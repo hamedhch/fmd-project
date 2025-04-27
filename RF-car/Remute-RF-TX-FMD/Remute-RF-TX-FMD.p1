@@ -1,0 +1,2243 @@
+Version 3.2   GCC8 Compiled Intermediate Code
+"39 C:\Program Files (x86)\CCompiler\Compiler\data\include\FT60F02X.h
+[s S2 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S2 . CARRY DC ZERO nPD nTO RP ]
+"47
+[s S3 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S3 . C HC Z nPF nTF PAGE ]
+"38
+[u S1 `S2 1 `S3 1 ]
+[n S1 . . . ]
+"84
+[s S5 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S5 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
+"94
+[s S6 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S6 . PA0 PA1 PA2 PA3 PA4 PA5 PA6 PA7 ]
+"83
+[u S4 `S5 1 `S6 1 ]
+[n S4 . . . ]
+"130
+[s S8 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S8 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"140
+[s S9 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S9 . PC0 PC1 PC2 PC3 PC4 PC5 PC6 PC7 ]
+"129
+[u S7 `S8 1 `S9 1 ]
+[n S7 . . . ]
+"158
+[s S11 :5 `uc 1 ]
+[n S11 . . ]
+"157
+[u S10 `S11 1 ]
+[n S10 . . ]
+"177
+[s S13 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S13 . PAIF INTF T0IF PAIE INTE T0IE PEIE GIE ]
+"176
+[u S12 `S13 1 ]
+[n S12 . . ]
+"202
+[s S15 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S15 . . TMR2IF OSFIF C1IF C2IF . CKMEAIF EEIF ]
+"201
+[u S14 `S15 1 ]
+[n S14 . . ]
+"231
+[s S17 :2 `uc 1 :1 `uc 1 :4 `uc 1 ]
+[n S17 . T2CKPS TMR2ON TOUTPS ]
+"236
+[s S18 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S18 . T2CKPS0 T2CKPS1 . TOUTPS0 TOUTPS1 TOUTPS2 TOUTPS3 ]
+"230
+[u S16 `S17 1 `S18 1 ]
+[n S16 . . . ]
+"260
+[s S20 :1 `uc 1 :4 `uc 1 ]
+[n S20 . SWDTEN WDTPS ]
+"264
+[s S21 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S21 . . WDTPS0 WDTPS1 WDTPS2 WDTPS3 ]
+"259
+[u S19 `S20 1 `S21 1 ]
+[n S19 . . . ]
+"288
+[s S23 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S23 . CM CIS C1INV C2INV C1OUT C2OUT ]
+"296
+[s S24 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S24 . CM0 CM1 CM2 ]
+"287
+[u S22 `S23 1 `S24 1 ]
+[n S22 . . . ]
+"317
+[s S26 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S26 . . CKCNTI CKMAVG . SLVREN ]
+"316
+[u S25 `S26 1 ]
+[n S25 . . ]
+"336
+[s S28 :4 `uc 1 ]
+[n S28 . SOSCPRH ]
+"335
+[u S27 `S28 1 ]
+[n S27 . . ]
+"360
+[s S30 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S30 . PS PSA T0SE T0CS INTEDG nPAPU ]
+"368
+[s S31 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S31 . PS0 PS1 PS2 ]
+"359
+[u S29 `S30 1 `S31 1 ]
+[n S29 . . . ]
+"388
+[s S33 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S33 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 . TRISA6 TRISA7 ]
+"387
+[u S32 `S33 1 ]
+[n S32 . . ]
+"415
+[s S35 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S35 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
+"425
+[s S36 :8 `uc 1 ]
+[n S36 . TRISC ]
+"414
+[u S34 `S35 1 `S36 1 ]
+[n S34 . . . ]
+"442
+[s S38 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S38 . . TMR2IE OSFIE C1IE C2IE . CKMEAIE EEIE ]
+"441
+[u S37 `S38 1 ]
+[n S37 . . ]
+"463
+[s S40 :1 `uc 1 :1 `uc 1 ]
+[n S40 . nBOR nPOR ]
+"462
+[u S39 `S40 1 ]
+[n S39 . . ]
+"483
+[s S42 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S42 . SCS LTS HTS OSTS IRCF LFMOD ]
+"491
+[s S43 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S43 . . IRCF0 IRCF1 IRCF2 . ]
+"482
+[u S41 `S42 1 `S43 1 ]
+[n S41 . . . ]
+"526
+[s S45 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S45 . WPUA0 WPUA1 WPUA2 WPUA3 WPUA4 . WPUA6 WPUA7 ]
+"536
+[s S46 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S46 . WPU0 WPU1 WPU2 WPU3 WPU4 . WPU6 WPU7 ]
+"525
+[u S44 `S45 1 `S46 1 ]
+[n S44 . . . ]
+"572
+[s S48 :8 `uc 1 ]
+[n S48 . IOCA ]
+"575
+[s S49 :8 `uc 1 ]
+[n S49 . IOC ]
+"571
+[u S47 `S48 1 `S49 1 ]
+[n S47 . . . ]
+"592
+[s S51 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S51 . VR . VRR . VREN ]
+"599
+[s S52 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S52 . VR0 VR1 VR2 VR3 ]
+"591
+[u S50 `S51 1 `S52 1 ]
+[n S50 . . . ]
+"628
+[s S54 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S54 . RD . WREN1 WRERR WREN2 WREN3 ]
+"627
+[u S53 `S54 1 ]
+[n S53 . . ]
+"645
+[s S56 :1 `uc 1 ]
+[n S56 . WR ]
+"644
+[u S55 `S56 1 ]
+[n S55 . . ]
+[p mainexit ]
+"48 Remute-RF-TX-FMD.C
+[v _POWER_INIT `(v ~T0 @X0 0 ef ]
+"49
+[v _INT_INIT `(v ~T0 @X0 0 ef ]
+"50
+[v _EEPROMread `(uc ~T0 @X0 0 ef1`uc ]
+"53
+[v _DelayMs `(v ~T0 @X0 0 ef1`ui ]
+"56
+[v _GEN_CODE `(v ~T0 @X0 0 ef ]
+"55
+[v _SEND_CODE `(v ~T0 @X0 0 ef3`uc`uc`uc ]
+"31 C:\Program Files (x86)\CCompiler\Compiler\data\include\SYSCFG.h
+[v ___nop `(v ~T0 @X0 0 ef ]
+[p i ___nop ]
+[; ;fmd.h: 26: extern const char __xc8_OPTIM_SPEED;
+[; ;fmd.h: 28: extern double __fpnormalize(double);
+[; ;gcc8debug.h: 14: extern void __builtin_software_breakpoint(void);
+"10 C:\Program Files (x86)\CCompiler\Compiler\data\include\FT60F02X.h
+[v _INDF `Vuc ~T0 @X0 1 e@0 ]
+[; ;FT60F02X.h: 10: volatile unsigned char INDF @ 0x000;
+"14
+[v _TMR0 `Vuc ~T0 @X0 1 e@1 ]
+[; ;FT60F02X.h: 14: volatile unsigned char TMR0 @ 0x001;
+"18
+[v _PCL `Vuc ~T0 @X0 1 e@2 ]
+[; ;FT60F02X.h: 18: volatile unsigned char PCL @ 0x002;
+"22
+[v _STATUS `Vuc ~T0 @X0 1 e@3 ]
+[; ;FT60F02X.h: 22: volatile unsigned char STATUS @ 0x003;
+"24
+[v _CARRY `Vb ~T0 @X0 1 e@24 ]
+[; ;FT60F02X.h: 24: volatile bit CARRY @ ((unsigned)&STATUS*8)+0;
+"25
+[v _DC `Vb ~T0 @X0 1 e@25 ]
+[; ;FT60F02X.h: 25: volatile bit DC @ ((unsigned)&STATUS*8)+1;
+"26
+[v _ZERO `Vb ~T0 @X0 1 e@26 ]
+[; ;FT60F02X.h: 26: volatile bit ZERO @ ((unsigned)&STATUS*8)+2;
+"27
+[v _nPD `Vb ~T0 @X0 1 e@27 ]
+[; ;FT60F02X.h: 27: volatile bit nPD @ ((unsigned)&STATUS*8)+3;
+"28
+[v _nTO `Vb ~T0 @X0 1 e@28 ]
+[; ;FT60F02X.h: 28: volatile bit nTO @ ((unsigned)&STATUS*8)+4;
+"29
+[v _RP `Vb ~T0 @X0 1 e@29 ]
+[; ;FT60F02X.h: 29: volatile bit RP @ ((unsigned)&STATUS*8)+5;
+"31
+[v _C `Vb ~T0 @X0 1 e@24 ]
+[; ;FT60F02X.h: 31: volatile bit C @ ((unsigned)&STATUS*8)+0;
+"32
+[v _HC `Vb ~T0 @X0 1 e@25 ]
+[; ;FT60F02X.h: 32: volatile bit HC @ ((unsigned)&STATUS*8)+1;
+"33
+[v _Z `Vb ~T0 @X0 1 e@26 ]
+[; ;FT60F02X.h: 33: volatile bit Z @ ((unsigned)&STATUS*8)+2;
+"34
+[v _nPF `Vb ~T0 @X0 1 e@27 ]
+[; ;FT60F02X.h: 34: volatile bit nPF @ ((unsigned)&STATUS*8)+3;
+"35
+[v _nTF `Vb ~T0 @X0 1 e@28 ]
+[; ;FT60F02X.h: 35: volatile bit nTF @ ((unsigned)&STATUS*8)+4;
+"36
+[v _PAGE `Vb ~T0 @X0 1 e@29 ]
+[; ;FT60F02X.h: 36: volatile bit PAGE @ ((unsigned)&STATUS*8)+5;
+"55
+[v _STATUSbits `VS1 ~T0 @X0 1 e@3 ]
+[; ;FT60F02X.h: 38: volatile union {
+[; ;FT60F02X.h: 39: struct {
+[; ;FT60F02X.h: 40: unsigned CARRY : 1;
+[; ;FT60F02X.h: 41: unsigned DC : 1;
+[; ;FT60F02X.h: 42: unsigned ZERO : 1;
+[; ;FT60F02X.h: 43: unsigned nPD : 1;
+[; ;FT60F02X.h: 44: unsigned nTO : 1;
+[; ;FT60F02X.h: 45: unsigned RP : 1;
+[; ;FT60F02X.h: 46: };
+[; ;FT60F02X.h: 47: struct {
+[; ;FT60F02X.h: 48: unsigned C : 1;
+[; ;FT60F02X.h: 49: unsigned HC : 1;
+[; ;FT60F02X.h: 50: unsigned Z : 1;
+[; ;FT60F02X.h: 51: unsigned nPF : 1;
+[; ;FT60F02X.h: 52: unsigned nTF : 1;
+[; ;FT60F02X.h: 53: unsigned PAGE : 1;
+[; ;FT60F02X.h: 54: };
+[; ;FT60F02X.h: 55: } STATUSbits @ 0x003;
+"59
+[v _FSR `Vuc ~T0 @X0 1 e@4 ]
+[; ;FT60F02X.h: 59: volatile unsigned char FSR @ 0x004;
+"63
+[v _PORTA `Vuc ~T0 @X0 1 e@5 ]
+[; ;FT60F02X.h: 63: volatile unsigned char PORTA @ 0x005;
+"65
+[v _RA0 `Vb ~T0 @X0 1 e@40 ]
+[; ;FT60F02X.h: 65: volatile bit RA0 @ ((unsigned)&PORTA*8)+0;
+"66
+[v _RA1 `Vb ~T0 @X0 1 e@41 ]
+[; ;FT60F02X.h: 66: volatile bit RA1 @ ((unsigned)&PORTA*8)+1;
+"67
+[v _RA2 `Vb ~T0 @X0 1 e@42 ]
+[; ;FT60F02X.h: 67: volatile bit RA2 @ ((unsigned)&PORTA*8)+2;
+"68
+[v _RA3 `Vb ~T0 @X0 1 e@43 ]
+[; ;FT60F02X.h: 68: volatile bit RA3 @ ((unsigned)&PORTA*8)+3;
+"69
+[v _RA4 `Vb ~T0 @X0 1 e@44 ]
+[; ;FT60F02X.h: 69: volatile bit RA4 @ ((unsigned)&PORTA*8)+4;
+"70
+[v _RA5 `Vb ~T0 @X0 1 e@45 ]
+[; ;FT60F02X.h: 70: volatile bit RA5 @ ((unsigned)&PORTA*8)+5;
+"71
+[v _RA6 `Vb ~T0 @X0 1 e@46 ]
+[; ;FT60F02X.h: 71: volatile bit RA6 @ ((unsigned)&PORTA*8)+6;
+"72
+[v _RA7 `Vb ~T0 @X0 1 e@47 ]
+[; ;FT60F02X.h: 72: volatile bit RA7 @ ((unsigned)&PORTA*8)+7;
+"74
+[v _PA0 `Vb ~T0 @X0 1 e@40 ]
+[; ;FT60F02X.h: 74: volatile bit PA0 @ ((unsigned)&PORTA*8)+0;
+"75
+[v _PA1 `Vb ~T0 @X0 1 e@41 ]
+[; ;FT60F02X.h: 75: volatile bit PA1 @ ((unsigned)&PORTA*8)+1;
+"76
+[v _PA2 `Vb ~T0 @X0 1 e@42 ]
+[; ;FT60F02X.h: 76: volatile bit PA2 @ ((unsigned)&PORTA*8)+2;
+"77
+[v _PA3 `Vb ~T0 @X0 1 e@43 ]
+[; ;FT60F02X.h: 77: volatile bit PA3 @ ((unsigned)&PORTA*8)+3;
+"78
+[v _PA4 `Vb ~T0 @X0 1 e@44 ]
+[; ;FT60F02X.h: 78: volatile bit PA4 @ ((unsigned)&PORTA*8)+4;
+"79
+[v _PA5 `Vb ~T0 @X0 1 e@45 ]
+[; ;FT60F02X.h: 79: volatile bit PA5 @ ((unsigned)&PORTA*8)+5;
+"80
+[v _PA6 `Vb ~T0 @X0 1 e@46 ]
+[; ;FT60F02X.h: 80: volatile bit PA6 @ ((unsigned)&PORTA*8)+6;
+"81
+[v _PA7 `Vb ~T0 @X0 1 e@47 ]
+[; ;FT60F02X.h: 81: volatile bit PA7 @ ((unsigned)&PORTA*8)+7;
+"104
+[v _PORTAbits `VS4 ~T0 @X0 1 e@5 ]
+[; ;FT60F02X.h: 83: volatile union {
+[; ;FT60F02X.h: 84: struct {
+[; ;FT60F02X.h: 85: unsigned RA0 : 1;
+[; ;FT60F02X.h: 86: unsigned RA1 : 1;
+[; ;FT60F02X.h: 87: unsigned RA2 : 1;
+[; ;FT60F02X.h: 88: unsigned RA3 : 1;
+[; ;FT60F02X.h: 89: unsigned RA4 : 1;
+[; ;FT60F02X.h: 90: unsigned RA5 : 1;
+[; ;FT60F02X.h: 91: unsigned RA6 : 1;
+[; ;FT60F02X.h: 92: unsigned RA7 : 1;
+[; ;FT60F02X.h: 93: };
+[; ;FT60F02X.h: 94: struct {
+[; ;FT60F02X.h: 95: unsigned PA0 : 1;
+[; ;FT60F02X.h: 96: unsigned PA1 : 1;
+[; ;FT60F02X.h: 97: unsigned PA2 : 1;
+[; ;FT60F02X.h: 98: unsigned PA3 : 1;
+[; ;FT60F02X.h: 99: unsigned PA4 : 1;
+[; ;FT60F02X.h: 100: unsigned PA5 : 1;
+[; ;FT60F02X.h: 101: unsigned PA6 : 1;
+[; ;FT60F02X.h: 102: unsigned PA7 : 1;
+[; ;FT60F02X.h: 103: };
+[; ;FT60F02X.h: 104: } PORTAbits @ 0x005;
+"108
+[v _PORTC `Vuc ~T0 @X0 1 e@7 ]
+[; ;FT60F02X.h: 108: volatile unsigned char PORTC @ 0x007;
+"110
+[v _RC0 `Vb ~T0 @X0 1 e@56 ]
+[; ;FT60F02X.h: 110: volatile bit RC0 @ ((unsigned)&PORTC*8)+0;
+"111
+[v _RC1 `Vb ~T0 @X0 1 e@57 ]
+[; ;FT60F02X.h: 111: volatile bit RC1 @ ((unsigned)&PORTC*8)+1;
+"112
+[v _RC2 `Vb ~T0 @X0 1 e@58 ]
+[; ;FT60F02X.h: 112: volatile bit RC2 @ ((unsigned)&PORTC*8)+2;
+"113
+[v _RC3 `Vb ~T0 @X0 1 e@59 ]
+[; ;FT60F02X.h: 113: volatile bit RC3 @ ((unsigned)&PORTC*8)+3;
+"114
+[v _RC4 `Vb ~T0 @X0 1 e@60 ]
+[; ;FT60F02X.h: 114: volatile bit RC4 @ ((unsigned)&PORTC*8)+4;
+"115
+[v _RC5 `Vb ~T0 @X0 1 e@61 ]
+[; ;FT60F02X.h: 115: volatile bit RC5 @ ((unsigned)&PORTC*8)+5;
+"116
+[v _RC6 `Vb ~T0 @X0 1 e@62 ]
+[; ;FT60F02X.h: 116: volatile bit RC6 @ ((unsigned)&PORTC*8)+6;
+"117
+[v _RC7 `Vb ~T0 @X0 1 e@63 ]
+[; ;FT60F02X.h: 117: volatile bit RC7 @ ((unsigned)&PORTC*8)+7;
+"119
+[v _PC0 `Vb ~T0 @X0 1 e@56 ]
+[; ;FT60F02X.h: 119: volatile bit PC0 @ ((unsigned)&PORTC*8)+0;
+"120
+[v _PC1 `Vb ~T0 @X0 1 e@57 ]
+[; ;FT60F02X.h: 120: volatile bit PC1 @ ((unsigned)&PORTC*8)+1;
+"121
+[v _PC2 `Vb ~T0 @X0 1 e@58 ]
+[; ;FT60F02X.h: 121: volatile bit PC2 @ ((unsigned)&PORTC*8)+2;
+"122
+[v _PC3 `Vb ~T0 @X0 1 e@59 ]
+[; ;FT60F02X.h: 122: volatile bit PC3 @ ((unsigned)&PORTC*8)+3;
+"123
+[v _PC4 `Vb ~T0 @X0 1 e@60 ]
+[; ;FT60F02X.h: 123: volatile bit PC4 @ ((unsigned)&PORTC*8)+4;
+"124
+[v _PC5 `Vb ~T0 @X0 1 e@61 ]
+[; ;FT60F02X.h: 124: volatile bit PC5 @ ((unsigned)&PORTC*8)+5;
+"125
+[v _PC6 `Vb ~T0 @X0 1 e@62 ]
+[; ;FT60F02X.h: 125: volatile bit PC6 @ ((unsigned)&PORTC*8)+6;
+"126
+[v _PC7 `Vb ~T0 @X0 1 e@63 ]
+[; ;FT60F02X.h: 126: volatile bit PC7 @ ((unsigned)&PORTC*8)+7;
+"150
+[v _PORTCbits `VS7 ~T0 @X0 1 e@7 ]
+[; ;FT60F02X.h: 129: volatile union {
+[; ;FT60F02X.h: 130: struct {
+[; ;FT60F02X.h: 131: unsigned RC0 : 1;
+[; ;FT60F02X.h: 132: unsigned RC1 : 1;
+[; ;FT60F02X.h: 133: unsigned RC2 : 1;
+[; ;FT60F02X.h: 134: unsigned RC3 : 1;
+[; ;FT60F02X.h: 135: unsigned RC4 : 1;
+[; ;FT60F02X.h: 136: unsigned RC5 : 1;
+[; ;FT60F02X.h: 137: unsigned RC6 : 1;
+[; ;FT60F02X.h: 138: unsigned RC7 : 1;
+[; ;FT60F02X.h: 139: };
+[; ;FT60F02X.h: 140: struct {
+[; ;FT60F02X.h: 141: unsigned PC0 : 1;
+[; ;FT60F02X.h: 142: unsigned PC1 : 1;
+[; ;FT60F02X.h: 143: unsigned PC2 : 1;
+[; ;FT60F02X.h: 144: unsigned PC3 : 1;
+[; ;FT60F02X.h: 145: unsigned PC4 : 1;
+[; ;FT60F02X.h: 146: unsigned PC5 : 1;
+[; ;FT60F02X.h: 147: unsigned PC6 : 1;
+[; ;FT60F02X.h: 148: unsigned PC7 : 1;
+[; ;FT60F02X.h: 149: };
+[; ;FT60F02X.h: 150: } PORTCbits @ 0x007;
+"154
+[v _PCLATH `Vuc ~T0 @X0 1 e@10 ]
+[; ;FT60F02X.h: 154: volatile unsigned char PCLATH @ 0x00A;
+"161
+[v _PCLATHbits `VS10 ~T0 @X0 1 e@10 ]
+[; ;FT60F02X.h: 157: volatile union {
+[; ;FT60F02X.h: 158: struct {
+[; ;FT60F02X.h: 159: unsigned : 5;
+[; ;FT60F02X.h: 160: };
+[; ;FT60F02X.h: 161: } PCLATHbits @ 0x00A;
+"165
+[v _INTCON `Vuc ~T0 @X0 1 e@11 ]
+[; ;FT60F02X.h: 165: volatile unsigned char INTCON @ 0x00B;
+"167
+[v _PAIF `Vb ~T0 @X0 1 e@88 ]
+[; ;FT60F02X.h: 167: volatile bit PAIF @ ((unsigned)&INTCON*8)+0;
+"168
+[v _INTF `Vb ~T0 @X0 1 e@89 ]
+[; ;FT60F02X.h: 168: volatile bit INTF @ ((unsigned)&INTCON*8)+1;
+"169
+[v _T0IF `Vb ~T0 @X0 1 e@90 ]
+[; ;FT60F02X.h: 169: volatile bit T0IF @ ((unsigned)&INTCON*8)+2;
+"170
+[v _PAIE `Vb ~T0 @X0 1 e@91 ]
+[; ;FT60F02X.h: 170: volatile bit PAIE @ ((unsigned)&INTCON*8)+3;
+"171
+[v _INTE `Vb ~T0 @X0 1 e@92 ]
+[; ;FT60F02X.h: 171: volatile bit INTE @ ((unsigned)&INTCON*8)+4;
+"172
+[v _T0IE `Vb ~T0 @X0 1 e@93 ]
+[; ;FT60F02X.h: 172: volatile bit T0IE @ ((unsigned)&INTCON*8)+5;
+"173
+[v _PEIE `Vb ~T0 @X0 1 e@94 ]
+[; ;FT60F02X.h: 173: volatile bit PEIE @ ((unsigned)&INTCON*8)+6;
+"174
+[v _GIE `Vb ~T0 @X0 1 e@95 ]
+[; ;FT60F02X.h: 174: volatile bit GIE @ ((unsigned)&INTCON*8)+7;
+"187
+[v _INTCONbits `VS12 ~T0 @X0 1 e@11 ]
+[; ;FT60F02X.h: 176: volatile union {
+[; ;FT60F02X.h: 177: struct {
+[; ;FT60F02X.h: 178: unsigned PAIF : 1;
+[; ;FT60F02X.h: 179: unsigned INTF : 1;
+[; ;FT60F02X.h: 180: unsigned T0IF : 1;
+[; ;FT60F02X.h: 181: unsigned PAIE : 1;
+[; ;FT60F02X.h: 182: unsigned INTE : 1;
+[; ;FT60F02X.h: 183: unsigned T0IE : 1;
+[; ;FT60F02X.h: 184: unsigned PEIE : 1;
+[; ;FT60F02X.h: 185: unsigned GIE : 1;
+[; ;FT60F02X.h: 186: };
+[; ;FT60F02X.h: 187: } INTCONbits @ 0x00B;
+"191
+[v _PIR1 `Vuc ~T0 @X0 1 e@12 ]
+[; ;FT60F02X.h: 191: volatile unsigned char PIR1 @ 0x00C;
+"193
+[v _TMR2IF `Vb ~T0 @X0 1 e@97 ]
+[; ;FT60F02X.h: 193: volatile bit TMR2IF @ ((unsigned)&PIR1*8)+1;
+"194
+[v _OSFIF `Vb ~T0 @X0 1 e@98 ]
+[; ;FT60F02X.h: 194: volatile bit OSFIF @ ((unsigned)&PIR1*8)+2;
+"195
+[v _C1IF `Vb ~T0 @X0 1 e@99 ]
+[; ;FT60F02X.h: 195: volatile bit C1IF @ ((unsigned)&PIR1*8)+3;
+"196
+[v _C2IF `Vb ~T0 @X0 1 e@100 ]
+[; ;FT60F02X.h: 196: volatile bit C2IF @ ((unsigned)&PIR1*8)+4;
+"197
+[v _CKMEAIF `Vb ~T0 @X0 1 e@102 ]
+[; ;FT60F02X.h: 197: volatile bit CKMEAIF @ ((unsigned)&PIR1*8)+6;
+"198
+[v _EEIF `Vb ~T0 @X0 1 e@103 ]
+[; ;FT60F02X.h: 198: volatile bit EEIF @ ((unsigned)&PIR1*8)+7;
+"212
+[v _PIR1bits `VS14 ~T0 @X0 1 e@12 ]
+[; ;FT60F02X.h: 201: volatile union {
+[; ;FT60F02X.h: 202: struct {
+[; ;FT60F02X.h: 203: unsigned : 1;
+[; ;FT60F02X.h: 204: unsigned TMR2IF : 1;
+[; ;FT60F02X.h: 205: unsigned OSFIF : 1;
+[; ;FT60F02X.h: 206: unsigned C1IF : 1;
+[; ;FT60F02X.h: 207: unsigned C2IF : 1;
+[; ;FT60F02X.h: 208: unsigned : 1;
+[; ;FT60F02X.h: 209: unsigned CKMEAIF : 1;
+[; ;FT60F02X.h: 210: unsigned EEIF : 1;
+[; ;FT60F02X.h: 211: };
+[; ;FT60F02X.h: 212: } PIR1bits @ 0x00C;
+"216
+[v _TMR2 `Vuc ~T0 @X0 1 e@17 ]
+[; ;FT60F02X.h: 216: volatile unsigned char TMR2 @ 0x011;
+"220
+[v _T2CON `Vuc ~T0 @X0 1 e@18 ]
+[; ;FT60F02X.h: 220: volatile unsigned char T2CON @ 0x012;
+"222
+[v _T2CKPS0 `Vb ~T0 @X0 1 e@144 ]
+[; ;FT60F02X.h: 222: volatile bit T2CKPS0 @ ((unsigned)&T2CON*8)+0;
+"223
+[v _T2CKPS1 `Vb ~T0 @X0 1 e@145 ]
+[; ;FT60F02X.h: 223: volatile bit T2CKPS1 @ ((unsigned)&T2CON*8)+1;
+"224
+[v _TMR2ON `Vb ~T0 @X0 1 e@146 ]
+[; ;FT60F02X.h: 224: volatile bit TMR2ON @ ((unsigned)&T2CON*8)+2;
+"225
+[v _TOUTPS0 `Vb ~T0 @X0 1 e@147 ]
+[; ;FT60F02X.h: 225: volatile bit TOUTPS0 @ ((unsigned)&T2CON*8)+3;
+"226
+[v _TOUTPS1 `Vb ~T0 @X0 1 e@148 ]
+[; ;FT60F02X.h: 226: volatile bit TOUTPS1 @ ((unsigned)&T2CON*8)+4;
+"227
+[v _TOUTPS2 `Vb ~T0 @X0 1 e@149 ]
+[; ;FT60F02X.h: 227: volatile bit TOUTPS2 @ ((unsigned)&T2CON*8)+5;
+"228
+[v _TOUTPS3 `Vb ~T0 @X0 1 e@150 ]
+[; ;FT60F02X.h: 228: volatile bit TOUTPS3 @ ((unsigned)&T2CON*8)+6;
+"245
+[v _T2CONbits `VS16 ~T0 @X0 1 e@18 ]
+[; ;FT60F02X.h: 230: volatile union {
+[; ;FT60F02X.h: 231: struct {
+[; ;FT60F02X.h: 232: unsigned T2CKPS : 2;
+[; ;FT60F02X.h: 233: unsigned TMR2ON : 1;
+[; ;FT60F02X.h: 234: unsigned TOUTPS : 4;
+[; ;FT60F02X.h: 235: };
+[; ;FT60F02X.h: 236: struct {
+[; ;FT60F02X.h: 237: unsigned T2CKPS0 : 1;
+[; ;FT60F02X.h: 238: unsigned T2CKPS1 : 1;
+[; ;FT60F02X.h: 239: unsigned : 1;
+[; ;FT60F02X.h: 240: unsigned TOUTPS0 : 1;
+[; ;FT60F02X.h: 241: unsigned TOUTPS1 : 1;
+[; ;FT60F02X.h: 242: unsigned TOUTPS2 : 1;
+[; ;FT60F02X.h: 243: unsigned TOUTPS3 : 1;
+[; ;FT60F02X.h: 244: };
+[; ;FT60F02X.h: 245: } T2CONbits @ 0x012;
+"250
+[v _WDTCON `Vuc ~T0 @X0 1 e@24 ]
+[; ;FT60F02X.h: 250: volatile unsigned char WDTCON @ 0x018;
+"252
+[v _SWDTEN `Vb ~T0 @X0 1 e@192 ]
+[; ;FT60F02X.h: 252: volatile bit SWDTEN @ ((unsigned)&WDTCON*8)+0;
+"253
+[v _WDTPS0 `Vb ~T0 @X0 1 e@193 ]
+[; ;FT60F02X.h: 253: volatile bit WDTPS0 @ ((unsigned)&WDTCON*8)+1;
+"254
+[v _WDTPS1 `Vb ~T0 @X0 1 e@194 ]
+[; ;FT60F02X.h: 254: volatile bit WDTPS1 @ ((unsigned)&WDTCON*8)+2;
+"255
+[v _WDTPS2 `Vb ~T0 @X0 1 e@195 ]
+[; ;FT60F02X.h: 255: volatile bit WDTPS2 @ ((unsigned)&WDTCON*8)+3;
+"256
+[v _WDTPS3 `Vb ~T0 @X0 1 e@196 ]
+[; ;FT60F02X.h: 256: volatile bit WDTPS3 @ ((unsigned)&WDTCON*8)+4;
+"271
+[v _WDTCONbits `VS19 ~T0 @X0 1 e@24 ]
+[; ;FT60F02X.h: 259: volatile union {
+[; ;FT60F02X.h: 260: struct {
+[; ;FT60F02X.h: 261: unsigned SWDTEN : 1;
+[; ;FT60F02X.h: 262: unsigned WDTPS : 4;
+[; ;FT60F02X.h: 263: };
+[; ;FT60F02X.h: 264: struct {
+[; ;FT60F02X.h: 265: unsigned : 1;
+[; ;FT60F02X.h: 266: unsigned WDTPS0 : 1;
+[; ;FT60F02X.h: 267: unsigned WDTPS1 : 1;
+[; ;FT60F02X.h: 268: unsigned WDTPS2 : 1;
+[; ;FT60F02X.h: 269: unsigned WDTPS3 : 1;
+[; ;FT60F02X.h: 270: };
+[; ;FT60F02X.h: 271: } WDTCONbits @ 0x018;
+"275
+[v _CMCON0 `Vuc ~T0 @X0 1 e@25 ]
+[; ;FT60F02X.h: 275: volatile unsigned char CMCON0 @ 0x019;
+"277
+[v _CM0 `Vb ~T0 @X0 1 e@200 ]
+[; ;FT60F02X.h: 277: volatile bit CM0 @ ((unsigned)&CMCON0*8)+0;
+"278
+[v _CM1 `Vb ~T0 @X0 1 e@201 ]
+[; ;FT60F02X.h: 278: volatile bit CM1 @ ((unsigned)&CMCON0*8)+1;
+"279
+[v _CM2 `Vb ~T0 @X0 1 e@202 ]
+[; ;FT60F02X.h: 279: volatile bit CM2 @ ((unsigned)&CMCON0*8)+2;
+"280
+[v _CIS `Vb ~T0 @X0 1 e@203 ]
+[; ;FT60F02X.h: 280: volatile bit CIS @ ((unsigned)&CMCON0*8)+3;
+"281
+[v _C1INV `Vb ~T0 @X0 1 e@204 ]
+[; ;FT60F02X.h: 281: volatile bit C1INV @ ((unsigned)&CMCON0*8)+4;
+"282
+[v _C2INV `Vb ~T0 @X0 1 e@205 ]
+[; ;FT60F02X.h: 282: volatile bit C2INV @ ((unsigned)&CMCON0*8)+5;
+"283
+[v _C1OUT `Vb ~T0 @X0 1 e@206 ]
+[; ;FT60F02X.h: 283: volatile bit C1OUT @ ((unsigned)&CMCON0*8)+6;
+"284
+[v _C2OUT `Vb ~T0 @X0 1 e@207 ]
+[; ;FT60F02X.h: 284: volatile bit C2OUT @ ((unsigned)&CMCON0*8)+7;
+"301
+[v _CMCON0bits `VS22 ~T0 @X0 1 e@25 ]
+[; ;FT60F02X.h: 287: volatile union {
+[; ;FT60F02X.h: 288: struct {
+[; ;FT60F02X.h: 289: unsigned CM : 3;
+[; ;FT60F02X.h: 290: unsigned CIS : 1;
+[; ;FT60F02X.h: 291: unsigned C1INV : 1;
+[; ;FT60F02X.h: 292: unsigned C2INV : 1;
+[; ;FT60F02X.h: 293: unsigned C1OUT : 1;
+[; ;FT60F02X.h: 294: unsigned C2OUT : 1;
+[; ;FT60F02X.h: 295: };
+[; ;FT60F02X.h: 296: struct {
+[; ;FT60F02X.h: 297: unsigned CM0 : 1;
+[; ;FT60F02X.h: 298: unsigned CM1 : 1;
+[; ;FT60F02X.h: 299: unsigned CM2 : 1;
+[; ;FT60F02X.h: 300: };
+[; ;FT60F02X.h: 301: } CMCON0bits @ 0x019;
+"305
+[v _PR0 `Vuc ~T0 @X0 1 e@26 ]
+[; ;FT60F02X.h: 305: volatile unsigned char PR0 @ 0x01A;
+"309
+[v _MSCKCON `Vuc ~T0 @X0 1 e@27 ]
+[; ;FT60F02X.h: 309: volatile unsigned char MSCKCON @ 0x01B;
+"311
+[v _CKCNTI `Vb ~T0 @X0 1 e@217 ]
+[; ;FT60F02X.h: 311: volatile bit CKCNTI @ ((unsigned)&MSCKCON*8)+1;
+"312
+[v _CKMAVG `Vb ~T0 @X0 1 e@218 ]
+[; ;FT60F02X.h: 312: volatile bit CKMAVG @ ((unsigned)&MSCKCON*8)+2;
+"313
+[v _SLVREN `Vb ~T0 @X0 1 e@220 ]
+[; ;FT60F02X.h: 313: volatile bit SLVREN @ ((unsigned)&MSCKCON*8)+4;
+"324
+[v _MSCKCONbits `VS25 ~T0 @X0 1 e@27 ]
+[; ;FT60F02X.h: 316: volatile union {
+[; ;FT60F02X.h: 317: struct {
+[; ;FT60F02X.h: 318: unsigned : 1;
+[; ;FT60F02X.h: 319: unsigned CKCNTI : 1;
+[; ;FT60F02X.h: 320: unsigned CKMAVG : 1;
+[; ;FT60F02X.h: 321: unsigned : 1;
+[; ;FT60F02X.h: 322: unsigned SLVREN : 1;
+[; ;FT60F02X.h: 323: };
+[; ;FT60F02X.h: 324: } MSCKCONbits @ 0x01B;
+"328
+[v _SOSCPRL `Vuc ~T0 @X0 1 e@28 ]
+[; ;FT60F02X.h: 328: volatile unsigned char SOSCPRL @ 0x01C;
+"332
+[v _SOSCPRH `Vuc ~T0 @X0 1 e@29 ]
+[; ;FT60F02X.h: 332: volatile unsigned char SOSCPRH @ 0x01D;
+"339
+[v _SOSCPRHbits `VS27 ~T0 @X0 1 e@29 ]
+[; ;FT60F02X.h: 335: volatile union {
+[; ;FT60F02X.h: 336: struct {
+[; ;FT60F02X.h: 337: unsigned SOSCPRH : 4;
+[; ;FT60F02X.h: 338: };
+[; ;FT60F02X.h: 339: } SOSCPRHbits @ 0x01D;
+"348
+[v _OPTION `Vuc ~T0 @X0 1 e@129 ]
+[; ;FT60F02X.h: 348: volatile unsigned char OPTION @ 0x081;
+"350
+[v _PS0 `Vb ~T0 @X0 1 e@1032 ]
+[; ;FT60F02X.h: 350: volatile bit PS0 @ ((unsigned)&OPTION*8)+0;
+"351
+[v _PS1 `Vb ~T0 @X0 1 e@1033 ]
+[; ;FT60F02X.h: 351: volatile bit PS1 @ ((unsigned)&OPTION*8)+1;
+"352
+[v _PS2 `Vb ~T0 @X0 1 e@1034 ]
+[; ;FT60F02X.h: 352: volatile bit PS2 @ ((unsigned)&OPTION*8)+2;
+"353
+[v _PSA `Vb ~T0 @X0 1 e@1035 ]
+[; ;FT60F02X.h: 353: volatile bit PSA @ ((unsigned)&OPTION*8)+3;
+"354
+[v _T0SE `Vb ~T0 @X0 1 e@1036 ]
+[; ;FT60F02X.h: 354: volatile bit T0SE @ ((unsigned)&OPTION*8)+4;
+"355
+[v _T0CS `Vb ~T0 @X0 1 e@1037 ]
+[; ;FT60F02X.h: 355: volatile bit T0CS @ ((unsigned)&OPTION*8)+5;
+"356
+[v _INTEDG `Vb ~T0 @X0 1 e@1038 ]
+[; ;FT60F02X.h: 356: volatile bit INTEDG @ ((unsigned)&OPTION*8)+6;
+"357
+[v _nPAPU `Vb ~T0 @X0 1 e@1039 ]
+[; ;FT60F02X.h: 357: volatile bit nPAPU @ ((unsigned)&OPTION*8)+7;
+"373
+[v _OPTIONbits `VS29 ~T0 @X0 1 e@129 ]
+[; ;FT60F02X.h: 359: volatile union {
+[; ;FT60F02X.h: 360: struct {
+[; ;FT60F02X.h: 361: unsigned PS : 3;
+[; ;FT60F02X.h: 362: unsigned PSA : 1;
+[; ;FT60F02X.h: 363: unsigned T0SE : 1;
+[; ;FT60F02X.h: 364: unsigned T0CS : 1;
+[; ;FT60F02X.h: 365: unsigned INTEDG : 1;
+[; ;FT60F02X.h: 366: unsigned nPAPU : 1;
+[; ;FT60F02X.h: 367: };
+[; ;FT60F02X.h: 368: struct {
+[; ;FT60F02X.h: 369: unsigned PS0 : 1;
+[; ;FT60F02X.h: 370: unsigned PS1 : 1;
+[; ;FT60F02X.h: 371: unsigned PS2 : 1;
+[; ;FT60F02X.h: 372: };
+[; ;FT60F02X.h: 373: } OPTIONbits @ 0x081;
+"377
+[v _TRISA `Vuc ~T0 @X0 1 e@133 ]
+[; ;FT60F02X.h: 377: volatile unsigned char TRISA @ 0x085;
+"379
+[v _TRISA0 `Vb ~T0 @X0 1 e@1064 ]
+[; ;FT60F02X.h: 379: volatile bit TRISA0 @ ((unsigned)&TRISA*8)+0;
+"380
+[v _TRISA1 `Vb ~T0 @X0 1 e@1065 ]
+[; ;FT60F02X.h: 380: volatile bit TRISA1 @ ((unsigned)&TRISA*8)+1;
+"381
+[v _TRISA2 `Vb ~T0 @X0 1 e@1066 ]
+[; ;FT60F02X.h: 381: volatile bit TRISA2 @ ((unsigned)&TRISA*8)+2;
+"382
+[v _TRISA3 `Vb ~T0 @X0 1 e@1067 ]
+[; ;FT60F02X.h: 382: volatile bit TRISA3 @ ((unsigned)&TRISA*8)+3;
+"383
+[v _TRISA4 `Vb ~T0 @X0 1 e@1068 ]
+[; ;FT60F02X.h: 383: volatile bit TRISA4 @ ((unsigned)&TRISA*8)+4;
+"384
+[v _TRISA6 `Vb ~T0 @X0 1 e@1070 ]
+[; ;FT60F02X.h: 384: volatile bit TRISA6 @ ((unsigned)&TRISA*8)+6;
+"385
+[v _TRISA7 `Vb ~T0 @X0 1 e@1071 ]
+[; ;FT60F02X.h: 385: volatile bit TRISA7 @ ((unsigned)&TRISA*8)+7;
+"398
+[v _TRISAbits `VS32 ~T0 @X0 1 e@133 ]
+[; ;FT60F02X.h: 387: volatile union {
+[; ;FT60F02X.h: 388: struct {
+[; ;FT60F02X.h: 389: unsigned TRISA0 : 1;
+[; ;FT60F02X.h: 390: unsigned TRISA1 : 1;
+[; ;FT60F02X.h: 391: unsigned TRISA2 : 1;
+[; ;FT60F02X.h: 392: unsigned TRISA3 : 1;
+[; ;FT60F02X.h: 393: unsigned TRISA4 : 1;
+[; ;FT60F02X.h: 394: unsigned : 1;
+[; ;FT60F02X.h: 395: unsigned TRISA6 : 1;
+[; ;FT60F02X.h: 396: unsigned TRISA7 : 1;
+[; ;FT60F02X.h: 397: };
+[; ;FT60F02X.h: 398: } TRISAbits @ 0x085;
+"403
+[v _TRISC `Vuc ~T0 @X0 1 e@135 ]
+[; ;FT60F02X.h: 403: volatile unsigned char TRISC @ 0x087;
+"405
+[v _TRISC0 `Vb ~T0 @X0 1 e@1080 ]
+[; ;FT60F02X.h: 405: volatile bit TRISC0 @ ((unsigned)&TRISC*8)+0;
+"406
+[v _TRISC1 `Vb ~T0 @X0 1 e@1081 ]
+[; ;FT60F02X.h: 406: volatile bit TRISC1 @ ((unsigned)&TRISC*8)+1;
+"407
+[v _TRISC2 `Vb ~T0 @X0 1 e@1082 ]
+[; ;FT60F02X.h: 407: volatile bit TRISC2 @ ((unsigned)&TRISC*8)+2;
+"408
+[v _TRISC3 `Vb ~T0 @X0 1 e@1083 ]
+[; ;FT60F02X.h: 408: volatile bit TRISC3 @ ((unsigned)&TRISC*8)+3;
+"409
+[v _TRISC4 `Vb ~T0 @X0 1 e@1084 ]
+[; ;FT60F02X.h: 409: volatile bit TRISC4 @ ((unsigned)&TRISC*8)+4;
+"410
+[v _TRISC5 `Vb ~T0 @X0 1 e@1085 ]
+[; ;FT60F02X.h: 410: volatile bit TRISC5 @ ((unsigned)&TRISC*8)+5;
+"411
+[v _TRISC6 `Vb ~T0 @X0 1 e@1086 ]
+[; ;FT60F02X.h: 411: volatile bit TRISC6 @ ((unsigned)&TRISC*8)+6;
+"412
+[v _TRISC7 `Vb ~T0 @X0 1 e@1087 ]
+[; ;FT60F02X.h: 412: volatile bit TRISC7 @ ((unsigned)&TRISC*8)+7;
+"428
+[v _TRISCbits `VS34 ~T0 @X0 1 e@135 ]
+[; ;FT60F02X.h: 414: volatile union {
+[; ;FT60F02X.h: 415: struct {
+[; ;FT60F02X.h: 416: unsigned TRISC0 : 1;
+[; ;FT60F02X.h: 417: unsigned TRISC1 : 1;
+[; ;FT60F02X.h: 418: unsigned TRISC2 : 1;
+[; ;FT60F02X.h: 419: unsigned TRISC3 : 1;
+[; ;FT60F02X.h: 420: unsigned TRISC4 : 1;
+[; ;FT60F02X.h: 421: unsigned TRISC5 : 1;
+[; ;FT60F02X.h: 422: unsigned TRISC6 : 1;
+[; ;FT60F02X.h: 423: unsigned TRISC7 : 1;
+[; ;FT60F02X.h: 424: };
+[; ;FT60F02X.h: 425: struct {
+[; ;FT60F02X.h: 426: unsigned TRISC : 8;
+[; ;FT60F02X.h: 427: };
+[; ;FT60F02X.h: 428: } TRISCbits @ 0x087;
+"432
+[v _PIE1 `Vuc ~T0 @X0 1 e@140 ]
+[; ;FT60F02X.h: 432: volatile unsigned char PIE1 @ 0x08C;
+"434
+[v _TMR2IE `Vb ~T0 @X0 1 e@1121 ]
+[; ;FT60F02X.h: 434: volatile bit TMR2IE @ ((unsigned)&PIE1*8)+1;
+"435
+[v _OSFIE `Vb ~T0 @X0 1 e@1122 ]
+[; ;FT60F02X.h: 435: volatile bit OSFIE @ ((unsigned)&PIE1*8)+2;
+"436
+[v _C1IE `Vb ~T0 @X0 1 e@1123 ]
+[; ;FT60F02X.h: 436: volatile bit C1IE @ ((unsigned)&PIE1*8)+3;
+"437
+[v _C2IE `Vb ~T0 @X0 1 e@1124 ]
+[; ;FT60F02X.h: 437: volatile bit C2IE @ ((unsigned)&PIE1*8)+4;
+"438
+[v _CKMEAIE `Vb ~T0 @X0 1 e@1126 ]
+[; ;FT60F02X.h: 438: volatile bit CKMEAIE @ ((unsigned)&PIE1*8)+6;
+"439
+[v _EEIE `Vb ~T0 @X0 1 e@1127 ]
+[; ;FT60F02X.h: 439: volatile bit EEIE @ ((unsigned)&PIE1*8)+7;
+"452
+[v _PIE1bits `VS37 ~T0 @X0 1 e@140 ]
+[; ;FT60F02X.h: 441: volatile union {
+[; ;FT60F02X.h: 442: struct {
+[; ;FT60F02X.h: 443: unsigned : 1;
+[; ;FT60F02X.h: 444: unsigned TMR2IE : 1;
+[; ;FT60F02X.h: 445: unsigned OSFIE : 1;
+[; ;FT60F02X.h: 446: unsigned C1IE : 1;
+[; ;FT60F02X.h: 447: unsigned C2IE : 1;
+[; ;FT60F02X.h: 448: unsigned : 1;
+[; ;FT60F02X.h: 449: unsigned CKMEAIE : 1;
+[; ;FT60F02X.h: 450: unsigned EEIE : 1;
+[; ;FT60F02X.h: 451: };
+[; ;FT60F02X.h: 452: } PIE1bits @ 0x08C;
+"457
+[v _PCON `Vuc ~T0 @X0 1 e@142 ]
+[; ;FT60F02X.h: 457: volatile unsigned char PCON @ 0x08E;
+"459
+[v _nBOR `Vb ~T0 @X0 1 e@1136 ]
+[; ;FT60F02X.h: 459: volatile bit nBOR @ ((unsigned)&PCON*8)+0;
+"460
+[v _nPOR `Vb ~T0 @X0 1 e@1137 ]
+[; ;FT60F02X.h: 460: volatile bit nPOR @ ((unsigned)&PCON*8)+1;
+"467
+[v _PCONbits `VS39 ~T0 @X0 1 e@142 ]
+[; ;FT60F02X.h: 462: volatile union {
+[; ;FT60F02X.h: 463: struct {
+[; ;FT60F02X.h: 464: unsigned nBOR : 1;
+[; ;FT60F02X.h: 465: unsigned nPOR : 1;
+[; ;FT60F02X.h: 466: };
+[; ;FT60F02X.h: 467: } PCONbits @ 0x08E;
+"471
+[v _OSCCON `Vuc ~T0 @X0 1 e@143 ]
+[; ;FT60F02X.h: 471: volatile unsigned char OSCCON @ 0x08F;
+"473
+[v _SCS `Vb ~T0 @X0 1 e@1144 ]
+[; ;FT60F02X.h: 473: volatile bit SCS @ ((unsigned)&OSCCON*8)+0;
+"474
+[v _LTS `Vb ~T0 @X0 1 e@1145 ]
+[; ;FT60F02X.h: 474: volatile bit LTS @ ((unsigned)&OSCCON*8)+1;
+"475
+[v _HTS `Vb ~T0 @X0 1 e@1146 ]
+[; ;FT60F02X.h: 475: volatile bit HTS @ ((unsigned)&OSCCON*8)+2;
+"476
+[v _OSTS `Vb ~T0 @X0 1 e@1147 ]
+[; ;FT60F02X.h: 476: volatile bit OSTS @ ((unsigned)&OSCCON*8)+3;
+"477
+[v _IRCF0 `Vb ~T0 @X0 1 e@1148 ]
+[; ;FT60F02X.h: 477: volatile bit IRCF0 @ ((unsigned)&OSCCON*8)+4;
+"478
+[v _IRCF1 `Vb ~T0 @X0 1 e@1149 ]
+[; ;FT60F02X.h: 478: volatile bit IRCF1 @ ((unsigned)&OSCCON*8)+5;
+"479
+[v _IRCF2 `Vb ~T0 @X0 1 e@1150 ]
+[; ;FT60F02X.h: 479: volatile bit IRCF2 @ ((unsigned)&OSCCON*8)+6;
+"480
+[v _LFMOD `Vb ~T0 @X0 1 e@1151 ]
+[; ;FT60F02X.h: 480: volatile bit LFMOD @ ((unsigned)&OSCCON*8)+7;
+"498
+[v _OSCCONbits `VS41 ~T0 @X0 1 e@143 ]
+[; ;FT60F02X.h: 482: volatile union {
+[; ;FT60F02X.h: 483: struct {
+[; ;FT60F02X.h: 484: unsigned SCS : 1;
+[; ;FT60F02X.h: 485: unsigned LTS : 1;
+[; ;FT60F02X.h: 486: unsigned HTS : 1;
+[; ;FT60F02X.h: 487: unsigned OSTS : 1;
+[; ;FT60F02X.h: 488: unsigned IRCF : 3;
+[; ;FT60F02X.h: 489: unsigned LFMOD : 1;
+[; ;FT60F02X.h: 490: };
+[; ;FT60F02X.h: 491: struct {
+[; ;FT60F02X.h: 492: unsigned : 4;
+[; ;FT60F02X.h: 493: unsigned IRCF0 : 1;
+[; ;FT60F02X.h: 494: unsigned IRCF1 : 1;
+[; ;FT60F02X.h: 495: unsigned IRCF2 : 1;
+[; ;FT60F02X.h: 496: unsigned : 1;
+[; ;FT60F02X.h: 497: };
+[; ;FT60F02X.h: 498: } OSCCONbits @ 0x08F;
+"502
+[v _PR2 `Vuc ~T0 @X0 1 e@146 ]
+[; ;FT60F02X.h: 502: volatile unsigned char PR2 @ 0x092;
+"506
+[v _WPUA `Vuc ~T0 @X0 1 e@149 ]
+[; ;FT60F02X.h: 506: volatile unsigned char WPUA @ 0x095;
+"507
+[v _WPU `Vuc ~T0 @X0 1 e@149 ]
+[; ;FT60F02X.h: 507: volatile unsigned char WPU @ 0x095;
+"509
+[v _WPUA0 `Vb ~T0 @X0 1 e@1192 ]
+[; ;FT60F02X.h: 509: volatile bit WPUA0 @ ((unsigned)&WPUA*8)+0;
+"510
+[v _WPUA1 `Vb ~T0 @X0 1 e@1193 ]
+[; ;FT60F02X.h: 510: volatile bit WPUA1 @ ((unsigned)&WPUA*8)+1;
+"511
+[v _WPUA2 `Vb ~T0 @X0 1 e@1194 ]
+[; ;FT60F02X.h: 511: volatile bit WPUA2 @ ((unsigned)&WPUA*8)+2;
+"512
+[v _WPUA3 `Vb ~T0 @X0 1 e@1195 ]
+[; ;FT60F02X.h: 512: volatile bit WPUA3 @ ((unsigned)&WPUA*8)+3;
+"513
+[v _WPUA4 `Vb ~T0 @X0 1 e@1196 ]
+[; ;FT60F02X.h: 513: volatile bit WPUA4 @ ((unsigned)&WPUA*8)+4;
+"514
+[v _WPUA6 `Vb ~T0 @X0 1 e@1198 ]
+[; ;FT60F02X.h: 514: volatile bit WPUA6 @ ((unsigned)&WPUA*8)+6;
+"515
+[v _WPUA7 `Vb ~T0 @X0 1 e@1199 ]
+[; ;FT60F02X.h: 515: volatile bit WPUA7 @ ((unsigned)&WPUA*8)+7;
+"517
+[v _WPU0 `Vb ~T0 @X0 1 e@1192 ]
+[; ;FT60F02X.h: 517: volatile bit WPU0 @ ((unsigned)&WPUA*8)+0;
+"518
+[v _WPU1 `Vb ~T0 @X0 1 e@1193 ]
+[; ;FT60F02X.h: 518: volatile bit WPU1 @ ((unsigned)&WPUA*8)+1;
+"519
+[v _WPU2 `Vb ~T0 @X0 1 e@1194 ]
+[; ;FT60F02X.h: 519: volatile bit WPU2 @ ((unsigned)&WPUA*8)+2;
+"520
+[v _WPU3 `Vb ~T0 @X0 1 e@1195 ]
+[; ;FT60F02X.h: 520: volatile bit WPU3 @ ((unsigned)&WPUA*8)+3;
+"521
+[v _WPU4 `Vb ~T0 @X0 1 e@1196 ]
+[; ;FT60F02X.h: 521: volatile bit WPU4 @ ((unsigned)&WPUA*8)+4;
+"522
+[v _WPU6 `Vb ~T0 @X0 1 e@1198 ]
+[; ;FT60F02X.h: 522: volatile bit WPU6 @ ((unsigned)&WPUA*8)+6;
+"523
+[v _WPU7 `Vb ~T0 @X0 1 e@1199 ]
+[; ;FT60F02X.h: 523: volatile bit WPU7 @ ((unsigned)&WPUA*8)+7;
+"546
+[v _WPUAbits `VS44 ~T0 @X0 1 e@149 ]
+[; ;FT60F02X.h: 525: volatile union {
+[; ;FT60F02X.h: 526: struct {
+[; ;FT60F02X.h: 527: unsigned WPUA0 : 1;
+[; ;FT60F02X.h: 528: unsigned WPUA1 : 1;
+[; ;FT60F02X.h: 529: unsigned WPUA2 : 1;
+[; ;FT60F02X.h: 530: unsigned WPUA3 : 1;
+[; ;FT60F02X.h: 531: unsigned WPUA4 : 1;
+[; ;FT60F02X.h: 532: unsigned : 1;
+[; ;FT60F02X.h: 533: unsigned WPUA6 : 1;
+[; ;FT60F02X.h: 534: unsigned WPUA7 : 1;
+[; ;FT60F02X.h: 535: };
+[; ;FT60F02X.h: 536: struct {
+[; ;FT60F02X.h: 537: unsigned WPU0 : 1;
+[; ;FT60F02X.h: 538: unsigned WPU1 : 1;
+[; ;FT60F02X.h: 539: unsigned WPU2 : 1;
+[; ;FT60F02X.h: 540: unsigned WPU3 : 1;
+[; ;FT60F02X.h: 541: unsigned WPU4 : 1;
+[; ;FT60F02X.h: 542: unsigned : 1;
+[; ;FT60F02X.h: 543: unsigned WPU6 : 1;
+[; ;FT60F02X.h: 544: unsigned WPU7 : 1;
+[; ;FT60F02X.h: 545: };
+[; ;FT60F02X.h: 546: } WPUAbits @ 0x095;
+"550
+[v _IOCA `Vuc ~T0 @X0 1 e@150 ]
+[; ;FT60F02X.h: 550: volatile unsigned char IOCA @ 0x096;
+"551
+[v _IOC `Vuc ~T0 @X0 1 e@150 ]
+[; ;FT60F02X.h: 551: volatile unsigned char IOC @ 0x096;
+"553
+[v _IOCA0 `Vb ~T0 @X0 1 e@1200 ]
+[; ;FT60F02X.h: 553: volatile bit IOCA0 @ ((unsigned)&IOCA*8)+0;
+"554
+[v _IOCA1 `Vb ~T0 @X0 1 e@1201 ]
+[; ;FT60F02X.h: 554: volatile bit IOCA1 @ ((unsigned)&IOCA*8)+1;
+"555
+[v _IOCA2 `Vb ~T0 @X0 1 e@1202 ]
+[; ;FT60F02X.h: 555: volatile bit IOCA2 @ ((unsigned)&IOCA*8)+2;
+"556
+[v _IOCA3 `Vb ~T0 @X0 1 e@1203 ]
+[; ;FT60F02X.h: 556: volatile bit IOCA3 @ ((unsigned)&IOCA*8)+3;
+"557
+[v _IOCA4 `Vb ~T0 @X0 1 e@1204 ]
+[; ;FT60F02X.h: 557: volatile bit IOCA4 @ ((unsigned)&IOCA*8)+4;
+"558
+[v _IOCA5 `Vb ~T0 @X0 1 e@1205 ]
+[; ;FT60F02X.h: 558: volatile bit IOCA5 @ ((unsigned)&IOCA*8)+5;
+"559
+[v _IOCA6 `Vb ~T0 @X0 1 e@1206 ]
+[; ;FT60F02X.h: 559: volatile bit IOCA6 @ ((unsigned)&IOCA*8)+6;
+"560
+[v _IOCA7 `Vb ~T0 @X0 1 e@1207 ]
+[; ;FT60F02X.h: 560: volatile bit IOCA7 @ ((unsigned)&IOCA*8)+7;
+"562
+[v _IOC0 `Vb ~T0 @X0 1 e@1200 ]
+[; ;FT60F02X.h: 562: volatile bit IOC0 @ ((unsigned)&IOCA*8)+0;
+"563
+[v _IOC1 `Vb ~T0 @X0 1 e@1201 ]
+[; ;FT60F02X.h: 563: volatile bit IOC1 @ ((unsigned)&IOCA*8)+1;
+"564
+[v _IOC2 `Vb ~T0 @X0 1 e@1202 ]
+[; ;FT60F02X.h: 564: volatile bit IOC2 @ ((unsigned)&IOCA*8)+2;
+"565
+[v _IOC3 `Vb ~T0 @X0 1 e@1203 ]
+[; ;FT60F02X.h: 565: volatile bit IOC3 @ ((unsigned)&IOCA*8)+3;
+"566
+[v _IOC4 `Vb ~T0 @X0 1 e@1204 ]
+[; ;FT60F02X.h: 566: volatile bit IOC4 @ ((unsigned)&IOCA*8)+4;
+"567
+[v _IOC5 `Vb ~T0 @X0 1 e@1205 ]
+[; ;FT60F02X.h: 567: volatile bit IOC5 @ ((unsigned)&IOCA*8)+5;
+"568
+[v _IOC6 `Vb ~T0 @X0 1 e@1206 ]
+[; ;FT60F02X.h: 568: volatile bit IOC6 @ ((unsigned)&IOCA*8)+6;
+"569
+[v _IOC7 `Vb ~T0 @X0 1 e@1207 ]
+[; ;FT60F02X.h: 569: volatile bit IOC7 @ ((unsigned)&IOCA*8)+7;
+"578
+[v _IOCAbits `VS47 ~T0 @X0 1 e@150 ]
+[; ;FT60F02X.h: 571: volatile union {
+[; ;FT60F02X.h: 572: struct {
+[; ;FT60F02X.h: 573: unsigned IOCA : 8;
+[; ;FT60F02X.h: 574: };
+[; ;FT60F02X.h: 575: struct {
+[; ;FT60F02X.h: 576: unsigned IOC : 8;
+[; ;FT60F02X.h: 577: };
+[; ;FT60F02X.h: 578: } IOCAbits @ 0x096;
+"582
+[v _VRCON `Vuc ~T0 @X0 1 e@153 ]
+[; ;FT60F02X.h: 582: volatile unsigned char VRCON @ 0x099;
+"584
+[v _VR0 `Vb ~T0 @X0 1 e@1224 ]
+[; ;FT60F02X.h: 584: volatile bit VR0 @ ((unsigned)&VRCON*8)+0;
+"585
+[v _VR1 `Vb ~T0 @X0 1 e@1225 ]
+[; ;FT60F02X.h: 585: volatile bit VR1 @ ((unsigned)&VRCON*8)+1;
+"586
+[v _VR2 `Vb ~T0 @X0 1 e@1226 ]
+[; ;FT60F02X.h: 586: volatile bit VR2 @ ((unsigned)&VRCON*8)+2;
+"587
+[v _VR3 `Vb ~T0 @X0 1 e@1227 ]
+[; ;FT60F02X.h: 587: volatile bit VR3 @ ((unsigned)&VRCON*8)+3;
+"588
+[v _VRR `Vb ~T0 @X0 1 e@1229 ]
+[; ;FT60F02X.h: 588: volatile bit VRR @ ((unsigned)&VRCON*8)+5;
+"589
+[v _VREN `Vb ~T0 @X0 1 e@1231 ]
+[; ;FT60F02X.h: 589: volatile bit VREN @ ((unsigned)&VRCON*8)+7;
+"605
+[v _VRCONbits `VS50 ~T0 @X0 1 e@153 ]
+[; ;FT60F02X.h: 591: volatile union {
+[; ;FT60F02X.h: 592: struct {
+[; ;FT60F02X.h: 593: unsigned VR : 4;
+[; ;FT60F02X.h: 594: unsigned : 1;
+[; ;FT60F02X.h: 595: unsigned VRR : 1;
+[; ;FT60F02X.h: 596: unsigned : 1;
+[; ;FT60F02X.h: 597: unsigned VREN : 1;
+[; ;FT60F02X.h: 598: };
+[; ;FT60F02X.h: 599: struct {
+[; ;FT60F02X.h: 600: unsigned VR0 : 1;
+[; ;FT60F02X.h: 601: unsigned VR1 : 1;
+[; ;FT60F02X.h: 602: unsigned VR2 : 1;
+[; ;FT60F02X.h: 603: unsigned VR3 : 1;
+[; ;FT60F02X.h: 604: };
+[; ;FT60F02X.h: 605: } VRCONbits @ 0x099;
+"609
+[v _EEDAT `Vuc ~T0 @X0 1 e@154 ]
+[; ;FT60F02X.h: 609: volatile unsigned char EEDAT @ 0x09A;
+"610
+[v _EEDATA `Vuc ~T0 @X0 1 e@154 ]
+[; ;FT60F02X.h: 610: volatile unsigned char EEDATA @ 0x09A;
+"614
+[v _EEADR `Vuc ~T0 @X0 1 e@155 ]
+[; ;FT60F02X.h: 614: volatile unsigned char EEADR @ 0x09B;
+"619
+[v _EECON1 `Vuc ~T0 @X0 1 e@156 ]
+[; ;FT60F02X.h: 619: volatile unsigned char EECON1 @ 0x09C;
+"621
+[v _RD `Vb ~T0 @X0 1 e@1248 ]
+[; ;FT60F02X.h: 621: volatile bit RD @ ((unsigned)&EECON1*8)+0;
+"622
+[v _WREN1 `Vb ~T0 @X0 1 e@1250 ]
+[; ;FT60F02X.h: 622: volatile bit WREN1 @ ((unsigned)&EECON1*8)+2;
+"623
+[v _WRERR `Vb ~T0 @X0 1 e@1251 ]
+[; ;FT60F02X.h: 623: volatile bit WRERR @ ((unsigned)&EECON1*8)+3;
+"624
+[v _WREN2 `Vb ~T0 @X0 1 e@1252 ]
+[; ;FT60F02X.h: 624: volatile bit WREN2 @ ((unsigned)&EECON1*8)+4;
+"625
+[v _WREN3 `Vb ~T0 @X0 1 e@1253 ]
+[; ;FT60F02X.h: 625: volatile bit WREN3 @ ((unsigned)&EECON1*8)+5;
+"636
+[v _EECON1bits `VS53 ~T0 @X0 1 e@156 ]
+[; ;FT60F02X.h: 627: volatile union {
+[; ;FT60F02X.h: 628: struct {
+[; ;FT60F02X.h: 629: unsigned RD : 1;
+[; ;FT60F02X.h: 630: unsigned : 1;
+[; ;FT60F02X.h: 631: unsigned WREN1 : 1;
+[; ;FT60F02X.h: 632: unsigned WRERR : 1;
+[; ;FT60F02X.h: 633: unsigned WREN2 : 1;
+[; ;FT60F02X.h: 634: unsigned WREN3 : 1;
+[; ;FT60F02X.h: 635: };
+[; ;FT60F02X.h: 636: } EECON1bits @ 0x09C;
+"640
+[v _EECON2 `Vuc ~T0 @X0 1 e@157 ]
+[; ;FT60F02X.h: 640: volatile unsigned char EECON2 @ 0x09D;
+"642
+[v _WR `Vb ~T0 @X0 1 e@1256 ]
+[; ;FT60F02X.h: 642: volatile bit WR @ ((unsigned)&EECON2*8)+0;
+"648
+[v _EECON2bits `VS55 ~T0 @X0 1 e@157 ]
+[; ;FT60F02X.h: 644: volatile union {
+[; ;FT60F02X.h: 645: struct {
+[; ;FT60F02X.h: 646: unsigned WR : 1;
+[; ;FT60F02X.h: 647: };
+[; ;FT60F02X.h: 648: } EECON2bits @ 0x09d;
+"652
+[v _SFR00 `Vuc ~T0 @X0 1 e@0 ]
+[; ;FT60F02X.h: 652: volatile unsigned char SFR00 @0x000;
+"653
+[v _SFR01 `Vuc ~T0 @X0 1 e@1 ]
+[; ;FT60F02X.h: 653: volatile unsigned char SFR01 @0x001;
+"654
+[v _SFR02 `Vuc ~T0 @X0 1 e@2 ]
+[; ;FT60F02X.h: 654: volatile unsigned char SFR02 @0x002;
+"655
+[v _SFR03 `Vuc ~T0 @X0 1 e@3 ]
+[; ;FT60F02X.h: 655: volatile unsigned char SFR03 @0x003;
+"656
+[v _SFR04 `Vuc ~T0 @X0 1 e@4 ]
+[; ;FT60F02X.h: 656: volatile unsigned char SFR04 @0x004;
+"657
+[v _SFR05 `Vuc ~T0 @X0 1 e@5 ]
+[; ;FT60F02X.h: 657: volatile unsigned char SFR05 @0x005;
+"658
+[v _SFR06 `Vuc ~T0 @X0 1 e@6 ]
+[; ;FT60F02X.h: 658: volatile unsigned char SFR06 @0x006;
+"659
+[v _SFR07 `Vuc ~T0 @X0 1 e@7 ]
+[; ;FT60F02X.h: 659: volatile unsigned char SFR07 @0x007;
+"660
+[v _SFR08 `Vuc ~T0 @X0 1 e@8 ]
+[; ;FT60F02X.h: 660: volatile unsigned char SFR08 @0x008;
+"661
+[v _SFR09 `Vuc ~T0 @X0 1 e@9 ]
+[; ;FT60F02X.h: 661: volatile unsigned char SFR09 @0x009;
+"662
+[v _SFR0A `Vuc ~T0 @X0 1 e@10 ]
+[; ;FT60F02X.h: 662: volatile unsigned char SFR0A @0x00A;
+"663
+[v _SFR0B `Vuc ~T0 @X0 1 e@11 ]
+[; ;FT60F02X.h: 663: volatile unsigned char SFR0B @0x00B;
+"664
+[v _SFR0C `Vuc ~T0 @X0 1 e@12 ]
+[; ;FT60F02X.h: 664: volatile unsigned char SFR0C @0x00C;
+"665
+[v _SFR0D `Vuc ~T0 @X0 1 e@13 ]
+[; ;FT60F02X.h: 665: volatile unsigned char SFR0D @0x00D;
+"666
+[v _SFR0E `Vuc ~T0 @X0 1 e@14 ]
+[; ;FT60F02X.h: 666: volatile unsigned char SFR0E @0x00E;
+"667
+[v _SFR0F `Vuc ~T0 @X0 1 e@15 ]
+[; ;FT60F02X.h: 667: volatile unsigned char SFR0F @0x00F;
+"669
+[v _SFR10 `Vuc ~T0 @X0 1 e@16 ]
+[; ;FT60F02X.h: 669: volatile unsigned char SFR10 @0x010;
+"670
+[v _SFR11 `Vuc ~T0 @X0 1 e@17 ]
+[; ;FT60F02X.h: 670: volatile unsigned char SFR11 @0x011;
+"671
+[v _SFR12 `Vuc ~T0 @X0 1 e@18 ]
+[; ;FT60F02X.h: 671: volatile unsigned char SFR12 @0x012;
+"672
+[v _SFR13 `Vuc ~T0 @X0 1 e@19 ]
+[; ;FT60F02X.h: 672: volatile unsigned char SFR13 @0x013;
+"673
+[v _SFR14 `Vuc ~T0 @X0 1 e@20 ]
+[; ;FT60F02X.h: 673: volatile unsigned char SFR14 @0x014;
+"674
+[v _SFR15 `Vuc ~T0 @X0 1 e@21 ]
+[; ;FT60F02X.h: 674: volatile unsigned char SFR15 @0x015;
+"675
+[v _SFR16 `Vuc ~T0 @X0 1 e@22 ]
+[; ;FT60F02X.h: 675: volatile unsigned char SFR16 @0x016;
+"676
+[v _SFR17 `Vuc ~T0 @X0 1 e@23 ]
+[; ;FT60F02X.h: 676: volatile unsigned char SFR17 @0x017;
+"677
+[v _SFR18 `Vuc ~T0 @X0 1 e@24 ]
+[; ;FT60F02X.h: 677: volatile unsigned char SFR18 @0x018;
+"678
+[v _SFR19 `Vuc ~T0 @X0 1 e@25 ]
+[; ;FT60F02X.h: 678: volatile unsigned char SFR19 @0x019;
+"679
+[v _SFR1A `Vuc ~T0 @X0 1 e@26 ]
+[; ;FT60F02X.h: 679: volatile unsigned char SFR1A @0x01A;
+"680
+[v _SFR1B `Vuc ~T0 @X0 1 e@27 ]
+[; ;FT60F02X.h: 680: volatile unsigned char SFR1B @0x01B;
+"681
+[v _SFR1C `Vuc ~T0 @X0 1 e@28 ]
+[; ;FT60F02X.h: 681: volatile unsigned char SFR1C @0x01C;
+"682
+[v _SFR1D `Vuc ~T0 @X0 1 e@29 ]
+[; ;FT60F02X.h: 682: volatile unsigned char SFR1D @0x01D;
+"683
+[v _SFR1E `Vuc ~T0 @X0 1 e@30 ]
+[; ;FT60F02X.h: 683: volatile unsigned char SFR1E @0x01E;
+"684
+[v _SFR1F `Vuc ~T0 @X0 1 e@31 ]
+[; ;FT60F02X.h: 684: volatile unsigned char SFR1F @0x01F;
+"687
+[v _SFR80 `Vuc ~T0 @X0 1 e@128 ]
+[; ;FT60F02X.h: 687: volatile unsigned char SFR80 @0x080;
+"688
+[v _SFR81 `Vuc ~T0 @X0 1 e@129 ]
+[; ;FT60F02X.h: 688: volatile unsigned char SFR81 @0x081;
+"689
+[v _SFR82 `Vuc ~T0 @X0 1 e@130 ]
+[; ;FT60F02X.h: 689: volatile unsigned char SFR82 @0x082;
+"690
+[v _SFR83 `Vuc ~T0 @X0 1 e@131 ]
+[; ;FT60F02X.h: 690: volatile unsigned char SFR83 @0x083;
+"691
+[v _SFR84 `Vuc ~T0 @X0 1 e@132 ]
+[; ;FT60F02X.h: 691: volatile unsigned char SFR84 @0x084;
+"692
+[v _SFR85 `Vuc ~T0 @X0 1 e@133 ]
+[; ;FT60F02X.h: 692: volatile unsigned char SFR85 @0x085;
+"693
+[v _SFR86 `Vuc ~T0 @X0 1 e@134 ]
+[; ;FT60F02X.h: 693: volatile unsigned char SFR86 @0x086;
+"694
+[v _SFR87 `Vuc ~T0 @X0 1 e@135 ]
+[; ;FT60F02X.h: 694: volatile unsigned char SFR87 @0x087;
+"695
+[v _SFR88 `Vuc ~T0 @X0 1 e@136 ]
+[; ;FT60F02X.h: 695: volatile unsigned char SFR88 @0x088;
+"696
+[v _SFR89 `Vuc ~T0 @X0 1 e@137 ]
+[; ;FT60F02X.h: 696: volatile unsigned char SFR89 @0x089;
+"697
+[v _SFR8A `Vuc ~T0 @X0 1 e@138 ]
+[; ;FT60F02X.h: 697: volatile unsigned char SFR8A @0x08A;
+"698
+[v _SFR8B `Vuc ~T0 @X0 1 e@139 ]
+[; ;FT60F02X.h: 698: volatile unsigned char SFR8B @0x08B;
+"699
+[v _SFR8C `Vuc ~T0 @X0 1 e@140 ]
+[; ;FT60F02X.h: 699: volatile unsigned char SFR8C @0x08C;
+"700
+[v _SFR8D `Vuc ~T0 @X0 1 e@141 ]
+[; ;FT60F02X.h: 700: volatile unsigned char SFR8D @0x08D;
+"701
+[v _SFR8E `Vuc ~T0 @X0 1 e@142 ]
+[; ;FT60F02X.h: 701: volatile unsigned char SFR8E @0x08E;
+"702
+[v _SFR8F `Vuc ~T0 @X0 1 e@143 ]
+[; ;FT60F02X.h: 702: volatile unsigned char SFR8F @0x08F;
+"704
+[v _SFR90 `Vuc ~T0 @X0 1 e@144 ]
+[; ;FT60F02X.h: 704: volatile unsigned char SFR90 @0x090;
+"705
+[v _SFR91 `Vuc ~T0 @X0 1 e@145 ]
+[; ;FT60F02X.h: 705: volatile unsigned char SFR91 @0x091;
+"706
+[v _SFR92 `Vuc ~T0 @X0 1 e@146 ]
+[; ;FT60F02X.h: 706: volatile unsigned char SFR92 @0x092;
+"707
+[v _SFR93 `Vuc ~T0 @X0 1 e@147 ]
+[; ;FT60F02X.h: 707: volatile unsigned char SFR93 @0x093;
+"708
+[v _SFR94 `Vuc ~T0 @X0 1 e@148 ]
+[; ;FT60F02X.h: 708: volatile unsigned char SFR94 @0x094;
+"709
+[v _SFR95 `Vuc ~T0 @X0 1 e@149 ]
+[; ;FT60F02X.h: 709: volatile unsigned char SFR95 @0x095;
+"710
+[v _SFR96 `Vuc ~T0 @X0 1 e@150 ]
+[; ;FT60F02X.h: 710: volatile unsigned char SFR96 @0x096;
+"711
+[v _SFR97 `Vuc ~T0 @X0 1 e@151 ]
+[; ;FT60F02X.h: 711: volatile unsigned char SFR97 @0x097;
+"712
+[v _SFR98 `Vuc ~T0 @X0 1 e@152 ]
+[; ;FT60F02X.h: 712: volatile unsigned char SFR98 @0x098;
+"713
+[v _SFR99 `Vuc ~T0 @X0 1 e@153 ]
+[; ;FT60F02X.h: 713: volatile unsigned char SFR99 @0x099;
+"714
+[v _SFR9A `Vuc ~T0 @X0 1 e@154 ]
+[; ;FT60F02X.h: 714: volatile unsigned char SFR9A @0x09A;
+"715
+[v _SFR9B `Vuc ~T0 @X0 1 e@155 ]
+[; ;FT60F02X.h: 715: volatile unsigned char SFR9B @0x09B;
+"716
+[v _SFR9C `Vuc ~T0 @X0 1 e@156 ]
+[; ;FT60F02X.h: 716: volatile unsigned char SFR9C @0x09C;
+"717
+[v _SFR9D `Vuc ~T0 @X0 1 e@157 ]
+[; ;FT60F02X.h: 717: volatile unsigned char SFR9D @0x09D;
+"718
+[v _SFR9E `Vuc ~T0 @X0 1 e@158 ]
+[; ;FT60F02X.h: 718: volatile unsigned char SFR9E @0x09E;
+"719
+[v _SFR9F `Vuc ~T0 @X0 1 e@159 ]
+[; ;FT60F02X.h: 719: volatile unsigned char SFR9F @0x09F;
+[; ;SYSCFG.h: 31: extern void __nop(void);
+[; ;SYSCFG.h: 61: extern unsigned int flash_read(unsigned short addr);
+[; ;eeprom_routines.h: 41: extern void eeprom_write(unsigned char addr, unsigned char value);
+[; ;eeprom_routines.h: 42: extern unsigned char eeprom_read(unsigned char addr);
+[; ;eeprom_routines.h: 43: extern void eecpymem(volatile unsigned char *to, __eeprom unsigned char *from, unsigned char size);
+[; ;eeprom_routines.h: 44: extern void memcpyee(__eeprom unsigned char *to, const unsigned char *from, unsigned char size);
+[; ;SYSCFG.h: 135: extern __nonreentrant void _delay(unsigned long);
+[; ;SYSCFG.h: 157: extern unsigned char __resetbits;
+[; ;SYSCFG.h: 158: extern __bit __powerdown;
+[; ;SYSCFG.h: 159: extern __bit __timeout;
+"45 Remute-RF-TX-FMD.C
+[v _ReadAPin `uc ~T0 @X0 1 e ]
+[i _ReadAPin
+-> -> 0 `i `uc
+]
+[v _Set `uc ~T0 @X0 1 e ]
+[i _Set
+-> -> 0 `i `uc
+]
+[v _Learn `uc ~T0 @X0 1 e ]
+[i _Learn
+-> -> 0 `i `uc
+]
+[v _CodeKey `uc ~T0 @X0 1 e ]
+[i _CodeKey
+-> -> 0 `i `uc
+]
+[v _CodeLearn `uc ~T0 @X0 -> 3 `i e ]
+[; ;Remute-RF-TX-FMD.C: 45: unsigned char ReadAPin=0,Set=0,Learn=0,CodeKey=0,CodeLearn[3];
+"46
+[v _CountKey `ui ~T0 @X0 1 e ]
+[i _CountKey
+-> -> 0 `i `ui
+]
+[; ;Remute-RF-TX-FMD.C: 46: unsigned int CountKey=0;
+[; ;Remute-RF-TX-FMD.C: 48: void POWER_INIT(void);
+[; ;Remute-RF-TX-FMD.C: 49: void INT_INIT(void);
+[; ;Remute-RF-TX-FMD.C: 50: unsigned char EEPROMread(unsigned char EEAddr);
+[; ;Remute-RF-TX-FMD.C: 51: void EEPROMwrite(unsigned char EEAddr,unsigned char Data);
+[; ;Remute-RF-TX-FMD.C: 52: void DelayUs(unsigned int Time);
+[; ;Remute-RF-TX-FMD.C: 53: void DelayMs(unsigned int Time);
+[; ;Remute-RF-TX-FMD.C: 54: void SEND_DATA(unsigned char Code);
+[; ;Remute-RF-TX-FMD.C: 55: void SEND_CODE(unsigned char Code1,unsigned char Code2,unsigned char Code3);
+[; ;Remute-RF-TX-FMD.C: 56: void GEN_CODE();
+[v $root$_ISR `(v ~T0 @X0 0 e ]
+[v F766 `(v ~T0 @X0 1 tf ]
+"58
+[v _ISR `IF766 ~T0 @X0 1 e ]
+"59
+{
+[; ;Remute-RF-TX-FMD.C: 58: void interrupt ISR(void)
+[; ;Remute-RF-TX-FMD.C: 59: {
+[e :U _ISR ]
+[f ]
+[; ;Remute-RF-TX-FMD.C: 60: if(PAIE && PAIF)
+"60
+[e $ ! && _PAIE _PAIF 58  ]
+[; ;Remute-RF-TX-FMD.C: 61: {
+"61
+{
+[; ;Remute-RF-TX-FMD.C: 62: ReadAPin = PORTA;
+"62
+[e = _ReadAPin _PORTA ]
+[; ;Remute-RF-TX-FMD.C: 63: PAIF = 0;
+"63
+[e = _PAIF -> -> 0 `i `b ]
+"64
+}
+[e :U 58 ]
+[; ;Remute-RF-TX-FMD.C: 64: }
+[; ;Remute-RF-TX-FMD.C: 65: }
+"65
+[e :UE 57 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"67
+[v _main `(v ~T0 @X0 1 ef ]
+"68
+{
+[; ;Remute-RF-TX-FMD.C: 67: void main()
+[; ;Remute-RF-TX-FMD.C: 68: {
+[e :U _main ]
+[f ]
+[; ;Remute-RF-TX-FMD.C: 69: POWER_INIT();
+"69
+[e ( _POWER_INIT ..  ]
+[; ;Remute-RF-TX-FMD.C: 70: INT_INIT();
+"70
+[e ( _INT_INIT ..  ]
+[; ;Remute-RF-TX-FMD.C: 71: Learn=EEPROMread(0X13);
+"71
+[e = _Learn ( _EEPROMread (1 -> -> 19 `i `uc ]
+[; ;Remute-RF-TX-FMD.C: 72: if(Learn==1)
+"72
+[e $ ! == -> _Learn `i -> 1 `i 60  ]
+[; ;Remute-RF-TX-FMD.C: 73: {
+"73
+{
+[; ;Remute-RF-TX-FMD.C: 74: CodeLearn[0]=EEPROMread(0X10);
+"74
+[e = *U + &U _CodeLearn * -> -> -> 0 `i `ui `ux -> -> # *U &U _CodeLearn `ui `ux ( _EEPROMread (1 -> -> 16 `i `uc ]
+[; ;Remute-RF-TX-FMD.C: 75: asm("clrwdt");
+"75
+[; <" clrwdt ;# ">
+[; ;Remute-RF-TX-FMD.C: 76: CodeLearn[1]=EEPROMread(0X11);
+"76
+[e = *U + &U _CodeLearn * -> -> -> 1 `i `ui `ux -> -> # *U &U _CodeLearn `ui `ux ( _EEPROMread (1 -> -> 17 `i `uc ]
+[; ;Remute-RF-TX-FMD.C: 77: asm("clrwdt");
+"77
+[; <" clrwdt ;# ">
+[; ;Remute-RF-TX-FMD.C: 78: CodeLearn[2]=EEPROMread(0X12);
+"78
+[e = *U + &U _CodeLearn * -> -> -> 2 `i `ui `ux -> -> # *U &U _CodeLearn `ui `ux ( _EEPROMread (1 -> -> 18 `i `uc ]
+[; ;Remute-RF-TX-FMD.C: 79: asm("clrwdt");
+"79
+[; <" clrwdt ;# ">
+[; ;Remute-RF-TX-FMD.C: 80: Learn=1;
+"80
+[e = _Learn -> -> 1 `i `uc ]
+"81
+}
+[; ;Remute-RF-TX-FMD.C: 81: }
+[e $U 61  ]
+"82
+[e :U 60 ]
+[; ;Remute-RF-TX-FMD.C: 82: else
+[; ;Remute-RF-TX-FMD.C: 83: {
+"83
+{
+[; ;Remute-RF-TX-FMD.C: 84: CodeLearn[0]=0X59;
+"84
+[e = *U + &U _CodeLearn * -> -> -> 0 `i `ui `ux -> -> # *U &U _CodeLearn `ui `ux -> -> 89 `i `uc ]
+[; ;Remute-RF-TX-FMD.C: 85: CodeLearn[1]=0X95;
+"85
+[e = *U + &U _CodeLearn * -> -> -> 1 `i `ui `ux -> -> # *U &U _CodeLearn `ui `ux -> -> 149 `i `uc ]
+[; ;Remute-RF-TX-FMD.C: 86: CodeLearn[2]=0X40;
+"86
+[e = *U + &U _CodeLearn * -> -> -> 2 `i `ui `ux -> -> # *U &U _CodeLearn `ui `ux -> -> 64 `i `uc ]
+[; ;Remute-RF-TX-FMD.C: 87: Learn=0;
+"87
+[e = _Learn -> -> 0 `i `uc ]
+"88
+}
+[e :U 61 ]
+[; ;Remute-RF-TX-FMD.C: 88: }
+[; ;Remute-RF-TX-FMD.C: 89: Learn=0;
+"89
+[e = _Learn -> -> 0 `i `uc ]
+[; ;Remute-RF-TX-FMD.C: 90: while(1)
+"90
+[e :U 63 ]
+[; ;Remute-RF-TX-FMD.C: 91: {
+"91
+{
+[; ;Remute-RF-TX-FMD.C: 92: if(PA1==0){CodeKey=1;PC7=1;}
+"92
+[e $ ! == -> _PA1 `i -> 0 `i 65  ]
+{
+[e = _CodeKey -> -> 1 `i `uc ]
+[e = _PC7 -> -> 1 `i `b ]
+}
+[e :U 65 ]
+[; ;Remute-RF-TX-FMD.C: 93: if(PA7==0){CodeKey=2;PC6=1;}
+"93
+[e $ ! == -> _PA7 `i -> 0 `i 66  ]
+{
+[e = _CodeKey -> -> 2 `i `uc ]
+[e = _PC6 -> -> 1 `i `b ]
+}
+[e :U 66 ]
+[; ;Remute-RF-TX-FMD.C: 94: if(PA6==0){CodeKey=4;PC5=1;}
+"94
+[e $ ! == -> _PA6 `i -> 0 `i 67  ]
+{
+[e = _CodeKey -> -> 4 `i `uc ]
+[e = _PC5 -> -> 1 `i `b ]
+}
+[e :U 67 ]
+[; ;Remute-RF-TX-FMD.C: 95: if(PA0==0){CodeKey=8;PC1=1;}
+"95
+[e $ ! == -> _PA0 `i -> 0 `i 68  ]
+{
+[e = _CodeKey -> -> 8 `i `uc ]
+[e = _PC1 -> -> 1 `i `b ]
+}
+[e :U 68 ]
+[; ;Remute-RF-TX-FMD.C: 96: if(PA2==0){CodeKey=10;PC2=1;}
+"96
+[e $ ! == -> _PA2 `i -> 0 `i 69  ]
+{
+[e = _CodeKey -> -> 10 `i `uc ]
+[e = _PC2 -> -> 1 `i `b ]
+}
+[e :U 69 ]
+[; ;Remute-RF-TX-FMD.C: 97: if(PA4==0){CodeKey=14;PC3=1;}
+"97
+[e $ ! == -> _PA4 `i -> 0 `i 70  ]
+{
+[e = _CodeKey -> -> 14 `i `uc ]
+[e = _PC3 -> -> 1 `i `b ]
+}
+[e :U 70 ]
+[; ;Remute-RF-TX-FMD.C: 98: if(PA7==0 && PA2==0 & Learn==0)
+"98
+[e $ ! && == -> _PA7 `i -> 0 `i & == -> _PA2 `i -> 0 `i == -> _Learn `i -> 0 `i 71  ]
+[; ;Remute-RF-TX-FMD.C: 99: {
+"99
+{
+[; ;Remute-RF-TX-FMD.C: 100: Set++;
+"100
+[e ++ _Set -> -> 1 `i `uc ]
+[; ;Remute-RF-TX-FMD.C: 101: if(Set>30)
+"101
+[e $ ! > -> _Set `i -> 30 `i 72  ]
+[; ;Remute-RF-TX-FMD.C: 102: {
+"102
+{
+[; ;Remute-RF-TX-FMD.C: 103: Set=0;
+"103
+[e = _Set -> -> 0 `i `uc ]
+[; ;Remute-RF-TX-FMD.C: 104: PORTC=0X00;
+"104
+[e = _PORTC -> -> 0 `i `uc ]
+[; ;Remute-RF-TX-FMD.C: 105: PC7=1;DelayMs(200);PC7=0;DelayMs(100);
+"105
+[e = _PC7 -> -> 1 `i `b ]
+[e ( _DelayMs (1 -> -> 200 `i `ui ]
+[e = _PC7 -> -> 0 `i `b ]
+[e ( _DelayMs (1 -> -> 100 `i `ui ]
+[; ;Remute-RF-TX-FMD.C: 106: PC6=1;DelayMs(200);PC6=0;DelayMs(100);
+"106
+[e = _PC6 -> -> 1 `i `b ]
+[e ( _DelayMs (1 -> -> 200 `i `ui ]
+[e = _PC6 -> -> 0 `i `b ]
+[e ( _DelayMs (1 -> -> 100 `i `ui ]
+[; ;Remute-RF-TX-FMD.C: 107: PC5=1;DelayMs(200);PC5=0;DelayMs(100);
+"107
+[e = _PC5 -> -> 1 `i `b ]
+[e ( _DelayMs (1 -> -> 200 `i `ui ]
+[e = _PC5 -> -> 0 `i `b ]
+[e ( _DelayMs (1 -> -> 100 `i `ui ]
+[; ;Remute-RF-TX-FMD.C: 108: PC1=1;DelayMs(200);PC1=0;DelayMs(100);
+"108
+[e = _PC1 -> -> 1 `i `b ]
+[e ( _DelayMs (1 -> -> 200 `i `ui ]
+[e = _PC1 -> -> 0 `i `b ]
+[e ( _DelayMs (1 -> -> 100 `i `ui ]
+[; ;Remute-RF-TX-FMD.C: 109: PC2=1;DelayMs(200);PC2=0;DelayMs(100);
+"109
+[e = _PC2 -> -> 1 `i `b ]
+[e ( _DelayMs (1 -> -> 200 `i `ui ]
+[e = _PC2 -> -> 0 `i `b ]
+[e ( _DelayMs (1 -> -> 100 `i `ui ]
+[; ;Remute-RF-TX-FMD.C: 110: PC3=1;DelayMs(200);PC3=0;DelayMs(100);
+"110
+[e = _PC3 -> -> 1 `i `b ]
+[e ( _DelayMs (1 -> -> 200 `i `ui ]
+[e = _PC3 -> -> 0 `i `b ]
+[e ( _DelayMs (1 -> -> 100 `i `ui ]
+[; ;Remute-RF-TX-FMD.C: 111: GEN_CODE();
+"111
+[e ( _GEN_CODE ..  ]
+"112
+}
+[e :U 72 ]
+"113
+}
+[e :U 71 ]
+[; ;Remute-RF-TX-FMD.C: 112: }
+[; ;Remute-RF-TX-FMD.C: 113: }
+[; ;Remute-RF-TX-FMD.C: 114: CodeLearn[2]=CodeLearn[2]>>4;
+"114
+[e = *U + &U _CodeLearn * -> -> -> 2 `i `ui `ux -> -> # *U &U _CodeLearn `ui `ux -> >> -> *U + &U _CodeLearn * -> -> -> 2 `i `ui `ux -> -> # *U &U _CodeLearn `ui `ux `i -> 4 `i `uc ]
+[; ;Remute-RF-TX-FMD.C: 115: CodeLearn[2]=CodeLearn[2]<<4 | CodeKey;
+"115
+[e = *U + &U _CodeLearn * -> -> -> 2 `i `ui `ux -> -> # *U &U _CodeLearn `ui `ux -> | << -> *U + &U _CodeLearn * -> -> -> 2 `i `ui `ux -> -> # *U &U _CodeLearn `ui `ux `i -> 4 `i -> _CodeKey `i `uc ]
+[; ;Remute-RF-TX-FMD.C: 116: SEND_CODE(CodeLearn[0],CodeLearn[1],CodeLearn[2]);
+"116
+[e ( _SEND_CODE (3 , , *U + &U _CodeLearn * -> -> -> 0 `i `ui `ux -> -> # *U &U _CodeLearn `ui `ux *U + &U _CodeLearn * -> -> -> 1 `i `ui `ux -> -> # *U &U _CodeLearn `ui `ux *U + &U _CodeLearn * -> -> -> 2 `i `ui `ux -> -> # *U &U _CodeLearn `ui `ux ]
+[; ;Remute-RF-TX-FMD.C: 117: if(PA1==1 && PA7==1 && PA6==1 && PA0==1 && PA2==1 && PA4==1)
+"117
+[e $ ! && && && && && == -> _PA1 `i -> 1 `i == -> _PA7 `i -> 1 `i == -> _PA6 `i -> 1 `i == -> _PA0 `i -> 1 `i == -> _PA2 `i -> 1 `i == -> _PA4 `i -> 1 `i 73  ]
+[; ;Remute-RF-TX-FMD.C: 118: {
+"118
+{
+[; ;Remute-RF-TX-FMD.C: 119: PORTC=0X00;
+"119
+[e = _PORTC -> -> 0 `i `uc ]
+[; ;Remute-RF-TX-FMD.C: 120: asm("sleep");
+"120
+[; <" sleep ;# ">
+"121
+}
+[e :U 73 ]
+"122
+}
+[e :U 62 ]
+"90
+[e $U 63  ]
+[e :U 64 ]
+[; ;Remute-RF-TX-FMD.C: 121: }
+[; ;Remute-RF-TX-FMD.C: 122: }
+[; ;Remute-RF-TX-FMD.C: 123: }
+"123
+[e :UE 59 ]
+}
+"125
+[v _POWER_INIT `(v ~T0 @X0 1 ef ]
+"126
+{
+[; ;Remute-RF-TX-FMD.C: 125: void POWER_INIT(void)
+[; ;Remute-RF-TX-FMD.C: 126: {
+[e :U _POWER_INIT ]
+[f ]
+[; ;Remute-RF-TX-FMD.C: 127: OSCCON = 0B01110001;
+"127
+[e = _OSCCON -> -> 113 `i `uc ]
+[; ;Remute-RF-TX-FMD.C: 128: INTCON = 0;
+"128
+[e = _INTCON -> -> 0 `i `uc ]
+[; ;Remute-RF-TX-FMD.C: 130: PORTA = 0B00000000;
+"130
+[e = _PORTA -> -> 0 `i `uc ]
+[; ;Remute-RF-TX-FMD.C: 131: TRISA = 0B11111111;
+"131
+[e = _TRISA -> -> 255 `i `uc ]
+[; ;Remute-RF-TX-FMD.C: 132: WPUA = 0B11111111;
+"132
+[e = _WPUA -> -> 255 `i `uc ]
+[; ;Remute-RF-TX-FMD.C: 134: PORTC = 0B00000000;
+"134
+[e = _PORTC -> -> 0 `i `uc ]
+[; ;Remute-RF-TX-FMD.C: 135: TRISC = 0B00000001;
+"135
+[e = _TRISC -> -> 1 `i `uc ]
+[; ;Remute-RF-TX-FMD.C: 137: OPTION = 0B00001000;
+"137
+[e = _OPTION -> -> 8 `i `uc ]
+[; ;Remute-RF-TX-FMD.C: 138: MSCKCON = 0B00000000;
+"138
+[e = _MSCKCON -> -> 0 `i `uc ]
+[; ;Remute-RF-TX-FMD.C: 140: CMCON0 = 0B00000111;
+"140
+[e = _CMCON0 -> -> 7 `i `uc ]
+[; ;Remute-RF-TX-FMD.C: 141: }
+"141
+[e :UE 74 ]
+}
+"143
+[v _INT_INIT `(v ~T0 @X0 1 ef ]
+"144
+{
+[; ;Remute-RF-TX-FMD.C: 143: void INT_INIT(void)
+[; ;Remute-RF-TX-FMD.C: 144: {
+[e :U _INT_INIT ]
+[f ]
+[; ;Remute-RF-TX-FMD.C: 145: ReadAPin = PORTA;
+"145
+[e = _ReadAPin _PORTA ]
+[; ;Remute-RF-TX-FMD.C: 146: PAIF =0;
+"146
+[e = _PAIF -> -> 0 `i `b ]
+[; ;Remute-RF-TX-FMD.C: 147: IOCA0 =1;
+"147
+[e = _IOCA0 -> -> 1 `i `b ]
+[; ;Remute-RF-TX-FMD.C: 148: IOCA1 =1;
+"148
+[e = _IOCA1 -> -> 1 `i `b ]
+[; ;Remute-RF-TX-FMD.C: 149: IOCA2 =1;
+"149
+[e = _IOCA2 -> -> 1 `i `b ]
+[; ;Remute-RF-TX-FMD.C: 150: IOCA4 =1;
+"150
+[e = _IOCA4 -> -> 1 `i `b ]
+[; ;Remute-RF-TX-FMD.C: 151: IOCA6 =1;
+"151
+[e = _IOCA6 -> -> 1 `i `b ]
+[; ;Remute-RF-TX-FMD.C: 152: IOCA7 =1;
+"152
+[e = _IOCA7 -> -> 1 `i `b ]
+[; ;Remute-RF-TX-FMD.C: 153: PAIE =1;
+"153
+[e = _PAIE -> -> 1 `i `b ]
+[; ;Remute-RF-TX-FMD.C: 154: GIE = 1;
+"154
+[e = _GIE -> -> 1 `i `b ]
+[; ;Remute-RF-TX-FMD.C: 155: }
+"155
+[e :UE 75 ]
+}
+"157
+[v _EEPROMread `(uc ~T0 @X0 1 ef1`uc ]
+"158
+{
+[; ;Remute-RF-TX-FMD.C: 157: unsigned char EEPROMread(unsigned char EEAddr)
+[; ;Remute-RF-TX-FMD.C: 158: {
+[e :U _EEPROMread ]
+"157
+[v _EEAddr `uc ~T0 @X0 1 r1 ]
+"158
+[f ]
+"159
+[v _ReEEPROMread `uc ~T0 @X0 1 a ]
+[; ;Remute-RF-TX-FMD.C: 159: unsigned char ReEEPROMread;
+[; ;Remute-RF-TX-FMD.C: 161: EEADR = EEAddr;
+"161
+[e = _EEADR _EEAddr ]
+[; ;Remute-RF-TX-FMD.C: 162: RD = 1;
+"162
+[e = _RD -> -> 1 `i `b ]
+[; ;Remute-RF-TX-FMD.C: 163: ReEEPROMread = EEDAT;
+"163
+[e = _ReEEPROMread _EEDAT ]
+[; ;Remute-RF-TX-FMD.C: 164: return ReEEPROMread;
+"164
+[e ) _ReEEPROMread ]
+[e $UE 76  ]
+[; ;Remute-RF-TX-FMD.C: 165: }
+"165
+[e :UE 76 ]
+}
+"167
+[v _EEPROMwrite `(v ~T0 @X0 1 ef2`uc`uc ]
+"168
+{
+[; ;Remute-RF-TX-FMD.C: 167: void EEPROMwrite(unsigned char EEAddr,unsigned char Data)
+[; ;Remute-RF-TX-FMD.C: 168: {
+[e :U _EEPROMwrite ]
+"167
+[v _EEAddr `uc ~T0 @X0 1 r1 ]
+[v _Data `uc ~T0 @X0 1 r2 ]
+"168
+[f ]
+[; ;Remute-RF-TX-FMD.C: 169: GIE = 0;
+"169
+[e = _GIE -> -> 0 `i `b ]
+[; ;Remute-RF-TX-FMD.C: 170: while(GIE);
+"170
+[e $U 78  ]
+[e :U 79 ]
+[e :U 78 ]
+[e $ _GIE 79  ]
+[e :U 80 ]
+[; ;Remute-RF-TX-FMD.C: 171: EEADR = EEAddr;
+"171
+[e = _EEADR _EEAddr ]
+[; ;Remute-RF-TX-FMD.C: 172: EEDAT = Data;
+"172
+[e = _EEDAT _Data ]
+[; ;Remute-RF-TX-FMD.C: 173: EEIF = 0;
+"173
+[e = _EEIF -> -> 0 `i `b ]
+[; ;Remute-RF-TX-FMD.C: 174: EECON1 = 0x34;
+"174
+[e = _EECON1 -> -> 52 `i `uc ]
+[; ;Remute-RF-TX-FMD.C: 175: WR = 1;
+"175
+[e = _WR -> -> 1 `i `b ]
+[; ;Remute-RF-TX-FMD.C: 176: while(WR);
+"176
+[e $U 81  ]
+[e :U 82 ]
+[e :U 81 ]
+[e $ _WR 82  ]
+[e :U 83 ]
+[; ;Remute-RF-TX-FMD.C: 177: GIE = 1;
+"177
+[e = _GIE -> -> 1 `i `b ]
+[; ;Remute-RF-TX-FMD.C: 178: }
+"178
+[e :UE 77 ]
+}
+"180
+[v _DelayUs `(v ~T0 @X0 1 ef1`ui ]
+"181
+{
+[; ;Remute-RF-TX-FMD.C: 180: void DelayUs(unsigned int Time)
+[; ;Remute-RF-TX-FMD.C: 181: {
+[e :U _DelayUs ]
+"180
+[v _Time `ui ~T0 @X0 1 r1 ]
+"181
+[f ]
+"182
+[v _a `ui ~T0 @X0 1 a ]
+[; ;Remute-RF-TX-FMD.C: 182: unsigned int a;
+[; ;Remute-RF-TX-FMD.C: 183: for(a=0;a<Time;a++)
+"183
+{
+[e = _a -> -> 0 `i `ui ]
+[e $U 88  ]
+"184
+[e :U 85 ]
+[; ;Remute-RF-TX-FMD.C: 184: {
+{
+[; ;Remute-RF-TX-FMD.C: 185: __nop();
+"185
+[e ( ___nop ..  ]
+[; ;Remute-RF-TX-FMD.C: 186: asm("clrwdt");
+"186
+[; <" clrwdt ;# ">
+"187
+}
+"183
+[e ++ _a -> -> 1 `i `ui ]
+[e :U 88 ]
+[e $ < _a _Time 85  ]
+[e :U 86 ]
+"187
+}
+[; ;Remute-RF-TX-FMD.C: 187: }
+[; ;Remute-RF-TX-FMD.C: 188: }
+"188
+[e :UE 84 ]
+}
+"190
+[v _DelayMs `(v ~T0 @X0 1 ef1`ui ]
+"191
+{
+[; ;Remute-RF-TX-FMD.C: 190: void DelayMs(unsigned int Time)
+[; ;Remute-RF-TX-FMD.C: 191: {
+[e :U _DelayMs ]
+"190
+[v _Time `ui ~T0 @X0 1 r1 ]
+"191
+[f ]
+"192
+[v _a `ui ~T0 @X0 1 a ]
+[v _b `ui ~T0 @X0 1 a ]
+[; ;Remute-RF-TX-FMD.C: 192: unsigned int a,b;
+[; ;Remute-RF-TX-FMD.C: 193: for(a=0;a<Time;a++)
+"193
+{
+[e = _a -> -> 0 `i `ui ]
+[e $U 93  ]
+"194
+[e :U 90 ]
+[; ;Remute-RF-TX-FMD.C: 194: {
+{
+[; ;Remute-RF-TX-FMD.C: 195: for(b=0;b<5;b++)
+"195
+{
+[e = _b -> -> 0 `i `ui ]
+[e $ < _b -> -> 5 `i `ui 94  ]
+[e $U 95  ]
+"196
+[e :U 94 ]
+[; ;Remute-RF-TX-FMD.C: 196: {
+{
+[; ;Remute-RF-TX-FMD.C: 197: DelayUs(197);
+"197
+[e ( _DelayUs (1 -> -> 197 `i `ui ]
+"198
+}
+"195
+[e ++ _b -> -> 1 `i `ui ]
+[e $ < _b -> -> 5 `i `ui 94  ]
+[e :U 95 ]
+"198
+}
+"199
+}
+"193
+[e ++ _a -> -> 1 `i `ui ]
+[e :U 93 ]
+[e $ < _a _Time 90  ]
+[e :U 91 ]
+"199
+}
+[; ;Remute-RF-TX-FMD.C: 198: }
+[; ;Remute-RF-TX-FMD.C: 199: }
+[; ;Remute-RF-TX-FMD.C: 200: }
+"200
+[e :UE 89 ]
+}
+"201
+[v _SEND_DATA `(v ~T0 @X0 1 ef1`uc ]
+"202
+{
+[; ;Remute-RF-TX-FMD.C: 201: void SEND_DATA(unsigned char Code)
+[; ;Remute-RF-TX-FMD.C: 202: {
+[e :U _SEND_DATA ]
+"201
+[v _Code `uc ~T0 @X0 1 r1 ]
+"202
+[f ]
+"203
+[v _Byte `uc ~T0 @X0 1 a ]
+[; ;Remute-RF-TX-FMD.C: 203: unsigned char Byte = 0b10000000, Bit = 0;
+[e = _Byte -> -> 128 `i `uc ]
+[v _Bit `uc ~T0 @X0 1 a ]
+[e = _Bit -> -> 0 `i `uc ]
+[; ;Remute-RF-TX-FMD.C: 204: for(Bit = 0; Bit <= 7; Bit++)
+"204
+{
+[e = _Bit -> -> 0 `i `uc ]
+[e $ <= -> _Bit `i -> 7 `i 98  ]
+[e $U 99  ]
+"205
+[e :U 98 ]
+[; ;Remute-RF-TX-FMD.C: 205: {
+{
+[; ;Remute-RF-TX-FMD.C: 206: if(Code & (Byte >> Bit))
+"206
+[e $ ! != & -> _Code `i >> -> _Byte `i _Bit -> 0 `i 101  ]
+[; ;Remute-RF-TX-FMD.C: 207: {
+"207
+{
+[; ;Remute-RF-TX-FMD.C: 208: PC4 = 1;
+"208
+[e = _PC4 -> -> 1 `i `b ]
+[; ;Remute-RF-TX-FMD.C: 209: DelayUs(600);
+"209
+[e ( _DelayUs (1 -> -> 600 `i `ui ]
+[; ;Remute-RF-TX-FMD.C: 211: PC4 = 0;
+"211
+[e = _PC4 -> -> 0 `i `b ]
+[; ;Remute-RF-TX-FMD.C: 212: DelayUs(310);
+"212
+[e ( _DelayUs (1 -> -> 310 `i `ui ]
+"213
+}
+[; ;Remute-RF-TX-FMD.C: 213: }
+[e $U 102  ]
+"214
+[e :U 101 ]
+[; ;Remute-RF-TX-FMD.C: 214: else
+[; ;Remute-RF-TX-FMD.C: 215: {
+"215
+{
+[; ;Remute-RF-TX-FMD.C: 216: PC4 = 1;
+"216
+[e = _PC4 -> -> 1 `i `b ]
+[; ;Remute-RF-TX-FMD.C: 217: DelayUs(310);
+"217
+[e ( _DelayUs (1 -> -> 310 `i `ui ]
+[; ;Remute-RF-TX-FMD.C: 219: PC4 = 0;
+"219
+[e = _PC4 -> -> 0 `i `b ]
+[; ;Remute-RF-TX-FMD.C: 220: DelayUs(600);
+"220
+[e ( _DelayUs (1 -> -> 600 `i `ui ]
+"221
+}
+[e :U 102 ]
+"222
+}
+"204
+[e ++ _Bit -> -> 1 `i `uc ]
+[e $ <= -> _Bit `i -> 7 `i 98  ]
+[e :U 99 ]
+"222
+}
+[; ;Remute-RF-TX-FMD.C: 221: }
+[; ;Remute-RF-TX-FMD.C: 222: }
+[; ;Remute-RF-TX-FMD.C: 224: }
+"224
+[e :UE 97 ]
+}
+"226
+[v _SEND_CODE `(v ~T0 @X0 1 ef3`uc`uc`uc ]
+"227
+{
+[; ;Remute-RF-TX-FMD.C: 226: void SEND_CODE(unsigned char Code1,unsigned char Code2,unsigned char Code3)
+[; ;Remute-RF-TX-FMD.C: 227: {
+[e :U _SEND_CODE ]
+"226
+[v _Code1 `uc ~T0 @X0 1 r1 ]
+[v _Code2 `uc ~T0 @X0 1 r2 ]
+[v _Code3 `uc ~T0 @X0 1 r3 ]
+"227
+[f ]
+[; ;Remute-RF-TX-FMD.C: 228: PC4=0;
+"228
+[e = _PC4 -> -> 0 `i `b ]
+[; ;Remute-RF-TX-FMD.C: 229: DelayMs(5);
+"229
+[e ( _DelayMs (1 -> -> 5 `i `ui ]
+[; ;Remute-RF-TX-FMD.C: 230: SEND_DATA(Code1);
+"230
+[e ( _SEND_DATA (1 _Code1 ]
+[; ;Remute-RF-TX-FMD.C: 231: SEND_DATA(Code2);
+"231
+[e ( _SEND_DATA (1 _Code2 ]
+[; ;Remute-RF-TX-FMD.C: 232: SEND_DATA(Code3);
+"232
+[e ( _SEND_DATA (1 _Code3 ]
+[; ;Remute-RF-TX-FMD.C: 233: if(CodeKey!=1){PC4 = 1;DelayUs(310);}
+"233
+[e $ ! != -> _CodeKey `i -> 1 `i 104  ]
+{
+[e = _PC4 -> -> 1 `i `b ]
+[e ( _DelayUs (1 -> -> 310 `i `ui ]
+}
+[e $U 105  ]
+"234
+[e :U 104 ]
+[; ;Remute-RF-TX-FMD.C: 234: else{PC4 = 0;DelayUs(310);}
+{
+[e = _PC4 -> -> 0 `i `b ]
+[e ( _DelayUs (1 -> -> 310 `i `ui ]
+}
+[e :U 105 ]
+[; ;Remute-RF-TX-FMD.C: 235: }
+"235
+[e :UE 103 ]
+}
+"237
+[v _GEN_CODE `(v ~T0 @X0 1 ef ]
+"238
+{
+[; ;Remute-RF-TX-FMD.C: 237: void GEN_CODE()
+[; ;Remute-RF-TX-FMD.C: 238: {
+[e :U _GEN_CODE ]
+[f ]
+"239
+[v _i `uc ~T0 @X0 1 a ]
+[; ;Remute-RF-TX-FMD.C: 239: unsigned char i=0;
+[e = _i -> -> 0 `i `uc ]
+[; ;Remute-RF-TX-FMD.C: 240: while(1)
+"240
+[e :U 108 ]
+[; ;Remute-RF-TX-FMD.C: 241: {
+"241
+{
+[; ;Remute-RF-TX-FMD.C: 242: i++;
+"242
+[e ++ _i -> -> 1 `i `uc ]
+[; ;Remute-RF-TX-FMD.C: 243: if(PA6==0)
+"243
+[e $ ! == -> _PA6 `i -> 0 `i 110  ]
+[; ;Remute-RF-TX-FMD.C: 244: {
+"244
+{
+[; ;Remute-RF-TX-FMD.C: 245: if(CountKey<510){CountKey++;}
+"245
+[e $ ! < _CountKey -> -> 510 `i `ui 111  ]
+{
+[e ++ _CountKey -> -> 1 `i `ui ]
+}
+[e :U 111 ]
+[; ;Remute-RF-TX-FMD.C: 246: if(PA6==0 & CountKey>500 & CountKey<510)
+"246
+[e $ ! & & == -> _PA6 `i -> 0 `i > _CountKey -> -> 500 `i `ui < _CountKey -> -> 510 `i `ui 112  ]
+[; ;Remute-RF-TX-FMD.C: 247: {
+"247
+{
+[; ;Remute-RF-TX-FMD.C: 248: CodeLearn[0]=i;
+"248
+[e = *U + &U _CodeLearn * -> -> -> 0 `i `ui `ux -> -> # *U &U _CodeLearn `ui `ux _i ]
+[; ;Remute-RF-TX-FMD.C: 249: i-58;
+"249
+[e - -> _i `i -> 58 `i ]
+[; ;Remute-RF-TX-FMD.C: 250: CountKey=520;
+"250
+[e = _CountKey -> -> 520 `i `ui ]
+[; ;Remute-RF-TX-FMD.C: 251: break;
+"251
+[e $U 109  ]
+"252
+}
+[e :U 112 ]
+"253
+}
+[e :U 110 ]
+"254
+}
+[e :U 107 ]
+"240
+[e $U 108  ]
+[e :U 109 ]
+[; ;Remute-RF-TX-FMD.C: 252: }
+[; ;Remute-RF-TX-FMD.C: 253: }
+[; ;Remute-RF-TX-FMD.C: 254: }
+[; ;Remute-RF-TX-FMD.C: 255: PC7=1;
+"255
+[e = _PC7 -> -> 1 `i `b ]
+[; ;Remute-RF-TX-FMD.C: 256: DelayMs(200);
+"256
+[e ( _DelayMs (1 -> -> 200 `i `ui ]
+[; ;Remute-RF-TX-FMD.C: 257: PC7=0;
+"257
+[e = _PC7 -> -> 0 `i `b ]
+[; ;Remute-RF-TX-FMD.C: 258: CountKey=0;
+"258
+[e = _CountKey -> -> 0 `i `ui ]
+[; ;Remute-RF-TX-FMD.C: 259: while(1)
+"259
+[e :U 114 ]
+[; ;Remute-RF-TX-FMD.C: 260: {
+"260
+{
+[; ;Remute-RF-TX-FMD.C: 261: i--;
+"261
+[e -- _i -> -> 1 `i `uc ]
+[; ;Remute-RF-TX-FMD.C: 262: if(PA6==0)
+"262
+[e $ ! == -> _PA6 `i -> 0 `i 116  ]
+[; ;Remute-RF-TX-FMD.C: 263: {
+"263
+{
+[; ;Remute-RF-TX-FMD.C: 264: if(CountKey<710){CountKey++;}
+"264
+[e $ ! < _CountKey -> -> 710 `i `ui 117  ]
+{
+[e ++ _CountKey -> -> 1 `i `ui ]
+}
+[e :U 117 ]
+[; ;Remute-RF-TX-FMD.C: 265: if(PA6==0 & CountKey>700 & CountKey<710)
+"265
+[e $ ! & & == -> _PA6 `i -> 0 `i > _CountKey -> -> 700 `i `ui < _CountKey -> -> 710 `i `ui 118  ]
+[; ;Remute-RF-TX-FMD.C: 266: {
+"266
+{
+[; ;Remute-RF-TX-FMD.C: 267: CodeLearn[1]=i;
+"267
+[e = *U + &U _CodeLearn * -> -> -> 1 `i `ui `ux -> -> # *U &U _CodeLearn `ui `ux _i ]
+[; ;Remute-RF-TX-FMD.C: 268: i+23;
+"268
+[e + -> _i `i -> 23 `i ]
+[; ;Remute-RF-TX-FMD.C: 269: CountKey=720;
+"269
+[e = _CountKey -> -> 720 `i `ui ]
+[; ;Remute-RF-TX-FMD.C: 270: break;
+"270
+[e $U 115  ]
+"271
+}
+[e :U 118 ]
+"272
+}
+[e :U 116 ]
+"273
+}
+[e :U 113 ]
+"259
+[e $U 114  ]
+[e :U 115 ]
+[; ;Remute-RF-TX-FMD.C: 271: }
+[; ;Remute-RF-TX-FMD.C: 272: }
+[; ;Remute-RF-TX-FMD.C: 273: }
+[; ;Remute-RF-TX-FMD.C: 274: PC6=1;
+"274
+[e = _PC6 -> -> 1 `i `b ]
+[; ;Remute-RF-TX-FMD.C: 275: DelayMs(200);
+"275
+[e ( _DelayMs (1 -> -> 200 `i `ui ]
+[; ;Remute-RF-TX-FMD.C: 276: PC6=0;
+"276
+[e = _PC6 -> -> 0 `i `b ]
+[; ;Remute-RF-TX-FMD.C: 277: CountKey=0;
+"277
+[e = _CountKey -> -> 0 `i `ui ]
+[; ;Remute-RF-TX-FMD.C: 278: while(1)
+"278
+[e :U 120 ]
+[; ;Remute-RF-TX-FMD.C: 279: {
+"279
+{
+[; ;Remute-RF-TX-FMD.C: 280: i++;
+"280
+[e ++ _i -> -> 1 `i `uc ]
+[; ;Remute-RF-TX-FMD.C: 281: if(PA6==0)
+"281
+[e $ ! == -> _PA6 `i -> 0 `i 122  ]
+[; ;Remute-RF-TX-FMD.C: 282: {
+"282
+{
+[; ;Remute-RF-TX-FMD.C: 283: if(CountKey<360){CountKey++;}
+"283
+[e $ ! < _CountKey -> -> 360 `i `ui 123  ]
+{
+[e ++ _CountKey -> -> 1 `i `ui ]
+}
+[e :U 123 ]
+[; ;Remute-RF-TX-FMD.C: 284: if(PA6==0 & CountKey>350 & CountKey<360)
+"284
+[e $ ! & & == -> _PA6 `i -> 0 `i > _CountKey -> -> 350 `i `ui < _CountKey -> -> 360 `i `ui 124  ]
+[; ;Remute-RF-TX-FMD.C: 285: {
+"285
+{
+[; ;Remute-RF-TX-FMD.C: 286: CodeLearn[2]=i;
+"286
+[e = *U + &U _CodeLearn * -> -> -> 2 `i `ui `ux -> -> # *U &U _CodeLearn `ui `ux _i ]
+[; ;Remute-RF-TX-FMD.C: 287: i=0;
+"287
+[e = _i -> -> 0 `i `uc ]
+[; ;Remute-RF-TX-FMD.C: 288: CountKey=370;
+"288
+[e = _CountKey -> -> 370 `i `ui ]
+[; ;Remute-RF-TX-FMD.C: 289: break;
+"289
+[e $U 121  ]
+"290
+}
+[e :U 124 ]
+"291
+}
+[e :U 122 ]
+"292
+}
+[e :U 119 ]
+"278
+[e $U 120  ]
+[e :U 121 ]
+[; ;Remute-RF-TX-FMD.C: 290: }
+[; ;Remute-RF-TX-FMD.C: 291: }
+[; ;Remute-RF-TX-FMD.C: 292: }
+[; ;Remute-RF-TX-FMD.C: 293: CountKey=0;
+"293
+[e = _CountKey -> -> 0 `i `ui ]
+[; ;Remute-RF-TX-FMD.C: 294: Learn=1;
+"294
+[e = _Learn -> -> 1 `i `uc ]
+[; ;Remute-RF-TX-FMD.C: 295: EEPROMwrite(0X10,CodeLearn[0]);
+"295
+[e ( _EEPROMwrite (2 , -> -> 16 `i `uc *U + &U _CodeLearn * -> -> -> 0 `i `ui `ux -> -> # *U &U _CodeLearn `ui `ux ]
+[; ;Remute-RF-TX-FMD.C: 296: EEPROMwrite(0X11,CodeLearn[1]);
+"296
+[e ( _EEPROMwrite (2 , -> -> 17 `i `uc *U + &U _CodeLearn * -> -> -> 1 `i `ui `ux -> -> # *U &U _CodeLearn `ui `ux ]
+[; ;Remute-RF-TX-FMD.C: 297: EEPROMwrite(0X12,CodeLearn[2]);
+"297
+[e ( _EEPROMwrite (2 , -> -> 18 `i `uc *U + &U _CodeLearn * -> -> -> 2 `i `ui `ux -> -> # *U &U _CodeLearn `ui `ux ]
+[; ;Remute-RF-TX-FMD.C: 298: EEPROMwrite(0X13,Learn);
+"298
+[e ( _EEPROMwrite (2 , -> -> 19 `i `uc _Learn ]
+[; ;Remute-RF-TX-FMD.C: 299: PC5=1;
+"299
+[e = _PC5 -> -> 1 `i `b ]
+[; ;Remute-RF-TX-FMD.C: 300: DelayMs(200);
+"300
+[e ( _DelayMs (1 -> -> 200 `i `ui ]
+[; ;Remute-RF-TX-FMD.C: 301: PC5=0;
+"301
+[e = _PC5 -> -> 0 `i `b ]
+[; ;Remute-RF-TX-FMD.C: 302: Learn=0;
+"302
+[e = _Learn -> -> 0 `i `uc ]
+[; ;Remute-RF-TX-FMD.C: 303: }
+"303
+[e :UE 106 ]
+}

@@ -1,0 +1,2452 @@
+Version 3.2   GCC8 Compiled Intermediate Code
+"39 C:\Program Files (x86)\CCompiler\Compiler\data\include\FT60F01X.h
+[s S2 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S2 . CARRY DC ZERO nPD nTO RP ]
+"47
+[s S3 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S3 . C HC Z nPF nTF PAGE ]
+"38
+[u S1 `S2 1 `S3 1 ]
+[n S1 . . . ]
+"80
+[s S5 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S5 . RA0 RA1 RA2 RA3 RA4 RA5 ]
+"88
+[s S6 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S6 . PA0 PA1 PA2 PA3 PA4 PA5 ]
+"79
+[u S4 `S5 1 `S6 1 ]
+[n S4 . . . ]
+"104
+[s S8 :3 `uc 1 ]
+[n S8 . PCLATH ]
+"103
+[u S7 `S8 1 ]
+[n S7 . . ]
+"123
+[s S10 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S10 . PAIF INTF T0IF PAIE INTE T0IE PEIE GIE ]
+"122
+[u S9 `S10 1 ]
+[n S9 . . ]
+"144
+[s S12 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S12 . . TMR2IF . . . . CKMEAIF EEIF ]
+"143
+[u S11 `S12 1 ]
+[n S11 . . ]
+"174
+[s S14 :2 `uc 1 :1 `uc 1 :4 `uc 1 ]
+[n S14 . T2CKPS TMR2ON TOUTPS ]
+"179
+[s S15 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S15 . T2CKPS0 T2CKPS1 . TOUTPS0 TOUTPS1 TOUTPS2 TOUTPS3 ]
+"173
+[u S13 `S14 1 `S15 1 ]
+[n S13 . . . ]
+"202
+[s S17 :1 `uc 1 :4 `uc 1 ]
+[n S17 . SWDTEN WDTPS ]
+"206
+[s S18 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S18 . . WDTPS0 WDTPS1 WDTPS2 WDTPS3 ]
+"201
+[u S16 `S17 1 `S18 1 ]
+[n S16 . . . ]
+"225
+[s S20 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S20 . . CKCNTI CKMAVG . SLVREN ]
+"224
+[u S19 `S20 1 ]
+[n S19 . . ]
+"244
+[s S22 :4 `uc 1 ]
+[n S22 . SOSCPRH ]
+"243
+[u S21 `S22 1 ]
+[n S21 . . ]
+"269
+[s S24 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S24 . PS PSA T0SE T0CS INTEDG nPAPU ]
+"277
+[s S25 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S25 . PS0 PS1 PS2 ]
+"268
+[u S23 `S24 1 `S25 1 ]
+[n S23 . . . ]
+"295
+[s S27 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S27 . TRISA0 TRISA1 TRISA2 . TRISA4 TRISA5 ]
+"294
+[u S26 `S27 1 ]
+[n S26 . . ]
+"315
+[s S29 :1 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S29 . . TMR2IE . CKMEAIE EEIE ]
+"314
+[u S28 `S29 1 ]
+[n S28 . . ]
+"332
+[s S31 :1 `uc 1 :1 `uc 1 ]
+[n S31 . nBOR nPOR ]
+"331
+[u S30 `S31 1 ]
+[n S30 . . ]
+"350
+[s S33 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S33 . . LFIOFR HFIOFR . IRCF LFMOD ]
+"358
+[s S34 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S34 . . IRCF0 IRCF1 IRCF2 ]
+"349
+[u S32 `S33 1 `S34 1 ]
+[n S32 . . . ]
+"388
+[s S36 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S36 . WPUA0 WPUA1 WPUA2 . WPUA4 WPUA5 ]
+"396
+[s S37 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S37 . WPU0 WPU1 WPU2 . WPU4 WPU5 ]
+"387
+[u S35 `S36 1 `S37 1 ]
+[n S35 . . . ]
+"426
+[s S39 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S39 . IOCA0 IOCA1 IOCA2 IOCA3 IOCA4 IOCA5 ]
+"434
+[s S40 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S40 . IOC0 IOC1 IOC2 IOC3 IOC4 IOC5 ]
+"425
+[u S38 `S39 1 `S40 1 ]
+[n S38 . . . ]
+"464
+[s S42 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S42 . RD . WREN1 WRERR WREN2 WREN3 ]
+"463
+[u S41 `S42 1 ]
+[n S41 . . ]
+"481
+[s S44 :1 `uc 1 ]
+[n S44 . WR ]
+"480
+[u S43 `S44 1 ]
+[n S43 . . ]
+"31 C:\Program Files (x86)\CCompiler\Compiler\data\include\SYSCFG.h
+[v ___nop `(v ~T0 @X0 0 ef ]
+[p i ___nop ]
+[p mainexit ]
+[; ;fmd.h: 26: extern const char __xc8_OPTIM_SPEED;
+[; ;fmd.h: 28: extern double __fpnormalize(double);
+[; ;gcc8debug.h: 14: extern void __builtin_software_breakpoint(void);
+"10 C:\Program Files (x86)\CCompiler\Compiler\data\include\FT60F01X.h
+[v _INDF `Vuc ~T0 @X0 1 e@0 ]
+[; ;FT60F01X.h: 10: volatile unsigned char INDF @ 0x000;
+"14
+[v _TMR0 `Vuc ~T0 @X0 1 e@1 ]
+[; ;FT60F01X.h: 14: volatile unsigned char TMR0 @ 0x001;
+"18
+[v _PCL `Vuc ~T0 @X0 1 e@2 ]
+[; ;FT60F01X.h: 18: volatile unsigned char PCL @ 0x002;
+"22
+[v _STATUS `Vuc ~T0 @X0 1 e@3 ]
+[; ;FT60F01X.h: 22: volatile unsigned char STATUS @ 0x003;
+"24
+[v _CARRY `Vb ~T0 @X0 1 e@24 ]
+[; ;FT60F01X.h: 24: volatile bit CARRY @ ((unsigned)&STATUS*8)+0;
+"25
+[v _DC `Vb ~T0 @X0 1 e@25 ]
+[; ;FT60F01X.h: 25: volatile bit DC @ ((unsigned)&STATUS*8)+1;
+"26
+[v _ZERO `Vb ~T0 @X0 1 e@26 ]
+[; ;FT60F01X.h: 26: volatile bit ZERO @ ((unsigned)&STATUS*8)+2;
+"27
+[v _nPD `Vb ~T0 @X0 1 e@27 ]
+[; ;FT60F01X.h: 27: volatile bit nPD @ ((unsigned)&STATUS*8)+3;
+"28
+[v _nTO `Vb ~T0 @X0 1 e@28 ]
+[; ;FT60F01X.h: 28: volatile bit nTO @ ((unsigned)&STATUS*8)+4;
+"29
+[v _RP `Vb ~T0 @X0 1 e@29 ]
+[; ;FT60F01X.h: 29: volatile bit RP @ ((unsigned)&STATUS*8)+5;
+"31
+[v _C `Vb ~T0 @X0 1 e@24 ]
+[; ;FT60F01X.h: 31: volatile bit C @ ((unsigned)&STATUS*8)+0;
+"32
+[v _HC `Vb ~T0 @X0 1 e@25 ]
+[; ;FT60F01X.h: 32: volatile bit HC @ ((unsigned)&STATUS*8)+1;
+"33
+[v _Z `Vb ~T0 @X0 1 e@26 ]
+[; ;FT60F01X.h: 33: volatile bit Z @ ((unsigned)&STATUS*8)+2;
+"34
+[v _nPF `Vb ~T0 @X0 1 e@27 ]
+[; ;FT60F01X.h: 34: volatile bit nPF @ ((unsigned)&STATUS*8)+3;
+"35
+[v _nTF `Vb ~T0 @X0 1 e@28 ]
+[; ;FT60F01X.h: 35: volatile bit nTF @ ((unsigned)&STATUS*8)+4;
+"36
+[v _PAGE `Vb ~T0 @X0 1 e@29 ]
+[; ;FT60F01X.h: 36: volatile bit PAGE @ ((unsigned)&STATUS*8)+5;
+"55
+[v _STATUSbits `VS1 ~T0 @X0 1 e@3 ]
+[; ;FT60F01X.h: 38: volatile union {
+[; ;FT60F01X.h: 39: struct {
+[; ;FT60F01X.h: 40: unsigned CARRY : 1;
+[; ;FT60F01X.h: 41: unsigned DC : 1;
+[; ;FT60F01X.h: 42: unsigned ZERO : 1;
+[; ;FT60F01X.h: 43: unsigned nPD : 1;
+[; ;FT60F01X.h: 44: unsigned nTO : 1;
+[; ;FT60F01X.h: 45: unsigned RP : 1;
+[; ;FT60F01X.h: 46: };
+[; ;FT60F01X.h: 47: struct {
+[; ;FT60F01X.h: 48: unsigned C : 1;
+[; ;FT60F01X.h: 49: unsigned HC : 1;
+[; ;FT60F01X.h: 50: unsigned Z : 1;
+[; ;FT60F01X.h: 51: unsigned nPF : 1;
+[; ;FT60F01X.h: 52: unsigned nTF : 1;
+[; ;FT60F01X.h: 53: unsigned PAGE : 1;
+[; ;FT60F01X.h: 54: };
+[; ;FT60F01X.h: 55: } STATUSbits @ 0x003;
+"59
+[v _FSR `Vuc ~T0 @X0 1 e@4 ]
+[; ;FT60F01X.h: 59: volatile unsigned char FSR @ 0x004;
+"63
+[v _PORTA `Vuc ~T0 @X0 1 e@5 ]
+[; ;FT60F01X.h: 63: volatile unsigned char PORTA @ 0x005;
+"65
+[v _RA0 `Vb ~T0 @X0 1 e@40 ]
+[; ;FT60F01X.h: 65: volatile bit RA0 @ ((unsigned)&PORTA*8)+0;
+"66
+[v _RA1 `Vb ~T0 @X0 1 e@41 ]
+[; ;FT60F01X.h: 66: volatile bit RA1 @ ((unsigned)&PORTA*8)+1;
+"67
+[v _RA2 `Vb ~T0 @X0 1 e@42 ]
+[; ;FT60F01X.h: 67: volatile bit RA2 @ ((unsigned)&PORTA*8)+2;
+"68
+[v _RA3 `Vb ~T0 @X0 1 e@43 ]
+[; ;FT60F01X.h: 68: volatile bit RA3 @ ((unsigned)&PORTA*8)+3;
+"69
+[v _RA4 `Vb ~T0 @X0 1 e@44 ]
+[; ;FT60F01X.h: 69: volatile bit RA4 @ ((unsigned)&PORTA*8)+4;
+"70
+[v _RA5 `Vb ~T0 @X0 1 e@45 ]
+[; ;FT60F01X.h: 70: volatile bit RA5 @ ((unsigned)&PORTA*8)+5;
+"72
+[v _PA0 `Vb ~T0 @X0 1 e@40 ]
+[; ;FT60F01X.h: 72: volatile bit PA0 @ ((unsigned)&PORTA*8)+0;
+"73
+[v _PA1 `Vb ~T0 @X0 1 e@41 ]
+[; ;FT60F01X.h: 73: volatile bit PA1 @ ((unsigned)&PORTA*8)+1;
+"74
+[v _PA2 `Vb ~T0 @X0 1 e@42 ]
+[; ;FT60F01X.h: 74: volatile bit PA2 @ ((unsigned)&PORTA*8)+2;
+"75
+[v _PA3 `Vb ~T0 @X0 1 e@43 ]
+[; ;FT60F01X.h: 75: volatile bit PA3 @ ((unsigned)&PORTA*8)+3;
+"76
+[v _PA4 `Vb ~T0 @X0 1 e@44 ]
+[; ;FT60F01X.h: 76: volatile bit PA4 @ ((unsigned)&PORTA*8)+4;
+"77
+[v _PA5 `Vb ~T0 @X0 1 e@45 ]
+[; ;FT60F01X.h: 77: volatile bit PA5 @ ((unsigned)&PORTA*8)+5;
+"96
+[v _PORTAbits `VS4 ~T0 @X0 1 e@5 ]
+[; ;FT60F01X.h: 79: volatile union {
+[; ;FT60F01X.h: 80: struct {
+[; ;FT60F01X.h: 81: unsigned RA0 : 1;
+[; ;FT60F01X.h: 82: unsigned RA1 : 1;
+[; ;FT60F01X.h: 83: unsigned RA2 : 1;
+[; ;FT60F01X.h: 84: unsigned RA3 : 1;
+[; ;FT60F01X.h: 85: unsigned RA4 : 1;
+[; ;FT60F01X.h: 86: unsigned RA5 : 1;
+[; ;FT60F01X.h: 87: };
+[; ;FT60F01X.h: 88: struct {
+[; ;FT60F01X.h: 89: unsigned PA0 : 1;
+[; ;FT60F01X.h: 90: unsigned PA1 : 1;
+[; ;FT60F01X.h: 91: unsigned PA2 : 1;
+[; ;FT60F01X.h: 92: unsigned PA3 : 1;
+[; ;FT60F01X.h: 93: unsigned PA4 : 1;
+[; ;FT60F01X.h: 94: unsigned PA5 : 1;
+[; ;FT60F01X.h: 95: };
+[; ;FT60F01X.h: 96: } PORTAbits @ 0x005;
+"100
+[v _PCLATH `Vuc ~T0 @X0 1 e@10 ]
+[; ;FT60F01X.h: 100: volatile unsigned char PCLATH @ 0x00A;
+"107
+[v _PCLATHbits `VS7 ~T0 @X0 1 e@10 ]
+[; ;FT60F01X.h: 103: volatile union {
+[; ;FT60F01X.h: 104: struct {
+[; ;FT60F01X.h: 105: unsigned PCLATH : 3;
+[; ;FT60F01X.h: 106: };
+[; ;FT60F01X.h: 107: } PCLATHbits @ 0x00A;
+"111
+[v _INTCON `Vuc ~T0 @X0 1 e@11 ]
+[; ;FT60F01X.h: 111: volatile unsigned char INTCON @ 0x00B;
+"113
+[v _PAIF `Vb ~T0 @X0 1 e@88 ]
+[; ;FT60F01X.h: 113: volatile bit PAIF @ ((unsigned)&INTCON*8)+0;
+"114
+[v _INTF `Vb ~T0 @X0 1 e@89 ]
+[; ;FT60F01X.h: 114: volatile bit INTF @ ((unsigned)&INTCON*8)+1;
+"115
+[v _T0IF `Vb ~T0 @X0 1 e@90 ]
+[; ;FT60F01X.h: 115: volatile bit T0IF @ ((unsigned)&INTCON*8)+2;
+"116
+[v _PAIE `Vb ~T0 @X0 1 e@91 ]
+[; ;FT60F01X.h: 116: volatile bit PAIE @ ((unsigned)&INTCON*8)+3;
+"117
+[v _INTE `Vb ~T0 @X0 1 e@92 ]
+[; ;FT60F01X.h: 117: volatile bit INTE @ ((unsigned)&INTCON*8)+4;
+"118
+[v _T0IE `Vb ~T0 @X0 1 e@93 ]
+[; ;FT60F01X.h: 118: volatile bit T0IE @ ((unsigned)&INTCON*8)+5;
+"119
+[v _PEIE `Vb ~T0 @X0 1 e@94 ]
+[; ;FT60F01X.h: 119: volatile bit PEIE @ ((unsigned)&INTCON*8)+6;
+"120
+[v _GIE `Vb ~T0 @X0 1 e@95 ]
+[; ;FT60F01X.h: 120: volatile bit GIE @ ((unsigned)&INTCON*8)+7;
+"133
+[v _INTCONbits `VS9 ~T0 @X0 1 e@11 ]
+[; ;FT60F01X.h: 122: volatile union {
+[; ;FT60F01X.h: 123: struct {
+[; ;FT60F01X.h: 124: unsigned PAIF : 1;
+[; ;FT60F01X.h: 125: unsigned INTF : 1;
+[; ;FT60F01X.h: 126: unsigned T0IF : 1;
+[; ;FT60F01X.h: 127: unsigned PAIE : 1;
+[; ;FT60F01X.h: 128: unsigned INTE : 1;
+[; ;FT60F01X.h: 129: unsigned T0IE : 1;
+[; ;FT60F01X.h: 130: unsigned PEIE : 1;
+[; ;FT60F01X.h: 131: unsigned GIE : 1;
+[; ;FT60F01X.h: 132: };
+[; ;FT60F01X.h: 133: } INTCONbits @ 0x00B;
+"137
+[v _PIR1 `Vuc ~T0 @X0 1 e@12 ]
+[; ;FT60F01X.h: 137: volatile unsigned char PIR1 @ 0x00C;
+"139
+[v _TMR2IF `Vb ~T0 @X0 1 e@97 ]
+[; ;FT60F01X.h: 139: volatile bit TMR2IF @ ((unsigned)&PIR1*8)+1;
+"140
+[v _CKMEAIF `Vb ~T0 @X0 1 e@102 ]
+[; ;FT60F01X.h: 140: volatile bit CKMEAIF @ ((unsigned)&PIR1*8)+6;
+"141
+[v _EEIF `Vb ~T0 @X0 1 e@103 ]
+[; ;FT60F01X.h: 141: volatile bit EEIF @ ((unsigned)&PIR1*8)+7;
+"154
+[v _PIR1bits `VS11 ~T0 @X0 1 e@12 ]
+[; ;FT60F01X.h: 143: volatile union {
+[; ;FT60F01X.h: 144: struct {
+[; ;FT60F01X.h: 145: unsigned : 1;
+[; ;FT60F01X.h: 146: unsigned TMR2IF : 1;
+[; ;FT60F01X.h: 147: unsigned : 1;
+[; ;FT60F01X.h: 148: unsigned : 1;
+[; ;FT60F01X.h: 149: unsigned : 1;
+[; ;FT60F01X.h: 150: unsigned : 1;
+[; ;FT60F01X.h: 151: unsigned CKMEAIF : 1;
+[; ;FT60F01X.h: 152: unsigned EEIF : 1;
+[; ;FT60F01X.h: 153: };
+[; ;FT60F01X.h: 154: } PIR1bits @ 0x00C;
+"159
+[v _TMR2 `Vuc ~T0 @X0 1 e@17 ]
+[; ;FT60F01X.h: 159: volatile unsigned char TMR2 @ 0x011;
+"163
+[v _T2CON `Vuc ~T0 @X0 1 e@18 ]
+[; ;FT60F01X.h: 163: volatile unsigned char T2CON @ 0x012;
+"165
+[v _T2CKPS0 `Vb ~T0 @X0 1 e@144 ]
+[; ;FT60F01X.h: 165: volatile bit T2CKPS0 @ ((unsigned)&T2CON*8)+0;
+"166
+[v _T2CKPS1 `Vb ~T0 @X0 1 e@145 ]
+[; ;FT60F01X.h: 166: volatile bit T2CKPS1 @ ((unsigned)&T2CON*8)+1;
+"167
+[v _TMR2ON `Vb ~T0 @X0 1 e@146 ]
+[; ;FT60F01X.h: 167: volatile bit TMR2ON @ ((unsigned)&T2CON*8)+2;
+"168
+[v _TOUTPS0 `Vb ~T0 @X0 1 e@147 ]
+[; ;FT60F01X.h: 168: volatile bit TOUTPS0 @ ((unsigned)&T2CON*8)+3;
+"169
+[v _TOUTPS1 `Vb ~T0 @X0 1 e@148 ]
+[; ;FT60F01X.h: 169: volatile bit TOUTPS1 @ ((unsigned)&T2CON*8)+4;
+"170
+[v _TOUTPS2 `Vb ~T0 @X0 1 e@149 ]
+[; ;FT60F01X.h: 170: volatile bit TOUTPS2 @ ((unsigned)&T2CON*8)+5;
+"171
+[v _TOUTPS3 `Vb ~T0 @X0 1 e@150 ]
+[; ;FT60F01X.h: 171: volatile bit TOUTPS3 @ ((unsigned)&T2CON*8)+6;
+"188
+[v _T2CONbits `VS13 ~T0 @X0 1 e@18 ]
+[; ;FT60F01X.h: 173: volatile union {
+[; ;FT60F01X.h: 174: struct {
+[; ;FT60F01X.h: 175: unsigned T2CKPS : 2;
+[; ;FT60F01X.h: 176: unsigned TMR2ON : 1;
+[; ;FT60F01X.h: 177: unsigned TOUTPS : 4;
+[; ;FT60F01X.h: 178: };
+[; ;FT60F01X.h: 179: struct {
+[; ;FT60F01X.h: 180: unsigned T2CKPS0 : 1;
+[; ;FT60F01X.h: 181: unsigned T2CKPS1 : 1;
+[; ;FT60F01X.h: 182: unsigned : 1;
+[; ;FT60F01X.h: 183: unsigned TOUTPS0 : 1;
+[; ;FT60F01X.h: 184: unsigned TOUTPS1 : 1;
+[; ;FT60F01X.h: 185: unsigned TOUTPS2 : 1;
+[; ;FT60F01X.h: 186: unsigned TOUTPS3 : 1;
+[; ;FT60F01X.h: 187: };
+[; ;FT60F01X.h: 188: } T2CONbits @ 0x012;
+"193
+[v _WDTCON `Vuc ~T0 @X0 1 e@24 ]
+[; ;FT60F01X.h: 193: volatile unsigned char WDTCON @ 0x018;
+"195
+[v _SWDTEN `Vb ~T0 @X0 1 e@192 ]
+[; ;FT60F01X.h: 195: volatile bit SWDTEN @ ((unsigned)&WDTCON*8)+0;
+"196
+[v _WDTPS0 `Vb ~T0 @X0 1 e@193 ]
+[; ;FT60F01X.h: 196: volatile bit WDTPS0 @ ((unsigned)&WDTCON*8)+1;
+"197
+[v _WDTPS1 `Vb ~T0 @X0 1 e@194 ]
+[; ;FT60F01X.h: 197: volatile bit WDTPS1 @ ((unsigned)&WDTCON*8)+2;
+"198
+[v _WDTPS2 `Vb ~T0 @X0 1 e@195 ]
+[; ;FT60F01X.h: 198: volatile bit WDTPS2 @ ((unsigned)&WDTCON*8)+3;
+"199
+[v _WDTPS3 `Vb ~T0 @X0 1 e@196 ]
+[; ;FT60F01X.h: 199: volatile bit WDTPS3 @ ((unsigned)&WDTCON*8)+4;
+"213
+[v _WDTCONbits `VS16 ~T0 @X0 1 e@24 ]
+[; ;FT60F01X.h: 201: volatile union {
+[; ;FT60F01X.h: 202: struct {
+[; ;FT60F01X.h: 203: unsigned SWDTEN : 1;
+[; ;FT60F01X.h: 204: unsigned WDTPS : 4;
+[; ;FT60F01X.h: 205: };
+[; ;FT60F01X.h: 206: struct {
+[; ;FT60F01X.h: 207: unsigned : 1;
+[; ;FT60F01X.h: 208: unsigned WDTPS0 : 1;
+[; ;FT60F01X.h: 209: unsigned WDTPS1 : 1;
+[; ;FT60F01X.h: 210: unsigned WDTPS2 : 1;
+[; ;FT60F01X.h: 211: unsigned WDTPS3 : 1;
+[; ;FT60F01X.h: 212: };
+[; ;FT60F01X.h: 213: } WDTCONbits @ 0x018;
+"217
+[v _MSCKCON `Vuc ~T0 @X0 1 e@27 ]
+[; ;FT60F01X.h: 217: volatile unsigned char MSCKCON @ 0x01B;
+"219
+[v _CKCNTI `Vb ~T0 @X0 1 e@217 ]
+[; ;FT60F01X.h: 219: volatile bit CKCNTI @ ((unsigned)&MSCKCON*8)+1;
+"220
+[v _CKMAVG `Vb ~T0 @X0 1 e@218 ]
+[; ;FT60F01X.h: 220: volatile bit CKMAVG @ ((unsigned)&MSCKCON*8)+2;
+"221
+[v _SLVREN `Vb ~T0 @X0 1 e@220 ]
+[; ;FT60F01X.h: 221: volatile bit SLVREN @ ((unsigned)&MSCKCON*8)+4;
+"232
+[v _MSCKCONbits `VS19 ~T0 @X0 1 e@27 ]
+[; ;FT60F01X.h: 224: volatile union {
+[; ;FT60F01X.h: 225: struct {
+[; ;FT60F01X.h: 226: unsigned : 1;
+[; ;FT60F01X.h: 227: unsigned CKCNTI : 1;
+[; ;FT60F01X.h: 228: unsigned CKMAVG : 1;
+[; ;FT60F01X.h: 229: unsigned : 1;
+[; ;FT60F01X.h: 230: unsigned SLVREN : 1;
+[; ;FT60F01X.h: 231: };
+[; ;FT60F01X.h: 232: } MSCKCONbits @ 0x01B;
+"236
+[v _SOSCPRL `Vuc ~T0 @X0 1 e@28 ]
+[; ;FT60F01X.h: 236: volatile unsigned char SOSCPRL @ 0x01C;
+"240
+[v _SOSCPRH `Vuc ~T0 @X0 1 e@29 ]
+[; ;FT60F01X.h: 240: volatile unsigned char SOSCPRH @ 0x01D;
+"247
+[v _SOSCPRHbits `VS21 ~T0 @X0 1 e@29 ]
+[; ;FT60F01X.h: 243: volatile union {
+[; ;FT60F01X.h: 244: struct {
+[; ;FT60F01X.h: 245: unsigned SOSCPRH : 4;
+[; ;FT60F01X.h: 246: };
+[; ;FT60F01X.h: 247: } SOSCPRHbits @ 0x01D;
+"257
+[v _OPTION `Vuc ~T0 @X0 1 e@129 ]
+[; ;FT60F01X.h: 257: volatile unsigned char OPTION @ 0x081;
+"259
+[v _PS0 `Vb ~T0 @X0 1 e@1032 ]
+[; ;FT60F01X.h: 259: volatile bit PS0 @ ((unsigned)&OPTION*8)+0;
+"260
+[v _PS1 `Vb ~T0 @X0 1 e@1033 ]
+[; ;FT60F01X.h: 260: volatile bit PS1 @ ((unsigned)&OPTION*8)+1;
+"261
+[v _PS2 `Vb ~T0 @X0 1 e@1034 ]
+[; ;FT60F01X.h: 261: volatile bit PS2 @ ((unsigned)&OPTION*8)+2;
+"262
+[v _PSA `Vb ~T0 @X0 1 e@1035 ]
+[; ;FT60F01X.h: 262: volatile bit PSA @ ((unsigned)&OPTION*8)+3;
+"263
+[v _T0SE `Vb ~T0 @X0 1 e@1036 ]
+[; ;FT60F01X.h: 263: volatile bit T0SE @ ((unsigned)&OPTION*8)+4;
+"264
+[v _T0CS `Vb ~T0 @X0 1 e@1037 ]
+[; ;FT60F01X.h: 264: volatile bit T0CS @ ((unsigned)&OPTION*8)+5;
+"265
+[v _INTEDG `Vb ~T0 @X0 1 e@1038 ]
+[; ;FT60F01X.h: 265: volatile bit INTEDG @ ((unsigned)&OPTION*8)+6;
+"266
+[v _nPAPU `Vb ~T0 @X0 1 e@1039 ]
+[; ;FT60F01X.h: 266: volatile bit nPAPU @ ((unsigned)&OPTION*8)+7;
+"282
+[v _OPTIONbits `VS23 ~T0 @X0 1 e@129 ]
+[; ;FT60F01X.h: 268: volatile union {
+[; ;FT60F01X.h: 269: struct {
+[; ;FT60F01X.h: 270: unsigned PS : 3;
+[; ;FT60F01X.h: 271: unsigned PSA : 1;
+[; ;FT60F01X.h: 272: unsigned T0SE : 1;
+[; ;FT60F01X.h: 273: unsigned T0CS : 1;
+[; ;FT60F01X.h: 274: unsigned INTEDG : 1;
+[; ;FT60F01X.h: 275: unsigned nPAPU : 1;
+[; ;FT60F01X.h: 276: };
+[; ;FT60F01X.h: 277: struct {
+[; ;FT60F01X.h: 278: unsigned PS0 : 1;
+[; ;FT60F01X.h: 279: unsigned PS1 : 1;
+[; ;FT60F01X.h: 280: unsigned PS2 : 1;
+[; ;FT60F01X.h: 281: };
+[; ;FT60F01X.h: 282: } OPTIONbits @ 0x081;
+"286
+[v _TRISA `Vuc ~T0 @X0 1 e@133 ]
+[; ;FT60F01X.h: 286: volatile unsigned char TRISA @ 0x085;
+"288
+[v _TRISA0 `Vb ~T0 @X0 1 e@1064 ]
+[; ;FT60F01X.h: 288: volatile bit TRISA0 @ ((unsigned)&TRISA*8)+0;
+"289
+[v _TRISA1 `Vb ~T0 @X0 1 e@1065 ]
+[; ;FT60F01X.h: 289: volatile bit TRISA1 @ ((unsigned)&TRISA*8)+1;
+"290
+[v _TRISA2 `Vb ~T0 @X0 1 e@1066 ]
+[; ;FT60F01X.h: 290: volatile bit TRISA2 @ ((unsigned)&TRISA*8)+2;
+"291
+[v _TRISA4 `Vb ~T0 @X0 1 e@1068 ]
+[; ;FT60F01X.h: 291: volatile bit TRISA4 @ ((unsigned)&TRISA*8)+4;
+"292
+[v _TRISA5 `Vb ~T0 @X0 1 e@1069 ]
+[; ;FT60F01X.h: 292: volatile bit TRISA5 @ ((unsigned)&TRISA*8)+5;
+"303
+[v _TRISAbits `VS26 ~T0 @X0 1 e@133 ]
+[; ;FT60F01X.h: 294: volatile union {
+[; ;FT60F01X.h: 295: struct {
+[; ;FT60F01X.h: 296: unsigned TRISA0 : 1;
+[; ;FT60F01X.h: 297: unsigned TRISA1 : 1;
+[; ;FT60F01X.h: 298: unsigned TRISA2 : 1;
+[; ;FT60F01X.h: 299: unsigned : 1;
+[; ;FT60F01X.h: 300: unsigned TRISA4 : 1;
+[; ;FT60F01X.h: 301: unsigned TRISA5 : 1;
+[; ;FT60F01X.h: 302: };
+[; ;FT60F01X.h: 303: } TRISAbits @ 0x085;
+"308
+[v _PIE1 `Vuc ~T0 @X0 1 e@140 ]
+[; ;FT60F01X.h: 308: volatile unsigned char PIE1 @ 0x08C;
+"310
+[v _TMR2IE `Vb ~T0 @X0 1 e@1121 ]
+[; ;FT60F01X.h: 310: volatile bit TMR2IE @ ((unsigned)&PIE1*8)+1;
+"311
+[v _CKMEAIE `Vb ~T0 @X0 1 e@1126 ]
+[; ;FT60F01X.h: 311: volatile bit CKMEAIE @ ((unsigned)&PIE1*8)+6;
+"312
+[v _EEIE `Vb ~T0 @X0 1 e@1127 ]
+[; ;FT60F01X.h: 312: volatile bit EEIE @ ((unsigned)&PIE1*8)+7;
+"322
+[v _PIE1bits `VS28 ~T0 @X0 1 e@140 ]
+[; ;FT60F01X.h: 314: volatile union {
+[; ;FT60F01X.h: 315: struct {
+[; ;FT60F01X.h: 316: unsigned : 1;
+[; ;FT60F01X.h: 317: unsigned TMR2IE : 1;
+[; ;FT60F01X.h: 318: unsigned : 4;
+[; ;FT60F01X.h: 319: unsigned CKMEAIE : 1;
+[; ;FT60F01X.h: 320: unsigned EEIE : 1;
+[; ;FT60F01X.h: 321: };
+[; ;FT60F01X.h: 322: } PIE1bits @ 0x08C;
+"326
+[v _PCON `Vuc ~T0 @X0 1 e@142 ]
+[; ;FT60F01X.h: 326: volatile unsigned char PCON @ 0x08E;
+"328
+[v _nBOR `Vb ~T0 @X0 1 e@1136 ]
+[; ;FT60F01X.h: 328: volatile bit nBOR @ ((unsigned)&PCON*8)+0;
+"329
+[v _nPOR `Vb ~T0 @X0 1 e@1137 ]
+[; ;FT60F01X.h: 329: volatile bit nPOR @ ((unsigned)&PCON*8)+1;
+"336
+[v _PCONbits `VS30 ~T0 @X0 1 e@142 ]
+[; ;FT60F01X.h: 331: volatile union {
+[; ;FT60F01X.h: 332: struct {
+[; ;FT60F01X.h: 333: unsigned nBOR : 1;
+[; ;FT60F01X.h: 334: unsigned nPOR : 1;
+[; ;FT60F01X.h: 335: };
+[; ;FT60F01X.h: 336: } PCONbits @ 0x08E;
+"340
+[v _OSCCON `Vuc ~T0 @X0 1 e@143 ]
+[; ;FT60F01X.h: 340: volatile unsigned char OSCCON @ 0x08F;
+"342
+[v _LFIOFR `Vb ~T0 @X0 1 e@1145 ]
+[; ;FT60F01X.h: 342: volatile bit LFIOFR @ ((unsigned)&OSCCON*8)+1;
+"343
+[v _HFIOFR `Vb ~T0 @X0 1 e@1146 ]
+[; ;FT60F01X.h: 343: volatile bit HFIOFR @ ((unsigned)&OSCCON*8)+2;
+"344
+[v _IRCF0 `Vb ~T0 @X0 1 e@1148 ]
+[; ;FT60F01X.h: 344: volatile bit IRCF0 @ ((unsigned)&OSCCON*8)+4;
+"345
+[v _IRCF1 `Vb ~T0 @X0 1 e@1149 ]
+[; ;FT60F01X.h: 345: volatile bit IRCF1 @ ((unsigned)&OSCCON*8)+5;
+"346
+[v _IRCF2 `Vb ~T0 @X0 1 e@1150 ]
+[; ;FT60F01X.h: 346: volatile bit IRCF2 @ ((unsigned)&OSCCON*8)+6;
+"347
+[v _LFMOD `Vb ~T0 @X0 1 e@1151 ]
+[; ;FT60F01X.h: 347: volatile bit LFMOD @ ((unsigned)&OSCCON*8)+7;
+"364
+[v _OSCCONbits `VS32 ~T0 @X0 1 e@143 ]
+[; ;FT60F01X.h: 349: volatile union {
+[; ;FT60F01X.h: 350: struct {
+[; ;FT60F01X.h: 351: unsigned : 1;
+[; ;FT60F01X.h: 352: unsigned LFIOFR : 1;
+[; ;FT60F01X.h: 353: unsigned HFIOFR : 1;
+[; ;FT60F01X.h: 354: unsigned : 1;
+[; ;FT60F01X.h: 355: unsigned IRCF : 3;
+[; ;FT60F01X.h: 356: unsigned LFMOD : 1;
+[; ;FT60F01X.h: 357: };
+[; ;FT60F01X.h: 358: struct {
+[; ;FT60F01X.h: 359: unsigned : 4;
+[; ;FT60F01X.h: 360: unsigned IRCF0 : 1;
+[; ;FT60F01X.h: 361: unsigned IRCF1 : 1;
+[; ;FT60F01X.h: 362: unsigned IRCF2 : 1;
+[; ;FT60F01X.h: 363: };
+[; ;FT60F01X.h: 364: } OSCCONbits @ 0x08F;
+"368
+[v _PR2 `Vuc ~T0 @X0 1 e@146 ]
+[; ;FT60F01X.h: 368: volatile unsigned char PR2 @ 0x092;
+"372
+[v _WPUA `Vuc ~T0 @X0 1 e@149 ]
+[; ;FT60F01X.h: 372: volatile unsigned char WPUA @ 0x095;
+"373
+[v _WPU `Vuc ~T0 @X0 1 e@149 ]
+[; ;FT60F01X.h: 373: volatile unsigned char WPU @ 0x095;
+"375
+[v _WPUA0 `Vb ~T0 @X0 1 e@1192 ]
+[; ;FT60F01X.h: 375: volatile bit WPUA0 @ ((unsigned)&WPUA*8)+0;
+"376
+[v _WPUA1 `Vb ~T0 @X0 1 e@1193 ]
+[; ;FT60F01X.h: 376: volatile bit WPUA1 @ ((unsigned)&WPUA*8)+1;
+"377
+[v _WPUA2 `Vb ~T0 @X0 1 e@1194 ]
+[; ;FT60F01X.h: 377: volatile bit WPUA2 @ ((unsigned)&WPUA*8)+2;
+"378
+[v _WPUA4 `Vb ~T0 @X0 1 e@1196 ]
+[; ;FT60F01X.h: 378: volatile bit WPUA4 @ ((unsigned)&WPUA*8)+4;
+"379
+[v _WPUA5 `Vb ~T0 @X0 1 e@1197 ]
+[; ;FT60F01X.h: 379: volatile bit WPUA5 @ ((unsigned)&WPUA*8)+5;
+"381
+[v _WPU0 `Vb ~T0 @X0 1 e@1192 ]
+[; ;FT60F01X.h: 381: volatile bit WPU0 @ ((unsigned)&WPUA*8)+0;
+"382
+[v _WPU1 `Vb ~T0 @X0 1 e@1193 ]
+[; ;FT60F01X.h: 382: volatile bit WPU1 @ ((unsigned)&WPUA*8)+1;
+"383
+[v _WPU2 `Vb ~T0 @X0 1 e@1194 ]
+[; ;FT60F01X.h: 383: volatile bit WPU2 @ ((unsigned)&WPUA*8)+2;
+"384
+[v _WPU4 `Vb ~T0 @X0 1 e@1196 ]
+[; ;FT60F01X.h: 384: volatile bit WPU4 @ ((unsigned)&WPUA*8)+4;
+"385
+[v _WPU5 `Vb ~T0 @X0 1 e@1197 ]
+[; ;FT60F01X.h: 385: volatile bit WPU5 @ ((unsigned)&WPUA*8)+5;
+"404
+[v _WPUAbits `VS35 ~T0 @X0 1 e@149 ]
+[; ;FT60F01X.h: 387: volatile union {
+[; ;FT60F01X.h: 388: struct {
+[; ;FT60F01X.h: 389: unsigned WPUA0 : 1;
+[; ;FT60F01X.h: 390: unsigned WPUA1 : 1;
+[; ;FT60F01X.h: 391: unsigned WPUA2 : 1;
+[; ;FT60F01X.h: 392: unsigned : 1;
+[; ;FT60F01X.h: 393: unsigned WPUA4 : 1;
+[; ;FT60F01X.h: 394: unsigned WPUA5 : 1;
+[; ;FT60F01X.h: 395: };
+[; ;FT60F01X.h: 396: struct {
+[; ;FT60F01X.h: 397: unsigned WPU0 : 1;
+[; ;FT60F01X.h: 398: unsigned WPU1 : 1;
+[; ;FT60F01X.h: 399: unsigned WPU2 : 1;
+[; ;FT60F01X.h: 400: unsigned : 1;
+[; ;FT60F01X.h: 401: unsigned WPU4 : 1;
+[; ;FT60F01X.h: 402: unsigned WPU5 : 1;
+[; ;FT60F01X.h: 403: };
+[; ;FT60F01X.h: 404: } WPUAbits @ 0x095;
+"408
+[v _IOCA `Vuc ~T0 @X0 1 e@150 ]
+[; ;FT60F01X.h: 408: volatile unsigned char IOCA @ 0x096;
+"409
+[v _IOC `Vuc ~T0 @X0 1 e@150 ]
+[; ;FT60F01X.h: 409: volatile unsigned char IOC @ 0x096;
+"411
+[v _IOCA0 `Vb ~T0 @X0 1 e@1200 ]
+[; ;FT60F01X.h: 411: volatile bit IOCA0 @ ((unsigned)&IOCA*8)+0;
+"412
+[v _IOCA1 `Vb ~T0 @X0 1 e@1201 ]
+[; ;FT60F01X.h: 412: volatile bit IOCA1 @ ((unsigned)&IOCA*8)+1;
+"413
+[v _IOCA2 `Vb ~T0 @X0 1 e@1202 ]
+[; ;FT60F01X.h: 413: volatile bit IOCA2 @ ((unsigned)&IOCA*8)+2;
+"414
+[v _IOCA3 `Vb ~T0 @X0 1 e@1203 ]
+[; ;FT60F01X.h: 414: volatile bit IOCA3 @ ((unsigned)&IOCA*8)+3;
+"415
+[v _IOCA4 `Vb ~T0 @X0 1 e@1204 ]
+[; ;FT60F01X.h: 415: volatile bit IOCA4 @ ((unsigned)&IOCA*8)+4;
+"416
+[v _IOCA5 `Vb ~T0 @X0 1 e@1205 ]
+[; ;FT60F01X.h: 416: volatile bit IOCA5 @ ((unsigned)&IOCA*8)+5;
+"418
+[v _IOC0 `Vb ~T0 @X0 1 e@1200 ]
+[; ;FT60F01X.h: 418: volatile bit IOC0 @ ((unsigned)&IOCA*8)+0;
+"419
+[v _IOC1 `Vb ~T0 @X0 1 e@1201 ]
+[; ;FT60F01X.h: 419: volatile bit IOC1 @ ((unsigned)&IOCA*8)+1;
+"420
+[v _IOC2 `Vb ~T0 @X0 1 e@1202 ]
+[; ;FT60F01X.h: 420: volatile bit IOC2 @ ((unsigned)&IOCA*8)+2;
+"421
+[v _IOC3 `Vb ~T0 @X0 1 e@1203 ]
+[; ;FT60F01X.h: 421: volatile bit IOC3 @ ((unsigned)&IOCA*8)+3;
+"422
+[v _IOC4 `Vb ~T0 @X0 1 e@1204 ]
+[; ;FT60F01X.h: 422: volatile bit IOC4 @ ((unsigned)&IOCA*8)+4;
+"423
+[v _IOC5 `Vb ~T0 @X0 1 e@1205 ]
+[; ;FT60F01X.h: 423: volatile bit IOC5 @ ((unsigned)&IOCA*8)+5;
+"442
+[v _IOCAbits `VS38 ~T0 @X0 1 e@150 ]
+[; ;FT60F01X.h: 425: volatile union {
+[; ;FT60F01X.h: 426: struct {
+[; ;FT60F01X.h: 427: unsigned IOCA0 : 1;
+[; ;FT60F01X.h: 428: unsigned IOCA1 : 1;
+[; ;FT60F01X.h: 429: unsigned IOCA2 : 1;
+[; ;FT60F01X.h: 430: unsigned IOCA3 : 1;
+[; ;FT60F01X.h: 431: unsigned IOCA4 : 1;
+[; ;FT60F01X.h: 432: unsigned IOCA5 : 1;
+[; ;FT60F01X.h: 433: };
+[; ;FT60F01X.h: 434: struct {
+[; ;FT60F01X.h: 435: unsigned IOC0 : 1;
+[; ;FT60F01X.h: 436: unsigned IOC1 : 1;
+[; ;FT60F01X.h: 437: unsigned IOC2 : 1;
+[; ;FT60F01X.h: 438: unsigned IOC3 : 1;
+[; ;FT60F01X.h: 439: unsigned IOC4 : 1;
+[; ;FT60F01X.h: 440: unsigned IOC5 : 1;
+[; ;FT60F01X.h: 441: };
+[; ;FT60F01X.h: 442: } IOCAbits @ 0x096;
+"446
+[v _EEDAT `Vuc ~T0 @X0 1 e@154 ]
+[; ;FT60F01X.h: 446: volatile unsigned char EEDAT @ 0x09A;
+"447
+[v _EEDATA `Vuc ~T0 @X0 1 e@154 ]
+[; ;FT60F01X.h: 447: volatile unsigned char EEDATA @ 0x09A;
+"451
+[v _EEADR `Vuc ~T0 @X0 1 e@155 ]
+[; ;FT60F01X.h: 451: volatile unsigned char EEADR @ 0x09B;
+"455
+[v _EECON1 `Vuc ~T0 @X0 1 e@156 ]
+[; ;FT60F01X.h: 455: volatile unsigned char EECON1 @ 0x09C;
+"457
+[v _RD `Vb ~T0 @X0 1 e@1248 ]
+[; ;FT60F01X.h: 457: volatile bit RD @ ((unsigned)&EECON1*8)+0;
+"458
+[v _WREN1 `Vb ~T0 @X0 1 e@1250 ]
+[; ;FT60F01X.h: 458: volatile bit WREN1 @ ((unsigned)&EECON1*8)+2;
+"459
+[v _WRERR `Vb ~T0 @X0 1 e@1251 ]
+[; ;FT60F01X.h: 459: volatile bit WRERR @ ((unsigned)&EECON1*8)+3;
+"460
+[v _WREN2 `Vb ~T0 @X0 1 e@1252 ]
+[; ;FT60F01X.h: 460: volatile bit WREN2 @ ((unsigned)&EECON1*8)+4;
+"461
+[v _WREN3 `Vb ~T0 @X0 1 e@1253 ]
+[; ;FT60F01X.h: 461: volatile bit WREN3 @ ((unsigned)&EECON1*8)+5;
+"472
+[v _EECON1bits `VS41 ~T0 @X0 1 e@156 ]
+[; ;FT60F01X.h: 463: volatile union {
+[; ;FT60F01X.h: 464: struct {
+[; ;FT60F01X.h: 465: unsigned RD : 1;
+[; ;FT60F01X.h: 466: unsigned : 1;
+[; ;FT60F01X.h: 467: unsigned WREN1 : 1;
+[; ;FT60F01X.h: 468: unsigned WRERR : 1;
+[; ;FT60F01X.h: 469: unsigned WREN2 : 1;
+[; ;FT60F01X.h: 470: unsigned WREN3 : 1;
+[; ;FT60F01X.h: 471: };
+[; ;FT60F01X.h: 472: } EECON1bits @ 0x09C;
+"476
+[v _EECON2 `Vuc ~T0 @X0 1 e@157 ]
+[; ;FT60F01X.h: 476: volatile unsigned char EECON2 @ 0x09D;
+"478
+[v _WR `Vb ~T0 @X0 1 e@1256 ]
+[; ;FT60F01X.h: 478: volatile bit WR @ ((unsigned)&EECON2*8)+0;
+"484
+[v _EECON2bits `VS43 ~T0 @X0 1 e@157 ]
+[; ;FT60F01X.h: 480: volatile union {
+[; ;FT60F01X.h: 481: struct {
+[; ;FT60F01X.h: 482: unsigned WR : 1;
+[; ;FT60F01X.h: 483: };
+[; ;FT60F01X.h: 484: } EECON2bits @ 0x09d;
+"487
+[v _SFR00 `Vuc ~T0 @X0 1 e@0 ]
+[; ;FT60F01X.h: 487: volatile unsigned char SFR00 @0x000;
+"488
+[v _SFR01 `Vuc ~T0 @X0 1 e@1 ]
+[; ;FT60F01X.h: 488: volatile unsigned char SFR01 @0x001;
+"489
+[v _SFR02 `Vuc ~T0 @X0 1 e@2 ]
+[; ;FT60F01X.h: 489: volatile unsigned char SFR02 @0x002;
+"490
+[v _SFR03 `Vuc ~T0 @X0 1 e@3 ]
+[; ;FT60F01X.h: 490: volatile unsigned char SFR03 @0x003;
+"491
+[v _SFR04 `Vuc ~T0 @X0 1 e@4 ]
+[; ;FT60F01X.h: 491: volatile unsigned char SFR04 @0x004;
+"492
+[v _SFR05 `Vuc ~T0 @X0 1 e@5 ]
+[; ;FT60F01X.h: 492: volatile unsigned char SFR05 @0x005;
+"493
+[v _SFR06 `Vuc ~T0 @X0 1 e@6 ]
+[; ;FT60F01X.h: 493: volatile unsigned char SFR06 @0x006;
+"494
+[v _SFR07 `Vuc ~T0 @X0 1 e@7 ]
+[; ;FT60F01X.h: 494: volatile unsigned char SFR07 @0x007;
+"495
+[v _SFR08 `Vuc ~T0 @X0 1 e@8 ]
+[; ;FT60F01X.h: 495: volatile unsigned char SFR08 @0x008;
+"496
+[v _SFR09 `Vuc ~T0 @X0 1 e@9 ]
+[; ;FT60F01X.h: 496: volatile unsigned char SFR09 @0x009;
+"497
+[v _SFR0A `Vuc ~T0 @X0 1 e@10 ]
+[; ;FT60F01X.h: 497: volatile unsigned char SFR0A @0x00A;
+"498
+[v _SFR0B `Vuc ~T0 @X0 1 e@11 ]
+[; ;FT60F01X.h: 498: volatile unsigned char SFR0B @0x00B;
+"499
+[v _SFR0C `Vuc ~T0 @X0 1 e@12 ]
+[; ;FT60F01X.h: 499: volatile unsigned char SFR0C @0x00C;
+"500
+[v _SFR0D `Vuc ~T0 @X0 1 e@13 ]
+[; ;FT60F01X.h: 500: volatile unsigned char SFR0D @0x00D;
+"501
+[v _SFR0E `Vuc ~T0 @X0 1 e@14 ]
+[; ;FT60F01X.h: 501: volatile unsigned char SFR0E @0x00E;
+"502
+[v _SFR0F `Vuc ~T0 @X0 1 e@15 ]
+[; ;FT60F01X.h: 502: volatile unsigned char SFR0F @0x00F;
+"504
+[v _SFR10 `Vuc ~T0 @X0 1 e@16 ]
+[; ;FT60F01X.h: 504: volatile unsigned char SFR10 @0x010;
+"505
+[v _SFR11 `Vuc ~T0 @X0 1 e@17 ]
+[; ;FT60F01X.h: 505: volatile unsigned char SFR11 @0x011;
+"506
+[v _SFR12 `Vuc ~T0 @X0 1 e@18 ]
+[; ;FT60F01X.h: 506: volatile unsigned char SFR12 @0x012;
+"507
+[v _SFR13 `Vuc ~T0 @X0 1 e@19 ]
+[; ;FT60F01X.h: 507: volatile unsigned char SFR13 @0x013;
+"508
+[v _SFR14 `Vuc ~T0 @X0 1 e@20 ]
+[; ;FT60F01X.h: 508: volatile unsigned char SFR14 @0x014;
+"509
+[v _SFR15 `Vuc ~T0 @X0 1 e@21 ]
+[; ;FT60F01X.h: 509: volatile unsigned char SFR15 @0x015;
+"510
+[v _SFR16 `Vuc ~T0 @X0 1 e@22 ]
+[; ;FT60F01X.h: 510: volatile unsigned char SFR16 @0x016;
+"511
+[v _SFR17 `Vuc ~T0 @X0 1 e@23 ]
+[; ;FT60F01X.h: 511: volatile unsigned char SFR17 @0x017;
+"512
+[v _SFR18 `Vuc ~T0 @X0 1 e@24 ]
+[; ;FT60F01X.h: 512: volatile unsigned char SFR18 @0x018;
+"513
+[v _SFR19 `Vuc ~T0 @X0 1 e@25 ]
+[; ;FT60F01X.h: 513: volatile unsigned char SFR19 @0x019;
+"514
+[v _SFR1A `Vuc ~T0 @X0 1 e@26 ]
+[; ;FT60F01X.h: 514: volatile unsigned char SFR1A @0x01A;
+"515
+[v _SFR1B `Vuc ~T0 @X0 1 e@27 ]
+[; ;FT60F01X.h: 515: volatile unsigned char SFR1B @0x01B;
+"516
+[v _SFR1C `Vuc ~T0 @X0 1 e@28 ]
+[; ;FT60F01X.h: 516: volatile unsigned char SFR1C @0x01C;
+"517
+[v _SFR1D `Vuc ~T0 @X0 1 e@29 ]
+[; ;FT60F01X.h: 517: volatile unsigned char SFR1D @0x01D;
+"518
+[v _SFR1E `Vuc ~T0 @X0 1 e@30 ]
+[; ;FT60F01X.h: 518: volatile unsigned char SFR1E @0x01E;
+"519
+[v _SFR1F `Vuc ~T0 @X0 1 e@31 ]
+[; ;FT60F01X.h: 519: volatile unsigned char SFR1F @0x01F;
+"522
+[v _SFR80 `Vuc ~T0 @X0 1 e@128 ]
+[; ;FT60F01X.h: 522: volatile unsigned char SFR80 @0x080;
+"523
+[v _SFR81 `Vuc ~T0 @X0 1 e@129 ]
+[; ;FT60F01X.h: 523: volatile unsigned char SFR81 @0x081;
+"524
+[v _SFR82 `Vuc ~T0 @X0 1 e@130 ]
+[; ;FT60F01X.h: 524: volatile unsigned char SFR82 @0x082;
+"525
+[v _SFR83 `Vuc ~T0 @X0 1 e@131 ]
+[; ;FT60F01X.h: 525: volatile unsigned char SFR83 @0x083;
+"526
+[v _SFR84 `Vuc ~T0 @X0 1 e@132 ]
+[; ;FT60F01X.h: 526: volatile unsigned char SFR84 @0x084;
+"527
+[v _SFR85 `Vuc ~T0 @X0 1 e@133 ]
+[; ;FT60F01X.h: 527: volatile unsigned char SFR85 @0x085;
+"528
+[v _SFR86 `Vuc ~T0 @X0 1 e@134 ]
+[; ;FT60F01X.h: 528: volatile unsigned char SFR86 @0x086;
+"529
+[v _SFR87 `Vuc ~T0 @X0 1 e@135 ]
+[; ;FT60F01X.h: 529: volatile unsigned char SFR87 @0x087;
+"530
+[v _SFR88 `Vuc ~T0 @X0 1 e@136 ]
+[; ;FT60F01X.h: 530: volatile unsigned char SFR88 @0x088;
+"531
+[v _SFR89 `Vuc ~T0 @X0 1 e@137 ]
+[; ;FT60F01X.h: 531: volatile unsigned char SFR89 @0x089;
+"532
+[v _SFR8A `Vuc ~T0 @X0 1 e@138 ]
+[; ;FT60F01X.h: 532: volatile unsigned char SFR8A @0x08A;
+"533
+[v _SFR8B `Vuc ~T0 @X0 1 e@139 ]
+[; ;FT60F01X.h: 533: volatile unsigned char SFR8B @0x08B;
+"534
+[v _SFR8C `Vuc ~T0 @X0 1 e@140 ]
+[; ;FT60F01X.h: 534: volatile unsigned char SFR8C @0x08C;
+"535
+[v _SFR8D `Vuc ~T0 @X0 1 e@141 ]
+[; ;FT60F01X.h: 535: volatile unsigned char SFR8D @0x08D;
+"536
+[v _SFR8E `Vuc ~T0 @X0 1 e@142 ]
+[; ;FT60F01X.h: 536: volatile unsigned char SFR8E @0x08E;
+"537
+[v _SFR8F `Vuc ~T0 @X0 1 e@143 ]
+[; ;FT60F01X.h: 537: volatile unsigned char SFR8F @0x08F;
+"539
+[v _SFR90 `Vuc ~T0 @X0 1 e@144 ]
+[; ;FT60F01X.h: 539: volatile unsigned char SFR90 @0x090;
+"540
+[v _SFR91 `Vuc ~T0 @X0 1 e@145 ]
+[; ;FT60F01X.h: 540: volatile unsigned char SFR91 @0x091;
+"541
+[v _SFR92 `Vuc ~T0 @X0 1 e@146 ]
+[; ;FT60F01X.h: 541: volatile unsigned char SFR92 @0x092;
+"542
+[v _SFR93 `Vuc ~T0 @X0 1 e@147 ]
+[; ;FT60F01X.h: 542: volatile unsigned char SFR93 @0x093;
+"543
+[v _SFR94 `Vuc ~T0 @X0 1 e@148 ]
+[; ;FT60F01X.h: 543: volatile unsigned char SFR94 @0x094;
+"544
+[v _SFR95 `Vuc ~T0 @X0 1 e@149 ]
+[; ;FT60F01X.h: 544: volatile unsigned char SFR95 @0x095;
+"545
+[v _SFR96 `Vuc ~T0 @X0 1 e@150 ]
+[; ;FT60F01X.h: 545: volatile unsigned char SFR96 @0x096;
+"546
+[v _SFR97 `Vuc ~T0 @X0 1 e@151 ]
+[; ;FT60F01X.h: 546: volatile unsigned char SFR97 @0x097;
+"547
+[v _SFR98 `Vuc ~T0 @X0 1 e@152 ]
+[; ;FT60F01X.h: 547: volatile unsigned char SFR98 @0x098;
+"548
+[v _SFR99 `Vuc ~T0 @X0 1 e@153 ]
+[; ;FT60F01X.h: 548: volatile unsigned char SFR99 @0x099;
+"549
+[v _SFR9A `Vuc ~T0 @X0 1 e@154 ]
+[; ;FT60F01X.h: 549: volatile unsigned char SFR9A @0x09A;
+"550
+[v _SFR9B `Vuc ~T0 @X0 1 e@155 ]
+[; ;FT60F01X.h: 550: volatile unsigned char SFR9B @0x09B;
+"551
+[v _SFR9C `Vuc ~T0 @X0 1 e@156 ]
+[; ;FT60F01X.h: 551: volatile unsigned char SFR9C @0x09C;
+"552
+[v _SFR9D `Vuc ~T0 @X0 1 e@157 ]
+[; ;FT60F01X.h: 552: volatile unsigned char SFR9D @0x09D;
+"553
+[v _SFR9E `Vuc ~T0 @X0 1 e@158 ]
+[; ;FT60F01X.h: 553: volatile unsigned char SFR9E @0x09E;
+"554
+[v _SFR9F `Vuc ~T0 @X0 1 e@159 ]
+[; ;FT60F01X.h: 554: volatile unsigned char SFR9F @0x09F;
+[; ;SYSCFG.h: 31: extern void __nop(void);
+[; ;SYSCFG.h: 79: extern unsigned int flash_read(unsigned short addr);
+[; ;eeprom_routines.h: 41: extern void eeprom_write(unsigned char addr, unsigned char value);
+[; ;eeprom_routines.h: 42: extern unsigned char eeprom_read(unsigned char addr);
+[; ;eeprom_routines.h: 43: extern void eecpymem(volatile unsigned char *to, __eeprom unsigned char *from, unsigned char size);
+[; ;eeprom_routines.h: 44: extern void memcpyee(__eeprom unsigned char *to, const unsigned char *from, unsigned char size);
+[; ;SYSCFG.h: 153: extern __nonreentrant void _delay(unsigned long);
+[; ;SYSCFG.h: 175: extern unsigned char __resetbits;
+[; ;SYSCFG.h: 176: extern __bit __powerdown;
+[; ;SYSCFG.h: 177: extern __bit __timeout;
+"28 remote-38k-6key-RGB.C
+[v _ReadAPin `i ~T0 @X0 1 e ]
+[v _R `i ~T0 @X0 1 e ]
+[i _R
+-> 20 `i
+]
+[v _G `i ~T0 @X0 1 e ]
+[i _G
+-> 20 `i
+]
+[v _B `i ~T0 @X0 1 e ]
+[i _B
+-> 20 `i
+]
+[; ;remote-38k-6key-RGB.C: 28: int ReadAPin , R=20 , G=20, B=20 ;
+"30
+[v _ir_status `uc ~T0 @X0 1 e ]
+[v _ir_timer `uc ~T0 @X0 1 e ]
+[v _Counter `uc ~T0 @X0 1 e ]
+[v _Set `uc ~T0 @X0 1 e ]
+[i _Set
+-> -> 1 `i `uc
+]
+[v _mode `uc ~T0 @X0 1 e ]
+[v _re `uc ~T0 @X0 1 e ]
+[v _repeat `uc ~T0 @X0 1 e ]
+[v _Counter_On_set `uc ~T0 @X0 1 e ]
+[i _Counter_On_set
+-> -> 40 `i `uc
+]
+[v _Counter_On `uc ~T0 @X0 1 e ]
+[i _Counter_On
+-> -> 40 `i `uc
+]
+[v _s `uc ~T0 @X0 1 e ]
+[v _m `uc ~T0 @X0 1 e ]
+[v _h `uc ~T0 @X0 1 e ]
+[v _CountINT `uc ~T0 @X0 1 e ]
+[v _RGB `uc ~T0 @X0 1 e ]
+[v _timer `uc ~T0 @X0 1 e ]
+[v _one `uc ~T0 @X0 1 e ]
+[v _modetime `uc ~T0 @X0 1 e ]
+[v _countz `uc ~T0 @X0 1 e ]
+[v _Rq `uc ~T0 @X0 1 e ]
+[v _Gq `uc ~T0 @X0 1 e ]
+[v _Bq `uc ~T0 @X0 1 e ]
+[; ;remote-38k-6key-RGB.C: 30: unsigned char ir_status , ir_timer , Counter ,Set=1, mode ,re , repeat , Counter_On_set=40 , Counter_On=40,s,m,h,CountINT ,RGB , timer , one , modetime,countz,Rq,Gq,Bq;
+"32
+[v _IRbitNum `uc ~T0 @X0 1 e ]
+[i _IRbitNum
+-> -> 0 `i `uc
+]
+[; ;remote-38k-6key-RGB.C: 32: unsigned char IRbitNum = 0;
+"33
+[v _IRbitTime `uc ~T0 @X0 1 e ]
+[i _IRbitTime
+-> -> 0 `i `uc
+]
+[; ;remote-38k-6key-RGB.C: 33: unsigned char IRbitTime = 0;
+"34
+[v _IRDataTimer `uc ~T0 @X0 -> 4 `i e ]
+[; ;remote-38k-6key-RGB.C: 34: unsigned char IRDataTimer[4];
+"35
+[v _bitdata `uc ~T0 @X0 1 e ]
+[i _bitdata
+-> -> 1 `i `uc
+]
+[; ;remote-38k-6key-RGB.C: 35: unsigned char bitdata=0x01;
+"36
+[v _ReceiveFinish `uc ~T0 @X0 1 e ]
+[i _ReceiveFinish
+-> -> 0 `i `uc
+]
+[; ;remote-38k-6key-RGB.C: 36: unsigned char ReceiveFinish = 0;
+"39
+[v _DelayUs `(v ~T0 @X0 1 ef1`uc ]
+"40
+{
+[; ;remote-38k-6key-RGB.C: 39: void DelayUs(unsigned char Time)
+[; ;remote-38k-6key-RGB.C: 40: {
+[e :U _DelayUs ]
+"39
+[v _Time `uc ~T0 @X0 1 r1 ]
+"40
+[f ]
+"41
+[v _a `uc ~T0 @X0 1 a ]
+[; ;remote-38k-6key-RGB.C: 41: unsigned char a;
+[; ;remote-38k-6key-RGB.C: 42: for(a=0;a<Time;a++)
+"42
+{
+[e = _a -> -> 0 `i `uc ]
+[e $U 49  ]
+"43
+[e :U 46 ]
+[; ;remote-38k-6key-RGB.C: 43: {
+{
+[; ;remote-38k-6key-RGB.C: 44: __nop();
+"44
+[e ( ___nop ..  ]
+"45
+}
+"42
+[e ++ _a -> -> 1 `i `uc ]
+[e :U 49 ]
+[e $ < -> _a `i -> _Time `i 46  ]
+[e :U 47 ]
+"45
+}
+[; ;remote-38k-6key-RGB.C: 45: }
+[; ;remote-38k-6key-RGB.C: 46: }
+"46
+[e :UE 45 ]
+}
+"49
+[v _DelayMs `(v ~T0 @X0 1 ef1`uc ]
+"50
+{
+[; ;remote-38k-6key-RGB.C: 49: void DelayMs(unsigned char Time)
+[; ;remote-38k-6key-RGB.C: 50: {
+[e :U _DelayMs ]
+"49
+[v _Time `uc ~T0 @X0 1 r1 ]
+"50
+[f ]
+"51
+[v _a `uc ~T0 @X0 1 a ]
+[v _b `uc ~T0 @X0 1 a ]
+[; ;remote-38k-6key-RGB.C: 51: unsigned char a,b;
+[; ;remote-38k-6key-RGB.C: 52: for(a=0;a<Time;a++)
+"52
+{
+[e = _a -> -> 0 `i `uc ]
+[e $U 54  ]
+"53
+[e :U 51 ]
+[; ;remote-38k-6key-RGB.C: 53: {
+{
+[; ;remote-38k-6key-RGB.C: 54: for(b=0;b<5;b++)
+"54
+{
+[e = _b -> -> 0 `i `uc ]
+[e $ < -> _b `i -> 5 `i 55  ]
+[e $U 56  ]
+"55
+[e :U 55 ]
+[; ;remote-38k-6key-RGB.C: 55: {
+{
+[; ;remote-38k-6key-RGB.C: 56: DelayUs(98);
+"56
+[e ( _DelayUs (1 -> -> 98 `i `uc ]
+"57
+}
+"54
+[e ++ _b -> -> 1 `i `uc ]
+[e $ < -> _b `i -> 5 `i 55  ]
+[e :U 56 ]
+"57
+}
+"58
+}
+"52
+[e ++ _a -> -> 1 `i `uc ]
+[e :U 54 ]
+[e $ < -> _a `i -> _Time `i 51  ]
+[e :U 52 ]
+"58
+}
+[; ;remote-38k-6key-RGB.C: 57: }
+[; ;remote-38k-6key-RGB.C: 58: }
+[; ;remote-38k-6key-RGB.C: 59: }
+"59
+[e :UE 50 ]
+}
+"62
+[v _DelayS `(v ~T0 @X0 1 ef1`uc ]
+"63
+{
+[; ;remote-38k-6key-RGB.C: 62: void DelayS(unsigned char Time)
+[; ;remote-38k-6key-RGB.C: 63: {
+[e :U _DelayS ]
+"62
+[v _Time `uc ~T0 @X0 1 r1 ]
+"63
+[f ]
+"64
+[v _a `uc ~T0 @X0 1 a ]
+[v _b `uc ~T0 @X0 1 a ]
+[; ;remote-38k-6key-RGB.C: 64: unsigned char a,b;
+[; ;remote-38k-6key-RGB.C: 65: for(a=0;a<Time;a++)
+"65
+{
+[e = _a -> -> 0 `i `uc ]
+[e $U 62  ]
+"66
+[e :U 59 ]
+[; ;remote-38k-6key-RGB.C: 66: {
+{
+[; ;remote-38k-6key-RGB.C: 67: for(b=0;b<10;b++)
+"67
+{
+[e = _b -> -> 0 `i `uc ]
+[e $ < -> _b `i -> 10 `i 63  ]
+[e $U 64  ]
+"68
+[e :U 63 ]
+[; ;remote-38k-6key-RGB.C: 68: {
+{
+[; ;remote-38k-6key-RGB.C: 69: DelayMs(100);
+"69
+[e ( _DelayMs (1 -> -> 100 `i `uc ]
+"70
+}
+"67
+[e ++ _b -> -> 1 `i `uc ]
+[e $ < -> _b `i -> 10 `i 63  ]
+[e :U 64 ]
+"70
+}
+"71
+}
+"65
+[e ++ _a -> -> 1 `i `uc ]
+[e :U 62 ]
+[e $ < -> _a `i -> _Time `i 59  ]
+[e :U 60 ]
+"71
+}
+[; ;remote-38k-6key-RGB.C: 70: }
+[; ;remote-38k-6key-RGB.C: 71: }
+[; ;remote-38k-6key-RGB.C: 72: }
+"72
+[e :UE 58 ]
+}
+[v $root$_ISR `(v ~T0 @X0 0 e ]
+[v F585 `(v ~T0 @X0 1 tf ]
+"74
+[v _ISR `IF585 ~T0 @X0 1 e ]
+"75
+{
+[; ;remote-38k-6key-RGB.C: 74: void interrupt ISR(void)
+[; ;remote-38k-6key-RGB.C: 75: {
+[e :U _ISR ]
+[f ]
+[; ;remote-38k-6key-RGB.C: 147: if(TMR2IE && TMR2IF)
+"147
+[e $ ! && _TMR2IE _TMR2IF 67  ]
+[; ;remote-38k-6key-RGB.C: 148: {
+"148
+{
+[; ;remote-38k-6key-RGB.C: 150: TMR2IF = 0;
+"150
+[e = _TMR2IF -> -> 0 `i `b ]
+[; ;remote-38k-6key-RGB.C: 151: TMR2IE = 1;
+"151
+[e = _TMR2IE -> -> 1 `i `b ]
+[; ;remote-38k-6key-RGB.C: 158: if(PA1==0){
+"158
+[e $ ! == -> _PA1 `i -> 0 `i 68  ]
+{
+[; ;remote-38k-6key-RGB.C: 159: PA2=~PA2;
+"159
+[e = _PA2 -> ~ -> _PA2 `ui `b ]
+[; ;remote-38k-6key-RGB.C: 160: countz++;
+"160
+[e ++ _countz -> -> 1 `i `uc ]
+"162
+}
+[; ;remote-38k-6key-RGB.C: 162: }else{
+[e $U 69  ]
+[e :U 68 ]
+{
+[; ;remote-38k-6key-RGB.C: 163: countz=0;
+"163
+[e = _countz -> -> 0 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 164: PA2=0;
+"164
+[e = _PA2 -> -> 0 `i `b ]
+"165
+}
+[e :U 69 ]
+[; ;remote-38k-6key-RGB.C: 165: }
+[; ;remote-38k-6key-RGB.C: 171: if(countz==2){
+"171
+[e $ ! == -> _countz `i -> 2 `i 70  ]
+{
+[; ;remote-38k-6key-RGB.C: 173: if(Counter>150){
+"173
+[e $ ! > -> _Counter `i -> 150 `i 71  ]
+{
+[; ;remote-38k-6key-RGB.C: 175: Counter=0;
+"175
+[e = _Counter -> -> 0 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 177: PA4=0;
+"177
+[e = _PA4 -> -> 0 `i `b ]
+[; ;remote-38k-6key-RGB.C: 178: PA5=0;
+"178
+[e = _PA5 -> -> 0 `i `b ]
+[; ;remote-38k-6key-RGB.C: 179: PA0=0;
+"179
+[e = _PA0 -> -> 0 `i `b ]
+"180
+}
+[e :U 71 ]
+[; ;remote-38k-6key-RGB.C: 180: }
+[; ;remote-38k-6key-RGB.C: 181: Rq=0;
+"181
+[e = _Rq -> -> 0 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 182: Gq=0;
+"182
+[e = _Gq -> -> 0 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 183: Bq=0;
+"183
+[e = _Bq -> -> 0 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 185: if(Set==1){
+"185
+[e $ ! == -> _Set `i -> 1 `i 72  ]
+{
+[; ;remote-38k-6key-RGB.C: 186: if(Counter_On>Counter_On_set){
+"186
+[e $ ! > -> _Counter_On `i -> _Counter_On_set `i 73  ]
+{
+[; ;remote-38k-6key-RGB.C: 187: Counter_On=Counter_On-1;
+"187
+[e = _Counter_On -> - -> _Counter_On `i -> 1 `i `uc ]
+"188
+}
+[; ;remote-38k-6key-RGB.C: 188: }else{
+[e $U 74  ]
+[e :U 73 ]
+{
+[; ;remote-38k-6key-RGB.C: 189: Counter_On=Counter_On_set;
+"189
+[e = _Counter_On _Counter_On_set ]
+"190
+}
+[e :U 74 ]
+"191
+}
+[e :U 72 ]
+[; ;remote-38k-6key-RGB.C: 190: }
+[; ;remote-38k-6key-RGB.C: 191: }
+[; ;remote-38k-6key-RGB.C: 193: if(Set==0 && Counter_On<=160)
+"193
+[e $ ! && == -> _Set `i -> 0 `i <= -> _Counter_On `i -> 160 `i 75  ]
+[; ;remote-38k-6key-RGB.C: 194: {
+"194
+{
+[; ;remote-38k-6key-RGB.C: 195: Counter_On=Counter_On+2;
+"195
+[e = _Counter_On -> + -> _Counter_On `i -> 2 `i `uc ]
+"196
+}
+[e :U 75 ]
+"198
+}
+[e :U 70 ]
+[; ;remote-38k-6key-RGB.C: 196: }
+[; ;remote-38k-6key-RGB.C: 198: }
+[; ;remote-38k-6key-RGB.C: 203: Counter++;
+"203
+[e ++ _Counter -> -> 1 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 205: if(Counter>=Counter_On)
+"205
+[e $ ! >= -> _Counter `i -> _Counter_On `i 76  ]
+[; ;remote-38k-6key-RGB.C: 206: {
+"206
+{
+[; ;remote-38k-6key-RGB.C: 208: if(Rq==1)PA4=0,Rq=2;
+"208
+[e $ ! == -> _Rq `i -> 1 `i 77  ]
+[e ; -> = _PA4 -> -> 0 `i `b `i = _Rq -> -> 2 `i `uc ]
+[e :U 77 ]
+[; ;remote-38k-6key-RGB.C: 209: if(Gq==1)PA5=0,Gq=2;
+"209
+[e $ ! == -> _Gq `i -> 1 `i 78  ]
+[e ; -> = _PA5 -> -> 0 `i `b `i = _Gq -> -> 2 `i `uc ]
+[e :U 78 ]
+[; ;remote-38k-6key-RGB.C: 210: if(Bq==1)PA0=0,Bq=2;
+"210
+[e $ ! == -> _Bq `i -> 1 `i 79  ]
+[e ; -> = _PA0 -> -> 0 `i `b `i = _Bq -> -> 2 `i `uc ]
+[e :U 79 ]
+[; ;remote-38k-6key-RGB.C: 215: if(Counter>=R && Rq==0){
+"215
+[e $ ! && >= -> _Counter `i _R == -> _Rq `i -> 0 `i 80  ]
+{
+[; ;remote-38k-6key-RGB.C: 216: Rq=1;
+"216
+[e = _Rq -> -> 1 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 217: PA4=1;
+"217
+[e = _PA4 -> -> 1 `i `b ]
+"218
+}
+[e :U 80 ]
+[; ;remote-38k-6key-RGB.C: 218: }
+[; ;remote-38k-6key-RGB.C: 220: if(Counter>=G && Gq==0){
+"220
+[e $ ! && >= -> _Counter `i _G == -> _Gq `i -> 0 `i 81  ]
+{
+[; ;remote-38k-6key-RGB.C: 221: Gq=1;
+"221
+[e = _Gq -> -> 1 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 222: PA5=1;
+"222
+[e = _PA5 -> -> 1 `i `b ]
+"223
+}
+[e :U 81 ]
+[; ;remote-38k-6key-RGB.C: 223: }
+[; ;remote-38k-6key-RGB.C: 225: if(Counter>=B && Bq==0){
+"225
+[e $ ! && >= -> _Counter `i _B == -> _Bq `i -> 0 `i 82  ]
+{
+[; ;remote-38k-6key-RGB.C: 226: Bq=1;
+"226
+[e = _Bq -> -> 1 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 227: PA0=1;
+"227
+[e = _PA0 -> -> 1 `i `b ]
+"228
+}
+[e :U 82 ]
+"231
+}
+[e :U 76 ]
+[; ;remote-38k-6key-RGB.C: 228: }
+[; ;remote-38k-6key-RGB.C: 231: }
+[; ;remote-38k-6key-RGB.C: 239: if(ir_timer){
+"239
+[e $ ! != -> _ir_timer `i -> -> -> 0 `i `uc `i 83  ]
+{
+[; ;remote-38k-6key-RGB.C: 240: IRbitTime++;
+"240
+[e ++ _IRbitTime -> -> 1 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 241: if(IRbitTime > 1600)
+"241
+[e $ ! > -> _IRbitTime `i -> 1600 `i 84  ]
+[; ;remote-38k-6key-RGB.C: 242: {
+"242
+{
+[; ;remote-38k-6key-RGB.C: 243: ir_timer = 0;
+"243
+[e = _ir_timer -> -> 0 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 244: IRbitTime = 0;
+"244
+[e = _IRbitTime -> -> 0 `i `uc ]
+"245
+}
+[e :U 84 ]
+"246
+}
+[e :U 83 ]
+[; ;remote-38k-6key-RGB.C: 245: }
+[; ;remote-38k-6key-RGB.C: 246: }
+[; ;remote-38k-6key-RGB.C: 248: if(ir_status != PA3){
+"248
+[e $ ! != -> _ir_status `i -> _PA3 `i 85  ]
+{
+[; ;remote-38k-6key-RGB.C: 249: ir_status=PA3;
+"249
+[e = _ir_status -> -> _PA3 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 251: if(ir_status==0){
+"251
+[e $ ! == -> _ir_status `i -> 0 `i 86  ]
+{
+[; ;remote-38k-6key-RGB.C: 253: ir_timer = 1;
+"253
+[e = _ir_timer -> -> 1 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 255: if(IRbitTime > 190)
+"255
+[e $ ! > -> _IRbitTime `i -> 190 `i 87  ]
+[; ;remote-38k-6key-RGB.C: 256: {
+"256
+{
+[; ;remote-38k-6key-RGB.C: 257: IRDataTimer[0] = 0;
+"257
+[e = *U + &U _IRDataTimer * -> -> -> 0 `i `ui `ux -> -> # *U &U _IRDataTimer `ui `ux -> -> 0 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 258: IRDataTimer[1] = 0;
+"258
+[e = *U + &U _IRDataTimer * -> -> -> 1 `i `ui `ux -> -> # *U &U _IRDataTimer `ui `ux -> -> 0 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 259: IRDataTimer[2] = 0;
+"259
+[e = *U + &U _IRDataTimer * -> -> -> 2 `i `ui `ux -> -> # *U &U _IRDataTimer `ui `ux -> -> 0 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 260: IRDataTimer[3] = 0;
+"260
+[e = *U + &U _IRDataTimer * -> -> -> 3 `i `ui `ux -> -> # *U &U _IRDataTimer `ui `ux -> -> 0 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 261: IRbitNum = 0;
+"261
+[e = _IRbitNum -> -> 0 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 262: bitdata = 0x00;
+"262
+[e = _bitdata -> -> 0 `i `uc ]
+"263
+}
+[; ;remote-38k-6key-RGB.C: 263: }
+[e $U 88  ]
+"264
+[e :U 87 ]
+[; ;remote-38k-6key-RGB.C: 264: else if(IRbitTime > 150)
+[e $ ! > -> _IRbitTime `i -> 150 `i 89  ]
+[; ;remote-38k-6key-RGB.C: 265: {
+"265
+{
+[; ;remote-38k-6key-RGB.C: 266: if(ReceiveFinish==0)repeat=1;
+"266
+[e $ ! == -> _ReceiveFinish `i -> 0 `i 90  ]
+[e = _repeat -> -> 1 `i `uc ]
+[e :U 90 ]
+"267
+}
+[; ;remote-38k-6key-RGB.C: 267: }
+[e $U 91  ]
+"268
+[e :U 89 ]
+[; ;remote-38k-6key-RGB.C: 268: else if(IRbitTime > 30)
+[e $ ! > -> _IRbitTime `i -> 30 `i 92  ]
+[; ;remote-38k-6key-RGB.C: 269: {
+"269
+{
+[; ;remote-38k-6key-RGB.C: 270: IRDataTimer[IRbitNum-1] |= bitdata;
+"270
+[e =| *U + &U _IRDataTimer * -> -> - -> _IRbitNum `i -> 1 `i `ui `ux -> -> # *U &U _IRDataTimer `ui `ux _bitdata ]
+"271
+}
+[e :U 92 ]
+"273
+[e :U 91 ]
+[e :U 88 ]
+[; ;remote-38k-6key-RGB.C: 271: }
+[; ;remote-38k-6key-RGB.C: 273: IRbitTime = 0;
+[e = _IRbitTime -> -> 0 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 274: bitdata<<=1;
+"274
+[e =<< _bitdata -> 1 `i ]
+[; ;remote-38k-6key-RGB.C: 275: if(bitdata == 0)
+"275
+[e $ ! == -> _bitdata `i -> 0 `i 93  ]
+[; ;remote-38k-6key-RGB.C: 276: {
+"276
+{
+[; ;remote-38k-6key-RGB.C: 277: bitdata = 0x01;
+"277
+[e = _bitdata -> -> 1 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 278: IRbitNum++;
+"278
+[e ++ _IRbitNum -> -> 1 `i `uc ]
+"279
+}
+[e :U 93 ]
+[; ;remote-38k-6key-RGB.C: 279: }
+[; ;remote-38k-6key-RGB.C: 280: if(IRbitNum > 4)
+"280
+[e $ ! > -> _IRbitNum `i -> 4 `i 94  ]
+[; ;remote-38k-6key-RGB.C: 281: {
+"281
+{
+[; ;remote-38k-6key-RGB.C: 282: IRbitNum = 0;
+"282
+[e = _IRbitNum -> -> 0 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 283: ir_timer = 0;
+"283
+[e = _ir_timer -> -> 0 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 284: ReceiveFinish = 1;
+"284
+[e = _ReceiveFinish -> -> 1 `i `uc ]
+"285
+}
+[e :U 94 ]
+"287
+}
+[e :U 86 ]
+"288
+}
+[e :U 85 ]
+"293
+}
+[e :U 67 ]
+[; ;remote-38k-6key-RGB.C: 285: }
+[; ;remote-38k-6key-RGB.C: 287: }
+[; ;remote-38k-6key-RGB.C: 288: }
+[; ;remote-38k-6key-RGB.C: 293: }
+[; ;remote-38k-6key-RGB.C: 296: }
+"296
+[e :UE 66 ]
+}
+"300
+[v _POWER_INITIAL `(v ~T0 @X0 1 ef ]
+"301
+{
+[; ;remote-38k-6key-RGB.C: 300: void POWER_INITIAL (void)
+[; ;remote-38k-6key-RGB.C: 301: {
+[e :U _POWER_INITIAL ]
+[f ]
+[; ;remote-38k-6key-RGB.C: 302: OSCCON = 0B11110000;
+"302
+[e = _OSCCON -> -> 240 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 304: INTCON = 0;
+"304
+[e = _INTCON -> -> 0 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 305: OPTION = 0B00001000;
+"305
+[e = _OPTION -> -> 8 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 307: PORTA = 0B00000000;
+"307
+[e = _PORTA -> -> 0 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 308: TRISA = 0B00001010;
+"308
+[e = _TRISA -> -> 10 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 310: WPUA = 0B00000010;
+"310
+[e = _WPUA -> -> 2 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 312: MSCKCON = 0B00000000;
+"312
+[e = _MSCKCON -> -> 0 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 313: }
+"313
+[e :UE 95 ]
+}
+"316
+[v _PA1_Level_Change_INITIAL `(v ~T0 @X0 1 ef ]
+"317
+{
+[; ;remote-38k-6key-RGB.C: 316: void PA1_Level_Change_INITIAL(void)
+[; ;remote-38k-6key-RGB.C: 317: {
+[e :U _PA1_Level_Change_INITIAL ]
+[f ]
+[; ;remote-38k-6key-RGB.C: 318: TRISA1 =1;
+"318
+[e = _TRISA1 -> -> 1 `i `b ]
+[; ;remote-38k-6key-RGB.C: 319: ReadAPin = PORTA;
+"319
+[e = _ReadAPin -> _PORTA `i ]
+[; ;remote-38k-6key-RGB.C: 320: PAIF =0;
+"320
+[e = _PAIF -> -> 0 `i `b ]
+[; ;remote-38k-6key-RGB.C: 321: IOCA1 =1;
+"321
+[e = _IOCA1 -> -> 1 `i `b ]
+[; ;remote-38k-6key-RGB.C: 322: INTEDG=0;
+"322
+[e = _INTEDG -> -> 0 `i `b ]
+[; ;remote-38k-6key-RGB.C: 323: }
+"323
+[e :UE 96 ]
+}
+"326
+[v _TIMER2_INITIAL `(v ~T0 @X0 1 ef ]
+"327
+{
+[; ;remote-38k-6key-RGB.C: 326: void TIMER2_INITIAL (void)
+[; ;remote-38k-6key-RGB.C: 327: {
+[e :U _TIMER2_INITIAL ]
+[f ]
+[; ;remote-38k-6key-RGB.C: 328: T2CON = 0B00000001;
+"328
+[e = _T2CON -> -> 1 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 330: TMR2 = 0;
+"330
+[e = _TMR2 -> -> 0 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 331: PR2 = 63;
+"331
+[e = _PR2 -> -> 63 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 332: TMR2IF = 0;
+"332
+[e = _TMR2IF -> -> 0 `i `b ]
+[; ;remote-38k-6key-RGB.C: 334: TMR2ON = 1;
+"334
+[e = _TMR2ON -> -> 1 `i `b ]
+[; ;remote-38k-6key-RGB.C: 335: PEIE=1;
+"335
+[e = _PEIE -> -> 1 `i `b ]
+[; ;remote-38k-6key-RGB.C: 336: GIE = 1;
+"336
+[e = _GIE -> -> 1 `i `b ]
+[; ;remote-38k-6key-RGB.C: 337: }
+"337
+[e :UE 97 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"342
+[v _main `(v ~T0 @X0 1 ef ]
+"343
+{
+[; ;remote-38k-6key-RGB.C: 342: void main()
+[; ;remote-38k-6key-RGB.C: 343: {
+[e :U _main ]
+[f ]
+"344
+[v _rdata1 `uc ~T0 @X0 1 a ]
+[v _rdata2 `uc ~T0 @X0 1 a ]
+[; ;remote-38k-6key-RGB.C: 344: unsigned char rdata1,rdata2;
+[; ;remote-38k-6key-RGB.C: 346: POWER_INITIAL();
+"346
+[e ( _POWER_INITIAL ..  ]
+[; ;remote-38k-6key-RGB.C: 349: TIMER2_INITIAL();
+"349
+[e ( _TIMER2_INITIAL ..  ]
+[; ;remote-38k-6key-RGB.C: 351: GIE = 1;
+"351
+[e = _GIE -> -> 1 `i `b ]
+[; ;remote-38k-6key-RGB.C: 353: PAIE =1;
+"353
+[e = _PAIE -> -> 1 `i `b ]
+[; ;remote-38k-6key-RGB.C: 354: TMR2IE = 1;
+"354
+[e = _TMR2IE -> -> 1 `i `b ]
+[; ;remote-38k-6key-RGB.C: 356: while(1)
+"356
+[e :U 100 ]
+[; ;remote-38k-6key-RGB.C: 357: {
+"357
+{
+[; ;remote-38k-6key-RGB.C: 359: if(h==timer && h!=0){
+"359
+[e $ ! && == -> _h `i -> _timer `i != -> _h `i -> 0 `i 102  ]
+{
+[; ;remote-38k-6key-RGB.C: 360: Set=0;
+"360
+[e = _Set -> -> 0 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 361: m=0;
+"361
+[e = _m -> -> 0 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 362: h=0;
+"362
+[e = _h -> -> 0 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 363: timer=0;
+"363
+[e = _timer -> -> 0 `i `uc ]
+"364
+}
+[e :U 102 ]
+[; ;remote-38k-6key-RGB.C: 364: }
+[; ;remote-38k-6key-RGB.C: 368: if(mode==2 || mode==1 ){
+"368
+[e $ ! || == -> _mode `i -> 2 `i == -> _mode `i -> 1 `i 103  ]
+{
+[; ;remote-38k-6key-RGB.C: 369: if(Counter%modetime==0){
+"369
+[e $ ! == % -> _Counter `i -> _modetime `i -> 0 `i 104  ]
+{
+[; ;remote-38k-6key-RGB.C: 371: if(RGB==0 ){
+"371
+[e $ ! == -> _RGB `i -> 0 `i 105  ]
+{
+[; ;remote-38k-6key-RGB.C: 372: G=G-1;
+"372
+[e = _G - _G -> 1 `i ]
+[; ;remote-38k-6key-RGB.C: 373: if(G<=0)RGB=1;
+"373
+[e $ ! <= _G -> 0 `i 106  ]
+[e = _RGB -> -> 1 `i `uc ]
+[e :U 106 ]
+"374
+}
+[e :U 105 ]
+[; ;remote-38k-6key-RGB.C: 374: }
+[; ;remote-38k-6key-RGB.C: 375: if(RGB==1 ){
+"375
+[e $ ! == -> _RGB `i -> 1 `i 107  ]
+{
+[; ;remote-38k-6key-RGB.C: 376: B=B+1;
+"376
+[e = _B + _B -> 1 `i ]
+[; ;remote-38k-6key-RGB.C: 377: if(B>=160)RGB=2;
+"377
+[e $ ! >= _B -> 160 `i 108  ]
+[e = _RGB -> -> 2 `i `uc ]
+[e :U 108 ]
+"378
+}
+[e :U 107 ]
+[; ;remote-38k-6key-RGB.C: 378: }
+[; ;remote-38k-6key-RGB.C: 379: if(RGB==2 ){
+"379
+[e $ ! == -> _RGB `i -> 2 `i 109  ]
+{
+[; ;remote-38k-6key-RGB.C: 380: R=R-1;
+"380
+[e = _R - _R -> 1 `i ]
+[; ;remote-38k-6key-RGB.C: 381: if(R<=0)RGB=3;
+"381
+[e $ ! <= _R -> 0 `i 110  ]
+[e = _RGB -> -> 3 `i `uc ]
+[e :U 110 ]
+"382
+}
+[e :U 109 ]
+[; ;remote-38k-6key-RGB.C: 382: }
+[; ;remote-38k-6key-RGB.C: 383: if(RGB==3 ){
+"383
+[e $ ! == -> _RGB `i -> 3 `i 111  ]
+{
+[; ;remote-38k-6key-RGB.C: 384: G=G+1;
+"384
+[e = _G + _G -> 1 `i ]
+[; ;remote-38k-6key-RGB.C: 385: if(G>=160)RGB=4;
+"385
+[e $ ! >= _G -> 160 `i 112  ]
+[e = _RGB -> -> 4 `i `uc ]
+[e :U 112 ]
+"386
+}
+[e :U 111 ]
+[; ;remote-38k-6key-RGB.C: 386: }
+[; ;remote-38k-6key-RGB.C: 387: if(RGB==4 ){
+"387
+[e $ ! == -> _RGB `i -> 4 `i 113  ]
+{
+[; ;remote-38k-6key-RGB.C: 388: B=B-1;
+"388
+[e = _B - _B -> 1 `i ]
+[; ;remote-38k-6key-RGB.C: 389: if(B<=0)RGB=5;
+"389
+[e $ ! <= _B -> 0 `i 114  ]
+[e = _RGB -> -> 5 `i `uc ]
+[e :U 114 ]
+"390
+}
+[e :U 113 ]
+[; ;remote-38k-6key-RGB.C: 390: }
+[; ;remote-38k-6key-RGB.C: 391: if(RGB==5 ){
+"391
+[e $ ! == -> _RGB `i -> 5 `i 115  ]
+{
+[; ;remote-38k-6key-RGB.C: 392: G=G-1;
+"392
+[e = _G - _G -> 1 `i ]
+[; ;remote-38k-6key-RGB.C: 393: if(G<=0)RGB=6;
+"393
+[e $ ! <= _G -> 0 `i 116  ]
+[e = _RGB -> -> 6 `i `uc ]
+[e :U 116 ]
+"394
+}
+[e :U 115 ]
+[; ;remote-38k-6key-RGB.C: 394: }
+[; ;remote-38k-6key-RGB.C: 395: if(RGB==6 ){
+"395
+[e $ ! == -> _RGB `i -> 6 `i 117  ]
+{
+[; ;remote-38k-6key-RGB.C: 396: G=G+1;
+"396
+[e = _G + _G -> 1 `i ]
+[; ;remote-38k-6key-RGB.C: 397: R=R+1;
+"397
+[e = _R + _R -> 1 `i ]
+[; ;remote-38k-6key-RGB.C: 398: if(G>=160 && R>=160 )RGB=0;
+"398
+[e $ ! && >= _G -> 160 `i >= _R -> 160 `i 118  ]
+[e = _RGB -> -> 0 `i `uc ]
+[e :U 118 ]
+"399
+}
+[e :U 117 ]
+"400
+}
+[e :U 104 ]
+"402
+}
+[e :U 103 ]
+[; ;remote-38k-6key-RGB.C: 399: }
+[; ;remote-38k-6key-RGB.C: 400: }
+[; ;remote-38k-6key-RGB.C: 402: }
+[; ;remote-38k-6key-RGB.C: 405: if(mode==3){
+"405
+[e $ ! == -> _mode `i -> 3 `i 119  ]
+{
+[; ;remote-38k-6key-RGB.C: 406: if((CountINT==50||CountINT==0)&&re==0)re=1,RGB++;
+"406
+[e $ ! && || == -> _CountINT `i -> 50 `i == -> _CountINT `i -> 0 `i == -> _re `i -> 0 `i 120  ]
+[e ; = _re -> -> 1 `i `uc ++ _RGB -> -> 1 `i `uc ]
+[e :U 120 ]
+[; ;remote-38k-6key-RGB.C: 408: if(RGB==0) R=160 , G=160, B=0 ;
+"408
+[e $ ! == -> _RGB `i -> 0 `i 121  ]
+[e ; ; = _R -> 160 `i = _G -> 160 `i = _B -> 0 `i ]
+[e :U 121 ]
+[; ;remote-38k-6key-RGB.C: 409: if(RGB==1) R=160 , G=0 , B=160 ;
+"409
+[e $ ! == -> _RGB `i -> 1 `i 122  ]
+[e ; ; = _R -> 160 `i = _G -> 0 `i = _B -> 160 `i ]
+[e :U 122 ]
+[; ;remote-38k-6key-RGB.C: 410: if(RGB==2) R=0 , G=160, B=160 ;
+"410
+[e $ ! == -> _RGB `i -> 2 `i 123  ]
+[e ; ; = _R -> 0 `i = _G -> 160 `i = _B -> 160 `i ]
+[e :U 123 ]
+[; ;remote-38k-6key-RGB.C: 411: if(RGB>=3) RGB=0;
+"411
+[e $ ! >= -> _RGB `i -> 3 `i 124  ]
+[e = _RGB -> -> 0 `i `uc ]
+[e :U 124 ]
+"412
+}
+[e :U 119 ]
+[; ;remote-38k-6key-RGB.C: 412: }
+[; ;remote-38k-6key-RGB.C: 414: if(mode==4&&Set==1){
+"414
+[e $ ! && == -> _mode `i -> 4 `i == -> _Set `i -> 1 `i 125  ]
+{
+[; ;remote-38k-6key-RGB.C: 416: if(s%2==0&&re==0)re=1,RGB++;
+"416
+[e $ ! && == % -> _s `i -> 2 `i -> 0 `i == -> _re `i -> 0 `i 126  ]
+[e ; = _re -> -> 1 `i `uc ++ _RGB -> -> 1 `i `uc ]
+[e :U 126 ]
+[; ;remote-38k-6key-RGB.C: 417: if(s%2==0){
+"417
+[e $ ! == % -> _s `i -> 2 `i -> 0 `i 127  ]
+{
+[; ;remote-38k-6key-RGB.C: 418: if(CountINT%10==0)PA4=1,PA5=1,PA0=1;
+"418
+[e $ ! == % -> _CountINT `i -> 10 `i -> 0 `i 128  ]
+[e ; ; -> = _PA4 -> -> 1 `i `b `i -> = _PA5 -> -> 1 `i `b `i -> = _PA0 -> -> 1 `i `b `i ]
+[e :U 128 ]
+[; ;remote-38k-6key-RGB.C: 419: if(CountINT%10==5)R=160 , G=160 , B=160 ,PA4=0,PA5=0,PA0=0;
+"419
+[e $ ! == % -> _CountINT `i -> 10 `i -> 5 `i 129  ]
+[e ; ; ; ; ; = _R -> 160 `i = _G -> 160 `i = _B -> 160 `i -> = _PA4 -> -> 0 `i `b `i -> = _PA5 -> -> 0 `i `b `i -> = _PA0 -> -> 0 `i `b `i ]
+[e :U 129 ]
+"420
+}
+[; ;remote-38k-6key-RGB.C: 420: }else {
+[e $U 130  ]
+[e :U 127 ]
+{
+[; ;remote-38k-6key-RGB.C: 421: if(RGB==1) R=160 , G=160, B=0 ;
+"421
+[e $ ! == -> _RGB `i -> 1 `i 131  ]
+[e ; ; = _R -> 160 `i = _G -> 160 `i = _B -> 0 `i ]
+[e :U 131 ]
+[; ;remote-38k-6key-RGB.C: 422: if(RGB==2) R=160 , G=0 , B=160 ;
+"422
+[e $ ! == -> _RGB `i -> 2 `i 132  ]
+[e ; ; = _R -> 160 `i = _G -> 0 `i = _B -> 160 `i ]
+[e :U 132 ]
+[; ;remote-38k-6key-RGB.C: 423: if(RGB==3) R=0 , G=160, B=160 ;
+"423
+[e $ ! == -> _RGB `i -> 3 `i 133  ]
+[e ; ; = _R -> 0 `i = _G -> 160 `i = _B -> 160 `i ]
+[e :U 133 ]
+[; ;remote-38k-6key-RGB.C: 424: if(RGB>=3) RGB=0;
+"424
+[e $ ! >= -> _RGB `i -> 3 `i 134  ]
+[e = _RGB -> -> 0 `i `uc ]
+[e :U 134 ]
+"425
+}
+[e :U 130 ]
+"428
+}
+[e :U 125 ]
+[; ;remote-38k-6key-RGB.C: 425: }
+[; ;remote-38k-6key-RGB.C: 428: }
+[; ;remote-38k-6key-RGB.C: 430: if(mode==5&&Set==1){
+"430
+[e $ ! && == -> _mode `i -> 5 `i == -> _Set `i -> 1 `i 135  ]
+{
+[; ;remote-38k-6key-RGB.C: 432: if(s%2==0&&re==0)re=1;
+"432
+[e $ ! && == % -> _s `i -> 2 `i -> 0 `i == -> _re `i -> 0 `i 136  ]
+[e = _re -> -> 1 `i `uc ]
+[e :U 136 ]
+[; ;remote-38k-6key-RGB.C: 433: if(s%2==0){
+"433
+[e $ ! == % -> _s `i -> 2 `i -> 0 `i 137  ]
+{
+[; ;remote-38k-6key-RGB.C: 434: if(CountINT%10==0)PA4=1,PA5=1,PA0=1;
+"434
+[e $ ! == % -> _CountINT `i -> 10 `i -> 0 `i 138  ]
+[e ; ; -> = _PA4 -> -> 1 `i `b `i -> = _PA5 -> -> 1 `i `b `i -> = _PA0 -> -> 1 `i `b `i ]
+[e :U 138 ]
+[; ;remote-38k-6key-RGB.C: 435: if(CountINT%10==5)R=160 , G=160 , B=160 ,PA4=0,PA5=0,PA0=0;
+"435
+[e $ ! == % -> _CountINT `i -> 10 `i -> 5 `i 139  ]
+[e ; ; ; ; ; = _R -> 160 `i = _G -> 160 `i = _B -> 160 `i -> = _PA4 -> -> 0 `i `b `i -> = _PA5 -> -> 0 `i `b `i -> = _PA0 -> -> 0 `i `b `i ]
+[e :U 139 ]
+"436
+}
+[; ;remote-38k-6key-RGB.C: 436: }else {
+[e $U 140  ]
+[e :U 137 ]
+{
+[; ;remote-38k-6key-RGB.C: 437: R=0 , G=0, B=0;
+"437
+[e ; ; = _R -> 0 `i = _G -> 0 `i = _B -> 0 `i ]
+"438
+}
+[e :U 140 ]
+"441
+}
+[e :U 135 ]
+[; ;remote-38k-6key-RGB.C: 438: }
+[; ;remote-38k-6key-RGB.C: 441: }
+[; ;remote-38k-6key-RGB.C: 445: if(ReceiveFinish || repeat)
+"445
+[e $ ! || != -> _ReceiveFinish `i -> -> -> 0 `i `uc `i != -> _repeat `i -> -> -> 0 `i `uc `i 141  ]
+[; ;remote-38k-6key-RGB.C: 446: {
+"446
+{
+[; ;remote-38k-6key-RGB.C: 447: ReceiveFinish = 0;
+"447
+[e = _ReceiveFinish -> -> 0 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 450: rdata1 = 0xFF - IRDataTimer[0];
+"450
+[e = _rdata1 -> - -> 255 `i -> *U + &U _IRDataTimer * -> -> -> 0 `i `ui `ux -> -> # *U &U _IRDataTimer `ui `ux `i `uc ]
+[; ;remote-38k-6key-RGB.C: 451: rdata2 = 0xFF - IRDataTimer[2];
+"451
+[e = _rdata2 -> - -> 255 `i -> *U + &U _IRDataTimer * -> -> -> 2 `i `ui `ux -> -> # *U &U _IRDataTimer `ui `ux `i `uc ]
+[; ;remote-38k-6key-RGB.C: 452: if((rdata1 == IRDataTimer[1])&&(rdata2 == IRDataTimer[3]))
+"452
+[e $ ! && == -> _rdata1 `i -> *U + &U _IRDataTimer * -> -> -> 1 `i `ui `ux -> -> # *U &U _IRDataTimer `ui `ux `i == -> _rdata2 `i -> *U + &U _IRDataTimer * -> -> -> 3 `i `ui `ux -> -> # *U &U _IRDataTimer `ui `ux `i 142  ]
+[; ;remote-38k-6key-RGB.C: 453: {
+"453
+{
+[; ;remote-38k-6key-RGB.C: 456: if( rdata2==0xED && repeat==0)
+"456
+[e $ ! && == -> _rdata2 `i -> 237 `i == -> _repeat `i -> 0 `i 143  ]
+[; ;remote-38k-6key-RGB.C: 457: {
+"457
+{
+[; ;remote-38k-6key-RGB.C: 458: Set++;
+"458
+[e ++ _Set -> -> 1 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 459: if(Set==1)
+"459
+[e $ ! == -> _Set `i -> 1 `i 144  ]
+[; ;remote-38k-6key-RGB.C: 460: {
+"460
+{
+"465
+}
+[; ;remote-38k-6key-RGB.C: 465: }
+[e $U 145  ]
+"466
+[e :U 144 ]
+[; ;remote-38k-6key-RGB.C: 466: else
+[; ;remote-38k-6key-RGB.C: 467: {
+"467
+{
+[; ;remote-38k-6key-RGB.C: 471: Set=0;
+"471
+[e = _Set -> -> 0 `i `uc ]
+"473
+}
+[e :U 145 ]
+"474
+}
+[e :U 143 ]
+[; ;remote-38k-6key-RGB.C: 473: }
+[; ;remote-38k-6key-RGB.C: 474: }
+[; ;remote-38k-6key-RGB.C: 479: if(rdata1==0x7F && rdata2==0xE1 )
+"479
+[e $ ! && == -> _rdata1 `i -> 127 `i == -> _rdata2 `i -> 225 `i 146  ]
+[; ;remote-38k-6key-RGB.C: 480: {
+"480
+{
+[; ;remote-38k-6key-RGB.C: 481: mode=0;
+"481
+[e = _mode -> -> 0 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 482: if(one==0)one=1,RGB=0 , R=160 , G= 160 , B=0;
+"482
+[e $ ! == -> _one `i -> 0 `i 147  ]
+[e ; ; ; ; = _one -> -> 1 `i `uc = _RGB -> -> 0 `i `uc = _R -> 160 `i = _G -> 160 `i = _B -> 0 `i ]
+[e :U 147 ]
+[; ;remote-38k-6key-RGB.C: 484: if(RGB==0 ){
+"484
+[e $ ! == -> _RGB `i -> 0 `i 148  ]
+{
+[; ;remote-38k-6key-RGB.C: 485: G=G-10;
+"485
+[e = _G - _G -> 10 `i ]
+[; ;remote-38k-6key-RGB.C: 486: if(G<=0)RGB=1;
+"486
+[e $ ! <= _G -> 0 `i 149  ]
+[e = _RGB -> -> 1 `i `uc ]
+[e :U 149 ]
+"487
+}
+[e :U 148 ]
+[; ;remote-38k-6key-RGB.C: 487: }
+[; ;remote-38k-6key-RGB.C: 488: if(RGB==1 ){
+"488
+[e $ ! == -> _RGB `i -> 1 `i 150  ]
+{
+[; ;remote-38k-6key-RGB.C: 489: B=B+10;
+"489
+[e = _B + _B -> 10 `i ]
+[; ;remote-38k-6key-RGB.C: 490: if(B>=160)RGB=2;
+"490
+[e $ ! >= _B -> 160 `i 151  ]
+[e = _RGB -> -> 2 `i `uc ]
+[e :U 151 ]
+"491
+}
+[e :U 150 ]
+[; ;remote-38k-6key-RGB.C: 491: }
+[; ;remote-38k-6key-RGB.C: 492: if(RGB==2 ){
+"492
+[e $ ! == -> _RGB `i -> 2 `i 152  ]
+{
+[; ;remote-38k-6key-RGB.C: 493: R=R-10;
+"493
+[e = _R - _R -> 10 `i ]
+[; ;remote-38k-6key-RGB.C: 494: if(R<=0)RGB=3;
+"494
+[e $ ! <= _R -> 0 `i 153  ]
+[e = _RGB -> -> 3 `i `uc ]
+[e :U 153 ]
+"495
+}
+[e :U 152 ]
+[; ;remote-38k-6key-RGB.C: 495: }
+[; ;remote-38k-6key-RGB.C: 496: if(RGB==3 ){
+"496
+[e $ ! == -> _RGB `i -> 3 `i 154  ]
+{
+[; ;remote-38k-6key-RGB.C: 497: G=G+10;
+"497
+[e = _G + _G -> 10 `i ]
+[; ;remote-38k-6key-RGB.C: 498: if(G>=160)RGB=4;
+"498
+[e $ ! >= _G -> 160 `i 155  ]
+[e = _RGB -> -> 4 `i `uc ]
+[e :U 155 ]
+"499
+}
+[e :U 154 ]
+[; ;remote-38k-6key-RGB.C: 499: }
+[; ;remote-38k-6key-RGB.C: 500: if(RGB==4 ){
+"500
+[e $ ! == -> _RGB `i -> 4 `i 156  ]
+{
+[; ;remote-38k-6key-RGB.C: 501: B=B-10;
+"501
+[e = _B - _B -> 10 `i ]
+[; ;remote-38k-6key-RGB.C: 502: if(B<=0)RGB=5;
+"502
+[e $ ! <= _B -> 0 `i 157  ]
+[e = _RGB -> -> 5 `i `uc ]
+[e :U 157 ]
+"503
+}
+[e :U 156 ]
+[; ;remote-38k-6key-RGB.C: 503: }
+[; ;remote-38k-6key-RGB.C: 504: if(RGB==5 ){
+"504
+[e $ ! == -> _RGB `i -> 5 `i 158  ]
+{
+[; ;remote-38k-6key-RGB.C: 505: G=G-10;
+"505
+[e = _G - _G -> 10 `i ]
+[; ;remote-38k-6key-RGB.C: 506: if(G<=0)RGB=6;
+"506
+[e $ ! <= _G -> 0 `i 159  ]
+[e = _RGB -> -> 6 `i `uc ]
+[e :U 159 ]
+"507
+}
+[e :U 158 ]
+[; ;remote-38k-6key-RGB.C: 507: }
+[; ;remote-38k-6key-RGB.C: 508: if(RGB==6 ){
+"508
+[e $ ! == -> _RGB `i -> 6 `i 160  ]
+{
+[; ;remote-38k-6key-RGB.C: 509: G=G+10;
+"509
+[e = _G + _G -> 10 `i ]
+[; ;remote-38k-6key-RGB.C: 510: R=R+10;
+"510
+[e = _R + _R -> 10 `i ]
+[; ;remote-38k-6key-RGB.C: 511: if(G>=160 && R>=160 )RGB=0;
+"511
+[e $ ! && >= _G -> 160 `i >= _R -> 160 `i 161  ]
+[e = _RGB -> -> 0 `i `uc ]
+[e :U 161 ]
+"512
+}
+[e :U 160 ]
+"513
+}
+[e :U 146 ]
+[; ;remote-38k-6key-RGB.C: 512: }
+[; ;remote-38k-6key-RGB.C: 513: }
+[; ;remote-38k-6key-RGB.C: 518: if( rdata2==0xF9 && Set==1 && repeat==0 )
+"518
+[e $ ! && && == -> _rdata2 `i -> 249 `i == -> _Set `i -> 1 `i == -> _repeat `i -> 0 `i 162  ]
+[; ;remote-38k-6key-RGB.C: 519: {
+"519
+{
+[; ;remote-38k-6key-RGB.C: 520: if(Counter_On_set>40){
+"520
+[e $ ! > -> _Counter_On_set `i -> 40 `i 163  ]
+{
+[; ;remote-38k-6key-RGB.C: 521: Counter_On_set=Counter_On_set-15;
+"521
+[e = _Counter_On_set -> - -> _Counter_On_set `i -> 15 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 523: if(Counter_On_set<=40 ){
+"523
+[e $ ! <= -> _Counter_On_set `i -> 40 `i 164  ]
+{
+[; ;remote-38k-6key-RGB.C: 524: Counter_On_set=0;
+"524
+[e = _Counter_On_set -> -> 0 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 525: PAIE=0;
+"525
+[e = _PAIE -> -> 0 `i `b ]
+[; ;remote-38k-6key-RGB.C: 526: TMR2IE=0;
+"526
+[e = _TMR2IE -> -> 0 `i `b ]
+[; ;remote-38k-6key-RGB.C: 527: PA4=0,PA5=0,PA0=0;
+"527
+[e ; ; -> = _PA4 -> -> 0 `i `b `i -> = _PA5 -> -> 0 `i `b `i -> = _PA0 -> -> 0 `i `b `i ]
+[; ;remote-38k-6key-RGB.C: 528: DelayMs(100);
+"528
+[e ( _DelayMs (1 -> -> 100 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 529: PAIE=1;
+"529
+[e = _PAIE -> -> 1 `i `b ]
+[; ;remote-38k-6key-RGB.C: 530: TMR2IE=1;
+"530
+[e = _TMR2IE -> -> 1 `i `b ]
+"531
+}
+[e :U 164 ]
+"532
+}
+[e :U 163 ]
+"533
+}
+[e :U 162 ]
+[; ;remote-38k-6key-RGB.C: 531: }
+[; ;remote-38k-6key-RGB.C: 532: }
+[; ;remote-38k-6key-RGB.C: 533: }
+[; ;remote-38k-6key-RGB.C: 535: if( rdata2==0xFB && Set==1 && repeat==0 )
+"535
+[e $ ! && && == -> _rdata2 `i -> 251 `i == -> _Set `i -> 1 `i == -> _repeat `i -> 0 `i 165  ]
+[; ;remote-38k-6key-RGB.C: 536: {
+"536
+{
+[; ;remote-38k-6key-RGB.C: 537: if(Counter_On_set<130){
+"537
+[e $ ! < -> _Counter_On_set `i -> 130 `i 166  ]
+{
+[; ;remote-38k-6key-RGB.C: 539: Counter_On_set=Counter_On_set+15;
+"539
+[e = _Counter_On_set -> + -> _Counter_On_set `i -> 15 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 541: if(Counter_On_set>=130 ){
+"541
+[e $ ! >= -> _Counter_On_set `i -> 130 `i 167  ]
+{
+[; ;remote-38k-6key-RGB.C: 542: PAIE=0;
+"542
+[e = _PAIE -> -> 0 `i `b ]
+[; ;remote-38k-6key-RGB.C: 543: TMR2IE=0;
+"543
+[e = _TMR2IE -> -> 0 `i `b ]
+[; ;remote-38k-6key-RGB.C: 544: PA4=1,PA5=1,PA0=1;
+"544
+[e ; ; -> = _PA4 -> -> 1 `i `b `i -> = _PA5 -> -> 1 `i `b `i -> = _PA0 -> -> 1 `i `b `i ]
+[; ;remote-38k-6key-RGB.C: 545: DelayMs(100);
+"545
+[e ( _DelayMs (1 -> -> 100 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 546: PAIE=1;
+"546
+[e = _PAIE -> -> 1 `i `b ]
+[; ;remote-38k-6key-RGB.C: 547: TMR2IE=1;
+"547
+[e = _TMR2IE -> -> 1 `i `b ]
+"548
+}
+[e :U 167 ]
+"549
+}
+[e :U 166 ]
+"550
+}
+[e :U 165 ]
+[; ;remote-38k-6key-RGB.C: 548: }
+[; ;remote-38k-6key-RGB.C: 549: }
+[; ;remote-38k-6key-RGB.C: 550: }
+[; ;remote-38k-6key-RGB.C: 552: if(rdata1==0x7F && rdata2==0xF7 && repeat==0 && Set==1)
+"552
+[e $ ! && && && == -> _rdata1 `i -> 127 `i == -> _rdata2 `i -> 247 `i == -> _repeat `i -> 0 `i == -> _Set `i -> 1 `i 168  ]
+[; ;remote-38k-6key-RGB.C: 553: {
+"553
+{
+[; ;remote-38k-6key-RGB.C: 554: PAIE=0;
+"554
+[e = _PAIE -> -> 0 `i `b ]
+[; ;remote-38k-6key-RGB.C: 555: TMR2IE=0;
+"555
+[e = _TMR2IE -> -> 0 `i `b ]
+[; ;remote-38k-6key-RGB.C: 558: timer=timer+2;
+"558
+[e = _timer -> + -> _timer `i -> 2 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 559: m=0;
+"559
+[e = _m -> -> 0 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 560: h=0;
+"560
+[e = _h -> -> 0 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 561: if(timer>=8){
+"561
+[e $ ! >= -> _timer `i -> 8 `i 169  ]
+{
+[; ;remote-38k-6key-RGB.C: 562: timer=0;
+"562
+[e = _timer -> -> 0 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 563: PA4=1,PA5=1,PA0=1;
+"563
+[e ; ; -> = _PA4 -> -> 1 `i `b `i -> = _PA5 -> -> 1 `i `b `i -> = _PA0 -> -> 1 `i `b `i ]
+[; ;remote-38k-6key-RGB.C: 564: DelayS(2);
+"564
+[e ( _DelayS (1 -> -> 2 `i `uc ]
+"566
+}
+[; ;remote-38k-6key-RGB.C: 566: }else{
+[e $U 170  ]
+[e :U 169 ]
+{
+"567
+[v _a `uc ~T0 @X0 1 a ]
+[; ;remote-38k-6key-RGB.C: 567: unsigned char a;
+[; ;remote-38k-6key-RGB.C: 568: for(a=0;a<(timer/2);a++)
+"568
+{
+[e = _a -> -> 0 `i `uc ]
+[e $U 174  ]
+"569
+[e :U 171 ]
+[; ;remote-38k-6key-RGB.C: 569: {
+{
+[; ;remote-38k-6key-RGB.C: 570: PAIE=0;
+"570
+[e = _PAIE -> -> 0 `i `b ]
+[; ;remote-38k-6key-RGB.C: 571: TMR2IE=0;
+"571
+[e = _TMR2IE -> -> 0 `i `b ]
+[; ;remote-38k-6key-RGB.C: 573: PA4=1,PA5=1,PA0=1;
+"573
+[e ; ; -> = _PA4 -> -> 1 `i `b `i -> = _PA5 -> -> 1 `i `b `i -> = _PA0 -> -> 1 `i `b `i ]
+[; ;remote-38k-6key-RGB.C: 574: DelayMs(200);
+"574
+[e ( _DelayMs (1 -> -> 200 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 576: PAIE=1;
+"576
+[e = _PAIE -> -> 1 `i `b ]
+[; ;remote-38k-6key-RGB.C: 577: TMR2IE=1;
+"577
+[e = _TMR2IE -> -> 1 `i `b ]
+[; ;remote-38k-6key-RGB.C: 579: DelayMs(150);
+"579
+[e ( _DelayMs (1 -> -> 150 `i `uc ]
+"580
+}
+"568
+[e ++ _a -> -> 1 `i `uc ]
+[e :U 174 ]
+[e $ < -> _a `i / -> _timer `i -> 2 `i 171  ]
+[e :U 172 ]
+"580
+}
+"581
+}
+[e :U 170 ]
+[; ;remote-38k-6key-RGB.C: 580: }
+[; ;remote-38k-6key-RGB.C: 581: }
+[; ;remote-38k-6key-RGB.C: 587: PAIE=1;
+"587
+[e = _PAIE -> -> 1 `i `b ]
+[; ;remote-38k-6key-RGB.C: 588: TMR2IE=1;
+"588
+[e = _TMR2IE -> -> 1 `i `b ]
+"589
+}
+[e :U 168 ]
+[; ;remote-38k-6key-RGB.C: 589: }
+[; ;remote-38k-6key-RGB.C: 591: if(rdata1==0x7F && rdata2==0xFD && repeat==0 && Set==1)
+"591
+[e $ ! && && && == -> _rdata1 `i -> 127 `i == -> _rdata2 `i -> 253 `i == -> _repeat `i -> 0 `i == -> _Set `i -> 1 `i 175  ]
+[; ;remote-38k-6key-RGB.C: 592: {
+"592
+{
+[; ;remote-38k-6key-RGB.C: 593: R=160 , G=160, B=0;
+"593
+[e ; ; = _R -> 160 `i = _G -> 160 `i = _B -> 0 `i ]
+[; ;remote-38k-6key-RGB.C: 595: one=0;
+"595
+[e = _one -> -> 0 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 597: PAIE=0;
+"597
+[e = _PAIE -> -> 0 `i `b ]
+[; ;remote-38k-6key-RGB.C: 598: TMR2IE=0;
+"598
+[e = _TMR2IE -> -> 0 `i `b ]
+[; ;remote-38k-6key-RGB.C: 599: PA4=1,PA5=1,PA0=1;
+"599
+[e ; ; -> = _PA4 -> -> 1 `i `b `i -> = _PA5 -> -> 1 `i `b `i -> = _PA0 -> -> 1 `i `b `i ]
+[; ;remote-38k-6key-RGB.C: 600: DelayMs(100);
+"600
+[e ( _DelayMs (1 -> -> 100 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 601: PA4=0,PA5=0,PA0=0;
+"601
+[e ; ; -> = _PA4 -> -> 0 `i `b `i -> = _PA5 -> -> 0 `i `b `i -> = _PA0 -> -> 0 `i `b `i ]
+[; ;remote-38k-6key-RGB.C: 602: mode++;
+"602
+[e ++ _mode -> -> 1 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 603: if(mode>5)mode=1;
+"603
+[e $ ! > -> _mode `i -> 5 `i 176  ]
+[e = _mode -> -> 1 `i `uc ]
+[e :U 176 ]
+[; ;remote-38k-6key-RGB.C: 604: if(mode==1)modetime=10;
+"604
+[e $ ! == -> _mode `i -> 1 `i 177  ]
+[e = _modetime -> -> 10 `i `uc ]
+[e :U 177 ]
+[; ;remote-38k-6key-RGB.C: 605: if(mode==2)modetime=140;
+"605
+[e $ ! == -> _mode `i -> 2 `i 178  ]
+[e = _modetime -> -> 140 `i `uc ]
+[e :U 178 ]
+[; ;remote-38k-6key-RGB.C: 606: PAIE=1;
+"606
+[e = _PAIE -> -> 1 `i `b ]
+[; ;remote-38k-6key-RGB.C: 607: TMR2IE=1;
+"607
+[e = _TMR2IE -> -> 1 `i `b ]
+"608
+}
+[e :U 175 ]
+"611
+}
+[e :U 142 ]
+[; ;remote-38k-6key-RGB.C: 608: }
+[; ;remote-38k-6key-RGB.C: 611: }
+[; ;remote-38k-6key-RGB.C: 613: rdata1=0;
+"613
+[e = _rdata1 -> -> 0 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 614: rdata2=0;
+"614
+[e = _rdata2 -> -> 0 `i `uc ]
+[; ;remote-38k-6key-RGB.C: 615: repeat=0;
+"615
+[e = _repeat -> -> 0 `i `uc ]
+"618
+}
+[e :U 141 ]
+"622
+}
+[e :U 99 ]
+"356
+[e $U 100  ]
+[e :U 101 ]
+[; ;remote-38k-6key-RGB.C: 618: }
+[; ;remote-38k-6key-RGB.C: 622: }
+[; ;remote-38k-6key-RGB.C: 623: }
+"623
+[e :UE 98 ]
+}

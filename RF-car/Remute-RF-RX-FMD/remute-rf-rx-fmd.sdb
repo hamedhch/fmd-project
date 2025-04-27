@@ -1,0 +1,195 @@
+[p PRO_MODE GLOBOPT AUTOSTATIC RSC14 PICREGULAR PICMID SPACEOPT ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip FT60F02X ]
+[d frameptr 6 ]
+"62 C:\Program Files (x86)\FMD\FMDIDE3.1.1.9\Compiler\data\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\FMD\FMDIDE3.1.1.9\Compiler\data\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"32 C:\Users\Mahdi Khalilian\Desktop\Project\Remute-RF-RX-FMD\Remute-RF-RX-FMD.C
+[v _ISR ISR `II(v  1 e 1 0 ]
+"93
+[v _main main `(v  1 e 1 0 ]
+"259
+[v _POWER_INITIAL POWER_INITIAL `(v  1 e 1 0 ]
+"273
+[v _TIMER2_INITIAL TIMER2_INITIAL `(v  1 e 1 0 ]
+"287
+[v _EEPROMread EEPROMread `(uc  1 e 1 0 ]
+"297
+[v _EEPROMwrite EEPROMwrite `(v  1 e 1 0 ]
+"310
+[v _DelayUs DelayUs `(v  1 e 1 0 ]
+"320
+[v _DelayMs DelayMs `(v  1 e 1 0 ]
+"63 C:\Program Files (x86)\FMD\FMDIDE3.1.1.9\Compiler\data\include\FT60F02X.h
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+"76
+[v _PA2 PA2 `VEb  1 e 0 @42 ]
+"78
+[v _PA4 PA4 `VEb  1 e 0 @44 ]
+"80
+[v _PA6 PA6 `VEb  1 e 0 @46 ]
+"81
+[v _PA7 PA7 `VEb  1 e 0 @47 ]
+"108
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+"119
+[v _PC0 PC0 `VEb  1 e 0 @56 ]
+"120
+[v _PC1 PC1 `VEb  1 e 0 @57 ]
+"121
+[v _PC2 PC2 `VEb  1 e 0 @58 ]
+"122
+[v _PC3 PC3 `VEb  1 e 0 @59 ]
+"123
+[v _PC4 PC4 `VEb  1 e 0 @60 ]
+"124
+[v _PC5 PC5 `VEb  1 e 0 @61 ]
+"125
+[v _PC6 PC6 `VEb  1 e 0 @62 ]
+"126
+[v _PC7 PC7 `VEb  1 e 0 @63 ]
+"165
+[v _INTCON INTCON `VEuc  1 e 1 @11 ]
+"173
+[v _PEIE PEIE `VEb  1 e 0 @94 ]
+"174
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"193
+[v _TMR2IF TMR2IF `VEb  1 e 0 @97 ]
+"198
+[v _EEIF EEIF `VEb  1 e 0 @103 ]
+"216
+[v _TMR2 TMR2 `VEuc  1 e 1 @17 ]
+"220
+[v _T2CON T2CON `VEuc  1 e 1 @18 ]
+"224
+[v _TMR2ON TMR2ON `VEb  1 e 0 @146 ]
+"275
+[v _CMCON0 CMCON0 `VEuc  1 e 1 @25 ]
+"309
+[v _MSCKCON MSCKCON `VEuc  1 e 1 @27 ]
+"348
+[v _OPTION OPTION `VEuc  1 e 1 @129 ]
+"377
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"403
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+"434
+[v _TMR2IE TMR2IE `VEb  1 e 0 @1121 ]
+"471
+[v _OSCCON OSCCON `VEuc  1 e 1 @143 ]
+"502
+[v _PR2 PR2 `VEuc  1 e 1 @146 ]
+"506
+[v _WPUA WPUA `VEuc  1 e 1 @149 ]
+"609
+[v _EEDAT EEDAT `VEuc  1 e 1 @154 ]
+"614
+[v _EEADR EEADR `VEuc  1 e 1 @155 ]
+"619
+[v _EECON1 EECON1 `VEuc  1 e 1 @156 ]
+"621
+[v _RD RD `VEb  1 e 0 @1248 ]
+"642
+[v _WR WR `VEb  1 e 0 @1256 ]
+"19 C:\Users\Mahdi Khalilian\Desktop\Project\Remute-RF-RX-FMD\Remute-RF-RX-FMD.C
+[v _Belink Belink `VEui  1 e 2 0 ]
+[v _CountKey1 CountKey1 `VEui  1 e 2 0 ]
+[v _CountKey2 CountKey2 `VEui  1 e 2 0 ]
+[v _Timer Timer `VEui  1 e 2 0 ]
+[v _Time Time `VEui  1 e 2 0 ]
+"20
+[v _True True `VEuc  1 e 1 0 ]
+[v _State State `VEuc  1 e 1 0 ]
+[v _Set Set `VEuc  1 e 1 0 ]
+[v _Data Data `VE[3]uc  1 e 3 0 ]
+[v _DataM DataM `VE[3]uc  1 e 3 0 ]
+[v _DataS DataS `VE[5][3]uc  1 e 15 0 ]
+[v _RFData RFData `VE[3]uc  1 e 3 0 ]
+[v _RFCode RFCode `VEuc  1 e 1 0 ]
+"21
+[v _Frist Frist `VEuc  1 e 1 0 ]
+[v _Start Start `VEuc  1 e 1 0 ]
+[v _Count Count `VEuc  1 e 1 0 ]
+[v _Lock Lock `VEuc  1 e 1 0 ]
+[v _Buffer Buffer `VEuc  1 e 1 0 ]
+[v _Bit Bit `VEuc  1 e 1 0 ]
+[v _Finish Finish `VEuc  1 e 1 0 ]
+[v _Learn Learn `VEuc  1 e 1 0 ]
+[v _Save Save `VEuc  1 e 1 0 ]
+"93
+[v _main main `(v  1 e 1 0 ]
+{
+"228
+[v main@i_841 i `uc  1 a 1 11 ]
+"175
+[v main@i_840 i `uc  1 a 1 14 ]
+"121
+[v main@i_837 i `uc  1 a 1 13 ]
+"101
+[v main@i i `uc  1 a 1 12 ]
+"257
+} 0
+"273
+[v _TIMER2_INITIAL TIMER2_INITIAL `(v  1 e 1 0 ]
+{
+"285
+} 0
+"259
+[v _POWER_INITIAL POWER_INITIAL `(v  1 e 1 0 ]
+{
+"271
+} 0
+"297
+[v _EEPROMwrite EEPROMwrite `(v  1 e 1 0 ]
+{
+[v EEPROMwrite@EEAddr EEAddr `uc  1 a 1 wreg ]
+[v EEPROMwrite@EEAddr EEAddr `uc  1 a 1 wreg ]
+[v EEPROMwrite@Data Data `uc  1 p 1 4 ]
+"299
+[v EEPROMwrite@EEAddr EEAddr `uc  1 a 1 0 ]
+"308
+} 0
+"287
+[v _EEPROMread EEPROMread `(uc  1 e 1 0 ]
+{
+[v EEPROMread@EEAddr EEAddr `uc  1 a 1 wreg ]
+"289
+[v EEPROMread@ReEEPROMread ReEEPROMread `uc  1 a 1 1 ]
+"287
+[v EEPROMread@EEAddr EEAddr `uc  1 a 1 wreg ]
+"291
+[v EEPROMread@EEAddr EEAddr `uc  1 a 1 0 ]
+"295
+} 0
+"320
+[v _DelayMs DelayMs `(v  1 e 1 0 ]
+{
+"322
+[v DelayMs@b b `ui  1 a 2 6 ]
+[v DelayMs@a a `ui  1 a 2 4 ]
+"321
+[v DelayMs@Time Time `ui  1 p 2 2 ]
+"330
+} 0
+"310
+[v _DelayUs DelayUs `(v  1 e 1 0 ]
+{
+"311
+[v DelayUs@Time Time `uc  1 a 1 wreg ]
+"312
+[v DelayUs@a a `uc  1 a 1 1 ]
+"311
+[v DelayUs@Time Time `uc  1 a 1 wreg ]
+"313
+[v DelayUs@Time Time `uc  1 a 1 0 ]
+"318
+} 0
+"32
+[v _ISR ISR `II(v  1 e 1 0 ]
+{
+"91
+} 0

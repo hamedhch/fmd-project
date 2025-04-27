@@ -1,0 +1,1 @@
+ ir-38k-moc-011.d  ir-38k-moc-011.obj:  ir-38k-moc-011.C

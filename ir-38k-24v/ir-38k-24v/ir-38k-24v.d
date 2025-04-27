@@ -1,0 +1,1 @@
+ ir-38k-24v.d  ir-38k-24v.obj:  ir-38k-24v.C

@@ -1,0 +1,109 @@
+[p PRO_MODE GLOBOPT AUTOSTATIC RSC14 PICREGULAR PICMID SPACEOPT ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip FT60F01X ]
+[d frameptr 6 ]
+"62 C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"41 C:\Users\hamed\OneDrive\Documents\FMD_Project\ir-remote-38k-tm0\ir-remote-38k-tm0\ir-remote-38k-tm0\ir-remote-38k-tm0.C
+[v _ISR ISR `II(v  1 e 1 0 ]
+"174
+[v _DelayUs DelayUs `(v  1 e 1 0 ]
+"184
+[v _DelayMs DelayMs `(v  1 e 1 0 ]
+"210
+[v _POWER_INITIAL POWER_INITIAL `(v  1 e 1 0 ]
+"228
+[v _PA1_Level_Change_INITIAL PA1_Level_Change_INITIAL `(v  1 e 1 0 ]
+"238
+[v _TIMER2_INITIAL TIMER2_INITIAL `(v  1 e 1 0 ]
+"257
+[v _main main `(v  1 e 1 0 ]
+"63 C:\Program Files (x86)\CCompiler\Compiler\data\include\FT60F01X.h
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+"72
+[v _PA0 PA0 `VEb  1 e 0 @40 ]
+"74
+[v _PA2 PA2 `VEb  1 e 0 @42 ]
+"75
+[v _PA3 PA3 `VEb  1 e 0 @43 ]
+"76
+[v _PA4 PA4 `VEb  1 e 0 @44 ]
+"77
+[v _PA5 PA5 `VEb  1 e 0 @45 ]
+"111
+[v _INTCON INTCON `VEuc  1 e 1 @11 ]
+"113
+[v _PAIF PAIF `VEb  1 e 0 @88 ]
+"116
+[v _PAIE PAIE `VEb  1 e 0 @91 ]
+"119
+[v _PEIE PEIE `VEb  1 e 0 @94 ]
+"120
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"139
+[v _TMR2IF TMR2IF `VEb  1 e 0 @97 ]
+"159
+[v _TMR2 TMR2 `VEuc  1 e 1 @17 ]
+"163
+[v _T2CON T2CON `VEuc  1 e 1 @18 ]
+"167
+[v _TMR2ON TMR2ON `VEb  1 e 0 @146 ]
+"217
+[v _MSCKCON MSCKCON `VEuc  1 e 1 @27 ]
+"257
+[v _OPTION OPTION `VEuc  1 e 1 @129 ]
+"286
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"289
+[v _TRISA1 TRISA1 `VEb  1 e 0 @1065 ]
+"310
+[v _TMR2IE TMR2IE `VEb  1 e 0 @1121 ]
+"340
+[v _OSCCON OSCCON `VEuc  1 e 1 @143 ]
+"368
+[v _PR2 PR2 `VEuc  1 e 1 @146 ]
+"372
+[v _WPUA WPUA `VEuc  1 e 1 @149 ]
+"412
+[v _IOCA1 IOCA1 `VEb  1 e 0 @1201 ]
+"33 C:\Users\hamed\OneDrive\Documents\FMD_Project\ir-remote-38k-tm0\ir-remote-38k-tm0\ir-remote-38k-tm0\ir-remote-38k-tm0.C
+[v _Set Set `ui  1 e 2 0 ]
+"36
+[v _Counter Counter `ui  1 e 2 0 ]
+[v _Counter_On Counter_On `ui  1 e 2 0 ]
+[v _Counter_On_set Counter_On_set `ui  1 e 2 0 ]
+"37
+[v _ir_count ir_count `ul  1 e 4 0 ]
+[v _Puls_end Puls_end `ul  1 e 4 0 ]
+"38
+[v _ir_status ir_status `ui  1 e 2 0 ]
+[v _up up `ui  1 e 2 0 ]
+[v _lockup lockup `ui  1 e 2 0 ]
+"257
+[v _main main `(v  1 e 1 0 ]
+{
+"329
+} 0
+"238
+[v _TIMER2_INITIAL TIMER2_INITIAL `(v  1 e 1 0 ]
+{
+"252
+} 0
+"210
+[v _POWER_INITIAL POWER_INITIAL `(v  1 e 1 0 ]
+{
+"223
+} 0
+"228
+[v _PA1_Level_Change_INITIAL PA1_Level_Change_INITIAL `(v  1 e 1 0 ]
+{
+"234
+} 0
+"41
+[v _ISR ISR `II(v  1 e 1 0 ]
+{
+"170
+} 0

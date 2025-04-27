@@ -1,0 +1,1 @@
+ ir-38k-moc-v3.d  ir-38k-moc-v3.obj:  ir-38k-moc-v3.C

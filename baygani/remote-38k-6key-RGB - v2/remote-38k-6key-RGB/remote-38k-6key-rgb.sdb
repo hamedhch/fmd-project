@@ -1,0 +1,180 @@
+[p PRO_MODE GLOBOPT AUTOSTATIC RSC14 PICREGULAR PICMID SPACEOPT ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip FT60F01X ]
+[d frameptr 6 ]
+"62 C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"4 C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\lbmod.c
+[v ___lbmod __lbmod `(uc  1 e 1 0 ]
+"39 C:\Users\hamed\OneDrive\Documents\FMD_Project\remote-38k-6key-RGB - v2\remote-38k-6key-RGB\remote-38k-6key-RGB.C
+[v _DelayUs DelayUs `(v  1 e 1 0 ]
+"49
+[v _DelayMs DelayMs `(v  1 e 1 0 ]
+"62
+[v _DelayS DelayS `(v  1 e 1 0 ]
+"74
+[v _ISR ISR `II(v  1 e 1 0 ]
+"300
+[v _POWER_INITIAL POWER_INITIAL `(v  1 e 1 0 ]
+"326
+[v _TIMER2_INITIAL TIMER2_INITIAL `(v  1 e 1 0 ]
+"342
+[v _main main `(v  1 e 1 0 ]
+"63 C:\Program Files (x86)\CCompiler\Compiler\data\include\FT60F01X.h
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+"72
+[v _PA0 PA0 `VEb  1 e 0 @40 ]
+"73
+[v _PA1 PA1 `VEb  1 e 0 @41 ]
+"74
+[v _PA2 PA2 `VEb  1 e 0 @42 ]
+"75
+[v _PA3 PA3 `VEb  1 e 0 @43 ]
+"76
+[v _PA4 PA4 `VEb  1 e 0 @44 ]
+"77
+[v _PA5 PA5 `VEb  1 e 0 @45 ]
+"111
+[v _INTCON INTCON `VEuc  1 e 1 @11 ]
+"116
+[v _PAIE PAIE `VEb  1 e 0 @91 ]
+"119
+[v _PEIE PEIE `VEb  1 e 0 @94 ]
+"120
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"139
+[v _TMR2IF TMR2IF `VEb  1 e 0 @97 ]
+"159
+[v _TMR2 TMR2 `VEuc  1 e 1 @17 ]
+"163
+[v _T2CON T2CON `VEuc  1 e 1 @18 ]
+"167
+[v _TMR2ON TMR2ON `VEb  1 e 0 @146 ]
+"217
+[v _MSCKCON MSCKCON `VEuc  1 e 1 @27 ]
+"257
+[v _OPTION OPTION `VEuc  1 e 1 @129 ]
+"286
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"310
+[v _TMR2IE TMR2IE `VEb  1 e 0 @1121 ]
+"340
+[v _OSCCON OSCCON `VEuc  1 e 1 @143 ]
+"368
+[v _PR2 PR2 `VEuc  1 e 1 @146 ]
+"372
+[v _WPUA WPUA `VEuc  1 e 1 @149 ]
+"28 C:\Users\hamed\OneDrive\Documents\FMD_Project\remote-38k-6key-RGB - v2\remote-38k-6key-RGB\remote-38k-6key-RGB.C
+[v _R R `i  1 e 2 0 ]
+[v _G G `i  1 e 2 0 ]
+[v _B B `i  1 e 2 0 ]
+"30
+[v _ir_status ir_status `uc  1 e 1 0 ]
+[v _ir_timer ir_timer `uc  1 e 1 0 ]
+[v _Counter Counter `uc  1 e 1 0 ]
+[v _Set Set `uc  1 e 1 0 ]
+[v _mode mode `uc  1 e 1 0 ]
+[v _re re `uc  1 e 1 0 ]
+[v _repeat repeat `uc  1 e 1 0 ]
+[v _Counter_On_set Counter_On_set `uc  1 e 1 0 ]
+[v _Counter_On Counter_On `uc  1 e 1 0 ]
+[v _h h `uc  1 e 1 0 ]
+[v _RGB RGB `uc  1 e 1 0 ]
+[v _timer timer `uc  1 e 1 0 ]
+[v _one one `uc  1 e 1 0 ]
+[v _modetime modetime `uc  1 e 1 0 ]
+[v _countz countz `uc  1 e 1 0 ]
+[v _Rq Rq `uc  1 e 1 0 ]
+[v _Gq Gq `uc  1 e 1 0 ]
+[v _Bq Bq `uc  1 e 1 0 ]
+"32
+[v _IRbitNum IRbitNum `uc  1 e 1 0 ]
+"33
+[v _IRbitTime IRbitTime `uc  1 e 1 0 ]
+"34
+[v _IRDataTimer IRDataTimer `[4]uc  1 e 4 0 ]
+"35
+[v _bitdata bitdata `uc  1 e 1 0 ]
+"36
+[v _ReceiveFinish ReceiveFinish `uc  1 e 1 0 ]
+"342
+[v _main main `(v  1 e 1 0 ]
+{
+"567
+[v main@a a `uc  1 a 1 3 ]
+"344
+[v main@rdata2 rdata2 `uc  1 a 1 5 ]
+[v main@rdata1 rdata1 `uc  1 a 1 4 ]
+"623
+} 0
+"4 C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\lbmod.c
+[v ___lbmod __lbmod `(uc  1 e 1 0 ]
+{
+[v ___lbmod@dividend dividend `uc  1 a 1 wreg ]
+"6
+[v ___lbmod@rem rem `uc  1 a 1 7 ]
+"7
+[v ___lbmod@counter counter `uc  1 a 1 6 ]
+"4
+[v ___lbmod@dividend dividend `uc  1 a 1 wreg ]
+[v ___lbmod@divisor divisor `uc  1 p 1 3 ]
+"9
+[v ___lbmod@dividend dividend `uc  1 a 1 5 ]
+"18
+} 0
+"326 C:\Users\hamed\OneDrive\Documents\FMD_Project\remote-38k-6key-RGB - v2\remote-38k-6key-RGB\remote-38k-6key-RGB.C
+[v _TIMER2_INITIAL TIMER2_INITIAL `(v  1 e 1 0 ]
+{
+"337
+} 0
+"300
+[v _POWER_INITIAL POWER_INITIAL `(v  1 e 1 0 ]
+{
+"313
+} 0
+"62
+[v _DelayS DelayS `(v  1 e 1 0 ]
+{
+[v DelayS@Time Time `uc  1 a 1 wreg ]
+"64
+[v DelayS@b b `uc  1 a 1 2 ]
+[v DelayS@a a `uc  1 a 1 1 ]
+"62
+[v DelayS@Time Time `uc  1 a 1 wreg ]
+"65
+[v DelayS@Time Time `uc  1 a 1 0 ]
+"72
+} 0
+"49
+[v _DelayMs DelayMs `(v  1 e 1 0 ]
+{
+[v DelayMs@Time Time `uc  1 a 1 wreg ]
+"51
+[v DelayMs@b b `uc  1 a 1 7 ]
+[v DelayMs@a a `uc  1 a 1 6 ]
+"49
+[v DelayMs@Time Time `uc  1 a 1 wreg ]
+"52
+[v DelayMs@Time Time `uc  1 a 1 5 ]
+"59
+} 0
+"39
+[v _DelayUs DelayUs `(v  1 e 1 0 ]
+{
+[v DelayUs@Time Time `uc  1 a 1 wreg ]
+"41
+[v DelayUs@a a `uc  1 a 1 4 ]
+"39
+[v DelayUs@Time Time `uc  1 a 1 wreg ]
+"42
+[v DelayUs@Time Time `uc  1 a 1 3 ]
+"46
+} 0
+"74
+[v _ISR ISR `II(v  1 e 1 0 ]
+{
+"296
+} 0

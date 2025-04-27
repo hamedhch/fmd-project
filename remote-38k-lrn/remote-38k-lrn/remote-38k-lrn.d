@@ -1,0 +1,1 @@
+ remote-38k-lrn.d  remote-38k-lrn.obj:  remote-38k-lrn.C
