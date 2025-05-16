@@ -1045,9 +1045,9 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [; ;USB-cuter.C: 44: Puls_Count++;
 "44
 [e ++ _Puls_Count -> -> 1 `i `ui ]
-[; ;USB-cuter.C: 46: if(Puls_Count>=1000)Puls_Count=0,S++;
+[; ;USB-cuter.C: 46: if(Puls_Count>=2000)Puls_Count=0,S++;
 "46
-[e $ ! >= _Puls_Count -> -> 1000 `i `ui 47  ]
+[e $ ! >= _Puls_Count -> -> 2000 `i `ui 47  ]
 [e ; = _Puls_Count -> -> 0 `i `ui ++ _S -> -> 1 `i `uc ]
 [e :U 47 ]
 [; ;USB-cuter.C: 48: if(S>=60)S=0,M++;
@@ -1248,12 +1248,12 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [; ;USB-cuter.C: 107: PORTA = 0B00000000;
 "107
 [e = _PORTA -> -> 0 `i `uc ]
-[; ;USB-cuter.C: 108: TRISA = 0B00001000;
+[; ;USB-cuter.C: 108: TRISA = 0B00100000;
 "108
-[e = _TRISA -> -> 8 `i `uc ]
-[; ;USB-cuter.C: 110: WPUA = 0B00001000;
+[e = _TRISA -> -> 32 `i `uc ]
+[; ;USB-cuter.C: 110: WPUA = 0B00100000;
 "110
-[e = _WPUA -> -> 8 `i `uc ]
+[e = _WPUA -> -> 32 `i `uc ]
 [; ;USB-cuter.C: 112: MSCKCON = 0B00000000;
 "112
 [e = _MSCKCON -> -> 0 `i `uc ]
@@ -1306,130 +1306,163 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [; ;USB-cuter.C: 143: T0IE = 0;
 "143
 [e = _T0IE -> -> 0 `i `b ]
-[; ;USB-cuter.C: 145: PA4=1;
-"145
-[e = _PA4 -> -> 1 `i `b ]
 [; ;USB-cuter.C: 146: mode=4;
 "146
 [e = _mode -> -> 4 `i `uc ]
-[; ;USB-cuter.C: 148: while(1)
+[; ;USB-cuter.C: 148: PA1=1,PA2=1,PA0=1;
 "148
-[e :U 75 ]
-[; ;USB-cuter.C: 149: {
+[e ; ; -> = _PA1 -> -> 1 `i `b `i -> = _PA2 -> -> 1 `i `b `i -> = _PA0 -> -> 1 `i `b `i ]
+[; ;USB-cuter.C: 149: DelayMs(500);
 "149
-{
-[; ;USB-cuter.C: 151: if(PA3==0 && Lock==0){
+[e ( _DelayMs (1 -> -> 500 `i `uc ]
+[; ;USB-cuter.C: 151: PA1=0,PA2=0,PA0=0;
 "151
-[e $ ! && == -> _PA3 `i -> 0 `i == -> _Lock `i -> 0 `i 77  ]
-{
-[; ;USB-cuter.C: 152: conter++;
+[e ; ; -> = _PA1 -> -> 0 `i `b `i -> = _PA2 -> -> 0 `i `b `i -> = _PA0 -> -> 0 `i `b `i ]
+[; ;USB-cuter.C: 152: DelayMs(500);
 "152
+[e ( _DelayMs (1 -> -> 500 `i `uc ]
+[; ;USB-cuter.C: 154: PA1=1,PA2=1,PA0=1;
+"154
+[e ; ; -> = _PA1 -> -> 1 `i `b `i -> = _PA2 -> -> 1 `i `b `i -> = _PA0 -> -> 1 `i `b `i ]
+[; ;USB-cuter.C: 155: DelayMs(500);
+"155
+[e ( _DelayMs (1 -> -> 500 `i `uc ]
+[; ;USB-cuter.C: 157: PA1=0,PA2=0,PA0=0;
+"157
+[e ; ; -> = _PA1 -> -> 0 `i `b `i -> = _PA2 -> -> 0 `i `b `i -> = _PA0 -> -> 0 `i `b `i ]
+[; ;USB-cuter.C: 158: DelayMs(500);
+"158
+[e ( _DelayMs (1 -> -> 500 `i `uc ]
+[; ;USB-cuter.C: 159: PA1=1,PA2=1,PA0=1;
+"159
+[e ; ; -> = _PA1 -> -> 1 `i `b `i -> = _PA2 -> -> 1 `i `b `i -> = _PA0 -> -> 1 `i `b `i ]
+[; ;USB-cuter.C: 160: DelayMs(500);
+"160
+[e ( _DelayMs (1 -> -> 500 `i `uc ]
+[; ;USB-cuter.C: 162: PA1=0,PA2=0,PA0=0;
+"162
+[e ; ; -> = _PA1 -> -> 0 `i `b `i -> = _PA2 -> -> 0 `i `b `i -> = _PA0 -> -> 0 `i `b `i ]
+[; ;USB-cuter.C: 164: PA4=1;
+"164
+[e = _PA4 -> -> 1 `i `b ]
+[; ;USB-cuter.C: 166: while(1)
+"166
+[e :U 75 ]
+[; ;USB-cuter.C: 167: {
+"167
+{
+[; ;USB-cuter.C: 169: if(PA5==0 && Lock==0){
+"169
+[e $ ! && == -> _PA5 `i -> 0 `i == -> _Lock `i -> 0 `i 77  ]
+{
+[; ;USB-cuter.C: 170: conter++;
+"170
 [e ++ _conter -> -> 1 `i `ui ]
-[; ;USB-cuter.C: 153: if(conter>=1000){
-"153
+[; ;USB-cuter.C: 171: if(conter>=1000){
+"171
 [e $ ! >= _conter -> -> 1000 `i `ui 78  ]
 {
-[; ;USB-cuter.C: 154: conter=0;
-"154
+[; ;USB-cuter.C: 172: conter=0;
+"172
 [e = _conter -> -> 0 `i `ui ]
-[; ;USB-cuter.C: 156: Lock=1;
-"156
+[; ;USB-cuter.C: 174: Lock=1;
+"174
 [e = _Lock -> -> 1 `i `uc ]
-[; ;USB-cuter.C: 157: mode++;
-"157
+[; ;USB-cuter.C: 175: mode++;
+"175
 [e ++ _mode -> -> 1 `i `uc ]
-[; ;USB-cuter.C: 159: if(mode>=5)mode=1;
-"159
+[; ;USB-cuter.C: 177: if(mode>=5)mode=1;
+"177
 [e $ ! >= -> _mode `i -> 5 `i 79  ]
 [e = _mode -> -> 1 `i `uc ]
 [e :U 79 ]
-[; ;USB-cuter.C: 161: S=0,M=0,H=0;
-"161
+[; ;USB-cuter.C: 179: S=0,M=0,H=0;
+"179
 [e ; ; = _S -> -> 0 `i `uc = _M -> -> 0 `i `uc = _H -> -> 0 `i `uc ]
-"162
+"180
 }
 [e :U 78 ]
-"163
+"181
 }
 [e :U 77 ]
-[; ;USB-cuter.C: 162: }
-[; ;USB-cuter.C: 163: }
-[; ;USB-cuter.C: 165: if(PA3==1 && Lock==1){
-"165
-[e $ ! && == -> _PA3 `i -> 1 `i == -> _Lock `i -> 1 `i 80  ]
+[; ;USB-cuter.C: 180: }
+[; ;USB-cuter.C: 181: }
+[; ;USB-cuter.C: 183: if(PA5==1 && Lock==1){
+"183
+[e $ ! && == -> _PA5 `i -> 1 `i == -> _Lock `i -> 1 `i 80  ]
 {
-[; ;USB-cuter.C: 166: conter2++;
-"166
+[; ;USB-cuter.C: 184: conter2++;
+"184
 [e ++ _conter2 -> -> 1 `i `ui ]
-[; ;USB-cuter.C: 167: if(conter2>=1000){
-"167
+[; ;USB-cuter.C: 185: if(conter2>=1000){
+"185
 [e $ ! >= _conter2 -> -> 1000 `i `ui 81  ]
 {
-[; ;USB-cuter.C: 168: conter=0;
-"168
+[; ;USB-cuter.C: 186: conter=0;
+"186
 [e = _conter -> -> 0 `i `ui ]
-[; ;USB-cuter.C: 169: conter2=0;
-"169
+[; ;USB-cuter.C: 187: conter2=0;
+"187
 [e = _conter2 -> -> 0 `i `ui ]
-[; ;USB-cuter.C: 170: Lock=0;
-"170
+[; ;USB-cuter.C: 188: Lock=0;
+"188
 [e = _Lock -> -> 0 `i `uc ]
-"171
+"189
 }
 [e :U 81 ]
-"172
+"190
 }
 [e :U 80 ]
-[; ;USB-cuter.C: 171: }
-[; ;USB-cuter.C: 172: }
-[; ;USB-cuter.C: 176: if(mode==0 )PA1=0,PA0=0,PA5=0,PA4=0 , T0IE=0;
-"176
+[; ;USB-cuter.C: 189: }
+[; ;USB-cuter.C: 190: }
+[; ;USB-cuter.C: 194: if(mode==0 )PA1=1,PA2=1,PA0=1,PA4=0 , T0IE=0;
+"194
 [e $ ! == -> _mode `i -> 0 `i 82  ]
-[e ; ; ; ; -> = _PA1 -> -> 0 `i `b `i -> = _PA0 -> -> 0 `i `b `i -> = _PA5 -> -> 0 `i `b `i -> = _PA4 -> -> 0 `i `b `i -> = _T0IE -> -> 0 `i `b `i ]
+[e ; ; ; ; -> = _PA1 -> -> 1 `i `b `i -> = _PA2 -> -> 1 `i `b `i -> = _PA0 -> -> 1 `i `b `i -> = _PA4 -> -> 0 `i `b `i -> = _T0IE -> -> 0 `i `b `i ]
 [e :U 82 ]
-[; ;USB-cuter.C: 178: if(mode==1 )PA1=1,PA0=0,PA5=0,PA4=1 , T0IE=1;
-"178
+[; ;USB-cuter.C: 196: if(mode==1 )PA1=0,PA2=1,PA0=1,PA4=1 , T0IE=1;
+"196
 [e $ ! == -> _mode `i -> 1 `i 83  ]
-[e ; ; ; ; -> = _PA1 -> -> 1 `i `b `i -> = _PA0 -> -> 0 `i `b `i -> = _PA5 -> -> 0 `i `b `i -> = _PA4 -> -> 1 `i `b `i -> = _T0IE -> -> 1 `i `b `i ]
+[e ; ; ; ; -> = _PA1 -> -> 0 `i `b `i -> = _PA2 -> -> 1 `i `b `i -> = _PA0 -> -> 1 `i `b `i -> = _PA4 -> -> 1 `i `b `i -> = _T0IE -> -> 1 `i `b `i ]
 [e :U 83 ]
-[; ;USB-cuter.C: 179: if(mode==2 )PA1=0,PA0=1,PA5=0,PA4=1 , T0IE=1;
-"179
+[; ;USB-cuter.C: 197: if(mode==2 )PA1=1,PA2=0,PA0=1,PA4=1 , T0IE=1;
+"197
 [e $ ! == -> _mode `i -> 2 `i 84  ]
-[e ; ; ; ; -> = _PA1 -> -> 0 `i `b `i -> = _PA0 -> -> 1 `i `b `i -> = _PA5 -> -> 0 `i `b `i -> = _PA4 -> -> 1 `i `b `i -> = _T0IE -> -> 1 `i `b `i ]
+[e ; ; ; ; -> = _PA1 -> -> 1 `i `b `i -> = _PA2 -> -> 0 `i `b `i -> = _PA0 -> -> 1 `i `b `i -> = _PA4 -> -> 1 `i `b `i -> = _T0IE -> -> 1 `i `b `i ]
 [e :U 84 ]
-[; ;USB-cuter.C: 180: if(mode==3 )PA1=0,PA0=0,PA5=1,PA4=1 , T0IE=1;
-"180
+[; ;USB-cuter.C: 198: if(mode==3 )PA1=1,PA2=1,PA0=0,PA4=1 , T0IE=1;
+"198
 [e $ ! == -> _mode `i -> 3 `i 85  ]
-[e ; ; ; ; -> = _PA1 -> -> 0 `i `b `i -> = _PA0 -> -> 0 `i `b `i -> = _PA5 -> -> 1 `i `b `i -> = _PA4 -> -> 1 `i `b `i -> = _T0IE -> -> 1 `i `b `i ]
+[e ; ; ; ; -> = _PA1 -> -> 1 `i `b `i -> = _PA2 -> -> 1 `i `b `i -> = _PA0 -> -> 0 `i `b `i -> = _PA4 -> -> 1 `i `b `i -> = _T0IE -> -> 1 `i `b `i ]
 [e :U 85 ]
-[; ;USB-cuter.C: 182: if(mode==4 )PA1=1,PA0=1,PA5=1,PA4=1 , T0IE=0;
-"182
+[; ;USB-cuter.C: 200: if(mode==4 )PA1=0,PA2=0,PA0=0,PA4=1 , T0IE=0;
+"200
 [e $ ! == -> _mode `i -> 4 `i 86  ]
-[e ; ; ; ; -> = _PA1 -> -> 1 `i `b `i -> = _PA0 -> -> 1 `i `b `i -> = _PA5 -> -> 1 `i `b `i -> = _PA4 -> -> 1 `i `b `i -> = _T0IE -> -> 0 `i `b `i ]
+[e ; ; ; ; -> = _PA1 -> -> 0 `i `b `i -> = _PA2 -> -> 0 `i `b `i -> = _PA0 -> -> 0 `i `b `i -> = _PA4 -> -> 1 `i `b `i -> = _T0IE -> -> 0 `i `b `i ]
 [e :U 86 ]
-[; ;USB-cuter.C: 185: if(mode==1 && M==45 && H==0 && PA4==1) mode=0 ;
-"185
+[; ;USB-cuter.C: 203: if(mode==1 && M==45 && H==0 && PA4==1) mode=0 ;
+"203
 [e $ ! && && && == -> _mode `i -> 1 `i == -> _M `i -> 45 `i == -> _H `i -> 0 `i == -> _PA4 `i -> 1 `i 87  ]
 [e = _mode -> -> 0 `i `uc ]
 [e :U 87 ]
-[; ;USB-cuter.C: 187: if(mode==2 && M==30 && H==1 && PA4==1) mode=0 ;
-"187
+[; ;USB-cuter.C: 205: if(mode==2 && M==30 && H==1 && PA4==1) mode=0 ;
+"205
 [e $ ! && && && == -> _mode `i -> 2 `i == -> _M `i -> 30 `i == -> _H `i -> 1 `i == -> _PA4 `i -> 1 `i 88  ]
 [e = _mode -> -> 0 `i `uc ]
 [e :U 88 ]
-[; ;USB-cuter.C: 189: if(mode==3 && M==30 && H==2 && PA4==1) mode=0 ;
-"189
+[; ;USB-cuter.C: 207: if(mode==3 && M==30 && H==2 && PA4==1) mode=0 ;
+"207
 [e $ ! && && && == -> _mode `i -> 3 `i == -> _M `i -> 30 `i == -> _H `i -> 2 `i == -> _PA4 `i -> 1 `i 89  ]
 [e = _mode -> -> 0 `i `uc ]
 [e :U 89 ]
-"193
+"211
 }
 [e :U 74 ]
-"148
+"166
 [e $U 75  ]
 [e :U 76 ]
-[; ;USB-cuter.C: 193: }
-[; ;USB-cuter.C: 194: }
-"194
+[; ;USB-cuter.C: 211: }
+[; ;USB-cuter.C: 212: }
+"212
 [e :UE 73 ]
 }

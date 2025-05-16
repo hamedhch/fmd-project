@@ -11,9 +11,9 @@
 *                  FT60F011A  SOP8 
 *                 ----------------
 *  VDD-----------|1(VDD)    (GND)8|------------GND     
-*       ---------|2(PA2)    (PA4)7|------------out 
-*  LED_1---------|3(PA1)    (PA5)6|----------LED_3
-*   BTN ---------|4(PA3)    (PA0)5|----------LED_2
+*  LED_2---------|2(PA2)    (PA4)7|------------out 
+*  LED_1---------|3(PA1)    (PA5)6|------------BTN
+*       ---------|4(PA3)    (PA0)5|----------LED_3
 *			      ----------------
 */
 //*********************************************************
@@ -21,11 +21,11 @@
 //***********************宏定义****************************
 
  
-#define  BTN		PA3
+#define  BTN		PA5
 
 #define	 LED_1		PA1
-#define	 LED_2		PA0
-#define	 LED_3		PA5
+#define	 LED_2		PA2
+#define	 LED_3		PA0
 #define	 out  		PA4
 
 
@@ -43,7 +43,7 @@ void interrupt ISR(void)
         
         Puls_Count++;
         
-        if(Puls_Count>=1000)Puls_Count=0,S++;
+        if(Puls_Count>=2000)Puls_Count=0,S++;
         
         if(S>=60)S=0,M++;
         if(M>=60)M=0,H++;
@@ -105,9 +105,9 @@ void POWER_INITIAL (void)
 	OPTION = 0B00001000;				//Bit3=1，WDT MODE，PS=000=WDT RATE 1:1
 
 	PORTA  = 0B00000000;					
-	TRISA  = 0B00001000;				//PA输入输出 0-输出 1-输入
+	TRISA  = 0B00100000;				//PA输入输出 0-输出 1-输入
                                         //PA2-IN PA4-OUT
-	WPUA   = 0B00001000;     			//PA端口上拉控制 1-开上拉 0-关上拉								
+	WPUA   = 0B00100000;     			//PA端口上拉控制 1-开上拉 0-关上拉								
 					 		            //开PA2上拉
 	MSCKCON = 0B00000000;
 }
@@ -142,8 +142,26 @@ void main()
     
 	T0IE = 0;	
     
-    out=1;
+    
     mode=4;
+    
+    LED_1=1,LED_2=1,LED_3=1;
+    DelayMs(500);
+    
+    LED_1=0,LED_2=0,LED_3=0;
+    DelayMs(500);
+    
+    LED_1=1,LED_2=1,LED_3=1;
+    DelayMs(500);
+    
+    LED_1=0,LED_2=0,LED_3=0;
+    DelayMs(500);
+    LED_1=1,LED_2=1,LED_3=1;
+    DelayMs(500);
+    
+    LED_1=0,LED_2=0,LED_3=0;
+   
+    out=1;
     
 	while(1)
 	{
@@ -173,13 +191,13 @@ void main()
         
         
         
-		if(mode==0 )LED_1=0,LED_2=0,LED_3=0,out=0 , T0IE=0;
+		if(mode==0 )LED_1=1,LED_2=1,LED_3=1,out=0 , T0IE=0;
         
-		if(mode==1 )LED_1=1,LED_2=0,LED_3=0,out=1 , T0IE=1;
-		if(mode==2 )LED_1=0,LED_2=1,LED_3=0,out=1 , T0IE=1;
-		if(mode==3 )LED_1=0,LED_2=0,LED_3=1,out=1 , T0IE=1;
+		if(mode==1 )LED_1=0,LED_2=1,LED_3=1,out=1 , T0IE=1;
+		if(mode==2 )LED_1=1,LED_2=0,LED_3=1,out=1 , T0IE=1;
+		if(mode==3 )LED_1=1,LED_2=1,LED_3=0,out=1 , T0IE=1;
 		
-		if(mode==4 )LED_1=1,LED_2=1,LED_3=1,out=1 , T0IE=0;
+		if(mode==4 )LED_1=0,LED_2=0,LED_3=0,out=1 , T0IE=0;
 		
         
         if(mode==1 && M==45 && H==0 && out==1)  mode=0 ; 
