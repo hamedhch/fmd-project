@@ -100,8 +100,8 @@
 		BTSC 	STATUS,2 		//0021 	1503
 		INCR	7DH,1 			//0022 	09FD
 
-		//;RF-car-light.C: 68: PA5=0;
-		BCR 	5H,5 			//0023 	1285
+		//;RF-car-light.C: 68: PA4=0;
+		BCR 	5H,4 			//0023 	1205
 
 		//;RF-car-light.C: 70: }
 		//;RF-car-light.C: 71: if(PA0==1 && conterout>230 && conterout<360 ){
@@ -146,8 +146,8 @@
 		BTSC 	STATUS,0 		//0045 	1403
 		LJUMP 	ACH 			//0046 	38AC
 
-		//;RF-car-light.C: 80: PA5=1;
-		BSR 	5H,5 			//0047 	1A85
+		//;RF-car-light.C: 80: PA4=1;
+		BSR 	5H,4 			//0047 	1A05
 
 		//;RF-car-light.C: 82: if(conterout>450 && conterout<490){
 		LDWI 	1H 			//0048 	2A01
@@ -424,7 +424,7 @@
 		BTSC 	STATUS,2 		//00FC 	1503
 		INCR	7DH,1 			//00FD 	09FD
 
-		//;RF-car-light.C: 173: if(conterout>=10000){conterout=0; PA5=!PA5;contlern++;}
+		//;RF-car-light.C: 173: if(conterout>=10000){conterout=0; PA4=!PA4;contlern++;}
 		LDWI 	27H 			//00FE 	2A27
 		SUBWR 	7DH,0 			//00FF 	0C7D
 		LDWI 	10H 			//0100 	2A10
@@ -434,7 +434,7 @@
 		LJUMP 	10AH 			//0104 	390A
 		CLRR 	7CH 			//0105 	017C
 		CLRR 	7DH 			//0106 	017D
-		LDWI 	20H 			//0107 	2A20
+		LDWI 	10H 			//0107 	2A10
 		XORWR 	5H,1 			//0108 	0485
 		INCR	59H,1 			//0109 	09D9
 
@@ -449,7 +449,7 @@
 		//;RF-car-light.C: 177: Learn=0;
 		//;RF-car-light.C: 179: TMR2IE = 0;
 		//;RF-car-light.C: 180: conterout=0;
-		//;RF-car-light.C: 181: PA5=1;
+		//;RF-car-light.C: 181: PA4=1;
 		//;RF-car-light.C: 183: T0IE=1;
 		LCALL 	189H 			//010E 	3189
 
@@ -665,7 +665,7 @@
 		CLRR 	7CH 			//018E 	017C
 		CLRR 	7DH 			//018F 	017D
 		BCR 	STATUS,5 		//0190 	1283
-		BSR 	5H,5 			//0191 	1A85
+		BSR 	5H,4 			//0191 	1A05
 		BSR 	INTCON,5 		//0192 	1A8B
 		RET		 					//0193 	0004
 		LDR 	44H,0 			//0194 	0844
@@ -690,8 +690,8 @@
 		//;RF-car-light.C: 255: TIMER0_INITIAL();
 		LCALL 	31CH 			//01A2 	331C
 
-		//;RF-car-light.C: 258: PA5=1;
-		BSR 	5H,5 			//01A3 	1A85
+		//;RF-car-light.C: 258: PA4=1;
+		BSR 	5H,4 			//01A3 	1A05
 
 		//;RF-car-light.C: 262: char i;
 		//;RF-car-light.C: 263: for(i=0;i<2;i++)
@@ -783,8 +783,8 @@
 		//;RF-car-light.C: 280: Start=0;
 		CLRR 	58H 			//01E5 	0158
 
-		//;RF-car-light.C: 282: PA4 = 0;
-		BCR 	5H,4 			//01E6 	1205
+		//;RF-car-light.C: 282: PA5 = 0;
+		BCR 	5H,5 			//01E6 	1285
 
 		//;RF-car-light.C: 284: while(1)
 		CLRWDT	 			//01E7 	0001
@@ -928,7 +928,7 @@
 		//;RF-car-light.C: 326: Learn=0;
 		//;RF-car-light.C: 328: TMR2IE = 0;
 		//;RF-car-light.C: 329: conterout=0;
-		//;RF-car-light.C: 330: PA5=1;
+		//;RF-car-light.C: 330: PA4=1;
 		//;RF-car-light.C: 332: T0IE=1;
 		LCALL 	189H 			//0240 	3189
 		LJUMP 	1E7H 			//0241 	39E7
@@ -967,11 +967,11 @@
 		ANDWR 	73H,0 			//025B 	0273
 
 		//;RF-car-light.C: 441: {
-		//;RF-car-light.C: 442: PA4 = 1;
+		//;RF-car-light.C: 442: PA5 = 1;
 		BCR 	STATUS,5 		//025C 	1283
 		BTSC 	STATUS,2 		//025D 	1503
 		LJUMP 	272H 			//025E 	3A72
-		BSR 	5H,4 			//025F 	1A05
+		BSR 	5H,5 			//025F 	1A85
 
 		//;RF-car-light.C: 443: DelayUs(420);
 		LDWI 	A4H 			//0260 	2AA4
@@ -985,9 +985,9 @@
 		LDWI 	A4H 			//0264 	2AA4
 		LCALL 	312H 			//0265 	3312
 
-		//;RF-car-light.C: 447: PA4 = 0;
+		//;RF-car-light.C: 447: PA5 = 0;
 		BCR 	STATUS,5 		//0266 	1283
-		BCR 	5H,4 			//0267 	1205
+		BCR 	5H,5 			//0267 	1285
 
 		//;RF-car-light.C: 448: DelayUs(800);
 		LDWI 	20H 			//0268 	2A20
@@ -1011,9 +1011,9 @@
 
 		//;RF-car-light.C: 454: else
 		//;RF-car-light.C: 455: {
-		//;RF-car-light.C: 456: PA4 = 1;
+		//;RF-car-light.C: 456: PA5 = 1;
 		//;RF-car-light.C: 453: }
-		BSR 	5H,4 			//0272 	1A05
+		BSR 	5H,5 			//0272 	1A85
 
 		//;RF-car-light.C: 457: DelayUs(800);
 		LDWI 	20H 			//0273 	2A20
@@ -1035,9 +1035,9 @@
 		LDWI 	20H 			//027B 	2A20
 		LCALL 	312H 			//027C 	3312
 
-		//;RF-car-light.C: 463: PA4 = 0;
+		//;RF-car-light.C: 463: PA5 = 0;
 		BCR 	STATUS,5 		//027D 	1283
-		BCR 	5H,4 			//027E 	1205
+		BCR 	5H,5 			//027E 	1285
 
 		//;RF-car-light.C: 464: DelayUs(420);
 		LDWI 	A4H 			//027F 	2AA4
@@ -1171,8 +1171,8 @@
 		RET		 					//02D7 	0004
 		STR 	7AH 			//02D8 	01FA
 
-		//;RF-car-light.C: 474: PA4=0;
-		BCR 	5H,4 			//02D9 	1205
+		//;RF-car-light.C: 474: PA5=0;
+		BCR 	5H,5 			//02D9 	1285
 
 		//;RF-car-light.C: 475: DelayMs(5);
 		LDWI 	5H 			//02DA 	2A05
@@ -1192,17 +1192,17 @@
 		LDR 	79H,0 			//02E2 	0879
 		LCALL 	24DH 			//02E3 	324D
 
-		//;RF-car-light.C: 480: PA4 = 1;
+		//;RF-car-light.C: 480: PA5 = 1;
 		BCR 	STATUS,5 		//02E4 	1283
-		BSR 	5H,4 			//02E5 	1A05
+		BSR 	5H,5 			//02E5 	1A85
 
 		//;RF-car-light.C: 481: DelayUs(410);
 		LDWI 	9AH 			//02E6 	2A9A
 		LCALL 	312H 			//02E7 	3312
 
-		//;RF-car-light.C: 483: PA4 = 0;
+		//;RF-car-light.C: 483: PA5 = 0;
 		BCR 	STATUS,5 		//02E8 	1283
-		BCR 	5H,4 			//02E9 	1205
+		BCR 	5H,5 			//02E9 	1285
 		RET		 					//02EA 	0004
 
 		//;RF-car-light.C: 350: OSCCON = 0B01110000;

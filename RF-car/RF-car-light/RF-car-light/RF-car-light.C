@@ -23,9 +23,9 @@
 
 #define DATA PA3
 #define data_touch PA0
-#define DATT PA4
+#define DATT PA5
 
-#define LED PA5
+#define LED PA4
 #define outD PA1
 #define outQ PA2
 
