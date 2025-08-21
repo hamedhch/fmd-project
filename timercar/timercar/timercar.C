@@ -141,17 +141,17 @@ void main()
     
 		if(door==0){
 			LED=0;
-			DelayMs(300);
+			DelayMs(500);
             LED=1;
-            DelayMs(300);
+            DelayMs(500);
             LED=0;
-            DelayMs(300);
+            DelayMs(500);
             LED=1;
-            DelayMs(300);
+            DelayMs(500);
             LED=0;
-            DelayMs(300);
+            DelayMs(500);
             LED=1;
-            DelayMs(300);
+            DelayMs(500);
             LED=0;
             
             
@@ -162,11 +162,11 @@ void main()
         
             T0IE=1;
             
-            if( S==11 && Lock==0 ){
+            if( S==20 && Lock==0 ){
 				OUT=1;
                 
             }
-            if( S==12 && Lock==0 ){
+            if( S==21 && Lock==0 ){
 				
                 OUT=0;
                 
