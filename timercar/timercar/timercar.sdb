@@ -7,22 +7,24 @@
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 "86 C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\ftadd.c
 [v ___ftadd __ftadd `(f  1 e 3 0 ]
-"34 C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
+"35 C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
 [v _ISR ISR `II(v  1 e 1 0 ]
-"61
+"62
 [v _DelayUs DelayUs `(v  1 e 1 0 ]
-"71
+"72
 [v _DelayMs DelayMs `(v  1 e 1 0 ]
-"97
+"98
 [v _POWER_INITIAL POWER_INITIAL `(v  1 e 1 0 ]
-"113
+"114
 [v _TIMER0_INITIAL TIMER0_INITIAL `(v  1 e 1 0 ]
-"125
+"126
 [v _main main `(v  1 e 1 0 ]
 "14 C:\Program Files (x86)\CCompiler\Compiler\data\include\FT60F01X.h
 [v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
 "63
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
+"72
+[v _PA0 PA0 `VEb  1 e 0 @40 ]
 "73
 [v _PA1 PA1 `VEb  1 e 0 @41 ]
 "74
@@ -47,56 +49,57 @@
 [v _OSCCON OSCCON `VEuc  1 e 1 @143 ]
 "372
 [v _WPUA WPUA `VEuc  1 e 1 @149 ]
-"30 C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
+"31 C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
 [v _S S `VEuc  1 e 1 0 ]
 [v _M M `VEuc  1 e 1 0 ]
 [v _H H `VEuc  1 e 1 0 ]
 [v _mode mode `VEuc  1 e 1 0 ]
 [v _Lock Lock `VEuc  1 e 1 0 ]
-"32
+[v _Lock2 Lock2 `VEuc  1 e 1 0 ]
+"33
 [v _Puls_Count Puls_Count `VEui  1 e 2 0 ]
-"125
+"126
 [v _main main `(v  1 e 1 0 ]
 {
-"177
+"217
 } 0
-"113
+"114
 [v _TIMER0_INITIAL TIMER0_INITIAL `(v  1 e 1 0 ]
 {
-"120
+"121
 } 0
-"97
+"98
 [v _POWER_INITIAL POWER_INITIAL `(v  1 e 1 0 ]
 {
-"110
+"111
 } 0
-"71
+"72
 [v _DelayMs DelayMs `(v  1 e 1 0 ]
 {
 [v DelayMs@Time Time `uc  1 a 1 wreg ]
-"73
-[v DelayMs@b b `uc  1 a 1 6 ]
-[v DelayMs@a a `uc  1 a 1 5 ]
-"71
-[v DelayMs@Time Time `uc  1 a 1 wreg ]
 "74
-[v DelayMs@Time Time `uc  1 a 1 4 ]
-"81
+[v DelayMs@b b `uc  1 a 1 2 ]
+[v DelayMs@a a `uc  1 a 1 1 ]
+"72
+[v DelayMs@Time Time `uc  1 a 1 wreg ]
+"75
+[v DelayMs@Time Time `uc  1 a 1 0 ]
+"82
 } 0
-"61
+"62
 [v _DelayUs DelayUs `(v  1 e 1 0 ]
 {
 [v DelayUs@Time Time `uc  1 a 1 wreg ]
-"63
-[v DelayUs@a a `uc  1 a 1 3 ]
-"61
-[v DelayUs@Time Time `uc  1 a 1 wreg ]
 "64
+[v DelayUs@a a `uc  1 a 1 3 ]
+"62
+[v DelayUs@Time Time `uc  1 a 1 wreg ]
+"65
 [v DelayUs@Time Time `uc  1 a 1 2 ]
-"68
+"69
 } 0
-"34
+"35
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"58
+"59
 } 0

@@ -12,7 +12,7 @@
 *  VDD-----------|1(VDD)    (GND)8|------------GND     
 *  OUT-----------|2(PA2)    (PA4)7|------------ACC
 *  LED-----------|3(PA1)    (PA5)6|----------
-*       ---------|4(PA3)    (PA0)5|----------
+*       ---------|4(PA3)    (PA0)5|-----------door
 *			      ----------------
 */
 //*********************************************************
@@ -24,10 +24,11 @@
 
 #define	 OUT		PA2
 #define	 LED		PA1
+#define	 door		PA0
 
 
 
-volatile unsigned char S=0,M=0,H=0, mode=4 ,Lock=0;
+volatile unsigned char S=0,M=0,H=0, mode=0 ,Lock=1,Lock2=1 ;
 
 volatile unsigned int Puls_Count;
 
@@ -102,9 +103,9 @@ void POWER_INITIAL (void)
 	OPTION = 0B00001000;				//Bit3=1，WDT MODE，PS=000=WDT RATE 1:1
 
 	PORTA  = 0B00000000;					
-	TRISA  = 0B00011000;				//PA输入输出 0-输出 1-输入
+	TRISA  = 0B00011001;				//PA输入输出 0-输出 1-输入
                                         //PA2-IN PA4-OUT
-	WPUA   = 0B00000000;     			//PA端口上拉控制 1-开上拉 0-关上拉								
+	WPUA   = 0B00000001;     			//PA端口上拉控制 1-开上拉 0-关上拉								
 					 		            //开PA2上拉
 	MSCKCON = 0B00000000;
 }
@@ -138,25 +139,59 @@ void main()
 	{
     
     
-    
+		if(door==0){
+			LED=0;
+			DelayMs(300);
+            LED=1;
+            DelayMs(300);
+            LED=0;
+            DelayMs(300);
+            LED=1;
+            DelayMs(300);
+            LED=0;
+            DelayMs(300);
+            LED=1;
+            DelayMs(300);
+            LED=0;
+            
+            
+            mode=1;
+        }
 		
         if(ACC==0){
         
             T0IE=1;
             
-            if( S==15 ){
+            if( S==11 && Lock==0 ){
 				OUT=1;
-                DelayMs(500);
+                
+            }
+            if( S==12 && Lock==0 ){
+				
                 OUT=0;
-                S++;
+                
+                Lock=1;
             }
             
-            if( M==15){
-				OUT=1;
-                DelayMs(500);
-                OUT=0;
-                M++;
+            
+            if( M==20 && S==10 && Lock2==0 && mode==1){
+				
+                OUT=1;
+                
             }
+             if( M==20 && S==11 && Lock2==0 && mode==1 ){
+				
+                OUT=0;
+                
+                Lock2=1;
+            }
+            
+            //if( M==15){
+			//	OUT=1;
+            //    DelayMs(500);
+             //   OUT=0;
+            //    M++;
+            //}
             
             
         }
@@ -166,7 +201,12 @@ void main()
             S=0;
             M=0;
             
+            OUT=0;
+            
             LED=0;
+            Lock=0;
+            Lock2=0;
+            mode=0;
             
         }
         

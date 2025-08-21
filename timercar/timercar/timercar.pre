@@ -575,8 +575,8 @@ extern unsigned char __resetbits;
 extern __bit __powerdown;
 extern __bit __timeout;
 
-# 30 "timercar.C"
-volatile unsigned char S=0,M=0,H=0, mode=4 ,Lock=0;
+# 31 "timercar.C"
+volatile unsigned char S=0,M=0,H=0, mode=0 ,Lock=1,Lock2=1 ;
 
 volatile unsigned int Puls_Count;
 
@@ -651,9 +651,9 @@ INTCON = 0;
 OPTION = 0B00001000;
 
 PORTA = 0B00000000;
-TRISA = 0B00011000;
+TRISA = 0B00011001;
 
-WPUA = 0B00000000;
+WPUA = 0B00000001;
 
 MSCKCON = 0B00000000;
 }
@@ -687,27 +687,54 @@ while(1)
 {
 
 
+if(PA0==0){
+PA1=0;
+DelayMs(300);
+PA1=1;
+DelayMs(300);
+PA1=0;
+DelayMs(300);
+PA1=1;
+DelayMs(300);
+PA1=0;
+DelayMs(300);
+PA1=1;
+DelayMs(300);
+PA1=0;
 
+
+mode=1;
+}
 
 if(PA4==0){
 
 T0IE=1;
 
-if( S==15 ){
+if( S==11 && Lock==0 ){
 PA2=1;
-DelayMs(500);
-PA2=0;
-S++;
-}
 
-if( M==15){
-PA2=1;
-DelayMs(500);
+}
+if( S==12 && Lock==0 ){
+
 PA2=0;
-M++;
+
+Lock=1;
 }
 
 
+if( M==20 && S==10 && Lock2==0 && mode==1){
+
+PA2=1;
+
+}
+if( M==20 && S==11 && Lock2==0 && mode==1 ){
+
+PA2=0;
+
+Lock2=1;
+}
+
+# 197
 }
 if(PA4==1 ){
 
@@ -715,7 +742,12 @@ T0IE=0;
 S=0;
 M=0;
 
+PA2=0;
+
 PA1=0;
+Lock=0;
+Lock2=0;
+mode=0;
 
 }
 

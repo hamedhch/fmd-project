@@ -11,45 +11,48 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\hamed\AppData\Local\Temp\s8s4.obj
+$C:\Users\hamed\AppData\Local\Temp\s4nc.obj
 reset_vec CODE 0 0 0 1 2
 end_init CODE 0 A A 1 2
 $timercar.obj
-cinit CODE 0 B B A 2
-text1 CODE 0 7D 7D 9 2
-text2 CODE 0 6E 6E F 2
-text3 CODE 0 5E 5E 10 2
-text4 CODE 0 86 86 9 2
-text5 CODE 0 15 15 27 2
-maintext CODE 0 3C 3C 22 2
-cstackCOMMON COMMON 1 70 70 7 1
+cinit CODE 0 B B B 2
+text1 CODE 0 B8 B8 9 2
+text2 CODE 0 A8 A8 10 2
+text3 CODE 0 97 97 11 2
+text4 CODE 0 C1 C1 9 2
+text5 CODE 0 70 70 27 2
+maintext CODE 0 16 16 5A 2
+cstackCOMMON COMMON 1 74 74 4 1
+cstackBANK0 BANK0 1 40 40 3 1
 intentry CODE 0 4 4 6 2
-dataCOMMON COMMON 1 7D 7D 1 1
-bssCOMMON COMMON 1 77 77 6 1
+bssBANK0 BANK0 1 43 43 2 1
+dataCOMMON COMMON 1 78 78 2 1
+bssCOMMON COMMON 1 70 70 4 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 40-6F 1
-BANK0 40-6F 1
+RAM 45-6F 1
+BANK0 45-6F 1
 CONST 1-3 2
-CONST 8F-3FF 2
+CONST CA-3FF 2
 ENTRY 1-3 2
-ENTRY 8F-3FF 2
+ENTRY CA-3FF 2
 IDLOC 2000-2003 2
-STACK 40-6F 1
+STACK 45-6F 1
 CODE 1-3 2
-CODE 8F-3FF 2
+CODE CA-3FF 2
 SFR0 0-3F 1
 SFR1 80-EF 1
+COMMON 7A-7D 1
 CONFIG 2007-2007 2
 EEDATA 2100-21FF 2
 STRCODE 1-3 2
-STRCODE 8F-3FF 2
+STRCODE CA-3FF 2
 STRING 1-3 2
-STRING 8F-3FF 2
+STRING CA-3FF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -64,79 +67,99 @@ STRING 8F-3FF 2
 # All other numeric values are in decimal.
 %LINETAB
 $timercar.obj
-B cinit CODE >80:C:\Users\hamed\AppData\Local\Temp\s8s4.
-B cinit CODE >83:C:\Users\hamed\AppData\Local\Temp\s8s4.
-B cinit CODE >30:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-C cinit CODE >116:C:\Users\hamed\AppData\Local\Temp\s8s4.
-D cinit CODE >120:C:\Users\hamed\AppData\Local\Temp\s8s4.
-E cinit CODE >121:C:\Users\hamed\AppData\Local\Temp\s8s4.
-F cinit CODE >122:C:\Users\hamed\AppData\Local\Temp\s8s4.
-10 cinit CODE >123:C:\Users\hamed\AppData\Local\Temp\s8s4.
-11 cinit CODE >124:C:\Users\hamed\AppData\Local\Temp\s8s4.
-12 cinit CODE >125:C:\Users\hamed\AppData\Local\Temp\s8s4.
-13 cinit CODE >131:C:\Users\hamed\AppData\Local\Temp\s8s4.
-13 cinit CODE >133:C:\Users\hamed\AppData\Local\Temp\s8s4.
-14 cinit CODE >134:C:\Users\hamed\AppData\Local\Temp\s8s4.
-4 intentry CODE >34:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-15 text5 CODE >34:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-15 text5 CODE >37:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-18 text5 CODE >39:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-1B text5 CODE >40:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-1C text5 CODE >42:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-1F text5 CODE >44:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-26 text5 CODE >45:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-28 text5 CODE >46:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-2A text5 CODE >47:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-2B text5 CODE >51:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-31 text5 CODE >52:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-35 text5 CODE >58:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-86 text4 CODE >61:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-87 text4 CODE >64:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-8C text4 CODE >66:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-8D text4 CODE >64:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-5E text3 CODE >71:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-5F text3 CODE >74:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-64 text3 CODE >76:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-65 text3 CODE >78:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-67 text3 CODE >76:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-6C text3 CODE >74:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-6E text2 CODE >97:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-6E text2 CODE >99:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-71 text2 CODE >101:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-72 text2 CODE >102:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-74 text2 CODE >104:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-76 text2 CODE >105:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-79 text2 CODE >107:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-7A text2 CODE >109:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-7C text2 CODE >110:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-7D text1 CODE >113:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-7D text1 CODE >115:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-80 text1 CODE >117:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-83 text1 CODE >118:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-84 text1 CODE >119:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-85 text1 CODE >120:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-3C maintext CODE >125:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-3C maintext CODE >127:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-3D maintext CODE >128:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-3E maintext CODE >131:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-3F maintext CODE >133:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-40 maintext CODE >143:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-42 maintext CODE >145:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-43 maintext CODE >147:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-47 maintext CODE >148:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-48 maintext CODE >149:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-4A maintext CODE >150:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-4C maintext CODE >151:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-4D maintext CODE >154:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-51 maintext CODE >155:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-52 maintext CODE >156:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-54 maintext CODE >157:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-56 maintext CODE >158:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-57 maintext CODE >163:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-59 maintext CODE >165:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-5A maintext CODE >166:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-5B maintext CODE >167:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
-5C maintext CODE >169:C:\Users\hamed\OneDrive\Documents\fmd-project\fmd-project\timercar\timercar\timercar.C
+B cinit CODE >86:C:\Users\hamed\AppData\Local\Temp\s4nc.
+B cinit CODE >89:C:\Users\hamed\AppData\Local\Temp\s4nc.
+B cinit CODE >31:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+C cinit CODE >131:C:\Users\hamed\AppData\Local\Temp\s4nc.
+D cinit CODE >133:C:\Users\hamed\AppData\Local\Temp\s4nc.
+E cinit CODE >137:C:\Users\hamed\AppData\Local\Temp\s4nc.
+F cinit CODE >138:C:\Users\hamed\AppData\Local\Temp\s4nc.
+10 cinit CODE >141:C:\Users\hamed\AppData\Local\Temp\s4nc.
+11 cinit CODE >142:C:\Users\hamed\AppData\Local\Temp\s4nc.
+12 cinit CODE >143:C:\Users\hamed\AppData\Local\Temp\s4nc.
+13 cinit CODE >144:C:\Users\hamed\AppData\Local\Temp\s4nc.
+14 cinit CODE >150:C:\Users\hamed\AppData\Local\Temp\s4nc.
+14 cinit CODE >152:C:\Users\hamed\AppData\Local\Temp\s4nc.
+15 cinit CODE >153:C:\Users\hamed\AppData\Local\Temp\s4nc.
+4 intentry CODE >35:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+70 text5 CODE >35:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+70 text5 CODE >38:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+73 text5 CODE >40:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+76 text5 CODE >41:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+77 text5 CODE >43:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+7A text5 CODE >45:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+81 text5 CODE >46:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+83 text5 CODE >47:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+85 text5 CODE >48:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+86 text5 CODE >52:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+8C text5 CODE >53:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+90 text5 CODE >59:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+C1 text4 CODE >62:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+C2 text4 CODE >65:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+C7 text4 CODE >67:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+C8 text4 CODE >65:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+97 text3 CODE >72:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+98 text3 CODE >75:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+9D text3 CODE >77:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+9E text3 CODE >79:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+A0 text3 CODE >77:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+A6 text3 CODE >75:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+A8 text2 CODE >98:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+A8 text2 CODE >100:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+AB text2 CODE >102:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+AC text2 CODE >103:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+AE text2 CODE >105:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+B0 text2 CODE >106:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+B3 text2 CODE >108:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+B5 text2 CODE >110:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+B7 text2 CODE >111:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+B8 text1 CODE >114:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+B8 text1 CODE >116:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+BB text1 CODE >118:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+BE text1 CODE >119:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+BF text1 CODE >120:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+C0 text1 CODE >121:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+16 maintext CODE >126:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+16 maintext CODE >128:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+17 maintext CODE >129:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+18 maintext CODE >132:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+19 maintext CODE >134:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+1A maintext CODE >142:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+1C maintext CODE >143:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+1D maintext CODE >144:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+1F maintext CODE >145:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+20 maintext CODE >146:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+22 maintext CODE >147:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+23 maintext CODE >148:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+25 maintext CODE >149:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+26 maintext CODE >150:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+28 maintext CODE >151:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+29 maintext CODE >152:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+2B maintext CODE >153:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+2C maintext CODE >154:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+2E maintext CODE >155:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+2F maintext CODE >158:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+31 maintext CODE >161:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+33 maintext CODE >163:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+34 maintext CODE >165:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+3B maintext CODE >166:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+3C maintext CODE >169:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+43 maintext CODE >171:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+44 maintext CODE >173:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+46 maintext CODE >177:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+53 maintext CODE >179:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+54 maintext CODE >182:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+62 maintext CODE >184:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+63 maintext CODE >186:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+65 maintext CODE >198:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+67 maintext CODE >200:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+68 maintext CODE >201:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+69 maintext CODE >202:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+6A maintext CODE >204:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+6B maintext CODE >206:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+6C maintext CODE >207:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+6D maintext CODE >208:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
+6E maintext CODE >209:C:\Users\hamed\OneDrive\Documents\FMD_Project\timercar\timercar\timercar.C
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -149,49 +172,49 @@ F cinit CODE >122:C:\Users\hamed\AppData\Local\Temp\s8s4.
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-_H 7A 0 COMMON 1 bssCOMMON timercar.obj
-_M 7B 0 COMMON 1 bssCOMMON timercar.obj
-_S 7C 0 COMMON 1 bssCOMMON timercar.obj
+_H 71 0 COMMON 1 bssCOMMON timercar.obj
+_M 72 0 COMMON 1 bssCOMMON timercar.obj
+_S 73 0 COMMON 1 bssCOMMON timercar.obj
 ___latbits 0 0 ABS 0 - timercar.obj
 __size_of_DelayMs 0 0 ABS 0 - timercar.obj
 __size_of_DelayUs 0 0 ABS 0 - timercar.obj
-__Hspace_0 8F 0 ABS 0 - -
-__Hspace_1 7E 0 ABS 0 - -
+__Hspace_0 CA 0 ABS 0 - -
+__Hspace_1 7A 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
-_POWER_INITIAL DC 0 CODE 0 text2 timercar.obj
+_POWER_INITIAL 150 0 CODE 0 text2 timercar.obj
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
-_Puls_Count 77 0 COMMON 1 bssCOMMON timercar.obj
+_Puls_Count 43 0 BANK0 1 bssBANK0 timercar.obj
 __Hstrings 0 0 ABS 0 strings -
-_Lock 79 0 COMMON 1 bssCOMMON timercar.obj
+_Lock 79 0 COMMON 1 dataCOMMON timercar.obj
 _T0IE 5D 0 ABS 0 - timercar.obj
 _T0IF 5A 0 ABS 0 - timercar.obj
 _TMR0 1 0 ABS 0 - timercar.obj
 _WPUA 95 0 ABS 0 - timercar.obj
-___sp 0 0 STACK 2 stack C:\Users\hamed\AppData\Local\Temp\s8s4.obj
-_main 78 0 CODE 0 maintext timercar.obj
-_mode 7D 0 COMMON 1 dataCOMMON timercar.obj
+___sp 0 0 STACK 2 stack C:\Users\hamed\AppData\Local\Temp\s4nc.obj
+_main 2C 0 CODE 0 maintext timercar.obj
+_mode 70 0 COMMON 1 bssCOMMON timercar.obj
 btemp 7E 0 ABS 0 - timercar.obj
-start 14 0 CODE 0 init C:\Users\hamed\AppData\Local\Temp\s8s4.obj
+start 14 0 CODE 0 init C:\Users\hamed\AppData\Local\Temp\s4nc.obj
 __size_of_main 0 0 ABS 0 - timercar.obj
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 _MSCKCON 1B 0 ABS 0 - timercar.obj
-DelayUs@Time 72 0 COMMON 1 cstackCOMMON timercar.obj
+DelayUs@Time 76 0 COMMON 1 cstackCOMMON timercar.obj
 __Hpowerup 0 0 CODE 0 powerup -
 __HdataCOMMON 0 0 ABS 0 dataCOMMON -
-intlevel0 0 0 ENTRY 0 functab C:\Users\hamed\AppData\Local\Temp\s8s4.obj
-intlevel1 0 0 ENTRY 0 functab C:\Users\hamed\AppData\Local\Temp\s8s4.obj
-intlevel2 0 0 ENTRY 0 functab C:\Users\hamed\AppData\Local\Temp\s8s4.obj
-intlevel3 0 0 ENTRY 0 functab C:\Users\hamed\AppData\Local\Temp\s8s4.obj
-intlevel4 0 0 ENTRY 0 functab C:\Users\hamed\AppData\Local\Temp\s8s4.obj
-intlevel5 0 0 ENTRY 0 functab C:\Users\hamed\AppData\Local\Temp\s8s4.obj
+intlevel0 0 0 ENTRY 0 functab C:\Users\hamed\AppData\Local\Temp\s4nc.obj
+intlevel1 0 0 ENTRY 0 functab C:\Users\hamed\AppData\Local\Temp\s4nc.obj
+intlevel2 0 0 ENTRY 0 functab C:\Users\hamed\AppData\Local\Temp\s4nc.obj
+intlevel3 0 0 ENTRY 0 functab C:\Users\hamed\AppData\Local\Temp\s4nc.obj
+intlevel4 0 0 ENTRY 0 functab C:\Users\hamed\AppData\Local\Temp\s4nc.obj
+intlevel5 0 0 ENTRY 0 functab C:\Users\hamed\AppData\Local\Temp\s4nc.obj
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 wtemp0 7E 0 ABS 0 - timercar.obj
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
 __pidataCOMMON 0 0 CODE 0 idataCOMMON timercar.obj
-__end_of_DelayMs DC 0 CODE 0 text3 timercar.obj
-__end_of_DelayUs 11E 0 CODE 0 text4 timercar.obj
+__end_of_DelayMs 150 0 CODE 0 text3 timercar.obj
+__end_of_DelayUs 194 0 CODE 0 text4 timercar.obj
 __LdataCOMMON 0 0 ABS 0 dataCOMMON -
 __Hpa_nodes0 0 0 ABS 0 pa_nodes0 -
 __size_of_POWER_INITIAL 0 0 ABS 0 - timercar.obj
@@ -199,18 +222,19 @@ __Lmaintext 0 0 ABS 0 maintext -
 _INTCON B 0 ABS 0 - timercar.obj
 __Lpa_nodes0 0 0 ABS 0 pa_nodes0 -
 __LidataCOMMON 0 0 ABS 0 idataCOMMON -
-__end_of_POWER_INITIAL FA 0 CODE 0 text2 timercar.obj
+__end_of_POWER_INITIAL 170 0 CODE 0 text2 timercar.obj
 start_initialization 16 0 CODE 0 cinit timercar.obj
 _OPTION 81 0 ABS 0 - timercar.obj
 _OSCCON 8F 0 ABS 0 - timercar.obj
-___int_sp 0 0 STACK 2 stack C:\Users\hamed\AppData\Local\Temp\s8s4.obj
+__pcstackBANK0 40 0 BANK0 1 cstackBANK0 timercar.obj
+___int_sp 0 0 STACK 2 stack C:\Users\hamed\AppData\Local\Temp\s4nc.obj
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 BANK1 1 bank1 -
-__Hcinit 2A 0 CODE 0 cinit -
+__Hcinit 2C 0 CODE 0 cinit -
 __Hidloc 0 0 IDLOC 0 idloc -
 __Hstack 0 0 STACK 2 stack -
 __Hmaintext 0 0 ABS 0 maintext -
-_TIMER0_INITIAL FA 0 CODE 0 text1 timercar.obj
+_TIMER0_INITIAL 170 0 CODE 0 text1 timercar.obj
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 0 0 CONFIG 0 config -
 __Lbank0 0 0 ABS 0 bank0 -
@@ -230,58 +254,64 @@ __Linit 14 0 CODE 0 init -
 __Lsfr0 0 0 ABS 0 sfr0 -
 __Lsfr1 0 0 ABS 0 sfr1 -
 __Ltext 0 0 ABS 0 text -
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 _GIE 5F 0 ABS 0 - timercar.obj
-_ISR 2A 0 CODE 0 text5 timercar.obj
+_ISR E0 0 CODE 0 text5 timercar.obj
+_PA0 28 0 ABS 0 - timercar.obj
 _PA1 29 0 ABS 0 - timercar.obj
 _PA2 2A 0 ABS 0 - timercar.obj
 _PA4 2C 0 ABS 0 - timercar.obj
-__S0 8F 0 ABS 0 - -
-__S1 7E 0 ABS 0 - -
+__S0 CA 0 ABS 0 - -
+__S1 7A 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-DelayMs@a 75 0 COMMON 1 cstackCOMMON timercar.obj
-DelayMs@b 76 0 COMMON 1 cstackCOMMON timercar.obj
-DelayUs@a 73 0 COMMON 1 cstackCOMMON timercar.obj
+DelayMs@a 41 0 BANK0 1 cstackBANK0 timercar.obj
+DelayMs@b 42 0 BANK0 1 cstackBANK0 timercar.obj
+DelayUs@a 77 0 COMMON 1 cstackCOMMON timercar.obj
 saved_w 7E 0 ABS 0 - timercar.obj
 __HidataCOMMON 0 0 ABS 0 idataCOMMON -
-__end_of_ISR 78 0 CODE 0 text5 timercar.obj
-__end_of_TIMER0_INITIAL 10C 0 CODE 0 text1 timercar.obj
-_DelayMs BC 0 CODE 0 text3 timercar.obj
-_DelayUs 10C 0 CODE 0 text4 timercar.obj
+__end_of_ISR 12E 0 CODE 0 text5 timercar.obj
+__end_of_TIMER0_INITIAL 182 0 CODE 0 text1 timercar.obj
+_DelayMs 12E 0 CODE 0 text3 timercar.obj
+_DelayUs 182 0 CODE 0 text4 timercar.obj
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\hamed\AppData\Local\Temp\s8s4.obj
-__pmaintext 78 0 CODE 0 maintext timercar.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\hamed\AppData\Local\Temp\s4nc.obj
+__LbssBANK0 0 0 ABS 0 bssBANK0 -
+__pmaintext 2C 0 CODE 0 maintext timercar.obj
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 0 config -
-stackhi 0 0 ABS 0 - C:\Users\hamed\AppData\Local\Temp\s8s4.obj
-stacklo 0 0 ABS 0 - C:\Users\hamed\AppData\Local\Temp\s8s4.obj
-DelayMs@Time 74 0 COMMON 1 cstackCOMMON timercar.obj
+stackhi 0 0 ABS 0 - C:\Users\hamed\AppData\Local\Temp\s4nc.obj
+stacklo 0 0 ABS 0 - C:\Users\hamed\AppData\Local\Temp\s4nc.obj
+DelayMs@Time 40 0 BANK0 1 cstackBANK0 timercar.obj
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
-__pbssCOMMON 77 0 COMMON 1 bssCOMMON timercar.obj
+__pbssCOMMON 70 0 COMMON 1 bssCOMMON timercar.obj
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __Lend_init 14 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-end_of_initialization 26 0 CODE 0 cinit timercar.obj
+end_of_initialization 28 0 CODE 0 cinit timercar.obj
 __Hintentry 14 0 CODE 0 intentry -
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 2 0 CODE 0 reset_vec -
-__ptext1 FA 0 CODE 0 text1 timercar.obj
-__ptext2 DC 0 CODE 0 text2 timercar.obj
-__ptext3 BC 0 CODE 0 text3 timercar.obj
-__ptext4 10C 0 CODE 0 text4 timercar.obj
-__ptext5 2A 0 CODE 0 text5 timercar.obj
+__HbssBANK0 0 0 ABS 0 bssBANK0 -
+__ptext1 170 0 CODE 0 text1 timercar.obj
+__ptext2 150 0 CODE 0 text2 timercar.obj
+__ptext3 12E 0 CODE 0 text3 timercar.obj
+__ptext4 182 0 CODE 0 text4 timercar.obj
+__ptext5 E0 0 CODE 0 text5 timercar.obj
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __Lreset_vec 0 0 CODE 0 reset_vec -
-__end_of__initialization 26 0 CODE 0 cinit timercar.obj
+__end_of__initialization 28 0 CODE 0 cinit timercar.obj
 __Lfunctab 0 0 ENTRY 0 functab -
 __Lclrtext 0 0 ABS 0 clrtext -
-__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON timercar.obj
+__pcstackCOMMON 74 0 COMMON 1 cstackCOMMON timercar.obj
 __Hend_init 16 0 CODE 0 end_init -
-__end_of_main BC 0 CODE 0 maintext timercar.obj
+__end_of_main E0 0 CODE 0 maintext timercar.obj
+_Lock2 78 0 COMMON 1 dataCOMMON timercar.obj
 _PORTA 5 0 ABS 0 - timercar.obj
 _TRISA 85 0 ABS 0 - timercar.obj
 __Hram 0 0 ABS 0 ram -
@@ -290,7 +320,8 @@ interrupt_function 8 0 CODE 0 intentry timercar.obj
 __pintentry 8 0 CODE 0 intentry timercar.obj
 __size_of_ISR 0 0 ABS 0 - timercar.obj
 __initialization 16 0 CODE 0 cinit timercar.obj
-__pdataCOMMON 7D 0 COMMON 1 dataCOMMON timercar.obj
+__pbssBANK0 43 0 BANK0 1 bssBANK0 timercar.obj
+__pdataCOMMON 78 0 COMMON 1 dataCOMMON timercar.obj
 __size_of_TIMER0_INITIAL 0 0 ABS 0 - timercar.obj
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
@@ -317,6 +348,7 @@ __size_of_TIMER0_INITIAL 0 0 ABS 0 - timercar.obj
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-cstackCOMMON 1 70 70 E 1
-intentry 0 4 8 8B 2
+cstackBANK0 1 40 40 5 1
+intentry 0 4 8 C6 2
 reset_vec 0 0 0 1 2
+bssCOMMON 1 70 70 A 1
