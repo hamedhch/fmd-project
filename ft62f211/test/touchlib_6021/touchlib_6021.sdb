@@ -1,0 +1,277 @@
+[p PRO_MODE GLOBOPT AUTOSTATIC RSC14 PICREGULAR PICMID SPACEOPT ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip FT62F21X ]
+[d frameptr 6 ]
+"62 C:\hamed\fmd\stup\FMDIDE3.0.7\data\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\hamed\fmd\stup\FMDIDE3.0.7\data\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"17 C:\hamed\fmd\ft62f211\test\touchlib_6021\main.c
+[v _ISR ISR `II(v  1 e 1 0 ]
+"119
+[v _Delay_Us Delay_Us `(v  1 e 1 0 ]
+"129
+[v _DelayMs DelayMs `(v  1 e 1 0 ]
+"138
+[v _TIMER0_INITIAL TIMER0_INITIAL `(v  1 e 1 0 ]
+"146
+[v _SYS_INITIAL SYS_INITIAL `(v  1 e 1 0 ]
+"166
+[v _EEPROMread EEPROMread `(uc  1 e 1 0 ]
+"180
+[v _EEPROMwrite EEPROMwrite `(v  1 e 1 0 ]
+"199
+[v _main main `(v  1 e 1 0 ]
+"79 C:\hamed\fmd\ft62f211\test\touchlib_6021\Touch.h
+[v _DelayUs2 DelayUs2 `(v  1 e 1 0 ]
+"87
+[v _updata updata `(v  1 e 1 0 ]
+"93
+[v _Touch_init Touch_init `(v  1 e 1 0 ]
+"116
+[v _Touch_start Touch_start `(v  1 e 1 0 ]
+"125
+[v _Touch_end Touch_end `(v  1 e 1 0 ]
+"133
+[v _ReadCap ReadCap `(v  1 e 1 0 ]
+"197
+[v _ReadCap4 ReadCap4 `(v  1 e 1 0 ]
+"218
+[v _TouchKeyScan TouchKeyScan `(uc  1 e 1 0 ]
+"10 d:\Èí¼þ\ide3.0.3_210603_external_testing\data\include\FT62F21X.h
+[v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
+"18
+[v _STATUS STATUS `VEuc  1 e 1 @3 ]
+"59
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+"71
+[v _PA3 PA3 `VEb  1 e 0 @43 ]
+"115
+[v _INTCON INTCON `VEuc  1 e 1 @11 ]
+"119
+[v _T0IF T0IF `VEb  1 e 0 @90 ]
+"122
+[v _T0IE T0IE `VEb  1 e 0 @93 ]
+"124
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"147
+[v _EEIF EEIF `VEb  1 e 0 @103 ]
+"438
+[v _OPTION OPTION `VEuc  1 e 1 @129 ]
+"467
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"469
+[v _TRISA0 TRISA0 `VEb  1 e 0 @1064 ]
+"470
+[v _TRISA1 TRISA1 `VEb  1 e 0 @1065 ]
+"471
+[v _TRISA2 TRISA2 `VEb  1 e 0 @1066 ]
+"472
+[v _TRISA3 TRISA3 `VEb  1 e 0 @1067 ]
+"492
+[v _TKCON TKCON `VEuc  1 e 1 @134 ]
+"498
+[v _TKEN TKEN `VEb  1 e 0 @1076 ]
+"499
+[v _TKCHGS0 TKCHGS0 `VEb  1 e 0 @1077 ]
+"500
+[v _TKCHGS1 TKCHGS1 `VEb  1 e 0 @1078 ]
+"520
+[v _PSRCA PSRCA `VEuc  1 e 1 @136 ]
+"564
+[v _LVDCON LVDCON `VEuc  1 e 1 @141 ]
+"583
+[v _PCON PCON `VEuc  1 e 1 @142 ]
+"588
+[v _LVDEN LVDEN `VEb  1 e 0 @1139 ]
+"613
+[v _OSCCON OSCCON `VEuc  1 e 1 @143 ]
+"678
+[v _WPUA WPUA `VEuc  1 e 1 @149 ]
+"819
+[v _EEDAT EEDAT `VEuc  1 e 1 @154 ]
+"824
+[v _EEADR EEADR `VEuc  1 e 1 @155 ]
+"828
+[v _EECON1 EECON1 `VEuc  1 e 1 @156 ]
+"830
+[v _RD RD `VEb  1 e 0 @1248 ]
+"851
+[v _WR WR `VEb  1 e 0 @1256 ]
+"13 C:\hamed\fmd\ft62f211\test\touchlib_6021\main.c
+[v _GKeyValue GKeyValue `VEuc  1 e 1 0 ]
+[v _Last Last `VEuc  1 e 1 0 ]
+[v _State State `VEuc  1 e 1 0 ]
+[v _i i `VEuc  1 e 1 0 ]
+[v _Effect Effect `VEuc  1 e 1 0 ]
+[v _Mute Mute `VEuc  1 e 1 0 ]
+[v _Flag Flag `VEuc  1 e 1 0 ]
+[v _Time Time `VEuc  1 e 1 0 ]
+[v _Trig Trig `VEuc  1 e 1 0 ]
+[v _CountTrig CountTrig `VEuc  1 e 1 0 ]
+[v _Lock Lock `VEuc  1 e 1 0 ]
+"14
+[v _StartTouchTime StartTouchTime `VEui  1 e 2 0 ]
+[v _CountKey CountKey `VEui  1 e 2 0 ]
+"15
+[v _awaken awaken `b  1 e 0 0 ]
+"17 TOUCH.C
+[v _KeyDv KeyDv `uc  1 e 1 0 ]
+"19
+[v _charcap charcap `[1]ui  1 e 2 0 ]
+"22 C:\hamed\fmd\ft62f211\test\touchlib_6021\Touch.h
+[v _EqudataC EqudataC `[1]uc  1 e 1 0 ]
+"23
+[v _EquDV EquDV `uc  1 e 1 0 ]
+"26
+[v _delta_temp delta_temp `uc  1 e 1 0 ]
+"29
+[v _DebounceActive DebounceActive `uc  1 e 1 0 ]
+"32
+[v _Touch_Number Touch_Number `ui  1 e 2 0 ]
+"33
+[v _UpdataTime UpdataTime `uc  1 e 1 0 ]
+"35
+[v _thedeathcount thedeathcount `ui  1 e 2 0 ]
+"37
+[v _Touch_C0 Touch_C0 `VEuc  1 e 1 @64 ]
+"38
+[v _Touch_C1 Touch_C1 `VEuc  1 e 1 @65 ]
+"39
+[v _Touch_Buff Touch_Buff `VEui  1 e 2 @64 ]
+"42
+[v _NowKey NowKey `uc  1 e 1 0 ]
+"43
+[v _NowKeyCount NowKeyCount `uc  1 e 1 0 ]
+"44
+[v _ACTIVE_SENSOR_DELTA ACTIVE_SENSOR_DELTA `DC[4]uc  1 e 4 0 ]
+"46
+[v _DebounceActiveBuff DebounceActiveBuff `uc  1 e 1 0 ]
+"51
+[v _KEY_FLAG KEY_FLAG `VEuc  1 e 1 @66 ]
+"53
+[v _INACTIVE_SENSOR_DELTA INACTIVE_SENSOR_DELTA `DC[4]uc  1 e 4 0 ]
+[v _Keypress Keypress `VEb  1 e 0 @528 ]
+"54
+[v _PowerOnD PowerOnD `VEb  1 e 0 @529 ]
+"55
+[v _Level Level `VEb  1 e 0 @530 ]
+"56
+[v _keyflag keyflag `VEb  1 e 0 @531 ]
+"57
+[v _one one `VEb  1 e 0 @532 ]
+"59
+[v _KeyOn KeyOn `VEb  1 e 0 @534 ]
+"60
+[v _KeyOff KeyOff `VEb  1 e 0 @535 ]
+"199 C:\hamed\fmd\ft62f211\test\touchlib_6021\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"311
+} 0
+"93 C:\hamed\fmd\ft62f211\test\touchlib_6021\Touch.h
+[v _Touch_init Touch_init `(v  1 e 1 0 ]
+{
+"95
+[v Touch_init@x x `uc  1 a 1 9 ]
+"115
+} 0
+"218
+[v _TouchKeyScan TouchKeyScan `(uc  1 e 1 0 ]
+{
+"220
+[v TouchKeyScan@charcapBuff charcapBuff `ui  1 a 2 3 ]
+"400
+} 0
+"87
+[v _updata updata `(v  1 e 1 0 ]
+{
+"90
+} 0
+"197
+[v _ReadCap4 ReadCap4 `(v  1 e 1 0 ]
+{
+"200
+[v ReadCap4@charcapBuff charcapBuff `ui  1 a 2 6 ]
+"199
+[v ReadCap4@Count Count `uc  1 a 1 8 ]
+"209
+} 0
+"133
+[v _ReadCap ReadCap `(v  1 e 1 0 ]
+{
+"166
+} 0
+"116
+[v _Touch_start Touch_start `(v  1 e 1 0 ]
+{
+"124
+} 0
+"125
+[v _Touch_end Touch_end `(v  1 e 1 0 ]
+{
+"131
+} 0
+"79
+[v _DelayUs2 DelayUs2 `(v  1 e 1 0 ]
+{
+"81
+[v DelayUs2@a a `uc  1 a 1 2 ]
+"86
+} 0
+"138 C:\hamed\fmd\ft62f211\test\touchlib_6021\main.c
+[v _TIMER0_INITIAL TIMER0_INITIAL `(v  1 e 1 0 ]
+{
+"144
+} 0
+"146
+[v _SYS_INITIAL SYS_INITIAL `(v  1 e 1 0 ]
+{
+"164
+} 0
+"180
+[v _EEPROMwrite EEPROMwrite `(v  1 e 1 0 ]
+{
+[v EEPROMwrite@EEAddr EEAddr `uc  1 a 1 wreg ]
+[v EEPROMwrite@EEAddr EEAddr `uc  1 a 1 wreg ]
+[v EEPROMwrite@Data Data `uc  1 p 1 2 ]
+"182
+[v EEPROMwrite@EEAddr EEAddr `uc  1 a 1 3 ]
+"197
+} 0
+"166
+[v _EEPROMread EEPROMread `(uc  1 e 1 0 ]
+{
+[v EEPROMread@EEAddr EEAddr `uc  1 a 1 wreg ]
+"168
+[v EEPROMread@ReEEPROMread ReEEPROMread `uc  1 a 1 3 ]
+"166
+[v EEPROMread@EEAddr EEAddr `uc  1 a 1 wreg ]
+"169
+[v EEPROMread@EEAddr EEAddr `uc  1 a 1 2 ]
+"178
+} 0
+"129
+[v _DelayMs DelayMs `(v  1 e 1 0 ]
+{
+"131
+[v DelayMs@a a `ui  1 a 2 8 ]
+"130
+[v DelayMs@Time Time `ui  1 p 2 6 ]
+"136
+} 0
+"119
+[v _Delay_Us Delay_Us `(v  1 e 1 0 ]
+{
+"121
+[v Delay_Us@a a `ui  1 a 2 4 ]
+"120
+[v Delay_Us@Time Time `ui  1 p 2 2 ]
+"127
+} 0
+"17
+[v _ISR ISR `II(v  1 e 1 0 ]
+{
+"117
+} 0

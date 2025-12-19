@@ -1,0 +1,83 @@
+[p PRO_MODE GLOBOPT AUTOSTATIC RSC14 PICREGULAR PICMID SPACEOPT ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip FT62F21X ]
+[d frameptr 6 ]
+"62 c:\users\administrator\desktop\Èí¼þ\ide3.0.3_6c03\data\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 c:\users\administrator\desktop\Èí¼þ\ide3.0.3_6c03\data\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"25 C:\Users\Administrator\Desktop\FMD demo\C\FT62F21x\test_62f21x_PWM\test_62f21x_PWM.C
+[v _ISR ISR `II(v  1 e 1 0 ]
+"38
+[v _POWER_INITIAL POWER_INITIAL `(v  1 e 1 0 ]
+"58
+[v _PWM1_INITIAL PWM1_INITIAL `(v  1 e 1 0 ]
+"122
+[v _main main `(v  1 e 1 0 ]
+"59 c:\users\administrator\desktop\Èí¼þ\ide3.0.3_6c03\data\include\FT62F21X.h
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+"115
+[v _INTCON INTCON `VEuc  1 e 1 @11 ]
+"123
+[v _PEIE PEIE `VEb  1 e 0 @94 ]
+"124
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"143
+[v _TMR2IF TMR2IF `VEb  1 e 0 @97 ]
+"176
+[v _P1ADTL P1ADTL `VEuc  1 e 1 @14 ]
+"186
+[v _TMR2L TMR2L `VEuc  1 e 1 @17 ]
+"190
+[v _T2CON0 T2CON0 `VEuc  1 e 1 @18 ]
+"194
+[v _TMR2ON TMR2ON `VEb  1 e 0 @146 ]
+"221
+[v _TMR2H TMR2H `VEuc  1 e 1 @19 ]
+"225
+[v _P1ADTH P1ADTH `VEuc  1 e 1 @20 ]
+"233
+[v _P1CON P1CON `VEuc  1 e 1 @22 ]
+"358
+[v _MSCON MSCON `VEuc  1 e 1 @27 ]
+"438
+[v _OPTION OPTION `VEuc  1 e 1 @129 ]
+"467
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"544
+[v _TMR2IE TMR2IE `VEb  1 e 0 @1121 ]
+"613
+[v _OSCCON OSCCON `VEuc  1 e 1 @143 ]
+"641
+[v _P1OE P1OE `VEuc  1 e 1 @144 ]
+"670
+[v _PR2L PR2L `VEuc  1 e 1 @145 ]
+"674
+[v _PR2H PR2H `VEuc  1 e 1 @146 ]
+"678
+[v _WPUA WPUA `VEuc  1 e 1 @149 ]
+"798
+[v _P1POL P1POL `VEuc  1 e 1 @153 ]
+"862
+[v _T2CON1 T2CON1 `VEuc  1 e 1 @158 ]
+"122 C:\Users\Administrator\Desktop\FMD demo\C\FT62F21x\test_62f21x_PWM\test_62f21x_PWM.C
+[v _main main `(v  1 e 1 0 ]
+{
+"130
+} 0
+"58
+[v _PWM1_INITIAL PWM1_INITIAL `(v  1 e 1 0 ]
+{
+"115
+} 0
+"38
+[v _POWER_INITIAL POWER_INITIAL `(v  1 e 1 0 ]
+{
+"49
+} 0
+"25
+[v _ISR ISR `II(v  1 e 1 0 ]
+{
+"31
+} 0

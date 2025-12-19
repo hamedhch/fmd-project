@@ -1,0 +1,735 @@
+
+
+GNU Macro Assembler for 8 bit devices.       
+                                                                                               Mon Aug 09 17:48:34 2021
+
+GNU C Code Generator                                                 
+     1                           	processor	FT62F21X
+     2                           	opt	pw 120
+     3                           	opt	pm
+     4                           	psect	idataCOMMON,global,class=CODE,delta=2
+     5                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     6                           	psect	bssCOMMON,global,class=COMMON,space=1,delta=1
+     7                           	psect	dataCOMMON,global,class=COMMON,space=1,delta=1
+     8                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
+     9                           	psect	maintext,global,class=CODE,split=1,delta=2
+    10                           	psect	text1,local,class=CODE,merge=1,delta=2
+    11                           	psect	text2,local,class=CODE,merge=1,delta=2
+    12                           	psect	text3,local,class=CODE,merge=1,delta=2
+    13                           	psect	text4,local,class=CODE,merge=1,delta=2
+    14                           	psect	intentry,global,class=CODE,delta=2
+    15                           	psect	pa_nodes0,global,class=CODE,delta=2
+    16                           	dabs	1,0x7E,2
+    17  0000                     
+    18                           ; Version 2.20
+    19                           ; Generated 09/04/2020 
+    20                           ; 
+    21                           ; SFR Addresses
+    22  0000                     
+    23                           	psect	idataCOMMON
+    24  0000                     __pidataCOMMON:	
+    25  001B                     _MSCON	set	27
+    26  000B                     _INTCON	set	11
+    27  0005                     _PORTA	set	5
+    28  0001                     _TMR0	set	1
+    29  005F                     _GIE	set	95
+    30  005D                     _T0IE	set	93
+    31  005B                     _PAIE	set	91
+    32  005A                     _T0IF	set	90
+    33  0058                     _PAIF	set	88
+    34  002C                     _PA4	set	44
+    35  002A                     _PA2	set	42
+    36  0095                     _WPUA	set	149
+    37  008F                     _OSCCON	set	143
+    38  0085                     _TRISA	set	133
+    39  0081                     _OPTION	set	129
+    40  04B2                     _IOCA2	set	1202
+    41  042A                     _TRISA2	set	1066
+    42                           
+    43                           	psect	cinit
+    44  000D                     start_initialization:	
+    45                           ; #config settings
+    46                           
+    47  000D                     __initialization:	
+    48                           
+    49                           ;initializer for _bitdata
+    50  000D  3001               	movlw	1
+    51  000E  00FC               	movwf	__pdataCOMMON& (0+127)
+    52                           
+    53                           ; Clear objects allocated to COMMON
+    54  000F  01F0               	clrf	__pbssCOMMON& (0+127)
+    55  0010  01F1               	clrf	(__pbssCOMMON+1)& (0+127)
+    56  0011  01F2               	clrf	(__pbssCOMMON+2)& (0+127)
+    57  0012  01F3               	clrf	(__pbssCOMMON+3)& (0+127)
+    58  0013  01F4               	clrf	(__pbssCOMMON+4)& (0+127)
+    59  0014  01F5               	clrf	(__pbssCOMMON+5)& (0+127)
+    60  0015  01F6               	clrf	(__pbssCOMMON+6)& (0+127)
+    61  0016  01F7               	clrf	(__pbssCOMMON+7)& (0+127)
+    62  0017  01F8               	clrf	(__pbssCOMMON+8)& (0+127)
+    63  0018                     end_of_initialization:	
+    64                           ;End of C runtime variable initialization code
+    65                           
+    66  0018                     __end_of__initialization:	
+    67  0018  0183               	clrf	3
+    68  0019  285F               	ljmp	_main	;jump to C main() function
+    69                           
+    70                           	psect	bssCOMMON
+    71  0070                     __pbssCOMMON:	
+    72  0070                     _IRDataTimer:	
+    73  0070                     	ds	4
+    74  0074                     _rdata2:	
+    75  0074                     	ds	1
+    76  0075                     _rdata1:	
+    77  0075                     	ds	1
+    78  0076                     _ReceiveFinish:	
+    79  0076                     	ds	1
+    80  0077                     _IRbitTime:	
+    81  0077                     	ds	1
+    82  0078                     _IRbitNum:	
+    83  0078                     	ds	1
+    84                           
+    85                           	psect	dataCOMMON
+    86  007C                     __pdataCOMMON:	
+    87  007C                     _bitdata:	
+    88  007C                     	ds	1
+    89                           
+    90                           	psect	cstackCOMMON
+    91  0079                     __pcstackCOMMON:	
+    92  0079                     ?_ISR:	
+    93  0079                     ??_ISR:	
+    94                           ; 1 bytes @ 0x0
+    95                           
+    96  0079                     ?_POWER_INITIAL:	
+    97                           ; 1 bytes @ 0x0
+    98                           
+    99  0079                     ?_TIMER0_INITIAL:	
+   100                           ; 1 bytes @ 0x0
+   101                           
+   102  0079                     ?_PA2_Level_Change_INITIAL:	
+   103                           ; 1 bytes @ 0x0
+   104                           
+   105  0079                     ?_main:	
+   106                           ; 1 bytes @ 0x0
+   107                           
+   108                           
+   109                           ; 1 bytes @ 0x0
+   110  0079                     	ds	3
+   111  007C                     ??_POWER_INITIAL:	
+   112  007C                     ??_TIMER0_INITIAL:	
+   113                           ; 1 bytes @ 0x3
+   114                           
+   115  007C                     ??_PA2_Level_Change_INITIAL:	
+   116                           ; 1 bytes @ 0x3
+   117                           
+   118  007C                     ??_main:	
+   119                           ; 1 bytes @ 0x3
+   120                           
+   121                           
+   122                           	psect	maintext
+   123  005F                     __pmaintext:	
+   124                           ; 1 bytes @ 0x3
+   125 ;;
+   126 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   127 ;;
+   128 ;; *************** function _main *****************
+   129 ;; Defined at:
+   130 ;;		line 157 in file "test_ft62f21x_IR_Receive.C"
+   131 ;; Parameters:    Size  Location     Type
+   132 ;;		None
+   133 ;; Auto vars:     Size  Location     Type
+   134 ;;		None
+   135 ;; Return value:  Size  Location     Type
+   136 ;;                  1    wreg      void 
+   137 ;; Registers used:
+   138 ;;		wreg, status,2, status,0, pclath, cstack
+   139 ;; Tracked objects:
+   140 ;;		On entry : B00/0
+   141 ;;		On exit  : B00/0
+   142 ;;		Unchanged: A00/0
+   143 ;; Data sizes:     COMMON   BANK0
+   144 ;;      Params:         0       0
+   145 ;;      Locals:         0       0
+   146 ;;      Temps:          0       0
+   147 ;;      Totals:         0       0
+   148 ;;Total ram usage:        0 bytes
+   149 ;; Hardware stack levels required when called:    2
+   150 ;; This function calls:
+   151 ;;		_PA2_Level_Change_INITIAL
+   152 ;;		_POWER_INITIAL
+   153 ;;		_TIMER0_INITIAL
+   154 ;; This function is called by:
+   155 ;;		Startup code after reset
+   156 ;; This function uses a non-reentrant model
+   157 ;;
+   158                           
+   159                           
+   160                           ;psect for function _main
+   161  005F                     _main:	
+   162                           
+   163                           ;test_ft62f21x_IR_Receive.C: 160: POWER_INITIAL();
+   164                           
+   165                           ;incstack = 0
+   166                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
+   167  005F  2077               	fcall	_POWER_INITIAL
+   168                           
+   169                           ;test_ft62f21x_IR_Receive.C: 161: TIMER0_INITIAL();
+   170  0060  208F               	fcall	_TIMER0_INITIAL
+   171                           
+   172                           ;test_ft62f21x_IR_Receive.C: 162: PA2_Level_Change_INITIAL();
+   173  0061  2086               	fcall	_PA2_Level_Change_INITIAL
+   174                           
+   175                           ;test_ft62f21x_IR_Receive.C: 163: GIE = 1;
+   176  0062  178B               	bsf	11,7	;volatile
+   177  0063                     l1177:	
+   178                           
+   179                           ;test_ft62f21x_IR_Receive.C: 165: {
+   180                           ;test_ft62f21x_IR_Receive.C: 166: if(ReceiveFinish)
+   181  0063  0876               	movf	_ReceiveFinish,w
+   182  0064  1903               	btfsc	3,2
+   183  0065  2863               	goto	l1177
+   184                           
+   185                           ;test_ft62f21x_IR_Receive.C: 167: {
+   186                           ;test_ft62f21x_IR_Receive.C: 168: ReceiveFinish = 0;
+   187  0066  01F6               	clrf	_ReceiveFinish
+   188                           
+   189                           ;test_ft62f21x_IR_Receive.C: 169: rdata1 = 0xFF - IRDataTimer[0];
+   190  0067  0970               	comf	_IRDataTimer,w
+   191  0068  00F5               	movwf	_rdata1
+   192                           
+   193                           ;test_ft62f21x_IR_Receive.C: 170: rdata2 = 0xFF - IRDataTimer[2];
+   194  0069  0972               	comf	_IRDataTimer+2,w
+   195  006A  00F4               	movwf	_rdata2
+   196                           
+   197                           ;test_ft62f21x_IR_Receive.C: 171: if((rdata1 == IRDataTimer[1])&&(rdata2 == IRDataTimer[
+      +                          3]))
+   198  006B  0871               	movf	_IRDataTimer+1,w
+   199  006C  0675               	xorwf	_rdata1,w
+   200  006D  1D03               	skipz
+   201  006E  2863               	goto	l1177
+   202  006F  0873               	movf	_IRDataTimer+3,w
+   203  0070  0674               	xorwf	_rdata2,w
+   204  0071  1D03               	skipz
+   205  0072  2863               	goto	l1177
+   206                           
+   207                           ;test_ft62f21x_IR_Receive.C: 172: {
+   208                           ;test_ft62f21x_IR_Receive.C: 173: PA4 = ~PA4;
+   209  0073  3010               	movlw	16
+   210  0074  1283               	bcf	3,5	;RP0=0, select bank0
+   211  0075  0685               	xorwf	5,f
+   212  0076  2863               	goto	l1177
+   213  0077                     __end_of_main:	
+   214                           
+   215                           	psect	text1
+   216  008F                     __ptext1:	
+   217 ;; *************** function _TIMER0_INITIAL *****************
+   218 ;; Defined at:
+   219 ;;		line 124 in file "test_ft62f21x_IR_Receive.C"
+   220 ;; Parameters:    Size  Location     Type
+   221 ;;		None
+   222 ;; Auto vars:     Size  Location     Type
+   223 ;;		None
+   224 ;; Return value:  Size  Location     Type
+   225 ;;                  1    wreg      void 
+   226 ;; Registers used:
+   227 ;;		wreg
+   228 ;; Tracked objects:
+   229 ;;		On entry : B00/0
+   230 ;;		On exit  : B00/0
+   231 ;;		Unchanged: A00/0
+   232 ;; Data sizes:     COMMON   BANK0
+   233 ;;      Params:         0       0
+   234 ;;      Locals:         0       0
+   235 ;;      Temps:          0       0
+   236 ;;      Totals:         0       0
+   237 ;;Total ram usage:        0 bytes
+   238 ;; Hardware stack levels used:    1
+   239 ;; Hardware stack levels required when called:    1
+   240 ;; This function calls:
+   241 ;;		Nothing
+   242 ;; This function is called by:
+   243 ;;		_main
+   244 ;; This function uses a non-reentrant model
+   245 ;;
+   246                           
+   247                           
+   248                           ;psect for function _TIMER0_INITIAL
+   249  008F                     _TIMER0_INITIAL:	
+   250                           
+   251                           ;test_ft62f21x_IR_Receive.C: 126: OPTION = 0B00000011;
+   252                           
+   253                           ;incstack = 0
+   254                           ; Regs used in _TIMER0_INITIAL: [wreg]
+   255  008F  3003               	movlw	3
+   256  0090  1683               	bsf	3,5	;RP0=1, select bank1
+   257  0091  0081               	movwf	1	;volatile
+   258                           
+   259                           ;test_ft62f21x_IR_Receive.C: 133: TMR0 = 140;
+   260  0092  308C               	movlw	140
+   261  0093  1283               	bcf	3,5	;RP0=0, select bank0
+   262  0094  0081               	movwf	1	;volatile
+   263                           
+   264                           ;test_ft62f21x_IR_Receive.C: 134: T0IF = 0;
+   265  0095  110B               	bcf	11,2	;volatile
+   266  0096  0008               	return
+   267  0097                     __end_of_TIMER0_INITIAL:	
+   268                           
+   269                           	psect	text2
+   270  0077                     __ptext2:	
+   271 ;; *************** function _POWER_INITIAL *****************
+   272 ;; Defined at:
+   273 ;;		line 104 in file "test_ft62f21x_IR_Receive.C"
+   274 ;; Parameters:    Size  Location     Type
+   275 ;;		None
+   276 ;; Auto vars:     Size  Location     Type
+   277 ;;		None
+   278 ;; Return value:  Size  Location     Type
+   279 ;;                  1    wreg      void 
+   280 ;; Registers used:
+   281 ;;		wreg, status,2
+   282 ;; Tracked objects:
+   283 ;;		On entry : B00/0
+   284 ;;		On exit  : B00/0
+   285 ;;		Unchanged: A00/0
+   286 ;; Data sizes:     COMMON   BANK0
+   287 ;;      Params:         0       0
+   288 ;;      Locals:         0       0
+   289 ;;      Temps:          0       0
+   290 ;;      Totals:         0       0
+   291 ;;Total ram usage:        0 bytes
+   292 ;; Hardware stack levels used:    1
+   293 ;; Hardware stack levels required when called:    1
+   294 ;; This function calls:
+   295 ;;		Nothing
+   296 ;; This function is called by:
+   297 ;;		_main
+   298 ;; This function uses a non-reentrant model
+   299 ;;
+   300                           
+   301                           
+   302                           ;psect for function _POWER_INITIAL
+   303  0077                     _POWER_INITIAL:	
+   304                           
+   305                           ;test_ft62f21x_IR_Receive.C: 106: OSCCON = 0B01110000;
+   306                           
+   307                           ;incstack = 0
+   308                           ; Regs used in _POWER_INITIAL: [wreg+status,2]
+   309  0077  3070               	movlw	112
+   310  0078  1683               	bsf	3,5	;RP0=1, select bank1
+   311  0079  008F               	movwf	15	;volatile
+   312                           
+   313                           ;test_ft62f21x_IR_Receive.C: 108: INTCON = 0;
+   314  007A  018B               	clrf	11	;volatile
+   315                           
+   316                           ;test_ft62f21x_IR_Receive.C: 110: PORTA = 0B00000000;
+   317  007B  1283               	bcf	3,5	;RP0=0, select bank0
+   318  007C  0185               	clrf	5	;volatile
+   319                           
+   320                           ;test_ft62f21x_IR_Receive.C: 111: TRISA = 0B00000100;
+   321  007D  3004               	movlw	4
+   322  007E  1683               	bsf	3,5	;RP0=1, select bank1
+   323  007F  0085               	movwf	5	;volatile
+   324                           
+   325                           ;test_ft62f21x_IR_Receive.C: 112: WPUA = 0B00000100;
+   326  0080  0095               	movwf	21	;volatile
+   327                           
+   328                           ;test_ft62f21x_IR_Receive.C: 114: OPTION = 0B00001000;
+   329  0081  3008               	movlw	8
+   330  0082  0081               	movwf	1	;volatile
+   331                           
+   332                           ;test_ft62f21x_IR_Receive.C: 116: MSCON = 0B00000000;
+   333  0083  1283               	bcf	3,5	;RP0=0, select bank0
+   334  0084  019B               	clrf	27	;volatile
+   335  0085  0008               	return
+   336  0086                     __end_of_POWER_INITIAL:	
+   337                           
+   338                           	psect	text3
+   339  0086                     __ptext3:	
+   340 ;; *************** function _PA2_Level_Change_INITIAL *****************
+   341 ;; Defined at:
+   342 ;;		line 142 in file "test_ft62f21x_IR_Receive.C"
+   343 ;; Parameters:    Size  Location     Type
+   344 ;;		None
+   345 ;; Auto vars:     Size  Location     Type
+   346 ;;		None
+   347 ;; Return value:  Size  Location     Type
+   348 ;;                  1    wreg      void 
+   349 ;; Registers used:
+   350 ;;		wreg
+   351 ;; Tracked objects:
+   352 ;;		On entry : B00/0
+   353 ;;		On exit  : B00/100
+   354 ;;		Unchanged: A00/0
+   355 ;; Data sizes:     COMMON   BANK0
+   356 ;;      Params:         0       0
+   357 ;;      Locals:         0       0
+   358 ;;      Temps:          0       0
+   359 ;;      Totals:         0       0
+   360 ;;Total ram usage:        0 bytes
+   361 ;; Hardware stack levels used:    1
+   362 ;; Hardware stack levels required when called:    1
+   363 ;; This function calls:
+   364 ;;		Nothing
+   365 ;; This function is called by:
+   366 ;;		_main
+   367 ;; This function uses a non-reentrant model
+   368 ;;
+   369                           
+   370                           
+   371                           ;psect for function _PA2_Level_Change_INITIAL
+   372  0086                     _PA2_Level_Change_INITIAL:	
+   373                           
+   374                           ;test_ft62f21x_IR_Receive.C: 144: TRISA2 =1;
+   375                           
+   376                           ;incstack = 0
+   377                           ; Regs used in _PA2_Level_Change_INITIAL: [wreg]
+   378  0086  1683               	bsf	3,5	;RP0=1, select bank1
+   379  0087  1505               	bsf	5,2	;volatile
+   380                           
+   381                           ;test_ft62f21x_IR_Receive.C: 145: ReadAPin = PORTA;
+   382  0088  1283               	bcf	3,5	;RP0=0, select bank0
+   383  0089  0805               	movf	5,w	;volatile
+   384                           
+   385                           ;test_ft62f21x_IR_Receive.C: 146: PAIF =0;
+   386  008A  100B               	bcf	11,0	;volatile
+   387                           
+   388                           ;test_ft62f21x_IR_Receive.C: 147: IOCA2 =1;
+   389  008B  1683               	bsf	3,5	;RP0=1, select bank1
+   390  008C  1516               	bsf	22,2	;volatile
+   391                           
+   392                           ;test_ft62f21x_IR_Receive.C: 148: PAIE =1;
+   393  008D  158B               	bsf	11,3	;volatile
+   394  008E  0008               	return
+   395  008F                     __end_of_PA2_Level_Change_INITIAL:	
+   396                           
+   397                           	psect	text4
+   398  001A                     __ptext4:	
+   399 ;; *************** function _ISR *****************
+   400 ;; Defined at:
+   401 ;;		line 43 in file "test_ft62f21x_IR_Receive.C"
+   402 ;; Parameters:    Size  Location     Type
+   403 ;;		None
+   404 ;; Auto vars:     Size  Location     Type
+   405 ;;		None
+   406 ;; Return value:  Size  Location     Type
+   407 ;;                  1    wreg      void 
+   408 ;; Registers used:
+   409 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+   410 ;; Tracked objects:
+   411 ;;		On entry : 0/0
+   412 ;;		On exit  : 0/0
+   413 ;;		Unchanged: 0/0
+   414 ;; Data sizes:     COMMON   BANK0
+   415 ;;      Params:         0       0
+   416 ;;      Locals:         0       0
+   417 ;;      Temps:          3       0
+   418 ;;      Totals:         3       0
+   419 ;;Total ram usage:        3 bytes
+   420 ;; Hardware stack levels used:    1
+   421 ;; This function calls:
+   422 ;;		Nothing
+   423 ;; This function is called by:
+   424 ;;		Interrupt level 1
+   425 ;; This function uses a non-reentrant model
+   426 ;;
+   427                           
+   428                           
+   429                           ;psect for function _ISR
+   430  001A                     _ISR:	
+   431                           
+   432                           ;test_ft62f21x_IR_Receive.C: 47: if(T0IE && T0IF)
+   433  001A  1A8B               	btfsc	11,5	;volatile
+   434  001B  1D0B               	btfss	11,2	;volatile
+   435  001C  2828               	goto	i1l1135
+   436                           
+   437                           ;test_ft62f21x_IR_Receive.C: 48: {
+   438                           ;test_ft62f21x_IR_Receive.C: 49: TMR0 = 140;
+   439  001D  308C               	movlw	140
+   440  001E  1283               	bcf	3,5	;RP0=0, select bank0
+   441  001F  0081               	movwf	1	;volatile
+   442                           
+   443                           ;test_ft62f21x_IR_Receive.C: 51: T0IF = 0;
+   444  0020  110B               	bcf	11,2	;volatile
+   445  0021  3033               	movlw	51
+   446                           
+   447                           ;test_ft62f21x_IR_Receive.C: 52: IRbitTime++;
+   448  0022  0AF7               	incf	_IRbitTime,f
+   449                           
+   450                           ;test_ft62f21x_IR_Receive.C: 53: if(IRbitTime > 50)
+   451  0023  0277               	subwf	_IRbitTime,w
+   452  0024  1C03               	skipc
+   453  0025  2828               	goto	i1l1135
+   454                           
+   455                           ;test_ft62f21x_IR_Receive.C: 54: {
+   456                           ;test_ft62f21x_IR_Receive.C: 55: T0IE = 0;
+   457  0026  128B               	bcf	11,5	;volatile
+   458                           
+   459                           ;test_ft62f21x_IR_Receive.C: 56: IRbitTime = 0;
+   460  0027  01F7               	clrf	_IRbitTime
+   461  0028                     i1l1135:	
+   462                           
+   463                           ;test_ft62f21x_IR_Receive.C: 57: }
+   464                           ;test_ft62f21x_IR_Receive.C: 58: }
+   465                           ;test_ft62f21x_IR_Receive.C: 61: if(PAIE && PAIF)
+   466  0028  198B               	btfsc	11,3	;volatile
+   467  0029  1C0B               	btfss	11,0	;volatile
+   468  002A  2856               	goto	i1l702
+   469                           
+   470                           ;test_ft62f21x_IR_Receive.C: 62: {
+   471                           ;test_ft62f21x_IR_Receive.C: 63: ReadAPin = PORTA;
+   472  002B  1283               	bcf	3,5	;RP0=0, select bank0
+   473  002C  0805               	movf	5,w	;volatile
+   474                           
+   475                           ;test_ft62f21x_IR_Receive.C: 64: PAIF = 0;
+   476  002D  100B               	bcf	11,0	;volatile
+   477                           
+   478                           ;test_ft62f21x_IR_Receive.C: 65: if(PA2 == 0)
+   479  002E  1905               	btfsc	5,2	;volatile
+   480  002F  2856               	goto	i1l702
+   481                           
+   482                           ;test_ft62f21x_IR_Receive.C: 66: {
+   483                           ;test_ft62f21x_IR_Receive.C: 67: T0IE = 1;
+   484  0030  168B               	bsf	11,5	;volatile
+   485                           
+   486                           ;test_ft62f21x_IR_Receive.C: 68: if(IRbitTime > 21)
+   487  0031  3016               	movlw	22
+   488  0032  0277               	subwf	_IRbitTime,w
+   489  0033  1C03               	skipc
+   490  0034  283C               	goto	i1l1151
+   491                           
+   492                           ;test_ft62f21x_IR_Receive.C: 69: {
+   493                           ;test_ft62f21x_IR_Receive.C: 70: IRDataTimer[0] = 0;
+   494  0035  01F0               	clrf	_IRDataTimer
+   495                           
+   496                           ;test_ft62f21x_IR_Receive.C: 71: IRDataTimer[1] = 0;
+   497  0036  01F1               	clrf	_IRDataTimer+1
+   498                           
+   499                           ;test_ft62f21x_IR_Receive.C: 72: IRDataTimer[2] = 0;
+   500  0037  01F2               	clrf	_IRDataTimer+2
+   501                           
+   502                           ;test_ft62f21x_IR_Receive.C: 73: IRDataTimer[3] = 0;
+   503  0038  01F3               	clrf	_IRDataTimer+3
+   504                           
+   505                           ;test_ft62f21x_IR_Receive.C: 74: IRbitNum = 0;
+   506  0039  01F8               	clrf	_IRbitNum
+   507                           
+   508                           ;test_ft62f21x_IR_Receive.C: 75: bitdata = 0x00;
+   509  003A  01FC               	clrf	_bitdata
+   510                           
+   511                           ;test_ft62f21x_IR_Receive.C: 76: }
+   512  003B  2845               	goto	i1l1155
+   513  003C                     i1l1151:	
+   514                           
+   515                           ;test_ft62f21x_IR_Receive.C: 77: else if(IRbitTime > 3)
+   516  003C  3004               	movlw	4
+   517  003D  0277               	subwf	_IRbitTime,w
+   518  003E  1C03               	skipc
+   519  003F  2845               	goto	i1l1155
+   520                           
+   521                           ;test_ft62f21x_IR_Receive.C: 78: {
+   522                           ;test_ft62f21x_IR_Receive.C: 79: IRDataTimer[IRbitNum-1] |= bitdata;
+   523  0040  0878               	movf	_IRbitNum,w
+   524  0041  3E6F               	addlw	(low ((_IRDataTimer| 0+255)))& (0+255)
+   525  0042  0084               	movwf	4
+   526  0043  087C               	movf	_bitdata,w
+   527  0044  0480               	iorwf	0,f
+   528  0045                     i1l1155:	
+   529                           
+   530                           ;test_ft62f21x_IR_Receive.C: 80: }
+   531                           ;test_ft62f21x_IR_Receive.C: 81: IRbitTime = 0;
+   532  0045  01F7               	clrf	_IRbitTime
+   533                           
+   534                           ;test_ft62f21x_IR_Receive.C: 82: bitdata<<=1;
+   535  0046  1003               	clrc
+   536  0047  0DFC               	rlf	_bitdata,f
+   537                           
+   538                           ;test_ft62f21x_IR_Receive.C: 83: if(bitdata == 0)
+   539  0048  087C               	movf	_bitdata,w
+   540  0049  1D03               	btfss	3,2
+   541  004A  284E               	goto	i1l1165
+   542                           
+   543                           ;test_ft62f21x_IR_Receive.C: 84: {
+   544                           ;test_ft62f21x_IR_Receive.C: 85: bitdata = 0x01;
+   545  004B  01FC               	clrf	_bitdata
+   546  004C  0AFC               	incf	_bitdata,f
+   547                           
+   548                           ;test_ft62f21x_IR_Receive.C: 86: IRbitNum++;
+   549  004D  0AF8               	incf	_IRbitNum,f
+   550  004E                     i1l1165:	
+   551                           
+   552                           ;test_ft62f21x_IR_Receive.C: 87: }
+   553                           ;test_ft62f21x_IR_Receive.C: 88: if(IRbitNum > 4)
+   554  004E  3005               	movlw	5
+   555  004F  0278               	subwf	_IRbitNum,w
+   556  0050  1C03               	skipc
+   557  0051  2856               	goto	i1l702
+   558                           
+   559                           ;test_ft62f21x_IR_Receive.C: 89: {
+   560                           ;test_ft62f21x_IR_Receive.C: 90: IRbitNum = 0;
+   561  0052  01F8               	clrf	_IRbitNum
+   562                           
+   563                           ;test_ft62f21x_IR_Receive.C: 91: T0IE = 0;
+   564  0053  128B               	bcf	11,5	;volatile
+   565                           
+   566                           ;test_ft62f21x_IR_Receive.C: 92: ReceiveFinish = 1;
+   567  0054  01F6               	clrf	_ReceiveFinish
+   568  0055  0AF6               	incf	_ReceiveFinish,f
+   569  0056                     i1l702:	
+   570  0056  087B               	movf	??_ISR+2,w
+   571  0057  008A               	movwf	10
+   572  0058  087A               	movf	??_ISR+1,w
+   573  0059  0084               	movwf	4
+   574  005A  0E79               	swapf	??_ISR^(0+-128),w
+   575  005B  0083               	movwf	3
+   576  005C  0EFE               	swapf	126,f
+   577  005D  0E7E               	swapf	126,w
+   578  005E  0009               	retfie
+   579  005F                     __end_of_ISR:	
+   580  007E                     btemp	set	126	;btemp
+   581  007E                     wtemp0	set	126
+   582                           
+   583                           	psect	intentry
+   584  0004                     __pintentry:	
+   585                           ;incstack = 0
+   586                           ; Regs used in _ISR: [wreg-fsr0h+status,2+status,0]
+   587                           
+   588  0004                     interrupt_function:	
+   589  007E                     saved_w	set	btemp
+   590  0004  00FE               	movwf	btemp
+   591  0005  0E03               	swapf	3,w
+   592  0006  00F9               	movwf	??_ISR
+   593  0007  0804               	movf	4,w
+   594  0008  00FA               	movwf	??_ISR+1
+   595  0009  080A               	movf	10,w
+   596  000A  00FB               	movwf	??_ISR+2
+   597  000B  281A               	ljmp	_ISR
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        1
+    BSS         9
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14      3      13
+    BANK0            48      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    None.
+
+Critical Paths under _ISR in COMMON
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _ISR in BANK0
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0       0
+           _PA2_Level_Change_INITIAL
+                      _POWER_INITIAL
+                     _TIMER0_INITIAL
+ ---------------------------------------------------------------------------------
+ (1) _TIMER0_INITIAL                                       0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _POWER_INITIAL                                        0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _PA2_Level_Change_INITIAL                             0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 1
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (2) _ISR                                                  3     3      0       0
+                                              0 COMMON     3     3      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _PA2_Level_Change_INITIAL
+   _POWER_INITIAL
+   _TIMER0_INITIAL
+
+ _ISR (ROOT)
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+SFR1                 0      0       0       2        0.0%
+BITSFR1              0      0       0       2        0.0%
+BANK0               30      0       0       5        0.0%
+BITBANK0            30      0       0       4        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR0              0      0       0       1        0.0%
+COMMON               E      3       D       1       92.9%
+BITCOMMON            E      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+DATA                 0      0       D       3        0.0%
+ABS                  0      0       D       6        0.0%
+NULL                 0      0       0       0        0.0%
+STACK                0      0       0       2        0.0%
+EEDATA              80      0       0       0        0.0%
+
+
+GNU Macro Assembler for 8 bit devices.     
+Symbol Table                                                                                   Mon Aug 09 17:48:34 2021
+
+                              _GIE 005F                                _PA2 002A  
+                              _PA4 002C                                _ISR 001A  
+                              fsr0 0004                                indf 0000  
+                             ?_ISR 0079                               l1177 0063  
+                             _T0IE 005D                               _T0IF 005A  
+                             _PAIE 005B                               _PAIF 0058  
+                             _TMR0 0001                               _WPUA 0095  
+                             _main 005F                               btemp 007E  
+                             start 000C                              ??_ISR 0079  
+                   _TIMER0_INITIAL 008F                              ?_main 0079  
+                            _IOCA2 04B2                              i1l702 0056  
+                            _MSCON 001B                              _PORTA 0005  
+                            _TRISA 0085                              pclath 000A  
+                            status 0003                              wtemp0 007E  
+                  __initialization 000D                       __end_of_main 0077  
+           __end_of_TIMER0_INITIAL 0097                             ??_main 007C  
+                           i1l1151 003C                             i1l1135 0028  
+                           i1l1155 0045                             i1l1165 004E  
+                           _INTCON 000B                             _OSCCON 008F  
+                           _OPTION 0081                             _TRISA2 042A  
+                  ?_TIMER0_INITIAL 0079                             _rdata1 0075  
+                           _rdata2 0074  __size_of_PA2_Level_Change_INITIAL 0009  
+        ?_PA2_Level_Change_INITIAL 0079                       __pdataCOMMON 007C  
+                           saved_w 007E              __end_of_POWER_INITIAL 0086  
+          __end_of__initialization 0018                      _ReceiveFinish 0076  
+                   __pcstackCOMMON 0079                         __pmaintext 005F  
+                       __pintentry 0004                            _bitdata 007C  
+                          __ptext1 008F                            __ptext2 0077  
+                          __ptext3 0086                            __ptext4 001A  
+                     __size_of_ISR 0045               end_of_initialization 0018  
+ __end_of_PA2_Level_Change_INITIAL 008F                   ??_TIMER0_INITIAL 007C  
+                        _IRbitTime 0077                      __pidataCOMMON 0000  
+              start_initialization 000D                        __end_of_ISR 005F  
+         _PA2_Level_Change_INITIAL 0086             __size_of_POWER_INITIAL 000F  
+                      __pbssCOMMON 0070                          ___latbits 0000  
+                interrupt_function 0004                      _POWER_INITIAL 0077  
+                         _IRbitNum 0078                     ?_POWER_INITIAL 0079  
+       ??_PA2_Level_Change_INITIAL 007C                      __size_of_main 0018  
+                      _IRDataTimer 0070            __size_of_TIMER0_INITIAL 0008  
+                  ??_POWER_INITIAL 007C                           intlevel1 0000  

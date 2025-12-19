@@ -1,0 +1,505 @@
+
+
+GNU Macro Assembler for 8 bit devices.       
+                                                                                               Sat Oct 09 13:51:41 2021
+
+GNU C Code Generator                                                 
+     1                           	processor	FT62F21X
+     2                           	opt	pw 120
+     3                           	opt	pm
+     4                           	psect	text0,local,class=CODE,merge=1,delta=2
+     5                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     6                           	psect	bssCOMMON,global,class=COMMON,space=1,delta=1
+     7                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
+     8                           	psect	maintext,global,class=CODE,split=1,delta=2
+     9                           	psect	text1,local,class=CODE,merge=1,delta=2
+    10                           	psect	text2,local,class=CODE,merge=1,delta=2
+    11                           	psect	text3,local,class=CODE,merge=1,delta=2
+    12                           	psect	pa_nodes0,global,class=CODE,delta=2
+    13                           	dabs	1,0x7E,2
+    14  0000                     
+    15                           ; Version 2.20
+    16                           ; Generated 09/04/2020 
+    17                           ; 
+    18                           ; SFR Addresses
+    19  0000                     
+    20                           	psect	text0
+    21  0000                     __ptext0:	
+    22  001B                     _MSCON	set	27
+    23  000B                     _INTCON	set	11
+    24  0005                     _PORTA	set	5
+    25  0067                     _EEIF	set	103
+    26  005F                     _GIE	set	95
+    27  009C                     _EECON1	set	156
+    28  009B                     _EEADR	set	155
+    29  009A                     _EEDAT	set	154
+    30  0095                     _WPUA	set	149
+    31  008F                     _OSCCON	set	143
+    32  0085                     _TRISA	set	133
+    33  0081                     _OPTION	set	129
+    34  04E8                     _WR	set	1256
+    35  04E0                     _RD	set	1248
+    36                           
+    37                           	psect	cinit
+    38  03FD                     start_initialization:	
+    39                           ; #config settings
+    40                           
+    41  03FD                     __initialization:	
+    42                           
+    43                           ; Clear objects allocated to COMMON
+    44  03FD  01F2               	clrf	__pbssCOMMON& (0+127)
+    45  03FE                     end_of_initialization:	
+    46                           ;End of C runtime variable initialization code
+    47                           
+    48  03FE                     __end_of__initialization:	
+    49  03FE  0183               	clrf	3
+    50  03FF  2BD3               	ljmp	_main	;jump to C main() function
+    51                           
+    52                           	psect	bssCOMMON
+    53  0072                     __pbssCOMMON:	
+    54  0072                     _EEReadData:	
+    55  0072                     	ds	1
+    56                           
+    57                           	psect	cstackCOMMON
+    58  0070                     __pcstackCOMMON:	
+    59  0070                     ?_POWER_INITIAL:	
+    60  0070                     ??_POWER_INITIAL:	
+    61                           ; 1 bytes @ 0x0
+    62                           
+    63  0070                     ?_EEPROMread:	
+    64                           ; 1 bytes @ 0x0
+    65                           
+    66  0070                     ??_EEPROMread:	
+    67                           ; 1 bytes @ 0x0
+    68                           
+    69  0070                     ?_EEPROMwrite:	
+    70                           ; 1 bytes @ 0x0
+    71                           
+    72  0070                     ?_main:	
+    73                           ; 1 bytes @ 0x0
+    74                           
+    75  0070                     EEPROMread@EEAddr:	
+    76                           ; 1 bytes @ 0x0
+    77                           
+    78  0070                     EEPROMwrite@Data:	
+    79                           ; 1 bytes @ 0x0
+    80                           
+    81                           
+    82                           ; 1 bytes @ 0x0
+    83  0070                     	ds	1
+    84  0071                     ??_EEPROMwrite:	
+    85  0071                     EEPROMread@ReEEPROMread:	
+    86                           ; 1 bytes @ 0x1
+    87                           
+    88  0071                     EEPROMwrite@EEAddr:	
+    89                           ; 1 bytes @ 0x1
+    90                           
+    91                           
+    92                           ; 1 bytes @ 0x1
+    93  0071                     	ds	1
+    94  0072                     ??_main:	
+    95                           
+    96                           	psect	maintext
+    97  03D3                     __pmaintext:	
+    98                           ; 1 bytes @ 0x2
+    99 ;;
+   100 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   101 ;;
+   102 ;; *************** function _main *****************
+   103 ;; Defined at:
+   104 ;;		line 87 in file "test_ft62f21x_eeprom.C"
+   105 ;; Parameters:    Size  Location     Type
+   106 ;;		None
+   107 ;; Auto vars:     Size  Location     Type
+   108 ;;		None
+   109 ;; Return value:  Size  Location     Type
+   110 ;;                  1    wreg      void 
+   111 ;; Registers used:
+   112 ;;		wreg, status,2, status,0, pclath, cstack
+   113 ;; Tracked objects:
+   114 ;;		On entry : B00/0
+   115 ;;		On exit  : 0/0
+   116 ;;		Unchanged: 0/0
+   117 ;; Data sizes:     COMMON   BANK0
+   118 ;;      Params:         0       0
+   119 ;;      Locals:         0       0
+   120 ;;      Temps:          0       0
+   121 ;;      Totals:         0       0
+   122 ;;Total ram usage:        0 bytes
+   123 ;; Hardware stack levels required when called:    1
+   124 ;; This function calls:
+   125 ;;		_EEPROMread
+   126 ;;		_EEPROMwrite
+   127 ;;		_POWER_INITIAL
+   128 ;; This function is called by:
+   129 ;;		Startup code after reset
+   130 ;; This function uses a non-reentrant model
+   131 ;;
+   132                           
+   133                           
+   134                           ;psect for function _main
+   135  03D3                     _main:	
+   136                           
+   137                           ;test_ft62f21x_eeprom.C: 89: POWER_INITIAL();
+   138                           
+   139                           ;incstack = 0
+   140                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
+   141  03D3  23C5               	fcall	_POWER_INITIAL
+   142                           
+   143                           ;test_ft62f21x_eeprom.C: 90: EEPROMwrite(0x55,0xaa);
+   144  03D4  30AA               	movlw	170
+   145  03D5  00F0               	movwf	EEPROMwrite@Data
+   146  03D6  3055               	movlw	85
+   147  03D7  23E5               	fcall	_EEPROMwrite
+   148                           
+   149                           ;test_ft62f21x_eeprom.C: 91: EEPROMwrite(0x55,0xaa);
+   150  03D8  30AA               	movlw	170
+   151  03D9  00F0               	movwf	EEPROMwrite@Data
+   152  03DA  3055               	movlw	85
+   153  03DB  23E5               	fcall	_EEPROMwrite
+   154                           
+   155                           ;test_ft62f21x_eeprom.C: 93: EEReadData = EEPROMread(0x12);
+   156  03DC  3012               	movlw	18
+   157  03DD  23BA               	fcall	_EEPROMread
+   158  03DE  00F2               	movwf	_EEReadData
+   159                           
+   160                           ;test_ft62f21x_eeprom.C: 94: EEPROMwrite(0x13,~EEReadData);
+   161  03DF  0972               	comf	_EEReadData,w
+   162  03E0  00F0               	movwf	EEPROMwrite@Data
+   163  03E1  3013               	movlw	19
+   164  03E2  23E5               	fcall	_EEPROMwrite
+   165  03E3                     l1151:	
+   166                           
+   167                           ;test_ft62f21x_eeprom.C: 97: {
+   168                           ;test_ft62f21x_eeprom.C: 99: __nop();
+   169  03E3  0000               	nop
+   170  03E4  2BE3               	goto	l1151
+   171  03E5                     __end_of_main:	
+   172                           
+   173                           	psect	text1
+   174  03C5                     __ptext1:	
+   175 ;; *************** function _POWER_INITIAL *****************
+   176 ;; Defined at:
+   177 ;;		line 28 in file "test_ft62f21x_eeprom.C"
+   178 ;; Parameters:    Size  Location     Type
+   179 ;;		None
+   180 ;; Auto vars:     Size  Location     Type
+   181 ;;		None
+   182 ;; Return value:  Size  Location     Type
+   183 ;;                  1    wreg      void 
+   184 ;; Registers used:
+   185 ;;		wreg, status,2
+   186 ;; Tracked objects:
+   187 ;;		On entry : B00/0
+   188 ;;		On exit  : B00/0
+   189 ;;		Unchanged: A00/0
+   190 ;; Data sizes:     COMMON   BANK0
+   191 ;;      Params:         0       0
+   192 ;;      Locals:         0       0
+   193 ;;      Temps:          0       0
+   194 ;;      Totals:         0       0
+   195 ;;Total ram usage:        0 bytes
+   196 ;; Hardware stack levels used:    1
+   197 ;; This function calls:
+   198 ;;		Nothing
+   199 ;; This function is called by:
+   200 ;;		_main
+   201 ;; This function uses a non-reentrant model
+   202 ;;
+   203                           
+   204                           
+   205                           ;psect for function _POWER_INITIAL
+   206  03C5                     _POWER_INITIAL:	
+   207                           
+   208                           ;test_ft62f21x_eeprom.C: 30: OSCCON = 0B01110000;
+   209                           
+   210                           ;incstack = 0
+   211                           ; Regs used in _POWER_INITIAL: [wreg+status,2]
+   212  03C5  3070               	movlw	112
+   213  03C6  1683               	bsf	3,5	;RP0=1, select bank1
+   214  03C7  008F               	movwf	15	;volatile
+   215                           
+   216                           ;test_ft62f21x_eeprom.C: 31: INTCON = 0;
+   217  03C8  018B               	clrf	11	;volatile
+   218                           
+   219                           ;test_ft62f21x_eeprom.C: 33: PORTA = 0B00000000;
+   220  03C9  1283               	bcf	3,5	;RP0=0, select bank0
+   221  03CA  0185               	clrf	5	;volatile
+   222                           
+   223                           ;test_ft62f21x_eeprom.C: 34: TRISA = 0B00000000;
+   224  03CB  1683               	bsf	3,5	;RP0=1, select bank1
+   225  03CC  0185               	clrf	5	;volatile
+   226                           
+   227                           ;test_ft62f21x_eeprom.C: 35: WPUA = 0B00000000;
+   228  03CD  0195               	clrf	21	;volatile
+   229                           
+   230                           ;test_ft62f21x_eeprom.C: 37: OPTION = 0B00001000;
+   231  03CE  3008               	movlw	8
+   232  03CF  0081               	movwf	1	;volatile
+   233                           
+   234                           ;test_ft62f21x_eeprom.C: 38: MSCON = 0B00000000;
+   235  03D0  1283               	bcf	3,5	;RP0=0, select bank0
+   236  03D1  019B               	clrf	27	;volatile
+   237  03D2  0008               	return
+   238  03D3                     __end_of_POWER_INITIAL:	
+   239                           
+   240                           	psect	text2
+   241  03E5                     __ptext2:	
+   242 ;; *************** function _EEPROMwrite *****************
+   243 ;; Defined at:
+   244 ;;		line 65 in file "test_ft62f21x_eeprom.C"
+   245 ;; Parameters:    Size  Location     Type
+   246 ;;  EEAddr          1    wreg     unsigned char 
+   247 ;;  Data            1    0[COMMON] unsigned char 
+   248 ;; Auto vars:     Size  Location     Type
+   249 ;;  EEAddr          1    1[COMMON] unsigned char 
+   250 ;; Return value:  Size  Location     Type
+   251 ;;                  1    wreg      void 
+   252 ;; Registers used:
+   253 ;;		wreg, status,2, status,0
+   254 ;; Tracked objects:
+   255 ;;		On entry : 0/0
+   256 ;;		On exit  : 100/100
+   257 ;;		Unchanged: 0/0
+   258 ;; Data sizes:     COMMON   BANK0
+   259 ;;      Params:         1       0
+   260 ;;      Locals:         1       0
+   261 ;;      Temps:          0       0
+   262 ;;      Totals:         2       0
+   263 ;;Total ram usage:        2 bytes
+   264 ;; Hardware stack levels used:    1
+   265 ;; This function calls:
+   266 ;;		Nothing
+   267 ;; This function is called by:
+   268 ;;		_main
+   269 ;; This function uses a non-reentrant model
+   270 ;;
+   271                           
+   272                           
+   273                           ;psect for function _EEPROMwrite
+   274  03E5                     _EEPROMwrite:	
+   275                           
+   276                           ;incstack = 0
+   277                           ; Regs used in _EEPROMwrite: [wreg+status,2+status,0]
+   278                           ;EEPROMwrite@EEAddr stored from wreg
+   279  03E5  00F1               	movwf	EEPROMwrite@EEAddr
+   280                           
+   281                           ;test_ft62f21x_eeprom.C: 67: GIE = 0;
+   282  03E6  138B               	bcf	11,7	;volatile
+   283  03E7                     l685:	
+   284                           ;test_ft62f21x_eeprom.C: 68: while(GIE);
+   285                           
+   286  03E7  1B8B               	btfsc	11,7	;volatile
+   287  03E8  2BE7               	goto	l685
+   288                           
+   289                           ;test_ft62f21x_eeprom.C: 69: EEADR = EEAddr;
+   290  03E9  0871               	movf	EEPROMwrite@EEAddr,w
+   291  03EA  1683               	bsf	3,5	;RP0=1, select bank1
+   292  03EB  009B               	movwf	27	;volatile
+   293                           
+   294                           ;test_ft62f21x_eeprom.C: 70: EEDAT = Data;
+   295  03EC  0870               	movf	EEPROMwrite@Data,w
+   296  03ED  009A               	movwf	26	;volatile
+   297                           
+   298                           ;test_ft62f21x_eeprom.C: 71: EEIF = 0;
+   299  03EE  1283               	bcf	3,5	;RP0=0, select bank0
+   300  03EF  138C               	bcf	12,7	;volatile
+   301                           
+   302                           ;test_ft62f21x_eeprom.C: 72: EECON1 |= 0x34;
+   303  03F0  3034               	movlw	52
+   304  03F1  1683               	bsf	3,5	;RP0=1, select bank1
+   305  03F2  049C               	iorwf	28,f	;volsfr
+   306                           
+   307                           ;test_ft62f21x_eeprom.C: 73: WR = 1;
+   308  03F3  141D               	bsf	29,0	;volsfr
+   309                           
+   310                           ;test_ft62f21x_eeprom.C: 74: __nop();
+   311  03F4  0000               	nop
+   312                           
+   313                           ;test_ft62f21x_eeprom.C: 75: __nop();
+   314  03F5  0000               	nop
+   315                           
+   316                           ;test_ft62f21x_eeprom.C: 76: __nop();
+   317  03F6  0000               	nop
+   318                           
+   319                           ;test_ft62f21x_eeprom.C: 77: __nop();
+   320  03F7  0000               	nop
+   321  03F8                     l688:	
+   322                           ;test_ft62f21x_eeprom.C: 78: while(WR);
+   323                           
+   324  03F8  1683               	bsf	3,5	;RP0=1, select bank1
+   325  03F9  181D               	btfsc	29,0	;volsfr
+   326  03FA  2BF8               	goto	l688
+   327                           
+   328                           ;test_ft62f21x_eeprom.C: 79: GIE = 1;
+   329  03FB  178B               	bsf	11,7	;volatile
+   330  03FC  0008               	return
+   331  03FD                     __end_of_EEPROMwrite:	
+   332                           
+   333                           	psect	text3
+   334  03BA                     __ptext3:	
+   335 ;; *************** function _EEPROMread *****************
+   336 ;; Defined at:
+   337 ;;		line 46 in file "test_ft62f21x_eeprom.C"
+   338 ;; Parameters:    Size  Location     Type
+   339 ;;  EEAddr          1    wreg     unsigned char 
+   340 ;; Auto vars:     Size  Location     Type
+   341 ;;  EEAddr          1    0[COMMON] unsigned char 
+   342 ;;  ReEEPROMread    1    1[COMMON] unsigned char 
+   343 ;; Return value:  Size  Location     Type
+   344 ;;                  1    wreg      unsigned char 
+   345 ;; Registers used:
+   346 ;;		wreg
+   347 ;; Tracked objects:
+   348 ;;		On entry : 100/100
+   349 ;;		On exit  : 100/100
+   350 ;;		Unchanged: 0/0
+   351 ;; Data sizes:     COMMON   BANK0
+   352 ;;      Params:         0       0
+   353 ;;      Locals:         2       0
+   354 ;;      Temps:          0       0
+   355 ;;      Totals:         2       0
+   356 ;;Total ram usage:        2 bytes
+   357 ;; Hardware stack levels used:    1
+   358 ;; This function calls:
+   359 ;;		Nothing
+   360 ;; This function is called by:
+   361 ;;		_main
+   362 ;; This function uses a non-reentrant model
+   363 ;;
+   364                           
+   365                           
+   366                           ;psect for function _EEPROMread
+   367  03BA                     _EEPROMread:	
+   368                           
+   369                           ;incstack = 0
+   370                           ; Regs used in _EEPROMread: [wreg]
+   371                           ;EEPROMread@EEAddr stored from wreg
+   372  03BA  00F0               	movwf	EEPROMread@EEAddr
+   373                           
+   374                           ;test_ft62f21x_eeprom.C: 48: unsigned char ReEEPROMread;
+   375                           ;test_ft62f21x_eeprom.C: 49: EEADR = EEAddr;
+   376  03BB  009B               	movwf	27	;volatile
+   377                           
+   378                           ;test_ft62f21x_eeprom.C: 50: RD=1;
+   379  03BC  141C               	bsf	28,0	;volsfr
+   380                           
+   381                           ;test_ft62f21x_eeprom.C: 51: __nop();
+   382  03BD  0000               	nop
+   383                           
+   384                           ;test_ft62f21x_eeprom.C: 52: __nop();
+   385  03BE  0000               	nop
+   386                           
+   387                           ;test_ft62f21x_eeprom.C: 53: __nop();
+   388  03BF  0000               	nop
+   389                           
+   390                           ;test_ft62f21x_eeprom.C: 54: __nop();
+   391  03C0  0000               	nop
+   392                           
+   393                           ;test_ft62f21x_eeprom.C: 55: ReEEPROMread =EEDAT;
+   394  03C1  1683               	bsf	3,5	;RP0=1, select bank1
+   395  03C2  081A               	movf	26,w	;volatile
+   396  03C3  00F1               	movwf	EEPROMread@ReEEPROMread
+   397                           
+   398                           ;test_ft62f21x_eeprom.C: 56: return ReEEPROMread;
+   399  03C4  0008               	return
+   400  03C5                     __end_of_EEPROMread:	
+   401  007E                     btemp	set	126	;btemp
+   402  007E                     wtemp0	set	126
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         1
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14      2       3
+    BANK0            48      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    _main->_EEPROMread
+    _main->_EEPROMwrite
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0     203
+                         _EEPROMread
+                        _EEPROMwrite
+                      _POWER_INITIAL
+ ---------------------------------------------------------------------------------
+ (1) _POWER_INITIAL                                        0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _EEPROMwrite                                          2     1      1     173
+                                              0 COMMON     2     1      1
+ ---------------------------------------------------------------------------------
+ (1) _EEPROMread                                           2     2      0      30
+                                              0 COMMON     2     2      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 1
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _EEPROMread
+   _EEPROMwrite
+   _POWER_INITIAL
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMMON            E      0       0       0        0.0%
+EEDATA              80      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMMON               E      2       3       1       21.4%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR1              0      0       0       2        0.0%
+SFR1                 0      0       0       2        0.0%
+STACK                0      0       0       2        0.0%
+DATA                 0      0       3       3        0.0%
+BITBANK0            30      0       0       4        0.0%
+BANK0               30      0       0       5        0.0%
+ABS                  0      0       3       6        0.0%
+
+
+GNU Macro Assembler for 8 bit devices.     
+Symbol Table                                                                                   Sat Oct 09 13:51:41 2021
+
+                     _RD 04E0                       _WR 04E8                      l685 03E7  
+                    l688 03F8                      _GIE 005F                     l1151 03E3  
+                   _EEIF 0067                     _WPUA 0095                     _main 03D3  
+                   btemp 007E                     start 0000      __size_of_EEPROMread 000B  
+                  ?_main 0070                    _EEADR 009B                    _EEDAT 009A  
+                  _MSCON 001B                    _PORTA 0005                    _TRISA 0085  
+                  status 0003                    wtemp0 007E          __initialization 03FD  
+           __end_of_main 03E5     __size_of_EEPROMwrite 0018                   ??_main 0072  
+                 _EECON1 009C                   _INTCON 000B                   _OSCCON 008F  
+                 _OPTION 0081             ??_EEPROMread 0070    __end_of_POWER_INITIAL 03D3  
+__end_of__initialization 03FE           __pcstackCOMMON 0070       __end_of_EEPROMread 03C5  
+             __pmaintext 03D3          EEPROMwrite@Data 0070         EEPROMread@EEAddr 0070  
+      EEPROMwrite@EEAddr 0071                  __ptext0 0000                  __ptext1 03C5  
+                __ptext2 03E5                  __ptext3 03BA     end_of_initialization 03FE  
+          ??_EEPROMwrite 0071      __end_of_EEPROMwrite 03FD      start_initialization 03FD  
+ __size_of_POWER_INITIAL 000E              __pbssCOMMON 0072                ___latbits 0000  
+            _EEPROMwrite 03E5            _POWER_INITIAL 03C5           ?_POWER_INITIAL 0070  
+             _EEPROMread 03BA            __size_of_main 0012   EEPROMread@ReEEPROMread 0071  
+             _EEReadData 0072          ??_POWER_INITIAL 0070             ?_EEPROMwrite 0070  
+            ?_EEPROMread 0070  

@@ -1,0 +1,253 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$test_ft62f21x_lvd.obj
+cinit CODE 0 3FE 3FE 2 2
+text1 CODE 0 3C9 3C9 F 2
+text2 CODE 0 3D8 3D8 10 2
+text3 CODE 0 3C0 3C0 9 2
+maintext CODE 0 3E8 3E8 16 2
+cstackCOMMON COMMON 1 70 70 5 1
+$C:\Users\ALEXAN~1.WAN\AppData\Local\Temp\se78.obj
+end_init CODE 0 0 0 1 2
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 40-6F 1
+BANK0 40-6F 1
+CONST 1-3BF 2
+ENTRY 1-3BF 2
+IDLOC 2000-2003 2
+STACK 40-6F 1
+CODE 1-3BF 2
+SFR0 0-3F 1
+SFR1 80-EF 1
+COMMON 75-7D 1
+CONFIG 2007-2007 2
+EEDATA 2100-217F 2
+STRCODE 1-3BF 2
+STRING 1-3BF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$test_ft62f21x_lvd.obj
+3FE cinit CODE >57:C:\Users\ALEXAN~1.WAN\AppData\Local\Temp\se78.
+3FE cinit CODE >60:C:\Users\ALEXAN~1.WAN\AppData\Local\Temp\se78.
+3FE cinit CODE >66:C:\Users\ALEXAN~1.WAN\AppData\Local\Temp\se78.
+3FE cinit CODE >68:C:\Users\ALEXAN~1.WAN\AppData\Local\Temp\se78.
+3FF cinit CODE >69:C:\Users\ALEXAN~1.WAN\AppData\Local\Temp\se78.
+3C0 text3 CODE >27:D:\FMD DEMO CODE(word+pdf)\C 修改1008\FT62F21x\test_ft62f21x_LVD\test_ft62f21x_LVD.C
+3C1 text3 CODE >30:D:\FMD DEMO CODE(word+pdf)\C 修改1008\FT62F21x\test_ft62f21x_LVD\test_ft62f21x_LVD.C
+3C6 text3 CODE >32:D:\FMD DEMO CODE(word+pdf)\C 修改1008\FT62F21x\test_ft62f21x_LVD\test_ft62f21x_LVD.C
+3C7 text3 CODE >30:D:\FMD DEMO CODE(word+pdf)\C 修改1008\FT62F21x\test_ft62f21x_LVD\test_ft62f21x_LVD.C
+3D8 text2 CODE >41:D:\FMD DEMO CODE(word+pdf)\C 修改1008\FT62F21x\test_ft62f21x_LVD\test_ft62f21x_LVD.C
+3D9 text2 CODE >44:D:\FMD DEMO CODE(word+pdf)\C 修改1008\FT62F21x\test_ft62f21x_LVD\test_ft62f21x_LVD.C
+3DE text2 CODE >46:D:\FMD DEMO CODE(word+pdf)\C 修改1008\FT62F21x\test_ft62f21x_LVD\test_ft62f21x_LVD.C
+3DF text2 CODE >48:D:\FMD DEMO CODE(word+pdf)\C 修改1008\FT62F21x\test_ft62f21x_LVD\test_ft62f21x_LVD.C
+3E1 text2 CODE >46:D:\FMD DEMO CODE(word+pdf)\C 修改1008\FT62F21x\test_ft62f21x_LVD\test_ft62f21x_LVD.C
+3E6 text2 CODE >44:D:\FMD DEMO CODE(word+pdf)\C 修改1008\FT62F21x\test_ft62f21x_LVD\test_ft62f21x_LVD.C
+3C9 text1 CODE >58:D:\FMD DEMO CODE(word+pdf)\C 修改1008\FT62F21x\test_ft62f21x_LVD\test_ft62f21x_LVD.C
+3C9 text1 CODE >60:D:\FMD DEMO CODE(word+pdf)\C 修改1008\FT62F21x\test_ft62f21x_LVD\test_ft62f21x_LVD.C
+3CC text1 CODE >61:D:\FMD DEMO CODE(word+pdf)\C 修改1008\FT62F21x\test_ft62f21x_LVD\test_ft62f21x_LVD.C
+3CD text1 CODE >62:D:\FMD DEMO CODE(word+pdf)\C 修改1008\FT62F21x\test_ft62f21x_LVD\test_ft62f21x_LVD.C
+3CE text1 CODE >63:D:\FMD DEMO CODE(word+pdf)\C 修改1008\FT62F21x\test_ft62f21x_LVD\test_ft62f21x_LVD.C
+3CF text1 CODE >64:D:\FMD DEMO CODE(word+pdf)\C 修改1008\FT62F21x\test_ft62f21x_LVD\test_ft62f21x_LVD.C
+3D0 text1 CODE >71:D:\FMD DEMO CODE(word+pdf)\C 修改1008\FT62F21x\test_ft62f21x_LVD\test_ft62f21x_LVD.C
+3D1 text1 CODE >72:D:\FMD DEMO CODE(word+pdf)\C 修改1008\FT62F21x\test_ft62f21x_LVD\test_ft62f21x_LVD.C
+3D3 text1 CODE >73:D:\FMD DEMO CODE(word+pdf)\C 修改1008\FT62F21x\test_ft62f21x_LVD\test_ft62f21x_LVD.C
+3D5 text1 CODE >75:D:\FMD DEMO CODE(word+pdf)\C 修改1008\FT62F21x\test_ft62f21x_LVD\test_ft62f21x_LVD.C
+3D7 text1 CODE >78:D:\FMD DEMO CODE(word+pdf)\C 修改1008\FT62F21x\test_ft62f21x_LVD\test_ft62f21x_LVD.C
+3E8 maintext CODE >85:D:\FMD DEMO CODE(word+pdf)\C 修改1008\FT62F21x\test_ft62f21x_LVD\test_ft62f21x_LVD.C
+3E8 maintext CODE >87:D:\FMD DEMO CODE(word+pdf)\C 修改1008\FT62F21x\test_ft62f21x_LVD\test_ft62f21x_LVD.C
+3E9 maintext CODE >91:D:\FMD DEMO CODE(word+pdf)\C 修改1008\FT62F21x\test_ft62f21x_LVD\test_ft62f21x_LVD.C
+3EC maintext CODE >93:D:\FMD DEMO CODE(word+pdf)\C 修改1008\FT62F21x\test_ft62f21x_LVD\test_ft62f21x_LVD.C
+3EE maintext CODE >94:D:\FMD DEMO CODE(word+pdf)\C 修改1008\FT62F21x\test_ft62f21x_LVD\test_ft62f21x_LVD.C
+3F0 maintext CODE >95:D:\FMD DEMO CODE(word+pdf)\C 修改1008\FT62F21x\test_ft62f21x_LVD\test_ft62f21x_LVD.C
+3F2 maintext CODE >96:D:\FMD DEMO CODE(word+pdf)\C 修改1008\FT62F21x\test_ft62f21x_LVD\test_ft62f21x_LVD.C
+3F4 maintext CODE >98:D:\FMD DEMO CODE(word+pdf)\C 修改1008\FT62F21x\test_ft62f21x_LVD\test_ft62f21x_LVD.C
+3F4 maintext CODE >100:D:\FMD DEMO CODE(word+pdf)\C 修改1008\FT62F21x\test_ft62f21x_LVD\test_ft62f21x_LVD.C
+3F6 maintext CODE >101:D:\FMD DEMO CODE(word+pdf)\C 修改1008\FT62F21x\test_ft62f21x_LVD\test_ft62f21x_LVD.C
+3F8 maintext CODE >102:D:\FMD DEMO CODE(word+pdf)\C 修改1008\FT62F21x\test_ft62f21x_LVD\test_ft62f21x_LVD.C
+3FA maintext CODE >103:D:\FMD DEMO CODE(word+pdf)\C 修改1008\FT62F21x\test_ft62f21x_LVD\test_ft62f21x_LVD.C
+3FC maintext CODE >105:D:\FMD DEMO CODE(word+pdf)\C 修改1008\FT62F21x\test_ft62f21x_LVD\test_ft62f21x_LVD.C
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+___latbits 0 0 ABS 0 - test_ft62f21x_lvd.obj
+__size_of_DelayMs 0 0 ABS 0 - test_ft62f21x_lvd.obj
+__size_of_DelayUs 0 0 ABS 0 - test_ft62f21x_lvd.obj
+__Hspace_0 400 0 ABS 0 - -
+__Hspace_1 75 0 ABS 0 - -
+__Hspace_2 0 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+_POWER_INITIAL 792 0 CODE 0 text1 test_ft62f21x_lvd.obj
+__Heeprom_data 0 0 EEDATA 3 eeprom_data -
+__Hstrings 0 0 ABS 0 strings -
+_PCON 8E 0 ABS 0 - test_ft62f21x_lvd.obj
+_WPUA 95 0 ABS 0 - test_ft62f21x_lvd.obj
+___sp 0 0 STACK 2 stack C:\Users\ALEXAN~1.WAN\AppData\Local\Temp\se78.obj
+_main 7D0 0 CODE 0 maintext test_ft62f21x_lvd.obj
+btemp 7E 0 ABS 0 - test_ft62f21x_lvd.obj
+start 0 0 CODE 0 init C:\Users\ALEXAN~1.WAN\AppData\Local\Temp\se78.obj
+__size_of_main 0 0 ABS 0 - test_ft62f21x_lvd.obj
+DelayUs@Time 70 0 COMMON 1 cstackCOMMON test_ft62f21x_lvd.obj
+__Hpowerup 0 0 CODE 0 powerup -
+intlevel0 0 0 ENTRY 0 functab C:\Users\ALEXAN~1.WAN\AppData\Local\Temp\se78.obj
+intlevel1 0 0 ENTRY 0 functab C:\Users\ALEXAN~1.WAN\AppData\Local\Temp\se78.obj
+intlevel2 0 0 ENTRY 0 functab C:\Users\ALEXAN~1.WAN\AppData\Local\Temp\se78.obj
+intlevel3 0 0 ENTRY 0 functab C:\Users\ALEXAN~1.WAN\AppData\Local\Temp\se78.obj
+intlevel4 0 0 ENTRY 0 functab C:\Users\ALEXAN~1.WAN\AppData\Local\Temp\se78.obj
+intlevel5 0 0 ENTRY 0 functab C:\Users\ALEXAN~1.WAN\AppData\Local\Temp\se78.obj
+wtemp0 7E 0 ABS 0 - test_ft62f21x_lvd.obj
+__Hfunctab 0 0 ENTRY 0 functab -
+__Hclrtext 0 0 ABS 0 clrtext -
+__end_of_DelayMs 7D0 0 CODE 0 text2 test_ft62f21x_lvd.obj
+__end_of_DelayUs 792 0 CODE 0 text3 test_ft62f21x_lvd.obj
+__Hpa_nodes0 0 0 ABS 0 pa_nodes0 -
+__size_of_POWER_INITIAL 0 0 ABS 0 - test_ft62f21x_lvd.obj
+__Lmaintext 0 0 ABS 0 maintext -
+_INTCON B 0 ABS 0 - test_ft62f21x_lvd.obj
+__Lpa_nodes0 0 0 ABS 0 pa_nodes0 -
+__end_of_POWER_INITIAL 7B0 0 CODE 0 text1 test_ft62f21x_lvd.obj
+start_initialization 7FC 0 CODE 0 cinit test_ft62f21x_lvd.obj
+_OPTION 81 0 ABS 0 - test_ft62f21x_lvd.obj
+_OSCCON 8F 0 ABS 0 - test_ft62f21x_lvd.obj
+_PSINKA 97 0 ABS 0 - test_ft62f21x_lvd.obj
+___int_sp 0 0 STACK 2 stack C:\Users\ALEXAN~1.WAN\AppData\Local\Temp\se78.obj
+__Hbank0 0 0 ABS 0 bank0 -
+__Hbank1 0 0 BANK1 1 bank1 -
+__Hcinit 800 0 CODE 0 cinit -
+__Hidloc 0 0 IDLOC 0 idloc -
+__Hstack 0 0 STACK 2 stack -
+__Hmaintext 0 0 ABS 0 maintext -
+__Hcommon 0 0 ABS 0 common -
+__Hconfig 0 0 CONFIG 0 config -
+__Lbank0 0 0 ABS 0 bank0 -
+__Lbank1 0 0 BANK1 1 bank1 -
+__Lcinit 7FC 0 CODE 0 cinit -
+__Lidloc 0 0 IDLOC 0 idloc -
+__Lstack 0 0 STACK 2 stack -
+__Habs1 0 0 ABS 0 abs1 -
+__Hcode 0 0 ABS 0 code -
+__Hinit 0 0 CODE 0 init -
+__Hsfr0 0 0 ABS 0 sfr0 -
+__Hsfr1 0 0 ABS 0 sfr1 -
+__Htext 0 0 ABS 0 text -
+__Labs1 0 0 ABS 0 abs1 -
+__Lcode 0 0 ABS 0 code -
+__Linit 0 0 CODE 0 init -
+__Lsfr0 0 0 ABS 0 sfr0 -
+__Lsfr1 0 0 ABS 0 sfr1 -
+__Ltext 0 0 ABS 0 text -
+__HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+_PA4 2C 0 ABS 0 - test_ft62f21x_lvd.obj
+__S0 400 0 ABS 0 - -
+__S1 75 0 ABS 0 - -
+__S2 0 0 ABS 0 - -
+__S3 0 0 ABS 0 - -
+DelayMs@a 73 0 COMMON 1 cstackCOMMON test_ft62f21x_lvd.obj
+DelayMs@b 74 0 COMMON 1 cstackCOMMON test_ft62f21x_lvd.obj
+DelayUs@a 71 0 COMMON 1 cstackCOMMON test_ft62f21x_lvd.obj
+_DelayMs 7B0 0 CODE 0 text2 test_ft62f21x_lvd.obj
+_DelayUs 780 0 CODE 0 text3 test_ft62f21x_lvd.obj
+__Lintentry 0 0 CODE 0 intentry -
+reset_vec 0 0 CODE 0 reset_vec C:\Users\ALEXAN~1.WAN\AppData\Local\Temp\se78.obj
+__pmaintext 7D0 0 CODE 0 maintext test_ft62f21x_lvd.obj
+__Lcommon 0 0 ABS 0 common -
+__Lconfig 0 0 CONFIG 0 config -
+stackhi 0 0 ABS 0 - C:\Users\ALEXAN~1.WAN\AppData\Local\Temp\se78.obj
+stacklo 0 0 ABS 0 - C:\Users\ALEXAN~1.WAN\AppData\Local\Temp\se78.obj
+DelayMs@Time 72 0 COMMON 1 cstackCOMMON test_ft62f21x_lvd.obj
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_2 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+__Lend_init 0 0 CODE 0 end_init -
+__LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+end_of_initialization 7FC 0 CODE 0 cinit test_ft62f21x_lvd.obj
+__Hintentry 0 0 CODE 0 intentry -
+__Lstrings 0 0 ABS 0 strings -
+__Hreset_vec 0 0 CODE 0 reset_vec -
+__ptext0 0 0 CODE 0 text0 test_ft62f21x_lvd.obj
+__ptext1 792 0 CODE 0 text1 test_ft62f21x_lvd.obj
+__ptext2 7B0 0 CODE 0 text2 test_ft62f21x_lvd.obj
+__ptext3 780 0 CODE 0 text3 test_ft62f21x_lvd.obj
+__Lpowerup 0 0 CODE 0 powerup -
+__Leeprom_data 0 0 EEDATA 3 eeprom_data -
+__Lreset_vec 0 0 CODE 0 reset_vec -
+__end_of__initialization 7FC 0 CODE 0 cinit test_ft62f21x_lvd.obj
+__Lfunctab 0 0 ENTRY 0 functab -
+__Lclrtext 0 0 ABS 0 clrtext -
+__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON test_ft62f21x_lvd.obj
+__Hend_init 2 0 CODE 0 end_init -
+__end_of_main 7FC 0 CODE 0 maintext test_ft62f21x_lvd.obj
+_PORTA 5 0 ABS 0 - test_ft62f21x_lvd.obj
+_PSRCA 88 0 ABS 0 - test_ft62f21x_lvd.obj
+_TRISA 85 0 ABS 0 - test_ft62f21x_lvd.obj
+__Hram 0 0 ABS 0 ram -
+__Lram 0 0 ABS 0 ram -
+__initialization 7FC 0 CODE 0 cinit test_ft62f21x_lvd.obj
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+- 1 7E 2
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+cinit 0 3FE 7FC 2 2
+text1 0 3C9 792 F 2
+text2 0 3D8 7B0 10 2
+text3 0 3C0 780 9 2
+maintext 0 3E8 7D0 16 2
+cstackCOMMON 1 70 70 5 1
+reset_vec 0 0 0 1 2

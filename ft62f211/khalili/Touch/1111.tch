@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<IC mcu="FT62F0GCA_LQFP48">
+    <pins>
+        <pin pin="8" key="1" t="4" color="8454143" />
+        <pin pin="9" key="2" t="3" color="65535" />
+        <pin pin="10" key="3" t="2" color="7864440" />
+        <pin pin="11" key="4" t="1" color="255" />
+    </pins>
+    <params emi="0" highsens="1" cs="1" lowpwr="0" multiple="0" />
+    <compiler type="GCC2.10" />
+    <setting customer="0" lver="0" dlbyide="0" txport="PB0" rxport="PB1" ctxport="" crxport="" ispport="" refcap="4.7 nF" />
+    <curve baselinemin="300" baselinemax="600" rawdatamin="300" rawdatamax="600" differmin="0" differmax="20" />
+    <trigger values="0,0,,0|0,0,,0|0,0,,0|0,0,,0" />
+    <lowpower MaskA="0" MaskB="0" MaskC="0" MaskD="0" minTrigger="0" nGroupCnt="0" />
+</IC>

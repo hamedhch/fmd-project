@@ -1,0 +1,534 @@
+
+
+GNU Macro Assembler for 8 bit devices.       
+                                                                                               Sun Oct 10 23:11:33 2021
+
+GNU C Code Generator                                                 
+     1                           	processor	FT62F21X
+     2                           	opt	pw 120
+     3                           	opt	pm
+     4                           	psect	text0,local,class=CODE,merge=1,delta=2
+     5                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     6                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
+     7                           	psect	maintext,global,class=CODE,split=1,delta=2
+     8                           	psect	text1,local,class=CODE,merge=1,delta=2
+     9                           	psect	text2,local,class=CODE,merge=1,delta=2
+    10                           	psect	text3,local,class=CODE,merge=1,delta=2
+    11                           	psect	text4,local,class=CODE,merge=1,delta=2
+    12                           	psect	pa_nodes0,global,class=CODE,delta=2
+    13                           	dabs	1,0x7E,2
+    14  0000                     
+    15                           ; Version 2.20
+    16                           ; Generated 09/04/2020 
+    17                           ; 
+    18                           ; SFR Addresses
+    19  0000                     
+    20                           	psect	text0
+    21  0000                     __ptext0:	
+    22  0018                     _WDTCON	set	24
+    23  000B                     _INTCON	set	11
+    24  0005                     _PORTA	set	5
+    25  002C                     _PA4	set	44
+    26  0097                     _PSINKA	set	151
+    27  0095                     _WPUA	set	149
+    28  008F                     _OSCCON	set	143
+    29  0088                     _PSRCA	set	136
+    30  0085                     _TRISA	set	133
+    31  0081                     _OPTION	set	129
+    32  040B                     _PSA	set	1035
+    33                           
+    34                           	psect	cinit
+    35  03FE                     start_initialization:	
+    36                           ; #config settings
+    37                           
+    38  03FE                     __initialization:	
+    39  03FE                     end_of_initialization:	
+    40                           ;End of C runtime variable initialization code
+    41                           
+    42  03FE                     __end_of__initialization:	
+    43  03FE  0183               	clrf	3
+    44  03FF  2BEC               	ljmp	_main	;jump to C main() function
+    45                           
+    46                           	psect	cstackCOMMON
+    47  0070                     __pcstackCOMMON:	
+    48  0070                     ?_POWER_INITIAL:	
+    49  0070                     ??_POWER_INITIAL:	
+    50                           ; 1 bytes @ 0x0
+    51                           
+    52  0070                     ?_DelayUs:	
+    53                           ; 1 bytes @ 0x0
+    54                           
+    55  0070                     ??_DelayUs:	
+    56                           ; 1 bytes @ 0x0
+    57                           
+    58  0070                     ?_DelayMs:	
+    59                           ; 1 bytes @ 0x0
+    60                           
+    61  0070                     ?_WDT_INITIAL:	
+    62                           ; 1 bytes @ 0x0
+    63                           
+    64  0070                     ??_WDT_INITIAL:	
+    65                           ; 1 bytes @ 0x0
+    66                           
+    67  0070                     ?_main:	
+    68                           ; 1 bytes @ 0x0
+    69                           
+    70  0070                     DelayUs@Time:	
+    71                           ; 1 bytes @ 0x0
+    72                           
+    73                           
+    74                           ; 1 bytes @ 0x0
+    75  0070                     	ds	1
+    76  0071                     DelayUs@a:	
+    77                           
+    78                           ; 1 bytes @ 0x1
+    79  0071                     	ds	1
+    80  0072                     ??_DelayMs:	
+    81  0072                     DelayMs@Time:	
+    82                           ; 1 bytes @ 0x2
+    83                           
+    84                           
+    85                           ; 1 bytes @ 0x2
+    86  0072                     	ds	1
+    87  0073                     DelayMs@a:	
+    88                           
+    89                           ; 1 bytes @ 0x3
+    90  0073                     	ds	1
+    91  0074                     DelayMs@b:	
+    92                           
+    93                           ; 1 bytes @ 0x4
+    94  0074                     	ds	1
+    95  0075                     ??_main:	
+    96                           
+    97                           	psect	maintext
+    98  03EC                     __pmaintext:	
+    99                           ; 1 bytes @ 0x5
+   100 ;;
+   101 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   102 ;;
+   103 ;; *************** function _main *****************
+   104 ;; Defined at:
+   105 ;;		line 98 in file "test_ft62f21x_WDT.C"
+   106 ;; Parameters:    Size  Location     Type
+   107 ;;		None
+   108 ;; Auto vars:     Size  Location     Type
+   109 ;;		None
+   110 ;; Return value:  Size  Location     Type
+   111 ;;                  1    wreg      void 
+   112 ;; Registers used:
+   113 ;;		wreg, status,2, status,0, pclath, cstack
+   114 ;; Tracked objects:
+   115 ;;		On entry : B00/0
+   116 ;;		On exit  : 0/0
+   117 ;;		Unchanged: 0/0
+   118 ;; Data sizes:     COMMON   BANK0
+   119 ;;      Params:         0       0
+   120 ;;      Locals:         0       0
+   121 ;;      Temps:          0       0
+   122 ;;      Totals:         0       0
+   123 ;;Total ram usage:        0 bytes
+   124 ;; Hardware stack levels required when called:    2
+   125 ;; This function calls:
+   126 ;;		_DelayMs
+   127 ;;		_POWER_INITIAL
+   128 ;;		_WDT_INITIAL
+   129 ;; This function is called by:
+   130 ;;		Startup code after reset
+   131 ;; This function uses a non-reentrant model
+   132 ;;
+   133                           
+   134                           
+   135                           ;psect for function _main
+   136  03EC                     _main:	
+   137                           
+   138                           ;test_ft62f21x_WDT.C: 100: POWER_INITIAL();
+   139                           
+   140                           ;incstack = 0
+   141                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
+   142  03EC  23D0               	fcall	_POWER_INITIAL
+   143                           
+   144                           ;test_ft62f21x_WDT.C: 101: WDT_INITIAL();
+   145  03ED  23BF               	fcall	_WDT_INITIAL
+   146                           
+   147                           ;test_ft62f21x_WDT.C: 103: PA4 = 1;
+   148  03EE  1283               	bcf	3,5	;RP0=0, select bank0
+   149  03EF  1605               	bsf	5,4	;volatile
+   150                           
+   151                           ;test_ft62f21x_WDT.C: 104: DelayMs(3);
+   152  03F0  3003               	movlw	3
+   153  03F1  23DC               	fcall	_DelayMs
+   154                           
+   155                           ;test_ft62f21x_WDT.C: 105: PA4 = 0;
+   156  03F2  1283               	bcf	3,5	;RP0=0, select bank0
+   157  03F3  1205               	bcf	5,4	;volatile
+   158                           
+   159                           ;test_ft62f21x_WDT.C: 106: DelayMs(3);
+   160  03F4  3003               	movlw	3
+   161  03F5                     L1:	
+   162  03F5  23DC               	fcall	_DelayMs
+   163                           
+   164                           ;test_ft62f21x_WDT.C: 109: {
+   165                           ;test_ft62f21x_WDT.C: 111: PA4 = 1;
+   166  03F6  1283               	bcf	3,5	;RP0=0, select bank0
+   167  03F7  1605               	bsf	5,4	;volatile
+   168                           
+   169                           ;test_ft62f21x_WDT.C: 112: DelayMs(1);
+   170  03F8  3001               	movlw	1
+   171  03F9  23DC               	fcall	_DelayMs
+   172                           
+   173                           ;test_ft62f21x_WDT.C: 113: PA4 = 0;
+   174  03FA  1283               	bcf	3,5	;RP0=0, select bank0
+   175  03FB  1205               	bcf	5,4	;volatile
+   176                           
+   177                           ;test_ft62f21x_WDT.C: 114: DelayMs(1);
+   178  03FC  3001               	movlw	1
+   179  03FD  2BF5               	goto	L1
+   180  03FE                     __end_of_main:	
+   181                           
+   182                           	psect	text1
+   183  03BF                     __ptext1:	
+   184 ;; *************** function _WDT_INITIAL *****************
+   185 ;; Defined at:
+   186 ;;		line 82 in file "test_ft62f21x_WDT.C"
+   187 ;; Parameters:    Size  Location     Type
+   188 ;;		None
+   189 ;; Auto vars:     Size  Location     Type
+   190 ;;		None
+   191 ;; Return value:  Size  Location     Type
+   192 ;;                  1    wreg      void 
+   193 ;; Registers used:
+   194 ;;		wreg, status,2
+   195 ;; Tracked objects:
+   196 ;;		On entry : B00/100
+   197 ;;		On exit  : 100/100
+   198 ;;		Unchanged: 0/0
+   199 ;; Data sizes:     COMMON   BANK0
+   200 ;;      Params:         0       0
+   201 ;;      Locals:         0       0
+   202 ;;      Temps:          0       0
+   203 ;;      Totals:         0       0
+   204 ;;Total ram usage:        0 bytes
+   205 ;; Hardware stack levels used:    1
+   206 ;; This function calls:
+   207 ;;		Nothing
+   208 ;; This function is called by:
+   209 ;;		_main
+   210 ;; This function uses a non-reentrant model
+   211 ;;
+   212                           
+   213                           
+   214                           ;psect for function _WDT_INITIAL
+   215  03BF                     _WDT_INITIAL:	
+   216                           
+   217                           ;incstack = 0
+   218                           ; Regs used in _WDT_INITIAL: [wreg+status,2]
+   219  03BF  0064               	clrwdt	;# 
+   220                           
+   221                           ;test_ft62f21x_WDT.C: 85: WDTCON = (0X05<<1)| (1<<0);
+   222  03C0  300B               	movlw	11
+   223  03C1  1283               	bcf	3,5	;RP0=0, select bank0
+   224  03C2  0098               	movwf	24	;volatile
+   225                           
+   226                           ;test_ft62f21x_WDT.C: 89: OPTION = 0;
+   227  03C3  1683               	bsf	3,5	;RP0=1, select bank1
+   228  03C4  0181               	clrf	1	;volatile
+   229                           
+   230                           ;test_ft62f21x_WDT.C: 90: PSA = 1;
+   231  03C5  1581               	bsf	1,3	;volatile
+   232  03C6  0008               	return
+   233  03C7                     __end_of_WDT_INITIAL:	
+   234                           
+   235                           	psect	text2
+   236  03D0                     __ptext2:	
+   237 ;; *************** function _POWER_INITIAL *****************
+   238 ;; Defined at:
+   239 ;;		line 31 in file "test_ft62f21x_WDT.C"
+   240 ;; Parameters:    Size  Location     Type
+   241 ;;		None
+   242 ;; Auto vars:     Size  Location     Type
+   243 ;;		None
+   244 ;; Return value:  Size  Location     Type
+   245 ;;                  1    wreg      void 
+   246 ;; Registers used:
+   247 ;;		wreg, status,2
+   248 ;; Tracked objects:
+   249 ;;		On entry : B00/0
+   250 ;;		On exit  : B00/100
+   251 ;;		Unchanged: A00/0
+   252 ;; Data sizes:     COMMON   BANK0
+   253 ;;      Params:         0       0
+   254 ;;      Locals:         0       0
+   255 ;;      Temps:          0       0
+   256 ;;      Totals:         0       0
+   257 ;;Total ram usage:        0 bytes
+   258 ;; Hardware stack levels used:    1
+   259 ;; This function calls:
+   260 ;;		Nothing
+   261 ;; This function is called by:
+   262 ;;		_main
+   263 ;; This function uses a non-reentrant model
+   264 ;;
+   265                           
+   266                           
+   267                           ;psect for function _POWER_INITIAL
+   268  03D0                     _POWER_INITIAL:	
+   269                           
+   270                           ;test_ft62f21x_WDT.C: 33: OSCCON = 0B01110001;
+   271                           
+   272                           ;incstack = 0
+   273                           ; Regs used in _POWER_INITIAL: [wreg+status,2]
+   274  03D0  3071               	movlw	113
+   275  03D1  1683               	bsf	3,5	;RP0=1, select bank1
+   276  03D2  008F               	movwf	15	;volatile
+   277                           
+   278                           ;test_ft62f21x_WDT.C: 37: INTCON = 0B00000000;
+   279  03D3  018B               	clrf	11	;volatile
+   280                           
+   281                           ;test_ft62f21x_WDT.C: 39: TRISA = 0B00000000;
+   282  03D4  0185               	clrf	5	;volatile
+   283                           
+   284                           ;test_ft62f21x_WDT.C: 40: PSRCA = 0B00000000;
+   285  03D5  0188               	clrf	8	;volatile
+   286                           
+   287                           ;test_ft62f21x_WDT.C: 41: PSINKA = 0B00000000;
+   288  03D6  0197               	clrf	23	;volatile
+   289                           
+   290                           ;test_ft62f21x_WDT.C: 42: PORTA = 0B00000000;
+   291  03D7  1283               	bcf	3,5	;RP0=0, select bank0
+   292  03D8  0185               	clrf	5	;volatile
+   293                           
+   294                           ;test_ft62f21x_WDT.C: 43: WPUA = 0B00000000;
+   295  03D9  1683               	bsf	3,5	;RP0=1, select bank1
+   296  03DA  0195               	clrf	21	;volatile
+   297  03DB  0008               	return
+   298  03DC                     __end_of_POWER_INITIAL:	
+   299                           
+   300                           	psect	text3
+   301  03DC                     __ptext3:	
+   302 ;; *************** function _DelayMs *****************
+   303 ;; Defined at:
+   304 ;;		line 65 in file "test_ft62f21x_WDT.C"
+   305 ;; Parameters:    Size  Location     Type
+   306 ;;  Time            1    wreg     unsigned char 
+   307 ;; Auto vars:     Size  Location     Type
+   308 ;;  Time            1    2[COMMON] unsigned char 
+   309 ;;  b               1    4[COMMON] unsigned char 
+   310 ;;  a               1    3[COMMON] unsigned char 
+   311 ;; Return value:  Size  Location     Type
+   312 ;;                  1    wreg      void 
+   313 ;; Registers used:
+   314 ;;		wreg, status,2, status,0, pclath, cstack
+   315 ;; Tracked objects:
+   316 ;;		On entry : 100/0
+   317 ;;		On exit  : 0/0
+   318 ;;		Unchanged: 0/0
+   319 ;; Data sizes:     COMMON   BANK0
+   320 ;;      Params:         0       0
+   321 ;;      Locals:         3       0
+   322 ;;      Temps:          0       0
+   323 ;;      Totals:         3       0
+   324 ;;Total ram usage:        3 bytes
+   325 ;; Hardware stack levels used:    1
+   326 ;; Hardware stack levels required when called:    1
+   327 ;; This function calls:
+   328 ;;		_DelayUs
+   329 ;; This function is called by:
+   330 ;;		_main
+   331 ;; This function uses a non-reentrant model
+   332 ;;
+   333                           
+   334                           
+   335                           ;psect for function _DelayMs
+   336  03DC                     _DelayMs:	
+   337                           
+   338                           ;incstack = 0
+   339                           ; Regs used in _DelayMs: [wreg+status,2+status,0+pclath+cstack]
+   340                           ;DelayMs@Time stored from wreg
+   341  03DC  00F2               	movwf	DelayMs@Time
+   342                           
+   343                           ;test_ft62f21x_WDT.C: 67: unsigned char a,b;
+   344                           ;test_ft62f21x_WDT.C: 68: for(a=0;a<Time;a++)
+   345  03DD  01F3               	clrf	DelayMs@a
+   346  03DE                     l1114:	
+   347  03DE  0872               	movf	DelayMs@Time,w
+   348  03DF  0273               	subwf	DelayMs@a,w
+   349  03E0  1803               	btfsc	3,0
+   350  03E1  0008               	return
+   351                           
+   352                           ;test_ft62f21x_WDT.C: 69: {
+   353                           ;test_ft62f21x_WDT.C: 70: for(b=0;b<5;b++)
+   354  03E2  01F4               	clrf	DelayMs@b
+   355  03E3                     l1106:	
+   356                           
+   357                           ;test_ft62f21x_WDT.C: 71: {
+   358                           ;test_ft62f21x_WDT.C: 72: DelayUs(98);
+   359  03E3  3062               	movlw	98
+   360  03E4  23C7               	fcall	_DelayUs
+   361  03E5  3005               	movlw	5
+   362  03E6  0AF4               	incf	DelayMs@b,f
+   363  03E7  0274               	subwf	DelayMs@b,w
+   364  03E8  1C03               	skipc
+   365  03E9  2BE3               	goto	l1106
+   366  03EA  0AF3               	incf	DelayMs@a,f
+   367  03EB  2BDE               	goto	l1114
+   368  03EC                     __end_of_DelayMs:	
+   369                           
+   370                           	psect	text4
+   371  03C7                     __ptext4:	
+   372 ;; *************** function _DelayUs *****************
+   373 ;; Defined at:
+   374 ;;		line 51 in file "test_ft62f21x_WDT.C"
+   375 ;; Parameters:    Size  Location     Type
+   376 ;;  Time            1    wreg     unsigned char 
+   377 ;; Auto vars:     Size  Location     Type
+   378 ;;  Time            1    0[COMMON] unsigned char 
+   379 ;;  a               1    1[COMMON] unsigned char 
+   380 ;; Return value:  Size  Location     Type
+   381 ;;                  1    wreg      void 
+   382 ;; Registers used:
+   383 ;;		wreg, status,2, status,0
+   384 ;; Tracked objects:
+   385 ;;		On entry : 0/0
+   386 ;;		On exit  : 0/0
+   387 ;;		Unchanged: 0/0
+   388 ;; Data sizes:     COMMON   BANK0
+   389 ;;      Params:         0       0
+   390 ;;      Locals:         2       0
+   391 ;;      Temps:          0       0
+   392 ;;      Totals:         2       0
+   393 ;;Total ram usage:        2 bytes
+   394 ;; Hardware stack levels used:    1
+   395 ;; This function calls:
+   396 ;;		Nothing
+   397 ;; This function is called by:
+   398 ;;		_DelayMs
+   399 ;; This function uses a non-reentrant model
+   400 ;;
+   401                           
+   402                           
+   403                           ;psect for function _DelayUs
+   404  03C7                     _DelayUs:	
+   405                           
+   406                           ;incstack = 0
+   407                           ; Regs used in _DelayUs: [wreg+status,2+status,0]
+   408                           ;DelayUs@Time stored from wreg
+   409  03C7  00F0               	movwf	DelayUs@Time
+   410                           
+   411                           ;test_ft62f21x_WDT.C: 53: unsigned char a;
+   412                           ;test_ft62f21x_WDT.C: 54: for(a=0;a<Time;a++)
+   413  03C8  01F1               	clrf	DelayUs@a
+   414  03C9                     l1082:	
+   415  03C9  0870               	movf	DelayUs@Time,w
+   416  03CA  0271               	subwf	DelayUs@a,w
+   417  03CB  1803               	btfsc	3,0
+   418  03CC  0008               	return
+   419                           
+   420                           ;test_ft62f21x_WDT.C: 55: {
+   421                           ;test_ft62f21x_WDT.C: 56: __nop();
+   422  03CD  0000               	nop
+   423  03CE  0AF1               	incf	DelayUs@a,f
+   424  03CF  2BC9               	goto	l1082
+   425  03D0                     __end_of_DelayUs:	
+   426  007E                     btemp	set	126	;btemp
+   427  007E                     wtemp0	set	126
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14      5       5
+    BANK0            48      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    _main->_DelayMs
+    _DelayMs->_DelayUs
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0      90
+                            _DelayMs
+                      _POWER_INITIAL
+                        _WDT_INITIAL
+ ---------------------------------------------------------------------------------
+ (1) _WDT_INITIAL                                          0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _POWER_INITIAL                                        0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _DelayMs                                              3     3      0      90
+                                              2 COMMON     3     3      0
+                            _DelayUs
+ ---------------------------------------------------------------------------------
+ (2) _DelayUs                                              2     2      0      30
+                                              0 COMMON     2     2      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _DelayMs
+     _DelayUs
+   _POWER_INITIAL
+   _WDT_INITIAL
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMMON            E      0       0       0        0.0%
+EEDATA              80      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMMON               E      5       5       1       35.7%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR1              0      0       0       2        0.0%
+SFR1                 0      0       0       2        0.0%
+STACK                0      0       0       2        0.0%
+DATA                 0      0       0       3        0.0%
+BITBANK0            30      0       0       4        0.0%
+BANK0               30      0       0       5        0.0%
+ABS                  0      0       0       6        0.0%
+
+
+GNU Macro Assembler for 8 bit devices.     
+Symbol Table                                                                                   Sun Oct 10 23:11:33 2021
+
+                    _PA4 002C                      _PSA 040B                     l1106 03E3  
+                   l1114 03DE                     l1082 03C9                     _WPUA 0095  
+                   _main 03EC                     btemp 007E                     start 0000  
+        __end_of_DelayMs 03EC          __end_of_DelayUs 03D0                    ?_main 0070  
+                  _PSRCA 0088                    _PORTA 0005                    _TRISA 0085  
+                  status 0003                    wtemp0 007E          __initialization 03FE  
+           __end_of_main 03FE                   ??_main 0075                   _INTCON 000B  
+              ??_DelayMs 0072                ??_DelayUs 0070                   _OSCCON 008F  
+                 _PSINKA 0097                   _OPTION 0081                   _WDTCON 0018  
+           ?_WDT_INITIAL 0070    __end_of_POWER_INITIAL 03DC  __end_of__initialization 03FE  
+         __pcstackCOMMON 0070               __pmaintext 03EC                  _DelayMs 03DC  
+                _DelayUs 03C7                  __ptext0 0000                  __ptext1 03BF  
+                __ptext2 03D0                  __ptext3 03DC                  __ptext4 03C7  
+   end_of_initialization 03FE     __size_of_WDT_INITIAL 0008      start_initialization 03FE  
+ __size_of_POWER_INITIAL 000C                ___latbits 0000                 ?_DelayMs 0070  
+               ?_DelayUs 0070            _POWER_INITIAL 03D0                 DelayMs@a 0073  
+               DelayMs@b 0074                 DelayUs@a 0071              DelayMs@Time 0072  
+          ??_WDT_INITIAL 0070           ?_POWER_INITIAL 0070              DelayUs@Time 0070  
+       __size_of_DelayMs 0010         __size_of_DelayUs 0009            __size_of_main 0012  
+    __end_of_WDT_INITIAL 03C7          ??_POWER_INITIAL 0070              _WDT_INITIAL 03BF  

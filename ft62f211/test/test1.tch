@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<IC mcu="FT62F211-SOP8">
+    <pins>
+        <pin pin="5" key="1" t="3" color="16711935" />
+        <pin pin="6" key="2" t="2" color="7864440" />
+    </pins>
+    <params emi="1" highsens="0" cs="0" lowpwr="0" rc="0" multiple="0" />
+    <compiler type="GCC" />
+    <setting customer="0" lver="0" microlib="1" dlbyide="0" txport="PA1" rxport="PC6" ctxport="" crxport="" ispport="" refcap="4.7 nF" />
+    <curve baselinemin="300" baselinemax="600" rawdatamin="300" rawdatamax="600" differmin="-30" differmax="30" />
+    <trigger values="0,0,,0|0,0,,0" />
+    <lowpower MaskA="0" MaskB="0" MaskC="0" MaskD="0" minTrigger="0" nGroupCnt="0" />
+</IC>

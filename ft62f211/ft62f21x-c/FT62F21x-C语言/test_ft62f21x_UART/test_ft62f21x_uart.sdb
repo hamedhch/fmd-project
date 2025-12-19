@@ -1,0 +1,118 @@
+[p PRO_MODE GLOBOPT AUTOSTATIC RSC14 PICREGULAR PICMID SPACEOPT ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip FT62F21X ]
+[d frameptr 6 ]
+"62 d:\ide3.0.3_6c03\data\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 d:\ide3.0.3_6c03\data\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"37 D:\FMD DEMO CODE(word+pdf)\C ÐÞ¸Ä1008\FT62F21x\test_ft62f21x_UART\test_ft62f21x_UART.C
+[v _ISR ISR `II(v  1 e 1 0 ]
+"68
+[v _POWER_INITIAL POWER_INITIAL `(v  1 e 1 0 ]
+"92
+[v _TIMER0_INITIAL TIMER0_INITIAL `(v  1 e 1 0 ]
+"112
+[v _PA2_Level_Change_INITIAL PA2_Level_Change_INITIAL `(v  1 e 1 0 ]
+"126
+[v _WaitTF0 WaitTF0 `(v  1 e 1 0 ]
+"137
+[v _WByte WByte `(v  1 e 1 0 ]
+"173
+[v _RByte RByte `(uc  1 e 1 0 ]
+"203
+[v _main main `(v  1 e 1 0 ]
+"10 d:\ide3.0.3_6c03\data\include\FT62F21X.h
+[v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
+"59
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+"70
+[v _PA2 PA2 `VEb  1 e 0 @42 ]
+"72
+[v _PA4 PA4 `VEb  1 e 0 @44 ]
+"115
+[v _INTCON INTCON `VEuc  1 e 1 @11 ]
+"117
+[v _PAIF PAIF `VEb  1 e 0 @88 ]
+"119
+[v _T0IF T0IF `VEb  1 e 0 @90 ]
+"120
+[v _PAIE PAIE `VEb  1 e 0 @91 ]
+"122
+[v _T0IE T0IE `VEb  1 e 0 @93 ]
+"124
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"417
+[v _T0ON T0ON `VEb  1 e 0 @251 ]
+"438
+[v _OPTION OPTION `VEuc  1 e 1 @129 ]
+"467
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"471
+[v _TRISA2 TRISA2 `VEb  1 e 0 @1066 ]
+"520
+[v _PSRCA PSRCA `VEuc  1 e 1 @136 ]
+"613
+[v _OSCCON OSCCON `VEuc  1 e 1 @143 ]
+"678
+[v _WPUA WPUA `VEuc  1 e 1 @149 ]
+"727
+[v _IOCA2 IOCA2 `VEb  1 e 0 @1202 ]
+"766
+[v _PSINKA PSINKA `VEuc  1 e 1 @151 ]
+"28 D:\FMD DEMO CODE(word+pdf)\C ÐÞ¸Ä1008\FT62F21x\test_ft62f21x_UART\test_ft62f21x_UART.C
+[v _RXFLAG RXFLAG `uc  1 e 1 0 ]
+"203
+[v _main main `(v  1 e 1 0 ]
+{
+"205
+[v main@rdata rdata `uc  1 a 1 4 ]
+"225
+} 0
+"137
+[v _WByte WByte `(v  1 e 1 0 ]
+{
+[v WByte@input input `uc  1 a 1 wreg ]
+"140
+[v WByte@i i `uc  1 a 1 3 ]
+"137
+[v WByte@input input `uc  1 a 1 wreg ]
+"140
+[v WByte@input input `uc  1 a 1 2 ]
+"165
+} 0
+"92
+[v _TIMER0_INITIAL TIMER0_INITIAL `(v  1 e 1 0 ]
+{
+"104
+} 0
+"173
+[v _RByte RByte `(uc  1 e 1 0 ]
+{
+"175
+[v RByte@Output Output `uc  1 a 1 3 ]
+"176
+[v RByte@i i `uc  1 a 1 2 ]
+"195
+} 0
+"126
+[v _WaitTF0 WaitTF0 `(v  1 e 1 0 ]
+{
+"130
+} 0
+"68
+[v _POWER_INITIAL POWER_INITIAL `(v  1 e 1 0 ]
+{
+"83
+} 0
+"112
+[v _PA2_Level_Change_INITIAL PA2_Level_Change_INITIAL `(v  1 e 1 0 ]
+{
+"119
+} 0
+"37
+[v _ISR ISR `II(v  1 e 1 0 ]
+{
+"61
+} 0

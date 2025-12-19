@@ -12,7 +12,7 @@
 *  VDD-----------|1(VDD)    (GND)8|------------GND     
 *  OUT-----------|2(PA2)    (PA4)7|------------ACC
 *  LED-----------|3(PA1)    (PA5)6|----------
-*       ---------|4(PA3)    (PA0)5|-----------door
+*  lamp----------|4(PA3)    (PA0)5|-----------door
 *			      ----------------
 */
 //*********************************************************
@@ -25,10 +25,11 @@
 #define	 OUT		PA2
 #define	 LED		PA1
 #define	 door		PA0
+#define	 lamp		PA3
 
 
 
-volatile unsigned char S=0,M=0,H=0, mode=0 ,Lock=1,Lock2=1 ;
+volatile unsigned char S=0,M=0,H=0, mode=0 , modelamp=0 ,Lock=1,Lock2=1 ;
 
 volatile unsigned int Puls_Count;
 
@@ -141,60 +142,87 @@ void main()
     
 		if(door==0){
 			LED=0;
-			DelayMs(500);
+			DelayMs(300);
             LED=1;
-            DelayMs(500);
+            DelayMs(300);
             LED=0;
-            DelayMs(500);
+            DelayMs(300);
             LED=1;
-            DelayMs(500);
+            DelayMs(300);
             LED=0;
-            DelayMs(500);
+            DelayMs(300);
             LED=1;
-            DelayMs(500);
+            DelayMs(300);
             LED=0;
             
             
             mode=1;
         }
 		
+        
         if(ACC==0){
         
-            T0IE=1;
             
-            if( S==20 && Lock==0 ){
+            
+            if( S==5 && Lock==0 ){
 				OUT=1;
                 
             }
-            if( S==21 && Lock==0 ){
+            if( S==6 && Lock==0 ){
 				
                 OUT=0;
-                
                 Lock=1;
+                mode=0;
             }
             
             
-            if( M==20 && S==10 && Lock2==0 && mode==1){
+            if( M==15 && S==10 && Lock2==0 && mode==1){
 				
                 OUT=1;
                 
             }
-             if( M==20 && S==11 && Lock2==0 && mode==1 ){
+            if( M==15 && S==11 && Lock2==0 && mode==1 ){
 				
                 OUT=0;
                 
                 Lock2=1;
             }
             
-            //if( M==15){
-			//	OUT=1;
-            //    DelayMs(500);
-             //   OUT=0;
-            //    M++;
-            //}
             
+            if(lamp==0 && modelamp!=1){ //darb baz
+				modelamp=1;
+                
+                T0IE=0;
+                S=0;
+				M=0;
+				
+				OUT=0;
+				
+				LED=1;DelayMs(50);LED=0;DelayMs(50);LED=1;DelayMs(50);LED=0;DelayMs(50);LED=1;DelayMs(50);LED=0;
+                DelayMs(600);
+				LED=1;DelayMs(50);LED=0;DelayMs(50);LED=1;DelayMs(50);LED=0;DelayMs(50);LED=1;DelayMs(50);LED=0;
+            }
+            
+			if(lamp!=0 && modelamp==1){ //darb baste
+				
+                LED=1;DelayMs(50);LED=0;DelayMs(50);LED=1;DelayMs(50);LED=0;DelayMs(50);LED=1;DelayMs(50);LED=0;
+                DelayMs(500);
+				LED=1;DelayMs(50);LED=0;DelayMs(50);LED=1;DelayMs(50);LED=0;DelayMs(50);LED=1;DelayMs(50);LED=0;
+				DelayMs(500);
+                LED=1;DelayMs(50);LED=0;DelayMs(50);LED=1;DelayMs(50);LED=0;DelayMs(50);LED=1;DelayMs(50);LED=0;
+                DelayMs(500);
+				LED=1;DelayMs(50);LED=0;DelayMs(50);LED=1;DelayMs(50);LED=0;DelayMs(50);LED=1;DelayMs(50);LED=0;
+				
+                DelayMs(1000);
+                
+                T0IE=1;
+                modelamp=2;
+                
+            }
             
         }
+        
+        
         if(ACC==1 ){
         
             T0IE=0;
@@ -208,6 +236,7 @@ void main()
             Lock2=0;
             mode=0;
             
+            modelamp=0;
         }
         
         

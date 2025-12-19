@@ -1,0 +1,111 @@
+[p PRO_MODE GLOBOPT AUTOSTATIC RSC14 PICREGULAR PICMID SPACEOPT ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip FT62F21X ]
+[d frameptr 6 ]
+"62 D:\IDE3.0.3_6C03\data\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 D:\IDE3.0.3_6C03\data\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"35 D:\FMD demo 11-11总修改\C\FT62F21x\test_ft62f21x_SPI\test_ft62f21x_SPI.C
+[v _POWER_INITIAL POWER_INITIAL `(v  1 e 1 0 ]
+"53
+[v _init_25c64_io init_25c64_io `(v  1 e 1 0 ]
+"65
+[v _SPI_RW SPI_RW `(uc  1 e 1 0 ]
+"91
+[v _WriteEnable WriteEnable `(v  1 e 1 0 ]
+"101
+[v _WriteDisable WriteDisable `(v  1 e 1 0 ]
+"113
+[v _SPI_ReadStatus SPI_ReadStatus `(uc  1 e 1 0 ]
+"140
+[v _SPI_Read SPI_Read `(uc  1 e 1 0 ]
+"157
+[v _SPI_Write SPI_Write `(v  1 e 1 0 ]
+"176
+[v _main main `(v  1 e 1 0 ]
+"59 D:\IDE3.0.3_6C03\data\include\FT62F21X.h
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+"69
+[v _PA1 PA1 `VEb  1 e 0 @41 ]
+"70
+[v _PA2 PA2 `VEb  1 e 0 @42 ]
+"71
+[v _PA3 PA3 `VEb  1 e 0 @43 ]
+"72
+[v _PA4 PA4 `VEb  1 e 0 @44 ]
+"115
+[v _INTCON INTCON `VEuc  1 e 1 @11 ]
+"358
+[v _MSCON MSCON `VEuc  1 e 1 @27 ]
+"438
+[v _OPTION OPTION `VEuc  1 e 1 @129 ]
+"467
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"613
+[v _OSCCON OSCCON `VEuc  1 e 1 @143 ]
+"678
+[v _WPUA WPUA `VEuc  1 e 1 @149 ]
+"28 D:\FMD demo 11-11总修改\C\FT62F21x\test_ft62f21x_SPI\test_ft62f21x_SPI.C
+[v _SPIReadData SPIReadData `uc  1 e 1 0 ]
+"176
+[v _main main `(v  1 e 1 0 ]
+{
+"187
+} 0
+"53
+[v _init_25c64_io init_25c64_io `(v  1 e 1 0 ]
+{
+"58
+} 0
+"157
+[v _SPI_Write SPI_Write `(v  1 e 1 0 ]
+{
+[v SPI_Write@addr addr `ui  1 p 2 3 ]
+[v SPI_Write@dat dat `uc  1 p 1 5 ]
+"169
+} 0
+"91
+[v _WriteEnable WriteEnable `(v  1 e 1 0 ]
+{
+"96
+} 0
+"101
+[v _WriteDisable WriteDisable `(v  1 e 1 0 ]
+{
+"106
+} 0
+"140
+[v _SPI_Read SPI_Read `(uc  1 e 1 0 ]
+{
+"142
+[v SPI_Read@spidata spidata `uc  1 a 1 5 ]
+"140
+[v SPI_Read@addr addr `ui  1 p 2 3 ]
+"151
+} 0
+"113
+[v _SPI_ReadStatus SPI_ReadStatus `(uc  1 e 1 0 ]
+{
+"115
+[v SPI_ReadStatus@status status `uc  1 a 1 2 ]
+"121
+} 0
+"65
+[v _SPI_RW SPI_RW `(uc  1 e 1 0 ]
+{
+[v SPI_RW@data data `uc  1 a 1 wreg ]
+"67
+[v SPI_RW@i i `uc  1 a 1 0 ]
+"65
+[v SPI_RW@data data `uc  1 a 1 wreg ]
+"68
+[v SPI_RW@data data `uc  1 a 1 1 ]
+"86
+} 0
+"35
+[v _POWER_INITIAL POWER_INITIAL `(v  1 e 1 0 ]
+{
+"46
+} 0

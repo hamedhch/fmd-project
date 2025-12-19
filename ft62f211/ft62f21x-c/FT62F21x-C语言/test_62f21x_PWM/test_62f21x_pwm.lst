@@ -1,0 +1,494 @@
+
+
+GNU Macro Assembler for 8 bit devices.       
+                                                                                               Fri Nov 05 13:48:42 2021
+
+GNU C Code Generator                                                 
+     1                           	processor	FT62F21X
+     2                           	opt	pw 120
+     3                           	opt	pm
+     4                           	psect	text0,local,class=CODE,merge=1,delta=2
+     5                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     6                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
+     7                           	psect	maintext,global,class=CODE,split=1,delta=2
+     8                           	psect	text1,local,class=CODE,merge=1,delta=2
+     9                           	psect	text2,local,class=CODE,merge=1,delta=2
+    10                           	psect	text3,local,class=CODE,merge=1,delta=2
+    11                           	psect	intentry,global,class=CODE,delta=2
+    12                           	psect	pa_nodes0,global,class=CODE,delta=2
+    13                           	dabs	1,0x7E,2
+    14  0000                     
+    15                           ; Version 2.20
+    16                           ; Generated 09/04/2020 
+    17                           ; 
+    18                           ; SFR Addresses
+    19  0000                     
+    20                           	psect	text0
+    21  0000                     __ptext0:	
+    22  001B                     _MSCON	set	27
+    23  0016                     _P1CON	set	22
+    24  0014                     _P1ADTH	set	20
+    25  0013                     _TMR2H	set	19
+    26  0012                     _T2CON0	set	18
+    27  0011                     _TMR2L	set	17
+    28  000E                     _P1ADTL	set	14
+    29  000B                     _INTCON	set	11
+    30  0005                     _PORTA	set	5
+    31  0092                     _TMR2ON	set	146
+    32  0061                     _TMR2IF	set	97
+    33  005F                     _GIE	set	95
+    34  005E                     _PEIE	set	94
+    35  009E                     _T2CON1	set	158
+    36  0099                     _P1POL	set	153
+    37  0095                     _WPUA	set	149
+    38  0092                     _PR2H	set	146
+    39  0091                     _PR2L	set	145
+    40  0090                     _P1OE	set	144
+    41  008F                     _OSCCON	set	143
+    42  0085                     _TRISA	set	133
+    43  0081                     _OPTION	set	129
+    44  0461                     _TMR2IE	set	1121
+    45                           
+    46                           	psect	cinit
+    47  000B                     start_initialization:	
+    48                           ; #config settings
+    49                           
+    50  000B                     __initialization:	
+    51  000B                     end_of_initialization:	
+    52                           ;End of C runtime variable initialization code
+    53                           
+    54  000B                     __end_of__initialization:	
+    55  000B  0183               	clrf	3
+    56  000C  2846               	ljmp	_main	;jump to C main() function
+    57                           
+    58                           	psect	cstackCOMMON
+    59  0070                     __pcstackCOMMON:	
+    60  0070                     ?_ISR:	
+    61  0070                     ??_ISR:	
+    62                           ; 1 bytes @ 0x0
+    63                           
+    64  0070                     ?_POWER_INITIAL:	
+    65                           ; 1 bytes @ 0x0
+    66                           
+    67  0070                     ?_PWM1_INITIAL:	
+    68                           ; 1 bytes @ 0x0
+    69                           
+    70  0070                     ?_main:	
+    71                           ; 1 bytes @ 0x0
+    72                           
+    73                           
+    74                           ; 1 bytes @ 0x0
+    75  0070                     	ds	2
+    76  0072                     ??_POWER_INITIAL:	
+    77  0072                     ??_PWM1_INITIAL:	
+    78                           ; 1 bytes @ 0x2
+    79                           
+    80  0072                     ??_main:	
+    81                           ; 1 bytes @ 0x2
+    82                           
+    83                           
+    84                           	psect	maintext
+    85  0046                     __pmaintext:	
+    86                           ; 1 bytes @ 0x2
+    87 ;;
+    88 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+    89 ;;
+    90 ;; *************** function _main *****************
+    91 ;; Defined at:
+    92 ;;		line 122 in file "test_62f21x_PWM.C"
+    93 ;; Parameters:    Size  Location     Type
+    94 ;;		None
+    95 ;; Auto vars:     Size  Location     Type
+    96 ;;		None
+    97 ;; Return value:  Size  Location     Type
+    98 ;;                  1    wreg      void 
+    99 ;; Registers used:
+   100 ;;		wreg, status,2, status,0, pclath, cstack
+   101 ;; Tracked objects:
+   102 ;;		On entry : B00/0
+   103 ;;		On exit  : 0/0
+   104 ;;		Unchanged: 0/0
+   105 ;; Data sizes:     COMMON   BANK0
+   106 ;;      Params:         0       0
+   107 ;;      Locals:         0       0
+   108 ;;      Temps:          0       0
+   109 ;;      Totals:         0       0
+   110 ;;Total ram usage:        0 bytes
+   111 ;; Hardware stack levels required when called:    2
+   112 ;; This function calls:
+   113 ;;		_POWER_INITIAL
+   114 ;;		_PWM1_INITIAL
+   115 ;; This function is called by:
+   116 ;;		Startup code after reset
+   117 ;; This function uses a non-reentrant model
+   118 ;;
+   119                           
+   120                           
+   121                           ;psect for function _main
+   122  0046                     _main:	
+   123                           
+   124                           ;test_62f21x_PWM.C: 124: POWER_INITIAL();
+   125                           
+   126                           ;incstack = 0
+   127                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
+   128  0046  202A               	fcall	_POWER_INITIAL
+   129                           
+   130                           ;test_62f21x_PWM.C: 125: PWM1_INITIAL();
+   131  0047  200D               	fcall	_PWM1_INITIAL
+   132  0048                     l1120:	
+   133                           
+   134                           ;test_62f21x_PWM.C: 127: {
+   135                           ;test_62f21x_PWM.C: 128: __nop();
+   136  0048  0000               	nop
+   137  0049  2848               	goto	l1120
+   138  004A                     __end_of_main:	
+   139                           
+   140                           	psect	text1
+   141  000D                     __ptext1:	
+   142 ;; *************** function _PWM1_INITIAL *****************
+   143 ;; Defined at:
+   144 ;;		line 58 in file "test_62f21x_PWM.C"
+   145 ;; Parameters:    Size  Location     Type
+   146 ;;		None
+   147 ;; Auto vars:     Size  Location     Type
+   148 ;;		None
+   149 ;; Return value:  Size  Location     Type
+   150 ;;                  1    wreg      void 
+   151 ;; Registers used:
+   152 ;;		wreg, status,2
+   153 ;; Tracked objects:
+   154 ;;		On entry : B00/0
+   155 ;;		On exit  : B00/0
+   156 ;;		Unchanged: A00/0
+   157 ;; Data sizes:     COMMON   BANK0
+   158 ;;      Params:         0       0
+   159 ;;      Locals:         0       0
+   160 ;;      Temps:          0       0
+   161 ;;      Totals:         0       0
+   162 ;;Total ram usage:        0 bytes
+   163 ;; Hardware stack levels used:    1
+   164 ;; Hardware stack levels required when called:    1
+   165 ;; This function calls:
+   166 ;;		Nothing
+   167 ;; This function is called by:
+   168 ;;		_main
+   169 ;; This function uses a non-reentrant model
+   170 ;;
+   171                           
+   172                           
+   173                           ;psect for function _PWM1_INITIAL
+   174  000D                     _PWM1_INITIAL:	
+   175                           
+   176                           ;test_62f21x_PWM.C: 60: T2CON0=0B00000001;
+   177                           
+   178                           ;incstack = 0
+   179                           ; Regs used in _PWM1_INITIAL: [wreg+status,2]
+   180  000D  3001               	movlw	1
+   181  000E  0092               	movwf	18	;volatile
+   182                           
+   183                           ;test_62f21x_PWM.C: 66: T2CON1=0B00000000;
+   184  000F  1683               	bsf	3,5	;RP0=1, select bank1
+   185  0010  019E               	clrf	30	;volatile
+   186                           
+   187                           ;test_62f21x_PWM.C: 76: TMR2H=0;
+   188  0011  1283               	bcf	3,5	;RP0=0, select bank0
+   189  0012  0193               	clrf	19	;volatile
+   190                           
+   191                           ;test_62f21x_PWM.C: 77: TMR2L=0;
+   192  0013  0191               	clrf	17	;volatile
+   193                           
+   194                           ;test_62f21x_PWM.C: 79: PR2H=0;
+   195  0014  1683               	bsf	3,5	;RP0=1, select bank1
+   196  0015  0192               	clrf	18	;volatile
+   197                           
+   198                           ;test_62f21x_PWM.C: 80: PR2L=99;
+   199  0016  3063               	movlw	99
+   200  0017  0091               	movwf	17	;volatile
+   201                           
+   202                           ;test_62f21x_PWM.C: 82: P1ADTH=0;
+   203  0018  1283               	bcf	3,5	;RP0=0, select bank0
+   204  0019  0194               	clrf	20	;volatile
+   205                           
+   206                           ;test_62f21x_PWM.C: 83: P1ADTL=50;
+   207  001A  3032               	movlw	50
+   208  001B  008E               	movwf	14	;volatile
+   209                           
+   210                           ;test_62f21x_PWM.C: 85: P1OE=0B00000001;
+   211  001C  3001               	movlw	1
+   212  001D  1683               	bsf	3,5	;RP0=1, select bank1
+   213  001E  0090               	movwf	16	;volatile
+   214                           
+   215                           ;test_62f21x_PWM.C: 96: P1POL=0B00000000;
+   216  001F  0199               	clrf	25	;volatile
+   217                           
+   218                           ;test_62f21x_PWM.C: 103: P1CON=0B00000000;
+   219  0020  1283               	bcf	3,5	;RP0=0, select bank0
+   220  0021  0196               	clrf	22	;volatile
+   221                           
+   222                           ;test_62f21x_PWM.C: 110: TMR2IF=0;
+   223  0022  108C               	bcf	12,1	;volatile
+   224                           
+   225                           ;test_62f21x_PWM.C: 111: TMR2IE=1;
+   226  0023  1683               	bsf	3,5	;RP0=1, select bank1
+   227  0024  148C               	bsf	12,1	;volatile
+   228                           
+   229                           ;test_62f21x_PWM.C: 112: TMR2ON=1;
+   230  0025  1283               	bcf	3,5	;RP0=0, select bank0
+   231  0026  1512               	bsf	18,2	;volatile
+   232                           
+   233                           ;test_62f21x_PWM.C: 113: PEIE=1;
+   234  0027  170B               	bsf	11,6	;volatile
+   235                           
+   236                           ;test_62f21x_PWM.C: 114: GIE=1;
+   237  0028  178B               	bsf	11,7	;volatile
+   238  0029  0008               	return
+   239  002A                     __end_of_PWM1_INITIAL:	
+   240                           
+   241                           	psect	text2
+   242  002A                     __ptext2:	
+   243 ;; *************** function _POWER_INITIAL *****************
+   244 ;; Defined at:
+   245 ;;		line 38 in file "test_62f21x_PWM.C"
+   246 ;; Parameters:    Size  Location     Type
+   247 ;;		None
+   248 ;; Auto vars:     Size  Location     Type
+   249 ;;		None
+   250 ;; Return value:  Size  Location     Type
+   251 ;;                  1    wreg      void 
+   252 ;; Registers used:
+   253 ;;		wreg, status,2
+   254 ;; Tracked objects:
+   255 ;;		On entry : B00/0
+   256 ;;		On exit  : B00/0
+   257 ;;		Unchanged: A00/0
+   258 ;; Data sizes:     COMMON   BANK0
+   259 ;;      Params:         0       0
+   260 ;;      Locals:         0       0
+   261 ;;      Temps:          0       0
+   262 ;;      Totals:         0       0
+   263 ;;Total ram usage:        0 bytes
+   264 ;; Hardware stack levels used:    1
+   265 ;; Hardware stack levels required when called:    1
+   266 ;; This function calls:
+   267 ;;		Nothing
+   268 ;; This function is called by:
+   269 ;;		_main
+   270 ;; This function uses a non-reentrant model
+   271 ;;
+   272                           
+   273                           
+   274                           ;psect for function _POWER_INITIAL
+   275  002A                     _POWER_INITIAL:	
+   276                           
+   277                           ;test_62f21x_PWM.C: 40: OSCCON = 0B01110000;
+   278                           
+   279                           ;incstack = 0
+   280                           ; Regs used in _POWER_INITIAL: [wreg+status,2]
+   281  002A  3070               	movlw	112
+   282  002B  1683               	bsf	3,5	;RP0=1, select bank1
+   283  002C  008F               	movwf	15	;volatile
+   284                           
+   285                           ;test_62f21x_PWM.C: 41: INTCON = 0;
+   286  002D  018B               	clrf	11	;volatile
+   287                           
+   288                           ;test_62f21x_PWM.C: 43: PORTA = 0B00000000;
+   289  002E  1283               	bcf	3,5	;RP0=0, select bank0
+   290  002F  0185               	clrf	5	;volatile
+   291                           
+   292                           ;test_62f21x_PWM.C: 44: TRISA = 0B00000000;
+   293  0030  1683               	bsf	3,5	;RP0=1, select bank1
+   294  0031  0185               	clrf	5	;volatile
+   295                           
+   296                           ;test_62f21x_PWM.C: 45: WPUA = 0B00000000;
+   297  0032  0195               	clrf	21	;volatile
+   298                           
+   299                           ;test_62f21x_PWM.C: 47: OPTION = 0B00001000;
+   300  0033  3008               	movlw	8
+   301  0034  0081               	movwf	1	;volatile
+   302                           
+   303                           ;test_62f21x_PWM.C: 48: MSCON = 0B00000000;
+   304  0035  1283               	bcf	3,5	;RP0=0, select bank0
+   305  0036  019B               	clrf	27	;volatile
+   306  0037  0008               	return
+   307  0038                     __end_of_POWER_INITIAL:	
+   308                           
+   309                           	psect	text3
+   310  0038                     __ptext3:	
+   311 ;; *************** function _ISR *****************
+   312 ;; Defined at:
+   313 ;;		line 25 in file "test_62f21x_PWM.C"
+   314 ;; Parameters:    Size  Location     Type
+   315 ;;		None
+   316 ;; Auto vars:     Size  Location     Type
+   317 ;;		None
+   318 ;; Return value:  Size  Location     Type
+   319 ;;                  1    wreg      void 
+   320 ;; Registers used:
+   321 ;;		None
+   322 ;; Tracked objects:
+   323 ;;		On entry : 0/0
+   324 ;;		On exit  : 0/0
+   325 ;;		Unchanged: 0/0
+   326 ;; Data sizes:     COMMON   BANK0
+   327 ;;      Params:         0       0
+   328 ;;      Locals:         0       0
+   329 ;;      Temps:          2       0
+   330 ;;      Totals:         2       0
+   331 ;;Total ram usage:        2 bytes
+   332 ;; Hardware stack levels used:    1
+   333 ;; This function calls:
+   334 ;;		Nothing
+   335 ;; This function is called by:
+   336 ;;		Interrupt level 1
+   337 ;; This function uses a non-reentrant model
+   338 ;;
+   339                           
+   340                           
+   341                           ;psect for function _ISR
+   342  0038                     _ISR:	
+   343                           
+   344                           ;test_62f21x_PWM.C: 27: if(TMR2IE && TMR2IF)
+   345  0038  1683               	bsf	3,5	;RP0=1, select bank1
+   346  0039  1C8C               	btfss	12,1	;volatile
+   347  003A  283F               	goto	i1l680
+   348  003B  1283               	bcf	3,5	;RP0=0, select bank0
+   349  003C  1C8C               	btfss	12,1	;volatile
+   350  003D  283F               	goto	i1l680
+   351                           
+   352                           ;test_62f21x_PWM.C: 28: {
+   353                           ;test_62f21x_PWM.C: 29: TMR2IF = 0;
+   354  003E  108C               	bcf	12,1	;volatile
+   355  003F                     i1l680:	
+   356  003F  0871               	movf	??_ISR+1,w
+   357  0040  008A               	movwf	10
+   358  0041  0E70               	swapf	??_ISR^(0+-128),w
+   359  0042  0083               	movwf	3
+   360  0043  0EFE               	swapf	126,f
+   361  0044  0E7E               	swapf	126,w
+   362  0045  0009               	retfie
+   363  0046                     __end_of_ISR:	
+   364  007E                     btemp	set	126	;btemp
+   365  007E                     wtemp0	set	126
+   366                           
+   367                           	psect	intentry
+   368  0004                     __pintentry:	
+   369                           ;incstack = 0
+   370                           ; Regs used in _ISR: []
+   371                           
+   372  0004                     interrupt_function:	
+   373  007E                     saved_w	set	btemp
+   374  0004  00FE               	movwf	btemp
+   375  0005  0E03               	swapf	3,w
+   376  0006  00F0               	movwf	??_ISR
+   377  0007  080A               	movf	10,w
+   378  0008  00F1               	movwf	??_ISR+1
+   379  0009  2838               	ljmp	_ISR
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14      2       2
+    BANK0            48      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    None.
+
+Critical Paths under _ISR in COMMON
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _ISR in BANK0
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0       0
+                      _POWER_INITIAL
+                       _PWM1_INITIAL
+ ---------------------------------------------------------------------------------
+ (1) _PWM1_INITIAL                                         0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _POWER_INITIAL                                        0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 1
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (2) _ISR                                                  2     2      0       0
+                                              0 COMMON     2     2      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _POWER_INITIAL
+   _PWM1_INITIAL
+
+ _ISR (ROOT)
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMMON            E      0       0       0        0.0%
+EEDATA              80      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMMON               E      2       2       1       14.3%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR1              0      0       0       2        0.0%
+SFR1                 0      0       0       2        0.0%
+STACK                0      0       0       2        0.0%
+DATA                 0      0       0       3        0.0%
+BITBANK0            30      0       0       4        0.0%
+BANK0               30      0       0       5        0.0%
+ABS                  0      0       0       6        0.0%
+
+
+GNU Macro Assembler for 8 bit devices.     
+Symbol Table                                                                                   Fri Nov 05 13:48:42 2021
+
+                    _GIE 005F                      _ISR 0038                     ?_ISR 0070  
+                   l1120 0048                     _P1OE 0090                     _PEIE 005E  
+                   _PR2H 0092                     _PR2L 0091                     _WPUA 0095  
+                   _main 0046                     btemp 007E                     start 000A  
+                  ??_ISR 0070                    ?_main 0070                    _P1CON 0016  
+                  _P1POL 0099                    i1l680 003F                    _MSCON 001B  
+                  _TMR2H 0013                    _TMR2L 0011                    _PORTA 0005  
+                  _TRISA 0085                    pclath 000A                    status 0003  
+                  wtemp0 007E          __initialization 000B             __end_of_main 004A  
+                 ??_main 0072                   _P1ADTH 0014                   _P1ADTL 000E  
+                 _T2CON0 0012                   _T2CON1 009E                   _INTCON 000B  
+                 _OSCCON 008F                   _TMR2IE 0461                   _TMR2IF 0061  
+                 _OPTION 0081                   _TMR2ON 0092                   saved_w 007E  
+  __end_of_POWER_INITIAL 0038  __end_of__initialization 000B           __pcstackCOMMON 0070  
+             __pmaintext 0046               __pintentry 0004            ?_PWM1_INITIAL 0070  
+                __ptext0 0000                  __ptext1 000D                  __ptext2 002A  
+                __ptext3 0038             __size_of_ISR 000E           ??_PWM1_INITIAL 0072  
+   end_of_initialization 000B      start_initialization 000B              __end_of_ISR 0046  
+   __end_of_PWM1_INITIAL 002A   __size_of_POWER_INITIAL 000E                ___latbits 0000  
+      interrupt_function 0004            _POWER_INITIAL 002A           ?_POWER_INITIAL 0070  
+  __size_of_PWM1_INITIAL 001D             _PWM1_INITIAL 000D            __size_of_main 0004  
+        ??_POWER_INITIAL 0072                 intlevel1 0000  
