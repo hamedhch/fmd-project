@@ -1,0 +1,410 @@
+###############################################################################
+#
+# IAR ELF Linker V9.10.2.313/W64 for ARM                  13/Apr/2022  18:43:50
+# Copyright 2007-2021 IAR Systems AB.
+#
+#    Output file  =
+#        D:\workspace\FMD\Touch\6100\IAR\LIB\touchlib_6100_intscan_fastscan\Pro\Debug\Exe\Pro.out
+#    Map file     =
+#        D:\workspace\FMD\Touch\6100\IAR\LIB\touchlib_6100_intscan_fastscan\Pro\Debug\List\Pro.map
+#    Command line =
+#        -f
+#        D:\workspace\FMD\Touch\6100\IAR\LIB\touchlib_6100_intscan_fastscan\Pro\Debug\Exe\Pro.out.rsp
+#        (D:\workspace\FMD\Touch\6100\IAR\LIB\touchlib_6100_intscan_fastscan\Pro\Debug\Obj\USER\board.o
+#        "D:\workspace\FMD\Touch\6100\IAR\LIB\touchlib_6100_intscan_fastscan\Pro\Debug\Obj\CMSIS-Pack\FMD
+#        StdDriverOne _Device.FT32Driver.GPIO_1.0.1\ft32f0xx_gpio.o"
+#        D:\workspace\FMD\Touch\6100\IAR\LIB\touchlib_6100_intscan_fastscan\Pro\Debug\Obj\USER\ft32f0xx_it.o
+#        "D:\workspace\FMD\Touch\6100\IAR\LIB\touchlib_6100_intscan_fastscan\Pro\Debug\Obj\CMSIS-Pack\FMD
+#        StdDriverOne _Device.FT32Driver.RCC_1.0.1\ft32f0xx_rcc.o"
+#        D:\workspace\FMD\Touch\6100\IAR\LIB\touchlib_6100_intscan_fastscan\Pro\Debug\Obj\USER\main.o
+#        D:\workspace\FMD\Touch\6100\IAR\LIB\touchlib_6100_intscan_fastscan\Pro\Debug\Obj\USER\startup_FT32f072.o
+#        "D:\workspace\FMD\Touch\6100\IAR\LIB\touchlib_6100_intscan_fastscan\Pro\Debug\Obj\CMSIS-Pack\FMD
+#        StdDriverOne _Device.Startup_1.0.1\system_ft32f0xx.o"
+#        --no_out_extension -o
+#        D:\workspace\FMD\Touch\6100\IAR\LIB\touchlib_6100_intscan_fastscan\Pro\Debug\Exe\Pro.out
+#        --map
+#        D:\workspace\FMD\Touch\6100\IAR\LIB\touchlib_6100_intscan_fastscan\Pro\Debug\List\Pro.map
+#        --config
+#        C:/Users/shenghui.li/IAR-CMSIS-Packs/FMD/FT32F0xx_DFP/1.0.2/\.iar\config\linker\FT32F072R8.icf
+#        --semihosting
+#        D:\workspace\FMD\Touch\6100\IAR\LIB\touchlib_6100_intscan_fastscan\Pro\..\TOUCH_LIB\ft32f0xx_touch_intscan_fs_cs.a
+#        --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__Heap_Handler  = NoFree
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The no free heap was selected because no calls to memory
+deallocation functions were found in the application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x800'0000 { ro section .intvec };
+"P1":  place in [from 0x0 to 0x0] |
+                [from 0x800'0000 to 0x800'ffff] { ro };
+define block CSTACK with size = 1K, alignment = 8 { };
+define block HEAP with size = 2K, alignment = 8 { };
+"P3":  place in [from 0x0 to 0x0] |
+                [from 0x2000'0000 to 0x2000'1fff] {
+          rw, block CSTACK, block HEAP };
+
+No sections matched the following patterns:
+
+  ro section application_specific_ro  in "P2|P4"
+  rw section application_specific_rw  in "P2|P4"
+
+
+  Section          Kind         Address    Size  Object
+  -------          ----         -------    ----  ------
+"A0":                                      0xc0
+  .intvec          ro code   0x800'0000    0xc0  startup_FT32f072.o [4]
+                           - 0x800'00c0    0xc0
+
+"P1":                                    0x1e3d
+  .text            ro code   0x800'00c0   0xccc  ft32f0xx_touch.o [6]
+  .text            ro code   0x800'0d8c   0x77c  touch.o [6]
+  .text            ro code   0x800'1508    0x50  no_free_heap0.o [5]
+  .text            ro code   0x800'1558    0xe0  I32DivModFast.o [7]
+  .text            ro code   0x800'1638    0x2c  xgetmemchunk.o [5]
+  .text            ro code   0x800'1664     0x2  IntDivZer.o [7]
+  .text            ro code   0x800'1666     0xa  ft32f0xx_it.o [4]
+  .text            ro code   0x800'1670   0x404  board.o [4]
+  .text            ro code   0x800'1a74    0x24  ft32f0xx_rcc.o [2]
+  .text            ro code   0x800'1a98    0xaa  ft32f0xx_gpio.o [1]
+  .rodata          const     0x800'1b42     0x2  main.o [4]
+  .text            ro code   0x800'1b44   0x160  system_ft32f0xx.o [3]
+  .rodata          const     0x800'1ca4    0xc0  touch.o [6]
+  .text            ro code   0x800'1d64    0x3c  startup_FT32f072.o [4]
+  .text            ro code   0x800'1da0    0x3c  zero_init3.o [7]
+  .text            ro code   0x800'1ddc    0x38  main.o [4]
+  .text            ro code   0x800'1e14    0x28  data_init.o [7]
+  .iar.init_table  const     0x800'1e3c    0x10  - Linker created -
+  .text            ro code   0x800'1e4c    0x1e  cmain.o [7]
+  .text            ro code   0x800'1e6a     0x4  low_level_init.o [5]
+  .text            ro code   0x800'1e6e     0x8  exit.o [5]
+  .rodata          const     0x800'1e76     0x2  main.o [4]
+  .text            ro code   0x800'1e78     0xa  cexit.o [7]
+  .text            ro code   0x800'1e82     0x2  startup_FT32f072.o [4]
+  .text            ro code   0x800'1e84    0x14  exit.o [8]
+  .text            ro code   0x800'1e98    0x1c  cstartup_M.o [7]
+  .text            ro code   0x800'1eb4     0x2  startup_FT32f072.o [4]
+  .text            ro code   0x800'1eb6     0x2  startup_FT32f072.o [4]
+  .text            ro code   0x800'1eb8     0x2  startup_FT32f072.o [4]
+  .text            ro code   0x800'1eba     0x2  startup_FT32f072.o [4]
+  .text            ro code   0x800'1ebc     0x2  startup_FT32f072.o [4]
+  .text            ro code   0x800'1ebe     0x2  startup_FT32f072.o [4]
+  .text            ro code   0x800'1ec0     0x2  startup_FT32f072.o [4]
+  .text            ro code   0x800'1ec2     0x2  startup_FT32f072.o [4]
+  .text            ro code   0x800'1ec4     0x2  startup_FT32f072.o [4]
+  .text            ro code   0x800'1ec6     0x2  startup_FT32f072.o [4]
+  .text            ro code   0x800'1ec8     0x2  startup_FT32f072.o [4]
+  .text            ro code   0x800'1eca     0x2  startup_FT32f072.o [4]
+  .text            ro code   0x800'1ecc     0x2  startup_FT32f072.o [4]
+  .text            ro code   0x800'1ece     0x2  startup_FT32f072.o [4]
+  .text            ro code   0x800'1ed0     0x2  startup_FT32f072.o [4]
+  .text            ro code   0x800'1ed2     0x2  startup_FT32f072.o [4]
+  .text            ro code   0x800'1ed4     0x2  startup_FT32f072.o [4]
+  .text            ro code   0x800'1ed6     0x2  startup_FT32f072.o [4]
+  .text            ro code   0x800'1ed8     0x2  startup_FT32f072.o [4]
+  .text            ro code   0x800'1eda     0x2  startup_FT32f072.o [4]
+  .text            ro code   0x800'1edc     0x2  startup_FT32f072.o [4]
+  .text            ro code   0x800'1ede     0x2  startup_FT32f072.o [4]
+  .text            ro code   0x800'1ee0     0x2  startup_FT32f072.o [4]
+  .text            ro code   0x800'1ee2     0x2  startup_FT32f072.o [4]
+  .text            ro code   0x800'1ee4     0x2  startup_FT32f072.o [4]
+  .text            ro code   0x800'1ee6     0x2  startup_FT32f072.o [4]
+  .text            ro code   0x800'1ee8     0x2  startup_FT32f072.o [4]
+  .text            ro code   0x800'1eea     0x2  startup_FT32f072.o [4]
+  .text            ro code   0x800'1eec     0x2  startup_FT32f072.o [4]
+  .text            ro code   0x800'1eee     0x2  startup_FT32f072.o [4]
+  .text            ro code   0x800'1ef0     0x2  startup_FT32f072.o [4]
+  .rodata          const     0x800'1ef2     0x1  main.o [4]
+  .rodata          const     0x800'1ef3     0x1  main.o [4]
+  .rodata          const     0x800'1ef4     0x1  main.o [4]
+  .rodata          const     0x800'1ef5     0x1  main.o [4]
+  .rodata          const     0x800'1ef6     0x1  main.o [4]
+  .rodata          const     0x800'1ef7     0x1  main.o [4]
+  .rodata          const     0x800'1ef8     0x1  main.o [4]
+  .rodata          const     0x800'1ef9     0x1  main.o [4]
+  .rodata          const     0x800'1efa     0x1  main.o [4]
+  .rodata          const     0x800'1efb     0x1  main.o [4]
+  .rodata          const     0x800'1efc     0x1  main.o [4]
+  .rodata          const     0x800'1efd     0x0  zero_init3.o [7]
+                           - 0x800'1efd  0x1e3d
+
+"P3", part 1 of 2:                         0x44
+  .bss             zero     0x2000'0000     0x8  ft32f0xx_touch.o [6]
+  .bss             zero     0x2000'0008     0x8  ft32f0xx_touch.o [6]
+  .bss             zero     0x2000'0010     0x4  ft32f0xx_touch.o [6]
+  .bss             zero     0x2000'0014     0x4  ft32f0xx_touch.o [6]
+  .bss             zero     0x2000'0018     0x4  ft32f0xx_touch.o [6]
+  .bss             zero     0x2000'001c     0x4  ft32f0xx_touch.o [6]
+  .bss             zero     0x2000'0020     0x4  ft32f0xx_touch.o [6]
+  .bss             zero     0x2000'0024     0x4  ft32f0xx_touch.o [6]
+  .bss             zero     0x2000'0028     0x4  touch.o [6]
+  .bss             zero     0x2000'002c     0x4  no_free_heap0.o [5]
+  .bss             zero     0x2000'0030     0x4  xgetmemchunk.o [5]
+  .bss             zero     0x2000'0034     0x2  ft32f0xx_touch.o [6]
+  .bss             zero     0x2000'0036     0x2  ft32f0xx_touch.o [6]
+  .bss             zero     0x2000'0038     0x1  ft32f0xx_touch.o [6]
+  .bss             zero     0x2000'0039     0x1  ft32f0xx_touch.o [6]
+  .bss             zero     0x2000'003a     0x1  ft32f0xx_touch.o [6]
+  .bss             zero     0x2000'003b     0x1  ft32f0xx_touch.o [6]
+  .bss             zero     0x2000'003c     0x1  ft32f0xx_touch.o [6]
+  .bss             zero     0x2000'003d     0x1  ft32f0xx_touch.o [6]
+  .bss             zero     0x2000'003e     0x1  ft32f0xx_touch.o [6]
+  .bss             zero     0x2000'003f     0x1  ft32f0xx_touch.o [6]
+  .bss             zero     0x2000'0040     0x1  ft32f0xx_touch.o [6]
+  .bss             zero     0x2000'0041     0x1  ft32f0xx_touch.o [6]
+  .bss             zero     0x2000'0042     0x1  touch.o [6]
+  .bss             zero     0x2000'0043     0x1  touch.o [6]
+                          - 0x2000'0044    0x44
+
+"P3", part 2 of 2:                        0xc00
+  CSTACK                    0x2000'0048   0x400  <Block>
+    CSTACK         uninit   0x2000'0048   0x400  <Block tail>
+  HEAP                      0x2000'0448   0x800  <Block>
+    HEAP           uninit   0x2000'0448   0x800  <Block tail>
+                          - 0x2000'0c48   0xc00
+
+Unused ranges:
+
+         From           To    Size
+         ----           --    ----
+          0x0          0x0     0x1
+   0x800'1efd   0x800'ffff  0xe103
+  0x2000'0044  0x2000'0047     0x4
+  0x2000'0c48  0x2000'1fff  0x13b8
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x44:
+          0x2000'0000  0x44
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module              ro code  ro data  rw data
+    ------              -------  -------  -------
+command line/config:
+    ---------------------------------------------
+    Total:
+
+D:\workspace\FMD\Touch\6100\IAR\LIB\touchlib_6100_intscan_fastscan\Pro\Debug\Obj\CMSIS-Pack\FMD StdDriverOne _Device.FT32Driver.GPIO_1.0.1: [1]
+    ft32f0xx_gpio.o         170
+    ---------------------------------------------
+    Total:                  170
+
+D:\workspace\FMD\Touch\6100\IAR\LIB\touchlib_6100_intscan_fastscan\Pro\Debug\Obj\CMSIS-Pack\FMD StdDriverOne _Device.FT32Driver.RCC_1.0.1: [2]
+    ft32f0xx_rcc.o           36
+    ---------------------------------------------
+    Total:                   36
+
+D:\workspace\FMD\Touch\6100\IAR\LIB\touchlib_6100_intscan_fastscan\Pro\Debug\Obj\CMSIS-Pack\FMD StdDriverOne _Device.Startup_1.0.1: [3]
+    system_ft32f0xx.o       352
+    ---------------------------------------------
+    Total:                  352
+
+D:\workspace\FMD\Touch\6100\IAR\LIB\touchlib_6100_intscan_fastscan\Pro\Debug\Obj\USER: [4]
+    board.o               1'028
+    ft32f0xx_it.o            10
+    main.o                   56       15
+    startup_FT32f072.o      316
+    ---------------------------------------------
+    Total:                1'410       15
+
+dl6M_tln.a: [5]
+    exit.o                    8
+    low_level_init.o          4
+    no_free_heap0.o          80                 4
+    xgetmemchunk.o           44                 4
+    ---------------------------------------------
+    Total:                  136                 8
+
+ft32f0xx_touch_intscan_fs_cs.a: [6]
+    ft32f0xx_touch.o      3'276                54
+    touch.o               1'916      192        6
+    ---------------------------------------------
+    Total:                5'192      192       60
+
+rt6M_tl.a: [7]
+    I32DivModFast.o         224
+    IntDivZer.o               2
+    cexit.o                  10
+    cmain.o                  30
+    cstartup_M.o             28
+    data_init.o              40
+    zero_init3.o             60
+    ---------------------------------------------
+    Total:                  394
+
+shb_l.a: [8]
+    exit.o                   20
+    ---------------------------------------------
+    Total:                   20
+
+    Linker created                    16    3'072
+-------------------------------------------------
+    Grand Total:          7'710      223    3'140
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base    0x800'1e3c          --   Gb  - Linker created -
+.iar.init_table$$Limit   0x800'1e4c          --   Gb  - Linker created -
+?main                    0x800'1e4d         Code  Gb  cmain.o [7]
+ADC1_COMP_IRQHandler     0x800'1df3   0x1c  Code  Gb  main.o [4]
+BaselineEqualCondition  0x2000'0040    0x1  Data  Gb  ft32f0xx_touch.o [6]
+COMP1_DAC1_Init          0x800'1075   0x98  Code  Gb  touch.o [6]
+COMP1_DAC1_Touch1        0x800'110d    0x8  Code  Gb  touch.o [6]
+COMP1_DAC1_Touch2        0x800'1115    0x8  Code  Gb  touch.o [6]
+COMP1_DAC1_Touch3        0x800'111d    0x8  Code  Gb  touch.o [6]
+CSTACK$$Base            0x2000'0048          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'0448          --   Gb  - Linker created -
+ChargeDataBuff          0x2000'0000    0x8  Data  Gb  ft32f0xx_touch.o [6]
+ClosestSub              0x2000'0008    0x8  Data  Gb  ft32f0xx_touch.o [6]
+GPIO_Init                0x800'1a99   0xa0  Code  Gb  ft32f0xx_gpio.o [1]
+GPIO_ResetBits           0x800'1b3f    0x4  Code  Gb  ft32f0xx_gpio.o [1]
+GPIO_SetBits             0x800'1b39    0x6  Code  Gb  ft32f0xx_gpio.o [1]
+GroupIoModeAnalog        0x800'14b9   0x34  Code  Gb  touch.o [6]
+GroupIoModeOut           0x800'0cc5   0x7e  Code  Gb  ft32f0xx_touch.o [6]
+HEAP$$Base              0x2000'0448          --   Gb  - Linker created -
+HEAP$$Limit             0x2000'0c48          --   Gb  - Linker created -
+HardFault_Handler        0x800'1669    0x4  Code  Gb  ft32f0xx_it.o [4]
+IO_Init                  0x800'0c79   0x42  Code  Gb  ft32f0xx_touch.o [6]
+JudgeGroupCharge         0x800'137d  0x134  Code  Gb  touch.o [6]
+KEY_Scan                 0x800'176d  0x2fa  Code  Gb  board.o [4]
+Led_Init                 0x800'1671   0xea  Code  Gb  board.o [4]
+MAX1_TMP                0x2000'003d    0x1  Data  Gb  ft32f0xx_touch.o [6]
+MAX_TMP                 0x2000'003c    0x1  Data  Gb  ft32f0xx_touch.o [6]
+McuVersion              0x2000'0042    0x1  Data  Gb  touch.o [6]
+NMI_Handler              0x800'1667    0x2  Code  Gb  ft32f0xx_it.o [4]
+PendSV_Handler           0x800'166f    0x2  Code  Gb  ft32f0xx_it.o [4]
+RCC_AHBPeriphClockCmd    0x800'1a75   0x20  Code  Gb  ft32f0xx_rcc.o [2]
+Region$$Table$$Base      0x800'1e3c          --   Gb  - Linker created -
+Region$$Table$$Limit     0x800'1e4c          --   Gb  - Linker created -
+SVC_Handler              0x800'166d    0x2  Code  Gb  ft32f0xx_it.o [4]
+SetSysClock              0x800'1bb3   0xba  Code  Lc  system_ft32f0xx.o [3]
+SystemInit               0x800'1b45   0x6e  Code  Gb  system_ft32f0xx.o [3]
+TIM16_CH1_Init           0x800'0dd3   0x5c  Code  Gb  touch.o [6]
+TIM16_Init               0x800'0d8d   0x46  Code  Gb  touch.o [6]
+TIM16_OFF                0x800'0e43    0xe  Code  Gb  touch.o [6]
+TIM16_ON                 0x800'0e2f   0x14  Code  Gb  touch.o [6]
+TIM1_CH1_Init            0x800'0e91   0x54  Code  Gb  touch.o [6]
+TIM1_CH2_Init            0x800'0ee9   0x56  Code  Gb  touch.o [6]
+TIM1_CH3_Init            0x800'0f61   0x56  Code  Gb  touch.o [6]
+TIM1_Init                0x800'0e51   0x40  Code  Gb  touch.o [6]
+TIM1_OFF                 0x800'0fd5    0xe  Code  Gb  touch.o [6]
+TIM1_ON                  0x800'0fc1   0x14  Code  Gb  touch.o [6]
+TIM3_Init                0x800'0fe9   0x38  Code  Gb  touch.o [6]
+TIM3_OFF                 0x800'1059    0xe  Code  Gb  touch.o [6]
+TIM3_ON                  0x800'1035   0x20  Code  Gb  touch.o [6]
+TK_OUT_SINGLE           0x2000'0024    0x4  Data  Gb  ft32f0xx_touch.o [6]
+TK_OUT_strongest        0x2000'003b    0x1  Data  Gb  ft32f0xx_touch.o [6]
+TOUCH_READ_OK           0x2000'0039    0x1  Data  Gb  ft32f0xx_touch.o [6]
+TSC_DataProcessing       0x800'06e9  0x578  Code  Gb  ft32f0xx_touch.o [6]
+TSC_EnableKey            0x800'0141   0x1a  Code  Gb  ft32f0xx_touch.o [6]
+TSC_GetStrongest         0x800'0c61    0x6  Code  Gb  ft32f0xx_touch.o [6]
+TSC_IONUM                0x800'1ca4   0xc0  Data  Gb  touch.o [6]
+TSC_Init                 0x800'015b  0x100  Code  Gb  ft32f0xx_touch.o [6]
+TSC_Start                0x800'02a5  0x3d8  Code  Gb  ft32f0xx_touch.o [6]
+Touch1_Charge            0x800'119d   0x56  Code  Gb  touch.o [6]
+Touch2_Charge            0x800'11f9   0x5c  Code  Gb  touch.o [6]
+Touch3_Charge            0x800'1275   0x5c  Code  Gb  touch.o [6]
+Touch_Charge             0x800'12d9   0x5c  Code  Gb  touch.o [6]
+Touch_Init               0x800'112d   0x64  Code  Gb  touch.o [6]
+__aeabi_idiv             0x800'1585         Code  Gb  I32DivModFast.o [7]
+__aeabi_idiv0            0x800'1665         Code  Gb  IntDivZer.o [7]
+__aeabi_idivmod          0x800'1585         Code  Gb  I32DivModFast.o [7]
+__aeabi_uidiv            0x800'158b         Code  Gb  I32DivModFast.o [7]
+__aeabi_uidivmod         0x800'158b         Code  Gb  I32DivModFast.o [7]
+__cmain                  0x800'1e4d         Code  Gb  cmain.o [7]
+__data_GetMemChunk       0x800'1639   0x2c  Code  Gb  xgetmemchunk.o [5]
+__data_GetMemChunk::start
+                        0x2000'0030    0x4  Data  Lc  xgetmemchunk.o [5]
+__exit                   0x800'1e85   0x14  Code  Gb  exit.o [8]
+__iar_data_init3         0x800'1e15   0x28  Code  Gb  data_init.o [7]
+__iar_program_start      0x800'1e99         Code  Gb  cstartup_M.o [7]
+__iar_zero_init3         0x800'1da1   0x3c  Code  Gb  zero_init3.o [7]
+__low_level_init         0x800'1e6b    0x4  Code  Gb  low_level_init.o [5]
+__no_free_malloc         0x800'1509   0x4a  Code  Gb  no_free_heap0.o [5]
+__vector_table           0x800'0000         Data  Gb  startup_FT32f072.o [4]
+_call_main               0x800'1e59         Code  Gb  cmain.o [7]
+_exit                    0x800'1e79         Code  Gb  cexit.o [7]
+capturecount            0x2000'003e    0x1  Data  Gb  ft32f0xx_touch.o [6]
+exit                     0x800'1e6f    0x8  Code  Gb  exit.o [5]
+main                     0x800'1ddd   0x16  Code  Gb  main.o [4]
+paSortBuffer            0x2000'0010    0x4  Data  Gb  ft32f0xx_touch.o [6]
+paSortIndexBuffer       0x2000'0014    0x4  Data  Gb  ft32f0xx_touch.o [6]
+paTK_Data               0x2000'001c    0x4  Data  Gb  ft32f0xx_touch.o [6]
+ptTSC_Para              0x2000'0020    0x4  Data  Gb  ft32f0xx_touch.o [6]
+qs                      0x2000'002c    0x4  Data  Lc  no_free_heap0.o [5]
+sorting                  0x800'00c1   0x80  Code  Gb  ft32f0xx_touch.o [6]
+ucBaselineDownSpeed      0x800'1ef5    0x1  Data  Gb  main.o [4]
+ucBaselineEqualDownSpeed
+                         0x800'1ef8    0x1  Data  Gb  main.o [4]
+ucBaselineEqualUpSpeed   0x800'1ef7    0x1  Data  Gb  main.o [4]
+ucBaselineUpSpeed        0x800'1ef6    0x1  Data  Gb  main.o [4]
+ucFreqChangeNumber      0x2000'0041    0x1  Data  Gb  ft32f0xx_touch.o [6]
+ucFrequ                 0x2000'0028    0x4  Data  Gb  touch.o [6]
+ucFrequNum              0x2000'0043    0x1  Data  Gb  touch.o [6]
+ucKeyEn                  0x800'1e76    0x2  Data  Gb  main.o [4]
+ucKeyNumber             0x2000'003f    0x1  Data  Gb  ft32f0xx_touch.o [6]
+ucKeyNumberMax           0x800'1efb    0x1  Data  Gb  main.o [4]
+ucKeyPollingCount       0x2000'003a    0x1  Data  Gb  ft32f0xx_touch.o [6]
+ucKeyScanEffNumber       0x800'1efc    0x1  Data  Gb  main.o [4]
+ucMeantimeMaxKeyNum      0x800'1efa    0x1  Data  Gb  main.o [4]
+ucMultiple               0x800'1ef2    0x1  Data  Gb  main.o [4]
+ucSensitivityArray       0x800'1b42    0x2  Data  Gb  main.o [4]
+ucSignalNoiseRatio       0x800'1ef9    0x1  Data  Gb  main.o [4]
+ucSingleFilter           0x800'1ef4    0x1  Data  Gb  main.o [4]
+ucSortingOnlyOneFlg     0x2000'0038    0x1  Data  Gb  ft32f0xx_touch.o [6]
+ucStrongFilter           0x800'1ef3    0x1  Data  Gb  main.o [4]
+uiBaseValue             0x2000'0034    0x2  Data  Gb  ft32f0xx_touch.o [6]
+uiSampleValue           0x2000'0036    0x2  Data  Gb  ft32f0xx_touch.o [6]
+ulKeySortingFlg         0x2000'0018    0x4  Data  Gb  ft32f0xx_touch.o [6]
+
+
+[1] = D:\workspace\FMD\Touch\6100\IAR\LIB\touchlib_6100_intscan_fastscan\Pro\Debug\Obj\CMSIS-Pack\FMD StdDriverOne _Device.FT32Driver.GPIO_1.0.1
+[2] = D:\workspace\FMD\Touch\6100\IAR\LIB\touchlib_6100_intscan_fastscan\Pro\Debug\Obj\CMSIS-Pack\FMD StdDriverOne _Device.FT32Driver.RCC_1.0.1
+[3] = D:\workspace\FMD\Touch\6100\IAR\LIB\touchlib_6100_intscan_fastscan\Pro\Debug\Obj\CMSIS-Pack\FMD StdDriverOne _Device.Startup_1.0.1
+[4] = D:\workspace\FMD\Touch\6100\IAR\LIB\touchlib_6100_intscan_fastscan\Pro\Debug\Obj\USER
+[5] = dl6M_tln.a
+[6] = ft32f0xx_touch_intscan_fs_cs.a
+[7] = rt6M_tl.a
+[8] = shb_l.a
+
+  7'710 bytes of readonly  code memory
+    223 bytes of readonly  data memory
+  3'140 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

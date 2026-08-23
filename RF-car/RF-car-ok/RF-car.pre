@@ -556,7 +556,7 @@ volatile unsigned char SFR9F @0x09F;
 #pragma intrinsic(__nop)
 extern void __nop(void);
 
-# 79
+# 61
 extern unsigned int flash_read(unsigned short addr);
 
 # 41 "C:\Program Files (x86)\CCompiler\Compiler\data\include\eeprom_routines.h"
@@ -566,11 +566,11 @@ extern void eecpymem(volatile unsigned char *to, __eeprom unsigned char *from, u
 extern void memcpyee(__eeprom unsigned char *to, const unsigned char *from, unsigned char size);
 
 
-# 152 "C:\Program Files (x86)\CCompiler\Compiler\data\include\SYSCFG.h"
+# 134 "C:\Program Files (x86)\CCompiler\Compiler\data\include\SYSCFG.h"
 #pragma intrinsic(_delay)
 extern __nonreentrant void _delay(unsigned long);
 
-# 175
+# 157
 extern unsigned char __resetbits;
 extern __bit __powerdown;
 extern __bit __timeout;

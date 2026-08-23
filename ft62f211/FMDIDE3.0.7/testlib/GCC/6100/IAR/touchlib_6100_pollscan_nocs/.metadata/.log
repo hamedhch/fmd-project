@@ -1,0 +1,39 @@
+!SESSION 2022-04-13 18:02:00.507 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86 -data D:\workspace\FMD\Touch\6100\IAR\LIB\touchlib_6100_pollscan_nocs
+
+!ENTRY com.iar.cdt.arm.toolchain.cmsis.adapter 1 0 2022-04-13 18:02:03.409
+!MESSAGE Using CMSIS pack repositories: http://links.iar.com/cmsis/pack/
+
+!ENTRY com.iar.cmsismanager.product 1 0 2022-04-13 18:02:04.498
+!MESSAGE CMSIS Agent interface registered with service registry at ServiceLocation(host:\\.\pipe\iar-cspy-cpp-binary-com.iar.thrift.service.registry-09178ea9-b649-4480-9ece-1839cd9f3c06-1, port:0, protocol:Binary, transport:Pipe)
+
+!ENTRY com.iar.cmsismanager.product 1 0 2022-04-13 18:03:58.052
+!MESSAGE CMSIS Agent interface deregistered with service registry at ServiceLocation(host:\\.\pipe\iar-cspy-cpp-binary-com.iar.thrift.service.registry-09178ea9-b649-4480-9ece-1839cd9f3c06-1, port:0, protocol:Binary, transport:Pipe)
+
+!ENTRY com.iar.cmsismanager.product 1 0 2022-04-13 18:03:58.053
+!MESSAGE Exiting workbench is response to shutdown() command.
+!SESSION 2022-04-13 18:04:03.705 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86 -data D:\workspace\FMD\Touch\6100\IAR\LIB\touchlib_6100_pollscan_nocs
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-04-13 18:04:04.839
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.iar.cdt.arm.toolchain.cmsis.adapter 1 0 2022-04-13 18:04:06.565
+!MESSAGE Using CMSIS pack repositories: http://links.iar.com/cmsis/pack/
+
+!ENTRY com.iar.cmsismanager.product 1 0 2022-04-13 18:04:07.650
+!MESSAGE CMSIS Agent interface registered with service registry at ServiceLocation(host:\\.\pipe\iar-cspy-cpp-binary-com.iar.thrift.service.registry-02fdc64d-ac6a-46b5-aaf8-e76a77290bb6-1, port:0, protocol:Binary, transport:Pipe)
+
+!ENTRY com.iar.cmsismanager.product 1 0 2022-04-13 18:04:32.413
+!MESSAGE CMSIS Agent interface deregistered with service registry at ServiceLocation(host:\\.\pipe\iar-cspy-cpp-binary-com.iar.thrift.service.registry-02fdc64d-ac6a-46b5-aaf8-e76a77290bb6-1, port:0, protocol:Binary, transport:Pipe)
+
+!ENTRY com.iar.cmsismanager.product 1 0 2022-04-13 18:04:32.413
+!MESSAGE Exiting workbench is response to shutdown() command.

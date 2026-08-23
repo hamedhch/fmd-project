@@ -1,0 +1,22 @@
+./objects/ft32f0xx_rcc.o: \
+  C:\Users\shenghui.li\AppData\Local\Arm\Packs\FMD\FT32F0xx_DFP\1.0.5\Drivers\FT32F0xx_Driver\Src\ft32f0xx_rcc.c \
+  C:\Users\shenghui.li\AppData\Local\Arm\Packs\FMD\FT32F0xx_DFP\1.0.5\Drivers\FT32F0xx_Driver\Inc\ft32f0xx_rcc.h \
+  C:\Users\shenghui.li\AppData\Local\Arm\Packs\FMD\FT32F0xx_DFP\1.0.5\Drivers\CMSIS\FT32F0xx\Include\ft32f0xx.h \
+  C:\Users\shenghui.li\AppData\Local\Arm\Packs\FMD\FT32F0xx_DFP\1.0.5\Drivers\CMSIS\FT32F0xx\Include\ft32f072xb.h \
+  C:\Users\shenghui.li\AppData\Local\Arm\Packs\FMD\FT32F0xx_DFP\1.0.5\Drivers\CMSIS\FT32F0xx\Include\core_cm0.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
+  C:\Users\shenghui.li\AppData\Local\Arm\Packs\FMD\FT32F0xx_DFP\1.0.5\Drivers\CMSIS\FT32F0xx\Include\core_cmInstr.h \
+  C:\Users\shenghui.li\AppData\Local\Arm\Packs\FMD\FT32F0xx_DFP\1.0.5\Drivers\CMSIS\FT32F0xx\Include\core_cmFunc.h \
+  C:\Users\shenghui.li\AppData\Local\Arm\Packs\FMD\FT32F0xx_DFP\1.0.5\Drivers\CMSIS\FT32F0xx\Include\ft32f0xx.h \
+  C:\Users\shenghui.li\AppData\Local\Arm\Packs\FMD\FT32F0xx_DFP\1.0.5\Drivers\CMSIS\FT32F0xx\Include\system_ft32f0xx.h \
+  C:\Users\shenghui.li\AppData\Local\Arm\Packs\FMD\FT32F0xx_DFP\1.0.5\Drivers\CMSIS\FT32F0xx\Include\..\..\..\FT32F0xx_Driver\templates\Inc\ft32f0xx_conf.h \
+  RTE\_Target_1\RTE_Components.h \
+  C:\Users\shenghui.li\AppData\Local\Arm\Packs\FMD\FT32F0xx_DFP\1.0.5\Drivers\FT32F0xx_Driver\Inc\ft32f0xx_comp.h \
+  C:\Users\shenghui.li\AppData\Local\Arm\Packs\FMD\FT32F0xx_DFP\1.0.5\Drivers\FT32F0xx_Driver\Inc\ft32f0xx_dma.h \
+  C:\Users\shenghui.li\AppData\Local\Arm\Packs\FMD\FT32F0xx_DFP\1.0.5\Drivers\FT32F0xx_Driver\Inc\ft32f0xx_exti.h \
+  C:\Users\shenghui.li\AppData\Local\Arm\Packs\FMD\FT32F0xx_DFP\1.0.5\Drivers\FT32F0xx_Driver\Inc\ft32f0xx_flash.h \
+  C:\Users\shenghui.li\AppData\Local\Arm\Packs\FMD\FT32F0xx_DFP\1.0.5\Drivers\FT32F0xx_Driver\Inc\ft32f0xx_gpio.h \
+  C:\Users\shenghui.li\AppData\Local\Arm\Packs\FMD\FT32F0xx_DFP\1.0.5\Drivers\FT32F0xx_Driver\Inc\ft32f0xx_misc.h \
+  C:\Users\shenghui.li\AppData\Local\Arm\Packs\FMD\FT32F0xx_DFP\1.0.5\Drivers\FT32F0xx_Driver\Inc\ft32f0xx_tim.h \
+  C:\Users\shenghui.li\AppData\Local\Arm\Packs\FMD\FT32F0xx_DFP\1.0.5\Drivers\FT32F0xx_Driver\Inc\ft32f0xx_usart.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h

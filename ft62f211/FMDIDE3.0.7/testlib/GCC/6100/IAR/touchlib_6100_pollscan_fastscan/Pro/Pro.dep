@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <fileVersion>5</fileVersion>
+    <fileChecksum>2775729437</fileChecksum>
+    <configuration>
+        <name>Debug</name>
+        <outputs>
+            <file>$PROJ_DIR$\Debug\Obj\CMSIS-Pack\FMD StdDriverOne _Device.Startup_1.0.1\system_ft32f0xx.o</file>
+            <file>C:\Users\shenghui.li\IAR-CMSIS-Packs\FMD\FT32F0xx_DFP\1.0.2\Drivers\FT32F0xx_Driver\Src\ft32f0xx_gpio.c</file>
+            <file>$PROJ_DIR$\..\Startup\startup_FT32f072.s</file>
+            <file>C:\Users\shenghui.li\IAR-CMSIS-Packs\FMD\FT32F0xx_DFP\1.0.2\Drivers\FT32F0xx_Driver\Src\ft32f0xx_rcc.c</file>
+            <file>$PROJ_DIR$\RTE\Device\FT32F072R8ATx\system_ft32f0xx.c</file>
+            <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+            <file>$PROJ_DIR$\..\USER\Source\main.c</file>
+            <file>$PROJ_DIR$\..\USER\Source\ft32f0xx_it.c</file>
+            <file>$PROJ_DIR$\RTE\RTE_Components.h</file>
+            <file>$PROJ_DIR$\..\USER\Source\board.c</file>
+            <file>$PROJ_DIR$\Debug\List\Pro.map</file>
+            <file>C:\Users\shenghui.li\IAR-CMSIS-Packs\FMD\FT32F0xx_DFP\1.0.2\Drivers\FT32F0xx_Driver\Inc\ft32f0xx_gpio.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\USER\ft32f0xx_it.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\aarch32\iccarm_builtin.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\CMSIS-Pack\FMD StdDriverOne _Device.FT32Driver.RCC_1.0.1\ft32f0xx_rcc.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+            <file>$TOOLKIT_DIR$\lib\rt6M_tl.a</file>
+            <file>$PROJ_DIR$\Debug\Obj\USER\startup_FT32f072.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\aarch32\cmsis_iar.h</file>
+            <file>C:\Users\shenghui.li\IAR-CMSIS-Packs\FMD\FT32F0xx_DFP\1.0.2\Drivers\CMSIS\FT32F0xx\Include\ft32f0xx.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\USER\main.o</file>
+            <file>C:\Users\shenghui.li\IAR-CMSIS-Packs\FMD\FT32F0xx_DFP\1.0.2\Drivers\FT32F0xx_Driver\templates\Inc\ft32f0xx_conf.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+            <file>C:\Users\shenghui.li\IAR-CMSIS-Packs\FMD\FT32F0xx_DFP\1.0.2\Drivers\CMSIS\FT32F0xx\Include\system_ft32f0xx.h</file>
+            <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+            <file>$PROJ_DIR$\Debug\Obj\USER\startup_FT32f072.o.rsp</file>
+            <file>$PROJ_DIR$\..\USER\Include\board.h</file>
+            <file>C:\Users\shenghui.li\IAR-CMSIS-Packs\FMD\FT32F0xx_DFP\1.0.2\Drivers\FT32F0xx_Driver\Inc\ft32f0xx_rcc.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
+            <file>$PROJ_DIR$\..\USER\Include\main.h</file>
+            <file>C:\Users\shenghui.li\IAR-CMSIS-Packs\FMD\FT32F0xx_DFP\1.0.2\Drivers\CMSIS\FT32F0xx\Include\core_cmFunc.h</file>
+            <file>$PROJ_DIR$\..\TOUCH_LIB\ft32f0xx_touch_pollscan_fs_cs.a</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+            <file>$PROJ_DIR$\..\USER\Include\ft32f0xx_it.h</file>
+            <file>$TOOLKIT_DIR$\lib\m6M_tl.a</file>
+            <file>C:\Users\shenghui.li\IAR-CMSIS-Packs\FMD\FT32F0xx_DFP\1.0.2\Drivers\CMSIS\FT32F0xx\Include\core_cm0.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\CMSIS-Pack\FMD StdDriverOne _Device.FT32Driver.GPIO_1.0.1\ft32f0xx_gpio.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\USER\board.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+            <file>$PROJ_DIR$\..\TOUCH_LIB\ft32f0xx_touch.h</file>
+            <file>$TOOLKIT_DIR$\lib\dl6M_tln.a</file>
+            <file>$PROJ_DIR$\Debug\Exe\Pro.out</file>
+            <file>C:\Users\shenghui.li\IAR-CMSIS-Packs\FMD\FT32F0xx_DFP\1.0.2\Drivers\CMSIS\FT32F0xx\Include\ft32f072x8.h</file>
+            <file>C:\Users\shenghui.li\IAR-CMSIS-Packs\FMD\FT32F0xx_DFP\1.0.2\.iar\config\linker\FT32F072R8.icf</file>
+            <file>C:\Users\shenghui.li\IAR-CMSIS-Packs\FMD\FT32F0xx_DFP\1.0.2\Drivers\CMSIS\FT32F0xx\Include\core_cmInstr.h</file>
+        </outputs>
+        <file>
+            <name>C:\Users\shenghui.li\IAR-CMSIS-Packs\FMD\FT32F0xx_DFP\1.0.2\Drivers\FT32F0xx_Driver\Src\ft32f0xx_gpio.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 38</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 40 15 32 18 13 33 28 37 5 22 36 30 46 44 19 23 11 27 21 8</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Startup\startup_FT32f072.s</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 17</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 25</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>C:\Users\shenghui.li\IAR-CMSIS-Packs\FMD\FT32F0xx_DFP\1.0.2\Drivers\FT32F0xx_Driver\Src\ft32f0xx_rcc.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 14</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 40 15 32 18 13 33 28 37 5 22 36 30 46 44 19 23 11 27 21 8</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\RTE\Device\FT32F072R8ATx\system_ft32f0xx.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 0</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 40 15 32 18 13 33 28 37 5 22 19 36 30 46 44 23 11 27 21 8</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\USER\Source\main.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 20</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 40 15 32 18 13 33 28 37 5 22 19 36 30 46 44 23 11 27 21 8 41 26 29</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\USER\Source\ft32f0xx_it.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 12</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 40 15 32 18 13 33 28 37 5 22 19 36 30 46 44 23 11 27 21 8 34</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>[ROOT_NODE]</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 43 10</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\USER\Source\board.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 39</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 40 15 32 18 13 33 28 37 5 22 19 36 30 46 44 23 11 27 21 8 26</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Debug\Exe\Pro.out</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 10</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 45 42 35 16 24 38 14 0 39 12 20 17 31</file>
+                </tool>
+            </inputs>
+        </file>
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
+    </configuration>
+    <configuration>
+        <name>Release</name>
+        <outputs />
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
+    </configuration>
+</project>

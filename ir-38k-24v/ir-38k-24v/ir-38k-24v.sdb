@@ -3,9 +3,9 @@
 [d edition pro ]
 [d chip FT60F01X ]
 [d frameptr 6 ]
-"62 C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\float.c
+"62 C:\Users\hamed\OneDrive\Documents\FMD_Project\ft62f211\FMDIDE3.0.7\data\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
-"86 C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\ftadd.c
+"86 C:\Users\hamed\OneDrive\Documents\FMD_Project\ft62f211\FMDIDE3.0.7\data\sources\common\ftadd.c
 [v ___ftadd __ftadd `(f  1 e 3 0 ]
 "34 C:\Users\hamed\OneDrive\Documents\FMD_Project\ir-38k-24v\ir-38k-24v\ir-38k-24v.C
 [v _ISR ISR `II(v  1 e 1 0 ]
@@ -19,16 +19,16 @@
 [v _TIMER0_INITIAL TIMER0_INITIAL `(v  1 e 1 0 ]
 "147
 [v _main main `(v  1 e 1 0 ]
-"14 C:\Program Files (x86)\CCompiler\Compiler\data\include\FT60F01X.h
+"14 C:\Users\hamed\OneDrive\Documents\FMD_Project\ft62f211\FMDIDE3.0.7\data\include\FT60F01X.h
 [v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
 "63
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
-"72
-[v _PA0 PA0 `VEb  1 e 0 @40 ]
 "73
 [v _PA1 PA1 `VEb  1 e 0 @41 ]
 "74
 [v _PA2 PA2 `VEb  1 e 0 @42 ]
+"75
+[v _PA3 PA3 `VEb  1 e 0 @43 ]
 "76
 [v _PA4 PA4 `VEb  1 e 0 @44 ]
 "111
@@ -57,7 +57,7 @@
 "147
 [v _main main `(v  1 e 1 0 ]
 {
-"235
+"240
 } 0
 "117
 [v _TIMER0_INITIAL TIMER0_INITIAL `(v  1 e 1 0 ]

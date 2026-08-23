@@ -1,0 +1,56 @@
+18:26:29 **** Updating project Pro: project created
+Project updated successfully
+
+18:26:30 **** Updating project Pro: project refresh
+Error loading RTE configuration file 'Pro':
+FMD.StdDriverOne::Device.Startup - Additional software components required
+Project update failed
+
+18:26:48 **** Updating project Pro: Configuration file [Pro.rteconfig] is saved
+Error loading RTE configuration file 'Pro.rteconfig':
+FMD.StdDriverOne::Device.Startup - Additional software components required
+Project update failed
+
+18:26:52 **** Updating project Pro: Configuration file [Pro.rteconfig] is saved
+Error loading RTE configuration file 'Pro.rteconfig':
+FMD.StdDriverOne::Device.Startup - Additional software components required
+Project update failed
+
+18:28:22 **** Updating project Pro: project created
+Project updated successfully
+
+18:28:23 **** Updating project Pro: project refresh
+Error loading RTE configuration file 'Pro':
+FMD.StdDriverOne::Device.Startup - Additional software components required
+Project update failed
+
+18:28:38 **** Updating project Pro: Configuration file [Pro.rteconfig] is saved
+Error loading RTE configuration file 'Pro.rteconfig':
+FMD.StdDriverOne::Device.Startup - Additional software components required
+Project update failed
+
+18:28:43 **** Updating project Pro: Configuration file [Pro.rteconfig] is saved
+Error loading RTE configuration file 'Pro.rteconfig':
+FMD.StdDriverOne::Device.Startup - Additional software components required
+Project update failed
+
+18:29:35 **** Updating project Pro: Configuration file [Pro.rteconfig] is saved
+Error loading RTE configuration file 'Pro.rteconfig':
+FMD.StdDriverOne::Device.Startup - Additional software components required
+Project update failed
+
+18:29:39 **** Updating project Pro: Configuration file [Pro.rteconfig] is saved
+Error loading RTE configuration file 'Pro.rteconfig':
+FMD.StdDriverOne::Device.Startup - Additional software components required
+Project update failed
+
+18:30:56 **** Updating project Pro: Configuration file [Pro.rteconfig] is saved
+Error loading RTE configuration file 'Pro.rteconfig':
+FMD.StdDriverOne::Device.Startup - Additional software components required
+Project update failed
+
+18:30:59 **** Updating project Pro: Configuration file [Pro.rteconfig] is saved
+Error loading RTE configuration file 'Pro.rteconfig':
+FMD.StdDriverOne::Device.Startup - Additional software components required
+Project update failed
+

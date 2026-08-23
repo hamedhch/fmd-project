@@ -1,0 +1,687 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$6021test.obj
+cinit CODE 0 B B 7 2
+text1 CODE 0 27D 27D 7 2
+text2 CODE 0 295 295 2 2
+text3 CODE 0 12 12 DE 2
+text4 CODE 0 284 284 6 2
+text5 CODE 0 F0 F0 5A 2
+text6 CODE 0 218 218 19 2
+text7 CODE 0 199 199 47 2
+text8 CODE 0 28A 28A 6 2
+text9 CODE 0 290 290 5 2
+text10 CODE 0 26E 26E 8 2
+text11 CODE 0 231 231 10 2
+text12 CODE 0 25D 25D 9 2
+text13 CODE 0 1E0 1E0 38 2
+text14 CODE 0 14A 14A 4F 2
+text15 CODE 0 241 241 E 2
+text16 CODE 0 24F 24F E 2
+maintext CODE 0 276 276 7 2
+cstackBANK0 BANK0 1 5F 5F 7 1
+intentry CODE 0 4 4 6 2
+bssBANK0 BANK0 1 40 40 1F 1
+cstackCOMMONh COMMON 1 77 77 5 1
+cstackCOMMONl COMMON 1 70 70 3 1
+clrtext CODE 0 266 266 8 2
+$startup.obj
+reset_vec CODE 0 0 0 1 2
+end_init CODE 0 A A 1 2
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 66-6F 1
+BANK0 66-6F 1
+CONST 1-3 2
+CONST 297-3FF 2
+ENTRY 1-3 2
+ENTRY 297-3FF 2
+IDLOC 2000-2003 2
+STACK 66-6F 1
+CODE 1-3 2
+CODE 297-3FF 2
+SFR0 0-3F 1
+SFR1 80-EF 1
+COMMON 7C-7D 1
+CONFIG 2007-2007 2
+EEDATA 2100-217F 2
+STRCODE 1-3 2
+STRCODE 297-3FF 2
+STRING 1-3 2
+STRING 297-3FF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$6021test.obj
+B cinit CODE >122:c:\users\data\desktop\fmdide3.0.7\Testtmp\6021test.as
+B cinit CODE >125:c:\users\data\desktop\fmdide3.0.7\Testtmp\6021test.as
+B cinit CODE >185:c:\users\data\desktop\fmdide3.0.7\Testtmp\6021test.as
+C cinit CODE >184:c:\users\data\desktop\fmdide3.0.7\Testtmp\6021test.as
+D cinit CODE >186:c:\users\data\desktop\fmdide3.0.7\Testtmp\6021test.as
+E cinit CODE >187:c:\users\data\desktop\fmdide3.0.7\Testtmp\6021test.as
+F cinit CODE >188:c:\users\data\desktop\fmdide3.0.7\Testtmp\6021test.as
+10 cinit CODE >194:c:\users\data\desktop\fmdide3.0.7\Testtmp\6021test.as
+10 cinit CODE >196:c:\users\data\desktop\fmdide3.0.7\Testtmp\6021test.as
+11 cinit CODE >197:c:\users\data\desktop\fmdide3.0.7\Testtmp\6021test.as
+4 intentry CODE >45:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+24F text16 CODE >45:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+24F text16 CODE >47:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+250 text16 CODE >48:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+253 text16 CODE >49:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+254 text16 CODE >50:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+256 text16 CODE >51:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+241 text15 CODE >76:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+241 text15 CODE >78:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+244 text15 CODE >79:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+245 text15 CODE >80:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+248 text15 CODE >81:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+24B text15 CODE >82:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+24C text15 CODE >83:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+24D text15 CODE >85:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+24E text15 CODE >86:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+14A text14 CODE >103:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+14B text14 CODE >105:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+14D text14 CODE >106:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+14F text14 CODE >107:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+151 text14 CODE >108:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+154 text14 CODE >112:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+155 text14 CODE >115:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+155 text14 CODE >118:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+157 text14 CODE >119:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+158 text14 CODE >120:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+15B text14 CODE >121:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+15D text14 CODE >123:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+15E text14 CODE >124:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+15F text14 CODE >125:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+160 text14 CODE >126:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+161 text14 CODE >127:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+163 text14 CODE >129:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+164 text14 CODE >130:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+165 text14 CODE >134:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+169 text14 CODE >136:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+16A text14 CODE >137:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+16A text14 CODE >139:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+16B text14 CODE >140:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+16C text14 CODE >141:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+16D text14 CODE >142:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+16E text14 CODE >145:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+16F text14 CODE >147:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+170 text14 CODE >148:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+171 text14 CODE >149:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+172 text14 CODE >150:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+173 text14 CODE >152:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+173 text14 CODE >155:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+175 text14 CODE >156:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+176 text14 CODE >157:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+177 text14 CODE >160:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+17F text14 CODE >161:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+185 text14 CODE >112:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+18A text14 CODE >163:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+198 text14 CODE >164:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1E0 text13 CODE >244:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1E0 text13 CODE >14:c:\users\data\desktop\fmdide3.0.7\Testtmp\touch.h
+1E3 text13 CODE >248:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1E5 text13 CODE >250:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1E9 text13 CODE >251:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1ED text13 CODE >254:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1EF text13 CODE >257:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1F0 text13 CODE >258:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1F3 text13 CODE >260:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1F6 text13 CODE >264:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1F9 text13 CODE >266:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1FB text13 CODE >268:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+20B text13 CODE >269:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+20F text13 CODE >271:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+25D text12 CODE >58:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+25E text12 CODE >61:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+263 text12 CODE >63:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+264 text12 CODE >61:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+231 text11 CODE >72:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+232 text11 CODE >75:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+237 text11 CODE >77:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+238 text11 CODE >79:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+23A text11 CODE >77:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+23F text11 CODE >75:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+26E text10 CODE >43:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+26E text10 CODE >46:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+26F text10 CODE >47:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+26F text10 CODE >48:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+270 text10 CODE >46:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+290 text9 CODE >177:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+290 text9 CODE >179:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+292 text9 CODE >180:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+293 text9 CODE >182:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+294 text9 CODE >183:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+28A text8 CODE >168:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+28A text8 CODE >170:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+28B text8 CODE >171:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+28C text8 CODE >173:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+28E text8 CODE >175:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+28F text8 CODE >176:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+199 text7 CODE >186:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+19A text7 CODE >188:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+19C text7 CODE >190:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+19E text7 CODE >191:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1A1 text7 CODE >192:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1A4 text7 CODE >195:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1A5 text7 CODE >197:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1A6 text7 CODE >199:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1A7 text7 CODE >200:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1A8 text7 CODE >201:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1A9 text7 CODE >202:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1AA text7 CODE >203:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1AC text7 CODE >205:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1AD text7 CODE >206:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1AE text7 CODE >210:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1AF text7 CODE >211:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1AF text7 CODE >213:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1B0 text7 CODE >214:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1B1 text7 CODE >215:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1B2 text7 CODE >216:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1B3 text7 CODE >218:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1B4 text7 CODE >219:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1B5 text7 CODE >220:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1B6 text7 CODE >221:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1B7 text7 CODE >222:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1B8 text7 CODE >224:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1B9 text7 CODE >225:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1BA text7 CODE >226:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1BB text7 CODE >228:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1BC text7 CODE >229:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1BD text7 CODE >231:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1BD text7 CODE >234:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1BE text7 CODE >235:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1C6 text7 CODE >236:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1CC text7 CODE >195:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1D1 text7 CODE >238:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1DF text7 CODE >240:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+218 text6 CODE >89:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+218 text6 CODE >92:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+222 text6 CODE >93:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+22C text6 CODE >94:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+230 text6 CODE >95:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+F0 text5 CODE >97:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+F1 text5 CODE >99:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+F2 text5 CODE >100:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+F4 text5 CODE >101:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+F5 text5 CODE >102:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+F7 text5 CODE >104:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+F9 text5 CODE >106:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+FA text5 CODE >107:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+FA text5 CODE >109:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+FC text5 CODE >110:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+FE text5 CODE >105:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+FF text5 CODE >113:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+101 text5 CODE >115:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+103 text5 CODE >117:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+104 text5 CODE >118:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+104 text5 CODE >120:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+106 text5 CODE >121:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+108 text5 CODE >116:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+109 text5 CODE >124:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+10B text5 CODE >126:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+10D text5 CODE >128:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+10E text5 CODE >129:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+10E text5 CODE >131:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+110 text5 CODE >132:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+112 text5 CODE >127:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+113 text5 CODE >135:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+115 text5 CODE >137:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+117 text5 CODE >139:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+118 text5 CODE >140:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+118 text5 CODE >142:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+11A text5 CODE >143:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+11C text5 CODE >138:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+11D text5 CODE >146:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+11F text5 CODE >148:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+121 text5 CODE >150:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+122 text5 CODE >151:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+122 text5 CODE >153:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+124 text5 CODE >154:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+126 text5 CODE >149:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+127 text5 CODE >157:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+129 text5 CODE >159:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+12B text5 CODE >161:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+12C text5 CODE >162:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+12C text5 CODE >164:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+12E text5 CODE >165:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+130 text5 CODE >160:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+131 text5 CODE >168:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+133 text5 CODE >170:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+135 text5 CODE >172:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+136 text5 CODE >173:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+136 text5 CODE >175:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+138 text5 CODE >176:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+13A text5 CODE >171:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+13B text5 CODE >179:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+13D text5 CODE >181:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+13F text5 CODE >183:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+140 text5 CODE >184:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+140 text5 CODE >186:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+142 text5 CODE >187:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+144 text5 CODE >182:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+145 text5 CODE >190:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+147 text5 CODE >191:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+148 text5 CODE >192:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+149 text5 CODE >193:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+284 text4 CODE >36:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+284 text4 CODE >38:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+286 text4 CODE >39:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+288 text4 CODE >40:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+12 text3 CODE >273:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+12 text3 CODE >14:c:\users\data\desktop\fmdide3.0.7\Testtmp\touch.h
+14 text3 CODE >279:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+16 text3 CODE >281:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1A text3 CODE >282:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+1E text3 CODE >284:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+20 text3 CODE >285:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+22 text3 CODE >288:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+23 text3 CODE >289:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+26 text3 CODE >292:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+29 text3 CODE >294:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+2C text3 CODE >296:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+2E text3 CODE >297:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+3E text3 CODE >298:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+42 text3 CODE >300:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+43 text3 CODE >301:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+45 text3 CODE >302:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+47 text3 CODE >303:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+49 text3 CODE >305:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+4E text3 CODE >306:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+56 text3 CODE >303:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+59 text3 CODE >308:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+5A text3 CODE >310:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+5C text3 CODE >311:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+5E text3 CODE >308:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+61 text3 CODE >313:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+63 text3 CODE >314:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+66 text3 CODE >316:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+67 text3 CODE >317:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+69 text3 CODE >318:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+6B text3 CODE >319:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+6D text3 CODE >321:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+72 text3 CODE >322:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+7B text3 CODE >319:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+7D text3 CODE >324:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+7E text3 CODE >326:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+80 text3 CODE >327:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+83 text3 CODE >324:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+85 text3 CODE >329:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+87 text3 CODE >330:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+8A text3 CODE >332:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+8B text3 CODE >333:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+8D text3 CODE >334:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+8F text3 CODE >337:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+90 text3 CODE >335:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+92 text3 CODE >337:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+93 text3 CODE >338:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+95 text3 CODE >335:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+98 text3 CODE >340:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+99 text3 CODE >341:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+9B text3 CODE >342:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+9C text3 CODE >343:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+9E text3 CODE >344:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+A0 text3 CODE >347:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+A1 text3 CODE >345:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+A3 text3 CODE >347:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+A4 text3 CODE >348:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+A7 text3 CODE >345:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+A9 text3 CODE >350:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+AA text3 CODE >351:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+AC text3 CODE >352:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+AD text3 CODE >353:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+AF text3 CODE >354:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+B1 text3 CODE >357:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+B2 text3 CODE >355:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+B4 text3 CODE >357:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+B5 text3 CODE >358:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+B8 text3 CODE >355:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+BA text3 CODE >360:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+BB text3 CODE >361:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+BD text3 CODE >362:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+BE text3 CODE >363:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+C0 text3 CODE >364:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+C2 text3 CODE >367:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+C3 text3 CODE >365:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+C5 text3 CODE >367:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+C6 text3 CODE >368:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+C9 text3 CODE >365:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+CB text3 CODE >370:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+CC text3 CODE >371:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+CE text3 CODE >372:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+295 text2 CODE >375:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+295 text2 CODE >377:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+296 text2 CODE >378:c:\users\data\desktop\fmdide3.0.7\Testtmp\TOUCH.C
+27D text1 CODE >60:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+27D text1 CODE >62:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+27F text1 CODE >67:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+282 text1 CODE >68:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+283 text1 CODE >69:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+276 maintext CODE >201:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+276 maintext CODE >203:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+277 maintext CODE >204:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+278 maintext CODE >208:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+279 maintext CODE >209:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+27A maintext CODE >210:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+27B maintext CODE >214:c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+266 clrtext CODE >171:c:\users\data\desktop\fmdide3.0.7\Testtmp\6021test.as
+266 clrtext CODE >172:c:\users\data\desktop\fmdide3.0.7\Testtmp\6021test.as
+267 clrtext CODE >173:c:\users\data\desktop\fmdide3.0.7\Testtmp\6021test.as
+267 clrtext CODE >174:c:\users\data\desktop\fmdide3.0.7\Testtmp\6021test.as
+268 clrtext CODE >175:c:\users\data\desktop\fmdide3.0.7\Testtmp\6021test.as
+269 clrtext CODE >176:c:\users\data\desktop\fmdide3.0.7\Testtmp\6021test.as
+26A clrtext CODE >177:c:\users\data\desktop\fmdide3.0.7\Testtmp\6021test.as
+26B clrtext CODE >178:c:\users\data\desktop\fmdide3.0.7\Testtmp\6021test.as
+26C clrtext CODE >179:c:\users\data\desktop\fmdide3.0.7\Testtmp\6021test.as
+26D clrtext CODE >180:c:\users\data\desktop\fmdide3.0.7\Testtmp\6021test.as
+$startup.obj
+A end_init CODE >76:c:\users\data\desktop\fmdide3.0.7\Testtmp\startup.as
+A init CODE >73:c:\users\data\desktop\fmdide3.0.7\Testtmp\startup.as
+0 functab ENTRY >39:c:\users\data\desktop\fmdide3.0.7\Testtmp\startup.as
+0 functab ENTRY >40:c:\users\data\desktop\fmdide3.0.7\Testtmp\startup.as
+0 functab ENTRY >41:c:\users\data\desktop\fmdide3.0.7\Testtmp\startup.as
+0 functab ENTRY >42:c:\users\data\desktop\fmdide3.0.7\Testtmp\startup.as
+0 functab ENTRY >43:c:\users\data\desktop\fmdide3.0.7\Testtmp\startup.as
+0 functab ENTRY >44:c:\users\data\desktop\fmdide3.0.7\Testtmp\startup.as
+0 reset_vec CODE >63:c:\users\data\desktop\fmdide3.0.7\Testtmp\startup.as
+0 reset_vec CODE >68:c:\users\data\desktop\fmdide3.0.7\Testtmp\startup.as
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+___latbits 0 0 ABS 0 - 6021test.obj
+__size_of_DelayMs 0 0 ABS 0 - 6021test.obj
+__size_of_DelayUs 0 0 ABS 0 - 6021test.obj
+__size_of_ReadCap1 0 0 ABS 0 - 6021test.obj
+__Hspace_0 297 0 ABS 0 - -
+__Hspace_1 7C 0 ABS 0 - -
+__Hspace_2 0 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+_POWER_INITIAL 482 0 CODE 0 text15 6021test.obj
+__Heeprom_data 0 0 EEDATA 3 eeprom_data -
+PL2 1A0 0 CODE 0 text3 6021test.obj
+PL4 1AA 0 CODE 0 text3 6021test.obj
+PL6 420 0 CODE 0 text13 6021test.obj
+PL8 1BC 0 CODE 0 text3 6021test.obj
+__size_of_SendHead 0 0 ABS 0 - 6021test.obj
+__Hstrings 0 0 ABS 0 strings -
+_PCON 8E 0 ABS 0 - 6021test.obj
+_T0IE 5D 0 ABS 0 - 6021test.obj
+_T0IF 5A 0 ABS 0 - 6021test.obj
+_TKEN 434 0 ABS 0 - 6021test.obj
+_TMR0 1 0 ABS 0 - 6021test.obj
+_WPUA 95 0 ABS 0 - 6021test.obj
+___sp 0 0 STACK 2 stack startup.obj
+_main 4EC 0 CODE 0 maintext 6021test.obj
+btemp 7E 0 ABS 0 - 6021test.obj
+start 14 0 CODE 0 init startup.obj
+__size_of_main 0 0 ABS 0 - 6021test.obj
+_Touch_Number1_sum 50 0 BANK0 1 bssBANK0 6021test.obj
+__end_of_ReadCapDisCharge 1A0 0 CODE 0 text3 6021test.obj
+__end_of_Touch_init 520 0 CODE 0 text8 6021test.obj
+DelayUs@Time 79 0 COMMON 1 cstackCOMMONh 6021test.obj
+__Hpowerup 0 0 CODE 0 powerup -
+__pcstackCOMMONh 77 0 COMMON 1 cstackCOMMONh 6021test.obj
+__pcstackCOMMONl 70 0 COMMON 1 cstackCOMMONl 6021test.obj
+_TKCHGS0 435 0 ABS 0 - 6021test.obj
+_TKCHGS1 436 0 ABS 0 - 6021test.obj
+__size_of_ReadCapDisCharge 0 0 ABS 0 - 6021test.obj
+_ReadCap1 332 0 CODE 0 text7 6021test.obj
+intlevel0 0 0 ENTRY 0 functab startup.obj
+intlevel1 0 0 ENTRY 0 functab startup.obj
+intlevel2 0 0 ENTRY 0 functab startup.obj
+intlevel3 0 0 ENTRY 0 functab startup.obj
+intlevel4 0 0 ENTRY 0 functab startup.obj
+intlevel5 0 0 ENTRY 0 functab startup.obj
+wtemp0 7E 0 ABS 0 - 6021test.obj
+__Hfunctab 0 0 ENTRY 0 functab -
+__end_of_ReadCap1 3C0 0 CODE 0 text7 6021test.obj
+_Touch_C0 73 0 ABS 1 - 6021test.obj
+_Touch_C1 74 0 ABS 1 - 6021test.obj
+__Hclrtext 0 0 ABS 0 clrtext -
+_SendHead 508 0 CODE 0 text4 6021test.obj
+__size_of_DelayUsz 0 0 ABS 0 - 6021test.obj
+__end_of_DelayMs 482 0 CODE 0 text11 6021test.obj
+__end_of_DelayUs 4CC 0 CODE 0 text12 6021test.obj
+__end_of_SendHead 514 0 CODE 0 text4 6021test.obj
+DelayUsz@a 79 0 COMMON 1 cstackCOMMONh 6021test.obj
+_ReadCapCharge 3C0 0 CODE 0 text13 6021test.obj
+__size_of_ReadCap 0 0 ABS 0 - 6021test.obj
+__Hpa_nodes0 0 0 ABS 0 pa_nodes0 -
+__size_of_POWER_INITIAL 0 0 ABS 0 - 6021test.obj
+__Lmaintext 0 0 ABS 0 maintext -
+_uart_tx 1E0 0 CODE 0 text5 6021test.obj
+_INTCON B 0 ABS 0 - 6021test.obj
+__Lpa_nodes0 0 0 ABS 0 pa_nodes0 -
+_LVDCON 8D 0 ABS 0 - 6021test.obj
+__end_of_POWER_INITIAL 49E 0 CODE 0 text15 6021test.obj
+_DelayUsz 4DC 0 CODE 0 text10 6021test.obj
+_ChargeCount 58 0 BANK0 1 bssBANK0 6021test.obj
+start_initialization 16 0 CODE 0 cinit 6021test.obj
+_NowKey 75 0 ABS 1 - 6021test.obj
+_OPTION 81 0 ABS 0 - 6021test.obj
+_OSCCON 8F 0 ABS 0 - 6021test.obj
+__end_of_DelayUsz 4EC 0 CODE 0 text10 6021test.obj
+__end_ofPL2 1AA 0 CODE 0 text3 6021test.obj
+__end_ofPL4 1BC 0 CODE 0 text3 6021test.obj
+__end_ofPL6 430 0 CODE 0 text13 6021test.obj
+__end_ofPL8 1CC 0 CODE 0 text3 6021test.obj
+clear_ram0 4CC 0 CODE 0 clrtext 6021test.obj
+__pcstackBANK0 5F 0 BANK0 1 cstackBANK0 6021test.obj
+_STATUS 3 0 ABS 0 - 6021test.obj
+_Touch_Number1 54 0 BANK0 1 bssBANK0 6021test.obj
+_TCount 5B 0 BANK0 1 bssBANK0 6021test.obj
+_TKCHE3 433 0 ABS 0 - 6021test.obj
+_uart_delay 430 0 CODE 0 text6 6021test.obj
+_Touch_Number_sum 52 0 BANK0 1 bssBANK0 6021test.obj
+__end_of_ReadCap 332 0 CODE 0 text14 6021test.obj
+___int_sp 0 0 STACK 2 stack startup.obj
+__size_of_ReadCapCharge 0 0 ABS 0 - 6021test.obj
+__Hbank0 0 0 ABS 0 bank0 -
+__Hbank1 0 0 BANK1 1 bank1 -
+__Hcinit 24 0 CODE 0 cinit -
+__size_of_Touch_init 0 0 ABS 0 - 6021test.obj
+__Hidloc 0 0 IDLOC 0 idloc -
+__Hstack 0 0 STACK 2 stack -
+__Hmaintext 0 0 ABS 0 maintext -
+_TIMER0_INITIAL 4FA 0 CODE 0 text1 6021test.obj
+__end_of_Touch_end 52A 0 CODE 0 text9 6021test.obj
+__Hcommon 0 0 ABS 0 common -
+__Hconfig 0 0 CONFIG 0 config -
+__size_of_Touch_end 0 0 ABS 0 - 6021test.obj
+__Lbank0 0 0 ABS 0 bank0 -
+__Lbank1 0 0 BANK1 1 bank1 -
+__Lcinit 16 0 CODE 0 cinit -
+__Lidloc 0 0 IDLOC 0 idloc -
+__Lstack 0 0 STACK 2 stack -
+__Habs1 0 0 ABS 0 abs1 -
+__Hcode 0 0 ABS 0 code -
+__Hinit 14 0 CODE 0 init -
+__Hsfr0 0 0 ABS 0 sfr0 -
+__Hsfr1 0 0 ABS 0 sfr1 -
+__Htext 0 0 ABS 0 text -
+__Labs1 0 0 ABS 0 abs1 -
+__Lcode 0 0 ABS 0 code -
+__Linit 14 0 CODE 0 init -
+__Lsfr0 0 0 ABS 0 sfr0 -
+__Lsfr1 0 0 ABS 0 sfr1 -
+__Ltext 0 0 ABS 0 text -
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__end_of_ReadCapCharge 420 0 CODE 0 text13 6021test.obj
+_Touch_end 520 0 CODE 0 text9 6021test.obj
+PL10 1CC 0 CODE 0 text3 6021test.obj
+PL12 1D6 0 CODE 0 text3 6021test.obj
+_GIE 5F 0 ABS 0 - 6021test.obj
+_ISR 49E 0 CODE 0 text16 6021test.obj
+_PA1 29 0 ABS 0 - 6021test.obj
+_PA5 2D 0 ABS 0 - 6021test.obj
+__S0 297 0 ABS 0 - -
+__S1 7C 0 ABS 0 - -
+__S2 0 0 ABS 0 - -
+__S3 0 0 ABS 0 - -
+DelayMs@a 71 0 COMMON 1 cstackCOMMONl 6021test.obj
+DelayMs@b 72 0 COMMON 1 cstackCOMMONl 6021test.obj
+DelayUs@a 7A 0 COMMON 1 cstackCOMMONh 6021test.obj
+uart_tx@data 79 0 COMMON 1 cstackCOMMONh 6021test.obj
+ReadCapDisCharge@Count 65 0 BANK0 1 cstackBANK0 6021test.obj
+__end_of_uart_delay 462 0 CODE 0 text6 6021test.obj
+saved_w 7E 0 ABS 0 - 6021test.obj
+_chbuff 76 0 ABS 1 - 6021test.obj
+__end_ofPL10 1D6 0 CODE 0 text3 6021test.obj
+__end_ofPL12 1E0 0 CODE 0 text3 6021test.obj
+__end_of_ISR 4BA 0 CODE 0 text16 6021test.obj
+__end_of_TIMER0_INITIAL 508 0 CODE 0 text1 6021test.obj
+_DelayMs 462 0 CODE 0 text11 6021test.obj
+_DelayUs 4BA 0 CODE 0 text12 6021test.obj
+__Lintentry 8 0 CODE 0 intentry -
+ReadCap@Count 62 0 BANK0 1 cstackBANK0 6021test.obj
+reset_vec 0 0 CODE 0 reset_vec startup.obj
+__LbssBANK0 0 0 ABS 0 bssBANK0 -
+__ptext10 4DC 0 CODE 0 text10 6021test.obj
+__ptext11 462 0 CODE 0 text11 6021test.obj
+__ptext12 4BA 0 CODE 0 text12 6021test.obj
+__ptext13 3C0 0 CODE 0 text13 6021test.obj
+__ptext14 294 0 CODE 0 text14 6021test.obj
+__ptext15 482 0 CODE 0 text15 6021test.obj
+__ptext16 49E 0 CODE 0 text16 6021test.obj
+_SendDataToPC 52A 0 CODE 0 text2 6021test.obj
+__pmaintext 4EC 0 CODE 0 maintext 6021test.obj
+__Lcommon 0 0 ABS 0 common -
+__Lconfig 0 0 CONFIG 0 config -
+stackhi 0 0 ABS 0 - startup.obj
+stacklo 0 0 ABS 0 - startup.obj
+ReadCap@ch 61 0 BANK0 1 cstackBANK0 6021test.obj
+DelayMs@Time 70 0 COMMON 1 cstackCOMMONl 6021test.obj
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_2 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+__size_of_uart_tx 0 0 ABS 0 - 6021test.obj
+__size_of_SendDataToPC 0 0 ABS 0 - 6021test.obj
+ReadCap1@sum 60 0 BANK0 1 cstackBANK0 6021test.obj
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__Lend_init 14 0 CODE 0 end_init -
+ReadCap1@ch 5F 0 BANK0 1 cstackBANK0 6021test.obj
+ReadCap@sum 5F 0 BANK0 1 cstackBANK0 6021test.obj
+end_of_initialization 20 0 CODE 0 cinit 6021test.obj
+__Hintentry 14 0 CODE 0 intentry -
+__Lstrings 0 0 ABS 0 strings -
+__Hreset_vec 2 0 CODE 0 reset_vec -
+__HbssBANK0 0 0 ABS 0 bssBANK0 -
+_ReadCap 294 0 CODE 0 text14 6021test.obj
+_ReadCom 5D 0 BANK0 1 bssBANK0 6021test.obj
+__end_of_SendDataToPC 52E 0 CODE 0 text2 6021test.obj
+__ptext0 0 0 CODE 0 text0 6021test.obj
+__ptext1 4FA 0 CODE 0 text1 6021test.obj
+__ptext2 52A 0 CODE 0 text2 6021test.obj
+__ptext3 24 0 CODE 0 text3 6021test.obj
+__ptext4 508 0 CODE 0 text4 6021test.obj
+__ptext5 1E0 0 CODE 0 text5 6021test.obj
+__ptext6 430 0 CODE 0 text6 6021test.obj
+__ptext7 332 0 CODE 0 text7 6021test.obj
+__ptext8 514 0 CODE 0 text8 6021test.obj
+__ptext9 520 0 CODE 0 text9 6021test.obj
+__LcstackCOMMONh 0 0 ABS 0 cstackCOMMONh -
+__LcstackCOMMONl 0 0 ABS 0 cstackCOMMONl -
+_SendTouch_Number1 48 0 BANK0 1 bssBANK0 6021test.obj
+_SendTouch_Number2 40 0 BANK0 1 bssBANK0 6021test.obj
+__Lpowerup 0 0 CODE 0 powerup -
+_TestCount 5E 0 BANK0 1 bssBANK0 6021test.obj
+__Leeprom_data 0 0 EEDATA 3 eeprom_data -
+__Lreset_vec 0 0 CODE 0 reset_vec -
+__size_of_uart_delay 0 0 ABS 0 - 6021test.obj
+__end_of__initialization 20 0 CODE 0 cinit 6021test.obj
+__Lfunctab 0 0 ENTRY 0 functab -
+__HcstackCOMMONh 0 0 ABS 0 cstackCOMMONh -
+__HcstackCOMMONl 0 0 ABS 0 cstackCOMMONl -
+__Lclrtext 0 0 ABS 0 clrtext -
+ReadCap1@Count 62 0 BANK0 1 cstackBANK0 6021test.obj
+__end_of_uart_tx 294 0 CODE 0 text5 6021test.obj
+__Hend_init 16 0 CODE 0 end_init -
+__end_of_main 4FA 0 CODE 0 maintext 6021test.obj
+_TreCount 5C 0 BANK0 1 bssBANK0 6021test.obj
+_LVDEN 473 0 ABS 0 - 6021test.obj
+_PORTA 5 0 ABS 0 - 6021test.obj
+_ReadCapDisCharge 24 0 CODE 0 text3 6021test.obj
+_TKCON 86 0 ABS 0 - 6021test.obj
+_TRISA 85 0 ABS 0 - 6021test.obj
+__Hram 0 0 ABS 0 ram -
+__Lram 0 0 ABS 0 ram -
+interrupt_function 8 0 CODE 0 intentry 6021test.obj
+_temp2 5A 0 BANK0 1 bssBANK0 6021test.obj
+__pintentry 8 0 CODE 0 intentry 6021test.obj
+__size_of_ISR 0 0 ABS 0 - 6021test.obj
+_Touch_Number 56 0 BANK0 1 bssBANK0 6021test.obj
+__initialization 16 0 CODE 0 cinit 6021test.obj
+__pbssBANK0 40 0 BANK0 1 bssBANK0 6021test.obj
+_Touch_Buff 73 0 ABS 1 - 6021test.obj
+_Touch_init 514 0 CODE 0 text8 6021test.obj
+__size_of_TIMER0_INITIAL 0 0 ABS 0 - 6021test.obj
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+_Touch_C0 1 73 1
+_Touch_C1 1 74 1
+_NowKey 1 75 1
+_chbuff 1 76 1
+_Touch_Buff 1 73 2
+- 1 7E 2
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+intentry 0 4 8 293 2
+reset_vec 0 0 0 1 2
+bssBANK0 1 40 40 26 1
+cstackCOMMONh 1 77 77 5 1
+cstackCOMMONl 1 70 70 3 1

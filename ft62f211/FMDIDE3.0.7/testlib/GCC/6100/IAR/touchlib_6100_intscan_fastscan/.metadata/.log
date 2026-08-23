@@ -1,0 +1,18 @@
+!SESSION 2022-04-13 18:37:44.501 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86 -data D:\workspace\FMD\Touch\6100\IAR\LIB\touchlib_6100_intscan_fastscan
+
+!ENTRY com.iar.cdt.arm.toolchain.cmsis.adapter 1 0 2022-04-13 18:37:47.386
+!MESSAGE Using CMSIS pack repositories: http://links.iar.com/cmsis/pack/
+
+!ENTRY com.iar.cmsismanager.product 1 0 2022-04-13 18:37:48.562
+!MESSAGE CMSIS Agent interface registered with service registry at ServiceLocation(host:\\.\pipe\iar-cspy-cpp-binary-com.iar.thrift.service.registry-2aff659e-5542-4b1d-9c82-f3f2ab364b8f-1, port:0, protocol:Binary, transport:Pipe)
+
+!ENTRY com.iar.cmsismanager.product 1 0 2022-04-13 18:44:12.021
+!MESSAGE CMSIS Agent interface deregistered with service registry at ServiceLocation(host:\\.\pipe\iar-cspy-cpp-binary-com.iar.thrift.service.registry-2aff659e-5542-4b1d-9c82-f3f2ab364b8f-1, port:0, protocol:Binary, transport:Pipe)
+
+!ENTRY com.iar.cmsismanager.product 1 0 2022-04-13 18:44:12.021
+!MESSAGE Exiting workbench is response to shutdown() command.

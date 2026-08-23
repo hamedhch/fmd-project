@@ -1,0 +1,7 @@
+Ver1：
+	AppUpdate  		V5.2.9
+Ver3in1：
+	AppUpdate3in1(3in1/非3in1)	V0.1.9 /V2.22
+	AppUpdateFMD3in1 	V0.2.1
+Ver32bit：
+	AppUpdate32bit		V1.0.9

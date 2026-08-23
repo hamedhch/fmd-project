@@ -1,0 +1,1283 @@
+
+//==========================================================================
+//
+//       Register Definitions
+//
+//==========================================================================
+W            EQU  H'0000' 
+F            EQU  H'0001'
+R            EQU  H'0001'				
+//=========================BANK0=================================================
+INDF0        EQU  0x000
+INDF1        EQU  0x001
+PCL          EQU  0x002 
+STATUS       EQU  0x003 
+FSR0L        EQU  0x004 
+FSR0H        EQU  0x005 
+FSR1L        EQU  0x006 
+FSR1H        EQU  0x007 
+BSREG        EQU  0x008 
+WREG         EQU  0x009 
+PCLATH       EQU  0x00A 
+INTCON       EQU  0x00B 
+PORTA        EQU  0x00C 
+PORTB        EQU  0x00D 
+PORTC        EQU  0x00E  
+PIR1         EQU  0x011 
+EPIF0        EQU  0x014 
+SPIDATA      EQU  0x015 
+SPICTRL      EQU  0x016 
+SPICFG       EQU  0x017 
+SPISCR       EQU  0x018 
+SPICRCPOL    EQU  0x019 
+SPIRXCRC     EQU  0x01A 
+SPITXCRC     EQU  0x01B 
+SPIIER       EQU  0x01C 
+SPICTRL2     EQU  0x01D 
+SPISTAT      EQU  0x01E 
+ADDLY        EQU  0x01F 
+
+//------------------------------BANK1--------------------------------------------------------
+
+TRISA        EQU  0x08C 
+TRISB        EQU  0x08D 
+TRISC        EQU  0x08E 
+PIE1         EQU  0x091 
+EPIE0        EQU  0x094 
+CKOCON       EQU  0x095 
+PCON         EQU  0x096 
+WDTCON       EQU  0x097 
+OSCTUNE      EQU  0x098 
+OSCCON       EQU  0x099 
+PCKEN        EQU  0x09A 
+ADRESL       EQU  0x09B 
+ADRESH       EQU  0x09C 
+ADCON0       EQU  0x09D 
+ADCON1       EQU  0x09E 
+ADCON2       EQU  0x09F 
+//--------------------------------BANK2-------------------------------------------------
+LATA         EQU  0x10C 
+LATB         EQU  0x10D 
+LATC         EQU  0x10E 
+TIM4CR1      EQU  0x111 
+TIM4IER      EQU  0x112 
+TIM4SR	     EQU  0x113 
+TIM4EGR      EQU  0x114 
+TIM4CNTR     EQU  0x115 
+TIM4PSCR     EQU  0x116 
+TIM4ARR      EQU  0x117 
+EPS0         EQU  0x118 
+EPS1         EQU  0x119 
+PSRC0        EQU  0x11A 
+PSRC1        EQU  0x11B 
+PSRC2        EQU  0x11C 
+ITYPE0       EQU  0x11E 
+ITYPE1       EQU  0x11F 
+//------------------------------BANK3----------------------------------------
+
+WPUA         EQU  0x18C 
+WPUB         EQU  0x18D 
+WPUC         EQU  0x18E 
+EEADRL       EQU  0x191 
+EEADRH       EQU  0x192 
+EEDATL       EQU  0x193 
+EEDATH       EQU  0x194 
+EECON1       EQU  0x195 
+EECON2       EQU  0x196 
+ANSELA       EQU  0x197 
+AFP2	       EQU  0x198 
+LVDCON0      EQU  0x199 
+PSINK0       EQU  0x19A 
+PSINK1       EQU  0x19B 
+PSINK2       EQU  0x19C 
+MISC0        EQU  0x19D 
+AFP0         EQU  0x19E 
+AFP1         EQU  0x19F 
+//-------------------------------BANK4------------------------------------
+WPDA         EQU  0x20C 
+WPDB         EQU  0x20D 
+WPDC         EQU  0x20E 
+TIM1CR1      EQU  0x211 
+TIM1CR2      EQU  0x212 
+TIM1SMCR     EQU  0x213 
+TIM1ETR      EQU  0x214 
+TIM1IER      EQU  0x215 
+TIM1SR1      EQU  0x216 
+TIM1SR2      EQU  0x217 
+TIM1EGR      EQU  0x218 
+TIM1CCMR1    EQU  0x219 
+TIM1CCMR2    EQU  0x21A 
+TIM1CCMR3    EQU  0x21B 
+TIM1CCMR4    EQU  0x21C 
+TIM1CCER1    EQU  0x21D 
+TIM1CCER2    EQU  0x21E 
+ODCON0		 EQU  0x21F 
+//Bank 5--------------------------BANK5------------------------------------
+//
+
+TIM1CNTRH    EQU  0x28C 
+TIM1CNTRL    EQU  0x28D 
+TIM1PSCRH    EQU  0x28E 
+TIM1PSCRL    EQU  0x28F 
+TIM1ARRH     EQU  0x290 
+TIM1ARRL     EQU  0x291 
+TIM1RCR      EQU  0x292 
+TIM1CCR1H    EQU  0x293 
+TIM1CCR1L    EQU  0x294 
+TIM1CCR2H    EQU  0x295 
+TIM1CCR2L    EQU  0x296 
+TIM1CCR3H    EQU  0x297 
+TIM1CCR3L    EQU  0x298 
+TIM1CCR4H    EQU  0x299 
+TIM1CCR4L    EQU  0x29A 
+TIM1BKR      EQU  0x29B 
+TIM1DTR      EQU  0x29C 
+TIM1OISR     EQU  0x29D 
+TIM2CCR3H    EQU  0x29E 
+TIM2CCR3L    EQU  0x29F 
+// Bank 6------------------------------BANK6-----------------------------------------
+//
+
+TIM2CR1      EQU  0x30C 
+TIM2IER      EQU  0x30D 
+TIM2SR1      EQU  0x30E 
+TIM2SR2      EQU  0x30F 
+TIM2EGR      EQU  0x310 
+TIM2CCMR1    EQU  0x311 
+TIM2CCMR2    EQU  0x312 
+TIM2CCMR3    EQU  0x313 
+TIM2CCER1    EQU  0x314 
+TIM2CCER2    EQU  0x315 
+TIM2CNTRH    EQU  0x316 
+TIM2CNTRL    EQU  0x317 
+TIM2PSCR     EQU  0x318 
+TIM2ARRH     EQU  0x319 
+TIM2ARRL     EQU  0x31A 
+TIM2CCR1H    EQU  0x31B 
+TIM2CCR1L    EQU  0x31C 
+TIM2CCR2H    EQU  0x31D 
+TIM2CCR2L    EQU  0x31E 
+TCKSRC       EQU  0x31F 
+// Bank 7-----------------------------------------------------------------------
+//
+// Bank 8--------------------------BANK8---------------------------------------------
+// 
+I2CCR1       EQU  0x40C 
+I2CCR2       EQU  0x40D 
+I2CCR3       EQU  0x40E 		;I2CEN
+I2COARL      EQU  0x40F 
+I2COARH      EQU  0x410 
+I2CFREQ      EQU  0x411 
+I2CDR        EQU  0x412 
+I2CCMD       EQU  0x413 
+I2CCCRL      EQU  0x414 
+I2CCCRH      EQU  0x415 
+I2CITR       EQU  0x416 
+I2CSR1       EQU  0x417 
+I2CSR2       EQU  0x418 
+I2CSR3       EQU  0x419 
+ADCON3       EQU  0x41A 
+ADCMPH       EQU  0x41B 
+LEBCON       EQU  0x41C
+MSCKCON      EQU  0x41D
+SOSCPRL      EQU  0x41E
+SOSCPRH      EQU  0x41F
+// Bank 9-----------------------------------------------------------------------
+//
+UR1DATAL     EQU  0x48C 
+UR1DATAH     EQU  0x48D 
+UR1IER       EQU  0x48E 
+UR1LCR       EQU  0x48F 
+UR1LCREXT    EQU  0x490 
+UR1MCR       EQU  0x491 
+UR1LSR       EQU  0x492 
+UR1RAR       EQU  0x493 
+UR1DLL       EQU  0x494 
+UR1DLH       EQU  0x495 
+UR1ABCR      EQU  0x496 
+UR1SYNCR     EQU  0x497 
+UR1LINCR     EQU  0x498 
+UR1SDCR0     EQU  0x499 
+UR1SDCR1     EQU  0x49A 
+UR1SDCR2     EQU  0x49B 
+UR1TC        EQU  0x49C 
+//-----------------------------------------Bank 10-------------------------------------------
+//
+UR2DATAL     EQU  0x50C 
+UR2DATAH     EQU  0x50D 
+UR2IER       EQU  0x50E 
+UR2LCR       EQU  0x50F 
+UR2LCREXT    EQU  0x510 
+UR2MCR       EQU  0x511 
+UR2LSR       EQU  0x512 
+UR2RAR       EQU  0x513 
+UR2DLL       EQU  0x514 
+UR2DLH       EQU  0x515 
+UR2ABCR      EQU  0x516 
+UR2SYNCR     EQU  0x517 
+UR2LINCR     EQU  0x518 
+UR2SDCR0     EQU  0x519 
+UR2SDCR1     EQU  0x51A 
+UR2SDCR2     EQU  0x51B 
+UR2TC        EQU  0x51C 
+// ----------------------------------------Bank 31-------------------------------------------------
+//
+CKAUX        EQU  0xF8D 
+LVDCON1      EQU  0xF8E 
+OP0CR0       EQU  0xF8F 
+OP0CR1       EQU  0xF90 
+OP0CFG       EQU  0xF91 
+LVDTUNE      EQU  0xF92 
+ 
+CF2OUT2L     EQU  0xFA0 
+CF2OUT2H     EQU  0xFA1 
+CF2OUT3L     EQU  0xFA2 
+CF2OUT3H     EQU  0xFA3 
+TKM216DL     EQU  0xFA4 
+TKM216DH     EQU  0xFA5 
+CF3OUT1L     EQU  0xFA6 
+CF3OUT1H     EQU  0xFA7 
+CF3OUT2L     EQU  0xFA8 
+CF3OUT2H     EQU  0xFA9 
+CF3OUT3L     EQU  0xFAA 
+CF3OUT3H     EQU  0xFAB 
+TKM316DL     EQU  0xFAC 
+TKM316DH     EQU  0xFAD 
+
+//==========================================================================
+//---------------STATUS Bits------------------------------------------------
+C            EQU 		H'0000'
+DC           EQU 		H'0001'
+Z            EQU 		H'0002'
+nPD          EQU 		H'0003'
+nTO          EQU 		H'0004'
+//----------------BSREG Bits------------------------------------------------
+BSREG0       EQU    H'0000'
+BSREG1       EQU    H'0001'
+BSREG2       EQU    H'0002'
+BSREG3       EQU    H'0003'
+BSREG4       EQU    H'0004'
+//-----------------Register: INTCON Bits--------------------------------------
+ OSFIF       EQU    H'0000'
+ LVDIF       EQU    H'0001'
+ EEIF        EQU    H'0002'
+ OSFIE       EQU    H'0003'
+ LVDIE       EQU    H'0004'
+ EEIE        EQU    H'0005'
+ PEIE        EQU    H'0006'
+ GIE         EQU    H'0007'
+//---------------------Register: PORTA Bits----------------------------------------------
+ RA0         EQU    H'0000'
+ RA1         EQU    H'0001'
+ RA2         EQU    H'0002'
+ RA3         EQU    H'0003'
+ RA4         EQU    H'0004'
+ RA5         EQU    H'0005'
+ RA6         EQU    H'0006'
+ RA7         EQU    H'0007'
+//-------------------------- Register: PORTB Bits----------------------------------------------
+ RB0         EQU    H'0000'
+ RB1         EQU    H'0001'
+ RB2         EQU    H'0002'
+ RB3         EQU    H'0003'
+ RB4         EQU    H'0004'
+ RB5         EQU    H'0005'
+ RB6         EQU    H'0006'
+ RB7         EQU    H'0007'
+//--------------------Register: PORTC Bits----------------------------------------------
+ RC0         EQU    H'0000'
+ RC1         EQU    H'0001'
+ RC2         EQU    H'0002'
+ RC3         EQU    H'0003'
+ RC4         EQU    H'0004'
+ RC5         EQU    H'0005'
+ RC6         EQU    H'0006'
+ RC7         EQU    H'0007'
+//----------------------Register: PORTD Bits----------------------------------------------
+ RD0         EQU    H'0000'
+ RD1         EQU    H'0001'
+ RD2         EQU    H'0002'
+ RD3         EQU    H'0003'
+ RD4         EQU    H'0004'
+ RD5         EQU    H'0005'
+ RD6         EQU    H'0006'
+ RD7         EQU    H'0007'
+//--------------------------------Register: PIR1 Bits----------------------------------------------
+ ADCIF       EQU    H'0000'
+ CKMIF       EQU    H'0001'
+ TKIF        EQU    H'0002'
+//----------------------Register: SPICTRL Bits----------------------------------------------
+ SPIEN       EQU    H'0000'
+ TXBMT       EQU    H'0001'
+ NSSM0       EQU    H'0002'
+ NSSM1       EQU    H'0003'
+ RXOVRN      EQU    H'0004'
+ MODF        EQU    H'0005'
+ WCF         EQU    H'0006'
+ SPIF        EQU    H'0007'
+//----------------------Register: SPICFG Bits----------------------------------------------
+ RXBMT       EQU    H'0000'
+ SRMT        EQU    H'0001'
+ NSSVAL      EQU    H'0002'
+ SLAS        EQU    H'0003'
+ CPOL        EQU    H'0004'
+ CPHA        EQU    H'0005'
+ MSTEN       EQU    H'0006'
+ BUSY        EQU    H'0007'
+//------------------------Register: SPIIER Bits----------------------------------------------
+ TXE         EQU    H'0000'
+ RXNE        EQU    H'0001'
+ RXERR       EQU    H'0002'
+ WAKUP       EQU    H'0003'
+//-------------------Register: SPICTRL2 Bits----------------------------------------------
+
+ LSBFIRST    EQU    H'0000'
+ CRCEN       EQU    H'0001'
+ CRCNXT      EQU    H'0002'
+ SSM         EQU    H'0003'
+ SSI         EQU    H'0004'
+ RXONLY      EQU    H'0005'
+ BDOE        EQU    H'0006'
+ BDM         EQU    H'0007'
+//--------------------Register: DPISTAT Bits----------------------------------------------
+
+ CRCERR      EQU    H'0000'
+ WKF         EQU    H'0001'
+ STXBMT      EQU    H'0002'
+ SRXBMT      EQU    H'0003'
+ SBUSY       EQU    H'0004'
+ SRXOVRN     EQU    H'0003'
+ SMODF       EQU    H'0004'
+// Special function register definitions: Bank 1
+//-------------------------Register: TRISA Bits----------------------------------------------
+ TRISA0                EQU    H'0000'
+ TRISA1                EQU    H'0001'
+ TRISA2                EQU    H'0002'
+ TRISA3                EQU    H'0003'
+ TRISA4                EQU    H'0004'
+ TRISA5                EQU    H'0005'
+ TRISA6                EQU    H'0006'
+ TRISA7                EQU    H'0007'
+//-------------------------Register: TRISB Bits----------------------------------------------
+ TRISB0                EQU    H'0000'
+ TRISB1                EQU    H'0001'
+ TRISB2                EQU    H'0002'
+ TRISB3                EQU    H'0003'
+ TRISB4                EQU    H'0004'
+ TRISB5                EQU    H'0005'
+ TRISB6                EQU    H'0006'
+ TRISB7                EQU    H'0007'
+//-------------------------------Register: TRISC Bits----------------------------------------------
+ TRISC0                EQU    H'0000'
+ TRISC1                EQU    H'0001'
+ TRISC2                EQU    H'0002'
+ TRISC3                EQU    H'0003'
+ TRISC4                EQU    H'0004'
+ TRISC5                EQU    H'0005'
+ TRISC6                EQU    H'0006'
+ TRISC7                EQU    H'0007'
+//-------------------------------Register: TRISE Bits----------------------------------------------
+ TRISD0                EQU    H'0000'
+ TRISD1                EQU    H'0001'
+ TRISD2                EQU    H'0002'
+ TRISD3                EQU    H'0003'
+ TRISD4                EQU    H'0004'
+ TRISD5                EQU    H'0005'
+ TRISD6                EQU    H'0006'
+ TRISD7                EQU    H'0007'
+//-------------------------------Register: PIE1 Bits----------------------------------------------
+
+ ADCIE                 EQU    H'0000'
+ CKMIE                 EQU    H'0001'
+ TKIE       					 EQU    H'0002'
+//-------------------------------Register: CKOCON Bits----------------------------------------------
+
+ CCOEN       					 EQU    H'0000'
+ CCOSEL0               EQU    H'0001'
+ CCOSEL1               EQU    H'0002'
+ CCOSEL2               EQU    H'0003'
+ DTYSEL0               EQU    H'0004'
+ DTYSEL1               EQU    H'0005'
+ CCOBSY                EQU    H'0006'
+ SYSON       					 EQU    H'0007'
+//-------------------------------Register: PCON Bits----------------------------------------------
+
+ nBORF        EQU    H'0000'
+ nPORF        EQU    H'0001'
+ nSRSTF       EQU    H'0002'
+ nMCLRF       EQU    H'0003'
+ IERRF        EQU    H'0004'
+ EMCF         EQU    H'0005'
+ STKUNF       EQU    H'0006'
+ STKOVF       EQU    H'0007'
+//--------------------------------Register: WDTCON Bits----------------------------------------------
+ SWDTEN                EQU    H'0000'
+ WDTPS0                EQU    H'0001'
+ WDTPS1                EQU    H'0002'
+ WDTPS2                EQU    H'0003'
+ WDTPS3                EQU    H'0004'
+ WDTPRE0               EQU    H'0005'
+ WDTPRE1               EQU    H'0006'
+ WDTPRE2               EQU    H'0007'
+//-------------------------------Register: OSCTUNE Bits----------------------------------------------
+ TUN0        EQU    H'0000'
+ TUN1        EQU    H'0001'
+ TUN2        EQU    H'0002'
+ TUN3        EQU    H'0003'
+ TUN4        EQU    H'0004'
+ TUN5        EQU    H'0005'
+ TUN6        EQU    H'0006'
+//-------------------------------Register: OSCCON Bits----------------------------------------------
+ SCS         EQU    H'0000'
+ LTS         EQU    H'0001'
+ HTS         EQU    H'0002'
+ OSTS        EQU    H'0003'
+ MCKCF0      EQU    H'0004'
+ MCKCF1      EQU    H'0005'
+ MCKCF2      EQU    H'0006'
+ MCKCF3      EQU    H'0007'
+//-------------------------------Register: PCKEN Bits----------------------------------------------
+ ADCEN       EQU    H'0000'
+ TIM1EN      EQU    H'0001'
+ TIM2EN      EQU    H'0002'
+ TIM4EN      EQU    H'0003'
+ SPICKEN     EQU    H'0004'
+ UARTEN      EQU    H'0005'
+ I2CEN       EQU    H'0006'
+ UART2EN        EQU    H'0007'
+//-------------------------------Register: ADCON0 Bits----------------------------------------------
+ ADON        EQU    H'0000'
+ GO          EQU    H'0001'
+ nDONE       EQU    H'0001'
+ ADEX        EQU    H'0002'
+ ADCAL       EQU    H'0003'
+ CHS0        EQU    H'0004'
+ CHS1        EQU    H'0005'
+ CHS2        EQU    H'0006'
+ CHS3        EQU    H'0007'
+//-------------------------------Register: ADCON1 Bits----------------------------------------------
+ ADPREF0     EQU    H'0000'
+ ADPREF1     EQU    H'0001'
+ ADNREF0     EQU    H'0002'
+ ADNREF1     EQU    H'0003'
+ ADCS0       EQU    H'0004'
+ ADCS1       EQU    H'0005'
+ ADCS2       EQU    H'0006'
+ ADFM        EQU    H'0007'
+//-------------------------------Register: ADCON2 Bits----------------------------------------------
+ ETGSEL0     EQU    H'0000'
+ ETGSEL1     EQU    H'0001'
+ ETGSEL2     EQU    H'0002'
+ ADDLY8      EQU    H'0003'
+ ETGTYP0     EQU    H'0004'
+ EEGTYP1     EQU    H'0005'
+ ADINTREF0   EQU    H'0006'
+ ADINTREF1   EQU    H'0007'
+
+// Special function register definitions: Bank 2
+//--------------------------------Register: LATA Bits----------------------------------------------
+ LATA0       EQU    H'0000'
+ LATA1       EQU    H'0001'
+ LATA2       EQU    H'0002'
+ LATA3       EQU    H'0003'
+ LATA4       EQU    H'0004'
+ LATA5       EQU    H'0005'
+ LATA6       EQU    H'0006'
+ LATA7       EQU    H'0007'
+//-------------------------------Register: LATB Bits----------------------------------------------
+ LATB0       EQU    H'0000'
+ LATB1       EQU    H'0001'
+ LATB2       EQU    H'0002'
+ LATB3       EQU    H'0003'
+ LATB4       EQU    H'0004'
+ LATB5       EQU    H'0005'
+ LATB6       EQU    H'0006'
+ LATB7       EQU    H'0007'
+//-------------------------------Register: LATC Bits----------------------------------------------
+ LATC0       EQU    H'0000'
+ LATC1       EQU    H'0001'
+ LATC2       EQU    H'0002'
+ LATC3       EQU    H'0003'
+ LATC4       EQU    H'0004'
+ LATC5       EQU    H'0005'
+ LATC6       EQU    H'0006'
+ LATC7       EQU    H'0007'
+//-------------------------------Register: LATE Bits----------------------------------------------
+ LATD0       EQU    H'0000'
+ LATD1       EQU    H'0001'
+ LATD2       EQU    H'0002'
+ LATD3       EQU    H'0003'
+ LATD4       EQU    H'0004'
+ LATD5       EQU    H'0005'
+//-------------------------------Register: CM1CON0 Bits----------------------------------------------
+ T4CEN         EQU    H'0000'
+ T4UDIS        EQU    H'0001'
+ T4URS         EQU    H'0002'
+ T4OPM         EQU    H'0003'
+ T4CKS0        EQU    H'0004'
+ T4CKS1        EQU    H'0005'
+ T4ARPE        EQU    H'0007'
+//---------------------------------Register: CM1CON1 Bits----------------------------------------------
+ T4UIE        EQU    H'0000'
+//--------------------------------Register: TIM4IER Bits----------------------------------------------
+ T4UIF        EQU    H'0000'
+//--------------------------------Register: CMOUT Bits----------------------------------------------
+ UG           EQU    H'0000'
+//--------------------------------Register: BORCON Bits----------------------------------------------
+//--------------------------------Register: TIM4PSCR Bits--------------------------------------------
+ T4PSC0                EQU    H'0000'
+ T4PSC1                EQU    H'0001'
+ T4PSC2                EQU    H'0002'
+//--------------------------------Register: MISC0 Bits--------------------------------------------
+ WCKSEL0                EQU    H'0000'
+ WCKSEL1                EQU    H'0001'
+//--------------------------------Register: EEADRH Bits----------------------------------------------
+ EEADRH0       EQU    H'0000'
+ EEADRH1       EQU    H'0001'
+ EEADRH2       EQU    H'0002'
+ EEADRH3       EQU    H'0003'
+ EEADRH4       EQU    H'0004'
+ EEADRH5       EQU    H'0005'
+ EEADRH6       EQU    H'0006'
+//---------------------------------Register: EEDATH Bits----------------------------------------------
+ EEDATH0       EQU    H'0000'
+ EEDATH1       EQU    H'0001'
+ EEDATH2       EQU    H'0002'
+ EEDATH3       EQU    H'0003'
+ EEDATH4       EQU    H'0004'
+ EEDATH5       EQU    H'0005'
+//---------------------------------Register: EECON1 Bits----------------------------------------------
+ RD          EQU    H'0000'
+ WR          EQU    H'0001'
+ WREN        EQU    H'0002'
+ WRERR       EQU    H'0003'
+ FREE        EQU    H'0004' 
+ LWLO        EQU    H'0005'
+ CFGS        EQU    H'0006'
+ EEPGD       EQU    H'0007'
+//--------------------------------Register: EECON2 Bits----------------------------------------------
+ DRDEN       EQU    H'0000'
+//----------------------------------Register: LVDCON Bits----------------------------------------------
+ LVDL0       EQU    H'0000'
+ LVDL1       EQU    H'0001'
+ LVDL2       EQU    H'0002'
+ LVDW        EQU    H'0003'
+ LVDEN       EQU    H'0004' 
+ LVDM        EQU    H'0006'
+ SLVREN      EQU    H'0007'
+//-----------------------------------Register: PSINK3 Bits----------------------------------------------
+ PSINK30       EQU    H'0000'
+ PSINK31       EQU    H'0001'
+ PSINK32       EQU    H'0002'
+ PSINK33       EQU    H'0003'
+ PSINK34       EQU    H'0004'
+ PSINK35       EQU    H'0005'
+// Special function register definitions: Bank 4
+
+//----------------------------------Register: WPDA Bits----------------------------------------------
+ WPDA0       EQU    H'0000'
+ WPDA1       EQU    H'0001'
+ WPDA2       EQU    H'0002'
+ WPDA3       EQU    H'0003'
+ WPDA4       EQU    H'0004'
+ WPDA5       EQU    H'0005'
+ WPDA6       EQU    H'0006'
+ WPDA7       EQU    H'0007'
+//-------------------------------Register: WPDB Bits----------------------------------------------
+ WPDB0       EQU    H'0000'
+ WPDB1       EQU    H'0001'
+ WPDB2       EQU    H'0002'
+ WPDB3       EQU    H'0003'
+ WPDB4       EQU    H'0004'
+ WPDB5       EQU    H'0005'
+ WPDB6       EQU    H'0006'
+ WPDB7       EQU    H'0007'
+//--------------------------------Register: WPDC Bits----------------------------------------------
+ WPDC0       EQU    H'0000'
+ WPDC1       EQU    H'0001'
+ WPDC2       EQU    H'0002'
+ WPDC3       EQU    H'0003'
+ WPDC4       EQU    H'0004'
+ WPDC5       EQU    H'0005'
+ WPDC6       EQU    H'0006'
+ WPDC7       EQU    H'0007'
+//--------------------------------Register: WPDD Bits----------------------------------------------
+ WPDD0       EQU    H'0000'
+ WPDD1       EQU    H'0001'
+ WPDD2       EQU    H'0002'
+ WPDD3       EQU    H'0003'
+ WPDD4       EQU    H'0004'
+ WPDD5       EQU    H'0005'
+ WPDD6       EQU    H'0006'
+ WPDD7       EQU    H'0007'
+//-----------------------------------Register: TIM1CR1 Bits----------------------------------------------
+ T1CEN         EQU    H'0000'
+ T1UDIS        EQU    H'0001'
+ T1URS         EQU    H'0002'
+ T1OPM         EQU    H'0003'
+ T1DIR           EQU    H'0004'
+ T1CMS0          EQU    H'0005'
+ T1CMS1          EQU    H'0006'
+ T1ARPE        EQU    H'0007'
+//---------------------------------Register: TIM1CR2 Bits----------------------------------------------
+ T1CCPC        EQU    H'0000'
+ T1COMS        EQU    H'0002'
+ T1MMS0        EQU    H'0004'
+ T1MMS1        EQU    H'0005'
+ T1MMS2        EQU    H'0006'
+//--------------------------------------Register: TIM1SMCR Bits----------------------------------------------
+ T1SMS0        EQU    H'0000'
+ T1SMS1        EQU    H'0001'
+ T1SMS2        EQU    H'0002'
+ T1TS0         EQU    H'0004'
+ T1TS1         EQU    H'0005'
+ T1TS2         EQU    H'0006'
+ T1MSM         EQU    H'0007'
+//--------------------------------Register: TIM1ETR Bits----------------------------------------------
+ T1EFT0        EQU    H'0000'
+ T1EFT1        EQU    H'0001'
+ T1EFT2        EQU    H'0002'
+ T1EFT3        EQU    H'0003'
+ T1ETPS0       EQU    H'0004'
+ T1ETPS1       EQU    H'0005'
+ T1ECE         EQU    H'0006'
+ T1ETP         EQU    H'0007'
+//---------------------------------Register: TIM1IER Bits----------------------------------------------
+ T1UIE       EQU    H'0000'
+ T1CC1IE     EQU    H'0001'
+ T1CC2IE     EQU    H'0002'
+ T1CC3IE     EQU    H'0003'
+ T1CC4IE     EQU    H'0004'
+ T1COMIE     EQU    H'0005'
+ T1TIE       EQU    H'0006'
+ T1BIE      EQU    H'0007'
+//--------------------------------Register: TIM1SR1 Bits----------------------------------------------
+ T1UIF       EQU    H'0000'
+ T1CC1IF     EQU    H'0001'
+ T1CC2IF     EQU    H'0002'
+ T1CC3IF     EQU    H'0003'
+ T1CC4IF     EQU    H'0004'
+ T1COMIF     EQU    H'0005'
+ T1TIF       EQU    H'0006'
+ T1BIF       EQU    H'0007'
+//-------------------------------Register: TIM1SR2 Bits----------------------------------------------
+ 
+ T1CC1OF     EQU    H'0001'
+ T1CC2OF     EQU    H'0002'
+ T1CC3OF     EQU    H'0003'
+ T1CC4OF     EQU    H'0004'
+//-------------------------------Register: TIM1EGR Bits----------------------------------------------
+ T1UG        EQU    H'0000'
+ T1CC1G      EQU    H'0001'
+ T1CC2G      EQU    H'0002'
+ T1CC3G      EQU    H'0003'
+ T1CC4G      EQU    H'0004'
+ T1COMG      EQU    H'0005'
+ T1TG        EQU    H'0006'
+ T1BG        EQU    H'0007'
+//--------------------------------Register: TIM1CCMR1 Bits----------------------------------------------
+ T1CC1S0     EQU    H'0000'
+ T1CC1S1     EQU    H'0001'
+ T1OC1FE     EQU    H'0002'
+ T1OC1PE     EQU    H'0003'
+ T1OC1M0     EQU    H'0004'
+ T1OC1M1     EQU    H'0005'
+ T1OC1M2     EQU    H'0006'
+ T1OC1CE     EQU    H'0007'
+
+ T1IC1PSC0   EQU    H'0002'
+ T1IC1PSC1   EQU    H'0003'
+ T1IC1F0     EQU    H'0004'
+ T1IC1F1     EQU    H'0005'
+ T1IC1F2     EQU    H'0006'
+ T1IC1F3     EQU    H'0007'
+//-----------------------------------Register: TIM1CCMR2 Bits----------------------------------------------
+ T1CC2S0     EQU    H'0000'
+ T1CC2S1     EQU    H'0001'
+ T1OC2FE     EQU    H'0002'
+ T1OC2PE     EQU    H'0003'
+ T1OC2M0     EQU    H'0004'
+ T1OC2M1     EQU    H'0005'
+ T1OC2M2     EQU    H'0006'
+ T1OC2CE     EQU    H'0007'
+
+ IC2PSC0     EQU    H'0002'
+ IC2PSC1     EQU    H'0003'
+ T1IC2F0     EQU    H'0004'
+ T1IC2F1     EQU    H'0005'
+ T1IC2F2     EQU    H'0006'
+ T1IC2F3     EQU    H'0007'
+//-----------------------------------Register: TIM1CCMR3 Bits----------------------------------------------
+ T1CC3S0     EQU    H'0000'
+ T1CC3S1     EQU    H'0001'
+ T1OC3FE     EQU    H'0002'
+ T1OC3PE     EQU    H'0003'
+ T1OC3M0     EQU    H'0004'
+ T1OC3M1     EQU    H'0005'
+ T1OC3M2     EQU    H'0006'
+ T1OC3CE     EQU    H'0007'
+
+ T1IC3PSC0   EQU    H'0002'
+ T1IC3PSC1   EQU    H'0003'
+ T1IC3F0     EQU    H'0004'
+ T1IC3F1     EQU    H'0005'
+ T1IC3F2     EQU    H'0006'
+ T1IC3F3     EQU    H'0007'
+//-------------------------------Register: TIM1CCMR4 Bits----------------------------------------------
+ T1CC4S0       EQU    H'0000'
+ T1CC4S1       EQU    H'0001'
+ T1OC4FE       EQU    H'0002'
+ T1OC4PE       EQU    H'0003'
+ T1OC4M0       EQU    H'0004'
+ T1OC4M1       EQU    H'0005'
+ T1OC4M2       EQU    H'0006'
+ T1OC4CE       EQU    H'0007'
+
+ T1IC4PSC0     EQU    H'0002'
+ T1IC4PSC1     EQU    H'0003'
+ T1IC4F0       EQU    H'0004'
+ T1IC4F1       EQU    H'0005'
+ T1IC4F2       EQU    H'0006'
+ T1IC4F3       EQU    H'0007'
+//------------------------------------Register: TIM1CCER1 Bits----------------------------------------------
+ T1CC1E        EQU    H'0000'
+ T1CC1P        EQU    H'0001'
+ T1CC1NE       EQU    H'0002'
+ T1CC1NP       EQU    H'0003'
+ T1CC2E        EQU    H'0004'
+ T1CC2P        EQU    H'0005'
+ T1CC2NE       EQU    H'0006'
+ T1CC2NP       EQU    H'0007'
+//-------------------------------------Register: TIM1CCER2 Bits----------------------------------------------
+ T1CC3E        EQU    H'0000'
+ T1CC3P        EQU    H'0001'
+ T1CC3NE       EQU    H'0002'
+ T1CC3NP       EQU    H'0003'
+ T1CC4E        EQU    H'0004'
+ T1CC4P        EQU    H'0005'
+//-------------------------------------Register: ODCON0 Bits----------------------------------------------
+ UR1OD         EQU    H'0000'
+ I2COD         EQU    H'0001'
+ SPIOD         EQU    H'0002'
+ UR2OD         EQU    H'0003'
+
+//
+// Special function register definitions: Bank 5--------------------------------------------------------------
+//
+
+//--------------------------------Register: TIM1BKR Bits----------------------------------------------
+ T1LOCK0       EQU    H'0000'
+ T1LOCK1       EQU    H'0001'
+ T1OSSI        EQU    H'0002'
+ T1OSSR        EQU    H'0003'
+ T1BKE         EQU    H'0004'
+ T1BKP         EQU    H'0005'
+ T1AOE         EQU    H'0006'
+ T1MOE         EQU    H'0007'
+//-------------------------------- Register: TIM1DTR Bits----------------------------------------------
+ T1DTG0        EQU    H'0000'
+ T1DTG1        EQU    H'0001'
+ T1DTG2        EQU    H'0002'
+ T1DTG3        EQU    H'0003'
+ T1DTG4        EQU    H'0004'
+ T1DTG5        EQU    H'0005'
+ T1DTG6        EQU    H'0006'
+ T1DTG7        EQU    H'0007'
+//----------------------------------Register: TIM1OISR Bits----------------------------------------------
+ T1OIS1        EQU    H'0000'
+ T1OIS1N       EQU    H'0001'
+ T1OIS2        EQU    H'0002'
+ T1OIS2N       EQU    H'0003'
+ T1OIS3        EQU    H'0004'
+ T1OIS3N       EQU    H'0005'
+ T1OIS4        EQU    H'0006'
+//----------------------------------Register: TIM2CCR3H Bits----------------------------------------------
+//----------------------------------Register: TIM2CR1 Bits----------------------------------------------
+ T2CEN       EQU    H'0000'
+ T2UDIS      EQU    H'0001'
+ T2URS       EQU    H'0002'
+ T2OPM       EQU    H'0003'
+ T2ARPE      EQU    H'0007'
+//-------------------------------------Register: TIM2IER Bits----------------------------------------------
+ T2UIE         EQU    H'0000'
+ T2CC1IE       EQU    H'0001'
+ T2CC2IE       EQU    H'0002'
+ T2CC3IE       EQU    H'0003'
+//---------------------------------------Register: TIM2SR1 Bits----------------------------------------------
+ T2UIF       EQU    H'0000'
+ T2CC1IF     EQU    H'0001'
+ T2CC2IF     EQU    H'0002'
+ T2CC3IF     EQU    H'0003'
+//---------------------------------Register: TIM2SR2 Bits----------------------------------------------
+ T2CC1OF       EQU    H'0001'
+ T2CC2OF       EQU    H'0002'
+ T2CC3OF       EQU    H'0003'
+//------------------------------------Register: TIM2EGR Bits--------------------------------------------
+ T2UG         EQU    H'0000'
+ T2CC1G       EQU    H'0001'
+ T2CC2G       EQU    H'0002'
+ T2CC3G       EQU    H'0003'
+//----------------------------------Register: TIM2CCMR1 Bits----------------------------------------------
+ T2CC1S0       EQU    H'0000'
+ T2CC1S1       EQU    H'0001'
+ T2OC1PE       EQU    H'0003'
+ T2OC1M0       EQU    H'0004'
+ T2OC1M1       EQU    H'0005'
+ T2OC1M2       EQU    H'0006'
+
+ T2IC1PSC0     EQU    H'0002'
+ T2IC1PSC1     EQU    H'0003'
+ T2IC1F0       EQU    H'0004'
+ T2IC1F1       EQU    H'0005'
+ T2IC1F2       EQU    H'0006'
+ T2IC1F3       EQU    H'0007'
+//----------------------------------Register: TIM2CCMR2 Bits----------------------------------------------
+ T2CC2S0       EQU    H'0000'
+ T2CC2S1       EQU    H'0001'
+ T2OC2PE       EQU    H'0003'
+ T2OC2M0       EQU    H'0004'
+ T2OC2M1       EQU    H'0005'
+ T2OC2M2       EQU    H'0006'
+
+ T2IC2PSC0     EQU    H'0002'
+ T2IC2PSC1     EQU    H'0003'
+ T2IC2F0       EQU    H'0004'
+ T2IC2F1       EQU    H'0005'
+ T2IC2F2       EQU    H'0006'
+ T2IC2F3       EQU    H'0007'
+//-----------------------------------Register: TIM2CCMR3 Bits----------------------------------------------
+ T2CC3S0      EQU   H'0000'
+ T2CC3S1      EQU   H'0001'
+ T2OC3PE      EQU   H'0003'
+ T2OC3M0      EQU   H'0004'
+ T2OC3M1      EQU   H'0005'
+ T2OC3M2      EQU   H'0006'
+          
+ T2IC3PSC0    EQU   H'0002'
+ T2IC3PSC1    EQU   H'0003'
+ T2IC3F0      EQU   H'0004'
+ T2IC3F1      EQU   H'0005'
+ T2IC3F2      EQU   H'0006'
+ T2IC3F3      EQU   H'0007'
+//-----------------------------------Register: TIM2CCER1 Bits----------------------------------------------
+ T2CC1E       EQU    H'0000'
+ T2CC1P       EQU    H'0001'
+ T2CC2E       EQU    H'0004'
+ T2CC2P       EQU    H'0005'
+//-----------------------------------Register: TIM2CCER2 Bits----------------------------------------------
+ T2CC3E       EQU    H'0000'
+ T2CC3P       EQU    H'0001'
+//-----------------------------------Register: TIM2PSCRRESET Bits----------------------------------------------
+ T2PSC0       EQU    H'0000'
+ T2PSC1       EQU    H'0001'
+ T2PSC2       EQU    H'0002'
+ T2PSC3       EQU    H'0003'
+ 
+ 
+//-----------------------------------Register: TCKSRC Bits----------------------------------------------
+ T1CKSRC0              EQU    H'0000';
+ T1CKSRC1              EQU    H'0001';
+ T1CKSRC2              EQU    H'0002';
+ T2CKSRC0              EQU    H'0004';
+ T2CKSRC1              EQU    H'0005';
+ T2CKSRC2              EQU    H'0006';
+ LFMOD                 EQU    H'0007';
+//
+// Special function register definitions: Bank 7
+//
+//--------------------------------Register: TKC0 Bits----------------------------------------------
+ TKCFOV      EQU    H'0004'
+ TKST        EQU    H'0005'
+ TKRCOV      EQU    H'0006'
+//-----------------------------------Register: TKC1 Bits----------------------------------------------
+ OPTION0               EQU    H'0000'
+ OPTION1               EQU    H'0001'
+ SEG0        EQU    H'0005'
+ SEG1        EQU    H'0006'
+//---------------------------------Register: M0ANALOG Bits----------------------------------------------
+ M0RSET0                EQU    H'0000'
+ M0RSET1                EQU    H'0001'
+ M0FILCS0               EQU    H'0002'
+ M0FILCS1               EQU    H'0003'
+ M0FILCS2               EQU    H'0004'
+ M0VIHVIL0              EQU    H'0005'
+ M0VIHVIL1              EQU    H'0006'
+ M0VIHVIL2              EQU    H'0007'
+//-------------------------------Register: M1ANALOG Bits----------------------------------------------
+ M1RSET0                EQU    H'0000'
+ M1RSET1                EQU    H'0001'
+ M1FILCS0               EQU    H'0002'
+ M1FILCS1               EQU    H'0003'
+ M1FILCS2               EQU    H'0004'
+ M1VIHVIL0              EQU    H'0005'
+ M1VIHVIL1              EQU    H'0006'
+ M1VIHVIL2              EQU    H'0007'
+//-------------------------------Register: M2ANALOG Bits-----------------------------------------
+ M2RSET0                EQU    H'0000'
+ M2RSET1                EQU    H'0001'
+ M2FILCS0               EQU    H'0002'
+ M2FILCS1               EQU    H'0003'
+ M2FILCS2               EQU    H'0004'
+ M2VIHVIL0              EQU    H'0005'
+ M2VIHVIL1              EQU    H'0006'
+ M2VIHVIL2              EQU    H'0007'
+//-----------------------------Register: M3ANALOG Bits----------------------------------------------
+ M3RSET0                EQU    H'0000'
+ M3RSET1                EQU    H'0001'
+ M3FILCS0               EQU    H'0002'
+ M3FILCS1               EQU    H'0003'
+ M3FILCS2               EQU    H'0004'
+ M3VIHVIL0              EQU    H'0005'
+ M3VIHVIL1              EQU    H'0006'
+ M3VIHVIL2              EQU    H'0007'
+//-------------------------------Register: TKM0C0 Bits----------------------------------------------
+ M0SOF0       EQU    H'0000'
+ M0SOF1       EQU    H'0001'
+ M0SOFC       EQU    H'0003'
+ M0FILEN      EQU    H'0004'
+ M0DFEN       EQU    H'0005'
+ M0MXS0       EQU    H'0006'
+ M0MXS1       EQU    H'0007'
+//---------------------------------Register: TKM0C1 Bits----------------------------------------------
+ M0K1IO       EQU    H'0000'
+ M0K2IO       EQU    H'0001'
+ M0K3IO       EQU    H'0002'
+ M0K4IO       EQU    H'0003'
+ M0KOEN       EQU    H'0004'
+//-----------------------------------Register: TKM1C0 Bits----------------------------------------------
+ M1SOF0       EQU    H'0000'
+ M1SOF1       EQU    H'0001'
+ M1SOFC       EQU    H'0003'
+ M1FILEN      EQU    H'0004'
+ M1DFEN       EQU    H'0005'
+ M1MXS0       EQU    H'0006'
+ M1MXS1       EQU    H'0007'
+//---------------------------------Register: TKM1C1 Bits----------------------------------------------
+ M1K1IO       EQU    H'0000'
+ M1K2IO       EQU    H'0001'
+ M1K3IO       EQU    H'0002'
+ M1K4IO       EQU    H'0003'
+ M1KOEN       EQU    H'0004'
+//---------------------------------Register: TKM2C0 Bits----------------------------------------------
+
+ M2SOF0       EQU    H'0000'
+ M2SOF1       EQU    H'0001'
+ M2SOFC       EQU    H'0003'
+ M2FILEN                EQU    H'0004'
+ M2DFEN       EQU    H'0005'
+ M2MXS0       EQU    H'0006'
+ M2MXS1       EQU    H'0007'
+//--------------------------------Register: TKM2C1 Bits----------------------------------------------
+
+ M2K1IO       EQU    H'0000'
+ M2K2IO       EQU    H'0001'
+ M2K3IO       EQU    H'0002'
+ M2K4IO       EQU    H'0003'
+ M2KOEN       EQU    H'0004'
+//--------------------------------Register: TKM3C0 Bits----------------------------------------------
+
+ M3SOF0       EQU    H'0000'
+ M3SOF1       EQU    H'0001'
+ M3SOFC       EQU    H'0003'
+ M3FILEN                EQU    H'0004'
+ M3DFEN       EQU    H'0005'
+ M3MXS0       EQU    H'0006'
+ M3MXS1       EQU    H'0007'
+//--------------------------------Register: TKM3C1 Bits----------------------------------------------
+
+ M3K1IO       EQU    H'0000'
+ M3K2IO       EQU    H'0001'
+ M3K3IO       EQU    H'0002'
+ M3K4IO       EQU    H'0003'
+ M3KOEN       EQU    H'0004'
+//
+// Special function register definitions: Bank 8
+//
+
+//------------------------------ Register: I2CCR1 Bits----------------------------------------------
+ MASTER       EQU    H'0000'
+ SPEED        EQU    H'0001'
+ SLV10B       EQU    H'0003'
+ MST10B       EQU    H'0004'
+//--------------------------------Register: I2CCR2 Bits----------------------------------------------
+ RXHLD         EQU    H'0001'
+ SNACK         EQU    H'0004'
+ AGCALL        EQU    H'0005'
+ SOFTRST       EQU    H'0006'
+//---------------------------------Register: I2CEN Bits----------------------------------------------
+ ENABLE         EQU    H'0000'
+ EVSTRE         EQU    H'0002'
+//------------------------------------Register: I2COARL Bits----------------------------------------------
+ ADD0           EQU    H'0000'
+ ADD1           EQU    H'0001'
+ ADD2           EQU    H'0002'
+ ADD3           EQU    H'0003'
+ ADD4           EQU    H'0004'
+ ADD5           EQU    H'0005'
+ ADD6           EQU    H'0006'
+ ADD7           EQU    H'0007'
+//-------------------------------------Register: I2COARH Bits----------------------------------------------
+ ADD8           EQU    H'0000'
+ ADD9           EQU    H'0001'
+//----------------------------------Register: I2CFREQ Bits----------------------------------------------
+
+ FREQ0           EQU    H'0000'
+ FREQ1           EQU    H'0001'
+ FREQ2           EQU    H'0002'
+ FREQ3           EQU    H'0003'
+ FREQ4           EQU    H'0004'
+ FREQ5           EQU    H'0005'
+//-------------------------------------Register: I2CCMD Bits----------------------------------------------
+ MSTDIR            EQU    H'0000'
+ STOP              EQU    H'0001'
+ RESTART           EQU    H'0002'
+//-----------------------------------Register: I2CCCRL Bits----------------------------------------------
+ CCR8            EQU    H'0000'
+ CCR9            EQU    H'0001'
+ CCR10           EQU    H'0002'
+ CCR11           EQU    H'0003'
+ DUTY            EQU    H'0006'
+// ----------------------------------Register: I2CITR Bits----------------------------------------------
+ ITERREN         EQU    H'0000'
+ ITEVEN          EQU    H'0001'
+ ITBUFEN         EQU    H'0002'
+//-----------------------------------Register: I2CSR1 Bits----------------------------------------------
+ SBF            EQU    H'0000'
+ ADDRF          EQU    H'0001'
+ BTF            EQU    H'0002'
+ ADD10F         EQU    H'0003'
+ STOPF          EQU    H'0004'
+ IICRXNE        EQU    H'0006'
+ IICTXE         EQU    H'0007'
+//----------------------------------Register: I2CSR2 Bits----------------------------------------------
+ BERR           EQU    H'0000'
+ ARLO           EQU    H'0001'
+ AF             EQU    H'0002'
+ OVR            EQU    H'0003'
+//----------------------------------Register: I2CSR3 Bits----------------------------------------------
+ ACTIVE         EQU    H'0001'
+ RDREQ          EQU    H'0002'
+ GCALL          EQU    H'0005'
+//----------------------------------Register: ADCON3 Bits----------------------------------------------
+ ELVDS0         EQU    H'0000'
+ ELVDS1         EQU    H'0001'
+ LEBADT         EQU    H'0003'
+ ADCMPO         EQU    H'0004'
+ ADCMPEN        EQU    H'0005'
+ ADCMPOP        EQU    H'0006'
+ ADFBEN         EQU    H'0007'
+//----------------------------------Register: LEBCON Bits----------------------------------------------
+ BKS0          EQU    H'0000'
+ BKS1          EQU    H'0001'
+ BKS2          EQU    H'0002'
+ EDGS          EQU    H'0003'
+ LEBCH0        EQU    H'0005'
+ LEBCH1        EQU    H'0006'
+ LEBEN         EQU    H'0007'
+//----------------------------------Register: MSCKCON Bits----------------------------------------------
+ CKCNTI        EQU    H'0000'
+ CKMAVG        EQU    H'0001'
+//
+// Special function register definitions: Bank 9
+//
+ 
+ //-------------------------------------Register: UR1DATAH Bits----------------------------------------------
+ UR1DATAH0      EQU    H'0000'
+//----------------------------------Register: UR1IER  Bits----------------------------------------------
+ UR1RXNE        EQU    H'0000'
+ UR1TE          EQU    H'0001'
+ UR1RXSE        EQU    H'0002'
+ UR1IDELE       EQU    H'0003'
+ UR1TCEN        EQU    H'0005'
+//----------------------------------Register: UR1LCR Bits----------------------------------------------
+
+UR1LTH          EQU    H'0000'
+UR1STOP         EQU    H'0002'
+UR1PEN          EQU    H'0003'
+UR1EVEN         EQU    H'0004'
+UR1BKREQ        EQU    H'0006'
+//----------------------------------Register: UR1LCREXT Bits----------------------------------------------
+UR1EXTEN        EQU    H'0000'
+UR1RWU          EQU    H'0001' 
+//----------------------------------Register: UR1MCR Bits----------------------------------------------
+UR1SIREN        EQU    H'0000'
+UR1HDSEL        EQU    H'0001'
+UR1WAKE         EQU    H'0002'
+UR1RXEN         EQU    H'0003'
+UR1TXEN         EQU    H'0004'
+UR1SIRLP        EQU    H'0005'
+//----------------------------------Register: UR1LSR Bits----------------------------------------------
+
+UR1RXNEF        EQU    H'0000'
+UR1OVERF        EQU    H'0001'
+UR1PEF          EQU    H'0002'
+UR1FEF          EQU    H'0003'
+UR1BKF          EQU    H'0004'
+UR1TXEF         EQU    H'0005'
+UR1IDLEF        EQU    H'0006'
+UR1URADDRF      EQU    H'0007'
+//--------------------------------Register: UR1ABCR Bits----------------------------------------------
+UR1ABREN        EQU    H'0000'
+UR1ABRF         EQU    H'0001'
+UR1ABRM         EQU    H'0002'
+UR1ABRE         EQU    H'0003'
+//----------------------------------Register: UR1SYNCR Bits----------------------------------------------
+UR1SYNEN        EQU    H'0000'
+UR1CPOL       	EQU    H'0001'
+UR1CPHA       	EQU    H'0002'
+UR1LBCL         EQU    H'0003'
+//-----------------------------------Register: UR1LINCR Bits----------------------------------------------
+UR1BLTH0        EQU    H'0000'
+UR1BLTH1        EQU    H'0001'
+UR1BLTH2        EQU    H'0002'
+UR1BLTH3        EQU    H'0003'
+UR1LINEN        EQU    H'0004'
+//----------------------------------Register: UR1SDCR0 Bits----------------------------------------------
+UR1SDEN         EQU    H'0004'
+UR1CKOE         EQU    H'0005'
+UR1NACK         EQU    H'0006'
+//----------------------------------Register: UR1SDCR1 Bits----------------------------------------------
+UR1GT0         EQU    H'0000'
+UR1GT1         EQU    H'0001'
+UR1GT2         EQU    H'0002'
+UR1GT3         EQU    H'0003'
+UR1GT4         EQU    H'0004'
+UR1GT5         EQU    H'0005'
+UR1GT6         EQU    H'0006'
+UR1GT7         EQU    H'0007'
+//----------------------------------Register: UR1SDCR2 Bits----------------------------------------------
+UR1PSC0        EQU    H'0000'
+UR1PSC1        EQU    H'0001'
+UR1PSC2        EQU    H'0002'
+UR1PSC3        EQU    H'0003'
+UR1PSC4        EQU    H'0004'
+UR1PSC5        EQU    H'0005'
+UR1PSC6        EQU    H'0006'
+UR1PSC7        EQU    H'0007'
+//-----------------------------------Register: UR1TC Bits----------------------------------------------
+UR1TCF           EQU    H'0000'
+
+//-----------------------------------Register: UR1RSM Bits----------------------------------------------
+UR1AS           EQU    H'0000'
+UR1ABSEN        EQU    H'0002'
+UR1ADR          EQU    H'0003'
+UR1BDR          EQU    H'0004'
+UR1ASINK        EQU    H'0005'
+UR1BSINK        EQU    H'0006'
+UR1HTF          EQU    H'0007'
+
+// Special function register definitions: Bank 10
+//-----------------------------------Register: UR2DATAH Bits----------------------------------------------
+UR2DATAH0       EQU    H'0000'
+
+//----------------------------------Register: UR2IER  Bits----------------------------------------------
+ UR2RXNE        EQU    H'0000'
+ UR2TE          EQU    H'0001'
+ UR2RXSE        EQU    H'0002'
+ UR2IDELE       EQU    H'0003'
+ UR2TCEN        EQU    H'0005'
+
+//----------------------------------Register: UR2LCR Bits----------------------------------------------
+
+UR2LTH          EQU    H'0000'
+UR2STOP         EQU    H'0002'
+UR2PEN          EQU    H'0003'
+UR2EVEN         EQU    H'0004'
+UR2BKREQ        EQU    H'0006'
+
+//----------------------------------Register: UR2LCREXT Bits----------------------------------------------
+UR2EXTEN        EQU    H'0000'
+UR2RWU          EQU    H'0001'          
+
+//----------------------------------Register: UR2MCR Bits----------------------------------------------
+UR2SIREN        EQU    H'0000'
+UR2HDSEL        EQU    H'0001'
+UR2WAKE         EQU    H'0002'
+UR2RXEN         EQU    H'0003'
+UR2TXEN         EQU    H'0004'
+UR2SIRLP        EQU    H'0005'
+
+//----------------------------------Register: UR2LSR Bits----------------------------------------------
+
+UR2RXNEF        EQU    H'0000'
+UR2OVERF        EQU    H'0001'
+UR2PEF          EQU    H'0002'
+UR2FEF          EQU    H'0003'
+UR2BKF          EQU    H'0004'
+UR2TXEF         EQU    H'0005'
+UR2IDLEF        EQU    H'0006'
+UR2URADDRF      EQU    H'0007'
+//--------------------------------Register: UR2ABCR Bits----------------------------------------------
+UR2ABREN        EQU    H'0000'
+UR2ABRF         EQU    H'0001'
+UR2ABRM         EQU    H'0002'
+UR2ABRE         EQU    H'0003'
+
+//----------------------------------Register: UR2SYNCR Bits----------------------------------------------
+UR2SYNEN        EQU    H'0000'
+UR2CPOL       	EQU    H'0001'
+UR2CPHA       	EQU    H'0002'
+UR2LBCL         EQU    H'0003'
+
+//-----------------------------------Register: UR2LINCR Bits----------------------------------------------
+UR2BLTH0        EQU    H'0000'
+UR2BLTH1        EQU    H'0001'
+UR2BLTH2        EQU    H'0002'
+UR2BLTH3        EQU    H'0003'
+UR2LINEN        EQU    H'0004'
+//----------------------------------Register: UR2SDCR0 Bits----------------------------------------------
+UR2SDEN         EQU    H'0004'
+UR2CKOE         EQU    H'0005'
+UR2NACK         EQU    H'0006'
+//----------------------------------Register: UR2SDCR1 Bits----------------------------------------------
+UR2GT0         EQU    H'0000'
+UR2GT1         EQU    H'0001'
+UR2GT2         EQU    H'0002'
+UR2GT3         EQU    H'0003'
+UR2GT4         EQU    H'0004'
+UR2GT5         EQU    H'0005'
+UR2GT6         EQU    H'0006'
+UR2GT7         EQU    H'0007'
+//----------------------------------Register: UR2SDCR2 Bits----------------------------------------------
+UR2PSC0        EQU    H'0000'
+UR2PSC1        EQU    H'0001'
+UR2PSC2        EQU    H'0002'
+UR2PSC3        EQU    H'0003'
+UR2PSC4        EQU    H'0004'
+UR2PSC5        EQU    H'0005'
+UR2PSC6        EQU    H'0006'
+UR2PSC7        EQU    H'0007'
+//-----------------------------------Register: UR2TC Bits----------------------------------------------
+UR2TCF           EQU    H'0000'
+//
+//----------------------------------Register: CKAUX Bits----------------------------------------------
+CLKOS          EQU    H'0001'
+//----------------------------------Register: OP0CR0 Bits----------------------------------------------
+OP0ON          EQU    H'0000'
+OP0RF0         EQU    H'0001'
+OP0RF1         EQU    H'0002'
+OP0RF2         EQU    H'0003'
+OP0NSEL0       EQU    H'0004'
+OP0NSEL1       EQU    H'0005'
+OP0PSEL        EQU    H'0006'
+OP0OUT         EQU    H'0007'
+//----------------------------------Register: OP0CR1 Bits----------------------------------------------
+OPTOIO         EQU    H'0000'
+OPTODIG        EQU    H'0001'
+OP0TM          EQU    H'0002'
+OP0FCAPE       EQU    H'0003'
+//----------------------------------Register: OP0CFG Bits----------------------------------------------
+OP0COF0        EQU    H'0000'
+OP0COF1        EQU    H'0001'
+OP0COF2        EQU    H'0002'
+OP0COF3        EQU    H'0003'
+OP0COF4        EQU    H'0003'
+//----------------------------------Register: LVDTUNE Bits----------------------------------------------
+LVDCAL0        EQU    H'0004'
+LVDCAL1        EQU    H'0005'
+LVDCAL2        EQU    H'0006'
+LVDCAL3        EQU    H'0007'
+
+
+// Special function register definitions: Bank 31
+//

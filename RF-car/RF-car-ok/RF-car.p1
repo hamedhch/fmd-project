@@ -992,15 +992,15 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [v _SFR9F `Vuc ~T0 @X0 1 e@159 ]
 [; ;FT60F01X.h: 554: volatile unsigned char SFR9F @0x09F;
 [; ;SYSCFG.h: 31: extern void __nop(void);
-[; ;SYSCFG.h: 79: extern unsigned int flash_read(unsigned short addr);
+[; ;SYSCFG.h: 61: extern unsigned int flash_read(unsigned short addr);
 [; ;eeprom_routines.h: 41: extern void eeprom_write(unsigned char addr, unsigned char value);
 [; ;eeprom_routines.h: 42: extern unsigned char eeprom_read(unsigned char addr);
 [; ;eeprom_routines.h: 43: extern void eecpymem(volatile unsigned char *to, __eeprom unsigned char *from, unsigned char size);
 [; ;eeprom_routines.h: 44: extern void memcpyee(__eeprom unsigned char *to, const unsigned char *from, unsigned char size);
-[; ;SYSCFG.h: 153: extern __nonreentrant void _delay(unsigned long);
-[; ;SYSCFG.h: 175: extern unsigned char __resetbits;
-[; ;SYSCFG.h: 176: extern __bit __powerdown;
-[; ;SYSCFG.h: 177: extern __bit __timeout;
+[; ;SYSCFG.h: 135: extern __nonreentrant void _delay(unsigned long);
+[; ;SYSCFG.h: 157: extern unsigned char __resetbits;
+[; ;SYSCFG.h: 158: extern __bit __powerdown;
+[; ;SYSCFG.h: 159: extern __bit __timeout;
 "34 RF-car.C
 [v _Timer `Vui ~T0 @X0 1 e ]
 [i _Timer

@@ -1,0 +1,245 @@
+[p PRO_MODE GLOBOPT AUTOSTATIC RSC14 PICREGULAR PICMID SPACEOPT ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip FT62F21X ]
+[d frameptr 6 ]
+"62 C:\Users\DATA\Desktop\FMDIDE3.0.7\data\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Users\DATA\Desktop\FMDIDE3.0.7\data\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"45 c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+[v _ISR ISR `II(v  1 e 1 0 ]
+"60
+[v _TIMER0_INITIAL TIMER0_INITIAL `(v  1 e 1 0 ]
+"76
+[v _POWER_INITIAL POWER_INITIAL `(v  1 e 1 0 ]
+"89
+[v _uart_delay uart_delay `(v  1 e 1 0 ]
+"97
+[v _uart_tx uart_tx `(v  1 e 1 0 ]
+"201
+[v _main main `(v  1 e 1 0 ]
+"36 TOUCH.C
+[v _SendHead SendHead `(v  1 e 1 0 ]
+"43
+[v _DelayUsz DelayUsz `(v  1 e 1 0 ]
+"58
+[v _DelayUs DelayUs `(v  1 e 1 0 ]
+"72
+[v _DelayMs DelayMs `(v  1 e 1 0 ]
+"103
+[v _ReadCap ReadCap `(v  1 e 1 0 ]
+"168
+[v _Touch_init Touch_init `(v  1 e 1 0 ]
+"177
+[v _Touch_end Touch_end `(v  1 e 1 0 ]
+"186
+[v _ReadCap1 ReadCap1 `(v  1 e 1 0 ]
+"244
+[v _ReadCapCharge ReadCapCharge `(v  1 e 1 0 ]
+"273
+[v _ReadCapDisCharge ReadCapDisCharge `(v  1 e 1 0 ]
+"375
+[v _SendDataToPC SendDataToPC `(v  1 e 1 0 ]
+"10 c:\users\jerry.liu\desktop\ide3.0.0_xc8\data\include\FT62F21X.h
+[v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
+"18
+[v _STATUS STATUS `VEuc  1 e 1 @3 ]
+"59
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+"69
+[v _PA1 PA1 `VEb  1 e 0 @41 ]
+"73
+[v _PA5 PA5 `VEb  1 e 0 @45 ]
+"115
+[v _INTCON INTCON `VEuc  1 e 1 @11 ]
+"119
+[v _T0IF T0IF `VEb  1 e 0 @90 ]
+"122
+[v _T0IE T0IE `VEb  1 e 0 @93 ]
+"124
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"438
+[v _OPTION OPTION `VEuc  1 e 1 @129 ]
+"467
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"492
+[v _TKCON TKCON `VEuc  1 e 1 @134 ]
+"497
+[v _TKCHE3 TKCHE3 `VEb  1 e 0 @1075 ]
+"498
+[v _TKEN TKEN `VEb  1 e 0 @1076 ]
+"499
+[v _TKCHGS0 TKCHGS0 `VEb  1 e 0 @1077 ]
+"500
+[v _TKCHGS1 TKCHGS1 `VEb  1 e 0 @1078 ]
+"564
+[v _LVDCON LVDCON `VEuc  1 e 1 @141 ]
+"583
+[v _PCON PCON `VEuc  1 e 1 @142 ]
+"588
+[v _LVDEN LVDEN `VEb  1 e 0 @1139 ]
+"613
+[v _OSCCON OSCCON `VEuc  1 e 1 @143 ]
+"678
+[v _WPUA WPUA `VEuc  1 e 1 @149 ]
+"29 c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+[v _TestCount TestCount `VEuc  1 e 1 0 ]
+"30
+[v _ReadCom ReadCom `VEuc  1 e 1 0 ]
+"31
+[v _ChargeCount ChargeCount `VEui  1 e 2 0 ]
+"32
+[v _TreCount TreCount `VEuc  1 e 1 0 ]
+"33
+[v _TCount TCount `VEuc  1 e 1 0 ]
+"9 TOUCH.C
+[v _Touch_C0 Touch_C0 `VEuc  1 e 1 @115 ]
+"10
+[v _Touch_C1 Touch_C1 `VEuc  1 e 1 @116 ]
+"11
+[v _temp2 temp2 `VEuc  1 e 1 0 ]
+"12
+[v _Touch_Number Touch_Number `VEui  1 e 2 0 ]
+"13
+[v _Touch_Buff Touch_Buff `VEui  1 e 2 @115 ]
+"14
+[v _Touch_Number1 Touch_Number1 `VEui  1 e 2 0 ]
+"15
+[v _Touch_Number_sum Touch_Number_sum `VEui  1 e 2 0 ]
+"16
+[v _Touch_Number1_sum Touch_Number1_sum `VEui  1 e 2 0 ]
+"17
+[v _NowKey NowKey `VEuc  1 e 1 @117 ]
+"18
+[v _chbuff chbuff `VEuc  1 e 1 @118 ]
+"19
+[v _SendTouch_Number1 SendTouch_Number1 `VE[4]ui  1 e 8 0 ]
+"20
+[v _SendTouch_Number2 SendTouch_Number2 `VE[4]ui  1 e 8 0 ]
+"201 c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"216
+} 0
+"60
+[v _TIMER0_INITIAL TIMER0_INITIAL `(v  1 e 1 0 ]
+{
+"69
+} 0
+"375 TOUCH.C
+[v _SendDataToPC SendDataToPC `(v  1 e 1 0 ]
+{
+"380
+} 0
+"273
+[v _ReadCapDisCharge ReadCapDisCharge `(v  1 e 1 0 ]
+{
+"276
+[v ReadCapDisCharge@Count Count `uc  1 a 1 6 ]
+"373
+} 0
+"36
+[v _SendHead SendHead `(v  1 e 1 0 ]
+{
+"41
+} 0
+"97 c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+[v _uart_tx uart_tx `(v  1 e 1 0 ]
+{
+[v uart_tx@data data `uc  1 a 1 wreg ]
+[v uart_tx@data data `uc  1 a 1 wreg ]
+"99
+[v uart_tx@data data `uc  1 a 1 2 ]
+"193
+} 0
+"89
+[v _uart_delay uart_delay `(v  1 e 1 0 ]
+{
+"95
+} 0
+"186 TOUCH.C
+[v _ReadCap1 ReadCap1 `(v  1 e 1 0 ]
+{
+[v ReadCap1@ch ch `uc  1 a 1 wreg ]
+"188
+[v ReadCap1@sum sum `ui  1 a 2 1 ]
+"189
+[v ReadCap1@Count Count `uc  1 a 1 3 ]
+"186
+[v ReadCap1@ch ch `uc  1 a 1 wreg ]
+"188
+[v ReadCap1@ch ch `uc  1 a 1 0 ]
+"240
+} 0
+"168
+[v _Touch_init Touch_init `(v  1 e 1 0 ]
+{
+"176
+} 0
+"177
+[v _Touch_end Touch_end `(v  1 e 1 0 ]
+{
+"183
+} 0
+"43
+[v _DelayUsz DelayUsz `(v  1 e 1 0 ]
+{
+"45
+[v DelayUsz@a a `uc  1 a 1 2 ]
+"50
+} 0
+"72
+[v _DelayMs DelayMs `(v  1 e 1 0 ]
+{
+[v DelayMs@Time Time `uc  1 a 1 wreg ]
+"74
+[v DelayMs@b b `uc  1 a 1 2 ]
+[v DelayMs@a a `uc  1 a 1 1 ]
+"72
+[v DelayMs@Time Time `uc  1 a 1 wreg ]
+"75
+[v DelayMs@Time Time `uc  1 a 1 0 ]
+"82
+} 0
+"58
+[v _DelayUs DelayUs `(v  1 e 1 0 ]
+{
+[v DelayUs@Time Time `uc  1 a 1 wreg ]
+"60
+[v DelayUs@a a `uc  1 a 1 3 ]
+"58
+[v DelayUs@Time Time `uc  1 a 1 wreg ]
+"61
+[v DelayUs@Time Time `uc  1 a 1 2 ]
+"65
+} 0
+"244
+[v _ReadCapCharge ReadCapCharge `(v  1 e 1 0 ]
+{
+"271
+} 0
+"103
+[v _ReadCap ReadCap `(v  1 e 1 0 ]
+{
+[v ReadCap@ch ch `uc  1 a 1 wreg ]
+"105
+[v ReadCap@sum sum `ui  1 a 2 0 ]
+"110
+[v ReadCap@Count Count `uc  1 a 1 3 ]
+"103
+[v ReadCap@ch ch `uc  1 a 1 wreg ]
+"105
+[v ReadCap@ch ch `uc  1 a 1 2 ]
+"164
+} 0
+"76 c:\users\data\desktop\fmdide3.0.7\Testtmp\main.c
+[v _POWER_INITIAL POWER_INITIAL `(v  1 e 1 0 ]
+{
+"86
+} 0
+"45
+[v _ISR ISR `II(v  1 e 1 0 ]
+{
+"51
+} 0

@@ -1,5 +1,5 @@
 Version 3.2   GCC8 Compiled Intermediate Code
-"39 C:\Program Files (x86)\CCompiler\Compiler\data\include\FT60F01X.h
+"39 C:\Users\hamed\OneDrive\Documents\FMD_Project\ft62f211\FMDIDE3.0.7\data\include\FT60F01X.h
 [s S2 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S2 . CARRY DC ZERO nPD nTO RP ]
 "47
@@ -131,14 +131,14 @@ Version 3.2   GCC8 Compiled Intermediate Code
 "480
 [u S43 `S44 1 ]
 [n S43 . . ]
-"31 C:\Program Files (x86)\CCompiler\Compiler\data\include\SYSCFG.h
+"31 C:\Users\hamed\OneDrive\Documents\FMD_Project\ft62f211\FMDIDE3.0.7\data\include\SYSCFG.h
 [v ___nop `(v ~T0 @X0 0 ef ]
 [p i ___nop ]
 [p mainexit ]
 [; ;fmd.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;fmd.h: 28: extern double __fpnormalize(double);
-[; ;gcc8debug.h: 14: extern void __builtin_software_breakpoint(void);
-"10 C:\Program Files (x86)\CCompiler\Compiler\data\include\FT60F01X.h
+[; ;GCC8debug.h: 14: extern void __builtin_software_breakpoint(void);
+"10 C:\Users\hamed\OneDrive\Documents\FMD_Project\ft62f211\FMDIDE3.0.7\data\include\FT60F01X.h
 [v _INDF `Vuc ~T0 @X0 1 e@0 ]
 [; ;FT60F01X.h: 10: volatile unsigned char INDF @ 0x000;
 "14
@@ -1021,9 +1021,9 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [; ;ir-38k-24v.C: 42: Puls_IR++;
 "42
 [e ++ _Puls_IR -> -> 1 `i `ui ]
-[; ;ir-38k-24v.C: 46: PA0 = ~PA0;
+[; ;ir-38k-24v.C: 46: PA1 = ~PA1;
 "46
-[e = _PA0 -> ~ -> _PA0 `ui `b ]
+[e = _PA1 -> ~ -> _PA1 `ui `b ]
 [; ;ir-38k-24v.C: 48: if(Puls_IR>=40){
 "48
 [e $ ! >= _Puls_IR -> -> 40 `i `ui 47  ]
@@ -1034,9 +1034,9 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [; ;ir-38k-24v.C: 50: T0IE=0;
 "50
 [e = _T0IE -> -> 0 `i `b ]
-[; ;ir-38k-24v.C: 51: PA0 = 0;
+[; ;ir-38k-24v.C: 51: PA1 = 0;
 "51
-[e = _PA0 -> -> 0 `i `b ]
+[e = _PA1 -> -> 0 `i `b ]
 "52
 }
 [e :U 47 ]
@@ -1229,9 +1229,9 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [; ;ir-38k-24v.C: 108: PORTA = 0B00000000;
 "108
 [e = _PORTA -> -> 0 `i `uc ]
-[; ;ir-38k-24v.C: 109: TRISA = 0B00000100;
+[; ;ir-38k-24v.C: 109: TRISA = 0B00001000;
 "109
-[e = _TRISA -> -> 4 `i `uc ]
+[e = _TRISA -> -> 8 `i `uc ]
 [; ;ir-38k-24v.C: 111: WPUA = 0B00000000;
 "111
 [e = _WPUA -> -> 0 `i `uc ]
@@ -1327,9 +1327,9 @@ Version 3.2   GCC8 Compiled Intermediate Code
 "164
 [e $ ! >= _Puls_IR -> -> 40 `i `ui 76  ]
 {
-[; ;ir-38k-24v.C: 169: if(PA2==0){
+[; ;ir-38k-24v.C: 169: if(PA3==0){
 "169
-[e $ ! == -> _PA2 `i -> 0 `i 77  ]
+[e $ ! == -> _PA3 `i -> 0 `i 77  ]
 {
 [; ;ir-38k-24v.C: 170: Puls_Count++;
 "170
@@ -1358,9 +1358,9 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [; ;ir-38k-24v.C: 178: DelayUs(400);
 "178
 [e ( _DelayUs (1 -> -> 400 `i `uc ]
-[; ;ir-38k-24v.C: 180: if(PA2!=0){
+[; ;ir-38k-24v.C: 180: if(PA3!=0){
 "180
-[e $ ! != -> _PA2 `i -> 0 `i 79  ]
+[e $ ! != -> _PA3 `i -> 0 `i 79  ]
 {
 [; ;ir-38k-24v.C: 181: Puls_Count++;
 "181
@@ -1396,77 +1396,83 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [; ;ir-38k-24v.C: 197: Lock=1;
 "197
 [e = _Lock -> -> 1 `i `ui ]
-[; ;ir-38k-24v.C: 199: PA1=1;
+[; ;ir-38k-24v.C: 199: PA4 =0;
 "199
-[e = _PA1 -> -> 1 `i `b ]
-[; ;ir-38k-24v.C: 200: DelayMs(500);
-"200
-[e ( _DelayMs (1 -> -> 500 `i `uc ]
-[; ;ir-38k-24v.C: 201: PA1=0;
-"201
-[e = _PA1 -> -> 0 `i `b ]
-[; ;ir-38k-24v.C: 202: DelayMs(200);
-"202
-[e ( _DelayMs (1 -> -> 200 `i `uc ]
-[; ;ir-38k-24v.C: 203: PA1=1;
-"203
-[e = _PA1 -> -> 1 `i `b ]
-[; ;ir-38k-24v.C: 204: DelayMs(500);
-"204
-[e ( _DelayMs (1 -> -> 500 `i `uc ]
-[; ;ir-38k-24v.C: 205: PA1=0;
-"205
-[e = _PA1 -> -> 0 `i `b ]
-[; ;ir-38k-24v.C: 207: PA4 =1;
-"207
-[e = _PA4 -> -> 1 `i `b ]
-[; ;ir-38k-24v.C: 208: DelayMs(3000);
-"208
-[e ( _DelayMs (1 -> -> 3000 `i `uc ]
-[; ;ir-38k-24v.C: 209: PA4 =0;
-"209
 [e = _PA4 -> -> 0 `i `b ]
+[; ;ir-38k-24v.C: 201: PA2=1;
+"201
+[e = _PA2 -> -> 1 `i `b ]
+[; ;ir-38k-24v.C: 202: DelayMs(500);
+"202
+[e ( _DelayMs (1 -> -> 500 `i `uc ]
+[; ;ir-38k-24v.C: 203: PA2=0;
+"203
+[e = _PA2 -> -> 0 `i `b ]
+[; ;ir-38k-24v.C: 204: DelayMs(200);
+"204
+[e ( _DelayMs (1 -> -> 200 `i `uc ]
+[; ;ir-38k-24v.C: 205: PA2=1;
+"205
+[e = _PA2 -> -> 1 `i `b ]
+[; ;ir-38k-24v.C: 206: DelayMs(500);
+"206
+[e ( _DelayMs (1 -> -> 500 `i `uc ]
+[; ;ir-38k-24v.C: 207: PA2=0;
+"207
+[e = _PA2 -> -> 0 `i `b ]
+[; ;ir-38k-24v.C: 210: DelayMs(4000);
+"210
+[e ( _DelayMs (1 -> -> 4000 `i `uc ]
+[; ;ir-38k-24v.C: 211: DelayMs(4000);
 "211
+[e ( _DelayMs (1 -> -> 4000 `i `uc ]
+[; ;ir-38k-24v.C: 212: DelayMs(4000);
+"212
+[e ( _DelayMs (1 -> -> 4000 `i `uc ]
+[; ;ir-38k-24v.C: 214: PA4 =1;
+"214
+[e = _PA4 -> -> 1 `i `b ]
+"216
 }
 [e :U 81 ]
-[; ;ir-38k-24v.C: 211: }
-[; ;ir-38k-24v.C: 212: if(Puls_off>500 )
-"212
+[; ;ir-38k-24v.C: 216: }
+[; ;ir-38k-24v.C: 217: if(Puls_off>500 )
+"217
 [e $ ! > _Puls_off -> -> 500 `i `ui 82  ]
-[; ;ir-38k-24v.C: 213: {
-"213
+[; ;ir-38k-24v.C: 218: {
+"218
 {
-[; ;ir-38k-24v.C: 214: Lock=0;
-"214
+[; ;ir-38k-24v.C: 219: Lock=0;
+"219
 [e = _Lock -> -> 0 `i `ui ]
-"215
+"220
 }
 [e :U 82 ]
-[; ;ir-38k-24v.C: 215: }
-[; ;ir-38k-24v.C: 221: TMR0 = 239;
-"221
+[; ;ir-38k-24v.C: 220: }
+[; ;ir-38k-24v.C: 226: TMR0 = 239;
+"226
 [e = _TMR0 -> -> 239 `i `uc ]
-[; ;ir-38k-24v.C: 222: T0IF = 0;
-"222
+[; ;ir-38k-24v.C: 227: T0IF = 0;
+"227
 [e = _T0IF -> -> 0 `i `b ]
-[; ;ir-38k-24v.C: 223: T0IE=1;
-"223
+[; ;ir-38k-24v.C: 228: T0IE=1;
+"228
 [e = _T0IE -> -> 1 `i `b ]
-[; ;ir-38k-24v.C: 224: Puls_IR=0;
-"224
+[; ;ir-38k-24v.C: 229: Puls_IR=0;
+"229
 [e = _Puls_IR -> -> 0 `i `ui ]
-"225
+"230
 }
 [e :U 76 ]
-"234
+"239
 }
 [e :U 73 ]
 "161
 [e $U 74  ]
 [e :U 75 ]
-[; ;ir-38k-24v.C: 225: }
-[; ;ir-38k-24v.C: 234: }
-[; ;ir-38k-24v.C: 235: }
-"235
+[; ;ir-38k-24v.C: 230: }
+[; ;ir-38k-24v.C: 239: }
+[; ;ir-38k-24v.C: 240: }
+"240
 [e :UE 72 ]
 }

@@ -1,0 +1,60 @@
+!SESSION 2022-04-13 13:50:50.047 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86 -data D:\workspace\FMD\Touch\6100\IAR\LIB\touchlib_6100_pollscan_normalscan
+
+!ENTRY com.iar.cdt.arm.toolchain.cmsis.adapter 1 0 2022-04-13 13:50:52.849
+!MESSAGE Using CMSIS pack repositories: http://links.iar.com/cmsis/pack/
+
+!ENTRY com.iar.cmsismanager.product 1 0 2022-04-13 13:50:53.875
+!MESSAGE CMSIS Agent interface registered with service registry at ServiceLocation(host:\\.\pipe\iar-cspy-cpp-binary-com.iar.thrift.service.registry-2d529076-121d-496f-a9b2-004a27148bac-1, port:0, protocol:Binary, transport:Pipe)
+
+!ENTRY com.iar.cmsismanager.product 1 0 2022-04-13 14:05:27.388
+!MESSAGE CMSIS Agent interface deregistered with service registry at ServiceLocation(host:\\.\pipe\iar-cspy-cpp-binary-com.iar.thrift.service.registry-2d529076-121d-496f-a9b2-004a27148bac-1, port:0, protocol:Binary, transport:Pipe)
+
+!ENTRY com.iar.cmsismanager.product 1 0 2022-04-13 14:05:27.388
+!MESSAGE Exiting workbench is response to shutdown() command.
+!SESSION 2022-04-13 14:36:13.127 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86 -data D:\workspace\FMD\Touch\6100\IAR\LIB\touchlib_6100_pollscan_normalscan
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-04-13 14:36:14.234
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.iar.cdt.arm.toolchain.cmsis.adapter 1 0 2022-04-13 14:36:14.327
+!MESSAGE Using CMSIS pack repositories: http://links.iar.com/cmsis/pack/
+
+!ENTRY com.iar.cmsismanager.product 1 0 2022-04-13 14:36:17.630
+!MESSAGE CMSIS Agent interface registered with service registry at ServiceLocation(host:\\.\pipe\iar-cspy-cpp-binary-com.iar.thrift.service.registry-7d17baba-c9dd-4d41-b8e9-878edce808ec-1, port:0, protocol:Binary, transport:Pipe)
+
+!ENTRY com.iar.cmsismanager.product 1 0 2022-04-13 14:38:09.929
+!MESSAGE CMSIS Agent interface deregistered with service registry at ServiceLocation(host:\\.\pipe\iar-cspy-cpp-binary-com.iar.thrift.service.registry-7d17baba-c9dd-4d41-b8e9-878edce808ec-1, port:0, protocol:Binary, transport:Pipe)
+
+!ENTRY com.iar.cmsismanager.product 1 0 2022-04-13 14:38:09.929
+!MESSAGE Exiting workbench is response to shutdown() command.
+!SESSION 2022-04-13 17:54:59.656 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86 -data D:\workspace\FMD\Touch\6100\IAR\LIB\touchlib_6100_pollscan_normalscan
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-04-13 17:55:00.785
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.iar.cdt.arm.toolchain.cmsis.adapter 1 0 2022-04-13 17:55:00.874
+!MESSAGE Using CMSIS pack repositories: http://links.iar.com/cmsis/pack/
+
+!ENTRY com.iar.cmsismanager.product 1 0 2022-04-13 17:55:04.178
+!MESSAGE CMSIS Agent interface registered with service registry at ServiceLocation(host:\\.\pipe\iar-cspy-cpp-binary-com.iar.thrift.service.registry-1c4878e1-1427-42ae-a291-403e3ca54817-1, port:0, protocol:Binary, transport:Pipe)
+
+!ENTRY com.iar.cmsismanager.product 1 0 2022-04-13 17:57:26.089
+!MESSAGE CMSIS Agent interface deregistered with service registry at ServiceLocation(host:\\.\pipe\iar-cspy-cpp-binary-com.iar.thrift.service.registry-1c4878e1-1427-42ae-a291-403e3ca54817-1, port:0, protocol:Binary, transport:Pipe)
+
+!ENTRY com.iar.cmsismanager.product 1 0 2022-04-13 17:57:26.089
+!MESSAGE Exiting workbench is response to shutdown() command.

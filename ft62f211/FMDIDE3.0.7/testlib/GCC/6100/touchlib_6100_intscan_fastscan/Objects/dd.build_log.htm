@@ -1,0 +1,139 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.36.0.0
+Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: lh lish, li, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.36.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.16
+Assembler:       Armasm.exe V6.16
+Linker/Locator:  ArmLink.exe V6.16
+Library Manager: ArmAr.exe V6.16
+Hex Converter:   FromElf.exe V6.16
+CPU DLL:         SARMCM3.DLL V5.36.0.0
+Dialog DLL:      DARMCM1.DLL V1.19.4.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.9.0
+Dialog DLL:      TARMCM1.DLL V1.14.4.0
+ 
+<h2>Project:</h2>
+D:\workspace\FMD\Touch\6100\LIB\touchlib_6100_intscan_fastscan\BoardDemo.uvprojx
+Project File Date:  04/07/2022
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'Target 1'
+compiling ft32f0xx_it.c...
+USER/Source/main.c(22): warning: In file included from...
+./USER/Include\main.h(17): warning: In file included from...
+./TOUCH_LIB\ft32f0xx_touch.h(80): warning: excess elements in array initializer [-Wexcess-initializers]
+    KEY0_ON, KEY1_ON, KEY2_ON, KEY3_ON, KEY4_ON, KEY5_ON, KEY6_ON, KEY7_ON,
+                      ^~~~~~~
+./TOUCH_LIB\ft32f0xx_touch.h(56): note: expanded from macro 'KEY2_ON'
+#define   KEY2_ON                   20
+                                    ^~
+./TOUCH_LIB\ft32f0xx_touch.h(111): warning: excess elements in array initializer [-Wexcess-initializers]
+    KEY0_INDEX_MAP, KEY1_INDEX_MAP, KEY2_INDEX_MAP, KEY3_INDEX_MAP, KEY4_INDEX_MAP, KEY5_INDEX_MAP, KEY6_INDEX_MAP, KEY7_INDEX_MAP,
+                                    ^~~~~~~~~~~~~~
+./TOUCH_LIB\ft32f0xx_touch.h(87): note: expanded from macro 'KEY2_INDEX_MAP'
+#define   KEY2_INDEX_MAP            2
+                                    ^
+2 warnings generated.
+compiling main.c...
+compiling ft32f0xx_gpio.c...
+compiling ft32f0xx_dma.c...
+compiling ft32f0xx_comp.c...
+compiling ft32f0xx_flash.c...
+compiling ft32f0xx_exti.c...
+assembling startup_ft32f072xb.s...
+compiling ft32f0xx_usart.c...
+compiling ft32f0xx_misc.c...
+compiling ft32f0xx_rcc.c...
+compiling system_ft32f0xx.c...
+compiling ft32f0xx_tim.c...
+linking...
+Program Size: Code=5948 RO-data=432 RW-data=68 ZI-data=1540  
+FromELF: creating hex file...
+".\Objects\dd.axf" - 0 Error(s), 2 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.8.0.pack
+                ARM.CMSIS.5.8.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.5.0
+
+Package Vendor: FMD
+                https://www.fremontmicro.com/upload/tools/pack/FMD.FT32F0xx_DFP.1.0.5.pack
+                FMD.FT32F0xx_DFP.1.0.5
+                FremontMicro FT32F0 Series Device Support and Examples
+   * Component: COMMON Version: 1.0.1
+   * Component: COMP Version: 1.0.1
+   * Component: DMA Version: 1.0.1
+   * Component: EXTI Version: 1.0.1
+   * Component: FLASH Version: 1.0.1
+   * Component: GPIO Version: 1.0.1
+   * Component: MISC Version: 1.0.1
+   * Component: RCC Version: 1.0.1
+   * Component: TIM Version: 1.0.1
+   * Component: USART Version: 1.0.1
+   * Component: Startup Version: 1.0.1
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\Device\FT32F072R8ATx
+  .\RTE\_Target_1
+  C:\Users\shenghui.li\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include
+  C:\Users\shenghui.li\AppData\Local\Arm\Packs\FMD\FT32F0xx_DFP\1.0.5\Drivers\CMSIS\FT32F0xx\Include
+  C:\Users\shenghui.li\AppData\Local\Arm\Packs\FMD\FT32F0xx_DFP\1.0.5\Drivers\FT32F0xx_Driver\Inc
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.5.0
+
+   * Component: FMD.StdDriverOne::Device:FT32Driver:COMMON:1.0.1
+      Source file:   Drivers\FT32F0xx_Driver\templates\Src\ft32f0xx_it.c
+      Include file:  Drivers\FT32F0xx_Driver\templates\Inc\ft32f0xx_conf.h
+      Include file:  Drivers\FT32F0xx_Driver\templates\Inc\ft32f0xx_it.h
+      Include file:  Drivers\FT32F0xx_Driver\templates\Inc\main.h
+      Source file:   Drivers\FT32F0xx_Driver\templates\Src\main.c
+
+   * Component: FMD.StdDriverOne::Device:FT32Driver:COMP:1.0.1
+      Source file:   Drivers\FT32F0xx_Driver\Src\ft32f0xx_comp.c
+
+   * Component: FMD.StdDriverOne::Device:FT32Driver:DMA:1.0.1
+      Source file:   Drivers\FT32F0xx_Driver\Src\ft32f0xx_dma.c
+
+   * Component: FMD.StdDriverOne::Device:FT32Driver:EXTI:1.0.1
+      Source file:   Drivers\FT32F0xx_Driver\Src\ft32f0xx_exti.c
+
+   * Component: FMD.StdDriverOne::Device:FT32Driver:FLASH:1.0.1
+      Source file:   Drivers\FT32F0xx_Driver\Src\ft32f0xx_flash.c
+
+   * Component: FMD.StdDriverOne::Device:FT32Driver:GPIO:1.0.1
+      Source file:   Drivers\FT32F0xx_Driver\Src\ft32f0xx_gpio.c
+
+   * Component: FMD.StdDriverOne::Device:FT32Driver:MISC:1.0.1
+      Source file:   Drivers\FT32F0xx_Driver\Src\ft32f0xx_misc.c
+
+   * Component: FMD.StdDriverOne::Device:FT32Driver:RCC:1.0.1
+      Source file:   Drivers\FT32F0xx_Driver\Src\ft32f0xx_rcc.c
+
+   * Component: FMD.StdDriverOne::Device:FT32Driver:TIM:1.0.1
+      Source file:   Drivers\FT32F0xx_Driver\Src\ft32f0xx_tim.c
+
+   * Component: FMD.StdDriverOne::Device:FT32Driver:USART:1.0.1
+      Source file:   Drivers\FT32F0xx_Driver\Src\ft32f0xx_usart.c
+
+   * Component: FMD.StdDriverOne::Device:Startup:1.0.1
+      Source file:   Drivers\CMSIS\FT32F0xx\source\arm\startup_ft32f072xb.s
+      Include file:  Drivers\CMSIS\FT32F0xx\Include\ft32f0xx.h
+      Source file:   Drivers\CMSIS\FT32F0xx\source\system_ft32f0xx.c
+Build Time Elapsed:  00:00:03
+</pre>
+</body>
+</html>

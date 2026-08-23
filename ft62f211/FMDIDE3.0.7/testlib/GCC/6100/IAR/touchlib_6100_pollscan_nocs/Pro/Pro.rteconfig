@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<configuration xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
+
+  <device Dclock="72000000" Dcore="Cortex-M0" DcoreVersion="r0p0" Dendian="Little-endian" Dfamily="FT32F0 Series" Dfpu="NO_FPU" Dmpu="NO_MPU" Dname="FT32F072R8" DsubFamily="FT32F072" Dvariant="FT32F072R8ATx" Dvendor="FMD:169" info="ARM , 8 KB RAM, 64 KB ROM" url="https://www.keil.com/dd2/fmd/ft32f072r8atx">
+
+    <package info="FremontMicro FT32F0 Series Device Support and Examples" name="FT32F0xx_DFP" url="https://www.fremontmicro.com/upload/tools/pack/" vendor="FMD" version="1.0.2"/>
+
+  </device>
+
+  <toolchain Tcompiler="IAR" Toutput="exe"/>
+
+  <components>
+
+    <component Cbundle="StdDriverOne" Cbundleversion="1.0.2" Cclass="Device" Cgroup="FT32Driver" Csub="GPIO" Cvendor="FMD" Cversion="1.0.1" deviceDependent="1">
+
+      <package name="FT32F0xx_DFP" url="https://www.fremontmicro.com/upload/tools/pack/" vendor="FMD" version="1.0.2"/>
+
+      <file category="source" deviceDependent="1" name="Drivers/FT32F0xx_Driver/Src/ft32f0xx_gpio.c"/>
+
+    </component>
+
+    <component Cbundle="StdDriverOne" Cbundleversion="1.0.2" Cclass="Device" Cgroup="FT32Driver" Csub="RCC" Cvendor="FMD" Cversion="1.0.1" deviceDependent="1">
+
+      <package name="FT32F0xx_DFP" url="https://www.fremontmicro.com/upload/tools/pack/" vendor="FMD" version="1.0.2"/>
+
+      <file category="source" deviceDependent="1" name="Drivers/FT32F0xx_Driver/Src/ft32f0xx_rcc.c"/>
+
+    </component>
+
+    <component Cbundle="StdDriverOne" Cbundleversion="1.0.2" Cclass="Device" Cgroup="Startup" Cvendor="FMD" Cversion="1.0.1" deviceDependent="1">
+
+      <package name="FT32F0xx_DFP" url="https://www.fremontmicro.com/upload/tools/pack/" vendor="FMD" version="1.0.2"/>
+
+      <file category="include" deviceDependent="1" name="Drivers/FT32F0xx_Driver/Inc/"/>
+
+      <file category="include" deviceDependent="1" name="Drivers/CMSIS/FT32F0xx/Include/"/>
+
+      <file category="header" deviceDependent="1" name="Drivers/CMSIS/FT32F0xx/Include/ft32f0xx.h"/>
+
+      <file attr="config" category="source" deviceDependent="1" name="Drivers/CMSIS/FT32F0xx/source/system_ft32f0xx.c" version="1.0.0"/>
+
+    </component>
+
+  </components>
+
+  <apis/>
+
+  <packages useAllLatestPacks="1"/>
+
+</configuration>
+

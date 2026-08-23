@@ -1,0 +1,2444 @@
+
+
+GNU Macro Assembler for 8 bit devices.       
+                                                                                               Wed Oct 15 19:22:21 2025
+
+GNU C Code Generator                                                 
+     1                           	processor	FT62F21X
+     2                           	opt	pw 120
+     3                           	opt	pm
+     4                           	psect	text0,local,class=CODE,merge=1,delta=2
+     5                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     6                           	psect	bssBANK0,global,class=BANK0,space=1,delta=1
+     7                           	psect	clrtext,global,class=CODE,delta=2
+     8                           	psect	cstackCOMMONh,global,class=COMMON,space=1,delta=1
+     9                           	psect	cstackCOMMONl,global,class=COMMON,space=1,delta=1
+    10                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1
+    11                           	psect	maintext,global,class=CODE,split=1,delta=2
+    12                           	psect	text1,local,class=CODE,merge=1,delta=2
+    13                           	psect	text2,local,class=CODE,merge=1,delta=2,group=1
+    14                           	psect	text3,local,class=CODE,merge=1,delta=2,group=1
+    15                           	psect	text4,local,class=CODE,merge=1,delta=2,group=1
+    16                           	psect	text5,local,class=CODE,merge=1,delta=2
+    17                           	psect	text6,local,class=CODE,merge=1,delta=2
+    18                           	psect	text7,local,class=CODE,merge=1,delta=2,group=1
+    19                           	psect	text8,local,class=CODE,merge=1,delta=2,group=1
+    20                           	psect	text9,local,class=CODE,merge=1,delta=2,group=1
+    21                           	psect	text10,local,class=CODE,merge=1,delta=2,group=1
+    22                           	psect	text11,local,class=CODE,merge=1,delta=2,group=1
+    23                           	psect	text12,local,class=CODE,merge=1,delta=2,group=1
+    24                           	psect	text13,local,class=CODE,merge=1,delta=2,group=1
+    25                           	psect	text14,local,class=CODE,merge=1,delta=2,group=1
+    26                           	psect	text15,local,class=CODE,merge=1,delta=2
+    27                           	psect	text16,local,class=CODE,merge=1,delta=2
+    28                           	psect	intentry,global,class=CODE,delta=2
+    29                           	psect	pa_nodes0,global,class=CODE,delta=2
+    30                           	dabs	1,0x73,2,_Touch_Buff
+    31                           	dabs	1,0x73,1,_Touch_C0
+    32                           	dabs	1,0x76,1,_chbuff
+    33                           	dabs	1,0x75,1,_NowKey
+    34                           	dabs	1,0x74,1,_Touch_C1
+    35                           	dabs	1,0x7E,2
+    36  0000                     
+    37                           ; Version 2.20
+    38                           ; Generated 09/04/2020 
+    39                           ; 
+    40                           ; SFR Addresses
+    41  0000                     
+    42                           	psect	text0
+    43  0000                     __ptext0:	
+    44  000B                     _INTCON	set	11
+    45  0005                     _PORTA	set	5
+    46  0003                     _STATUS	set	3
+    47  0001                     _TMR0	set	1
+    48  005F                     _GIE	set	95
+    49  005D                     _T0IE	set	93
+    50  005A                     _T0IF	set	90
+    51  002D                     _PA5	set	45
+    52  0029                     _PA1	set	41
+    53  0095                     _WPUA	set	149
+    54  008F                     _OSCCON	set	143
+    55  008E                     _PCON	set	142
+    56  008D                     _LVDCON	set	141
+    57  0086                     _TKCON	set	134
+    58  0085                     _TRISA	set	133
+    59  0081                     _OPTION	set	129
+    60  0473                     _LVDEN	set	1139
+    61  0436                     _TKCHGS1	set	1078
+    62  0435                     _TKCHGS0	set	1077
+    63  0434                     _TKEN	set	1076
+    64  0433                     _TKCHE3	set	1075
+    65                           
+    66                           	psect	cinit
+    67  000B                     start_initialization:	
+    68                           ; #config settings
+    69                           
+    70  000B                     __initialization:	
+    71  000B  3040               	movlw	low __pbssBANK0
+    72                           
+    73                           ; Clear objects allocated to BANK0
+    74  000C  1383               	bcf	3,7	;select IRP bank0
+    75  000D  0084               	movwf	4
+    76  000E  305F               	movlw	low (__pbssBANK0+31)
+    77  000F  2266               	fcall	clear_ram0
+    78  0010                     end_of_initialization:	
+    79                           ;End of C runtime variable initialization code
+    80                           
+    81  0010                     __end_of__initialization:	
+    82  0010  0183               	clrf	3
+    83  0011  2A76               	ljmp	_main	;jump to C main() function
+    84                           
+    85                           	psect	bssBANK0
+    86  0040                     __pbssBANK0:	
+    87  0040                     _SendTouch_Number2:	
+    88  0040                     	ds	8
+    89  0048                     _SendTouch_Number1:	
+    90  0048                     	ds	8
+    91  0050                     _Touch_Number1_sum:	
+    92  0050                     	ds	2
+    93  0052                     _Touch_Number_sum:	
+    94  0052                     	ds	2
+    95  0054                     _Touch_Number1:	
+    96  0054                     	ds	2
+    97  0056                     _Touch_Number:	
+    98  0056                     	ds	2
+    99  0058                     _ChargeCount:	
+   100  0058                     	ds	2
+   101  005A                     _temp2:	
+   102  005A                     	ds	1
+   103  005B                     _TCount:	
+   104  005B                     	ds	1
+   105  005C                     _TreCount:	
+   106  005C                     	ds	1
+   107  005D                     _ReadCom:	
+   108  005D                     	ds	1
+   109  005E                     _TestCount:	
+   110  005E                     	ds	1
+   111                           
+   112                           	psect	clrtext
+   113  0266                     clear_ram0:	
+   114                           ;	Called with FSR containing the base address, and
+   115                           ;	W with the last address+1
+   116                           
+   117  0266  0064               	clrwdt	;clear the watchdog before getting into this loop
+   118  0267                     clrloop0:	
+   119  0267  0180               	clrf	0	;clear RAM location pointed to by FSR
+   120  0268  0A84               	incf	4,f	;increment pointer
+   121  0269  0604               	xorwf	4,w	;XOR with final address
+   122  026A  1903               	btfsc	3,2	;have we reached the end yet?
+   123  026B  3400               	retlw	0	;all done for this memory range, return
+   124  026C  0604               	xorwf	4,w	;XOR again to restore value
+   125  026D  2A67               	goto	clrloop0	;do the next byte
+   126                           
+   127                           	psect	cstackCOMMONh
+   128  0077                     __pcstackCOMMONh:	
+   129  0077                     ?_ISR:	
+   130  0077                     ??_ISR:	
+   131                           ; 1 bytes @ 0x0
+   132                           
+   133  0077                     ?_TIMER0_INITIAL:	
+   134                           ; 1 bytes @ 0x0
+   135                           
+   136  0077                     ?_POWER_INITIAL:	
+   137                           ; 1 bytes @ 0x0
+   138                           
+   139  0077                     ?_uart_delay:	
+   140                           ; 1 bytes @ 0x0
+   141                           
+   142  0077                     ?_uart_tx:	
+   143                           ; 1 bytes @ 0x0
+   144                           
+   145  0077                     ?_main:	
+   146                           ; 1 bytes @ 0x0
+   147                           
+   148  0077                     ?_SendHead:	
+   149                           ; 1 bytes @ 0x0
+   150                           
+   151  0077                     ?_DelayUsz:	
+   152                           ; 1 bytes @ 0x0
+   153                           
+   154  0077                     ?_DelayUs:	
+   155                           ; 1 bytes @ 0x0
+   156                           
+   157  0077                     ?_DelayMs:	
+   158                           ; 1 bytes @ 0x0
+   159                           
+   160  0077                     ?_ReadCap:	
+   161                           ; 1 bytes @ 0x0
+   162                           
+   163  0077                     ?_Touch_init:	
+   164                           ; 1 bytes @ 0x0
+   165                           
+   166  0077                     ?_Touch_end:	
+   167                           ; 1 bytes @ 0x0
+   168                           
+   169  0077                     ?_ReadCap1:	
+   170                           ; 1 bytes @ 0x0
+   171                           
+   172  0077                     ?_ReadCapCharge:	
+   173                           ; 1 bytes @ 0x0
+   174                           
+   175  0077                     ?_ReadCapDisCharge:	
+   176                           ; 1 bytes @ 0x0
+   177                           
+   178                           
+   179                           ; 1 bytes @ 0x0
+   180  0077                     	ds	2
+   181  0079                     ??_TIMER0_INITIAL:	
+   182  0079                     ??_POWER_INITIAL:	
+   183                           ; 1 bytes @ 0x2
+   184                           
+   185  0079                     ??_uart_delay:	
+   186                           ; 1 bytes @ 0x2
+   187                           
+   188  0079                     ??_uart_tx:	
+   189                           ; 1 bytes @ 0x2
+   190                           
+   191  0079                     ??_DelayUsz:	
+   192                           ; 1 bytes @ 0x2
+   193                           
+   194  0079                     ??_DelayUs:	
+   195                           ; 1 bytes @ 0x2
+   196                           
+   197  0079                     ??_ReadCap:	
+   198                           ; 1 bytes @ 0x2
+   199                           
+   200  0079                     ??_Touch_init:	
+   201                           ; 1 bytes @ 0x2
+   202                           
+   203  0079                     ??_Touch_end:	
+   204                           ; 1 bytes @ 0x2
+   205                           
+   206  0079                     uart_tx@data:	
+   207                           ; 1 bytes @ 0x2
+   208                           
+   209  0079                     DelayUsz@a:	
+   210                           ; 1 bytes @ 0x2
+   211                           
+   212  0079                     DelayUs@Time:	
+   213                           ; 1 bytes @ 0x2
+   214                           
+   215                           
+   216                           ; 1 bytes @ 0x2
+   217  0079                     	ds	1
+   218  007A                     ??_SendHead:	
+   219  007A                     ??_ReadCap1:	
+   220                           ; 1 bytes @ 0x3
+   221                           
+   222  007A                     DelayUs@a:	
+   223                           ; 1 bytes @ 0x3
+   224                           
+   225                           
+   226                           ; 1 bytes @ 0x3
+   227  007A                     	ds	1
+   228  007B                     ??_DelayMs:	
+   229                           
+   230                           ; 1 bytes @ 0x4
+   231  007B                     	ds	1
+   232  007C                     ??_SendDataToPC:	
+   233  007C                     ??_main:	
+   234                           ; 1 bytes @ 0x5
+   235                           
+   236                           
+   237                           	psect	cstackCOMMONl
+   238  0070                     __pcstackCOMMONl:	
+   239                           ; 1 bytes @ 0x5
+   240                           
+   241  0070                     ?_SendDataToPC:	
+   242  0070                     ??_ReadCapCharge:	
+   243                           ; 1 bytes @ 0x0
+   244                           
+   245  0070                     DelayMs@Time:	
+   246                           ; 1 bytes @ 0x0
+   247                           
+   248                           
+   249                           ; 1 bytes @ 0x0
+   250  0070                     	ds	1
+   251  0071                     DelayMs@a:	
+   252                           
+   253                           ; 1 bytes @ 0x1
+   254  0071                     	ds	1
+   255  0072                     DelayMs@b:	
+   256                           
+   257                           ; 1 bytes @ 0x2
+   258  0072                     	ds	1
+   259                           
+   260                           	psect	cstackBANK0
+   261  005F                     __pcstackBANK0:	
+   262  005F                     ReadCap1@ch:	
+   263  005F                     ReadCap@sum:	
+   264                           ; 1 bytes @ 0x0
+   265                           
+   266                           
+   267                           ; 2 bytes @ 0x0
+   268  005F                     	ds	1
+   269  0060                     ReadCap1@sum:	
+   270                           
+   271                           ; 2 bytes @ 0x1
+   272  0060                     	ds	1
+   273  0061                     ReadCap@ch:	
+   274                           
+   275                           ; 1 bytes @ 0x2
+   276  0061                     	ds	1
+   277  0062                     ReadCap@Count:	
+   278  0062                     ReadCap1@Count:	
+   279                           ; 1 bytes @ 0x3
+   280                           
+   281                           
+   282                           ; 1 bytes @ 0x3
+   283  0062                     	ds	1
+   284  0063                     ??_ReadCapDisCharge:	
+   285                           
+   286                           ; 1 bytes @ 0x4
+   287  0063                     	ds	2
+   288  0065                     ReadCapDisCharge@Count:	
+   289                           
+   290                           ; 1 bytes @ 0x6
+   291  0065                     	ds	1
+   292                           
+   293                           	psect	maintext
+   294  0276                     __pmaintext:	
+   295 ;;
+   296 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   297 ;;
+   298 ;; *************** function _main *****************
+   299 ;; Defined at:
+   300 ;;		line 201 in file "main.c"
+   301 ;; Parameters:    Size  Location     Type
+   302 ;;		None
+   303 ;; Auto vars:     Size  Location     Type
+   304 ;;		None
+   305 ;; Return value:  Size  Location     Type
+   306 ;;                  1    wreg      void 
+   307 ;; Registers used:
+   308 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   309 ;; Tracked objects:
+   310 ;;		On entry : B00/0
+   311 ;;		On exit  : 0/0
+   312 ;;		Unchanged: 0/0
+   313 ;; Data sizes:    COMMONh COMMONl   BANK0
+   314 ;;      Params:         0       0       0
+   315 ;;      Locals:         0       0       0
+   316 ;;      Temps:          0       0       0
+   317 ;;      Totals:         0       0       0
+   318 ;;Total ram usage:        0 bytes
+   319 ;; Hardware stack levels required when called:    6
+   320 ;; This function calls:
+   321 ;;		_POWER_INITIAL
+   322 ;;		_SendDataToPC
+   323 ;;		_TIMER0_INITIAL
+   324 ;; This function is called by:
+   325 ;;		Startup code after reset
+   326 ;; This function uses a non-reentrant model
+   327 ;;
+   328                           
+   329                           
+   330                           ;psect for function _main
+   331  0276                     _main:	
+   332                           
+   333                           ;main.c: 203: POWER_INITIAL();
+   334                           
+   335                           ;incstack = 0
+   336                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   337  0276  2241               	fcall	_POWER_INITIAL
+   338                           
+   339                           ;main.c: 204: TIMER0_INITIAL();
+   340  0277  227D               	fcall	_TIMER0_INITIAL
+   341                           
+   342                           ;main.c: 208: GIE = 1;
+   343  0278  178B               	bsf	11,7	;volatile
+   344                           
+   345                           ;main.c: 209: T0IE = 1;
+   346  0279  168B               	bsf	11,5	;volatile
+   347                           
+   348                           ;main.c: 210: TCount = 0;
+   349  027A  01DB               	clrf	_TCount	;volatile
+   350  027B                     l2723:	
+   351                           
+   352                           ;main.c: 212: {
+   353                           ;main.c: 214: SendDataToPC();
+   354  027B  2295               	fcall	_SendDataToPC
+   355  027C  2A7B               	goto	l2723
+   356  027D                     __end_of_main:	
+   357                           
+   358                           	psect	text1
+   359  027D                     __ptext1:	
+   360 ;; *************** function _TIMER0_INITIAL *****************
+   361 ;; Defined at:
+   362 ;;		line 60 in file "main.c"
+   363 ;; Parameters:    Size  Location     Type
+   364 ;;		None
+   365 ;; Auto vars:     Size  Location     Type
+   366 ;;		None
+   367 ;; Return value:  Size  Location     Type
+   368 ;;                  1    wreg      void 
+   369 ;; Registers used:
+   370 ;;		wreg
+   371 ;; Tracked objects:
+   372 ;;		On entry : B00/100
+   373 ;;		On exit  : B00/0
+   374 ;;		Unchanged: A00/0
+   375 ;; Data sizes:    COMMONh COMMONl   BANK0
+   376 ;;      Params:         0       0       0
+   377 ;;      Locals:         0       0       0
+   378 ;;      Temps:          0       0       0
+   379 ;;      Totals:         0       0       0
+   380 ;;Total ram usage:        0 bytes
+   381 ;; Hardware stack levels used:    1
+   382 ;; Hardware stack levels required when called:    1
+   383 ;; This function calls:
+   384 ;;		Nothing
+   385 ;; This function is called by:
+   386 ;;		_main
+   387 ;; This function uses a non-reentrant model
+   388 ;;
+   389                           
+   390                           
+   391                           ;psect for function _TIMER0_INITIAL
+   392  027D                     _TIMER0_INITIAL:	
+   393                           
+   394                           ;main.c: 62: OPTION = 0B00000100;
+   395                           
+   396                           ;incstack = 0
+   397                           ; Regs used in _TIMER0_INITIAL: [wreg]
+   398  027D  3004               	movlw	4
+   399  027E  0081               	movwf	1	;volatile
+   400                           
+   401                           ;main.c: 67: TMR0 = 7;
+   402  027F  3007               	movlw	7
+   403  0280  1283               	bcf	3,5	;RP0=0, select bank0
+   404  0281  0081               	movwf	1	;volatile
+   405                           
+   406                           ;main.c: 68: T0IF = 0;
+   407  0282  110B               	bcf	11,2	;volatile
+   408  0283  0008               	return
+   409  0284                     __end_of_TIMER0_INITIAL:	
+   410                           
+   411                           	psect	text2
+   412  0295                     __ptext2:	
+   413 ;; *************** function _SendDataToPC *****************
+   414 ;; Defined at:
+   415 ;;		line 375 in file "TOUCH.C"
+   416 ;; Parameters:    Size  Location     Type
+   417 ;;		None
+   418 ;; Auto vars:     Size  Location     Type
+   419 ;;		None
+   420 ;; Return value:  Size  Location     Type
+   421 ;;                  1    wreg      void 
+   422 ;; Registers used:
+   423 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   424 ;; Tracked objects:
+   425 ;;		On entry : 0/0
+   426 ;;		On exit  : 0/0
+   427 ;;		Unchanged: 0/0
+   428 ;; Data sizes:    COMMONh COMMONl   BANK0
+   429 ;;      Params:         0       0       0
+   430 ;;      Locals:         0       0       0
+   431 ;;      Temps:          0       0       0
+   432 ;;      Totals:         0       0       0
+   433 ;;Total ram usage:        0 bytes
+   434 ;; Hardware stack levels used:    1
+   435 ;; Hardware stack levels required when called:    5
+   436 ;; This function calls:
+   437 ;;		_ReadCapCharge
+   438 ;;		_ReadCapDisCharge
+   439 ;; This function is called by:
+   440 ;;		_main
+   441 ;; This function uses a non-reentrant model
+   442 ;;
+   443                           
+   444                           
+   445                           ;psect for function _SendDataToPC
+   446  0295                     _SendDataToPC:	
+   447                           
+   448                           ;TOUCH.C: 377: ReadCapCharge( );
+   449                           
+   450                           ;incstack = 0
+   451                           ; Regs used in _SendDataToPC: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   452  0295  21E0               	fcall	_ReadCapCharge
+   453                           
+   454                           ;TOUCH.C: 378: ReadCapDisCharge();
+   455  0296  2812               	ljmp	l2543
+   456  0297                     __end_of_SendDataToPC:	
+   457                           
+   458                           	psect	text3
+   459  0012                     __ptext3:	
+   460 ;; *************** function _ReadCapDisCharge *****************
+   461 ;; Defined at:
+   462 ;;		line 273 in file "TOUCH.C"
+   463 ;; Parameters:    Size  Location     Type
+   464 ;;		None
+   465 ;; Auto vars:     Size  Location     Type
+   466 ;;  Count           1    6[BANK0 ] unsigned char 
+   467 ;; Return value:  Size  Location     Type
+   468 ;;                  1    wreg      void 
+   469 ;; Registers used:
+   470 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   471 ;; Tracked objects:
+   472 ;;		On entry : 100/0
+   473 ;;		On exit  : 0/0
+   474 ;;		Unchanged: 0/0
+   475 ;; Data sizes:    COMMONh COMMONl   BANK0
+   476 ;;      Params:         0       0       0
+   477 ;;      Locals:         0       0       1
+   478 ;;      Temps:          0       0       2
+   479 ;;      Totals:         0       0       3
+   480 ;;Total ram usage:        3 bytes
+   481 ;; Hardware stack levels used:    1
+   482 ;; Hardware stack levels required when called:    4
+   483 ;; This function calls:
+   484 ;;		_DelayMs
+   485 ;;		_ReadCap1
+   486 ;;		_SendHead
+   487 ;;		_uart_tx
+   488 ;; This function is called by:
+   489 ;;		_SendDataToPC
+   490 ;; This function uses a non-reentrant model
+   491 ;;
+   492                           
+   493                           
+   494                           ;psect for function _ReadCapDisCharge
+   495  0012                     _ReadCapDisCharge:	
+   496  0012                     l2543:	
+   497                           ;incstack = 0
+   498                           ; Regs used in _ReadCapDisCharge: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   499                           
+   500  0012  3008               	movlw	8
+   501  0013  00F5               	movwf	117	;volatile
+   502                           
+   503                           ;TOUCH.C: 279: ReadCap1(1);
+   504  0014  3001               	movlw	1
+   505  0015  2199               	fcall	_ReadCap1
+   506                           
+   507                           ;TOUCH.C: 281: Touch_Number1_sum=Touch_Number1;
+   508  0016  0855               	movf	_Touch_Number1+1,w	;volatile
+   509  0017  00D1               	movwf	_Touch_Number1_sum+1	;volatile
+   510  0018  0854               	movf	_Touch_Number1,w	;volatile
+   511  0019  00D0               	movwf	_Touch_Number1_sum	;volatile
+   512                           
+   513                           ;TOUCH.C: 282: SendTouch_Number2[0] = Touch_Number1;
+   514  001A  0855               	movf	_Touch_Number1+1,w	;volatile
+   515  001B  00C1               	movwf	_SendTouch_Number2+1	;volatile
+   516  001C  0854               	movf	_Touch_Number1,w	;volatile
+   517  001D  00C0               	movwf	_SendTouch_Number2	;volatile
+   518                           
+   519                           ;TOUCH.C: 284: Touch_Number1=0;
+   520  001E  01D4               	clrf	_Touch_Number1	;volatile
+   521  001F  01D5               	clrf	_Touch_Number1+1	;volatile
+   522                           
+   523                           ;TOUCH.C: 285: ReadCap1(2);
+   524  0020  3002               	movlw	2
+   525  0021  2199               	fcall	_ReadCap1
+   526                           
+   527                           ;TOUCH.C: 288: Touch_Number1_sum=Touch_Number1+Touch_Number1_sum;
+   528                           
+   529                           ;TOUCH.C: 289: SendTouch_Number2[1] = Touch_Number1;
+   530  0022  20DE               	fcall	PL8	;call to abstracted procedure
+   531  0023  00C3               	movwf	_SendTouch_Number2+3	;volatile
+   532  0024  0854               	movf	_Touch_Number1,w	;volatile
+   533  0025  00C2               	movwf	_SendTouch_Number2+2	;volatile
+   534                           
+   535                           ;TOUCH.C: 292: ReadCap1(4);
+   536  0026  3004               	movlw	4
+   537  0027  2199               	fcall	_ReadCap1
+   538                           
+   539                           ;TOUCH.C: 293: Touch_Number1_sum=Touch_Number1+Touch_Number1_sum;
+   540                           
+   541                           ;TOUCH.C: 294: SendTouch_Number2[2] = Touch_Number1;
+   542  0028  20DE               	fcall	PL8	;call to abstracted procedure
+   543  0029  00C5               	movwf	_SendTouch_Number2+5	;volatile
+   544  002A  0854               	movf	_Touch_Number1,w	;volatile
+   545  002B  00C4               	movwf	_SendTouch_Number2+4	;volatile
+   546                           
+   547                           ;TOUCH.C: 296: ReadCap1(8);
+   548  002C  3008               	movlw	8
+   549  002D  2199               	fcall	_ReadCap1
+   550                           
+   551                           ;TOUCH.C: 297: Touch_Number1_sum=Touch_Number1+Touch_Number1_sum+2;
+   552  002E  0850               	movf	_Touch_Number1_sum,w	;volatile
+   553  002F  0754               	addwf	_Touch_Number1,w	;volatile
+   554  0030  00E3               	movwf	??_ReadCapDisCharge
+   555  0031  0851               	movf	_Touch_Number1_sum+1,w	;volatile
+   556  0032  1803               	skipnc
+   557  0033  0A51               	incf	_Touch_Number1_sum+1,w	;volatile
+   558  0034  0755               	addwf	_Touch_Number1+1,w	;volatile
+   559  0035  00E4               	movwf	??_ReadCapDisCharge+1
+   560  0036  0863               	movf	??_ReadCapDisCharge,w
+   561  0037  3E02               	addlw	2
+   562  0038  00D0               	movwf	_Touch_Number1_sum	;volatile
+   563  0039  0864               	movf	??_ReadCapDisCharge+1,w
+   564  003A  1803               	skipnc
+   565  003B  3E01               	addlw	1
+   566  003C  3E00               	addlw	0
+   567  003D  00D1               	movwf	_Touch_Number1_sum+1	;volatile
+   568                           
+   569                           ;TOUCH.C: 298: SendTouch_Number2[3] = Touch_Number1;
+   570  003E  0855               	movf	_Touch_Number1+1,w	;volatile
+   571  003F  00C7               	movwf	_SendTouch_Number2+7	;volatile
+   572  0040  0854               	movf	_Touch_Number1,w	;volatile
+   573  0041  00C6               	movwf	_SendTouch_Number2+6	;volatile
+   574                           
+   575                           ;TOUCH.C: 300: SendHead();
+   576  0042  2284               	fcall	_SendHead
+   577                           
+   578                           ;TOUCH.C: 301: uart_tx(1);
+   579  0043  3001               	movlw	1
+   580  0044  20F0               	fcall	_uart_tx
+   581                           
+   582                           ;TOUCH.C: 302: uart_tx(0xfe);
+   583  0045  30FE               	movlw	254
+   584  0046  20F0               	fcall	_uart_tx
+   585                           
+   586                           ;TOUCH.C: 303: for(Count = 0;Count<=3;Count++)
+   587  0047  1283               	bcf	3,5	;RP0=0, select bank0
+   588  0048  01E5               	clrf	ReadCapDisCharge@Count
+   589                           
+   590                           ;TOUCH.C: 304: {
+   591                           ;TOUCH.C: 305: uart_tx(SendTouch_Number1[Count]>>8);
+   592  0049  1003               	clrc
+   593  004A                     L1:	
+   594  004A  0D65               	rlf	ReadCapDisCharge@Count,w
+   595  004B  3E48               	addlw	(low (_SendTouch_Number1| 0))& (0+255)
+   596  004C  20D5               	fcall	PL4	;call to abstracted procedure
+   597  004D  20F0               	fcall	_uart_tx
+   598                           
+   599                           ;TOUCH.C: 306: uart_tx(SendTouch_Number1[Count]);
+   600  004E  1283               	bcf	3,5	;RP0=0, select bank0
+   601  004F  1003               	clrc
+   602  0050  0D65               	rlf	ReadCapDisCharge@Count,w
+   603  0051  3E48               	addlw	(low (_SendTouch_Number1| 0))& (0+255)
+   604  0052  0084               	movwf	4
+   605  0053  1383               	bcf	3,7	;select IRP bank0
+   606  0054  0800               	movf	0,w
+   607  0055  20F0               	fcall	_uart_tx
+   608  0056  20EB               	fcall	PL12	;call to abstracted procedure
+   609  0057  1C03               	skipc
+   610  0058  284A               	goto	L1
+   611                           
+   612                           ;TOUCH.C: 307: }
+   613                           ;TOUCH.C: 308: for(Count = 0;Count<=11;Count++)
+   614  0059  01E5               	clrf	ReadCapDisCharge@Count
+   615  005A                     l2595:	
+   616                           
+   617                           ;TOUCH.C: 309: {
+   618                           ;TOUCH.C: 310: uart_tx(0);
+   619  005A  3000               	movlw	0
+   620  005B  20F0               	fcall	_uart_tx
+   621                           
+   622                           ;TOUCH.C: 311: uart_tx(0);
+   623  005C  3000               	movlw	0
+   624  005D  20F0               	fcall	_uart_tx
+   625  005E  20E6               	fcall	PL10	;call to abstracted procedure
+   626  005F  1C03               	skipc
+   627  0060  285A               	goto	l2595
+   628                           
+   629                           ;TOUCH.C: 312: }
+   630                           ;TOUCH.C: 313: uart_tx(Touch_Number_sum>>8);
+   631  0061  0853               	movf	_Touch_Number_sum+1,w	;volatile
+   632  0062  20F0               	fcall	_uart_tx
+   633                           
+   634                           ;TOUCH.C: 314: uart_tx(Touch_Number_sum);
+   635  0063  1283               	bcf	3,5	;RP0=0, select bank0
+   636  0064  0852               	movf	_Touch_Number_sum,w	;volatile
+   637  0065  20F0               	fcall	_uart_tx
+   638                           
+   639                           ;TOUCH.C: 316: SendHead();
+   640  0066  2284               	fcall	_SendHead
+   641                           
+   642                           ;TOUCH.C: 317: uart_tx(2);
+   643  0067  3002               	movlw	2
+   644  0068  20F0               	fcall	_uart_tx
+   645                           
+   646                           ;TOUCH.C: 318: uart_tx(0xfd);
+   647  0069  30FD               	movlw	253
+   648  006A  20F0               	fcall	_uart_tx
+   649                           
+   650                           ;TOUCH.C: 319: for(Count = 0;Count<=3;Count++)
+   651  006B  1283               	bcf	3,5	;RP0=0, select bank0
+   652  006C  01E5               	clrf	ReadCapDisCharge@Count
+   653                           
+   654                           ;TOUCH.C: 320: {
+   655                           ;TOUCH.C: 321: uart_tx(SendTouch_Number2[Count]>>8);
+   656  006D  1003               	clrc
+   657  006E                     L2:	
+   658  006E  0D65               	rlf	ReadCapDisCharge@Count,w
+   659  006F  3E40               	addlw	(low (_SendTouch_Number2| 0))& (0+255)
+   660  0070  20D5               	fcall	PL4	;call to abstracted procedure
+   661  0071  20F0               	fcall	_uart_tx
+   662                           
+   663                           ;TOUCH.C: 322: uart_tx(SendTouch_Number2[Count]);
+   664  0072  1283               	bcf	3,5	;RP0=0, select bank0
+   665  0073  1003               	clrc
+   666  0074  0D65               	rlf	ReadCapDisCharge@Count,w
+   667  0075  3E40               	addlw	(low (_SendTouch_Number2| 0))& (0+255)
+   668  0076  0084               	movwf	4
+   669  0077  1383               	bcf	3,7	;select IRP bank0
+   670  0078  0800               	movf	0,w
+   671  0079  20F0               	fcall	_uart_tx
+   672  007A  20EB               	fcall	PL12	;call to abstracted procedure
+   673  007B  1C03               	skipc
+   674  007C  286E               	goto	L2
+   675                           
+   676                           ;TOUCH.C: 323: }
+   677                           ;TOUCH.C: 324: for(Count = 0;Count<=11;Count++)
+   678  007D  01E5               	clrf	ReadCapDisCharge@Count
+   679  007E                     l2621:	
+   680                           
+   681                           ;TOUCH.C: 325: {
+   682                           ;TOUCH.C: 326: uart_tx(0);
+   683  007E  3000               	movlw	0
+   684  007F  20F0               	fcall	_uart_tx
+   685                           
+   686                           ;TOUCH.C: 327: uart_tx(0);
+   687  0080  3000               	movlw	0
+   688  0081  20F0               	fcall	_uart_tx
+   689  0082  20E6               	fcall	PL10	;call to abstracted procedure
+   690  0083  1C03               	skipc
+   691  0084  287E               	goto	l2621
+   692                           
+   693                           ;TOUCH.C: 328: }
+   694                           ;TOUCH.C: 329: uart_tx(Touch_Number1_sum>>8);
+   695  0085  0851               	movf	_Touch_Number1_sum+1,w	;volatile
+   696  0086  20F0               	fcall	_uart_tx
+   697                           
+   698                           ;TOUCH.C: 330: uart_tx(Touch_Number1_sum);
+   699  0087  1283               	bcf	3,5	;RP0=0, select bank0
+   700  0088  0850               	movf	_Touch_Number1_sum,w	;volatile
+   701  0089  20F0               	fcall	_uart_tx
+   702                           
+   703                           ;TOUCH.C: 332: SendHead();
+   704  008A  2284               	fcall	_SendHead
+   705                           
+   706                           ;TOUCH.C: 333: uart_tx(3);
+   707  008B  3003               	movlw	3
+   708  008C  20F0               	fcall	_uart_tx
+   709                           
+   710                           ;TOUCH.C: 334: uart_tx(0xfc);
+   711  008D  30FC               	movlw	252
+   712  008E  20F0               	fcall	_uart_tx
+   713  008F  3000               	movlw	0
+   714                           
+   715                           ;TOUCH.C: 335: for(Count = 0;Count<=15;Count++)
+   716  0090  1283               	bcf	3,5	;RP0=0, select bank0
+   717  0091  01E5               	clrf	ReadCapDisCharge@Count
+   718  0092                     L3:	
+   719                           ;TOUCH.C: 336: {
+   720                           ;TOUCH.C: 337: uart_tx(0);
+   721                           
+   722  0092  20F0               	fcall	_uart_tx
+   723                           
+   724                           ;TOUCH.C: 338: uart_tx(0);
+   725  0093  3000               	movlw	0
+   726  0094  20F0               	fcall	_uart_tx
+   727                           
+   728                           ;TOUCH.C: 339: }
+   729                           ;TOUCH.C: 340: uart_tx(0);
+   730  0095  20D0               	fcall	PL2	;call to abstracted procedure
+   731  0096  1C03               	skipc
+   732  0097  2892               	goto	L3
+   733  0098  20F0               	fcall	_uart_tx
+   734                           
+   735                           ;TOUCH.C: 341: uart_tx(3);
+   736  0099  3003               	movlw	3
+   737  009A  20F0               	fcall	_uart_tx
+   738                           
+   739                           ;TOUCH.C: 342: SendHead();
+   740  009B  2284               	fcall	_SendHead
+   741                           
+   742                           ;TOUCH.C: 343: uart_tx(4);
+   743  009C  3004               	movlw	4
+   744  009D  20F0               	fcall	_uart_tx
+   745                           
+   746                           ;TOUCH.C: 344: uart_tx(0xfb);
+   747  009E  30FB               	movlw	251
+   748  009F  20F0               	fcall	_uart_tx
+   749  00A0  3000               	movlw	0
+   750                           
+   751                           ;TOUCH.C: 345: for(Count = 0;Count<=15;Count++)
+   752  00A1  1283               	bcf	3,5	;RP0=0, select bank0
+   753  00A2  01E5               	clrf	ReadCapDisCharge@Count
+   754  00A3                     L4:	
+   755                           ;TOUCH.C: 346: {
+   756                           ;TOUCH.C: 347: uart_tx(0);
+   757                           
+   758  00A3  20F0               	fcall	_uart_tx
+   759                           
+   760                           ;TOUCH.C: 348: uart_tx(0);
+   761  00A4  3000               	movlw	0
+   762  00A5  20F0               	fcall	_uart_tx
+   763                           
+   764                           ;TOUCH.C: 349: }
+   765                           ;TOUCH.C: 350: uart_tx(0);
+   766  00A6  20D0               	fcall	PL2	;call to abstracted procedure
+   767  00A7  1C03               	skipc
+   768  00A8  28A3               	goto	L4
+   769  00A9  20F0               	fcall	_uart_tx
+   770                           
+   771                           ;TOUCH.C: 351: uart_tx(4);
+   772  00AA  3004               	movlw	4
+   773  00AB  20F0               	fcall	_uart_tx
+   774                           
+   775                           ;TOUCH.C: 352: SendHead();
+   776  00AC  2284               	fcall	_SendHead
+   777                           
+   778                           ;TOUCH.C: 353: uart_tx(5);
+   779  00AD  3005               	movlw	5
+   780  00AE  20F0               	fcall	_uart_tx
+   781                           
+   782                           ;TOUCH.C: 354: uart_tx(0xfa);
+   783  00AF  30FA               	movlw	250
+   784  00B0  20F0               	fcall	_uart_tx
+   785  00B1  3000               	movlw	0
+   786                           
+   787                           ;TOUCH.C: 355: for(Count = 0;Count<=15;Count++)
+   788  00B2  1283               	bcf	3,5	;RP0=0, select bank0
+   789  00B3  01E5               	clrf	ReadCapDisCharge@Count
+   790  00B4                     L5:	
+   791                           ;TOUCH.C: 356: {
+   792                           ;TOUCH.C: 357: uart_tx(0);
+   793                           
+   794  00B4  20F0               	fcall	_uart_tx
+   795                           
+   796                           ;TOUCH.C: 358: uart_tx(0);
+   797  00B5  3000               	movlw	0
+   798  00B6  20F0               	fcall	_uart_tx
+   799                           
+   800                           ;TOUCH.C: 359: }
+   801                           ;TOUCH.C: 360: uart_tx(0);
+   802  00B7  20D0               	fcall	PL2	;call to abstracted procedure
+   803  00B8  1C03               	skipc
+   804  00B9  28B4               	goto	L5
+   805  00BA  20F0               	fcall	_uart_tx
+   806                           
+   807                           ;TOUCH.C: 361: uart_tx(5);
+   808  00BB  3005               	movlw	5
+   809  00BC  20F0               	fcall	_uart_tx
+   810                           
+   811                           ;TOUCH.C: 362: SendHead();
+   812  00BD  2284               	fcall	_SendHead
+   813                           
+   814                           ;TOUCH.C: 363: uart_tx(6);
+   815  00BE  3006               	movlw	6
+   816  00BF  20F0               	fcall	_uart_tx
+   817                           
+   818                           ;TOUCH.C: 364: uart_tx(0xf9);
+   819  00C0  30F9               	movlw	249
+   820  00C1  20F0               	fcall	_uart_tx
+   821  00C2  3000               	movlw	0
+   822                           
+   823                           ;TOUCH.C: 365: for(Count = 0;Count<=15;Count++)
+   824  00C3  1283               	bcf	3,5	;RP0=0, select bank0
+   825  00C4  01E5               	clrf	ReadCapDisCharge@Count
+   826  00C5                     L6:	
+   827                           ;TOUCH.C: 366: {
+   828                           ;TOUCH.C: 367: uart_tx(0);
+   829                           
+   830  00C5  20F0               	fcall	_uart_tx
+   831                           
+   832                           ;TOUCH.C: 368: uart_tx(0);
+   833  00C6  3000               	movlw	0
+   834  00C7  20F0               	fcall	_uart_tx
+   835                           
+   836                           ;TOUCH.C: 369: }
+   837                           ;TOUCH.C: 370: uart_tx(0);
+   838  00C8  20D0               	fcall	PL2	;call to abstracted procedure
+   839  00C9  1C03               	skipc
+   840  00CA  28C5               	goto	L6
+   841  00CB  20F0               	fcall	_uart_tx
+   842                           
+   843                           ;TOUCH.C: 371: uart_tx(6);
+   844  00CC  3006               	movlw	6
+   845  00CD  20F0               	fcall	_uart_tx
+   846                           
+   847                           ;TOUCH.C: 372: DelayMs(10);
+   848  00CE  300A               	movlw	10
+   849  00CF  2A31               	ljmp	_DelayMs
+   850  00D0                     __end_of_ReadCapDisCharge:	
+   851  00D0                     PL2:	
+   852  00D0  3010               	movlw	16
+   853  00D1  1283               	bcf	3,5	;RP0=0, select bank0
+   854  00D2  0AE5               	incf	ReadCapDisCharge@Count,f
+   855  00D3  0265               	subwf	ReadCapDisCharge@Count,w
+   856  00D4  3400               	retlw	0
+   857  00D5                     __end_ofPL2:	
+   858  00D5                     PL4:	
+   859  00D5  0084               	movwf	4
+   860  00D6  1383               	bcf	3,7	;select IRP bank0
+   861  00D7  0800               	movf	0,w
+   862  00D8  00E3               	movwf	??_ReadCapDisCharge
+   863  00D9  0A84               	incf	4,f
+   864  00DA  0800               	movf	0,w
+   865  00DB  00E4               	movwf	??_ReadCapDisCharge+1
+   866  00DC  0864               	movf	??_ReadCapDisCharge+1,w
+   867  00DD  0008               	return
+   868  00DE                     __end_ofPL4:	
+   869  00DE                     PL8:	
+   870  00DE  0854               	movf	_Touch_Number1,w	;volatile
+   871  00DF  07D0               	addwf	_Touch_Number1_sum,f	;volatile
+   872  00E0  1803               	skipnc
+   873  00E1  0AD1               	incf	_Touch_Number1_sum+1,f	;volatile
+   874  00E2  0855               	movf	_Touch_Number1+1,w	;volatile
+   875  00E3  07D1               	addwf	_Touch_Number1_sum+1,f	;volatile
+   876  00E4  0855               	movf	_Touch_Number1+1,w	;volatile
+   877  00E5  0008               	return
+   878  00E6                     __end_ofPL8:	
+   879  00E6                     PL10:	
+   880  00E6  300C               	movlw	12
+   881  00E7  1283               	bcf	3,5	;RP0=0, select bank0
+   882  00E8  0AE5               	incf	ReadCapDisCharge@Count,f
+   883  00E9  0265               	subwf	ReadCapDisCharge@Count,w
+   884  00EA  0008               	return
+   885  00EB                     __end_ofPL10:	
+   886  00EB                     PL12:	
+   887  00EB  3004               	movlw	4
+   888  00EC  1283               	bcf	3,5	;RP0=0, select bank0
+   889  00ED  0AE5               	incf	ReadCapDisCharge@Count,f
+   890  00EE  0265               	subwf	ReadCapDisCharge@Count,w
+   891  00EF  0008               	return
+   892  00F0                     __end_ofPL12:	
+   893                           
+   894                           	psect	text4
+   895  0284                     __ptext4:	
+   896 ;; *************** function _SendHead *****************
+   897 ;; Defined at:
+   898 ;;		line 36 in file "TOUCH.C"
+   899 ;; Parameters:    Size  Location     Type
+   900 ;;		None
+   901 ;; Auto vars:     Size  Location     Type
+   902 ;;		None
+   903 ;; Return value:  Size  Location     Type
+   904 ;;                  1    wreg      void 
+   905 ;; Registers used:
+   906 ;;		wreg, status,2, status,0, pclath, cstack
+   907 ;; Tracked objects:
+   908 ;;		On entry : 0/0
+   909 ;;		On exit  : 0/0
+   910 ;;		Unchanged: 0/0
+   911 ;; Data sizes:    COMMONh COMMONl   BANK0
+   912 ;;      Params:         0       0       0
+   913 ;;      Locals:         0       0       0
+   914 ;;      Temps:          0       0       0
+   915 ;;      Totals:         0       0       0
+   916 ;;Total ram usage:        0 bytes
+   917 ;; Hardware stack levels used:    1
+   918 ;; Hardware stack levels required when called:    3
+   919 ;; This function calls:
+   920 ;;		_uart_tx
+   921 ;; This function is called by:
+   922 ;;		_ReadCapDisCharge
+   923 ;; This function uses a non-reentrant model
+   924 ;;
+   925                           
+   926                           
+   927                           ;psect for function _SendHead
+   928  0284                     _SendHead:	
+   929                           
+   930                           ;TOUCH.C: 38: uart_tx(0x00);
+   931                           
+   932                           ;incstack = 0
+   933                           ; Regs used in _SendHead: [wreg+status,2+status,0+pclath+cstack]
+   934  0284  3000               	movlw	0
+   935  0285  20F0               	fcall	_uart_tx
+   936                           
+   937                           ;TOUCH.C: 39: uart_tx(0x55);
+   938  0286  3055               	movlw	85
+   939  0287  20F0               	fcall	_uart_tx
+   940                           
+   941                           ;TOUCH.C: 40: uart_tx(0xaa);
+   942  0288  30AA               	movlw	170
+   943  0289  28F0               	ljmp	_uart_tx
+   944  028A                     __end_of_SendHead:	
+   945                           
+   946                           	psect	text5
+   947  00F0                     __ptext5:	
+   948 ;; *************** function _uart_tx *****************
+   949 ;; Defined at:
+   950 ;;		line 97 in file "main.c"
+   951 ;; Parameters:    Size  Location     Type
+   952 ;;  data            1    wreg     unsigned char 
+   953 ;; Auto vars:     Size  Location     Type
+   954 ;;  data            1    2[COMMON] unsigned char 
+   955 ;; Return value:  Size  Location     Type
+   956 ;;                  1    wreg      void 
+   957 ;; Registers used:
+   958 ;;		wreg, status,2, status,0, pclath, cstack
+   959 ;; Tracked objects:
+   960 ;;		On entry : 0/0
+   961 ;;		On exit  : 0/0
+   962 ;;		Unchanged: 0/0
+   963 ;; Data sizes:    COMMONh COMMONl   BANK0
+   964 ;;      Params:         0       0       0
+   965 ;;      Locals:         1       0       0
+   966 ;;      Temps:          0       0       0
+   967 ;;      Totals:         1       0       0
+   968 ;;Total ram usage:        1 bytes
+   969 ;; Hardware stack levels used:    1
+   970 ;; Hardware stack levels required when called:    2
+   971 ;; This function calls:
+   972 ;;		_uart_delay
+   973 ;; This function is called by:
+   974 ;;		_SendHead
+   975 ;;		_ReadCapDisCharge
+   976 ;; This function uses a non-reentrant model
+   977 ;;
+   978                           
+   979                           
+   980                           ;psect for function _uart_tx
+   981  00F0                     _uart_tx:	
+   982                           
+   983                           ;incstack = 0
+   984                           ; Regs used in _uart_tx: [wreg+status,2+status,0+pclath+cstack]
+   985                           ;uart_tx@data stored from wreg
+   986  00F0  00F9               	movwf	uart_tx@data
+   987                           
+   988                           ;main.c: 99: GIE = 0;
+   989  00F1  138B               	bcf	11,7	;volatile
+   990                           
+   991                           ;main.c: 100: PA1 =0;
+   992  00F2  1283               	bcf	3,5	;RP0=0, select bank0
+   993  00F3  1085               	bcf	5,1	;volatile
+   994                           
+   995                           ;main.c: 101: uart_delay();
+   996  00F4  2218               	fcall	_uart_delay
+   997                           
+   998                           ;main.c: 102: if(data & 0x01)
+   999  00F5  1C79               	btfss	uart_tx@data,0
+  1000  00F6  28FA               	goto	l707
+  1001                           
+  1002                           ;main.c: 103: {
+  1003                           ;main.c: 104: PA1 = 1;
+  1004  00F7  1283               	bcf	3,5	;RP0=0, select bank0
+  1005  00F8  1485               	bsf	5,1	;volatile
+  1006                           
+  1007                           ;main.c: 106: }
+  1008  00F9  28FE               	goto	l2317
+  1009  00FA                     l707:	
+  1010                           
+  1011                           ;main.c: 107: else
+  1012                           ;main.c: 108: {
+  1013                           ;main.c: 109: PA1 = 0;
+  1014  00FA  1283               	bcf	3,5	;RP0=0, select bank0
+  1015  00FB  1085               	bcf	5,1	;volatile
+  1016                           
+  1017                           ;main.c: 110: __nop();__nop();
+  1018  00FC  0000               	nop
+  1019  00FD  0000               	nop
+  1020  00FE                     l2317:	
+  1021                           
+  1022                           ;main.c: 105: uart_delay();
+  1023  00FE  2218               	fcall	_uart_delay
+  1024                           
+  1025                           ;main.c: 112: }
+  1026                           ;main.c: 113: if(data & 0x02)
+  1027  00FF  1CF9               	btfss	uart_tx@data,1
+  1028  0100  2904               	goto	l709
+  1029                           
+  1030                           ;main.c: 114: {
+  1031                           ;main.c: 115: PA1 = 1;
+  1032  0101  1283               	bcf	3,5	;RP0=0, select bank0
+  1033  0102  1485               	bsf	5,1	;volatile
+  1034                           
+  1035                           ;main.c: 117: }
+  1036  0103  2908               	goto	l2325
+  1037  0104                     l709:	
+  1038                           
+  1039                           ;main.c: 118: else
+  1040                           ;main.c: 119: {
+  1041                           ;main.c: 120: PA1 = 0;
+  1042  0104  1283               	bcf	3,5	;RP0=0, select bank0
+  1043  0105  1085               	bcf	5,1	;volatile
+  1044                           
+  1045                           ;main.c: 121: __nop();__nop();
+  1046  0106  0000               	nop
+  1047  0107  0000               	nop
+  1048  0108                     l2325:	
+  1049                           
+  1050                           ;main.c: 116: uart_delay();
+  1051  0108  2218               	fcall	_uart_delay
+  1052                           
+  1053                           ;main.c: 123: }
+  1054                           ;main.c: 124: if(data & 0x04)
+  1055  0109  1D79               	btfss	uart_tx@data,2
+  1056  010A  290E               	goto	l711
+  1057                           
+  1058                           ;main.c: 125: {
+  1059                           ;main.c: 126: PA1 = 1;
+  1060  010B  1283               	bcf	3,5	;RP0=0, select bank0
+  1061  010C  1485               	bsf	5,1	;volatile
+  1062                           
+  1063                           ;main.c: 128: }
+  1064  010D  2912               	goto	l2333
+  1065  010E                     l711:	
+  1066                           
+  1067                           ;main.c: 129: else
+  1068                           ;main.c: 130: {
+  1069                           ;main.c: 131: PA1 = 0;
+  1070  010E  1283               	bcf	3,5	;RP0=0, select bank0
+  1071  010F  1085               	bcf	5,1	;volatile
+  1072                           
+  1073                           ;main.c: 132: __nop();__nop();
+  1074  0110  0000               	nop
+  1075  0111  0000               	nop
+  1076  0112                     l2333:	
+  1077                           
+  1078                           ;main.c: 127: uart_delay();
+  1079  0112  2218               	fcall	_uart_delay
+  1080                           
+  1081                           ;main.c: 134: }
+  1082                           ;main.c: 135: if(data & 0x08)
+  1083  0113  1DF9               	btfss	uart_tx@data,3
+  1084  0114  2918               	goto	l713
+  1085                           
+  1086                           ;main.c: 136: {
+  1087                           ;main.c: 137: PA1 = 1;
+  1088  0115  1283               	bcf	3,5	;RP0=0, select bank0
+  1089  0116  1485               	bsf	5,1	;volatile
+  1090                           
+  1091                           ;main.c: 139: }
+  1092  0117  291C               	goto	l2341
+  1093  0118                     l713:	
+  1094                           
+  1095                           ;main.c: 140: else
+  1096                           ;main.c: 141: {
+  1097                           ;main.c: 142: PA1 = 0;
+  1098  0118  1283               	bcf	3,5	;RP0=0, select bank0
+  1099  0119  1085               	bcf	5,1	;volatile
+  1100                           
+  1101                           ;main.c: 143: __nop();__nop();
+  1102  011A  0000               	nop
+  1103  011B  0000               	nop
+  1104  011C                     l2341:	
+  1105                           
+  1106                           ;main.c: 138: uart_delay();
+  1107  011C  2218               	fcall	_uart_delay
+  1108                           
+  1109                           ;main.c: 145: }
+  1110                           ;main.c: 146: if(data & 0x10)
+  1111  011D  1E79               	btfss	uart_tx@data,4
+  1112  011E  2922               	goto	l715
+  1113                           
+  1114                           ;main.c: 147: {
+  1115                           ;main.c: 148: PA1 = 1;
+  1116  011F  1283               	bcf	3,5	;RP0=0, select bank0
+  1117  0120  1485               	bsf	5,1	;volatile
+  1118                           
+  1119                           ;main.c: 150: }
+  1120  0121  2926               	goto	l2349
+  1121  0122                     l715:	
+  1122                           
+  1123                           ;main.c: 151: else
+  1124                           ;main.c: 152: {
+  1125                           ;main.c: 153: PA1 = 0;
+  1126  0122  1283               	bcf	3,5	;RP0=0, select bank0
+  1127  0123  1085               	bcf	5,1	;volatile
+  1128                           
+  1129                           ;main.c: 154: __nop();__nop();
+  1130  0124  0000               	nop
+  1131  0125  0000               	nop
+  1132  0126                     l2349:	
+  1133                           
+  1134                           ;main.c: 149: uart_delay();
+  1135  0126  2218               	fcall	_uart_delay
+  1136                           
+  1137                           ;main.c: 156: }
+  1138                           ;main.c: 157: if(data & 0x20)
+  1139  0127  1EF9               	btfss	uart_tx@data,5
+  1140  0128  292C               	goto	l717
+  1141                           
+  1142                           ;main.c: 158: {
+  1143                           ;main.c: 159: PA1 = 1;
+  1144  0129  1283               	bcf	3,5	;RP0=0, select bank0
+  1145  012A  1485               	bsf	5,1	;volatile
+  1146                           
+  1147                           ;main.c: 161: }
+  1148  012B  2930               	goto	l2357
+  1149  012C                     l717:	
+  1150                           
+  1151                           ;main.c: 162: else
+  1152                           ;main.c: 163: {
+  1153                           ;main.c: 164: PA1 = 0;
+  1154  012C  1283               	bcf	3,5	;RP0=0, select bank0
+  1155  012D  1085               	bcf	5,1	;volatile
+  1156                           
+  1157                           ;main.c: 165: __nop();__nop();
+  1158  012E  0000               	nop
+  1159  012F  0000               	nop
+  1160  0130                     l2357:	
+  1161                           
+  1162                           ;main.c: 160: uart_delay();
+  1163  0130  2218               	fcall	_uart_delay
+  1164                           
+  1165                           ;main.c: 167: }
+  1166                           ;main.c: 168: if(data & 0x40)
+  1167  0131  1F79               	btfss	uart_tx@data,6
+  1168  0132  2936               	goto	l719
+  1169                           
+  1170                           ;main.c: 169: {
+  1171                           ;main.c: 170: PA1 = 1;
+  1172  0133  1283               	bcf	3,5	;RP0=0, select bank0
+  1173  0134  1485               	bsf	5,1	;volatile
+  1174                           
+  1175                           ;main.c: 172: }
+  1176  0135  293A               	goto	l2365
+  1177  0136                     l719:	
+  1178                           
+  1179                           ;main.c: 173: else
+  1180                           ;main.c: 174: {
+  1181                           ;main.c: 175: PA1 = 0;
+  1182  0136  1283               	bcf	3,5	;RP0=0, select bank0
+  1183  0137  1085               	bcf	5,1	;volatile
+  1184                           
+  1185                           ;main.c: 176: __nop();__nop();
+  1186  0138  0000               	nop
+  1187  0139  0000               	nop
+  1188  013A                     l2365:	
+  1189                           
+  1190                           ;main.c: 171: uart_delay();
+  1191  013A  2218               	fcall	_uart_delay
+  1192                           
+  1193                           ;main.c: 178: }
+  1194                           ;main.c: 179: if(data & 0x80)
+  1195  013B  1FF9               	btfss	uart_tx@data,7
+  1196  013C  2940               	goto	l721
+  1197                           
+  1198                           ;main.c: 180: {
+  1199                           ;main.c: 181: PA1 = 1;
+  1200  013D  1283               	bcf	3,5	;RP0=0, select bank0
+  1201  013E  1485               	bsf	5,1	;volatile
+  1202                           
+  1203                           ;main.c: 183: }
+  1204  013F  2944               	goto	l2373
+  1205  0140                     l721:	
+  1206                           
+  1207                           ;main.c: 184: else
+  1208                           ;main.c: 185: {
+  1209                           ;main.c: 186: PA1 = 0;
+  1210  0140  1283               	bcf	3,5	;RP0=0, select bank0
+  1211  0141  1085               	bcf	5,1	;volatile
+  1212                           
+  1213                           ;main.c: 187: __nop();__nop();
+  1214  0142  0000               	nop
+  1215  0143  0000               	nop
+  1216  0144                     l2373:	
+  1217                           
+  1218                           ;main.c: 182: uart_delay();
+  1219  0144  2218               	fcall	_uart_delay
+  1220                           
+  1221                           ;main.c: 189: }
+  1222                           ;main.c: 190: PA1 = 1;
+  1223  0145  1283               	bcf	3,5	;RP0=0, select bank0
+  1224  0146  1485               	bsf	5,1	;volatile
+  1225                           
+  1226                           ;main.c: 191: uart_delay ();
+  1227  0147  2218               	fcall	_uart_delay
+  1228                           
+  1229                           ;main.c: 192: GIE =1;
+  1230  0148  178B               	bsf	11,7	;volatile
+  1231  0149  0008               	return
+  1232  014A                     __end_of_uart_tx:	
+  1233                           
+  1234                           	psect	text6
+  1235  0218                     __ptext6:	
+  1236 ;; *************** function _uart_delay *****************
+  1237 ;; Defined at:
+  1238 ;;		line 89 in file "main.c"
+  1239 ;; Parameters:    Size  Location     Type
+  1240 ;;		None
+  1241 ;; Auto vars:     Size  Location     Type
+  1242 ;;		None
+  1243 ;; Return value:  Size  Location     Type
+  1244 ;;                  1    wreg      void 
+  1245 ;; Registers used:
+  1246 ;;		None
+  1247 ;; Tracked objects:
+  1248 ;;		On entry : 0/0
+  1249 ;;		On exit  : 0/0
+  1250 ;;		Unchanged: 0/0
+  1251 ;; Data sizes:    COMMONh COMMONl   BANK0
+  1252 ;;      Params:         0       0       0
+  1253 ;;      Locals:         0       0       0
+  1254 ;;      Temps:          0       0       0
+  1255 ;;      Totals:         0       0       0
+  1256 ;;Total ram usage:        0 bytes
+  1257 ;; Hardware stack levels used:    1
+  1258 ;; Hardware stack levels required when called:    1
+  1259 ;; This function calls:
+  1260 ;;		Nothing
+  1261 ;; This function is called by:
+  1262 ;;		_uart_tx
+  1263 ;; This function uses a non-reentrant model
+  1264 ;;
+  1265                           
+  1266                           
+  1267                           ;psect for function _uart_delay
+  1268  0218                     _uart_delay:	
+  1269                           
+  1270                           ;main.c: 92: __nop();__nop();__nop();__nop();__nop();__nop();__nop();__nop();__nop();__n
+      +                          op();
+  1271                           
+  1272                           ;incstack = 0
+  1273                           ; Regs used in _uart_delay: []
+  1274  0218  0000               	nop
+  1275  0219  0000               	nop
+  1276  021A  0000               	nop
+  1277  021B  0000               	nop
+  1278  021C  0000               	nop
+  1279  021D  0000               	nop
+  1280  021E  0000               	nop
+  1281  021F  0000               	nop
+  1282  0220  0000               	nop
+  1283  0221  0000               	nop
+  1284                           
+  1285                           ;main.c: 93: __nop();__nop();__nop();__nop();__nop();__nop();__nop();__nop();__nop();__n
+      +                          op();
+  1286  0222  0000               	nop
+  1287  0223  0000               	nop
+  1288  0224  0000               	nop
+  1289  0225  0000               	nop
+  1290  0226  0000               	nop
+  1291  0227  0000               	nop
+  1292  0228  0000               	nop
+  1293  0229  0000               	nop
+  1294  022A  0000               	nop
+  1295  022B  0000               	nop
+  1296                           
+  1297                           ;main.c: 94: __nop();__nop();__nop();__nop();
+  1298  022C  0000               	nop
+  1299  022D  0000               	nop
+  1300  022E  0000               	nop
+  1301  022F  0000               	nop
+  1302  0230  0008               	return
+  1303  0231                     __end_of_uart_delay:	
+  1304                           
+  1305                           	psect	text7
+  1306  0199                     __ptext7:	
+  1307 ;; *************** function _ReadCap1 *****************
+  1308 ;; Defined at:
+  1309 ;;		line 186 in file "TOUCH.C"
+  1310 ;; Parameters:    Size  Location     Type
+  1311 ;;  ch              1    wreg     unsigned char 
+  1312 ;; Auto vars:     Size  Location     Type
+  1313 ;;  ch              1    0[BANK0 ] unsigned char 
+  1314 ;;  sum             2    1[BANK0 ] unsigned int 
+  1315 ;;  Count           1    3[BANK0 ] unsigned char 
+  1316 ;; Return value:  Size  Location     Type
+  1317 ;;                  1    wreg      void 
+  1318 ;; Registers used:
+  1319 ;;		wreg, status,2, status,0, pclath, cstack
+  1320 ;; Tracked objects:
+  1321 ;;		On entry : 100/0
+  1322 ;;		On exit  : 100/0
+  1323 ;;		Unchanged: 0/0
+  1324 ;; Data sizes:    COMMONh COMMONl   BANK0
+  1325 ;;      Params:         0       0       0
+  1326 ;;      Locals:         0       0       4
+  1327 ;;      Temps:          2       0       0
+  1328 ;;      Totals:         2       0       4
+  1329 ;;Total ram usage:        6 bytes
+  1330 ;; Hardware stack levels used:    1
+  1331 ;; Hardware stack levels required when called:    2
+  1332 ;; This function calls:
+  1333 ;;		_DelayUsz
+  1334 ;;		_Touch_end
+  1335 ;;		_Touch_init
+  1336 ;; This function is called by:
+  1337 ;;		_ReadCapDisCharge
+  1338 ;; This function uses a non-reentrant model
+  1339 ;;
+  1340                           
+  1341                           
+  1342                           ;psect for function _ReadCap1
+  1343  0199                     _ReadCap1:	
+  1344                           
+  1345                           ;incstack = 0
+  1346                           ; Regs used in _ReadCap1: [wreg+status,2+status,0+pclath+cstack]
+  1347                           ;ReadCap1@ch stored from wreg
+  1348  0199  00DF               	movwf	ReadCap1@ch
+  1349                           
+  1350                           ;TOUCH.C: 188: unsigned int sum=0;
+  1351  019A  01E0               	clrf	ReadCap1@sum
+  1352  019B  01E1               	clrf	ReadCap1@sum+1
+  1353                           
+  1354                           ;TOUCH.C: 190: Touch_Number1=0;
+  1355  019C  01D4               	clrf	_Touch_Number1	;volatile
+  1356  019D  01D5               	clrf	_Touch_Number1+1	;volatile
+  1357                           
+  1358                           ;TOUCH.C: 191: chbuff=NowKey&ch;
+  1359  019E  0875               	movf	117,w	;volatile
+  1360  019F  055F               	andwf	ReadCap1@ch,w
+  1361  01A0  00F6               	movwf	118	;volatile
+  1362                           
+  1363                           ;TOUCH.C: 192: if(chbuff==0)
+  1364  01A1  0876               	movf	118,w	;volatile
+  1365  01A2  1903               	btfsc	3,2
+  1366  01A3  0008               	return
+  1367                           
+  1368                           ;TOUCH.C: 195: for(Count=0;Count<=3;Count++)
+  1369  01A4  01E2               	clrf	ReadCap1@Count
+  1370  01A5                     l2491:	
+  1371                           
+  1372                           ;TOUCH.C: 196: {
+  1373                           ;TOUCH.C: 197: Touch_init();
+  1374  01A5  228A               	fcall	_Touch_init
+  1375                           
+  1376                           ;TOUCH.C: 199: TKCHGS1=0;
+  1377  01A6  1306               	bcf	6,6	;volatile
+  1378                           
+  1379                           ;TOUCH.C: 200: TKCHGS0=1;
+  1380  01A7  1686               	bsf	6,5	;volatile
+  1381                           
+  1382                           ;TOUCH.C: 201: TKEN = 1;
+  1383  01A8  1606               	bsf	6,4	;volatile
+  1384                           
+  1385                           ;TOUCH.C: 202: DelayUsz();
+  1386  01A9  226E               	fcall	_DelayUsz
+  1387                           
+  1388                           ;TOUCH.C: 203: TKEN = 0;
+  1389  01AA  1683               	bsf	3,5	;RP0=1, select bank1
+  1390  01AB  1206               	bcf	6,4	;volatile
+  1391                           
+  1392                           ;TOUCH.C: 205: TKCHGS0=0;
+  1393  01AC  1286               	bcf	6,5	;volatile
+  1394                           
+  1395                           ;TOUCH.C: 206: TKCHGS1=0;
+  1396  01AD  1306               	bcf	6,6	;volatile
+  1397  01AE  1683               	banksel	134	;# 
+  1398  01AF                     touch_loop1:	
+  1399                           
+  1400                           ;# 
+  1401  01AF  0876               	movf	_chbuff,w	;# 
+  1402  01B0  3860               	iorlw	96	;# 
+  1403  01B1  1683               	bsf	3,5	;# 
+  1404  01B2  0086               	movwf	6	;# 
+  1405  01B3  1606               	bsf	6,4	;# 
+  1406  01B4  0AF3               	incf	_Touch_C0,f	;# 
+  1407  01B5  1903               	btfsc	3,2	;# 
+  1408  01B6  0AF4               	incf	_Touch_C1,f	;# 
+  1409  01B7  1206               	bcf	6,4	;# 
+  1410  01B8  0876               	movf	_chbuff,w	;# 
+  1411  01B9  1683               	bsf	3,5	;# 
+  1412  01BA  0086               	movwf	6	;# 
+  1413  01BB  1D0E               	btfss	14,2	;# 
+  1414  01BC  29AF               	goto	touch_loop1	;# 
+  1415  01BD                     breakloop1:	
+  1416                           
+  1417                           ;TOUCH.C: 234: Touch_end();
+  1418                           
+  1419                           ;# 
+  1420  01BD  2290               	fcall	_Touch_end
+  1421                           
+  1422                           ;TOUCH.C: 235: Touch_Number1=Touch_C1*256+Touch_C0;
+  1423  01BE  1283               	bcf	3,5	;RP0=0, select bank0
+  1424  01BF  0874               	movf	116,w	;volatile
+  1425  01C0  00D5               	movwf	_Touch_Number1+1	;volatile
+  1426  01C1  01D4               	clrf	_Touch_Number1	;volatile
+  1427  01C2  0873               	movf	115,w	;volatile
+  1428  01C3  07D4               	addwf	_Touch_Number1,f	;volatile
+  1429  01C4  1803               	skipnc
+  1430  01C5  0AD5               	incf	_Touch_Number1+1,f	;volatile
+  1431                           
+  1432                           ;TOUCH.C: 236: sum= Touch_Number1+sum;
+  1433  01C6  0854               	movf	_Touch_Number1,w	;volatile
+  1434  01C7  07E0               	addwf	ReadCap1@sum,f
+  1435  01C8  1803               	skipnc
+  1436  01C9  0AE1               	incf	ReadCap1@sum+1,f
+  1437  01CA  0855               	movf	_Touch_Number1+1,w	;volatile
+  1438  01CB  07E1               	addwf	ReadCap1@sum+1,f
+  1439  01CC  3004               	movlw	4
+  1440  01CD  0AE2               	incf	ReadCap1@Count,f
+  1441  01CE  0262               	subwf	ReadCap1@Count,w
+  1442  01CF  1C03               	skipc
+  1443  01D0  29A5               	goto	l2491
+  1444                           
+  1445                           ;TOUCH.C: 237: }
+  1446                           ;TOUCH.C: 238: Touch_Number1 = sum >> 2;
+  1447  01D1  0861               	movf	ReadCap1@sum+1,w
+  1448  01D2  00FB               	movwf	??_ReadCap1+1
+  1449  01D3  0860               	movf	ReadCap1@sum,w
+  1450  01D4  00FA               	movwf	??_ReadCap1
+  1451  01D5  1003               	clrc
+  1452  01D6  0CFB               	rrf	??_ReadCap1+1,f
+  1453  01D7  0CFA               	rrf	??_ReadCap1,f
+  1454  01D8  1003               	clrc
+  1455  01D9  0CFB               	rrf	??_ReadCap1+1,f
+  1456  01DA  0CFA               	rrf	??_ReadCap1,f
+  1457  01DB  087A               	movf	??_ReadCap1,w
+  1458  01DC  00D4               	movwf	_Touch_Number1	;volatile
+  1459  01DD  087B               	movf	??_ReadCap1+1,w
+  1460  01DE  00D5               	movwf	_Touch_Number1+1	;volatile
+  1461  01DF  0008               	return
+  1462  01E0                     __end_of_ReadCap1:	
+  1463                           
+  1464                           	psect	text8
+  1465  028A                     __ptext8:	
+  1466 ;; *************** function _Touch_init *****************
+  1467 ;; Defined at:
+  1468 ;;		line 168 in file "TOUCH.C"
+  1469 ;; Parameters:    Size  Location     Type
+  1470 ;;		None
+  1471 ;; Auto vars:     Size  Location     Type
+  1472 ;;		None
+  1473 ;; Return value:  Size  Location     Type
+  1474 ;;                  1    wreg      void 
+  1475 ;; Registers used:
+  1476 ;;		status,2
+  1477 ;; Tracked objects:
+  1478 ;;		On entry : 100/0
+  1479 ;;		On exit  : 100/100
+  1480 ;;		Unchanged: 0/0
+  1481 ;; Data sizes:    COMMONh COMMONl   BANK0
+  1482 ;;      Params:         0       0       0
+  1483 ;;      Locals:         0       0       0
+  1484 ;;      Temps:          0       0       0
+  1485 ;;      Totals:         0       0       0
+  1486 ;;Total ram usage:        0 bytes
+  1487 ;; Hardware stack levels used:    1
+  1488 ;; Hardware stack levels required when called:    1
+  1489 ;; This function calls:
+  1490 ;;		Nothing
+  1491 ;; This function is called by:
+  1492 ;;		_ReadCap1
+  1493 ;; This function uses a non-reentrant model
+  1494 ;;
+  1495                           
+  1496                           
+  1497                           ;psect for function _Touch_init
+  1498  028A                     _Touch_init:	
+  1499                           
+  1500                           ;TOUCH.C: 170: Touch_C0= 0;
+  1501                           
+  1502                           ;incstack = 0
+  1503                           ; Regs used in _Touch_init: [status,2]
+  1504  028A  01F3               	clrf	115	;volatile
+  1505                           
+  1506                           ;TOUCH.C: 171: Touch_C1= 0;
+  1507  028B  01F4               	clrf	116	;volatile
+  1508                           
+  1509                           ;TOUCH.C: 173: LVDEN =1;
+  1510  028C  1683               	bsf	3,5	;RP0=1, select bank1
+  1511  028D  158E               	bsf	14,3	;volatile
+  1512                           
+  1513                           ;TOUCH.C: 175: TKCON = 0;
+  1514  028E  0186               	clrf	6	;volatile
+  1515  028F  0008               	return
+  1516  0290                     __end_of_Touch_init:	
+  1517                           
+  1518                           	psect	text9
+  1519  0290                     __ptext9:	
+  1520 ;; *************** function _Touch_end *****************
+  1521 ;; Defined at:
+  1522 ;;		line 177 in file "TOUCH.C"
+  1523 ;; Parameters:    Size  Location     Type
+  1524 ;;		None
+  1525 ;; Auto vars:     Size  Location     Type
+  1526 ;;		None
+  1527 ;; Return value:  Size  Location     Type
+  1528 ;;                  1    wreg      void 
+  1529 ;; Registers used:
+  1530 ;;		status,2
+  1531 ;; Tracked objects:
+  1532 ;;		On entry : 0/100
+  1533 ;;		On exit  : 100/100
+  1534 ;;		Unchanged: 0/0
+  1535 ;; Data sizes:    COMMONh COMMONl   BANK0
+  1536 ;;      Params:         0       0       0
+  1537 ;;      Locals:         0       0       0
+  1538 ;;      Temps:          0       0       0
+  1539 ;;      Totals:         0       0       0
+  1540 ;;Total ram usage:        0 bytes
+  1541 ;; Hardware stack levels used:    1
+  1542 ;; Hardware stack levels required when called:    1
+  1543 ;; This function calls:
+  1544 ;;		Nothing
+  1545 ;; This function is called by:
+  1546 ;;		_ReadCap1
+  1547 ;; This function uses a non-reentrant model
+  1548 ;;
+  1549                           
+  1550                           
+  1551                           ;psect for function _Touch_end
+  1552  0290                     _Touch_end:	
+  1553                           
+  1554                           ;TOUCH.C: 179: TKCON = 0;
+  1555                           
+  1556                           ;incstack = 0
+  1557                           ; Regs used in _Touch_end: [status,2]
+  1558  0290  1683               	bsf	3,5	;RP0=1, select bank1
+  1559  0291  0186               	clrf	6	;volatile
+  1560                           
+  1561                           ;TOUCH.C: 180: TKEN = 1;
+  1562  0292  1606               	bsf	6,4	;volatile
+  1563                           
+  1564                           ;TOUCH.C: 182: LVDEN=0;
+  1565  0293  118E               	bcf	14,3	;volatile
+  1566  0294  0008               	return
+  1567  0295                     __end_of_Touch_end:	
+  1568                           
+  1569                           	psect	text10
+  1570  026E                     __ptext10:	
+  1571 ;; *************** function _DelayUsz *****************
+  1572 ;; Defined at:
+  1573 ;;		line 43 in file "TOUCH.C"
+  1574 ;; Parameters:    Size  Location     Type
+  1575 ;;		None
+  1576 ;; Auto vars:     Size  Location     Type
+  1577 ;;  a               1    2[COMMON] unsigned char 
+  1578 ;; Return value:  Size  Location     Type
+  1579 ;;                  1    wreg      void 
+  1580 ;; Registers used:
+  1581 ;;		wreg, status,2, status,0
+  1582 ;; Tracked objects:
+  1583 ;;		On entry : 100/100
+  1584 ;;		On exit  : 0/0
+  1585 ;;		Unchanged: 0/0
+  1586 ;; Data sizes:    COMMONh COMMONl   BANK0
+  1587 ;;      Params:         0       0       0
+  1588 ;;      Locals:         1       0       0
+  1589 ;;      Temps:          0       0       0
+  1590 ;;      Totals:         1       0       0
+  1591 ;;Total ram usage:        1 bytes
+  1592 ;; Hardware stack levels used:    1
+  1593 ;; Hardware stack levels required when called:    1
+  1594 ;; This function calls:
+  1595 ;;		Nothing
+  1596 ;; This function is called by:
+  1597 ;;		_ReadCap1
+  1598 ;; This function uses a non-reentrant model
+  1599 ;;
+  1600                           
+  1601                           
+  1602                           ;psect for function _DelayUsz
+  1603  026E                     _DelayUsz:	
+  1604                           
+  1605                           ;TOUCH.C: 45: unsigned char a;
+  1606                           ;TOUCH.C: 46: for(a=0;a<250;a++)
+  1607                           
+  1608                           ;incstack = 0
+  1609                           ; Regs used in _DelayUsz: [wreg+status,2+status,0]
+  1610  026E  01F9               	clrf	DelayUsz@a
+  1611  026F                     l1442:	
+  1612                           
+  1613                           ;TOUCH.C: 47: {
+  1614                           ;TOUCH.C: 48: __nop();
+  1615  026F  0000               	nop
+  1616  0270  30FA               	movlw	250
+  1617  0271  0AF9               	incf	DelayUsz@a,f
+  1618  0272  0279               	subwf	DelayUsz@a,w
+  1619  0273  1803               	btfsc	3,0
+  1620  0274  0008               	return
+  1621  0275  2A6F               	goto	l1442
+  1622  0276                     __end_of_DelayUsz:	
+  1623                           
+  1624                           	psect	text11
+  1625  0231                     __ptext11:	
+  1626 ;; *************** function _DelayMs *****************
+  1627 ;; Defined at:
+  1628 ;;		line 72 in file "TOUCH.C"
+  1629 ;; Parameters:    Size  Location     Type
+  1630 ;;  Time            1    wreg     unsigned char 
+  1631 ;; Auto vars:     Size  Location     Type
+  1632 ;;  Time            1    0[COMMON] unsigned char 
+  1633 ;;  b               1    2[COMMON] unsigned char 
+  1634 ;;  a               1    1[COMMON] unsigned char 
+  1635 ;; Return value:  Size  Location     Type
+  1636 ;;                  1    wreg      void 
+  1637 ;; Registers used:
+  1638 ;;		wreg, status,2, status,0, pclath, cstack
+  1639 ;; Tracked objects:
+  1640 ;;		On entry : 0/0
+  1641 ;;		On exit  : 0/0
+  1642 ;;		Unchanged: 0/0
+  1643 ;; Data sizes:    COMMONh COMMONl   BANK0
+  1644 ;;      Params:         0       0       0
+  1645 ;;      Locals:         0       3       0
+  1646 ;;      Temps:          0       0       0
+  1647 ;;      Totals:         0       3       0
+  1648 ;;Total ram usage:        3 bytes
+  1649 ;; Hardware stack levels used:    1
+  1650 ;; Hardware stack levels required when called:    2
+  1651 ;; This function calls:
+  1652 ;;		_DelayUs
+  1653 ;; This function is called by:
+  1654 ;;		_ReadCapDisCharge
+  1655 ;; This function uses a non-reentrant model
+  1656 ;;
+  1657                           
+  1658                           
+  1659                           ;psect for function _DelayMs
+  1660  0231                     _DelayMs:	
+  1661                           
+  1662                           ;incstack = 0
+  1663                           ; Regs used in _DelayMs: [wreg+status,2+status,0+pclath+cstack]
+  1664                           ;DelayMs@Time stored from wreg
+  1665  0231  00F0               	movwf	DelayMs@Time
+  1666                           
+  1667                           ;TOUCH.C: 74: unsigned char a,b;
+  1668                           ;TOUCH.C: 75: for(a=0;a<Time;a++)
+  1669  0232  01F1               	clrf	DelayMs@a
+  1670  0233                     l2425:	
+  1671  0233  0870               	movf	DelayMs@Time,w
+  1672  0234  0271               	subwf	DelayMs@a,w
+  1673  0235  1803               	btfsc	3,0
+  1674  0236  0008               	return
+  1675                           
+  1676                           ;TOUCH.C: 76: {
+  1677                           ;TOUCH.C: 77: for(b=0;b<5;b++)
+  1678  0237  01F2               	clrf	DelayMs@b
+  1679  0238                     l2417:	
+  1680                           
+  1681                           ;TOUCH.C: 78: {
+  1682                           ;TOUCH.C: 79: DelayUs(197);
+  1683  0238  30C5               	movlw	197
+  1684  0239  225D               	fcall	_DelayUs
+  1685  023A  3005               	movlw	5
+  1686  023B  0AF2               	incf	DelayMs@b,f
+  1687  023C  0272               	subwf	DelayMs@b,w
+  1688  023D  1C03               	skipc
+  1689  023E  2A38               	goto	l2417
+  1690  023F  0AF1               	incf	DelayMs@a,f
+  1691  0240  2A33               	goto	l2425
+  1692  0241                     __end_of_DelayMs:	
+  1693                           
+  1694                           	psect	text12
+  1695  025D                     __ptext12:	
+  1696 ;; *************** function _DelayUs *****************
+  1697 ;; Defined at:
+  1698 ;;		line 58 in file "TOUCH.C"
+  1699 ;; Parameters:    Size  Location     Type
+  1700 ;;  Time            1    wreg     unsigned char 
+  1701 ;; Auto vars:     Size  Location     Type
+  1702 ;;  Time            1    2[COMMON] unsigned char 
+  1703 ;;  a               1    3[COMMON] unsigned char 
+  1704 ;; Return value:  Size  Location     Type
+  1705 ;;                  1    wreg      void 
+  1706 ;; Registers used:
+  1707 ;;		wreg, status,2, status,0
+  1708 ;; Tracked objects:
+  1709 ;;		On entry : 0/0
+  1710 ;;		On exit  : 0/0
+  1711 ;;		Unchanged: 0/0
+  1712 ;; Data sizes:    COMMONh COMMONl   BANK0
+  1713 ;;      Params:         0       0       0
+  1714 ;;      Locals:         2       0       0
+  1715 ;;      Temps:          0       0       0
+  1716 ;;      Totals:         2       0       0
+  1717 ;;Total ram usage:        2 bytes
+  1718 ;; Hardware stack levels used:    1
+  1719 ;; Hardware stack levels required when called:    1
+  1720 ;; This function calls:
+  1721 ;;		Nothing
+  1722 ;; This function is called by:
+  1723 ;;		_DelayMs
+  1724 ;; This function uses a non-reentrant model
+  1725 ;;
+  1726                           
+  1727                           
+  1728                           ;psect for function _DelayUs
+  1729  025D                     _DelayUs:	
+  1730                           
+  1731                           ;incstack = 0
+  1732                           ; Regs used in _DelayUs: [wreg+status,2+status,0]
+  1733                           ;DelayUs@Time stored from wreg
+  1734  025D  00F9               	movwf	DelayUs@Time
+  1735                           
+  1736                           ;TOUCH.C: 60: unsigned char a;
+  1737                           ;TOUCH.C: 61: for(a=0;a<Time;a++)
+  1738  025E  01FA               	clrf	DelayUs@a
+  1739  025F                     l2395:	
+  1740  025F  0879               	movf	DelayUs@Time,w
+  1741  0260  027A               	subwf	DelayUs@a,w
+  1742  0261  1803               	btfsc	3,0
+  1743  0262  0008               	return
+  1744                           
+  1745                           ;TOUCH.C: 62: {
+  1746                           ;TOUCH.C: 63: __nop();
+  1747  0263  0000               	nop
+  1748  0264  0AFA               	incf	DelayUs@a,f
+  1749  0265  2A5F               	goto	l2395
+  1750  0266                     __end_of_DelayUs:	
+  1751                           
+  1752                           	psect	text13
+  1753  01E0                     __ptext13:	
+  1754 ;; *************** function _ReadCapCharge *****************
+  1755 ;; Defined at:
+  1756 ;;		line 244 in file "TOUCH.C"
+  1757 ;; Parameters:    Size  Location     Type
+  1758 ;;		None
+  1759 ;; Auto vars:     Size  Location     Type
+  1760 ;;		None
+  1761 ;; Return value:  Size  Location     Type
+  1762 ;;                  1    wreg      void 
+  1763 ;; Registers used:
+  1764 ;;		wreg, status,2, status,0, pclath, cstack
+  1765 ;; Tracked objects:
+  1766 ;;		On entry : 0/0
+  1767 ;;		On exit  : 100/0
+  1768 ;;		Unchanged: 0/0
+  1769 ;; Data sizes:    COMMONh COMMONl   BANK0
+  1770 ;;      Params:         0       0       0
+  1771 ;;      Locals:         0       0       0
+  1772 ;;      Temps:          0       2       0
+  1773 ;;      Totals:         0       2       0
+  1774 ;;Total ram usage:        2 bytes
+  1775 ;; Hardware stack levels used:    1
+  1776 ;; Hardware stack levels required when called:    2
+  1777 ;; This function calls:
+  1778 ;;		_ReadCap
+  1779 ;; This function is called by:
+  1780 ;;		_SendDataToPC
+  1781 ;; This function uses a non-reentrant model
+  1782 ;;
+  1783                           
+  1784                           
+  1785                           ;psect for function _ReadCapCharge
+  1786  01E0                     _ReadCapCharge:	
+  1787                           
+  1788                           ;incstack = 0
+  1789                           ; Regs used in _ReadCapCharge: [wreg+status,2+status,0+pclath+cstack]
+  1790  01E0  3008               	movlw	8
+  1791  01E1  1283               	bcf	3,5	;RP0=0, select bank0
+  1792  01E2  00F5               	movwf	117	;volatile
+  1793                           
+  1794                           ;TOUCH.C: 248: ReadCap(1);
+  1795  01E3  3001               	movlw	1
+  1796  01E4  214A               	fcall	_ReadCap
+  1797                           
+  1798                           ;TOUCH.C: 250: Touch_Number_sum=Touch_Number;
+  1799  01E5  0857               	movf	_Touch_Number+1,w	;volatile
+  1800  01E6  00D3               	movwf	_Touch_Number_sum+1	;volatile
+  1801  01E7  0856               	movf	_Touch_Number,w	;volatile
+  1802  01E8  00D2               	movwf	_Touch_Number_sum	;volatile
+  1803                           
+  1804                           ;TOUCH.C: 251: SendTouch_Number1[0] = Touch_Number;
+  1805  01E9  0857               	movf	_Touch_Number+1,w	;volatile
+  1806  01EA  00C9               	movwf	_SendTouch_Number1+1	;volatile
+  1807  01EB  0856               	movf	_Touch_Number,w	;volatile
+  1808  01EC  00C8               	movwf	_SendTouch_Number1	;volatile
+  1809                           
+  1810                           ;TOUCH.C: 254: ReadCap(2);
+  1811  01ED  3002               	movlw	2
+  1812  01EE  214A               	fcall	_ReadCap
+  1813                           
+  1814                           ;TOUCH.C: 257: Touch_Number_sum=Touch_Number+Touch_Number_sum;
+  1815                           
+  1816                           ;TOUCH.C: 258: SendTouch_Number1[1] = Touch_Number;
+  1817  01EF  2210               	fcall	PL6	;call to abstracted procedure
+  1818  01F0  00CB               	movwf	_SendTouch_Number1+3	;volatile
+  1819  01F1  0856               	movf	_Touch_Number,w	;volatile
+  1820  01F2  00CA               	movwf	_SendTouch_Number1+2	;volatile
+  1821                           
+  1822                           ;TOUCH.C: 260: ReadCap(4);
+  1823  01F3  3004               	movlw	4
+  1824  01F4  214A               	fcall	_ReadCap
+  1825                           
+  1826                           ;TOUCH.C: 262: Touch_Number_sum=Touch_Number+Touch_Number_sum;
+  1827                           
+  1828                           ;TOUCH.C: 264: SendTouch_Number1[2] = Touch_Number;
+  1829  01F5  2210               	fcall	PL6	;call to abstracted procedure
+  1830  01F6  00CD               	movwf	_SendTouch_Number1+5	;volatile
+  1831  01F7  0856               	movf	_Touch_Number,w	;volatile
+  1832  01F8  00CC               	movwf	_SendTouch_Number1+4	;volatile
+  1833                           
+  1834                           ;TOUCH.C: 266: ReadCap(8);
+  1835  01F9  3008               	movlw	8
+  1836  01FA  214A               	fcall	_ReadCap
+  1837                           
+  1838                           ;TOUCH.C: 268: Touch_Number_sum=Touch_Number+Touch_Number_sum+1;
+  1839  01FB  0852               	movf	_Touch_Number_sum,w	;volatile
+  1840  01FC  0756               	addwf	_Touch_Number,w	;volatile
+  1841  01FD  00F0               	movwf	??_ReadCapCharge
+  1842  01FE  0853               	movf	_Touch_Number_sum+1,w	;volatile
+  1843  01FF  1803               	skipnc
+  1844  0200  0A53               	incf	_Touch_Number_sum+1,w	;volatile
+  1845  0201  0757               	addwf	_Touch_Number+1,w	;volatile
+  1846  0202  00F1               	movwf	??_ReadCapCharge+1
+  1847  0203  0870               	movf	??_ReadCapCharge,w
+  1848  0204  3E01               	addlw	1
+  1849  0205  00D2               	movwf	_Touch_Number_sum	;volatile
+  1850  0206  0871               	movf	??_ReadCapCharge+1,w
+  1851  0207  1803               	skipnc
+  1852  0208  3E01               	addlw	1
+  1853  0209  3E00               	addlw	0
+  1854  020A  00D3               	movwf	_Touch_Number_sum+1	;volatile
+  1855                           
+  1856                           ;TOUCH.C: 269: SendTouch_Number1[3] = Touch_Number;
+  1857  020B  0857               	movf	_Touch_Number+1,w	;volatile
+  1858  020C  00CF               	movwf	_SendTouch_Number1+7	;volatile
+  1859  020D  0856               	movf	_Touch_Number,w	;volatile
+  1860  020E  00CE               	movwf	_SendTouch_Number1+6	;volatile
+  1861  020F  0008               	return
+  1862  0210                     __end_of_ReadCapCharge:	
+  1863  0210                     PL6:	
+  1864  0210  0856               	movf	_Touch_Number,w	;volatile
+  1865  0211  07D2               	addwf	_Touch_Number_sum,f	;volatile
+  1866  0212  1803               	skipnc
+  1867  0213  0AD3               	incf	_Touch_Number_sum+1,f	;volatile
+  1868  0214  0857               	movf	_Touch_Number+1,w	;volatile
+  1869  0215  07D3               	addwf	_Touch_Number_sum+1,f	;volatile
+  1870  0216  0857               	movf	_Touch_Number+1,w	;volatile
+  1871  0217  0008               	return
+  1872  0218                     __end_ofPL6:	
+  1873                           
+  1874                           	psect	text14
+  1875  014A                     __ptext14:	
+  1876 ;; *************** function _ReadCap *****************
+  1877 ;; Defined at:
+  1878 ;;		line 103 in file "TOUCH.C"
+  1879 ;; Parameters:    Size  Location     Type
+  1880 ;;  ch              1    wreg     unsigned char 
+  1881 ;; Auto vars:     Size  Location     Type
+  1882 ;;  ch              1    2[BANK0 ] unsigned char 
+  1883 ;;  sum             2    0[BANK0 ] unsigned int 
+  1884 ;;  Count           1    3[BANK0 ] unsigned char 
+  1885 ;; Return value:  Size  Location     Type
+  1886 ;;                  1    wreg      void 
+  1887 ;; Registers used:
+  1888 ;;		wreg, status,2, status,0
+  1889 ;; Tracked objects:
+  1890 ;;		On entry : 100/0
+  1891 ;;		On exit  : 100/0
+  1892 ;;		Unchanged: 0/0
+  1893 ;; Data sizes:    COMMONh COMMONl   BANK0
+  1894 ;;      Params:         0       0       0
+  1895 ;;      Locals:         0       0       4
+  1896 ;;      Temps:          2       0       0
+  1897 ;;      Totals:         2       0       4
+  1898 ;;Total ram usage:        6 bytes
+  1899 ;; Hardware stack levels used:    1
+  1900 ;; Hardware stack levels required when called:    1
+  1901 ;; This function calls:
+  1902 ;;		Nothing
+  1903 ;; This function is called by:
+  1904 ;;		_ReadCapCharge
+  1905 ;; This function uses a non-reentrant model
+  1906 ;;
+  1907                           
+  1908                           
+  1909                           ;psect for function _ReadCap
+  1910  014A                     _ReadCap:	
+  1911                           
+  1912                           ;incstack = 0
+  1913                           ; Regs used in _ReadCap: [wreg+status,2+status,0]
+  1914                           ;ReadCap@ch stored from wreg
+  1915  014A  00E1               	movwf	ReadCap@ch
+  1916                           
+  1917                           ;TOUCH.C: 105: unsigned int sum=0;
+  1918  014B  01DF               	clrf	ReadCap@sum
+  1919  014C  01E0               	clrf	ReadCap@sum+1
+  1920                           
+  1921                           ;TOUCH.C: 106: Touch_Number=0;
+  1922  014D  01D6               	clrf	_Touch_Number	;volatile
+  1923  014E  01D7               	clrf	_Touch_Number+1	;volatile
+  1924                           
+  1925                           ;TOUCH.C: 107: ch=NowKey&ch;
+  1926  014F  0875               	movf	117,w	;volatile
+  1927  0150  05E1               	andwf	ReadCap@ch,f
+  1928                           
+  1929                           ;TOUCH.C: 108: if(ch==0)
+  1930  0151  0861               	movf	ReadCap@ch,w
+  1931  0152  1903               	btfsc	3,2
+  1932  0153  0008               	return
+  1933                           
+  1934                           ;TOUCH.C: 110: unsigned char Count;
+  1935                           ;TOUCH.C: 112: for(Count=0;Count<=3;Count++)
+  1936  0154  01E2               	clrf	ReadCap@Count
+  1937  0155                     start_touch:	
+  1938                           
+  1939                           ;TOUCH.C: 118: Touch_C0= 0;
+  1940                           
+  1941                           ;# 
+  1942  0155  1283               	bcf	3,5	;RP0=0, select bank0
+  1943  0156  01F3               	clrf	115	;volatile
+  1944                           
+  1945                           ;TOUCH.C: 119: Touch_C1= 0;
+  1946  0157  01F4               	clrf	116	;volatile
+  1947                           
+  1948                           ;TOUCH.C: 120: LVDCON = 0x03;
+  1949  0158  3003               	movlw	3
+  1950  0159  1683               	bsf	3,5	;RP0=1, select bank1
+  1951  015A  008D               	movwf	13	;volatile
+  1952                           
+  1953                           ;TOUCH.C: 121: PCON = 0x88;
+  1954  015B  3088               	movlw	136
+  1955  015C  008E               	movwf	14	;volatile
+  1956                           
+  1957                           ;TOUCH.C: 123: TKCON = 0;
+  1958  015D  0186               	clrf	6	;volatile
+  1959                           
+  1960                           ;TOUCH.C: 124: TKEN = 1;
+  1961  015E  1606               	bsf	6,4	;volatile
+  1962                           
+  1963                           ;TOUCH.C: 125: __nop();
+  1964  015F  0000               	nop
+  1965                           
+  1966                           ;TOUCH.C: 126: __nop();
+  1967  0160  0000               	nop
+  1968                           
+  1969                           ;TOUCH.C: 127: TKEN = 0;
+  1970  0161  1683               	bsf	3,5	;RP0=1, select bank1
+  1971  0162  1206               	bcf	6,4	;volatile
+  1972                           
+  1973                           ;TOUCH.C: 129: TKCHGS0=1;
+  1974  0163  1686               	bsf	6,5	;volatile
+  1975                           
+  1976                           ;TOUCH.C: 130: TKCHGS1=1;
+  1977  0164  1706               	bsf	6,6	;volatile
+  1978                           
+  1979                           ;TOUCH.C: 134: TKCON=TKCON|ch;
+  1980  0165  1283               	bcf	3,5	;RP0=0, select bank0
+  1981  0166  0861               	movf	ReadCap@ch,w
+  1982  0167  1683               	bsf	3,5	;RP0=1, select bank1
+  1983  0168  0486               	iorwf	6,f	;volatile
+  1984  0169  1683               	banksel	134	;# 
+  1985  016A                     touch_loop:	
+  1986                           
+  1987                           ;# 
+  1988  016A  0AF3               	incf	_Touch_C0,f	;# 
+  1989  016B  1903               	btfsc	3,2	;# 
+  1990  016C  0AF4               	incf	_Touch_C1,f	;# 
+  1991  016D  1706               	bsf	6,6	;# 
+  1992  016E  1606               	bsf	6,4	;# 
+  1993  016F  1206               	bcf	6,4	;# 
+  1994  0170  1306               	bcf	6,6	;# 
+  1995  0171  190E               	btfsc	14,2	;# 
+  1996  0172  296A               	goto	touch_loop	;# 
+  1997  0173                     breakloop:	
+  1998                           
+  1999                           ;TOUCH.C: 155: TKCON = 0;
+  2000                           
+  2001                           ;# 
+  2002  0173  1683               	bsf	3,5	;RP0=1, select bank1
+  2003  0174  0186               	clrf	6	;volatile
+  2004                           
+  2005                           ;TOUCH.C: 156: TKEN = 1;
+  2006  0175  1606               	bsf	6,4	;volatile
+  2007                           
+  2008                           ;TOUCH.C: 157: TKCHE3=1;
+  2009  0176  1586               	bsf	6,3	;volatile
+  2010                           
+  2011                           ;TOUCH.C: 160: Touch_Number=Touch_C1*256+Touch_C0;
+  2012  0177  1283               	bcf	3,5	;RP0=0, select bank0
+  2013  0178  0874               	movf	116,w	;volatile
+  2014  0179  00D7               	movwf	_Touch_Number+1	;volatile
+  2015  017A  01D6               	clrf	_Touch_Number	;volatile
+  2016  017B  0873               	movf	115,w	;volatile
+  2017  017C  07D6               	addwf	_Touch_Number,f	;volatile
+  2018  017D  1803               	skipnc
+  2019  017E  0AD7               	incf	_Touch_Number+1,f	;volatile
+  2020                           
+  2021                           ;TOUCH.C: 161: sum= Touch_Number+sum;
+  2022  017F  0856               	movf	_Touch_Number,w	;volatile
+  2023  0180  07DF               	addwf	ReadCap@sum,f
+  2024  0181  1803               	skipnc
+  2025  0182  0AE0               	incf	ReadCap@sum+1,f
+  2026  0183  0857               	movf	_Touch_Number+1,w	;volatile
+  2027  0184  07E0               	addwf	ReadCap@sum+1,f
+  2028  0185  3004               	movlw	4
+  2029  0186  0AE2               	incf	ReadCap@Count,f
+  2030  0187  0262               	subwf	ReadCap@Count,w
+  2031  0188  1C03               	skipc
+  2032  0189  2955               	goto	start_touch
+  2033                           
+  2034                           ;TOUCH.C: 162: }
+  2035                           ;TOUCH.C: 163: Touch_Number = sum >> 2;
+  2036  018A  0860               	movf	ReadCap@sum+1,w
+  2037  018B  00FA               	movwf	??_ReadCap+1
+  2038  018C  085F               	movf	ReadCap@sum,w
+  2039  018D  00F9               	movwf	??_ReadCap
+  2040  018E  1003               	clrc
+  2041  018F  0CFA               	rrf	??_ReadCap+1,f
+  2042  0190  0CF9               	rrf	??_ReadCap,f
+  2043  0191  1003               	clrc
+  2044  0192  0CFA               	rrf	??_ReadCap+1,f
+  2045  0193  0CF9               	rrf	??_ReadCap,f
+  2046  0194  0879               	movf	??_ReadCap,w
+  2047  0195  00D6               	movwf	_Touch_Number	;volatile
+  2048  0196  087A               	movf	??_ReadCap+1,w
+  2049  0197  00D7               	movwf	_Touch_Number+1	;volatile
+  2050  0198  0008               	return
+  2051  0199                     __end_of_ReadCap:	
+  2052                           
+  2053                           	psect	text15
+  2054  0241                     __ptext15:	
+  2055 ;; *************** function _POWER_INITIAL *****************
+  2056 ;; Defined at:
+  2057 ;;		line 76 in file "main.c"
+  2058 ;; Parameters:    Size  Location     Type
+  2059 ;;		None
+  2060 ;; Auto vars:     Size  Location     Type
+  2061 ;;		None
+  2062 ;; Return value:  Size  Location     Type
+  2063 ;;                  1    wreg      void 
+  2064 ;; Registers used:
+  2065 ;;		wreg, status,2
+  2066 ;; Tracked objects:
+  2067 ;;		On entry : B00/0
+  2068 ;;		On exit  : B00/100
+  2069 ;;		Unchanged: A00/0
+  2070 ;; Data sizes:    COMMONh COMMONl   BANK0
+  2071 ;;      Params:         0       0       0
+  2072 ;;      Locals:         0       0       0
+  2073 ;;      Temps:          0       0       0
+  2074 ;;      Totals:         0       0       0
+  2075 ;;Total ram usage:        0 bytes
+  2076 ;; Hardware stack levels used:    1
+  2077 ;; Hardware stack levels required when called:    1
+  2078 ;; This function calls:
+  2079 ;;		Nothing
+  2080 ;; This function is called by:
+  2081 ;;		_main
+  2082 ;; This function uses a non-reentrant model
+  2083 ;;
+  2084                           
+  2085                           
+  2086                           ;psect for function _POWER_INITIAL
+  2087  0241                     _POWER_INITIAL:	
+  2088                           
+  2089                           ;main.c: 78: OSCCON = 0B01110000;
+  2090                           
+  2091                           ;incstack = 0
+  2092                           ; Regs used in _POWER_INITIAL: [wreg+status,2]
+  2093  0241  3070               	movlw	112
+  2094  0242  1683               	bsf	3,5	;RP0=1, select bank1
+  2095  0243  008F               	movwf	15	;volatile
+  2096                           
+  2097                           ;main.c: 79: INTCON = 0;
+  2098  0244  018B               	clrf	11	;volatile
+  2099                           
+  2100                           ;main.c: 80: PORTA = 0B00110000;
+  2101  0245  3030               	movlw	48
+  2102  0246  1283               	bcf	3,5	;RP0=0, select bank0
+  2103  0247  0085               	movwf	5	;volatile
+  2104                           
+  2105                           ;main.c: 81: TRISA = 0B00001111;
+  2106  0248  300F               	movlw	15
+  2107  0249  1683               	bsf	3,5	;RP0=1, select bank1
+  2108  024A  0085               	movwf	5	;volatile
+  2109                           
+  2110                           ;main.c: 82: WPUA = 0B00000000;
+  2111  024B  0195               	clrf	21	;volatile
+  2112                           
+  2113                           ;main.c: 83: OPTION = 0B00000000;
+  2114  024C  0181               	clrf	1	;volatile
+  2115                           
+  2116                           ;main.c: 85: TRISA &= ~0x2;
+  2117  024D  1085               	bcf	5,1	;volatile
+  2118  024E  0008               	return
+  2119  024F                     __end_of_POWER_INITIAL:	
+  2120                           
+  2121                           	psect	text16
+  2122  024F                     __ptext16:	
+  2123 ;; *************** function _ISR *****************
+  2124 ;; Defined at:
+  2125 ;;		line 45 in file "main.c"
+  2126 ;; Parameters:    Size  Location     Type
+  2127 ;;		None
+  2128 ;; Auto vars:     Size  Location     Type
+  2129 ;;		None
+  2130 ;; Return value:  Size  Location     Type
+  2131 ;;                  1    wreg      void 
+  2132 ;; Registers used:
+  2133 ;;		wreg, status,2, status,0
+  2134 ;; Tracked objects:
+  2135 ;;		On entry : 0/0
+  2136 ;;		On exit  : 100/0
+  2137 ;;		Unchanged: 0/0
+  2138 ;; Data sizes:    COMMONh COMMONl   BANK0
+  2139 ;;      Params:         0       0       0
+  2140 ;;      Locals:         0       0       0
+  2141 ;;      Temps:          2       0       0
+  2142 ;;      Totals:         2       0       0
+  2143 ;;Total ram usage:        2 bytes
+  2144 ;; Hardware stack levels used:    1
+  2145 ;; This function calls:
+  2146 ;;		Nothing
+  2147 ;; This function is called by:
+  2148 ;;		Interrupt level 1
+  2149 ;; This function uses a non-reentrant model
+  2150 ;;
+  2151                           
+  2152                           
+  2153                           ;psect for function _ISR
+  2154  024F                     _ISR:	
+  2155                           
+  2156                           ;main.c: 47: T0IF = 0;
+  2157  024F  110B               	bcf	11,2	;volatile
+  2158                           
+  2159                           ;main.c: 48: TMR0 = 7;
+  2160  0250  3007               	movlw	7
+  2161  0251  1283               	bcf	3,5	;RP0=0, select bank0
+  2162  0252  0081               	movwf	1	;volatile
+  2163                           
+  2164                           ;main.c: 49: TCount++;
+  2165  0253  0ADB               	incf	_TCount,f	;volatile
+  2166                           
+  2167                           ;main.c: 50: PA5 = ~PA5;
+  2168  0254  3020               	movlw	32
+  2169  0255  0685               	xorwf	5,f
+  2170  0256  0878               	movf	??_ISR+1,w
+  2171  0257  008A               	movwf	10
+  2172  0258  0E77               	swapf	??_ISR^(0+-128),w
+  2173  0259  0083               	movwf	3
+  2174  025A  0EFE               	swapf	126,f
+  2175  025B  0E7E               	swapf	126,w
+  2176  025C  0009               	retfie
+  2177  025D                     __end_of_ISR:	
+  2178  007E                     btemp	set	126	;btemp
+  2179  007E                     wtemp0	set	126
+  2180                           
+  2181                           	psect	intentry
+  2182  0004                     __pintentry:	
+  2183                           ;incstack = 0
+  2184                           ; Regs used in _ISR: [wreg+status,2+status,0]
+  2185                           
+  2186  0004                     interrupt_function:	
+  2187  007E                     saved_w	set	btemp
+  2188  0004  00FE               	movwf	btemp
+  2189  0005  0E03               	swapf	3,w
+  2190  0006  00F7               	movwf	??_ISR
+  2191  0007  080A               	movf	10,w
+  2192  0008  00F8               	movwf	??_ISR+1
+  2193  0009  2A4F               	ljmp	_ISR
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         31
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMONh           7      5       5
+    COMMONl           3      3       3
+    BANK0            48      7      38
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMONh
+
+    _ReadCapDisCharge->_ReadCap1
+    _SendHead->_uart_tx
+    _ReadCap1->_DelayUsz
+    _DelayMs->_DelayUs
+    _ReadCapCharge->_ReadCap
+
+Critical Paths under _ISR in COMMONh
+
+    None.
+
+Critical Paths under _main in COMMONl
+
+    _ReadCapDisCharge->_DelayMs
+
+Critical Paths under _ISR in COMMONl
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    _SendDataToPC->_ReadCapDisCharge
+    _ReadCapDisCharge->_ReadCap1
+    _ReadCapCharge->_ReadCap
+
+Critical Paths under _ISR in BANK0
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0    1200
+                      _POWER_INITIAL
+                       _SendDataToPC
+                     _TIMER0_INITIAL
+ ---------------------------------------------------------------------------------
+ (1) _TIMER0_INITIAL                                       0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _SendDataToPC                                         0     0      0    1200
+                      _ReadCapCharge
+                   _ReadCapDisCharge
+ ---------------------------------------------------------------------------------
+ (2) _ReadCapDisCharge                                     3     3      0    1085
+                                              4 BANK0      3     3      0
+                            _DelayMs
+                           _ReadCap1
+                           _SendHead
+                            _uart_tx
+ ---------------------------------------------------------------------------------
+ (3) _SendHead                                             0     0      0     176
+                            _uart_tx
+ ---------------------------------------------------------------------------------
+ (3) _uart_tx                                              1     1      0     176
+                                              2 COMMONh    1     1      0
+                         _uart_delay
+ ---------------------------------------------------------------------------------
+ (4) _uart_delay                                           0     0      0       0
+ ---------------------------------------------------------------------------------
+ (3) _ReadCap1                                             6     6      0     139
+                                              3 COMMONh    2     2      0
+                                              0 BANK0      4     4      0
+                           _DelayUsz
+                          _Touch_end
+                         _Touch_init
+ ---------------------------------------------------------------------------------
+ (4) _Touch_init                                           0     0      0       0
+ ---------------------------------------------------------------------------------
+ (4) _Touch_end                                            0     0      0       0
+ ---------------------------------------------------------------------------------
+ (4) _DelayUsz                                             1     1      0      46
+                                              2 COMMONh    1     1      0
+ ---------------------------------------------------------------------------------
+ (3) _DelayMs                                              3     3      0     138
+                                              0 COMMONl    3     3      0
+                            _DelayUs
+ ---------------------------------------------------------------------------------
+ (4) _DelayUs                                              2     2      0      46
+                                              2 COMMONh    2     2      0
+ ---------------------------------------------------------------------------------
+ (2) _ReadCapCharge                                        2     2      0     115
+                                              0 COMMONl    2     2      0
+                            _ReadCap
+ ---------------------------------------------------------------------------------
+ (3) _ReadCap                                              6     6      0     115
+                                              2 COMMONh    2     2      0
+                                              0 BANK0      4     4      0
+ ---------------------------------------------------------------------------------
+ (1) _POWER_INITIAL                                        0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 4
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (6) _ISR                                                  2     2      0       0
+                                              0 COMMONh    2     2      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 6
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _POWER_INITIAL
+   _SendDataToPC
+     _ReadCapCharge
+       _ReadCap
+     _ReadCapDisCharge
+       _DelayMs
+         _DelayUs
+       _ReadCap1
+         _DelayUsz
+         _Touch_end
+         _Touch_init
+       _SendHead
+         _uart_tx
+           _uart_delay
+       _uart_tx
+         _uart_delay
+   _TIMER0_INITIAL
+
+ _ISR (ROOT)
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMMONh           7      0       0       0        0.0%
+EEDATA              80      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+BITCOMMONl           3      0       0       1        0.0%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+COMMONh              7      5       5       2       71.4%
+BITSFR1              0      0       0       2        0.0%
+SFR1                 0      0       0       2        0.0%
+COMMONl              3      3       3       3      100.0%
+STACK                0      0       0       4        0.0%
+DATA                 0      0      2E       5        0.0%
+BITBANK0            30      0       0       6        0.0%
+BANK0               30      7      26       7       79.2%
+ABS                  0      0      2E       8        0.0%
+
+
+GNU Macro Assembler for 8 bit devices.     
+Symbol Table                                                                                   Wed Oct 15 19:22:21 2025
+
+                       PL2 00D0                         PL4 00D5                         PL6 0210  
+                       PL8 00DE                         fsr 0004                        PL10 00E6  
+                      PL12 00EB                        l711 010E                        l721 0140  
+                      l713 0118                        l715 0122                        l707 00FA  
+                      l717 012C                        l709 0104                        l719 0136  
+            _ReadCapCharge 01E0                        _PA1 0029                        _GIE 005F  
+                      _PA5 002D                        _ISR 024F                        fsr0 0004  
+                      indf 0000                 ReadCap1@ch 005F                       ?_ISR 0077  
+               ReadCap@sum 005F                       l1442 026F                       l2341 011C  
+                     l2333 0112                       l2325 0108                       l2317 00FE  
+                     l2417 0238                       l2425 0233                       l2373 0144  
+                     l2365 013A                       l2357 0130                       l2349 0126  
+                     l2621 007E                       l2543 0012                       l2395 025F  
+                     l2491 01A5                       l2723 027B                       l2595 005A  
+                     _T0IE 005D                       _T0IF 005A                       _PCON 008E  
+                     _TKEN 0434                       _TMR0 0001                       _WPUA 0095  
+                     _main 0276                       btemp 007E                       start 000A  
+          __end_of_DelayMs 0241            __end_of_DelayUs 0266                ReadCap1@sum 0060  
+          __end_of_ReadCap 0199                      ??_ISR 0077             _TIMER0_INITIAL 027D  
+           ?_ReadCapCharge 0077                      ?_main 0077                      _LVDEN 0473  
+              _ChargeCount 0058                      _TKCON 0086                      _PORTA 0005  
+                    _TRISA 0085                      _temp2 005A                      pclath 000A  
+          __end_of_uart_tx 014A                      status 0003                      wtemp0 007E  
+         __end_of_DelayUsz 0276            __initialization 000B               __end_of_main 027D  
+   __end_of_TIMER0_INITIAL 0284           __end_of_ReadCap1 01E0               ReadCap@Count 0062  
+         __end_of_SendHead 028A                     ??_main 007C           _ReadCapDisCharge 0012  
+                   _INTCON 000B                  ??_DelayMs 007B                  ??_DelayUs 0079  
+                   _LVDCON 008D                     _OSCCON 008F                     _TKCHE3 0433  
+                   _OPTION 0081                     _STATUS 0003                  ??_ReadCap 0079  
+                   _TCount 005B              ?_SendDataToPC 0070                     _NowKey 0075  
+          ?_TIMER0_INITIAL 0077                     _chbuff 0076            ??_ReadCapCharge 0070  
+                   saved_w 007E                  ??_uart_tx 0079         __size_of_Touch_end 0005  
+               _Touch_Buff 0073      __end_of_POWER_INITIAL 024F                 _Touch_init 028A  
+  __end_of__initialization 0010             ??_SendDataToPC 007C              ReadCap1@Count 0062  
+               __end_ofPL2 00D5                 __end_ofPL4 00DE                 __end_ofPL6 0218  
+               __end_ofPL8 00E6                  ?_DelayUsz 0077                 __pbssBANK0 0040  
+                ?_ReadCap1 0077                  ?_SendHead 0077                 __pmaintext 0276  
+               __pintentry 0004          __end_of_Touch_end 0295                 ??_DelayUsz 0079  
+                  _TKCHGS0 0435                    _TKCHGS1 0436                 ??_ReadCap1 007A  
+                  _DelayMs 0231                    _DelayUs 025D                ?_Touch_init 0077  
+                  _ReadCap 014A                 ??_SendHead 007A                    _ReadCom 005D  
+ __end_of_ReadCapDisCharge 00D0                    __ptext0 0000                    __ptext1 027D  
+                  __ptext2 0295                    __ptext3 0012                    __ptext4 0284  
+                  __ptext5 00F0                    __ptext6 0218                    __ptext7 0199  
+                  __ptext8 028A                    __ptext9 0290               __size_of_ISR 000E  
+     __end_of_SendDataToPC 0297                    _uart_tx 00F0                    clrloop0 0267  
+     end_of_initialization 0010                  DelayUsz@a 0079           ??_TIMER0_INITIAL 0079  
+               _uart_delay 0218        __size_of_Touch_init 0006                uart_tx@data 0079  
+        _Touch_Number1_sum 0050                  ReadCap@ch 0061            __pcstackCOMMONh 0077  
+          __pcstackCOMMONl 0070      __end_of_ReadCapCharge 0210                __end_ofPL10 00EB  
+              __end_ofPL12 00F0        start_initialization 000B                __end_of_ISR 025D  
+        __size_of_DelayUsz 0008          __size_of_ReadCap1 0047      ReadCapDisCharge@Count 0065  
+        __size_of_SendHead 0006                  _TestCount 005E                ?_uart_delay 0077  
+    __size_of_SendDataToPC 0002     __size_of_POWER_INITIAL 000E                  _Touch_end 0290  
+                ___latbits 0000              __pcstackBANK0 005F               ??_Touch_init 0079  
+                 ?_DelayMs 0077                   ?_DelayUs 0077                   ?_ReadCap 0077  
+             _SendDataToPC 0295          ?_ReadCapDisCharge 0077         __end_of_Touch_init 0290  
+               ?_Touch_end 0077         ??_ReadCapDisCharge 0063                   ?_uart_tx 0077  
+      __size_of_uart_delay 0019          interrupt_function 0004              _POWER_INITIAL 0241  
+                 DelayMs@a 0071                   DelayMs@b 0072                   DelayUs@a 007A  
+                clear_ram0 0266                  breakloop1 01BD           _Touch_Number_sum 0052  
+                 _DelayUsz 026E                DelayMs@Time 0070                   _ReadCap1 0199  
+           ?_POWER_INITIAL 0077                DelayUs@Time 0079           __size_of_DelayMs 0010  
+         __size_of_DelayUs 0009                   _SendHead 0284           __size_of_ReadCap 004F  
+                 _TreCount 005C                   _Touch_C0 0073                   _Touch_C1 0074  
+               start_touch 0155                ??_Touch_end 0079                 touch_loop1 01AF  
+                 __ptext10 026E                   __ptext11 0231                   __ptext12 025D  
+                 __ptext13 01E0                   __ptext14 014A                   __ptext15 0241  
+                 __ptext16 024F           __size_of_uart_tx 005A              __size_of_main 0007  
+                 breakloop 0173               ??_uart_delay 0079    __size_of_TIMER0_INITIAL 0007  
+        _SendTouch_Number1 0048          _SendTouch_Number2 0040            ??_POWER_INITIAL 0079  
+                 intlevel1 0000                  touch_loop 016A         __end_of_uart_delay 0231  
+   __size_of_ReadCapCharge 0030              _Touch_Number1 0054  __size_of_ReadCapDisCharge 00BE  
+             _Touch_Number 0056  

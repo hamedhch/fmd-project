@@ -1,0 +1,19 @@
+各位代理商朋友们，中午好！
+非常感谢对FMD产品的支持！针对之前MCU工具的相关问题，我们做了优化与更新，同时新增型号。请查收最新安装软件，谢谢！
+“FMD-MCU 工具安装包”的压缩包：
+01、CompilerSetup 2.0.9
+  	增加FT62FC1X、FT64FDCX、FT62F36X、FT60FC1X 
+02、FMDIDE V3.1.3.0
+	增加FT62FC1X、FT64FDCX、FT62F36X、FT60FC1X
+03、FMDProgrammer V5.3.9.0
+	增加FT62FC1X、FT64FDCX、FT62F36X、FT60FC1X
+04、VisualTouchTL V2.0.3.9
+	增加FT62FC1X、FT64FDCX、FT62F36X、
+“SP100_V1.0.8”的压缩包
+01、上位机 V1.0.8：
+     增加新型号FT62FC1X、FT60FC1X  	
+02、下位机 V1.0.7：
+     1.更新固件至 1.0.7，修正已知 BUG
+     2.增加新型号FT62FC1X、FT60FC1X
+     3.新增支持 FT61F02x 与 FT61FC2x 系列芯片的互相烧录功能
+注意：1、安装前，需关闭360等杀毒软件；2、先安装CompilerSetup2.0.8.exe，再安装其它软件。

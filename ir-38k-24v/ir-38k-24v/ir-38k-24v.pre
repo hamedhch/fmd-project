@@ -1,17 +1,17 @@
 
 # 1 "ir-38k-24v.C"
 
-# 26 "C:\Program Files (x86)\CCompiler\Compiler\data\include\fmd.h"
+# 26 "C:\Users\hamed\OneDrive\Documents\FMD_Project\ft62f211\FMDIDE3.0.7\data\include\fmd.h"
 extern const char __xc8_OPTIM_SPEED;
 
 extern double __fpnormalize(double);
 
 
-# 13 "C:\Program Files (x86)\CCompiler\Compiler\data\include\gcc8debug.h"
+# 13 "C:\Users\hamed\OneDrive\Documents\FMD_Project\ft62f211\FMDIDE3.0.7\data\include\GCC8debug.h"
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 
-# 10 "C:\Program Files (x86)\CCompiler\Compiler\data\include\FT60F01X.h"
+# 10 "C:\Users\hamed\OneDrive\Documents\FMD_Project\ft62f211\FMDIDE3.0.7\data\include\FT60F01X.h"
 volatile unsigned char INDF @ 0x000;
 
 
@@ -552,21 +552,21 @@ volatile unsigned char SFR9E @0x09E;
 volatile unsigned char SFR9F @0x09F;
 
 
-# 30 "C:\Program Files (x86)\CCompiler\Compiler\data\include\SYSCFG.h"
+# 30 "C:\Users\hamed\OneDrive\Documents\FMD_Project\ft62f211\FMDIDE3.0.7\data\include\SYSCFG.h"
 #pragma intrinsic(__nop)
 extern void __nop(void);
 
 # 79
 extern unsigned int flash_read(unsigned short addr);
 
-# 41 "C:\Program Files (x86)\CCompiler\Compiler\data\include\eeprom_routines.h"
+# 41 "C:\Users\hamed\OneDrive\Documents\FMD_Project\ft62f211\FMDIDE3.0.7\data\include\eeprom_routines.h"
 extern void eeprom_write(unsigned char addr, unsigned char value);
 extern unsigned char eeprom_read(unsigned char addr);
 extern void eecpymem(volatile unsigned char *to, __eeprom unsigned char *from, unsigned char size);
 extern void memcpyee(__eeprom unsigned char *to, const unsigned char *from, unsigned char size);
 
 
-# 152 "C:\Program Files (x86)\CCompiler\Compiler\data\include\SYSCFG.h"
+# 152 "C:\Users\hamed\OneDrive\Documents\FMD_Project\ft62f211\FMDIDE3.0.7\data\include\SYSCFG.h"
 #pragma intrinsic(_delay)
 extern __nonreentrant void _delay(unsigned long);
 
@@ -591,12 +591,12 @@ Puls_IR++;
 
 
 
-PA0 = ~PA0;
+PA1 = ~PA1;
 
 if(Puls_IR>=40){
 TMR0 = 0;
 T0IE=0;
-PA0 = 0;
+PA1 = 0;
 }
 }
 
@@ -649,7 +649,7 @@ INTCON = 0;
 OPTION = 0B00001000;
 
 PORTA = 0B00000000;
-TRISA = 0B00000100;
+TRISA = 0B00001000;
 
 WPUA = 0B00000000;
 
@@ -709,7 +709,7 @@ if(Puls_IR>=40){
 
 
 
-if(PA2==0){
+if(PA3==0){
 Puls_Count++;
 Puls_off=0;
 }else
@@ -720,7 +720,7 @@ Puls_Count=0;
 
 DelayUs(400);
 
-if(PA2!=0){
+if(PA3!=0){
 Puls_Count++;
 Puls_off++;
 }else
@@ -739,17 +739,22 @@ if(Puls_Count>30 && Lock==0){
 
 Lock=1;
 
-PA1=1;
+PA4 =0;
+
+PA2=1;
 DelayMs(500);
-PA1=0;
+PA2=0;
 DelayMs(200);
-PA1=1;
+PA2=1;
 DelayMs(500);
-PA1=0;
+PA2=0;
+
+
+DelayMs(4000);
+DelayMs(4000);
+DelayMs(4000);
 
 PA4 =1;
-DelayMs(3000);
-PA4 =0;
 
 }
 if(Puls_off>500 )
@@ -757,13 +762,13 @@ if(Puls_off>500 )
 Lock=0;
 }
 
-# 221
+# 226
 TMR0 = 239;
 T0IF = 0;
 T0IE=1;
 Puls_IR=0;
 }
 
-# 234
+# 239
 }
 }

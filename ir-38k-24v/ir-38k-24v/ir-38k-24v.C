@@ -10,9 +10,9 @@
 *                  FT60F011A  SOP8 
 *                 ----------------
 *  VDD-----------|1(VDD)    (GND)8|------------GND     
-*  IRREC---------|2(PA2)    (PA4)7|------------out 
-*  BIZER---------|3(PA1)    (PA5)6|----------LED_2
-*       ---------|4(PA3)    (PA0)5|----------IRTRN
+*  BIZER---------|2(PA2)    (PA4)7|------------out 
+*  IRTRN---------|3(PA1)    (PA5)6|----------
+*  IRREC---------|4(PA3)    (PA0)5|----------
 *			      ----------------
 */
 //*********************************************************
@@ -20,11 +20,11 @@
 //***********************宏定义****************************
 #define  unchar         unsigned int 
 
-#define  IRREC		PA2
+#define  IRREC		PA3
 
  
-#define	 IRTRN		PA0
-#define	 BIZER		PA1
+#define	 IRTRN		PA1
+#define	 BIZER		PA2
 #define	 out  		PA4
 
 
@@ -106,7 +106,7 @@ void POWER_INITIAL (void)
 	OPTION = 0B00001000;				//Bit3=1，WDT MODE，PS=000=WDT RATE 1:1
 
 	PORTA  = 0B00000000;					
-	TRISA  = 0B00000100;				//PA输入输出 0-输出 1-输入
+	TRISA  = 0B00001000;				//PA输入输出 0-输出 1-输入
                                         //PA2-IN PA4-OUT
 	WPUA   = 0B00000000;     			//PA端口上拉控制 1-开上拉 0-关上拉								
 					 		            //开PA2上拉
@@ -195,7 +195,9 @@ void main()
 					
 			
 				Lock=1;
-				
+                
+				out =0;
+                
 				BIZER=1;
                 DelayMs(500); 
                 BIZER=0;
@@ -204,9 +206,12 @@ void main()
                 DelayMs(500); 
                 BIZER=0;
                 
+				
+                DelayMs(4000); 
+                DelayMs(4000);
+                DelayMs(4000);
+                
 				out =1;
-                DelayMs(3000); 
-				out =0;
 
 			}
 			if(Puls_off>500 )

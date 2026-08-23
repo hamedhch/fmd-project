@@ -1,0 +1,13 @@
+"C:\Program Files\IAR Systems\Embedded Workbench 9.0\arm\bin\armPROC.dll" 
+
+"C:\Program Files\IAR Systems\Embedded Workbench 9.0\arm\bin\armJET.dll" 
+
+"D:\workspace\FMD\Touch\6100\IAR\LIB\touchlib_6100_pollscan_nocs\Pro\Debug\Exe\Pro.out" 
+
+--plugin="C:\Program Files\IAR Systems\Embedded Workbench 9.0\arm\bin\armbat.dll" 
+
+--flash_loader="C:\Program Files\IAR Systems\Embedded Workbench 9.0\arm\config\flashloader\FT\FlashFT32F0xx.board" 
+
+
+
+

@@ -254,7 +254,6 @@ void main()
  TIMER2_INITIAL();
  TIMER0_INITIAL();       
  
- 
         LED=1;
         
         
