@@ -23,451 +23,569 @@
 
 //===========================================================
 //===========================================================
-#include	"SYSCFG.h"
+// Project: RF-car-touch.prj
+// Device: FT60F01X (FT60F011A SOP8)
+// Memory: Flash 1KX14b, EEPROM 256X8b, SRAM 64X8b
+
+#include "SYSCFG.h"
+
+#define RF          PA3
+#define data_touch  PA2
+#define out1        PA5
+#define out2        PA1
+#define out3        PA0
+#define out4        PA4
+
+#define REMOTES_PER_KEY 5
 
 
 
 
+// --- „ €Ì—Â«Ì Å—Ê ò·  «ç (Â„êÌ 1 »«Ì Ì ÃÂ  »ÂÌ‰Âù”«“Ì RAM) ---
+volatile unsigned char rx_state = 0;      
+volatile unsigned char pulse_counter = 0;  
+volatile unsigned char high_counter = 0;   
+volatile unsigned char payload_val = 0;    
+volatile unsigned char RxBusy = 0;        
+volatile unsigned char frame_ready = 0;
 
-#define RF PA3
+// --- „ €Ì—Â«Ì —Ì„Ê  RF ---
+volatile unsigned int  conternotRF = 0;
+volatile unsigned char Timedown = 0;
+volatile unsigned char Data[3], DataM[3], RFData[3];
+volatile unsigned char eerom = 0, lastKey = 0, LernRFKey = 0;
+volatile unsigned char Count = 0, Buffer = 0, Bit = 0;
 
-#define out1 PA4
-#define out2 PA0
-#define out3 PA1
-#define out4 PA5
+// --- »Ì ùÂ«Ì ò‰ —·Ì ---
+volatile bit O1 = 0, O2 = 0, O3 = 0, O4 = 0;
+volatile bit Start = 0, state1 = 0, state2 = 0, state3 = 0, state4 = 0;
+volatile bit LernRFblink = 0, LernRF = 0, Frist = 0, Finish = 0, Lock = 0;
 
-#define data_touch PA2
-
-
-
-
-
-
-#define	unchar	unsigned char
-
-
-//Variable definition
-volatile unsigned int conternotRF=0, conterout=0 , conteroutnot=0;
-volatile unsigned char Timedown=0 , Data[3] ,DataM[3],DataS[4][3],RFData[3] , eerom=0;
-volatile unsigned char  lastKey=0 ,LernRFKey=0 , Count=0 , Buffer=0,Bit=0 ;	
-
-volatile bit  O1=0,O2=0,O3=0,O4=0,Start=0,state1=0 ,state2=0 ,state3=0 ,state4=0  , LernRFblink=0 , LernRF=0,Frist=0,Finish=0,Lock=0;
-//===========================================================
-
+// ---  Ê«»⁄ ---
 void POWER_INITIAL(void);
 void TIMER2_INITIAL(void);
 void TIMER0_INITIAL(void);
-
 unsigned char EEPROMread(unsigned char EEAddr);
-void EEPROMwrite(unsigned char EEAddr,unsigned int Data);
+void EEPROMwrite(unsigned char EEAddr, unsigned char Data);
 void DelayUs(unsigned char Time);
 void DelayMs(unsigned int Time);
+void Check_RF_Match(void);
+void Learn_Current_Remote(unsigned char key_num);
+void Process_Touch_Payload(void);
 
-void SEND_DATA(unchar Code);
-void SEND_CODE(unchar Code1,unchar Code2,unchar Code3);
-
-//=============================================
+//===========================================================
+// —Ê Ì‰ Êﬁ›Â (”»ò Ê ”—Ì⁄)
+//===========================================================
 void interrupt ISR(void)
 {
-
-
-  if(T0IE && T0IF)					
-	{
-		TMR0 = 239;					
-		T0IF = 0;    
+    // -----------  «Ì„— ’›— (œÌòÊœ— Å—Ê ò·  «ç ÂÊ· ò) -----------
+    if(T0IE && T0IF)					
+    {
+        TMR0 = 239;					
+        T0IF = 0;    
         
-        
-        if(LernRF==1){
-			conternotRF++;
-        }
-        
-		if(conternotRF>=20000 ){//“„«‰ Õ–› —Ì„Ê  «“ ò·Ìœ
-			conternotRF=0;
-            
-            DataM[0]=0;
-            DataM[1]=0;
-            DataM[2]=0;
-            
-			Lock=1;
-		}
-        
-        
-        if(data_touch==0){
-             conterout++;
-             conteroutnot=0;
-        }
-        
-        if(data_touch==1 && conteroutnot<=500){
-             conteroutnot++;
-        }
-        
-						//conterout>5 && conterout<15
-        if(data_touch==1 && conterout>230 && conterout<360 ){
-			conterout++;
-        }
-        
-        if(conteroutnot>300 ){
-			 
-             //conterout>53 && conterout<57
-            if(conterout>1080 && conterout<1150 ){
-
-                 
-                if(lastKey==1)conterout=470;
-                if(lastKey==2)conterout=590;
-                if(lastKey==3)conterout=710;
-                if(lastKey==4)conterout=840;
-                
-                LernRFblink=1;
-                
-                
-			}
-            
-            
-             //conterout>18 && conterout<22
-            if(((conterout>450 && conterout<490 ) || O1==1 ) && LernRFKey!=1){
-
-                if(state1==0){
-					state1=1;
-                }else{
-					state1=0;
-                }
-                
-                eerom=1;
-                if(O1!=1)lastKey=1;
-                out1=state1;
-                O1=0;
-			}
-             
-             //conterout>25 && conterout<29
-            if(((conterout>570 && conterout<610 ) || O2==1) && LernRFKey!=2){
-
-                if(state2==0){
-					state2=1;
-                }else{
-					state2=0;
-                }
-                eerom=2;
-                
-                out2=state2;
-                if(O2!=1)lastKey=2;
-                O2=0;
-			}
-           
-             //conterout>32 && conterout<36
-            if(((conterout>690 && conterout<725 ) || O3==1) && LernRFKey!=3){
-
-                if(state3==0){
-					state3=1;
-                }else{
-					state3=0;
-                }
-                eerom=3;
-                
-                out3=state3;
-                if(O3!=1)lastKey=3;
-                O3=0;
-			}
-			
-             //conterout>39 && conterout<43
-            if(((conterout>820 && conterout<850 ) || O4==1) && LernRFKey!=4){
-
-                if(state4==0){
-					state4=1;
-                }else{
-					state4=0;
-                }
-                eerom=4;
-                
-                out4=state4;
-               if(O4!=1)lastKey=4;
-               O4=0;
+        if(LernRF == 1)
+        {
+            conternotRF++;
+            if(conternotRF >= 15000) // Œ—ÊÃ «“ ·—‰ »⁄œ «“  «Ì„ù«Ê 
+            {
+                conternotRF = 0;
+                LernRF = 0;
+                LernRFKey = 0;
             }
-            //----------------------------------------------------------
-            
-            conterout=0;
         }
         
-	} 
+        // --- „«‘Ì‰ Õ«·  œ—Ì«›  Âœ— Ê ÅÌ·Êœ ---
+        if(data_touch == 0) // Œÿ LOW «” 
+        {
+            high_counter = 0;
+            if(pulse_counter < 250) pulse_counter++;
 
+            if(rx_state == 1) //  ‘ŒÌ’ ·»Â Å«ÌÌ‰ù—Ê‰œÂ œÌ «Ì ò·Ìœ »⁄œ «“ Âœ—
+            {
+                rx_state = 2; // Ê—Êœ »Â «‰œ«“ÂùêÌ—Ì ÅÌ·Êœ
+                pulse_counter = 1;
+            }
+        }
+        else // Œÿ HIGH «” 
+        {
+            if(high_counter < 250) high_counter++;
 
+            if(rx_state == 0) // Å«Ì«‰ Å«·” Âœ—
+            {
+                if(pulse_counter >= 20 && pulse_counter <= 30) // Âœ— 10ms
+                {
+                    rx_state = 1; // „‰ Ÿ— Êﬁ›Â HIGH
+                }
+                pulse_counter = 0;
+            }
+            else if(rx_state == 1)
+            {
+                if(high_counter > 80) //  «Ì„ù«Ê  Ãœ«ò‰‰œÂ
+                {
+                    rx_state = 0;
+                    pulse_counter = 0;
+                }
+            }
+            else if(rx_state == 2) // Å«Ì«‰ Å«·” LOW ÅÌ·Êœ
+            {
+                payload_val = pulse_counter; // –ŒÌ—Â œﬁÌﬁ „ﬁœ«— ò·Ìœ
+                rx_state = 3;
+                pulse_counter = 0;
+                high_counter = 1;
+            }
+            else if(rx_state == 3) // Å«Ì«‰ ›—Ì„ Ê  √ÌÌœ
+            {
+                if(high_counter >= 15)
+                {
+                    frame_ready = 1;
+                    rx_state = 0;
+                }
+            }
+        }
 
-if(TMR2IE && TMR2IF)			//100us 5KHz
- {
- 
-	//out1=!out1;
-    
-	TMR2IF = 0;
+        // »«“ ò—œ‰ ﬁ›· Œÿ  «ç Å” «“ —Â« ‘œ‰ ò«„·
+        if(RxBusy == 1 && data_touch == 1 && high_counter >= 60)
+        {
+            RxBusy = 0;
+        }
+    }
+
+    // -----------  «Ì„— œÊ (œÌòÊœ— ”Ìê‰«· —Ì„Ê  RF) -----------
+	
+    if(TMR2IE && TMR2IF)			
+{
+    TMR2IF = 0;
     CLRWDT();
     
-	 if(RF==0){
-		Timedown++;Frist=1;
-        
-	 }
-	 else
-	 {
-		
-        
-		if(Timedown>250){
-			Finish=0;
-			Timedown=0;
+    if(RF == 0)
+    {
+        if(Timedown < 250)
+        {
+            Timedown++;
+        }
+        Frist = 1;
+    }
+    else
+    {
+        // 1. «ê— Å«·” »Ì‘ «“ Õœ ÿÊ·«‰Ì ‘œ (”òÊ  Ì« ‰ÊÌ“ ÿÊ·«‰Ì)° Â„ÂùçÌ“ —« —Ì”  ò‰ Ê Œ«—Ã ‘Ê
+        if(Timedown >= 250)
+        {
+            Timedown = 0;
+            Frist = 0;
+            Start = 0;
+            Bit = 8;
+            Buffer = 0;
+            Count = 0;
+            Finish = 0;
+            return;
         }
         
-		if(Frist==1 & Finish==0)
+        // 2. Å—œ«“‘ Å«·” „⁄ »— œ—Ì«›  ‘œÂ
+        if((Frist == 1) && (Finish == 0))
         {
-			
-			if(Start==1)
-			{
-				Bit--;
-				if(Timedown>15 & Timedown< 30){
-					Buffer = Buffer << 1;  
-				}
-				else if(Timedown>5 & Timedown< 12){
-					Buffer = Buffer << 1;
-					Buffer = Buffer + 1;
-				}
-                else{
-					Count=0;
-                    Bit=8;
-                    Buffer=0;
-                    Start=0;
+            // «·›) ¬Ì« Å«·” ‘—Ê⁄ ›—Ì„ (Sync) «” ø
+            if(Timedown >= 180 && Timedown <= 245)
+            { 
+                Start = 1;
+                Bit = 8;
+                Count = 0;
+                Buffer = 0;
+            }
+            // ») ¬Ì« ﬁ»·« ”‰ò  «ÌÌœ ‘œÂ Ê «ò‰Ê‰ œ— Õ«· œ—Ì«›  »Ì ùÂ«Ì œ«œÂ Â” Ì„ø
+            else if(Start == 1)
+            {
+                Bit--;
+
+                // Å«·” »·‰œ (»Ì  0 „‰ÿﬁÌ)
+                if(Timedown >= 14 && Timedown <= 32)
+                {
+                    Buffer = Buffer << 1;  
+                }
+                // Å«·” òÊ «Â (»Ì  1 „‰ÿﬁÌ)
+                else if(Timedown >= 4 && Timedown <= 13)
+                {
+                    Buffer = (Buffer << 1) | 1;
+                }
+                // Œÿ«Ì “„«‰Ì œ— »Ì  -> —Ì”  Ê÷⁄Ì  œÌòÊœ
+                else
+                {
+                    Count = 0;
+                    Bit = 8;
+                    Buffer = 0;
+                    Start = 0;
                 }
                 
-				if(Bit == 0){
-					Bit=8;
-					Data[Count]=RFData[Count];
-					RFData[Count]=Buffer;
-					Count++;
-					
-					if(Count>=3)
-					{
-						Count=0;
-						Start=0;
-						if(Data[0]==RFData[0] && Data[1]==RFData[1] &&Data[2]==RFData[2]) 
-						{
-							DataM[0]=RFData[0];
-							DataM[1]=RFData[1];
-							DataM[2]=RFData[2];
-							
-							Finish=1;
-							Lock=1;
-						}else
-						{
-                         NOP();
+                // Êﬁ Ì ? »Ì  Ìò »«Ì  ò«„· ‘œ
+                if(Bit == 0)
+                {
+                    Bit = 8;
+                    Data[Count] = RFData[Count];
+                    RFData[Count] = Buffer;
+                    Count++;
+                    
+                    // œ—Ì«›  ò«„· ? »«Ì  (?? »Ì  —Ì„Ê  EV1527)
+                    if(Count >= 3)
+                    {
+                        Count = 0;
+                        Start = 0;
+
+                        //  «ÌÌœ «⁄ »«— »« œ—Ì«›  ? ›—Ì„ „ Ê«·Ì Ìò”«‰
+                        if(Data[0] == RFData[0] && 
+                           Data[1] == RFData[1] && 
+                           Data[2] == RFData[2]) 
+                        {
+                            DataM[0] = RFData[0];
+                            DataM[1] = RFData[1];
+                            DataM[2] = RFData[2];
+                            Finish = 1;
+                            Lock = 1;
                         }
-					} 
-					Buffer=0;
-				}
-			}
-            
-			if(Timedown>200 && Timedown<240){ 
-				Start=1;Bit=8;
+                    } 
+                    Buffer = 0;
+                }
             }
-            
-			Frist=0;
-			
-		}
-        			Timedown=0;
-	 }
- 
- }
- 
+
+            Frist = 0;
+        }
+
+        Timedown = 0;
+    }
 }
 
+    
+}
 
 //===========================================================
-
-void main()
+//  «»⁄ »——”Ì  ÿ«»ﬁ —Ì„Ê  »« EEPROM
+//===========================================================
+void Check_RF_Match(void)
 {
- POWER_INITIAL();
- TIMER2_INITIAL();
- TIMER0_INITIAL();       
- 
- TMR2IE = 1;   
-
-Finish=0;
-
-state1=EEPROMread(31);
-state2=EEPROMread(32);
-state3=EEPROMread(33);
-state4=EEPROMread(34);
- 
-
-out1=state1;
-out2=state2;
-out3=state3;
-out4=state4;
- 
-char i;
-for(i=0;i<4;i++)
-{
-	CLRWDT();
-	DataS[i][0]=EEPROMread(i*3);
-	DataS[i][1]=EEPROMread((i*3)+1);
-	DataS[i][2]=EEPROMread((i*3)+2);
-}
-
-
-Start=0;
-
- while(1)
- {
-	CLRWDT();
+    unsigned char k, r, base_addr;
     
-    if(eerom!=0){
-		if(eerom==1)EEPROMwrite(31,state1);
-        if(eerom==2)EEPROMwrite(32,state2);
-        if(eerom==3)EEPROMwrite(33,state3);
-        if(eerom==4)EEPROMwrite(34,state4);
-        eerom=0;
-    }
-   
-    
-    if(LernRFblink==1){
-		
-        if(lastKey==1) DelayMs(200) ,out1=!out1 , DelayMs(200) , out1=!out1 , LernRFKey=1;
-		if(lastKey==2) DelayMs(200) ,out2=!out2 , DelayMs(200) , out2=!out2 , LernRFKey=2 ;
-		if(lastKey==3) DelayMs(200) ,out3=!out3 , DelayMs(200) , out3=!out3 , LernRFKey=3 ;
-		if(lastKey==4) DelayMs(200) ,out4=!out4 , DelayMs(200) , out4=!out4 , LernRFKey=4 ;
-		
-        LernRFblink=0;
-        conternotRF=0;
-        LernRF=1;
-        
-    }
-    
-    if(Lock==1 & LernRF==0)
+    for(k = 0; k < 4; k++)
     {
-        Lock=0;
-        char i;
-        for(i=0;i<4;i++)
+        for(r = 0; r < REMOTES_PER_KEY; r++)
         {
-			if(DataM[0]==DataS[i][0] && DataM[1]==DataS[i][1] && DataM[2]==DataS[i][2]){
-				if(i==0)O1=1;
-				if(i==1)O2=1;
-				if(i==2)O3=1;
-				if(i==3)O4=1;
+            base_addr = (k * REMOTES_PER_KEY * 3) + (r * 3);
+            
+            if(DataM[0] == EEPROMread(base_addr) &&
+               DataM[1] == EEPROMread(base_addr + 1) &&
+               DataM[2] == EEPROMread(base_addr + 2))
+            {
+                if(k == 0) O1 = 1;
+                else if(k == 1) O2 = 1;
+                else if(k == 2) O3 = 1;
+                else if(k == 3) O4 = 1;
+                return;
             }
         }
-	}
-    
-    
-    if(Lock==1 & LernRF==1)
-    {
-		EEPROMwrite(((LernRFKey-1)*3),DataM[0]);
-		DelayMs(10);
-		EEPROMwrite((((LernRFKey-1)*3)+1),DataM[1]);
-		DelayMs(10);
-		EEPROMwrite((((LernRFKey-1)*3)+2),DataM[2]);
-		DelayMs(10);
-		DataS[LernRFKey-1][0]=DataM[0];
-		DataS[LernRFKey-1][1]=DataM[1];
-		DataS[LernRFKey-1][2]=DataM[2];
-			
-		if(LernRFKey==1)conterout=20;
-		if(LernRFKey==2)conterout=27;
-		if(LernRFKey==3)conterout=34;
-		if(LernRFKey==4)conterout=41;
-		
-		LernRFKey=0;
-		Lock=0;
-		LernRF=0;
-		
     }
-    
- }
+}
+
+//===========================================================
+//  «»⁄ ÂÊ‘„‰œ ·—‰ ò—œ‰ (»——”Ì  ò—«—Ì + Ã«Ìê“Ì‰Ì FIFO)
+//===========================================================
+void Learn_Current_Remote(unsigned char key_num)
+{
+    unsigned char r;
+    unsigned char k_idx;
+    unsigned char base_addr;
+    unsigned char fifo_ptr_addr;
+    unsigned char current_ptr;
+    unsigned char target_addr;
+
+    if((key_num < 1) || (key_num > 4))
+        return;
+
+    k_idx = key_num - 1;
+
+    // ?. Ã·ÊêÌ—Ì «“ –ŒÌ—Â —Ì„Ê   ò—«—Ì
+    for(r = 0; r < REMOTES_PER_KEY; r++)
+    {
+        base_addr = (k_idx * REMOTES_PER_KEY * 3) + (r * 3);
+
+        if((DataM[0] == EEPROMread(base_addr)) &&
+           (DataM[1] == EEPROMread(base_addr + 1)) &&
+           (DataM[2] == EEPROMread(base_addr + 2)))
+        {
+            return;
+        }
+    }
+
+    // ?. «‘«—Âùê— FIFO „—»Êÿ »Â ò·Ìœ
+    fifo_ptr_addr = 60 + k_idx;
+    current_ptr = EEPROMread(fifo_ptr_addr);
+
+    if(current_ptr >= REMOTES_PER_KEY)
+        current_ptr = 0;
+
+    target_addr = (k_idx * REMOTES_PER_KEY * 3) + (current_ptr * 3);
+
+    // ?. –ŒÌ—Â —Ì„Ê  œ— EEPROM
+    EEPROMwrite(target_addr,     DataM[0]);
+    DelayMs(10);
+
+    EEPROMwrite(target_addr + 1, DataM[1]);
+    DelayMs(10);
+
+    EEPROMwrite(target_addr + 2, DataM[2]);
+    DelayMs(10);
+
+    // ?. »Âù—Ê“—”«‰Ì Ê –ŒÌ—Â «‘«—Âùê— FIFO
+    current_ptr++;
+    if(current_ptr >= REMOTES_PER_KEY)
+        current_ptr = 0;
+
+    EEPROMwrite(fifo_ptr_addr, current_ptr);
+    DelayMs(10);
+
+    // ?. ç‘„ò —·Â ÃÂ  «⁄·«„ „Ê›ﬁÌ  Learn
+    if(key_num == 1)
+    {
+        DelayMs(100);
+        out1 = !out1;
+        DelayMs(100);
+        out1 = !out1;
+    }
+    else if(key_num == 2)
+    {
+        DelayMs(100);
+        out2 = !out2;
+        DelayMs(100);
+        out2 = !out2;
+    }
+    else if(key_num == 3)
+    {
+        DelayMs(100);
+        out3 = !out3;
+        DelayMs(100);
+        out3 = !out3;
+    }
+    else if(key_num == 4)
+    {
+        DelayMs(100);
+        out4 = !out4;
+        DelayMs(100);
+        out4 = !out4;
+    }
+
+    // Å«Ì«‰ Ê÷⁄Ì  Learn
+    LernRFKey = 0;
+    LernRF = 0;
+}
+
+//===========================================================
+// Å—œ«“‘ ÅÌ·Êœ œ—Ì«› Ì «“  «ç
+//===========================================================
+void Process_Touch_Payload(void)
+{
+    unsigned char val = payload_val;
+    payload_val = 0;
+
+    if(RxBusy == 1) return;
+    RxBusy = 1;
+
+    // 1. Õ«·  Learn (Å«·” »·‰œ)
+    if(val >= 120 && val <= 140)
+    {
+        LernRFblink = 1;
+        
+    }
+    // 2. ò·Ìœ 1 (ÕœÊœ 5ms)
+    else if(val >= 10 && val <= 20 && LernRFKey != 1)
+    {
+        state1 = !state1;
+        eerom = 1;
+        out1 = state1;
+        lastKey = 1;
+    }
+    // 3. ò·Ìœ 2 (ÕœÊœ 15ms)
+    else if(val >= 30 && val <= 45 && LernRFKey != 2)
+    {
+        state2 = !state2;
+        eerom = 2;
+        out2 = state2;
+        lastKey = 2;
+    }
+    // 4. ò·Ìœ 3 (ÕœÊœ 25ms)
+    else if(val >= 50 && val <= 70 && LernRFKey != 3)
+    {
+        state3 = !state3;
+        eerom = 3;
+        out3 = state3;
+        lastKey = 3;
+    }
+    // 5. ò·Ìœ 4 (ÕœÊœ 35ms)
+    else if(val >= 75 && val <= 95 && LernRFKey != 4)
+    {
+        state4 = !state4;
+        eerom = 4;
+        out4 = state4;
+        lastKey = 4;
+    }
+}
+
+//===========================================================
+//  «»⁄ «’·Ì »—‰«„Â
+//===========================================================
+void main(void)
+{
+    POWER_INITIAL();
+    TIMER2_INITIAL();
+    TIMER0_INITIAL();       
+    TMR2IE = 1;   
+
+    Finish = 0;
+    Start = 0;
+
+    // »«“Ì«»Ì Ê÷⁄Ì  —·ÂùÂ« «“ Õ«›ŸÂ
+    state1 = EEPROMread(70);
+    state2 = EEPROMread(71);
+    state3 = EEPROMread(72);
+    state4 = EEPROMread(73);
+
+    out1 = state1;
+    out2 = state2;
+    out3 = state3;
+    out4 = state4;
+
+    while(1)
+    {
+        CLRWDT();
+        
+        // Å—œ«“‘  «ç œ—Ì«› Ì
+        if(frame_ready == 1)
+        {
+            frame_ready = 0;
+            Process_Touch_Payload();
+        }
+
+
+		// Å—œ«“‘ ›—Ì„ „⁄ »— RF
+		if(Lock == 1)
+		{
+			Lock = 0;
+
+			if(LernRF == 1)
+			{
+				if((LernRFKey >= 1) && (LernRFKey <= 4))
+				{
+					Learn_Current_Remote(LernRFKey);
+				}
+			}
+			else
+			{
+				Check_RF_Match();
+			}
+		}
+
+
+
+        // Å—œ«“‘ ›—„«‰ ò·ÌœÂ«  Ê”ÿ —Ì„Ê 
+        if(O1 == 1) { O1 = 0; state1 = !state1; eerom = 1; out1 = state1; lastKey = 1; }
+        if(O2 == 1) { O2 = 0; state2 = !state2; eerom = 2; out2 = state2; lastKey = 2; }
+        if(O3 == 1) { O3 = 0; state3 = !state3; eerom = 3; out3 = state3; lastKey = 3; }
+        if(O4 == 1) { O4 = 0; state4 = !state4; eerom = 4; out4 = state4; lastKey = 4; }
+
+        // –ŒÌ—Â Ê÷⁄Ì  —·ÂùÂ« œ— ’Ê—   €ÌÌ—
+        if(eerom != 0)
+        {
+            if(eerom == 1) EEPROMwrite(70, state1);
+            else if(eerom == 2) EEPROMwrite(71, state2);
+            else if(eerom == 3) EEPROMwrite(72, state3);
+            else if(eerom == 4) EEPROMwrite(73, state4);
+            eerom = 0;
+        }
+       
+        // ç‘„ò “œ‰ —·Â ÃÂ  «⁄·«„ Ê—Êœ »Â „Êœ Learn
+        if(LernRFblink==1){
+		
+			if(lastKey==1) DelayMs(200) ,out1=!out1 , DelayMs(200) , out1=!out1 , LernRFKey=1;
+			if(lastKey==2) DelayMs(200) ,out2=!out2 , DelayMs(200) , out2=!out2 , LernRFKey=2 ;
+			if(lastKey==3) DelayMs(200) ,out3=!out3 , DelayMs(200) , out3=!out3 , LernRFKey=3 ;
+			if(lastKey==4) DelayMs(200) ,out4=!out4 , DelayMs(200) , out4=!out4 , LernRFKey=4 ;
+			
+			LernRFblink=0;
+			conternotRF=0;
+			LernRF=1;
+			
+		}
+    }
 }
 
 
 //===========================================================
-
-
-
-
-
-
+//  Ê«»⁄ —«Âù«‰œ«“Ì Ê ”Œ ù«›“«—
+//===========================================================
 void POWER_INITIAL(void) 
 { 
-	OSCCON = 0B01110000; //IRCF=111=16MHz/2T=8MHz,0.125us  
-    
-	INTCON = 0;
+    OSCCON = 0B01110000; 
+    INTCON = 0;
     OPTION = 0B00001000;    
-    
-	PORTA = 0B00000100;		
-	TRISA = 0B00001100;
-    
-	WPUA = 0B00001100;
-    
-	MSCKCON = 0B00000000;	
+    PORTA = 0B00000100;     
+    TRISA = 0B00001100;
+    WPUA  = 0B00001100;
+    MSCKCON = 0B00000000;   
 }
 
 void TIMER2_INITIAL(void) 
 {
-	 
-	T2CON = 0B00000001; 
-	TMR2 = 0;  				
-	PR2 = 50;//50uS
-	TMR2IF = 0;	
-	
-	TMR2ON = 1;	
-	PEIE=1;
-	GIE = 1;
-
+    T2CON = 0B00000001; 
+    TMR2 = 0;               
+    PR2 = 50; 
+    TMR2IF = 0; 
+    TMR2ON = 1; 
+    PEIE = 1;
+    GIE = 1;
 }
-void TIMER0_INITIAL (void)  
+
+void TIMER0_INITIAL(void)  
 {
-	OPTION = 0B00000110;	 			// ±÷”‘¥Œ™÷∏¡Ó ±÷”£¨‘§∑÷∆µ±»Œ™1:256
-	//Bit5:	T0CS Timer0 ±÷”‘¥—°‘Ò 
-	//		1-Õ‚≤ø“˝Ω≈µÁ∆Ω±‰ªØT0CKI 0-ƒ⁄≤ø ±÷”(FOSC/4)
-	//Bit4:	T0SE T0CKI“˝Ω≈¥•∑¢∑Ω Ω 1-œ¬Ωµ—ÿ 0-…œ…˝—ÿ
-	//Bit3:	PSA ‘§∑÷∆µ∆˜∑÷≈‰Œª 0-Timer0 1-WDT 
-	//Bit[2:0]:PS 8Œª‘§∑÷∆µ±» 111 - 1:256
-	TMR0 = 239; 
-    T0IF = 0;	
-    T0IE = 1;						//«Âø’T0»Ìº˛÷–∂œ
+    OPTION = 0B00000110; 
+    TMR0 = 239; 
+    T0IF = 0;   
+    T0IE = 1;   
 }
 
 unsigned char EEPROMread(unsigned char EEAddr)
 {
-	unsigned char ReEEPROMread;
-
-	EEADR = EEAddr;    
-	RD = 1;
-	ReEEPROMread = EEDAT;
-	return ReEEPROMread;
+    EEADR = EEAddr;    
+    RD = 1;
+    return EEDAT;
 }
 
-void EEPROMwrite(unsigned char EEAddr,unsigned int Data)
+void EEPROMwrite(unsigned char EEAddr, unsigned char Data)
 {
-	GIE = 0;						
-	while(GIE); 					
-	EEADR = EEAddr; 	 			
-	EEDAT = Data;		 			
-	EEIF = 0;
-	EECON1 |= 0x34;					
-	WR = 1;							
-	while(WR);      				
-	GIE = 1;
+    GIE = 0;                        
+    while(GIE);                     
+    EEADR = EEAddr;                 
+    EEDAT = Data;                   
+    EEIF = 0;
+    EECON1 |= 0x34;                 
+    WR = 1;                         
+    while(WR);                      
+    GIE = 1;
 }
 
 void DelayUs(unsigned char Time)
 {
-	unsigned char a;
-	for(a=0;a<Time;a++)
-	{
-		NOP();
+    unsigned char a;
+    for(a = 0; a < Time; a++)
+    {
+        NOP();
         CLRWDT(); 
-	}
+    }
 }                  
 
 void DelayMs(unsigned int Time)
 {
-	unsigned int a,b;
-	for(a=0;a<Time;a++)
-	{
-		for(b=0;b<5;b++)
-		{
-		 	DelayUs(197);
-		}
-	}
+    unsigned int a, b;
+    for(a = 0; a < Time; a++)
+    {
+        for(b = 0; b < 5; b++)
+        {
+            DelayUs(197);
+        }
+    }
 }
-//===========================================================

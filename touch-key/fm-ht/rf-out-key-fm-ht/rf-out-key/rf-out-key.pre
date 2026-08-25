@@ -1,17 +1,17 @@
 
 # 1 "rf-out-key.C"
 
-# 26 "C:\Users\hamed\OneDrive\Documents\FMD_Project\ft62f211\FMDIDE3.0.7\data\include\fmd.h"
+# 26 "C:\Users\hamedwin\OneDrive\Documents\fmd-project\fmd-project\baygani\FMDIDE3.0.7\data\include\fmd.h"
 extern const char __xc8_OPTIM_SPEED;
 
 extern double __fpnormalize(double);
 
 
-# 13 "C:\Users\hamed\OneDrive\Documents\FMD_Project\ft62f211\FMDIDE3.0.7\data\include\GCC8debug.h"
+# 13 "C:\Users\hamedwin\OneDrive\Documents\fmd-project\fmd-project\baygani\FMDIDE3.0.7\data\include\GCC8debug.h"
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 
-# 10 "C:\Users\hamed\OneDrive\Documents\FMD_Project\ft62f211\FMDIDE3.0.7\data\include\FT60F01X.h"
+# 10 "C:\Users\hamedwin\OneDrive\Documents\fmd-project\fmd-project\baygani\FMDIDE3.0.7\data\include\FT60F01X.h"
 volatile unsigned char INDF @ 0x000;
 
 
@@ -552,21 +552,21 @@ volatile unsigned char SFR9E @0x09E;
 volatile unsigned char SFR9F @0x09F;
 
 
-# 30 "C:\Users\hamed\OneDrive\Documents\FMD_Project\ft62f211\FMDIDE3.0.7\data\include\SYSCFG.h"
+# 30 "C:\Users\hamedwin\OneDrive\Documents\fmd-project\fmd-project\baygani\FMDIDE3.0.7\data\include\SYSCFG.h"
 #pragma intrinsic(__nop)
 extern void __nop(void);
 
 # 79
 extern unsigned int flash_read(unsigned short addr);
 
-# 41 "C:\Users\hamed\OneDrive\Documents\FMD_Project\ft62f211\FMDIDE3.0.7\data\include\eeprom_routines.h"
+# 41 "C:\Users\hamedwin\OneDrive\Documents\fmd-project\fmd-project\baygani\FMDIDE3.0.7\data\include\eeprom_routines.h"
 extern void eeprom_write(unsigned char addr, unsigned char value);
 extern unsigned char eeprom_read(unsigned char addr);
 extern void eecpymem(volatile unsigned char *to, __eeprom unsigned char *from, unsigned char size);
 extern void memcpyee(__eeprom unsigned char *to, const unsigned char *from, unsigned char size);
 
 
-# 152 "C:\Users\hamed\OneDrive\Documents\FMD_Project\ft62f211\FMDIDE3.0.7\data\include\SYSCFG.h"
+# 152 "C:\Users\hamedwin\OneDrive\Documents\fmd-project\fmd-project\baygani\FMDIDE3.0.7\data\include\SYSCFG.h"
 #pragma intrinsic(_delay)
 extern __nonreentrant void _delay(unsigned long);
 
@@ -576,365 +576,504 @@ extern __bit __powerdown;
 extern __bit __timeout;
 
 # 45 "rf-out-key.C"
-volatile unsigned int conternotRF=0, conterout=0 , conteroutnot=0;
-volatile unsigned char Timedown=0 , Data[3] ,DataM[3],DataS[4][3],RFData[3] , eerom=0;
-volatile unsigned char lastKey=0 ,LernRFKey=0 , Count=0 , Buffer=0,Bit=0 ;
+volatile unsigned char rx_state = 0;
+volatile unsigned char pulse_counter = 0;
+volatile unsigned char high_counter = 0;
+volatile unsigned char payload_val = 0;
+volatile unsigned char RxBusy = 0;
+volatile unsigned char frame_ready = 0;
 
-volatile bit O1=0,O2=0,O3=0,O4=0,Start=0,state1=0 ,state2=0 ,state3=0 ,state4=0 , LernRFblink=0 , LernRF=0,Frist=0,Finish=0,Lock=0;
+
+volatile unsigned int conternotRF = 0;
+volatile unsigned char Timedown = 0;
+volatile unsigned char Data[3], DataM[3], RFData[3];
+volatile unsigned char eerom = 0, lastKey = 0, LernRFKey = 0;
+volatile unsigned char Count = 0, Buffer = 0, Bit = 0;
+
+
+volatile bit O1 = 0, O2 = 0, O3 = 0, O4 = 0;
+volatile bit Start = 0, state1 = 0, state2 = 0, state3 = 0, state4 = 0;
+volatile bit LernRFblink = 0, LernRF = 0, Frist = 0, Finish = 0, Lock = 0;
 
 
 void POWER_INITIAL(void);
 void TIMER2_INITIAL(void);
 void TIMER0_INITIAL(void);
-
 unsigned char EEPROMread(unsigned char EEAddr);
-void EEPROMwrite(unsigned char EEAddr,unsigned int Data);
+void EEPROMwrite(unsigned char EEAddr, unsigned char Data);
 void DelayUs(unsigned char Time);
 void DelayMs(unsigned int Time);
+void Check_RF_Match(void);
+void Learn_Current_Remote(unsigned char key_num);
+void Process_Touch_Payload(void);
 
-void SEND_DATA(unsigned char Code);
-void SEND_CODE(unsigned char Code1,unsigned char Code2,unsigned char Code3);
+
 
 
 void interrupt ISR(void)
 {
-
 
 if(T0IE && T0IF)
 {
 TMR0 = 239;
 T0IF = 0;
 
-
-if(LernRF==1){
+if(LernRF == 1)
+{
 conternotRF++;
+if(conternotRF >= 15000)
+{
+conternotRF = 0;
+LernRF = 0;
+LernRFKey = 0;
 }
-
-if(conternotRF>=20000 ){
-conternotRF=0;
-
-DataM[0]=0;
-DataM[1]=0;
-DataM[2]=0;
-
-Lock=1;
 }
 
 
-if(PA2==0){
-conterout++;
-conteroutnot=0;
+if(PA2 == 0)
+{
+high_counter = 0;
+if(pulse_counter < 250) pulse_counter++;
+
+if(rx_state == 1)
+{
+rx_state = 2;
+pulse_counter = 1;
 }
-
-if(PA2!=0 && conteroutnot<=110){
-conteroutnot++;
 }
+else
+{
+if(high_counter < 250) high_counter++;
 
-
-if(PA2==1 && conterout>5 && conterout<15 ){
-conterout++;
+if(rx_state == 0)
+{
+if(pulse_counter >= 20 && pulse_counter <= 30)
+{
+rx_state = 1;
 }
-
-if(conteroutnot>10 ){
-
-
-if(conterout>53 && conterout<57 ){
-
-
-if(lastKey==1)conterout=20;
-if(lastKey==2)conterout=27;
-if(lastKey==3)conterout=34;
-if(lastKey==4)conterout=41;
-
-LernRFblink=1;
-
-
+pulse_counter = 0;
 }
-
-if(((conterout>18 && conterout<22 ) || O1==1 ) && LernRFKey!=1){
-
-if(state1==0){
-state1=1;
-}else{
-state1=0;
+else if(rx_state == 1)
+{
+if(high_counter > 80)
+{
+rx_state = 0;
+pulse_counter = 0;
 }
-
-eerom=1;
-if(O1!=1)lastKey=1;
-PA4=state1;
-O1=0;
 }
-
-if(((conterout>25 && conterout<29 ) || O2==1) && LernRFKey!=2){
-
-if(state2==0){
-state2=1;
-}else{
-state2=0;
+else if(rx_state == 2)
+{
+payload_val = pulse_counter;
+rx_state = 3;
+pulse_counter = 0;
+high_counter = 1;
 }
-eerom=2;
-
-PA0=state2;
-if(O2!=1)lastKey=2;
-O2=0;
+else if(rx_state == 3)
+{
+if(high_counter >= 15)
+{
+frame_ready = 1;
+rx_state = 0;
 }
-
-if(((conterout>32 && conterout<36 ) || O3==1) && LernRFKey!=3){
-
-if(state3==0){
-state3=1;
-}else{
-state3=0;
 }
-eerom=3;
-
-PA1=state3;
-if(O3!=1)lastKey=3;
-O3=0;
-}
-
-if(((conterout>39 && conterout<43 ) || O4==1) && LernRFKey!=4){
-
-if(state4==0){
-state4=1;
-}else{
-state4=0;
-}
-eerom=4;
-
-PA5=state4;
-if(O4!=1)lastKey=4;
-O4=0;
 }
 
 
-conterout=0;
+if(RxBusy == 1 && PA2 == 1 && high_counter >= 60)
+{
+RxBusy = 0;
 }
-
 }
 
 
 
 if(TMR2IE && TMR2IF)
 {
-
-
-
 TMR2IF = 0;
 asm("clrwdt");
 
-if(PA3==0){
-Timedown++;Frist=1;
-
+if(PA3 == 0)
+{
+if(Timedown < 250)
+{
+Timedown++;
+}
+Frist = 1;
 }
 else
 {
 
-
-if(Timedown>250){
-Finish=0;
-Timedown=0;
+if(Timedown >= 250)
+{
+Timedown = 0;
+Frist = 0;
+Start = 0;
+Bit = 8;
+Buffer = 0;
+Count = 0;
+Finish = 0;
+return;
 }
 
-if(Frist==1 & Finish==0)
+
+if((Frist == 1) && (Finish == 0))
 {
 
-if(Start==1)
+if(Timedown >= 180 && Timedown <= 245)
+{
+Start = 1;
+Bit = 8;
+Count = 0;
+Buffer = 0;
+}
+
+else if(Start == 1)
 {
 Bit--;
-if(Timedown>15 & Timedown< 30){
+
+
+if(Timedown >= 14 && Timedown <= 32)
+{
 Buffer = Buffer << 1;
-}
-else if(Timedown>5 & Timedown< 12){
-Buffer = Buffer << 1;
-Buffer = Buffer + 1;
-}
-else{
-Count=0;
-Bit=8;
-Buffer=0;
-Start=0;
 }
 
-if(Bit == 0){
-Bit=8;
-Data[Count]=RFData[Count];
-RFData[Count]=Buffer;
+else if(Timedown >= 4 && Timedown <= 13)
+{
+Buffer = (Buffer << 1) | 1;
+}
+
+else
+{
+Count = 0;
+Bit = 8;
+Buffer = 0;
+Start = 0;
+}
+
+
+if(Bit == 0)
+{
+Bit = 8;
+Data[Count] = RFData[Count];
+RFData[Count] = Buffer;
 Count++;
 
-if(Count>=3)
+
+if(Count >= 3)
 {
-Count=0;
-Start=0;
-if(Data[0]==RFData[0] && Data[1]==RFData[1] &&Data[2]==RFData[2])
+Count = 0;
+Start = 0;
+
+
+if(Data[0] == RFData[0] &&
+Data[1] == RFData[1] &&
+Data[2] == RFData[2])
 {
-DataM[0]=RFData[0];
-DataM[1]=RFData[1];
-DataM[2]=RFData[2];
+DataM[0] = RFData[0];
+DataM[1] = RFData[1];
+DataM[2] = RFData[2];
+Finish = 1;
+Lock = 1;
+}
+}
+Buffer = 0;
+}
+}
 
-Finish=1;
-Lock=1;
-}else
+Frist = 0;
+}
+
+Timedown = 0;
+}
+}
+
+
+}
+
+
+
+
+void Check_RF_Match(void)
 {
-__nop();
+unsigned char k, r, base_addr;
+
+for(k = 0; k < 4; k++)
+{
+for(r = 0; r < 5; r++)
+{
+base_addr = (k * 5 * 3) + (r * 3);
+
+if(DataM[0] == EEPROMread(base_addr) &&
+DataM[1] == EEPROMread(base_addr + 1) &&
+DataM[2] == EEPROMread(base_addr + 2))
+{
+if(k == 0) O1 = 1;
+else if(k == 1) O2 = 1;
+else if(k == 2) O3 = 1;
+else if(k == 3) O4 = 1;
+return;
 }
 }
-Buffer=0;
 }
 }
 
-if(Timedown>200 && Timedown<240){
-Start=1;Bit=8;
+
+
+
+void Learn_Current_Remote(unsigned char key_num)
+{
+unsigned char r;
+unsigned char k_idx;
+unsigned char base_addr;
+unsigned char fifo_ptr_addr;
+unsigned char current_ptr;
+unsigned char target_addr;
+
+if((key_num < 1) || (key_num > 4))
+return;
+
+k_idx = key_num - 1;
+
+
+for(r = 0; r < 5; r++)
+{
+base_addr = (k_idx * 5 * 3) + (r * 3);
+
+if((DataM[0] == EEPROMread(base_addr)) &&
+(DataM[1] == EEPROMread(base_addr + 1)) &&
+(DataM[2] == EEPROMread(base_addr + 2)))
+{
+return;
+}
 }
 
-Frist=0;
+
+fifo_ptr_addr = 60 + k_idx;
+current_ptr = EEPROMread(fifo_ptr_addr);
+
+if(current_ptr >= 5)
+current_ptr = 0;
+
+target_addr = (k_idx * 5 * 3) + (current_ptr * 3);
+
+
+EEPROMwrite(target_addr, DataM[0]);
+DelayMs(10);
+
+EEPROMwrite(target_addr + 1, DataM[1]);
+DelayMs(10);
+
+EEPROMwrite(target_addr + 2, DataM[2]);
+DelayMs(10);
+
+
+current_ptr++;
+if(current_ptr >= 5)
+current_ptr = 0;
+
+EEPROMwrite(fifo_ptr_addr, current_ptr);
+DelayMs(10);
+
+
+if(key_num == 1)
+{
+DelayMs(100);
+PA5 = !PA5;
+DelayMs(100);
+PA5 = !PA5;
+}
+else if(key_num == 2)
+{
+DelayMs(100);
+PA1 = !PA1;
+DelayMs(100);
+PA1 = !PA1;
+}
+else if(key_num == 3)
+{
+DelayMs(100);
+PA0 = !PA0;
+DelayMs(100);
+PA0 = !PA0;
+}
+else if(key_num == 4)
+{
+DelayMs(100);
+PA4 = !PA4;
+DelayMs(100);
+PA4 = !PA4;
+}
+
+
+LernRFKey = 0;
+LernRF = 0;
+}
+
+
+
+
+void Process_Touch_Payload(void)
+{
+unsigned char val = payload_val;
+payload_val = 0;
+
+if(RxBusy == 1) return;
+RxBusy = 1;
+
+
+if(val >= 120 && val <= 140)
+{
+LernRFblink = 1;
 
 }
-Timedown=0;
+
+else if(val >= 10 && val <= 20 && LernRFKey != 1)
+{
+state1 = !state1;
+eerom = 1;
+PA5 = state1;
+lastKey = 1;
 }
 
+else if(val >= 30 && val <= 45 && LernRFKey != 2)
+{
+state2 = !state2;
+eerom = 2;
+PA1 = state2;
+lastKey = 2;
 }
 
+else if(val >= 50 && val <= 70 && LernRFKey != 3)
+{
+state3 = !state3;
+eerom = 3;
+PA0 = state3;
+lastKey = 3;
+}
+
+else if(val >= 75 && val <= 95 && LernRFKey != 4)
+{
+state4 = !state4;
+eerom = 4;
+PA4 = state4;
+lastKey = 4;
+}
 }
 
 
 
 
-void main()
+void main(void)
 {
 POWER_INITIAL();
 TIMER2_INITIAL();
 TIMER0_INITIAL();
-
 TMR2IE = 1;
 
-Finish=0;
-
-state1=EEPROMread(31);
-state2=EEPROMread(32);
-state3=EEPROMread(33);
-state4=EEPROMread(34);
+Finish = 0;
+Start = 0;
 
 
-PA4=state1;
-PA0=state2;
-PA1=state3;
-PA5=state4;
+state1 = EEPROMread(70);
+state2 = EEPROMread(71);
+state3 = EEPROMread(72);
+state4 = EEPROMread(73);
 
-char i;
-for(i=0;i<4;i++)
-{
-asm("clrwdt");
-DataS[i][0]=EEPROMread(i*3);
-DataS[i][1]=EEPROMread((i*3)+1);
-DataS[i][2]=EEPROMread((i*3)+2);
-}
-
-
-Start=0;
+PA5 = state1;
+PA1 = state2;
+PA0 = state3;
+PA4 = state4;
 
 while(1)
 {
 asm("clrwdt");
 
-if(eerom!=0){
-if(eerom==1)EEPROMwrite(31,state1);
-if(eerom==2)EEPROMwrite(32,state2);
-if(eerom==3)EEPROMwrite(33,state3);
-if(eerom==4)EEPROMwrite(34,state4);
-eerom=0;
+
+if(frame_ready == 1)
+{
+frame_ready = 0;
+Process_Touch_Payload();
+}
+
+
+
+if(Lock == 1)
+{
+Lock = 0;
+
+if(LernRF == 1)
+{
+if((LernRFKey >= 1) && (LernRFKey <= 4))
+{
+Learn_Current_Remote(LernRFKey);
+}
+}
+else
+{
+Check_RF_Match();
+}
+}
+
+
+
+
+if(O1 == 1) { O1 = 0; state1 = !state1; eerom = 1; PA5 = state1; lastKey = 1; }
+if(O2 == 1) { O2 = 0; state2 = !state2; eerom = 2; PA1 = state2; lastKey = 2; }
+if(O3 == 1) { O3 = 0; state3 = !state3; eerom = 3; PA0 = state3; lastKey = 3; }
+if(O4 == 1) { O4 = 0; state4 = !state4; eerom = 4; PA4 = state4; lastKey = 4; }
+
+
+if(eerom != 0)
+{
+if(eerom == 1) EEPROMwrite(70, state1);
+else if(eerom == 2) EEPROMwrite(71, state2);
+else if(eerom == 3) EEPROMwrite(72, state3);
+else if(eerom == 4) EEPROMwrite(73, state4);
+eerom = 0;
 }
 
 
 if(LernRFblink==1){
 
-if(lastKey==1) DelayMs(200) ,PA4=!PA4 , DelayMs(200) , PA4=!PA4 , LernRFKey=1;
-if(lastKey==2) DelayMs(200) ,PA0=!PA0 , DelayMs(200) , PA0=!PA0 , LernRFKey=2 ;
-if(lastKey==3) DelayMs(200) ,PA1=!PA1 , DelayMs(200) , PA1=!PA1 , LernRFKey=3 ;
-if(lastKey==4) DelayMs(200) ,PA5=!PA5 , DelayMs(200) , PA5=!PA5 , LernRFKey=4 ;
+if(lastKey==1) DelayMs(200) ,PA5=!PA5 , DelayMs(200) , PA5=!PA5 , LernRFKey=1;
+if(lastKey==2) DelayMs(200) ,PA1=!PA1 , DelayMs(200) , PA1=!PA1 , LernRFKey=2 ;
+if(lastKey==3) DelayMs(200) ,PA0=!PA0 , DelayMs(200) , PA0=!PA0 , LernRFKey=3 ;
+if(lastKey==4) DelayMs(200) ,PA4=!PA4 , DelayMs(200) , PA4=!PA4 , LernRFKey=4 ;
 
 LernRFblink=0;
 conternotRF=0;
 LernRF=1;
 
 }
-
-if(Lock==1 & LernRF==0)
-{
-Lock=0;
-char i;
-for(i=0;i<4;i++)
-{
-if(DataM[0]==DataS[i][0] && DataM[1]==DataS[i][1] && DataM[2]==DataS[i][2]){
-if(i==0)O1=1;
-if(i==1)O2=1;
-if(i==2)O3=1;
-if(i==3)O4=1;
-}
 }
 }
 
-
-if(Lock==1 & LernRF==1)
-{
-EEPROMwrite(((LernRFKey-1)*3),DataM[0]);
-DelayMs(10);
-EEPROMwrite((((LernRFKey-1)*3)+1),DataM[1]);
-DelayMs(10);
-EEPROMwrite((((LernRFKey-1)*3)+2),DataM[2]);
-DelayMs(10);
-DataS[LernRFKey-1][0]=DataM[0];
-DataS[LernRFKey-1][1]=DataM[1];
-DataS[LernRFKey-1][2]=DataM[2];
-
-if(LernRFKey==1)conterout=20;
-if(LernRFKey==2)conterout=27;
-if(LernRFKey==3)conterout=34;
-if(LernRFKey==4)conterout=41;
-
-LernRFKey=0;
-Lock=0;
-LernRF=0;
-
-}
-
-}
-}
-
-# 378
+# 521
 void POWER_INITIAL(void)
 {
 OSCCON = 0B01110000;
-
 INTCON = 0;
 OPTION = 0B00001000;
-
 PORTA = 0B00000100;
 TRISA = 0B00001100;
-
 WPUA = 0B00001100;
-
 MSCKCON = 0B00000000;
 }
 
 void TIMER2_INITIAL(void)
 {
-
 T2CON = 0B00000001;
 TMR2 = 0;
 PR2 = 50;
 TMR2IF = 0;
-
 TMR2ON = 1;
-PEIE=1;
+PEIE = 1;
 GIE = 1;
-
 }
-void TIMER0_INITIAL (void)
+
+void TIMER0_INITIAL(void)
 {
 OPTION = 0B00000110;
-
-# 414
 TMR0 = 239;
 T0IF = 0;
 T0IE = 1;
@@ -942,15 +1081,12 @@ T0IE = 1;
 
 unsigned char EEPROMread(unsigned char EEAddr)
 {
-unsigned char ReEEPROMread;
-
 EEADR = EEAddr;
 RD = 1;
-ReEEPROMread = EEDAT;
-return ReEEPROMread;
+return EEDAT;
 }
 
-void EEPROMwrite(unsigned char EEAddr,unsigned int Data)
+void EEPROMwrite(unsigned char EEAddr, unsigned char Data)
 {
 GIE = 0;
 while(GIE);
@@ -966,7 +1102,7 @@ GIE = 1;
 void DelayUs(unsigned char Time)
 {
 unsigned char a;
-for(a=0;a<Time;a++)
+for(a = 0; a < Time; a++)
 {
 __nop();
 asm("clrwdt");
@@ -975,13 +1111,12 @@ asm("clrwdt");
 
 void DelayMs(unsigned int Time)
 {
-unsigned int a,b;
-for(a=0;a<Time;a++)
+unsigned int a, b;
+for(a = 0; a < Time; a++)
 {
-for(b=0;b<5;b++)
+for(b = 0; b < 5; b++)
 {
 DelayUs(197);
 }
 }
 }
-
