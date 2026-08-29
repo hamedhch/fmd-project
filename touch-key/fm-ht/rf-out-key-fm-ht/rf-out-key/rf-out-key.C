@@ -55,6 +55,7 @@ volatile unsigned char Timedown = 0;
 volatile unsigned char Data[3], DataM[3], RFData[3];
 volatile unsigned char eerom = 0, lastKey = 0, LernRFKey = 0;
 volatile unsigned char Count = 0, Buffer = 0, Bit = 0;
+volatile unsigned char lastLearnKey = 0;
 
 // --- »Ì ùÂ«Ì ò‰ —·Ì ---
 volatile bit O1 = 0, O2 = 0, O3 = 0, O4 = 0;
@@ -72,6 +73,7 @@ void DelayMs(unsigned int Time);
 void Check_RF_Match(void);
 void Learn_Current_Remote(unsigned char key_num);
 void Process_Touch_Payload(void);
+void Clear_Key_Remotes(unsigned char key_num);
 
 //===========================================================
 // —Ê Ì‰ Êﬁ›Â (”»ò Ê ”—Ì⁄)
@@ -256,6 +258,33 @@ void interrupt ISR(void)
     
 }
 
+
+
+
+//===========================================================
+// Å«ò ò—œ‰ 5 —Ì„Ê  „—»Êÿ »Â Ìò ò·Ìœ + —Ì”  FIFO Â„«‰ ò·Ìœ
+//===========================================================
+void Clear_Key_Remotes(unsigned char key_num)
+{
+    unsigned char i;
+    unsigned char addr;
+
+    // Â— ò·Ìœ: 5 —Ì„Ê  ◊ 3 »«Ì  = 15 »«Ì 
+    // ò·Ìœ 1: 0..14
+    // ò·Ìœ 2: 15..29
+    // ò·Ìœ 3: 30..44
+    // ò·Ìœ 4: 45..59
+    addr = (key_num - 1) * 15;
+
+    for(i = 0; i < 15; i++)
+    {
+        EEPROMwrite(addr++, 0xFF);
+    }
+
+    // FIFO ò·ÌœÂ«: 60  « 63
+    EEPROMwrite(59 + key_num, 0);
+}
+
 //===========================================================
 //  «»⁄ »——”Ì  ÿ«»ﬁ —Ì„Ê  »« EEPROM
 //===========================================================
@@ -277,7 +306,7 @@ void Check_RF_Match(void)
                 else if(k == 1) O2 = 1;
                 else if(k == 2) O3 = 1;
                 else if(k == 3) O4 = 1;
-                return;
+                //return;
             }
         }
     }
@@ -323,14 +352,9 @@ void Learn_Current_Remote(unsigned char key_num)
     target_addr = (k_idx * REMOTES_PER_KEY * 3) + (current_ptr * 3);
 
     // ?. –ŒÌ—Â —Ì„Ê  œ— EEPROM
-    EEPROMwrite(target_addr,     DataM[0]);
-    DelayMs(10);
-
-    EEPROMwrite(target_addr + 1, DataM[1]);
-    DelayMs(10);
-
-    EEPROMwrite(target_addr + 2, DataM[2]);
-    DelayMs(10);
+    EEPROMwrite(target_addr, DataM[0]);
+	EEPROMwrite(target_addr + 1, DataM[1]);
+	EEPROMwrite(target_addr + 2, DataM[2]);
 
     // ?. »Âù—Ê“—”«‰Ì Ê –ŒÌ—Â «‘«—Âùê— FIFO
     current_ptr++;
@@ -338,39 +362,51 @@ void Learn_Current_Remote(unsigned char key_num)
         current_ptr = 0;
 
     EEPROMwrite(fifo_ptr_addr, current_ptr);
-    DelayMs(10);
-
+    
     // ?. ç‘„ò —·Â ÃÂ  «⁄·«„ „Ê›ﬁÌ  Learn
-    if(key_num == 1)
-    {
-        DelayMs(100);
-        out1 = !out1;
-        DelayMs(100);
-        out1 = !out1;
-    }
-    else if(key_num == 2)
-    {
-        DelayMs(100);
-        out2 = !out2;
-        DelayMs(100);
-        out2 = !out2;
-    }
-    else if(key_num == 3)
-    {
-        DelayMs(100);
-        out3 = !out3;
-        DelayMs(100);
-        out3 = !out3;
-    }
-    else if(key_num == 4)
-    {
-        DelayMs(100);
-        out4 = !out4;
-        DelayMs(100);
-        out4 = !out4;
-    }
+    //if(key_num == 1)
+//    {
+//        DelayMs(100);
+//        out1 = !out1;
+//        DelayMs(100);
+//        out1 = !out1;
+//    }
+//    else if(key_num == 2)
+//    {
+//        DelayMs(100);
+//        out2 = !out2;
+//        DelayMs(100);
+//        out2 = !out2;
+//    }
+//    else if(key_num == 3)
+//    {
+//        DelayMs(100);
+//        out3 = !out3;
+//        DelayMs(100);
+//        out3 = !out3;
+//    }
+//    else if(key_num == 4)
+//    {
+//        DelayMs(100);
+//        out4 = !out4;
+//        DelayMs(100);
+//        out4 = !out4;
+//    }
 
+
+	// «⁄·«„ „Ê›ﬁÌ  Learn:
+    // Œ—ÊÃÌ Â„«‰ ò·Ìœ Ìò »«— „«‰‰œ ›‘—œ‰ Â„«‰ ò·Ìœ ⁄„· „Ìùò‰œ.
+    if(key_num == 1) O1 = 1;
+    else if(key_num == 2) O2 = 1;
+    else if(key_num == 3) O3 = 1;
+    else O4 = 1;
+    
+    
     // Å«Ì«‰ Ê÷⁄Ì  Learn
+    // Ì«œêÌ—Ì »« „Ê›ﬁÌ  «‰Ã«„ ‘œ.
+    // Å” Learn »⁄œÌ »—«Ì «›“Êœ‰ Ìò —Ì„Ê  ÃœÌœ° Õ«›ŸÂ ﬁ»·Ì —« Å«ò ‰ò‰œ.
+    lastLearnKey = 0;
+
     LernRFKey = 0;
     LernRF = 0;
 }
@@ -388,10 +424,33 @@ void Process_Touch_Payload(void)
 
     // 1. Õ«·  Learn (Å«·” »·‰œ)
     if(val >= 120 && val <= 140)
-    {
-        LernRFblink = 1;
-        
-    }
+	{
+		if((lastKey >= 1) && (lastKey <= 4))
+		{
+			// «ê— œÊ»«—Â Learn Â„«‰ ò·Ìœ ¬„œ:
+			// ›ﬁÿ Õ«›ŸÂ —« Å«ò ò‰ Ê Ê«—œ Learn ‰‘Ê.
+			if(lastLearnKey == lastKey)
+			{
+				Clear_Key_Remotes(lastKey);
+
+				// Œ—ÊÃ ﬁÿ⁄Ì «“ Learn ›⁄·Ì
+				LernRF = 0;
+				LernRFKey = 0;
+
+				// ⁄œœ 5 ›ﬁÿ ⁄·«„  ç‘„ò œÊ„ »—«Ì «⁄·«„ Å«òù”«“Ì «” 
+				lastLearnKey = 5;
+
+				// ›ﬁÿ «⁄·«„ Å«òù‘œ‰ Õ«›ŸÂ »« Ìò ç‘„ò
+				LernRFblink = 1;
+			}
+			else
+			{
+				// »«— «Ê· Learn: Ê«—œ Õ«·  Learn ‘Ê
+				lastLearnKey = lastKey;
+				LernRFblink = 1;
+			}
+		}
+	}
     // 2. ò·Ìœ 1 (ÕœÊœ 5ms)
     else if(val >= 10 && val <= 20 && LernRFKey != 1)
     {
@@ -431,6 +490,7 @@ void Process_Touch_Payload(void)
 //===========================================================
 void main(void)
 {
+	
     POWER_INITIAL();
     TIMER2_INITIAL();
     TIMER0_INITIAL();       
@@ -438,7 +498,8 @@ void main(void)
 
     Finish = 0;
     Start = 0;
-
+	lastLearnKey = 0;
+    
     // »«“Ì«»Ì Ê÷⁄Ì  —·ÂùÂ« «“ Õ«›ŸÂ
     state1 = EEPROMread(70);
     state2 = EEPROMread(71);
@@ -499,18 +560,64 @@ void main(void)
         }
        
         // ç‘„ò “œ‰ —·Â ÃÂ  «⁄·«„ Ê—Êœ »Â „Êœ Learn
-        if(LernRFblink==1){
-		
-			if(lastKey==1) DelayMs(200) ,out1=!out1 , DelayMs(200) , out1=!out1 , LernRFKey=1;
-			if(lastKey==2) DelayMs(200) ,out2=!out2 , DelayMs(200) , out2=!out2 , LernRFKey=2 ;
-			if(lastKey==3) DelayMs(200) ,out3=!out3 , DelayMs(200) , out3=!out3 , LernRFKey=3 ;
-			if(lastKey==4) DelayMs(200) ,out4=!out4 , DelayMs(200) , out4=!out4 , LernRFKey=4 ;
-			
-			LernRFblink=0;
-			conternotRF=0;
-			LernRF=1;
-			
+        if(LernRFblink == 1)
+		{
+			// Ìò ç‘„ò »—«Ì «⁄·«„ Ê—Êœ »Â Learn Ì« Å«òù‘œ‰ Õ«›ŸÂ
+			if(lastKey == 1)
+			{
+				DelayMs(200);
+				out1 = !out1;
+				DelayMs(200);
+				out1 = !out1;
+			}
+			else if(lastKey == 2)
+			{
+				DelayMs(200);
+				out2 = !out2;
+				DelayMs(200);
+				out2 = !out2;
+			}
+			else if(lastKey == 3)
+			{
+				DelayMs(200);
+				out3 = !out3;
+				DelayMs(200);
+				out3 = !out3;
+			}
+			else if(lastKey == 4)
+			{
+				DelayMs(200);
+				out4 = !out4;
+				DelayMs(200);
+				out4 = !out4;
+			}
+
+			LernRFblink = 0;
+			conternotRF = 0;
+
+			// „ﬁœ«— 5 Ì⁄‰Ì Å«òù”«“Ì «‰Ã«„ ‘œÂ «” .
+			// Ìò »«— œÌê— Â„«‰ ç‘„ò —« «Ã—« ò‰° Ê·Ì Ê«—œ Learn ‰‘Ê.
+			if(lastLearnKey == 5)
+			{
+				lastLearnKey = 0;
+				LernRFblink = 1;   // «Ã—«Ì ç‘„ò œÊ„ œ— œÊ— »⁄œÌ while
+				LernRFKey = 0;
+				LernRF = 0;
+			}
+			else if(lastLearnKey != 0)
+			{
+				// Learn ⁄«œÌ: ›ﬁÿ Ìò ç‘„ò Ê Ê—Êœ »Â Learn
+				LernRFKey = lastLearnKey;
+				LernRF = 1;
+			}
+			else
+			{
+				// Å” «“ ç‘„ò œÊ„ Å«òù”«“Ì: Œ«—Ã «“ Learn »„«‰
+				LernRFKey = 0;
+				LernRF = 0;
+			}
 		}
+
     }
 }
 

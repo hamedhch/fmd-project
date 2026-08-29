@@ -9,29 +9,31 @@
 [v ___ftadd __ftadd `(f  1 e 3 0 ]
 "4 C:\Users\hamedwin\OneDrive\Documents\fmd-project\fmd-project\baygani\FMDIDE3.0.7\data\sources\common\Umul8.c
 [v ___bmul __bmul `(uc  1 e 1 0 ]
-"79 D:\hamed\project\fmd-project\touch-key\fm-ht\rf-out-key-fm-ht\rf-out-key\rf-out-key.C
+"81 D:\hamed\project\fmd-project\touch-key\fm-ht\rf-out-key-fm-ht\rf-out-key\rf-out-key.C
 [v _ISR ISR `II(v  1 e 1 0 ]
-"262
+"267
+[v _Clear_Key_Remotes Clear_Key_Remotes `(v  1 e 1 0 ]
+"291
 [v _Check_RF_Match Check_RF_Match `(v  1 e 1 0 ]
-"289
+"318
 [v _Learn_Current_Remote Learn_Current_Remote `(v  1 e 1 0 ]
-"381
+"417
 [v _Process_Touch_Payload Process_Touch_Payload `(v  1 e 1 0 ]
-"432
+"491
 [v _main main `(v  1 e 1 0 ]
-"521
+"628
 [v _POWER_INITIAL POWER_INITIAL `(v  1 e 1 0 ]
-"532
+"639
 [v _TIMER2_INITIAL TIMER2_INITIAL `(v  1 e 1 0 ]
-"543
+"650
 [v _TIMER0_INITIAL TIMER0_INITIAL `(v  1 e 1 0 ]
-"551
+"658
 [v _EEPROMread EEPROMread `(uc  1 e 1 0 ]
-"558
+"665
 [v _EEPROMwrite EEPROMwrite `(v  1 e 1 0 ]
-"571
+"678
 [v _DelayUs DelayUs `(v  1 e 1 0 ]
-"581
+"688
 [v _DelayMs DelayMs `(v  1 e 1 0 ]
 "14 C:\Users\hamedwin\OneDrive\Documents\fmd-project\fmd-project\baygani\FMDIDE3.0.7\data\include\FT60F01X.h
 [v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
@@ -121,112 +123,128 @@
 [v _Count Count `VEuc  1 e 1 0 ]
 [v _Buffer Buffer `VEuc  1 e 1 0 ]
 [v _Bit Bit `VEuc  1 e 1 0 ]
-"60
+"58
+[v _lastLearnKey lastLearnKey `VEuc  1 e 1 0 ]
+"61
 [v _O1 O1 `VEb  1 e 0 0 ]
 [v _O2 O2 `VEb  1 e 0 0 ]
 [v _O3 O3 `VEb  1 e 0 0 ]
 [v _O4 O4 `VEb  1 e 0 0 ]
-"61
+"62
 [v _Start Start `VEb  1 e 0 0 ]
 [v _state1 state1 `VEb  1 e 0 0 ]
 [v _state2 state2 `VEb  1 e 0 0 ]
 [v _state3 state3 `VEb  1 e 0 0 ]
 [v _state4 state4 `VEb  1 e 0 0 ]
-"62
+"63
 [v _LernRFblink LernRFblink `VEb  1 e 0 0 ]
 [v _LernRF LernRF `VEb  1 e 0 0 ]
 [v _Frist Frist `VEb  1 e 0 0 ]
 [v _Finish Finish `VEb  1 e 0 0 ]
 [v _Lock Lock `VEb  1 e 0 0 ]
-"432
+"491
 [v _main main `(v  1 e 1 0 ]
 {
-"515
+"622
 } 0
-"532
+"639
 [v _TIMER2_INITIAL TIMER2_INITIAL `(v  1 e 1 0 ]
 {
-"541
+"648
 } 0
-"543
+"650
 [v _TIMER0_INITIAL TIMER0_INITIAL `(v  1 e 1 0 ]
 {
-"549
+"656
 } 0
-"381
+"417
 [v _Process_Touch_Payload Process_Touch_Payload `(v  1 e 1 0 ]
 {
-"383
-[v Process_Touch_Payload@val val `uc  1 a 1 4 ]
-"427
+"419
+[v Process_Touch_Payload@val val `uc  1 a 1 5 ]
+"486
 } 0
-"521
+"267
+[v _Clear_Key_Remotes Clear_Key_Remotes `(v  1 e 1 0 ]
+{
+[v Clear_Key_Remotes@key_num key_num `uc  1 a 1 wreg ]
+"269
+[v Clear_Key_Remotes@i i `uc  1 a 1 4 ]
+"270
+[v Clear_Key_Remotes@addr addr `uc  1 a 1 2 ]
+"267
+[v Clear_Key_Remotes@key_num key_num `uc  1 a 1 wreg ]
+"277
+[v Clear_Key_Remotes@key_num key_num `uc  1 a 1 3 ]
+"286
+} 0
+"628
 [v _POWER_INITIAL POWER_INITIAL `(v  1 e 1 0 ]
 {
-"530
+"637
 } 0
-"289
+"318
 [v _Learn_Current_Remote Learn_Current_Remote `(v  1 e 1 0 ]
 {
 [v Learn_Current_Remote@key_num key_num `uc  1 a 1 wreg ]
-"295
-[v Learn_Current_Remote@current_ptr current_ptr `uc  1 a 1 12 ]
-"291
-[v Learn_Current_Remote@r r `uc  1 a 1 11 ]
-"296
-[v Learn_Current_Remote@target_addr target_addr `uc  1 a 1 10 ]
-"293
-[v Learn_Current_Remote@base_addr base_addr `uc  1 a 1 9 ]
-"292
-[v Learn_Current_Remote@k_idx k_idx `uc  1 a 1 8 ]
-"294
-[v Learn_Current_Remote@fifo_ptr_addr fifo_ptr_addr `uc  1 a 1 7 ]
-"289
+"324
+[v Learn_Current_Remote@current_ptr current_ptr `uc  1 a 1 8 ]
+"320
+[v Learn_Current_Remote@r r `uc  1 a 1 7 ]
+"325
+[v Learn_Current_Remote@target_addr target_addr `uc  1 a 1 6 ]
+"322
+[v Learn_Current_Remote@base_addr base_addr `uc  1 a 1 5 ]
+"321
+[v Learn_Current_Remote@k_idx k_idx `uc  1 a 1 4 ]
+"323
+[v Learn_Current_Remote@fifo_ptr_addr fifo_ptr_addr `uc  1 a 1 3 ]
+"318
 [v Learn_Current_Remote@key_num key_num `uc  1 a 1 wreg ]
-"298
-[v Learn_Current_Remote@key_num key_num `uc  1 a 1 13 ]
-"376
+"327
+[v Learn_Current_Remote@key_num key_num `uc  1 a 1 9 ]
+"412
 } 0
-"558
+"665
 [v _EEPROMwrite EEPROMwrite `(v  1 e 1 0 ]
 {
 [v EEPROMwrite@EEAddr EEAddr `uc  1 a 1 wreg ]
 [v EEPROMwrite@EEAddr EEAddr `uc  1 a 1 wreg ]
 [v EEPROMwrite@Data Data `uc  1 p 1 4 ]
-"560
+"667
 [v EEPROMwrite@EEAddr EEAddr `uc  1 a 1 5 ]
-"569
+"676
 } 0
-"581
+"688
 [v _DelayMs DelayMs `(v  1 e 1 0 ]
 {
-"583
+"690
 [v DelayMs@b b `ui  1 a 2 4 ]
 [v DelayMs@a a `ui  1 a 2 2 ]
-"581
+"688
 [v DelayMs@Time Time `ui  1 p 2 0 ]
-"591
+"698
 } 0
-"571
+"678
 [v _DelayUs DelayUs `(v  1 e 1 0 ]
 {
 [v DelayUs@Time Time `uc  1 a 1 wreg ]
-"573
+"680
 [v DelayUs@a a `uc  1 a 1 5 ]
-"571
+"678
 [v DelayUs@Time Time `uc  1 a 1 wreg ]
-"574
+"681
 [v DelayUs@Time Time `uc  1 a 1 4 ]
-"579
+"686
 } 0
-"262
+"291
 [v _Check_RF_Match Check_RF_Match `(v  1 e 1 0 ]
 {
-"264
+"293
 [v Check_RF_Match@k k `uc  1 a 1 4 ]
 [v Check_RF_Match@r r `uc  1 a 1 3 ]
 [v Check_RF_Match@base_addr base_addr `uc  1 a 1 2 ]
-"284
+"313
 } 0
 "4 C:\Users\hamedwin\OneDrive\Documents\fmd-project\fmd-project\baygani\FMDIDE3.0.7\data\sources\common\Umul8.c
 [v ___bmul __bmul `(uc  1 e 1 0 ]
@@ -241,17 +259,17 @@
 [v ___bmul@multiplier multiplier `uc  1 a 1 1 ]
 "51
 } 0
-"551 D:\hamed\project\fmd-project\touch-key\fm-ht\rf-out-key-fm-ht\rf-out-key\rf-out-key.C
+"658 D:\hamed\project\fmd-project\touch-key\fm-ht\rf-out-key-fm-ht\rf-out-key\rf-out-key.C
 [v _EEPROMread EEPROMread `(uc  1 e 1 0 ]
 {
 [v EEPROMread@EEAddr EEAddr `uc  1 a 1 wreg ]
 [v EEPROMread@EEAddr EEAddr `uc  1 a 1 wreg ]
-"553
+"660
 [v EEPROMread@EEAddr EEAddr `uc  1 a 1 4 ]
-"556
+"663
 } 0
-"79
+"81
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"257
+"259
 } 0
