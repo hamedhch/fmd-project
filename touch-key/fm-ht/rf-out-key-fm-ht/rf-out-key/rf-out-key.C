@@ -94,6 +94,8 @@ void interrupt ISR(void)
                 conternotRF = 0;
                 LernRF = 0;
                 LernRFKey = 0;
+                lastLearnKey = 0;
+				LernRFblink = 0;  
             }
         }
         

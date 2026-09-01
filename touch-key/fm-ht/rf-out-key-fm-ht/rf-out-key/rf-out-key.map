@@ -5,7 +5,7 @@ Linker command line:
 \
   --edf=C:\Users\hamedwin\OneDrive\Documents\fmd-project\fmd-project\baygani\FMDIDE3.0.7\data\dat\en_msgs.txt \
   -cs -h+rf-out-key.sym --cmf=rf-out-key.cmf -z -QFT60F01X \
-  -oC:\Users\hamedwin\AppData\Local\Temp\s76k.2 -Mrf-out-key.map -E1 \
+  -oC:\Users\hamedwin\AppData\Local\Temp\s51s.2 -Mrf-out-key.map -E1 \
   -ver=XC8 -ASTACK=063h-06fh -pstack=STACK -ACODE=00h-03FFh \
   -ASTRCODE=00h-03FFh -ASTRING=00h-0FFhx4 -ACONST=00h-0FFhx4 \
   -AENTRY=00h-0FFhx4 -ACOMMON=070h-07Fh -ABANK0=040h-06Fh -ARAM=040h-06Fh \
@@ -14,7 +14,7 @@ Linker command line:
   -pfunctab=ENTRY -ACONFIG=02007h-02007h -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=02000h-02003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/02100h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k C:\Users\hamedwin\AppData\Local\Temp\s76k.obj rf-out-key.obj 
+  -DENTRY=2 -k C:\Users\hamedwin\AppData\Local\Temp\s51s.obj rf-out-key.obj 
 
 Object code version is 3.11
 
@@ -23,28 +23,28 @@ Machine type is FT60F01X
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\hamedwin\AppData\Local\Temp\s76k.obj
+C:\Users\hamedwin\AppData\Local\Temp\s51s.obj
                 end_init                              C        C        1        8       0
                 reset_vec                             0        0        1        0       0
 rf-out-key.obj  cinit                                 D        D        A        8       0
                 intentry                              4        4        8        8       0
-                text13                              132      132       EA        8       0
-                text12                              3E4      3E4        6        8       0
-                text11                              3AF      3AF        E        8       0
-                text10                              31B      31B       3D        8       0
-                text9                               3C9      3C9        A        8       0
-                text8                               358      358       1D        8       0
-                text7                               38C      38C       13        8       0
-                text6                               2A9      2A9       72        8       0
-                text5                               39F      39F       10        8       0
-                text4                               375      375       17        8       0
-                text3                               21C      21C       8D        8       0
-                text2                               3D3      3D3        9        8       0
-                text1                               3BD      3BD        C        8       0
+                text13                              132      132       EC        8       0
+                text12                              3E6      3E6        6        8       0
+                text11                              3B1      3B1        E        8       0
+                text10                              31D      31D       3D        8       0
+                text9                               3CB      3CB        A        8       0
+                text8                               35A      35A       1D        8       0
+                text7                               38E      38E       13        8       0
+                text6                               2AB      2AB       72        8       0
+                text5                               3A1      3A1       10        8       0
+                text4                               377      377       17        8       0
+                text3                               21E      21E       8D        8       0
+                text2                               3D5      3D5        9        8       0
+                text1                               3BF      3BF        C        8       0
                 maintext                             17       17      11B        8       0
                 cstackBANK0                          58       58        B       40       1
                 cstackCOMMON                         72       72        6       70       1
-                clrtext                             3DC      3DC        8        8       0
+                clrtext                             3DE      3DE        8        8       0
                 bssBANK0                             40       40       18       40       1
                 bssCOMMON                            79       79        1       70       1
                 bitbssCOMMON                        380       70        A       70       1     8
@@ -58,21 +58,21 @@ TOTAL           Name                               Link     Load   Length     Sp
                 cinit                                 D        D        A         0
                 intentry                              4        4        8         0
                 reset_vec                             0        0        1         0
-                text13                              132      132       EA         0
-                text12                              3E4      3E4        6         0
-                text11                              3AF      3AF        E         0
-                text10                              31B      31B       3D         0
-                text9                               3C9      3C9        A         0
-                text8                               358      358       1D         0
-                text7                               38C      38C       13         0
-                text6                               2A9      2A9       72         0
-                text5                               39F      39F       10         0
-                text4                               375      375       17         0
-                text3                               21C      21C       8D         0
-                text2                               3D3      3D3        9         0
-                text1                               3BD      3BD        C         0
+                text13                              132      132       EC         0
+                text12                              3E6      3E6        6         0
+                text11                              3B1      3B1        E         0
+                text10                              31D      31D       3D         0
+                text9                               3CB      3CB        A         0
+                text8                               35A      35A       1D         0
+                text7                               38E      38E       13         0
+                text6                               2AB      2AB       72         0
+                text5                               3A1      3A1       10         0
+                text4                               377      377       17         0
+                text3                               21E      21E       8D         0
+                text2                               3D5      3D5        9         0
+                text1                               3BF      3BF        C         0
                 maintext                             17       17      11B         0
-                clrtext                             3DC      3DC        8         0
+                clrtext                             3DE      3DE        8         0
 
         CLASS   STRCODE        
 
@@ -114,7 +114,7 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
                 reset_vec                      000000  000001  000001         0       0  CODE        2
-                intentry                       000004  0003E6  0003EA         8       0  CODE        2
+                intentry                       000004  0003E8  0003EC         8       0  CODE        2
                 bssBANK0                       000040  000023  000063        40       1  BANK0       1
                 bitbssCOMMON                   000070  00000A  00007A        70       1  COMMON      1
 
@@ -124,23 +124,23 @@ UNUSED ADDRESS RANGES
         Name                Unused          Largest block    Delta
         BANK0            063-06F             D           1
         CODE             001-003             3           2
-                         3EA-3FF            16
+                         3EC-3FF            14
         COMMON           07A-07D             4           1
         CONFIG           2007-2007             1           2
         CONST            001-003             3           2
-                         3EA-3FF            16
+                         3EC-3FF            14
         EEDATA           2100-21FF           100           2
         ENTRY            001-003             3           2
-                         3EA-3FF            16
+                         3EC-3FF            14
         IDLOC            2000-2003             4           2
         RAM              063-06F             D           1
         SFR0             000-03F            40           1
         SFR1             080-0EF            70           1
         STACK            063-06F             D           1
         STRCODE          001-003             3           2
-                         3EA-3FF            16
+                         3EC-3FF            14
         STRING           001-003             3           2
-                         3EA-3FF            16
+                         3EC-3FF            14
 
                                   Symbol Table
 
@@ -169,25 +169,25 @@ PL2                                maintext     12D
 Process_Touch_Payload@val          cstackBANK0  05D
 _Bit                               bssBANK0     04C
 _Buffer                            bssBANK0     04D
-_Check_RF_Match                    text10       31B
-_Clear_Key_Remotes                 text4        375
+_Check_RF_Match                    text10       31D
+_Clear_Key_Remotes                 text4        377
 _Count                             bssBANK0     04E
 _Data                              bssBANK0     046
 _DataM                             bssBANK0     043
-_DelayMs                           text8        358
-_DelayUs                           text9        3C9
+_DelayMs                           text8        35A
+_DelayUs                           text9        3CB
 _EEADR                             (abs)        09B
 _EECON1                            (abs)        09C
 _EEDAT                             (abs)        09A
 _EEIF                              (abs)        067
-_EEPROMread                        text12       3E4
-_EEPROMwrite                       text7        38C
+_EEPROMread                        text12       3E6
+_EEPROMwrite                       text7        38E
 _Finish                            bitbssCOMMON 381
 _Frist                             bitbssCOMMON 382
 _GIE                               (abs)        05F
 _INTCON                            (abs)        00B
 _ISR                               text13       132
-_Learn_Current_Remote              text6        2A9
+_Learn_Current_Remote              text6        2AB
 _LernRF                            bitbssCOMMON 383
 _LernRFKey                         bssBANK0     04F
 _LernRFblink                       bitbssCOMMON 384
@@ -207,9 +207,9 @@ _PA4                               (abs)        02C
 _PA5                               (abs)        02D
 _PEIE                              (abs)        05E
 _PORTA                             (abs)        005
-_POWER_INITIAL                     text5        39F
+_POWER_INITIAL                     text5        3A1
 _PR2                               (abs)        092
-_Process_Touch_Payload             text3        21C
+_Process_Touch_Payload             text3        21E
 _RD                                (abs)        4E0
 _RFData                            bssBANK0     040
 _RxBusy                            bssBANK0     053
@@ -217,8 +217,8 @@ _Start                             bitbssCOMMON 385
 _T0IE                              (abs)        05D
 _T0IF                              (abs)        05A
 _T2CON                             (abs)        012
-_TIMER0_INITIAL                    text2        3D3
-_TIMER2_INITIAL                    text1        3BD
+_TIMER0_INITIAL                    text2        3D5
+_TIMER2_INITIAL                    text1        3BF
 _TMR0                              (abs)        001
 _TMR2                              (abs)        011
 _TMR2IE                            (abs)        461
@@ -255,7 +255,7 @@ __Hram                             ram          000
 __Hreset_vec                       reset_vec    001
 __Hsfr0                            sfr0         000
 __Hsfr1                            sfr1         000
-__Hspace_0                         (abs)        3EA
+__Hspace_0                         (abs)        3EC
 __Hspace_1                         (abs)        3C4
 __Hspace_2                         (abs)        000
 __Hspace_3                         (abs)        000
@@ -296,11 +296,11 @@ __Lspace_3                         (abs)        000
 __Lstack                           stack        000
 __Lstrings                         strings      000
 __Ltext                            text         000
-__S0                               (abs)        3EA
+__S0                               (abs)        3EC
 __S1                               (abs)        07A
 __S2                               (abs)        000
 __S3                               (abs)        000
-___bmul                            text11       3AF
+___bmul                            text11       3B1
 ___bmul@multiplicand               cstackCOMMON 076
 ___bmul@multiplier                 cstackBANK0  059
 ___bmul@product                    cstackBANK0  058
@@ -308,19 +308,19 @@ ___int_sp                          stack        000
 ___latbits                         (abs)        000
 ___sp                              stack        000
 __end_ofPL2                        maintext     132
-__end_of_Check_RF_Match            text10       358
-__end_of_Clear_Key_Remotes         text4        38C
-__end_of_DelayMs                   text8        375
-__end_of_DelayUs                   text9        3D3
-__end_of_EEPROMread                text12       3EA
-__end_of_EEPROMwrite               text7        39F
-__end_of_ISR                       text13       21C
-__end_of_Learn_Current_Remote      text6        31B
-__end_of_POWER_INITIAL             text5        3AF
-__end_of_Process_Touch_Payload     text3        2A9
-__end_of_TIMER0_INITIAL            text2        3DC
-__end_of_TIMER2_INITIAL            text1        3C9
-__end_of___bmul                    text11       3BD
+__end_of_Check_RF_Match            text10       35A
+__end_of_Clear_Key_Remotes         text4        38E
+__end_of_DelayMs                   text8        377
+__end_of_DelayUs                   text9        3D5
+__end_of_EEPROMread                text12       3EC
+__end_of_EEPROMwrite               text7        3A1
+__end_of_ISR                       text13       21E
+__end_of_Learn_Current_Remote      text6        31D
+__end_of_POWER_INITIAL             text5        3B1
+__end_of_Process_Touch_Payload     text3        2AB
+__end_of_TIMER0_INITIAL            text2        3DE
+__end_of_TIMER2_INITIAL            text1        3CB
+__end_of___bmul                    text11       3BF
 __end_of__initialization           cinit        015
 __end_of_main                      maintext     12D
 __initialization                   cinit        00D
@@ -332,19 +332,19 @@ __pcstackBANK0                     cstackBANK0  058
 __pcstackCOMMON                    cstackCOMMON 072
 __pintentry                        intentry     004
 __pmaintext                        maintext     017
-__ptext1                           text1        3BD
-__ptext10                          text10       31B
-__ptext11                          text11       3AF
-__ptext12                          text12       3E4
+__ptext1                           text1        3BF
+__ptext10                          text10       31D
+__ptext11                          text11       3B1
+__ptext12                          text12       3E6
 __ptext13                          text13       132
-__ptext2                           text2        3D3
-__ptext3                           text3        21C
-__ptext4                           text4        375
-__ptext5                           text5        39F
-__ptext6                           text6        2A9
-__ptext7                           text7        38C
-__ptext8                           text8        358
-__ptext9                           text9        3C9
+__ptext2                           text2        3D5
+__ptext3                           text3        21E
+__ptext4                           text4        377
+__ptext5                           text5        3A1
+__ptext6                           text6        2AB
+__ptext7                           text7        38E
+__ptext8                           text8        35A
+__ptext9                           text9        3CB
 __size_of_Check_RF_Match           (abs)        000
 __size_of_Clear_Key_Remotes        (abs)        000
 __size_of_DelayMs                  (abs)        000
@@ -374,7 +374,7 @@ _state2                            bitnvCOMMON  3C2
 _state3                            bitnvCOMMON  3C1
 _state4                            bitnvCOMMON  3C0
 btemp                              (abs)        07E
-clear_ram0                         clrtext      3DC
+clear_ram0                         clrtext      3DE
 end_of_initialization              cinit        015
 interrupt_function                 intentry     004
 intlevel0                          functab      000
@@ -396,7 +396,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 491 in file "rf-out-key.C"
+		line 493 in file "rf-out-key.C"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -433,7 +433,7 @@ Total ram usage:        1 bytes
 
  *************** function _TIMER2_INITIAL *****************
  Defined at:
-		line 639 in file "rf-out-key.C"
+		line 641 in file "rf-out-key.C"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -463,7 +463,7 @@ Total ram usage:        0 bytes
 
  *************** function _TIMER0_INITIAL *****************
  Defined at:
-		line 650 in file "rf-out-key.C"
+		line 652 in file "rf-out-key.C"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -493,7 +493,7 @@ Total ram usage:        0 bytes
 
  *************** function _Process_Touch_Payload *****************
  Defined at:
-		line 417 in file "rf-out-key.C"
+		line 419 in file "rf-out-key.C"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -523,7 +523,7 @@ Total ram usage:        1 bytes
 
  *************** function _Clear_Key_Remotes *****************
  Defined at:
-		line 267 in file "rf-out-key.C"
+		line 269 in file "rf-out-key.C"
  Parameters:    Size  Location     Type
   key_num         1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -556,7 +556,7 @@ Total ram usage:        3 bytes
 
  *************** function _POWER_INITIAL *****************
  Defined at:
-		line 628 in file "rf-out-key.C"
+		line 630 in file "rf-out-key.C"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -586,7 +586,7 @@ Total ram usage:        0 bytes
 
  *************** function _Learn_Current_Remote *****************
  Defined at:
-		line 318 in file "rf-out-key.C"
+		line 320 in file "rf-out-key.C"
  Parameters:    Size  Location     Type
   key_num         1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -624,7 +624,7 @@ Total ram usage:        8 bytes
 
  *************** function _EEPROMwrite *****************
  Defined at:
-		line 665 in file "rf-out-key.C"
+		line 667 in file "rf-out-key.C"
  Parameters:    Size  Location     Type
   EEAddr          1    wreg     unsigned char 
   Data            1    4[COMMON] unsigned char 
@@ -657,7 +657,7 @@ Total ram usage:        2 bytes
 
  *************** function _DelayMs *****************
  Defined at:
-		line 688 in file "rf-out-key.C"
+		line 690 in file "rf-out-key.C"
  Parameters:    Size  Location     Type
   Time            2    0[BANK0 ] unsigned int 
  Auto vars:     Size  Location     Type
@@ -688,7 +688,7 @@ Total ram usage:        6 bytes
 
  *************** function _DelayUs *****************
  Defined at:
-		line 678 in file "rf-out-key.C"
+		line 680 in file "rf-out-key.C"
  Parameters:    Size  Location     Type
   Time            1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -719,7 +719,7 @@ Total ram usage:        2 bytes
 
  *************** function _Check_RF_Match *****************
  Defined at:
-		line 291 in file "rf-out-key.C"
+		line 293 in file "rf-out-key.C"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -786,7 +786,7 @@ Total ram usage:        3 bytes
 
  *************** function _EEPROMread *****************
  Defined at:
-		line 658 in file "rf-out-key.C"
+		line 660 in file "rf-out-key.C"
  Parameters:    Size  Location     Type
   EEAddr          1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -850,26 +850,26 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 C:\Users\hamedwin\OneDrive\Documents\fmd-project\fmd-project\baygani\FMDIDE3.0.7\data\sources\common\Umul8.c
-		___bmul        		CODE           	03AF	0000	15
+		___bmul        		CODE           	03B1	0000	15
 
 C:\Users\hamedwin\OneDrive\Documents\fmd-project\fmd-project\baygani\FMDIDE3.0.7\data\sources\common\Umul8.c estimated size: 15
 
 rf-out-key.C
-		_Clear_Key_Remotes		CODE           	0375	0000	24
-		_DelayUs       		CODE           	03C9	0000	11
-		_ISR           		CODE           	0132	0000	235
+		_Clear_Key_Remotes		CODE           	0377	0000	24
+		_DelayUs       		CODE           	03CB	0000	11
+		_ISR           		CODE           	0132	0000	237
 		_main          		CODE           	0017	0000	279
-		_EEPROMread    		CODE           	03E4	0000	7
-		_DelayMs       		CODE           	0358	0000	30
-		_POWER_INITIAL 		CODE           	039F	0000	17
-		_TIMER2_INITIAL		CODE           	03BD	0000	13
-		_Check_RF_Match		CODE           	031B	0000	62
-		_Process_Touch_Payload		CODE           	021C	0000	142
-		_EEPROMwrite   		CODE           	038C	0000	20
-		_TIMER0_INITIAL		CODE           	03D3	0000	10
-		_Learn_Current_Remote		CODE           	02A9	0000	115
+		_EEPROMread    		CODE           	03E6	0000	7
+		_DelayMs       		CODE           	035A	0000	30
+		_POWER_INITIAL 		CODE           	03A1	0000	17
+		_TIMER2_INITIAL		CODE           	03BF	0000	13
+		_Check_RF_Match		CODE           	031D	0000	62
+		_Process_Touch_Payload		CODE           	021E	0000	142
+		_EEPROMwrite   		CODE           	038E	0000	20
+		_TIMER0_INITIAL		CODE           	03D5	0000	10
+		_Learn_Current_Remote		CODE           	02AB	0000	115
 
-rf-out-key.C estimated size: 965
+rf-out-key.C estimated size: 967
 
 shared
 		__initialization		CODE           	000D	0000	9

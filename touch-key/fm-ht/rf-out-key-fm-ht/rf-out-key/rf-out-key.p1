@@ -1205,1057 +1205,1063 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [; ;rf-out-key.C: 96: LernRFKey = 0;
 "96
 [e = _LernRFKey -> -> 0 `i `uc ]
+[; ;rf-out-key.C: 97: lastLearnKey = 0;
 "97
+[e = _lastLearnKey -> -> 0 `i `uc ]
+[; ;rf-out-key.C: 98: LernRFblink = 0;
+"98
+[e = _LernRFblink -> -> 0 `i `b ]
+"99
 }
 [e :U 48 ]
-"98
+"100
 }
 [e :U 47 ]
-[; ;rf-out-key.C: 97: }
-[; ;rf-out-key.C: 98: }
-[; ;rf-out-key.C: 101: if(PA2 == 0)
-"101
-[e $ ! == -> _PA2 `i -> 0 `i 49  ]
-[; ;rf-out-key.C: 102: {
-"102
-{
-[; ;rf-out-key.C: 103: high_counter = 0;
+[; ;rf-out-key.C: 99: }
+[; ;rf-out-key.C: 100: }
+[; ;rf-out-key.C: 103: if(PA2 == 0)
 "103
-[e = _high_counter -> -> 0 `i `uc ]
-[; ;rf-out-key.C: 104: if(pulse_counter < 250) pulse_counter++;
+[e $ ! == -> _PA2 `i -> 0 `i 49  ]
+[; ;rf-out-key.C: 104: {
 "104
+{
+[; ;rf-out-key.C: 105: high_counter = 0;
+"105
+[e = _high_counter -> -> 0 `i `uc ]
+[; ;rf-out-key.C: 106: if(pulse_counter < 250) pulse_counter++;
+"106
 [e $ ! < -> _pulse_counter `i -> 250 `i 50  ]
 [e ++ _pulse_counter -> -> 1 `i `uc ]
 [e :U 50 ]
-[; ;rf-out-key.C: 106: if(rx_state == 1)
-"106
-[e $ ! == -> _rx_state `i -> 1 `i 51  ]
-[; ;rf-out-key.C: 107: {
-"107
-{
-[; ;rf-out-key.C: 108: rx_state = 2;
+[; ;rf-out-key.C: 108: if(rx_state == 1)
 "108
-[e = _rx_state -> -> 2 `i `uc ]
-[; ;rf-out-key.C: 109: pulse_counter = 1;
+[e $ ! == -> _rx_state `i -> 1 `i 51  ]
+[; ;rf-out-key.C: 109: {
 "109
-[e = _pulse_counter -> -> 1 `i `uc ]
+{
+[; ;rf-out-key.C: 110: rx_state = 2;
 "110
+[e = _rx_state -> -> 2 `i `uc ]
+[; ;rf-out-key.C: 111: pulse_counter = 1;
+"111
+[e = _pulse_counter -> -> 1 `i `uc ]
+"112
 }
 [e :U 51 ]
-"111
-}
-[; ;rf-out-key.C: 110: }
-[; ;rf-out-key.C: 111: }
-[e $U 52  ]
-"112
-[e :U 49 ]
-[; ;rf-out-key.C: 112: else
-[; ;rf-out-key.C: 113: {
 "113
-{
-[; ;rf-out-key.C: 114: if(high_counter < 250) high_counter++;
+}
+[; ;rf-out-key.C: 112: }
+[; ;rf-out-key.C: 113: }
+[e $U 52  ]
 "114
+[e :U 49 ]
+[; ;rf-out-key.C: 114: else
+[; ;rf-out-key.C: 115: {
+"115
+{
+[; ;rf-out-key.C: 116: if(high_counter < 250) high_counter++;
+"116
 [e $ ! < -> _high_counter `i -> 250 `i 53  ]
 [e ++ _high_counter -> -> 1 `i `uc ]
 [e :U 53 ]
-[; ;rf-out-key.C: 116: if(rx_state == 0)
-"116
-[e $ ! == -> _rx_state `i -> 0 `i 54  ]
-[; ;rf-out-key.C: 117: {
-"117
-{
-[; ;rf-out-key.C: 118: if(pulse_counter >= 20 && pulse_counter <= 30)
+[; ;rf-out-key.C: 118: if(rx_state == 0)
 "118
-[e $ ! && >= -> _pulse_counter `i -> 20 `i <= -> _pulse_counter `i -> 30 `i 55  ]
+[e $ ! == -> _rx_state `i -> 0 `i 54  ]
 [; ;rf-out-key.C: 119: {
 "119
 {
-[; ;rf-out-key.C: 120: rx_state = 1;
+[; ;rf-out-key.C: 120: if(pulse_counter >= 20 && pulse_counter <= 30)
 "120
-[e = _rx_state -> -> 1 `i `uc ]
+[e $ ! && >= -> _pulse_counter `i -> 20 `i <= -> _pulse_counter `i -> 30 `i 55  ]
+[; ;rf-out-key.C: 121: {
 "121
-}
-[e :U 55 ]
-[; ;rf-out-key.C: 121: }
-[; ;rf-out-key.C: 122: pulse_counter = 0;
+{
+[; ;rf-out-key.C: 122: rx_state = 1;
 "122
-[e = _pulse_counter -> -> 0 `i `uc ]
+[e = _rx_state -> -> 1 `i `uc ]
 "123
 }
+[e :U 55 ]
 [; ;rf-out-key.C: 123: }
-[e $U 56  ]
+[; ;rf-out-key.C: 124: pulse_counter = 0;
 "124
-[e :U 54 ]
-[; ;rf-out-key.C: 124: else if(rx_state == 1)
-[e $ ! == -> _rx_state `i -> 1 `i 57  ]
-[; ;rf-out-key.C: 125: {
+[e = _pulse_counter -> -> 0 `i `uc ]
 "125
-{
-[; ;rf-out-key.C: 126: if(high_counter > 80)
+}
+[; ;rf-out-key.C: 125: }
+[e $U 56  ]
 "126
-[e $ ! > -> _high_counter `i -> 80 `i 58  ]
+[e :U 54 ]
+[; ;rf-out-key.C: 126: else if(rx_state == 1)
+[e $ ! == -> _rx_state `i -> 1 `i 57  ]
 [; ;rf-out-key.C: 127: {
 "127
 {
-[; ;rf-out-key.C: 128: rx_state = 0;
+[; ;rf-out-key.C: 128: if(high_counter > 80)
 "128
-[e = _rx_state -> -> 0 `i `uc ]
-[; ;rf-out-key.C: 129: pulse_counter = 0;
+[e $ ! > -> _high_counter `i -> 80 `i 58  ]
+[; ;rf-out-key.C: 129: {
 "129
-[e = _pulse_counter -> -> 0 `i `uc ]
+{
+[; ;rf-out-key.C: 130: rx_state = 0;
 "130
+[e = _rx_state -> -> 0 `i `uc ]
+[; ;rf-out-key.C: 131: pulse_counter = 0;
+"131
+[e = _pulse_counter -> -> 0 `i `uc ]
+"132
 }
 [e :U 58 ]
-"131
-}
-[; ;rf-out-key.C: 130: }
-[; ;rf-out-key.C: 131: }
-[e $U 59  ]
-"132
-[e :U 57 ]
-[; ;rf-out-key.C: 132: else if(rx_state == 2)
-[e $ ! == -> _rx_state `i -> 2 `i 60  ]
-[; ;rf-out-key.C: 133: {
 "133
-{
-[; ;rf-out-key.C: 134: payload_val = pulse_counter;
-"134
-[e = _payload_val _pulse_counter ]
-[; ;rf-out-key.C: 135: rx_state = 3;
-"135
-[e = _rx_state -> -> 3 `i `uc ]
-[; ;rf-out-key.C: 136: pulse_counter = 0;
-"136
-[e = _pulse_counter -> -> 0 `i `uc ]
-[; ;rf-out-key.C: 137: high_counter = 1;
-"137
-[e = _high_counter -> -> 1 `i `uc ]
-"138
 }
-[; ;rf-out-key.C: 138: }
-[e $U 61  ]
-"139
-[e :U 60 ]
-[; ;rf-out-key.C: 139: else if(rx_state == 3)
-[e $ ! == -> _rx_state `i -> 3 `i 62  ]
-[; ;rf-out-key.C: 140: {
-"140
+[; ;rf-out-key.C: 132: }
+[; ;rf-out-key.C: 133: }
+[e $U 59  ]
+"134
+[e :U 57 ]
+[; ;rf-out-key.C: 134: else if(rx_state == 2)
+[e $ ! == -> _rx_state `i -> 2 `i 60  ]
+[; ;rf-out-key.C: 135: {
+"135
 {
-[; ;rf-out-key.C: 141: if(high_counter >= 15)
+[; ;rf-out-key.C: 136: payload_val = pulse_counter;
+"136
+[e = _payload_val _pulse_counter ]
+[; ;rf-out-key.C: 137: rx_state = 3;
+"137
+[e = _rx_state -> -> 3 `i `uc ]
+[; ;rf-out-key.C: 138: pulse_counter = 0;
+"138
+[e = _pulse_counter -> -> 0 `i `uc ]
+[; ;rf-out-key.C: 139: high_counter = 1;
+"139
+[e = _high_counter -> -> 1 `i `uc ]
+"140
+}
+[; ;rf-out-key.C: 140: }
+[e $U 61  ]
 "141
-[e $ ! >= -> _high_counter `i -> 15 `i 63  ]
+[e :U 60 ]
+[; ;rf-out-key.C: 141: else if(rx_state == 3)
+[e $ ! == -> _rx_state `i -> 3 `i 62  ]
 [; ;rf-out-key.C: 142: {
 "142
 {
-[; ;rf-out-key.C: 143: frame_ready = 1;
+[; ;rf-out-key.C: 143: if(high_counter >= 15)
 "143
-[e = _frame_ready -> -> 1 `i `uc ]
-[; ;rf-out-key.C: 144: rx_state = 0;
+[e $ ! >= -> _high_counter `i -> 15 `i 63  ]
+[; ;rf-out-key.C: 144: {
 "144
-[e = _rx_state -> -> 0 `i `uc ]
+{
+[; ;rf-out-key.C: 145: frame_ready = 1;
 "145
+[e = _frame_ready -> -> 1 `i `uc ]
+[; ;rf-out-key.C: 146: rx_state = 0;
+"146
+[e = _rx_state -> -> 0 `i `uc ]
+"147
 }
 [e :U 63 ]
-"146
+"148
 }
 [e :U 62 ]
-"147
+"149
 [e :U 61 ]
 [e :U 59 ]
 [e :U 56 ]
 }
 [e :U 52 ]
-[; ;rf-out-key.C: 145: }
-[; ;rf-out-key.C: 146: }
 [; ;rf-out-key.C: 147: }
-[; ;rf-out-key.C: 150: if(RxBusy == 1 && PA2 == 1 && high_counter >= 60)
-"150
-[e $ ! && && == -> _RxBusy `i -> 1 `i == -> _PA2 `i -> 1 `i >= -> _high_counter `i -> 60 `i 64  ]
-[; ;rf-out-key.C: 151: {
-"151
-{
-[; ;rf-out-key.C: 152: RxBusy = 0;
+[; ;rf-out-key.C: 148: }
+[; ;rf-out-key.C: 149: }
+[; ;rf-out-key.C: 152: if(RxBusy == 1 && PA2 == 1 && high_counter >= 60)
 "152
-[e = _RxBusy -> -> 0 `i `uc ]
+[e $ ! && && == -> _RxBusy `i -> 1 `i == -> _PA2 `i -> 1 `i >= -> _high_counter `i -> 60 `i 64  ]
+[; ;rf-out-key.C: 153: {
 "153
+{
+[; ;rf-out-key.C: 154: RxBusy = 0;
+"154
+[e = _RxBusy -> -> 0 `i `uc ]
+"155
 }
 [e :U 64 ]
-"154
+"156
 }
 [e :U 46 ]
-[; ;rf-out-key.C: 153: }
-[; ;rf-out-key.C: 154: }
-[; ;rf-out-key.C: 158: if(TMR2IE && TMR2IF)
-"158
-[e $ ! && _TMR2IE _TMR2IF 65  ]
-[; ;rf-out-key.C: 159: {
-"159
-{
-[; ;rf-out-key.C: 160: TMR2IF = 0;
+[; ;rf-out-key.C: 155: }
+[; ;rf-out-key.C: 156: }
+[; ;rf-out-key.C: 160: if(TMR2IE && TMR2IF)
 "160
-[e = _TMR2IF -> -> 0 `i `b ]
-[; ;rf-out-key.C: 161: asm("clrwdt");
+[e $ ! && _TMR2IE _TMR2IF 65  ]
+[; ;rf-out-key.C: 161: {
 "161
-[; <" clrwdt ;# ">
-[; ;rf-out-key.C: 163: if(PA3 == 0)
-"163
-[e $ ! == -> _PA3 `i -> 0 `i 66  ]
-[; ;rf-out-key.C: 164: {
-"164
 {
-[; ;rf-out-key.C: 165: if(Timedown < 250)
+[; ;rf-out-key.C: 162: TMR2IF = 0;
+"162
+[e = _TMR2IF -> -> 0 `i `b ]
+[; ;rf-out-key.C: 163: asm("clrwdt");
+"163
+[; <" clrwdt ;# ">
+[; ;rf-out-key.C: 165: if(PA3 == 0)
 "165
-[e $ ! < -> _Timedown `i -> 250 `i 67  ]
+[e $ ! == -> _PA3 `i -> 0 `i 66  ]
 [; ;rf-out-key.C: 166: {
 "166
 {
-[; ;rf-out-key.C: 167: Timedown++;
+[; ;rf-out-key.C: 167: if(Timedown < 250)
 "167
-[e ++ _Timedown -> -> 1 `i `uc ]
+[e $ ! < -> _Timedown `i -> 250 `i 67  ]
+[; ;rf-out-key.C: 168: {
 "168
-}
-[e :U 67 ]
-[; ;rf-out-key.C: 168: }
-[; ;rf-out-key.C: 169: Frist = 1;
+{
+[; ;rf-out-key.C: 169: Timedown++;
 "169
-[e = _Frist -> -> 1 `i `b ]
+[e ++ _Timedown -> -> 1 `i `uc ]
 "170
 }
+[e :U 67 ]
 [; ;rf-out-key.C: 170: }
-[e $U 68  ]
+[; ;rf-out-key.C: 171: Frist = 1;
 "171
-[e :U 66 ]
-[; ;rf-out-key.C: 171: else
-[; ;rf-out-key.C: 172: {
+[e = _Frist -> -> 1 `i `b ]
 "172
-{
-[; ;rf-out-key.C: 174: if(Timedown >= 250)
+}
+[; ;rf-out-key.C: 172: }
+[e $U 68  ]
+"173
+[e :U 66 ]
+[; ;rf-out-key.C: 173: else
+[; ;rf-out-key.C: 174: {
 "174
-[e $ ! >= -> _Timedown `i -> 250 `i 69  ]
-[; ;rf-out-key.C: 175: {
-"175
 {
-[; ;rf-out-key.C: 176: Timedown = 0;
+[; ;rf-out-key.C: 176: if(Timedown >= 250)
 "176
-[e = _Timedown -> -> 0 `i `uc ]
-[; ;rf-out-key.C: 177: Frist = 0;
+[e $ ! >= -> _Timedown `i -> 250 `i 69  ]
+[; ;rf-out-key.C: 177: {
 "177
-[e = _Frist -> -> 0 `i `b ]
-[; ;rf-out-key.C: 178: Start = 0;
+{
+[; ;rf-out-key.C: 178: Timedown = 0;
 "178
-[e = _Start -> -> 0 `i `b ]
-[; ;rf-out-key.C: 179: Bit = 8;
+[e = _Timedown -> -> 0 `i `uc ]
+[; ;rf-out-key.C: 179: Frist = 0;
 "179
-[e = _Bit -> -> 8 `i `uc ]
-[; ;rf-out-key.C: 180: Buffer = 0;
+[e = _Frist -> -> 0 `i `b ]
+[; ;rf-out-key.C: 180: Start = 0;
 "180
-[e = _Buffer -> -> 0 `i `uc ]
-[; ;rf-out-key.C: 181: Count = 0;
+[e = _Start -> -> 0 `i `b ]
+[; ;rf-out-key.C: 181: Bit = 8;
 "181
-[e = _Count -> -> 0 `i `uc ]
-[; ;rf-out-key.C: 182: Finish = 0;
+[e = _Bit -> -> 8 `i `uc ]
+[; ;rf-out-key.C: 182: Buffer = 0;
 "182
-[e = _Finish -> -> 0 `i `b ]
-[; ;rf-out-key.C: 183: return;
+[e = _Buffer -> -> 0 `i `uc ]
+[; ;rf-out-key.C: 183: Count = 0;
 "183
-[e $UE 45  ]
+[e = _Count -> -> 0 `i `uc ]
+[; ;rf-out-key.C: 184: Finish = 0;
 "184
+[e = _Finish -> -> 0 `i `b ]
+[; ;rf-out-key.C: 185: return;
+"185
+[e $UE 45  ]
+"186
 }
 [e :U 69 ]
-[; ;rf-out-key.C: 184: }
-[; ;rf-out-key.C: 187: if((Frist == 1) && (Finish == 0))
-"187
+[; ;rf-out-key.C: 186: }
+[; ;rf-out-key.C: 189: if((Frist == 1) && (Finish == 0))
+"189
 [e $ ! && == -> _Frist `i -> 1 `i == -> _Finish `i -> 0 `i 70  ]
-[; ;rf-out-key.C: 188: {
-"188
-{
-[; ;rf-out-key.C: 190: if(Timedown >= 180 && Timedown <= 245)
+[; ;rf-out-key.C: 190: {
 "190
-[e $ ! && >= -> _Timedown `i -> 180 `i <= -> _Timedown `i -> 245 `i 71  ]
-[; ;rf-out-key.C: 191: {
-"191
 {
-[; ;rf-out-key.C: 192: Start = 1;
+[; ;rf-out-key.C: 192: if(Timedown >= 180 && Timedown <= 245)
 "192
-[e = _Start -> -> 1 `i `b ]
-[; ;rf-out-key.C: 193: Bit = 8;
+[e $ ! && >= -> _Timedown `i -> 180 `i <= -> _Timedown `i -> 245 `i 71  ]
+[; ;rf-out-key.C: 193: {
 "193
-[e = _Bit -> -> 8 `i `uc ]
-[; ;rf-out-key.C: 194: Count = 0;
+{
+[; ;rf-out-key.C: 194: Start = 1;
 "194
-[e = _Count -> -> 0 `i `uc ]
-[; ;rf-out-key.C: 195: Buffer = 0;
+[e = _Start -> -> 1 `i `b ]
+[; ;rf-out-key.C: 195: Bit = 8;
 "195
-[e = _Buffer -> -> 0 `i `uc ]
-"196
-}
-[; ;rf-out-key.C: 196: }
-[e $U 72  ]
-"198
-[e :U 71 ]
-[; ;rf-out-key.C: 198: else if(Start == 1)
-[e $ ! == -> _Start `i -> 1 `i 73  ]
-[; ;rf-out-key.C: 199: {
-"199
-{
-[; ;rf-out-key.C: 200: Bit--;
-"200
-[e -- _Bit -> -> 1 `i `uc ]
-[; ;rf-out-key.C: 203: if(Timedown >= 14 && Timedown <= 32)
-"203
-[e $ ! && >= -> _Timedown `i -> 14 `i <= -> _Timedown `i -> 32 `i 74  ]
-[; ;rf-out-key.C: 204: {
-"204
-{
-[; ;rf-out-key.C: 205: Buffer = Buffer << 1;
-"205
-[e = _Buffer -> << -> _Buffer `i -> 1 `i `uc ]
-"206
-}
-[; ;rf-out-key.C: 206: }
-[e $U 75  ]
-"208
-[e :U 74 ]
-[; ;rf-out-key.C: 208: else if(Timedown >= 4 && Timedown <= 13)
-[e $ ! && >= -> _Timedown `i -> 4 `i <= -> _Timedown `i -> 13 `i 76  ]
-[; ;rf-out-key.C: 209: {
-"209
-{
-[; ;rf-out-key.C: 210: Buffer = (Buffer << 1) | 1;
-"210
-[e = _Buffer -> | << -> _Buffer `i -> 1 `i -> 1 `i `uc ]
-"211
-}
-[; ;rf-out-key.C: 211: }
-[e $U 77  ]
-"213
-[e :U 76 ]
-[; ;rf-out-key.C: 213: else
-[; ;rf-out-key.C: 214: {
-"214
-{
-[; ;rf-out-key.C: 215: Count = 0;
-"215
-[e = _Count -> -> 0 `i `uc ]
-[; ;rf-out-key.C: 216: Bit = 8;
-"216
 [e = _Bit -> -> 8 `i `uc ]
-[; ;rf-out-key.C: 217: Buffer = 0;
-"217
+[; ;rf-out-key.C: 196: Count = 0;
+"196
+[e = _Count -> -> 0 `i `uc ]
+[; ;rf-out-key.C: 197: Buffer = 0;
+"197
 [e = _Buffer -> -> 0 `i `uc ]
-[; ;rf-out-key.C: 218: Start = 0;
+"198
+}
+[; ;rf-out-key.C: 198: }
+[e $U 72  ]
+"200
+[e :U 71 ]
+[; ;rf-out-key.C: 200: else if(Start == 1)
+[e $ ! == -> _Start `i -> 1 `i 73  ]
+[; ;rf-out-key.C: 201: {
+"201
+{
+[; ;rf-out-key.C: 202: Bit--;
+"202
+[e -- _Bit -> -> 1 `i `uc ]
+[; ;rf-out-key.C: 205: if(Timedown >= 14 && Timedown <= 32)
+"205
+[e $ ! && >= -> _Timedown `i -> 14 `i <= -> _Timedown `i -> 32 `i 74  ]
+[; ;rf-out-key.C: 206: {
+"206
+{
+[; ;rf-out-key.C: 207: Buffer = Buffer << 1;
+"207
+[e = _Buffer -> << -> _Buffer `i -> 1 `i `uc ]
+"208
+}
+[; ;rf-out-key.C: 208: }
+[e $U 75  ]
+"210
+[e :U 74 ]
+[; ;rf-out-key.C: 210: else if(Timedown >= 4 && Timedown <= 13)
+[e $ ! && >= -> _Timedown `i -> 4 `i <= -> _Timedown `i -> 13 `i 76  ]
+[; ;rf-out-key.C: 211: {
+"211
+{
+[; ;rf-out-key.C: 212: Buffer = (Buffer << 1) | 1;
+"212
+[e = _Buffer -> | << -> _Buffer `i -> 1 `i -> 1 `i `uc ]
+"213
+}
+[; ;rf-out-key.C: 213: }
+[e $U 77  ]
+"215
+[e :U 76 ]
+[; ;rf-out-key.C: 215: else
+[; ;rf-out-key.C: 216: {
+"216
+{
+[; ;rf-out-key.C: 217: Count = 0;
+"217
+[e = _Count -> -> 0 `i `uc ]
+[; ;rf-out-key.C: 218: Bit = 8;
 "218
-[e = _Start -> -> 0 `i `b ]
+[e = _Bit -> -> 8 `i `uc ]
+[; ;rf-out-key.C: 219: Buffer = 0;
 "219
+[e = _Buffer -> -> 0 `i `uc ]
+[; ;rf-out-key.C: 220: Start = 0;
+"220
+[e = _Start -> -> 0 `i `b ]
+"221
 }
 [e :U 77 ]
 [e :U 75 ]
-[; ;rf-out-key.C: 219: }
-[; ;rf-out-key.C: 222: if(Bit == 0)
-"222
-[e $ ! == -> _Bit `i -> 0 `i 78  ]
-[; ;rf-out-key.C: 223: {
-"223
-{
-[; ;rf-out-key.C: 224: Bit = 8;
+[; ;rf-out-key.C: 221: }
+[; ;rf-out-key.C: 224: if(Bit == 0)
 "224
-[e = _Bit -> -> 8 `i `uc ]
-[; ;rf-out-key.C: 225: Data[Count] = RFData[Count];
+[e $ ! == -> _Bit `i -> 0 `i 78  ]
+[; ;rf-out-key.C: 225: {
 "225
-[e = *U + &U _Data * -> _Count `ux -> -> # *U &U _Data `ui `ux *U + &U _RFData * -> _Count `ux -> -> # *U &U _RFData `ui `ux ]
-[; ;rf-out-key.C: 226: RFData[Count] = Buffer;
+{
+[; ;rf-out-key.C: 226: Bit = 8;
 "226
-[e = *U + &U _RFData * -> _Count `ux -> -> # *U &U _RFData `ui `ux _Buffer ]
-[; ;rf-out-key.C: 227: Count++;
+[e = _Bit -> -> 8 `i `uc ]
+[; ;rf-out-key.C: 227: Data[Count] = RFData[Count];
 "227
+[e = *U + &U _Data * -> _Count `ux -> -> # *U &U _Data `ui `ux *U + &U _RFData * -> _Count `ux -> -> # *U &U _RFData `ui `ux ]
+[; ;rf-out-key.C: 228: RFData[Count] = Buffer;
+"228
+[e = *U + &U _RFData * -> _Count `ux -> -> # *U &U _RFData `ui `ux _Buffer ]
+[; ;rf-out-key.C: 229: Count++;
+"229
 [e ++ _Count -> -> 1 `i `uc ]
-[; ;rf-out-key.C: 230: if(Count >= 3)
-"230
-[e $ ! >= -> _Count `i -> 3 `i 79  ]
-[; ;rf-out-key.C: 231: {
-"231
-{
-[; ;rf-out-key.C: 232: Count = 0;
+[; ;rf-out-key.C: 232: if(Count >= 3)
 "232
-[e = _Count -> -> 0 `i `uc ]
-[; ;rf-out-key.C: 233: Start = 0;
+[e $ ! >= -> _Count `i -> 3 `i 79  ]
+[; ;rf-out-key.C: 233: {
 "233
-[e = _Start -> -> 0 `i `b ]
-[; ;rf-out-key.C: 236: if(Data[0] == RFData[0] &&
-[; ;rf-out-key.C: 237: Data[1] == RFData[1] &&
-[; ;rf-out-key.C: 238: Data[2] == RFData[2])
-"238
-[e $ ! && && == -> *U + &U _Data * -> -> -> 0 `i `ui `ux -> -> # *U &U _Data `ui `ux `i -> *U + &U _RFData * -> -> -> 0 `i `ui `ux -> -> # *U &U _RFData `ui `ux `i == -> *U + &U _Data * -> -> -> 1 `i `ui `ux -> -> # *U &U _Data `ui `ux `i -> *U + &U _RFData * -> -> -> 1 `i `ui `ux -> -> # *U &U _RFData `ui `ux `i == -> *U + &U _Data * -> -> -> 2 `i `ui `ux -> -> # *U &U _Data `ui `ux `i -> *U + &U _RFData * -> -> -> 2 `i `ui `ux -> -> # *U &U _RFData `ui `ux `i 80  ]
-[; ;rf-out-key.C: 239: {
-"239
 {
-[; ;rf-out-key.C: 240: DataM[0] = RFData[0];
+[; ;rf-out-key.C: 234: Count = 0;
+"234
+[e = _Count -> -> 0 `i `uc ]
+[; ;rf-out-key.C: 235: Start = 0;
+"235
+[e = _Start -> -> 0 `i `b ]
+[; ;rf-out-key.C: 238: if(Data[0] == RFData[0] &&
+[; ;rf-out-key.C: 239: Data[1] == RFData[1] &&
+[; ;rf-out-key.C: 240: Data[2] == RFData[2])
 "240
-[e = *U + &U _DataM * -> -> -> 0 `i `ui `ux -> -> # *U &U _DataM `ui `ux *U + &U _RFData * -> -> -> 0 `i `ui `ux -> -> # *U &U _RFData `ui `ux ]
-[; ;rf-out-key.C: 241: DataM[1] = RFData[1];
+[e $ ! && && == -> *U + &U _Data * -> -> -> 0 `i `ui `ux -> -> # *U &U _Data `ui `ux `i -> *U + &U _RFData * -> -> -> 0 `i `ui `ux -> -> # *U &U _RFData `ui `ux `i == -> *U + &U _Data * -> -> -> 1 `i `ui `ux -> -> # *U &U _Data `ui `ux `i -> *U + &U _RFData * -> -> -> 1 `i `ui `ux -> -> # *U &U _RFData `ui `ux `i == -> *U + &U _Data * -> -> -> 2 `i `ui `ux -> -> # *U &U _Data `ui `ux `i -> *U + &U _RFData * -> -> -> 2 `i `ui `ux -> -> # *U &U _RFData `ui `ux `i 80  ]
+[; ;rf-out-key.C: 241: {
 "241
-[e = *U + &U _DataM * -> -> -> 1 `i `ui `ux -> -> # *U &U _DataM `ui `ux *U + &U _RFData * -> -> -> 1 `i `ui `ux -> -> # *U &U _RFData `ui `ux ]
-[; ;rf-out-key.C: 242: DataM[2] = RFData[2];
+{
+[; ;rf-out-key.C: 242: DataM[0] = RFData[0];
 "242
-[e = *U + &U _DataM * -> -> -> 2 `i `ui `ux -> -> # *U &U _DataM `ui `ux *U + &U _RFData * -> -> -> 2 `i `ui `ux -> -> # *U &U _RFData `ui `ux ]
-[; ;rf-out-key.C: 243: Finish = 1;
+[e = *U + &U _DataM * -> -> -> 0 `i `ui `ux -> -> # *U &U _DataM `ui `ux *U + &U _RFData * -> -> -> 0 `i `ui `ux -> -> # *U &U _RFData `ui `ux ]
+[; ;rf-out-key.C: 243: DataM[1] = RFData[1];
 "243
-[e = _Finish -> -> 1 `i `b ]
-[; ;rf-out-key.C: 244: Lock = 1;
+[e = *U + &U _DataM * -> -> -> 1 `i `ui `ux -> -> # *U &U _DataM `ui `ux *U + &U _RFData * -> -> -> 1 `i `ui `ux -> -> # *U &U _RFData `ui `ux ]
+[; ;rf-out-key.C: 244: DataM[2] = RFData[2];
 "244
-[e = _Lock -> -> 1 `i `b ]
+[e = *U + &U _DataM * -> -> -> 2 `i `ui `ux -> -> # *U &U _DataM `ui `ux *U + &U _RFData * -> -> -> 2 `i `ui `ux -> -> # *U &U _RFData `ui `ux ]
+[; ;rf-out-key.C: 245: Finish = 1;
 "245
+[e = _Finish -> -> 1 `i `b ]
+[; ;rf-out-key.C: 246: Lock = 1;
+"246
+[e = _Lock -> -> 1 `i `b ]
+"247
 }
 [e :U 80 ]
-"246
-}
-[e :U 79 ]
-[; ;rf-out-key.C: 245: }
-[; ;rf-out-key.C: 246: }
-[; ;rf-out-key.C: 247: Buffer = 0;
-"247
-[e = _Buffer -> -> 0 `i `uc ]
 "248
 }
-[e :U 78 ]
+[e :U 79 ]
+[; ;rf-out-key.C: 247: }
+[; ;rf-out-key.C: 248: }
+[; ;rf-out-key.C: 249: Buffer = 0;
 "249
+[e = _Buffer -> -> 0 `i `uc ]
+"250
+}
+[e :U 78 ]
+"251
 }
 [e :U 73 ]
-"251
+"253
 [e :U 72 ]
-[; ;rf-out-key.C: 248: }
-[; ;rf-out-key.C: 249: }
-[; ;rf-out-key.C: 251: Frist = 0;
+[; ;rf-out-key.C: 250: }
+[; ;rf-out-key.C: 251: }
+[; ;rf-out-key.C: 253: Frist = 0;
 [e = _Frist -> -> 0 `i `b ]
-"252
+"254
 }
 [e :U 70 ]
-[; ;rf-out-key.C: 252: }
-[; ;rf-out-key.C: 254: Timedown = 0;
-"254
+[; ;rf-out-key.C: 254: }
+[; ;rf-out-key.C: 256: Timedown = 0;
+"256
 [e = _Timedown -> -> 0 `i `uc ]
-"255
+"257
 }
 [e :U 68 ]
-"256
+"258
 }
 [e :U 65 ]
-[; ;rf-out-key.C: 255: }
-[; ;rf-out-key.C: 256: }
-[; ;rf-out-key.C: 259: }
-"259
+[; ;rf-out-key.C: 257: }
+[; ;rf-out-key.C: 258: }
+[; ;rf-out-key.C: 261: }
+"261
 [e :UE 45 ]
 }
-"267
-[v _Clear_Key_Remotes `(v ~T0 @X0 1 ef1`uc ]
-"268
-{
-[; ;rf-out-key.C: 267: void Clear_Key_Remotes(unsigned char key_num)
-[; ;rf-out-key.C: 268: {
-[e :U _Clear_Key_Remotes ]
-"267
-[v _key_num `uc ~T0 @X0 1 r1 ]
-"268
-[f ]
 "269
-[v _i `uc ~T0 @X0 1 a ]
+[v _Clear_Key_Remotes `(v ~T0 @X0 1 ef1`uc ]
 "270
+{
+[; ;rf-out-key.C: 269: void Clear_Key_Remotes(unsigned char key_num)
+[; ;rf-out-key.C: 270: {
+[e :U _Clear_Key_Remotes ]
+"269
+[v _key_num `uc ~T0 @X0 1 r1 ]
+"270
+[f ]
+"271
+[v _i `uc ~T0 @X0 1 a ]
+"272
 [v _addr `uc ~T0 @X0 1 a ]
-[; ;rf-out-key.C: 269: unsigned char i;
-[; ;rf-out-key.C: 270: unsigned char addr;
-[; ;rf-out-key.C: 277: addr = (key_num - 1) * 15;
-"277
-[e = _addr -> * - -> _key_num `i -> 1 `i -> 15 `i `uc ]
-[; ;rf-out-key.C: 279: for(i = 0; i < 15; i++)
+[; ;rf-out-key.C: 271: unsigned char i;
+[; ;rf-out-key.C: 272: unsigned char addr;
+[; ;rf-out-key.C: 279: addr = (key_num - 1) * 15;
 "279
+[e = _addr -> * - -> _key_num `i -> 1 `i -> 15 `i `uc ]
+[; ;rf-out-key.C: 281: for(i = 0; i < 15; i++)
+"281
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 15 `i 82  ]
 [e $U 83  ]
-"280
-[e :U 82 ]
-[; ;rf-out-key.C: 280: {
-{
-[; ;rf-out-key.C: 281: EEPROMwrite(addr++, 0xFF);
-"281
-[e ( _EEPROMwrite (2 , ++ _addr -> -> 1 `i `uc -> -> 255 `i `uc ]
 "282
+[e :U 82 ]
+[; ;rf-out-key.C: 282: {
+{
+[; ;rf-out-key.C: 283: EEPROMwrite(addr++, 0xFF);
+"283
+[e ( _EEPROMwrite (2 , ++ _addr -> -> 1 `i `uc -> -> 255 `i `uc ]
+"284
 }
-"279
+"281
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 15 `i 82  ]
 [e :U 83 ]
-"282
+"284
 }
-[; ;rf-out-key.C: 282: }
-[; ;rf-out-key.C: 285: EEPROMwrite(59 + key_num, 0);
-"285
+[; ;rf-out-key.C: 284: }
+[; ;rf-out-key.C: 287: EEPROMwrite(59 + key_num, 0);
+"287
 [e ( _EEPROMwrite (2 , -> + -> 59 `i -> _key_num `i `uc -> -> 0 `i `uc ]
-[; ;rf-out-key.C: 286: }
-"286
+[; ;rf-out-key.C: 288: }
+"288
 [e :UE 81 ]
 }
-"291
+"293
 [v _Check_RF_Match `(v ~T0 @X0 1 ef ]
-"292
+"294
 {
-[; ;rf-out-key.C: 291: void Check_RF_Match(void)
-[; ;rf-out-key.C: 292: {
+[; ;rf-out-key.C: 293: void Check_RF_Match(void)
+[; ;rf-out-key.C: 294: {
 [e :U _Check_RF_Match ]
 [f ]
-"293
+"295
 [v _k `uc ~T0 @X0 1 a ]
 [v _r `uc ~T0 @X0 1 a ]
 [v _base_addr `uc ~T0 @X0 1 a ]
-[; ;rf-out-key.C: 293: unsigned char k, r, base_addr;
-[; ;rf-out-key.C: 295: for(k = 0; k < 4; k++)
-"295
+[; ;rf-out-key.C: 295: unsigned char k, r, base_addr;
+[; ;rf-out-key.C: 297: for(k = 0; k < 4; k++)
+"297
 {
 [e = _k -> -> 0 `i `uc ]
 [e $ < -> _k `i -> 4 `i 86  ]
 [e $U 87  ]
-"296
+"298
 [e :U 86 ]
-[; ;rf-out-key.C: 296: {
+[; ;rf-out-key.C: 298: {
 {
-[; ;rf-out-key.C: 297: for(r = 0; r < 5; r++)
-"297
+[; ;rf-out-key.C: 299: for(r = 0; r < 5; r++)
+"299
 {
 [e = _r -> -> 0 `i `uc ]
 [e $ < -> _r `i -> 5 `i 89  ]
 [e $U 90  ]
-"298
+"300
 [e :U 89 ]
-[; ;rf-out-key.C: 298: {
+[; ;rf-out-key.C: 300: {
 {
-[; ;rf-out-key.C: 299: base_addr = (k * 5 * 3) + (r * 3);
-"299
+[; ;rf-out-key.C: 301: base_addr = (k * 5 * 3) + (r * 3);
+"301
 [e = _base_addr -> + * * -> _k `i -> 5 `i -> 3 `i * -> _r `i -> 3 `i `uc ]
-[; ;rf-out-key.C: 301: if(DataM[0] == EEPROMread(base_addr) &&
-[; ;rf-out-key.C: 302: DataM[1] == EEPROMread(base_addr + 1) &&
-[; ;rf-out-key.C: 303: DataM[2] == EEPROMread(base_addr + 2))
-"303
-[e $ ! && && == -> *U + &U _DataM * -> -> -> 0 `i `ui `ux -> -> # *U &U _DataM `ui `ux `i -> ( _EEPROMread (1 _base_addr `i == -> *U + &U _DataM * -> -> -> 1 `i `ui `ux -> -> # *U &U _DataM `ui `ux `i -> ( _EEPROMread (1 -> + -> _base_addr `i -> 1 `i `uc `i == -> *U + &U _DataM * -> -> -> 2 `i `ui `ux -> -> # *U &U _DataM `ui `ux `i -> ( _EEPROMread (1 -> + -> _base_addr `i -> 2 `i `uc `i 92  ]
-[; ;rf-out-key.C: 304: {
-"304
-{
-[; ;rf-out-key.C: 305: if(k == 0) O1 = 1;
+[; ;rf-out-key.C: 303: if(DataM[0] == EEPROMread(base_addr) &&
+[; ;rf-out-key.C: 304: DataM[1] == EEPROMread(base_addr + 1) &&
+[; ;rf-out-key.C: 305: DataM[2] == EEPROMread(base_addr + 2))
 "305
+[e $ ! && && == -> *U + &U _DataM * -> -> -> 0 `i `ui `ux -> -> # *U &U _DataM `ui `ux `i -> ( _EEPROMread (1 _base_addr `i == -> *U + &U _DataM * -> -> -> 1 `i `ui `ux -> -> # *U &U _DataM `ui `ux `i -> ( _EEPROMread (1 -> + -> _base_addr `i -> 1 `i `uc `i == -> *U + &U _DataM * -> -> -> 2 `i `ui `ux -> -> # *U &U _DataM `ui `ux `i -> ( _EEPROMread (1 -> + -> _base_addr `i -> 2 `i `uc `i 92  ]
+[; ;rf-out-key.C: 306: {
+"306
+{
+[; ;rf-out-key.C: 307: if(k == 0) O1 = 1;
+"307
 [e $ ! == -> _k `i -> 0 `i 93  ]
 [e = _O1 -> -> 1 `i `b ]
 [e $U 94  ]
-"306
+"308
 [e :U 93 ]
-[; ;rf-out-key.C: 306: else if(k == 1) O2 = 1;
+[; ;rf-out-key.C: 308: else if(k == 1) O2 = 1;
 [e $ ! == -> _k `i -> 1 `i 95  ]
 [e = _O2 -> -> 1 `i `b ]
 [e $U 96  ]
-"307
+"309
 [e :U 95 ]
-[; ;rf-out-key.C: 307: else if(k == 2) O3 = 1;
+[; ;rf-out-key.C: 309: else if(k == 2) O3 = 1;
 [e $ ! == -> _k `i -> 2 `i 97  ]
 [e = _O3 -> -> 1 `i `b ]
 [e $U 98  ]
-"308
+"310
 [e :U 97 ]
-[; ;rf-out-key.C: 308: else if(k == 3) O4 = 1;
+[; ;rf-out-key.C: 310: else if(k == 3) O4 = 1;
 [e $ ! == -> _k `i -> 3 `i 99  ]
 [e = _O4 -> -> 1 `i `b ]
 [e :U 99 ]
-"310
+"312
 [e :U 98 ]
 [e :U 96 ]
 [e :U 94 ]
 }
 [e :U 92 ]
-"311
+"313
 }
-"297
+"299
 [e ++ _r -> -> 1 `i `uc ]
 [e $ < -> _r `i -> 5 `i 89  ]
 [e :U 90 ]
-"311
+"313
 }
-"312
+"314
 }
-"295
+"297
 [e ++ _k -> -> 1 `i `uc ]
 [e $ < -> _k `i -> 4 `i 86  ]
 [e :U 87 ]
-"312
+"314
 }
-[; ;rf-out-key.C: 310: }
-[; ;rf-out-key.C: 311: }
 [; ;rf-out-key.C: 312: }
 [; ;rf-out-key.C: 313: }
-"313
+[; ;rf-out-key.C: 314: }
+[; ;rf-out-key.C: 315: }
+"315
 [e :UE 85 ]
 }
-"318
-[v _Learn_Current_Remote `(v ~T0 @X0 1 ef1`uc ]
-"319
-{
-[; ;rf-out-key.C: 318: void Learn_Current_Remote(unsigned char key_num)
-[; ;rf-out-key.C: 319: {
-[e :U _Learn_Current_Remote ]
-"318
-[v _key_num `uc ~T0 @X0 1 r1 ]
-"319
-[f ]
 "320
-[v _r `uc ~T0 @X0 1 a ]
+[v _Learn_Current_Remote `(v ~T0 @X0 1 ef1`uc ]
 "321
-[v _k_idx `uc ~T0 @X0 1 a ]
+{
+[; ;rf-out-key.C: 320: void Learn_Current_Remote(unsigned char key_num)
+[; ;rf-out-key.C: 321: {
+[e :U _Learn_Current_Remote ]
+"320
+[v _key_num `uc ~T0 @X0 1 r1 ]
+"321
+[f ]
 "322
-[v _base_addr `uc ~T0 @X0 1 a ]
+[v _r `uc ~T0 @X0 1 a ]
 "323
-[v _fifo_ptr_addr `uc ~T0 @X0 1 a ]
+[v _k_idx `uc ~T0 @X0 1 a ]
 "324
-[v _current_ptr `uc ~T0 @X0 1 a ]
+[v _base_addr `uc ~T0 @X0 1 a ]
 "325
-[v _target_addr `uc ~T0 @X0 1 a ]
-[; ;rf-out-key.C: 320: unsigned char r;
-[; ;rf-out-key.C: 321: unsigned char k_idx;
-[; ;rf-out-key.C: 322: unsigned char base_addr;
-[; ;rf-out-key.C: 323: unsigned char fifo_ptr_addr;
-[; ;rf-out-key.C: 324: unsigned char current_ptr;
-[; ;rf-out-key.C: 325: unsigned char target_addr;
-[; ;rf-out-key.C: 327: if((key_num < 1) || (key_num > 4))
+[v _fifo_ptr_addr `uc ~T0 @X0 1 a ]
+"326
+[v _current_ptr `uc ~T0 @X0 1 a ]
 "327
+[v _target_addr `uc ~T0 @X0 1 a ]
+[; ;rf-out-key.C: 322: unsigned char r;
+[; ;rf-out-key.C: 323: unsigned char k_idx;
+[; ;rf-out-key.C: 324: unsigned char base_addr;
+[; ;rf-out-key.C: 325: unsigned char fifo_ptr_addr;
+[; ;rf-out-key.C: 326: unsigned char current_ptr;
+[; ;rf-out-key.C: 327: unsigned char target_addr;
+[; ;rf-out-key.C: 329: if((key_num < 1) || (key_num > 4))
+"329
 [e $ ! || < -> _key_num `i -> 1 `i > -> _key_num `i -> 4 `i 101  ]
-[; ;rf-out-key.C: 328: return;
-"328
+[; ;rf-out-key.C: 330: return;
+"330
 [e $UE 100  ]
 [e :U 101 ]
-[; ;rf-out-key.C: 330: k_idx = key_num - 1;
-"330
+[; ;rf-out-key.C: 332: k_idx = key_num - 1;
+"332
 [e = _k_idx -> - -> _key_num `i -> 1 `i `uc ]
-[; ;rf-out-key.C: 333: for(r = 0; r < 5; r++)
-"333
+[; ;rf-out-key.C: 335: for(r = 0; r < 5; r++)
+"335
 {
 [e = _r -> -> 0 `i `uc ]
 [e $ < -> _r `i -> 5 `i 102  ]
 [e $U 103  ]
-"334
+"336
 [e :U 102 ]
-[; ;rf-out-key.C: 334: {
+[; ;rf-out-key.C: 336: {
 {
-[; ;rf-out-key.C: 335: base_addr = (k_idx * 5 * 3) + (r * 3);
-"335
+[; ;rf-out-key.C: 337: base_addr = (k_idx * 5 * 3) + (r * 3);
+"337
 [e = _base_addr -> + * * -> _k_idx `i -> 5 `i -> 3 `i * -> _r `i -> 3 `i `uc ]
-[; ;rf-out-key.C: 337: if((DataM[0] == EEPROMread(base_addr)) &&
-[; ;rf-out-key.C: 338: (DataM[1] == EEPROMread(base_addr + 1)) &&
-[; ;rf-out-key.C: 339: (DataM[2] == EEPROMread(base_addr + 2)))
-"339
-[e $ ! && && == -> *U + &U _DataM * -> -> -> 0 `i `ui `ux -> -> # *U &U _DataM `ui `ux `i -> ( _EEPROMread (1 _base_addr `i == -> *U + &U _DataM * -> -> -> 1 `i `ui `ux -> -> # *U &U _DataM `ui `ux `i -> ( _EEPROMread (1 -> + -> _base_addr `i -> 1 `i `uc `i == -> *U + &U _DataM * -> -> -> 2 `i `ui `ux -> -> # *U &U _DataM `ui `ux `i -> ( _EEPROMread (1 -> + -> _base_addr `i -> 2 `i `uc `i 105  ]
-[; ;rf-out-key.C: 340: {
-"340
-{
-[; ;rf-out-key.C: 341: return;
+[; ;rf-out-key.C: 339: if((DataM[0] == EEPROMread(base_addr)) &&
+[; ;rf-out-key.C: 340: (DataM[1] == EEPROMread(base_addr + 1)) &&
+[; ;rf-out-key.C: 341: (DataM[2] == EEPROMread(base_addr + 2)))
 "341
-[e $UE 100  ]
+[e $ ! && && == -> *U + &U _DataM * -> -> -> 0 `i `ui `ux -> -> # *U &U _DataM `ui `ux `i -> ( _EEPROMread (1 _base_addr `i == -> *U + &U _DataM * -> -> -> 1 `i `ui `ux -> -> # *U &U _DataM `ui `ux `i -> ( _EEPROMread (1 -> + -> _base_addr `i -> 1 `i `uc `i == -> *U + &U _DataM * -> -> -> 2 `i `ui `ux -> -> # *U &U _DataM `ui `ux `i -> ( _EEPROMread (1 -> + -> _base_addr `i -> 2 `i `uc `i 105  ]
+[; ;rf-out-key.C: 342: {
 "342
+{
+[; ;rf-out-key.C: 343: return;
+"343
+[e $UE 100  ]
+"344
 }
 [e :U 105 ]
-"343
+"345
 }
-"333
+"335
 [e ++ _r -> -> 1 `i `uc ]
 [e $ < -> _r `i -> 5 `i 102  ]
 [e :U 103 ]
-"343
+"345
 }
-[; ;rf-out-key.C: 342: }
-[; ;rf-out-key.C: 343: }
-[; ;rf-out-key.C: 346: fifo_ptr_addr = 60 + k_idx;
-"346
+[; ;rf-out-key.C: 344: }
+[; ;rf-out-key.C: 345: }
+[; ;rf-out-key.C: 348: fifo_ptr_addr = 60 + k_idx;
+"348
 [e = _fifo_ptr_addr -> + -> 60 `i -> _k_idx `i `uc ]
-[; ;rf-out-key.C: 347: current_ptr = EEPROMread(fifo_ptr_addr);
-"347
-[e = _current_ptr ( _EEPROMread (1 _fifo_ptr_addr ]
-[; ;rf-out-key.C: 349: if(current_ptr >= 5)
+[; ;rf-out-key.C: 349: current_ptr = EEPROMread(fifo_ptr_addr);
 "349
+[e = _current_ptr ( _EEPROMread (1 _fifo_ptr_addr ]
+[; ;rf-out-key.C: 351: if(current_ptr >= 5)
+"351
 [e $ ! >= -> _current_ptr `i -> 5 `i 106  ]
-[; ;rf-out-key.C: 350: current_ptr = 0;
-"350
+[; ;rf-out-key.C: 352: current_ptr = 0;
+"352
 [e = _current_ptr -> -> 0 `i `uc ]
 [e :U 106 ]
-[; ;rf-out-key.C: 352: target_addr = (k_idx * 5 * 3) + (current_ptr * 3);
-"352
+[; ;rf-out-key.C: 354: target_addr = (k_idx * 5 * 3) + (current_ptr * 3);
+"354
 [e = _target_addr -> + * * -> _k_idx `i -> 5 `i -> 3 `i * -> _current_ptr `i -> 3 `i `uc ]
-[; ;rf-out-key.C: 355: EEPROMwrite(target_addr, DataM[0]);
-"355
-[e ( _EEPROMwrite (2 , _target_addr *U + &U _DataM * -> -> -> 0 `i `ui `ux -> -> # *U &U _DataM `ui `ux ]
-[; ;rf-out-key.C: 356: EEPROMwrite(target_addr + 1, DataM[1]);
-"356
-[e ( _EEPROMwrite (2 , -> + -> _target_addr `i -> 1 `i `uc *U + &U _DataM * -> -> -> 1 `i `ui `ux -> -> # *U &U _DataM `ui `ux ]
-[; ;rf-out-key.C: 357: EEPROMwrite(target_addr + 2, DataM[2]);
+[; ;rf-out-key.C: 357: EEPROMwrite(target_addr, DataM[0]);
 "357
+[e ( _EEPROMwrite (2 , _target_addr *U + &U _DataM * -> -> -> 0 `i `ui `ux -> -> # *U &U _DataM `ui `ux ]
+[; ;rf-out-key.C: 358: EEPROMwrite(target_addr + 1, DataM[1]);
+"358
+[e ( _EEPROMwrite (2 , -> + -> _target_addr `i -> 1 `i `uc *U + &U _DataM * -> -> -> 1 `i `ui `ux -> -> # *U &U _DataM `ui `ux ]
+[; ;rf-out-key.C: 359: EEPROMwrite(target_addr + 2, DataM[2]);
+"359
 [e ( _EEPROMwrite (2 , -> + -> _target_addr `i -> 2 `i `uc *U + &U _DataM * -> -> -> 2 `i `ui `ux -> -> # *U &U _DataM `ui `ux ]
-[; ;rf-out-key.C: 360: current_ptr++;
-"360
-[e ++ _current_ptr -> -> 1 `i `uc ]
-[; ;rf-out-key.C: 361: if(current_ptr >= 5)
-"361
-[e $ ! >= -> _current_ptr `i -> 5 `i 107  ]
-[; ;rf-out-key.C: 362: current_ptr = 0;
+[; ;rf-out-key.C: 362: current_ptr++;
 "362
+[e ++ _current_ptr -> -> 1 `i `uc ]
+[; ;rf-out-key.C: 363: if(current_ptr >= 5)
+"363
+[e $ ! >= -> _current_ptr `i -> 5 `i 107  ]
+[; ;rf-out-key.C: 364: current_ptr = 0;
+"364
 [e = _current_ptr -> -> 0 `i `uc ]
 [e :U 107 ]
-[; ;rf-out-key.C: 364: EEPROMwrite(fifo_ptr_addr, current_ptr);
-"364
+[; ;rf-out-key.C: 366: EEPROMwrite(fifo_ptr_addr, current_ptr);
+"366
 [e ( _EEPROMwrite (2 , _fifo_ptr_addr _current_ptr ]
-[; ;rf-out-key.C: 399: if(key_num == 1) O1 = 1;
-"399
+[; ;rf-out-key.C: 401: if(key_num == 1) O1 = 1;
+"401
 [e $ ! == -> _key_num `i -> 1 `i 108  ]
 [e = _O1 -> -> 1 `i `b ]
 [e $U 109  ]
-"400
+"402
 [e :U 108 ]
-[; ;rf-out-key.C: 400: else if(key_num == 2) O2 = 1;
+[; ;rf-out-key.C: 402: else if(key_num == 2) O2 = 1;
 [e $ ! == -> _key_num `i -> 2 `i 110  ]
 [e = _O2 -> -> 1 `i `b ]
 [e $U 111  ]
-"401
+"403
 [e :U 110 ]
-[; ;rf-out-key.C: 401: else if(key_num == 3) O3 = 1;
+[; ;rf-out-key.C: 403: else if(key_num == 3) O3 = 1;
 [e $ ! == -> _key_num `i -> 3 `i 112  ]
 [e = _O3 -> -> 1 `i `b ]
 [e $U 113  ]
-"402
+"404
 [e :U 112 ]
-[; ;rf-out-key.C: 402: else O4 = 1;
+[; ;rf-out-key.C: 404: else O4 = 1;
 [e = _O4 -> -> 1 `i `b ]
 [e :U 113 ]
 [e :U 111 ]
 [e :U 109 ]
-[; ;rf-out-key.C: 408: lastLearnKey = 0;
-"408
-[e = _lastLearnKey -> -> 0 `i `uc ]
-[; ;rf-out-key.C: 410: LernRFKey = 0;
+[; ;rf-out-key.C: 410: lastLearnKey = 0;
 "410
-[e = _LernRFKey -> -> 0 `i `uc ]
-[; ;rf-out-key.C: 411: LernRF = 0;
-"411
-[e = _LernRF -> -> 0 `i `b ]
-[; ;rf-out-key.C: 412: }
+[e = _lastLearnKey -> -> 0 `i `uc ]
+[; ;rf-out-key.C: 412: LernRFKey = 0;
 "412
+[e = _LernRFKey -> -> 0 `i `uc ]
+[; ;rf-out-key.C: 413: LernRF = 0;
+"413
+[e = _LernRF -> -> 0 `i `b ]
+[; ;rf-out-key.C: 414: }
+"414
 [e :UE 100 ]
 }
-"417
+"419
 [v _Process_Touch_Payload `(v ~T0 @X0 1 ef ]
-"418
+"420
 {
-[; ;rf-out-key.C: 417: void Process_Touch_Payload(void)
-[; ;rf-out-key.C: 418: {
+[; ;rf-out-key.C: 419: void Process_Touch_Payload(void)
+[; ;rf-out-key.C: 420: {
 [e :U _Process_Touch_Payload ]
 [f ]
-"419
+"421
 [v _val `uc ~T0 @X0 1 a ]
-[; ;rf-out-key.C: 419: unsigned char val = payload_val;
+[; ;rf-out-key.C: 421: unsigned char val = payload_val;
 [e = _val _payload_val ]
-[; ;rf-out-key.C: 420: payload_val = 0;
-"420
-[e = _payload_val -> -> 0 `i `uc ]
-[; ;rf-out-key.C: 422: if(RxBusy == 1) return;
+[; ;rf-out-key.C: 422: payload_val = 0;
 "422
+[e = _payload_val -> -> 0 `i `uc ]
+[; ;rf-out-key.C: 424: if(RxBusy == 1) return;
+"424
 [e $ ! == -> _RxBusy `i -> 1 `i 115  ]
 [e $UE 114  ]
 [e :U 115 ]
-[; ;rf-out-key.C: 423: RxBusy = 1;
-"423
+[; ;rf-out-key.C: 425: RxBusy = 1;
+"425
 [e = _RxBusy -> -> 1 `i `uc ]
-[; ;rf-out-key.C: 426: if(val >= 120 && val <= 140)
-"426
-[e $ ! && >= -> _val `i -> 120 `i <= -> _val `i -> 140 `i 116  ]
-[; ;rf-out-key.C: 427: {
-"427
-{
-[; ;rf-out-key.C: 428: if((lastKey >= 1) && (lastKey <= 4))
+[; ;rf-out-key.C: 428: if(val >= 120 && val <= 140)
 "428
-[e $ ! && >= -> _lastKey `i -> 1 `i <= -> _lastKey `i -> 4 `i 117  ]
+[e $ ! && >= -> _val `i -> 120 `i <= -> _val `i -> 140 `i 116  ]
 [; ;rf-out-key.C: 429: {
 "429
 {
-[; ;rf-out-key.C: 432: if(lastLearnKey == lastKey)
-"432
-[e $ ! == -> _lastLearnKey `i -> _lastKey `i 118  ]
-[; ;rf-out-key.C: 433: {
-"433
+[; ;rf-out-key.C: 430: if((lastKey >= 1) && (lastKey <= 4))
+"430
+[e $ ! && >= -> _lastKey `i -> 1 `i <= -> _lastKey `i -> 4 `i 117  ]
+[; ;rf-out-key.C: 431: {
+"431
 {
-[; ;rf-out-key.C: 434: Clear_Key_Remotes(lastKey);
+[; ;rf-out-key.C: 434: if(lastLearnKey == lastKey)
 "434
-[e ( _Clear_Key_Remotes (1 _lastKey ]
-[; ;rf-out-key.C: 437: LernRF = 0;
-"437
-[e = _LernRF -> -> 0 `i `b ]
-[; ;rf-out-key.C: 438: LernRFKey = 0;
-"438
-[e = _LernRFKey -> -> 0 `i `uc ]
-[; ;rf-out-key.C: 441: lastLearnKey = 5;
-"441
-[e = _lastLearnKey -> -> 5 `i `uc ]
-[; ;rf-out-key.C: 444: LernRFblink = 1;
-"444
-[e = _LernRFblink -> -> 1 `i `b ]
-"445
-}
-[; ;rf-out-key.C: 445: }
-[e $U 119  ]
-"446
-[e :U 118 ]
-[; ;rf-out-key.C: 446: else
-[; ;rf-out-key.C: 447: {
-"447
+[e $ ! == -> _lastLearnKey `i -> _lastKey `i 118  ]
+[; ;rf-out-key.C: 435: {
+"435
 {
-[; ;rf-out-key.C: 449: lastLearnKey = lastKey;
-"449
-[e = _lastLearnKey _lastKey ]
-[; ;rf-out-key.C: 450: LernRFblink = 1;
-"450
+[; ;rf-out-key.C: 436: Clear_Key_Remotes(lastKey);
+"436
+[e ( _Clear_Key_Remotes (1 _lastKey ]
+[; ;rf-out-key.C: 439: LernRF = 0;
+"439
+[e = _LernRF -> -> 0 `i `b ]
+[; ;rf-out-key.C: 440: LernRFKey = 0;
+"440
+[e = _LernRFKey -> -> 0 `i `uc ]
+[; ;rf-out-key.C: 443: lastLearnKey = 5;
+"443
+[e = _lastLearnKey -> -> 5 `i `uc ]
+[; ;rf-out-key.C: 446: LernRFblink = 1;
+"446
 [e = _LernRFblink -> -> 1 `i `b ]
+"447
+}
+[; ;rf-out-key.C: 447: }
+[e $U 119  ]
+"448
+[e :U 118 ]
+[; ;rf-out-key.C: 448: else
+[; ;rf-out-key.C: 449: {
+"449
+{
+[; ;rf-out-key.C: 451: lastLearnKey = lastKey;
 "451
-}
-[e :U 119 ]
+[e = _lastLearnKey _lastKey ]
+[; ;rf-out-key.C: 452: LernRFblink = 1;
 "452
-}
-[e :U 117 ]
+[e = _LernRFblink -> -> 1 `i `b ]
 "453
 }
-[; ;rf-out-key.C: 451: }
-[; ;rf-out-key.C: 452: }
-[; ;rf-out-key.C: 453: }
-[e $U 120  ]
+[e :U 119 ]
+"454
+}
+[e :U 117 ]
 "455
-[e :U 116 ]
-[; ;rf-out-key.C: 455: else if(val >= 10 && val <= 20 && LernRFKey != 1)
-[e $ ! && && >= -> _val `i -> 10 `i <= -> _val `i -> 20 `i != -> _LernRFKey `i -> 1 `i 121  ]
-[; ;rf-out-key.C: 456: {
-"456
-{
-[; ;rf-out-key.C: 457: state1 = !state1;
+}
+[; ;rf-out-key.C: 453: }
+[; ;rf-out-key.C: 454: }
+[; ;rf-out-key.C: 455: }
+[e $U 120  ]
 "457
-[e = _state1 ! _state1 ]
-[; ;rf-out-key.C: 458: eerom = 1;
+[e :U 116 ]
+[; ;rf-out-key.C: 457: else if(val >= 10 && val <= 20 && LernRFKey != 1)
+[e $ ! && && >= -> _val `i -> 10 `i <= -> _val `i -> 20 `i != -> _LernRFKey `i -> 1 `i 121  ]
+[; ;rf-out-key.C: 458: {
 "458
-[e = _eerom -> -> 1 `i `uc ]
-[; ;rf-out-key.C: 459: PA5 = state1;
+{
+[; ;rf-out-key.C: 459: state1 = !state1;
 "459
-[e = _PA5 _state1 ]
-[; ;rf-out-key.C: 460: lastKey = 1;
+[e = _state1 ! _state1 ]
+[; ;rf-out-key.C: 460: eerom = 1;
 "460
-[e = _lastKey -> -> 1 `i `uc ]
+[e = _eerom -> -> 1 `i `uc ]
+[; ;rf-out-key.C: 461: PA5 = state1;
 "461
-}
-[; ;rf-out-key.C: 461: }
-[e $U 122  ]
+[e = _PA5 _state1 ]
+[; ;rf-out-key.C: 462: lastKey = 1;
+"462
+[e = _lastKey -> -> 1 `i `uc ]
 "463
-[e :U 121 ]
-[; ;rf-out-key.C: 463: else if(val >= 30 && val <= 45 && LernRFKey != 2)
-[e $ ! && && >= -> _val `i -> 30 `i <= -> _val `i -> 45 `i != -> _LernRFKey `i -> 2 `i 123  ]
-[; ;rf-out-key.C: 464: {
-"464
-{
-[; ;rf-out-key.C: 465: state2 = !state2;
+}
+[; ;rf-out-key.C: 463: }
+[e $U 122  ]
 "465
-[e = _state2 ! _state2 ]
-[; ;rf-out-key.C: 466: eerom = 2;
+[e :U 121 ]
+[; ;rf-out-key.C: 465: else if(val >= 30 && val <= 45 && LernRFKey != 2)
+[e $ ! && && >= -> _val `i -> 30 `i <= -> _val `i -> 45 `i != -> _LernRFKey `i -> 2 `i 123  ]
+[; ;rf-out-key.C: 466: {
 "466
-[e = _eerom -> -> 2 `i `uc ]
-[; ;rf-out-key.C: 467: PA1 = state2;
+{
+[; ;rf-out-key.C: 467: state2 = !state2;
 "467
-[e = _PA1 _state2 ]
-[; ;rf-out-key.C: 468: lastKey = 2;
+[e = _state2 ! _state2 ]
+[; ;rf-out-key.C: 468: eerom = 2;
 "468
-[e = _lastKey -> -> 2 `i `uc ]
+[e = _eerom -> -> 2 `i `uc ]
+[; ;rf-out-key.C: 469: PA1 = state2;
 "469
-}
-[; ;rf-out-key.C: 469: }
-[e $U 124  ]
+[e = _PA1 _state2 ]
+[; ;rf-out-key.C: 470: lastKey = 2;
+"470
+[e = _lastKey -> -> 2 `i `uc ]
 "471
-[e :U 123 ]
-[; ;rf-out-key.C: 471: else if(val >= 50 && val <= 70 && LernRFKey != 3)
-[e $ ! && && >= -> _val `i -> 50 `i <= -> _val `i -> 70 `i != -> _LernRFKey `i -> 3 `i 125  ]
-[; ;rf-out-key.C: 472: {
-"472
-{
-[; ;rf-out-key.C: 473: state3 = !state3;
-"473
-[e = _state3 ! _state3 ]
-[; ;rf-out-key.C: 474: eerom = 3;
-"474
-[e = _eerom -> -> 3 `i `uc ]
-[; ;rf-out-key.C: 475: PA0 = state3;
-"475
-[e = _PA0 _state3 ]
-[; ;rf-out-key.C: 476: lastKey = 3;
-"476
-[e = _lastKey -> -> 3 `i `uc ]
-"477
 }
-[; ;rf-out-key.C: 477: }
-[e $U 126  ]
-"479
-[e :U 125 ]
-[; ;rf-out-key.C: 479: else if(val >= 75 && val <= 95 && LernRFKey != 4)
-[e $ ! && && >= -> _val `i -> 75 `i <= -> _val `i -> 95 `i != -> _LernRFKey `i -> 4 `i 127  ]
-[; ;rf-out-key.C: 480: {
-"480
+[; ;rf-out-key.C: 471: }
+[e $U 124  ]
+"473
+[e :U 123 ]
+[; ;rf-out-key.C: 473: else if(val >= 50 && val <= 70 && LernRFKey != 3)
+[e $ ! && && >= -> _val `i -> 50 `i <= -> _val `i -> 70 `i != -> _LernRFKey `i -> 3 `i 125  ]
+[; ;rf-out-key.C: 474: {
+"474
 {
-[; ;rf-out-key.C: 481: state4 = !state4;
+[; ;rf-out-key.C: 475: state3 = !state3;
+"475
+[e = _state3 ! _state3 ]
+[; ;rf-out-key.C: 476: eerom = 3;
+"476
+[e = _eerom -> -> 3 `i `uc ]
+[; ;rf-out-key.C: 477: PA0 = state3;
+"477
+[e = _PA0 _state3 ]
+[; ;rf-out-key.C: 478: lastKey = 3;
+"478
+[e = _lastKey -> -> 3 `i `uc ]
+"479
+}
+[; ;rf-out-key.C: 479: }
+[e $U 126  ]
 "481
-[e = _state4 ! _state4 ]
-[; ;rf-out-key.C: 482: eerom = 4;
+[e :U 125 ]
+[; ;rf-out-key.C: 481: else if(val >= 75 && val <= 95 && LernRFKey != 4)
+[e $ ! && && >= -> _val `i -> 75 `i <= -> _val `i -> 95 `i != -> _LernRFKey `i -> 4 `i 127  ]
+[; ;rf-out-key.C: 482: {
 "482
-[e = _eerom -> -> 4 `i `uc ]
-[; ;rf-out-key.C: 483: PA4 = state4;
+{
+[; ;rf-out-key.C: 483: state4 = !state4;
 "483
-[e = _PA4 _state4 ]
-[; ;rf-out-key.C: 484: lastKey = 4;
+[e = _state4 ! _state4 ]
+[; ;rf-out-key.C: 484: eerom = 4;
 "484
-[e = _lastKey -> -> 4 `i `uc ]
+[e = _eerom -> -> 4 `i `uc ]
+[; ;rf-out-key.C: 485: PA4 = state4;
 "485
+[e = _PA4 _state4 ]
+[; ;rf-out-key.C: 486: lastKey = 4;
+"486
+[e = _lastKey -> -> 4 `i `uc ]
+"487
 }
 [e :U 127 ]
-"486
+"488
 [e :U 126 ]
 [e :U 124 ]
 [e :U 122 ]
 [e :U 120 ]
-[; ;rf-out-key.C: 485: }
-[; ;rf-out-key.C: 486: }
+[; ;rf-out-key.C: 487: }
+[; ;rf-out-key.C: 488: }
 [e :UE 114 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"491
+"493
 [v _main `(v ~T0 @X0 1 ef ]
-"492
+"494
 {
-[; ;rf-out-key.C: 491: void main(void)
-[; ;rf-out-key.C: 492: {
+[; ;rf-out-key.C: 493: void main(void)
+[; ;rf-out-key.C: 494: {
 [e :U _main ]
 [f ]
-[; ;rf-out-key.C: 494: POWER_INITIAL();
-"494
-[e ( _POWER_INITIAL ..  ]
-[; ;rf-out-key.C: 495: TIMER2_INITIAL();
-"495
-[e ( _TIMER2_INITIAL ..  ]
-[; ;rf-out-key.C: 496: TIMER0_INITIAL();
+[; ;rf-out-key.C: 496: POWER_INITIAL();
 "496
-[e ( _TIMER0_INITIAL ..  ]
-[; ;rf-out-key.C: 497: TMR2IE = 1;
+[e ( _POWER_INITIAL ..  ]
+[; ;rf-out-key.C: 497: TIMER2_INITIAL();
 "497
-[e = _TMR2IE -> -> 1 `i `b ]
-[; ;rf-out-key.C: 499: Finish = 0;
+[e ( _TIMER2_INITIAL ..  ]
+[; ;rf-out-key.C: 498: TIMER0_INITIAL();
+"498
+[e ( _TIMER0_INITIAL ..  ]
+[; ;rf-out-key.C: 499: TMR2IE = 1;
 "499
-[e = _Finish -> -> 0 `i `b ]
-[; ;rf-out-key.C: 500: Start = 0;
-"500
-[e = _Start -> -> 0 `i `b ]
-[; ;rf-out-key.C: 501: lastLearnKey = 0;
+[e = _TMR2IE -> -> 1 `i `b ]
+[; ;rf-out-key.C: 501: Finish = 0;
 "501
+[e = _Finish -> -> 0 `i `b ]
+[; ;rf-out-key.C: 502: Start = 0;
+"502
+[e = _Start -> -> 0 `i `b ]
+[; ;rf-out-key.C: 503: lastLearnKey = 0;
+"503
 [e = _lastLearnKey -> -> 0 `i `uc ]
-[; ;rf-out-key.C: 504: state1 = EEPROMread(70);
-"504
-[e = _state1 -> ( _EEPROMread (1 -> -> 70 `i `uc `b ]
-[; ;rf-out-key.C: 505: state2 = EEPROMread(71);
-"505
-[e = _state2 -> ( _EEPROMread (1 -> -> 71 `i `uc `b ]
-[; ;rf-out-key.C: 506: state3 = EEPROMread(72);
+[; ;rf-out-key.C: 506: state1 = EEPROMread(70);
 "506
-[e = _state3 -> ( _EEPROMread (1 -> -> 72 `i `uc `b ]
-[; ;rf-out-key.C: 507: state4 = EEPROMread(73);
+[e = _state1 -> ( _EEPROMread (1 -> -> 70 `i `uc `b ]
+[; ;rf-out-key.C: 507: state2 = EEPROMread(71);
 "507
-[e = _state4 -> ( _EEPROMread (1 -> -> 73 `i `uc `b ]
-[; ;rf-out-key.C: 509: PA5 = state1;
+[e = _state2 -> ( _EEPROMread (1 -> -> 71 `i `uc `b ]
+[; ;rf-out-key.C: 508: state3 = EEPROMread(72);
+"508
+[e = _state3 -> ( _EEPROMread (1 -> -> 72 `i `uc `b ]
+[; ;rf-out-key.C: 509: state4 = EEPROMread(73);
 "509
-[e = _PA5 _state1 ]
-[; ;rf-out-key.C: 510: PA1 = state2;
-"510
-[e = _PA1 _state2 ]
-[; ;rf-out-key.C: 511: PA0 = state3;
+[e = _state4 -> ( _EEPROMread (1 -> -> 73 `i `uc `b ]
+[; ;rf-out-key.C: 511: PA5 = state1;
 "511
-[e = _PA0 _state3 ]
-[; ;rf-out-key.C: 512: PA4 = state4;
+[e = _PA5 _state1 ]
+[; ;rf-out-key.C: 512: PA1 = state2;
 "512
-[e = _PA4 _state4 ]
-[; ;rf-out-key.C: 514: while(1)
+[e = _PA1 _state2 ]
+[; ;rf-out-key.C: 513: PA0 = state3;
+"513
+[e = _PA0 _state3 ]
+[; ;rf-out-key.C: 514: PA4 = state4;
 "514
-[e :U 130 ]
-[; ;rf-out-key.C: 515: {
-"515
-{
-[; ;rf-out-key.C: 516: asm("clrwdt");
+[e = _PA4 _state4 ]
+[; ;rf-out-key.C: 516: while(1)
 "516
-[; <" clrwdt ;# ">
-[; ;rf-out-key.C: 519: if(frame_ready == 1)
-"519
-[e $ ! == -> _frame_ready `i -> 1 `i 132  ]
-[; ;rf-out-key.C: 520: {
-"520
+[e :U 130 ]
+[; ;rf-out-key.C: 517: {
+"517
 {
-[; ;rf-out-key.C: 521: frame_ready = 0;
+[; ;rf-out-key.C: 518: asm("clrwdt");
+"518
+[; <" clrwdt ;# ">
+[; ;rf-out-key.C: 521: if(frame_ready == 1)
 "521
-[e = _frame_ready -> -> 0 `i `uc ]
-[; ;rf-out-key.C: 522: Process_Touch_Payload();
+[e $ ! == -> _frame_ready `i -> 1 `i 132  ]
+[; ;rf-out-key.C: 522: {
 "522
-[e ( _Process_Touch_Payload ..  ]
+{
+[; ;rf-out-key.C: 523: frame_ready = 0;
 "523
+[e = _frame_ready -> -> 0 `i `uc ]
+[; ;rf-out-key.C: 524: Process_Touch_Payload();
+"524
+[e ( _Process_Touch_Payload ..  ]
+"525
 }
 [e :U 132 ]
-[; ;rf-out-key.C: 523: }
-[; ;rf-out-key.C: 527: if(Lock == 1)
-"527
-[e $ ! == -> _Lock `i -> 1 `i 133  ]
-[; ;rf-out-key.C: 528: {
-"528
-{
-[; ;rf-out-key.C: 529: Lock = 0;
+[; ;rf-out-key.C: 525: }
+[; ;rf-out-key.C: 529: if(Lock == 1)
 "529
-[e = _Lock -> -> 0 `i `b ]
-[; ;rf-out-key.C: 531: if(LernRF == 1)
-"531
-[e $ ! == -> _LernRF `i -> 1 `i 134  ]
-[; ;rf-out-key.C: 532: {
-"532
+[e $ ! == -> _Lock `i -> 1 `i 133  ]
+[; ;rf-out-key.C: 530: {
+"530
 {
-[; ;rf-out-key.C: 533: if((LernRFKey >= 1) && (LernRFKey <= 4))
+[; ;rf-out-key.C: 531: Lock = 0;
+"531
+[e = _Lock -> -> 0 `i `b ]
+[; ;rf-out-key.C: 533: if(LernRF == 1)
 "533
-[e $ ! && >= -> _LernRFKey `i -> 1 `i <= -> _LernRFKey `i -> 4 `i 135  ]
+[e $ ! == -> _LernRF `i -> 1 `i 134  ]
 [; ;rf-out-key.C: 534: {
 "534
 {
-[; ;rf-out-key.C: 535: Learn_Current_Remote(LernRFKey);
+[; ;rf-out-key.C: 535: if((LernRFKey >= 1) && (LernRFKey <= 4))
 "535
-[e ( _Learn_Current_Remote (1 _LernRFKey ]
+[e $ ! && >= -> _LernRFKey `i -> 1 `i <= -> _LernRFKey `i -> 4 `i 135  ]
+[; ;rf-out-key.C: 536: {
 "536
+{
+[; ;rf-out-key.C: 537: Learn_Current_Remote(LernRFKey);
+"537
+[e ( _Learn_Current_Remote (1 _LernRFKey ]
+"538
 }
 [e :U 135 ]
-"537
-}
-[; ;rf-out-key.C: 536: }
-[; ;rf-out-key.C: 537: }
-[e $U 136  ]
-"538
-[e :U 134 ]
-[; ;rf-out-key.C: 538: else
-[; ;rf-out-key.C: 539: {
 "539
-{
-[; ;rf-out-key.C: 540: Check_RF_Match();
+}
+[; ;rf-out-key.C: 538: }
+[; ;rf-out-key.C: 539: }
+[e $U 136  ]
 "540
-[e ( _Check_RF_Match ..  ]
+[e :U 134 ]
+[; ;rf-out-key.C: 540: else
+[; ;rf-out-key.C: 541: {
 "541
+{
+[; ;rf-out-key.C: 542: Check_RF_Match();
+"542
+[e ( _Check_RF_Match ..  ]
+"543
 }
 [e :U 136 ]
-"542
+"544
 }
 [e :U 133 ]
-[; ;rf-out-key.C: 541: }
-[; ;rf-out-key.C: 542: }
-[; ;rf-out-key.C: 547: if(O1 == 1) { O1 = 0; state1 = !state1; eerom = 1; PA5 = state1; lastKey = 1; }
-"547
+[; ;rf-out-key.C: 543: }
+[; ;rf-out-key.C: 544: }
+[; ;rf-out-key.C: 549: if(O1 == 1) { O1 = 0; state1 = !state1; eerom = 1; PA5 = state1; lastKey = 1; }
+"549
 [e $ ! == -> _O1 `i -> 1 `i 137  ]
 {
 [e = _O1 -> -> 0 `i `b ]
@@ -2265,8 +2271,8 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [e = _lastKey -> -> 1 `i `uc ]
 }
 [e :U 137 ]
-[; ;rf-out-key.C: 548: if(O2 == 1) { O2 = 0; state2 = !state2; eerom = 2; PA1 = state2; lastKey = 2; }
-"548
+[; ;rf-out-key.C: 550: if(O2 == 1) { O2 = 0; state2 = !state2; eerom = 2; PA1 = state2; lastKey = 2; }
+"550
 [e $ ! == -> _O2 `i -> 1 `i 138  ]
 {
 [e = _O2 -> -> 0 `i `b ]
@@ -2276,8 +2282,8 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [e = _lastKey -> -> 2 `i `uc ]
 }
 [e :U 138 ]
-[; ;rf-out-key.C: 549: if(O3 == 1) { O3 = 0; state3 = !state3; eerom = 3; PA0 = state3; lastKey = 3; }
-"549
+[; ;rf-out-key.C: 551: if(O3 == 1) { O3 = 0; state3 = !state3; eerom = 3; PA0 = state3; lastKey = 3; }
+"551
 [e $ ! == -> _O3 `i -> 1 `i 139  ]
 {
 [e = _O3 -> -> 0 `i `b ]
@@ -2287,8 +2293,8 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [e = _lastKey -> -> 3 `i `uc ]
 }
 [e :U 139 ]
-[; ;rf-out-key.C: 550: if(O4 == 1) { O4 = 0; state4 = !state4; eerom = 4; PA4 = state4; lastKey = 4; }
-"550
+[; ;rf-out-key.C: 552: if(O4 == 1) { O4 = 0; state4 = !state4; eerom = 4; PA4 = state4; lastKey = 4; }
+"552
 [e $ ! == -> _O4 `i -> 1 `i 140  ]
 {
 [e = _O4 -> -> 0 `i `b ]
@@ -2298,488 +2304,488 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [e = _lastKey -> -> 4 `i `uc ]
 }
 [e :U 140 ]
-[; ;rf-out-key.C: 553: if(eerom != 0)
-"553
-[e $ ! != -> _eerom `i -> 0 `i 141  ]
-[; ;rf-out-key.C: 554: {
-"554
-{
-[; ;rf-out-key.C: 555: if(eerom == 1) EEPROMwrite(70, state1);
+[; ;rf-out-key.C: 555: if(eerom != 0)
 "555
+[e $ ! != -> _eerom `i -> 0 `i 141  ]
+[; ;rf-out-key.C: 556: {
+"556
+{
+[; ;rf-out-key.C: 557: if(eerom == 1) EEPROMwrite(70, state1);
+"557
 [e $ ! == -> _eerom `i -> 1 `i 142  ]
 [e ( _EEPROMwrite (2 , -> -> 70 `i `uc -> -> _state1 `i `uc ]
 [e $U 143  ]
-"556
+"558
 [e :U 142 ]
-[; ;rf-out-key.C: 556: else if(eerom == 2) EEPROMwrite(71, state2);
+[; ;rf-out-key.C: 558: else if(eerom == 2) EEPROMwrite(71, state2);
 [e $ ! == -> _eerom `i -> 2 `i 144  ]
 [e ( _EEPROMwrite (2 , -> -> 71 `i `uc -> -> _state2 `i `uc ]
 [e $U 145  ]
-"557
+"559
 [e :U 144 ]
-[; ;rf-out-key.C: 557: else if(eerom == 3) EEPROMwrite(72, state3);
+[; ;rf-out-key.C: 559: else if(eerom == 3) EEPROMwrite(72, state3);
 [e $ ! == -> _eerom `i -> 3 `i 146  ]
 [e ( _EEPROMwrite (2 , -> -> 72 `i `uc -> -> _state3 `i `uc ]
 [e $U 147  ]
-"558
+"560
 [e :U 146 ]
-[; ;rf-out-key.C: 558: else if(eerom == 4) EEPROMwrite(73, state4);
+[; ;rf-out-key.C: 560: else if(eerom == 4) EEPROMwrite(73, state4);
 [e $ ! == -> _eerom `i -> 4 `i 148  ]
 [e ( _EEPROMwrite (2 , -> -> 73 `i `uc -> -> _state4 `i `uc ]
 [e :U 148 ]
-"559
+"561
 [e :U 147 ]
 [e :U 145 ]
 [e :U 143 ]
-[; ;rf-out-key.C: 559: eerom = 0;
+[; ;rf-out-key.C: 561: eerom = 0;
 [e = _eerom -> -> 0 `i `uc ]
-"560
+"562
 }
 [e :U 141 ]
-[; ;rf-out-key.C: 560: }
-[; ;rf-out-key.C: 563: if(LernRFblink == 1)
-"563
+[; ;rf-out-key.C: 562: }
+[; ;rf-out-key.C: 565: if(LernRFblink == 1)
+"565
 [e $ ! == -> _LernRFblink `i -> 1 `i 149  ]
-[; ;rf-out-key.C: 564: {
-"564
-{
-[; ;rf-out-key.C: 566: if(lastKey == 1)
+[; ;rf-out-key.C: 566: {
 "566
-[e $ ! == -> _lastKey `i -> 1 `i 150  ]
-[; ;rf-out-key.C: 567: {
-"567
 {
-[; ;rf-out-key.C: 568: DelayMs(200);
+[; ;rf-out-key.C: 568: if(lastKey == 1)
 "568
-[e ( _DelayMs (1 -> -> 200 `i `ui ]
-[; ;rf-out-key.C: 569: PA5 = !PA5;
+[e $ ! == -> _lastKey `i -> 1 `i 150  ]
+[; ;rf-out-key.C: 569: {
 "569
-[e = _PA5 ! _PA5 ]
+{
 [; ;rf-out-key.C: 570: DelayMs(200);
 "570
 [e ( _DelayMs (1 -> -> 200 `i `ui ]
 [; ;rf-out-key.C: 571: PA5 = !PA5;
 "571
 [e = _PA5 ! _PA5 ]
+[; ;rf-out-key.C: 572: DelayMs(200);
 "572
-}
-[; ;rf-out-key.C: 572: }
-[e $U 151  ]
-"573
-[e :U 150 ]
-[; ;rf-out-key.C: 573: else if(lastKey == 2)
-[e $ ! == -> _lastKey `i -> 2 `i 152  ]
-[; ;rf-out-key.C: 574: {
-"574
-{
-[; ;rf-out-key.C: 575: DelayMs(200);
-"575
 [e ( _DelayMs (1 -> -> 200 `i `ui ]
-[; ;rf-out-key.C: 576: PA1 = !PA1;
+[; ;rf-out-key.C: 573: PA5 = !PA5;
+"573
+[e = _PA5 ! _PA5 ]
+"574
+}
+[; ;rf-out-key.C: 574: }
+[e $U 151  ]
+"575
+[e :U 150 ]
+[; ;rf-out-key.C: 575: else if(lastKey == 2)
+[e $ ! == -> _lastKey `i -> 2 `i 152  ]
+[; ;rf-out-key.C: 576: {
 "576
-[e = _PA1 ! _PA1 ]
+{
 [; ;rf-out-key.C: 577: DelayMs(200);
 "577
 [e ( _DelayMs (1 -> -> 200 `i `ui ]
 [; ;rf-out-key.C: 578: PA1 = !PA1;
 "578
 [e = _PA1 ! _PA1 ]
+[; ;rf-out-key.C: 579: DelayMs(200);
 "579
-}
-[; ;rf-out-key.C: 579: }
-[e $U 153  ]
-"580
-[e :U 152 ]
-[; ;rf-out-key.C: 580: else if(lastKey == 3)
-[e $ ! == -> _lastKey `i -> 3 `i 154  ]
-[; ;rf-out-key.C: 581: {
-"581
-{
-[; ;rf-out-key.C: 582: DelayMs(200);
-"582
 [e ( _DelayMs (1 -> -> 200 `i `ui ]
-[; ;rf-out-key.C: 583: PA0 = !PA0;
+[; ;rf-out-key.C: 580: PA1 = !PA1;
+"580
+[e = _PA1 ! _PA1 ]
+"581
+}
+[; ;rf-out-key.C: 581: }
+[e $U 153  ]
+"582
+[e :U 152 ]
+[; ;rf-out-key.C: 582: else if(lastKey == 3)
+[e $ ! == -> _lastKey `i -> 3 `i 154  ]
+[; ;rf-out-key.C: 583: {
 "583
-[e = _PA0 ! _PA0 ]
+{
 [; ;rf-out-key.C: 584: DelayMs(200);
 "584
 [e ( _DelayMs (1 -> -> 200 `i `ui ]
 [; ;rf-out-key.C: 585: PA0 = !PA0;
 "585
 [e = _PA0 ! _PA0 ]
+[; ;rf-out-key.C: 586: DelayMs(200);
 "586
-}
-[; ;rf-out-key.C: 586: }
-[e $U 155  ]
-"587
-[e :U 154 ]
-[; ;rf-out-key.C: 587: else if(lastKey == 4)
-[e $ ! == -> _lastKey `i -> 4 `i 156  ]
-[; ;rf-out-key.C: 588: {
-"588
-{
-[; ;rf-out-key.C: 589: DelayMs(200);
-"589
 [e ( _DelayMs (1 -> -> 200 `i `ui ]
-[; ;rf-out-key.C: 590: PA4 = !PA4;
+[; ;rf-out-key.C: 587: PA0 = !PA0;
+"587
+[e = _PA0 ! _PA0 ]
+"588
+}
+[; ;rf-out-key.C: 588: }
+[e $U 155  ]
+"589
+[e :U 154 ]
+[; ;rf-out-key.C: 589: else if(lastKey == 4)
+[e $ ! == -> _lastKey `i -> 4 `i 156  ]
+[; ;rf-out-key.C: 590: {
 "590
-[e = _PA4 ! _PA4 ]
+{
 [; ;rf-out-key.C: 591: DelayMs(200);
 "591
 [e ( _DelayMs (1 -> -> 200 `i `ui ]
 [; ;rf-out-key.C: 592: PA4 = !PA4;
 "592
 [e = _PA4 ! _PA4 ]
+[; ;rf-out-key.C: 593: DelayMs(200);
 "593
+[e ( _DelayMs (1 -> -> 200 `i `ui ]
+[; ;rf-out-key.C: 594: PA4 = !PA4;
+"594
+[e = _PA4 ! _PA4 ]
+"595
 }
 [e :U 156 ]
-"595
+"597
 [e :U 155 ]
 [e :U 153 ]
 [e :U 151 ]
-[; ;rf-out-key.C: 593: }
-[; ;rf-out-key.C: 595: LernRFblink = 0;
+[; ;rf-out-key.C: 595: }
+[; ;rf-out-key.C: 597: LernRFblink = 0;
 [e = _LernRFblink -> -> 0 `i `b ]
-[; ;rf-out-key.C: 596: conternotRF = 0;
-"596
+[; ;rf-out-key.C: 598: conternotRF = 0;
+"598
 [e = _conternotRF -> -> 0 `i `ui ]
-[; ;rf-out-key.C: 600: if(lastLearnKey == 5)
-"600
-[e $ ! == -> _lastLearnKey `i -> 5 `i 157  ]
-[; ;rf-out-key.C: 601: {
-"601
-{
-[; ;rf-out-key.C: 602: lastLearnKey = 0;
+[; ;rf-out-key.C: 602: if(lastLearnKey == 5)
 "602
-[e = _lastLearnKey -> -> 0 `i `uc ]
-[; ;rf-out-key.C: 603: LernRFblink = 1;
+[e $ ! == -> _lastLearnKey `i -> 5 `i 157  ]
+[; ;rf-out-key.C: 603: {
 "603
-[e = _LernRFblink -> -> 1 `i `b ]
-[; ;rf-out-key.C: 604: LernRFKey = 0;
+{
+[; ;rf-out-key.C: 604: lastLearnKey = 0;
 "604
-[e = _LernRFKey -> -> 0 `i `uc ]
-[; ;rf-out-key.C: 605: LernRF = 0;
+[e = _lastLearnKey -> -> 0 `i `uc ]
+[; ;rf-out-key.C: 605: LernRFblink = 1;
 "605
-[e = _LernRF -> -> 0 `i `b ]
+[e = _LernRFblink -> -> 1 `i `b ]
+[; ;rf-out-key.C: 606: LernRFKey = 0;
 "606
-}
-[; ;rf-out-key.C: 606: }
-[e $U 158  ]
-"607
-[e :U 157 ]
-[; ;rf-out-key.C: 607: else if(lastLearnKey != 0)
-[e $ ! != -> _lastLearnKey `i -> 0 `i 159  ]
-[; ;rf-out-key.C: 608: {
-"608
-{
-[; ;rf-out-key.C: 610: LernRFKey = lastLearnKey;
-"610
-[e = _LernRFKey _lastLearnKey ]
-[; ;rf-out-key.C: 611: LernRF = 1;
-"611
-[e = _LernRF -> -> 1 `i `b ]
-"612
-}
-[; ;rf-out-key.C: 612: }
-[e $U 160  ]
-"613
-[e :U 159 ]
-[; ;rf-out-key.C: 613: else
-[; ;rf-out-key.C: 614: {
-"614
-{
-[; ;rf-out-key.C: 616: LernRFKey = 0;
-"616
 [e = _LernRFKey -> -> 0 `i `uc ]
-[; ;rf-out-key.C: 617: LernRF = 0;
-"617
+[; ;rf-out-key.C: 607: LernRF = 0;
+"607
 [e = _LernRF -> -> 0 `i `b ]
+"608
+}
+[; ;rf-out-key.C: 608: }
+[e $U 158  ]
+"609
+[e :U 157 ]
+[; ;rf-out-key.C: 609: else if(lastLearnKey != 0)
+[e $ ! != -> _lastLearnKey `i -> 0 `i 159  ]
+[; ;rf-out-key.C: 610: {
+"610
+{
+[; ;rf-out-key.C: 612: LernRFKey = lastLearnKey;
+"612
+[e = _LernRFKey _lastLearnKey ]
+[; ;rf-out-key.C: 613: LernRF = 1;
+"613
+[e = _LernRF -> -> 1 `i `b ]
+"614
+}
+[; ;rf-out-key.C: 614: }
+[e $U 160  ]
+"615
+[e :U 159 ]
+[; ;rf-out-key.C: 615: else
+[; ;rf-out-key.C: 616: {
+"616
+{
+[; ;rf-out-key.C: 618: LernRFKey = 0;
 "618
+[e = _LernRFKey -> -> 0 `i `uc ]
+[; ;rf-out-key.C: 619: LernRF = 0;
+"619
+[e = _LernRF -> -> 0 `i `b ]
+"620
 }
 [e :U 160 ]
 [e :U 158 ]
-"619
-}
-[e :U 149 ]
 "621
 }
+[e :U 149 ]
+"623
+}
 [e :U 129 ]
-"514
+"516
 [e $U 130  ]
 [e :U 131 ]
-[; ;rf-out-key.C: 618: }
-[; ;rf-out-key.C: 619: }
+[; ;rf-out-key.C: 620: }
 [; ;rf-out-key.C: 621: }
-[; ;rf-out-key.C: 622: }
-"622
+[; ;rf-out-key.C: 623: }
+[; ;rf-out-key.C: 624: }
+"624
 [e :UE 128 ]
 }
-"628
+"630
 [v _POWER_INITIAL `(v ~T0 @X0 1 ef ]
-"629
+"631
 {
-[; ;rf-out-key.C: 628: void POWER_INITIAL(void)
-[; ;rf-out-key.C: 629: {
+[; ;rf-out-key.C: 630: void POWER_INITIAL(void)
+[; ;rf-out-key.C: 631: {
 [e :U _POWER_INITIAL ]
 [f ]
-[; ;rf-out-key.C: 630: OSCCON = 0B01110000;
-"630
-[e = _OSCCON -> -> 112 `i `uc ]
-[; ;rf-out-key.C: 631: INTCON = 0;
-"631
-[e = _INTCON -> -> 0 `i `uc ]
-[; ;rf-out-key.C: 632: OPTION = 0B00001000;
+[; ;rf-out-key.C: 632: OSCCON = 0B01110000;
 "632
-[e = _OPTION -> -> 8 `i `uc ]
-[; ;rf-out-key.C: 633: PORTA = 0B00000100;
+[e = _OSCCON -> -> 112 `i `uc ]
+[; ;rf-out-key.C: 633: INTCON = 0;
 "633
-[e = _PORTA -> -> 4 `i `uc ]
-[; ;rf-out-key.C: 634: TRISA = 0B00001100;
+[e = _INTCON -> -> 0 `i `uc ]
+[; ;rf-out-key.C: 634: OPTION = 0B00001000;
 "634
-[e = _TRISA -> -> 12 `i `uc ]
-[; ;rf-out-key.C: 635: WPUA = 0B00001100;
+[e = _OPTION -> -> 8 `i `uc ]
+[; ;rf-out-key.C: 635: PORTA = 0B00000100;
 "635
-[e = _WPUA -> -> 12 `i `uc ]
-[; ;rf-out-key.C: 636: MSCKCON = 0B00000000;
+[e = _PORTA -> -> 4 `i `uc ]
+[; ;rf-out-key.C: 636: TRISA = 0B00001100;
 "636
-[e = _MSCKCON -> -> 0 `i `uc ]
-[; ;rf-out-key.C: 637: }
+[e = _TRISA -> -> 12 `i `uc ]
+[; ;rf-out-key.C: 637: WPUA = 0B00001100;
 "637
+[e = _WPUA -> -> 12 `i `uc ]
+[; ;rf-out-key.C: 638: MSCKCON = 0B00000000;
+"638
+[e = _MSCKCON -> -> 0 `i `uc ]
+[; ;rf-out-key.C: 639: }
+"639
 [e :UE 161 ]
 }
-"639
+"641
 [v _TIMER2_INITIAL `(v ~T0 @X0 1 ef ]
-"640
+"642
 {
-[; ;rf-out-key.C: 639: void TIMER2_INITIAL(void)
-[; ;rf-out-key.C: 640: {
+[; ;rf-out-key.C: 641: void TIMER2_INITIAL(void)
+[; ;rf-out-key.C: 642: {
 [e :U _TIMER2_INITIAL ]
 [f ]
-[; ;rf-out-key.C: 641: T2CON = 0B00000001;
-"641
-[e = _T2CON -> -> 1 `i `uc ]
-[; ;rf-out-key.C: 642: TMR2 = 0;
-"642
-[e = _TMR2 -> -> 0 `i `uc ]
-[; ;rf-out-key.C: 643: PR2 = 50;
+[; ;rf-out-key.C: 643: T2CON = 0B00000001;
 "643
-[e = _PR2 -> -> 50 `i `uc ]
-[; ;rf-out-key.C: 644: TMR2IF = 0;
+[e = _T2CON -> -> 1 `i `uc ]
+[; ;rf-out-key.C: 644: TMR2 = 0;
 "644
-[e = _TMR2IF -> -> 0 `i `b ]
-[; ;rf-out-key.C: 645: TMR2ON = 1;
+[e = _TMR2 -> -> 0 `i `uc ]
+[; ;rf-out-key.C: 645: PR2 = 50;
 "645
-[e = _TMR2ON -> -> 1 `i `b ]
-[; ;rf-out-key.C: 646: PEIE = 1;
+[e = _PR2 -> -> 50 `i `uc ]
+[; ;rf-out-key.C: 646: TMR2IF = 0;
 "646
-[e = _PEIE -> -> 1 `i `b ]
-[; ;rf-out-key.C: 647: GIE = 1;
+[e = _TMR2IF -> -> 0 `i `b ]
+[; ;rf-out-key.C: 647: TMR2ON = 1;
 "647
-[e = _GIE -> -> 1 `i `b ]
-[; ;rf-out-key.C: 648: }
+[e = _TMR2ON -> -> 1 `i `b ]
+[; ;rf-out-key.C: 648: PEIE = 1;
 "648
+[e = _PEIE -> -> 1 `i `b ]
+[; ;rf-out-key.C: 649: GIE = 1;
+"649
+[e = _GIE -> -> 1 `i `b ]
+[; ;rf-out-key.C: 650: }
+"650
 [e :UE 162 ]
 }
-"650
+"652
 [v _TIMER0_INITIAL `(v ~T0 @X0 1 ef ]
-"651
+"653
 {
-[; ;rf-out-key.C: 650: void TIMER0_INITIAL(void)
-[; ;rf-out-key.C: 651: {
+[; ;rf-out-key.C: 652: void TIMER0_INITIAL(void)
+[; ;rf-out-key.C: 653: {
 [e :U _TIMER0_INITIAL ]
 [f ]
-[; ;rf-out-key.C: 652: OPTION = 0B00000110;
-"652
-[e = _OPTION -> -> 6 `i `uc ]
-[; ;rf-out-key.C: 653: TMR0 = 239;
-"653
-[e = _TMR0 -> -> 239 `i `uc ]
-[; ;rf-out-key.C: 654: T0IF = 0;
+[; ;rf-out-key.C: 654: OPTION = 0B00000110;
 "654
-[e = _T0IF -> -> 0 `i `b ]
-[; ;rf-out-key.C: 655: T0IE = 1;
+[e = _OPTION -> -> 6 `i `uc ]
+[; ;rf-out-key.C: 655: TMR0 = 239;
 "655
-[e = _T0IE -> -> 1 `i `b ]
-[; ;rf-out-key.C: 656: }
+[e = _TMR0 -> -> 239 `i `uc ]
+[; ;rf-out-key.C: 656: T0IF = 0;
 "656
+[e = _T0IF -> -> 0 `i `b ]
+[; ;rf-out-key.C: 657: T0IE = 1;
+"657
+[e = _T0IE -> -> 1 `i `b ]
+[; ;rf-out-key.C: 658: }
+"658
 [e :UE 163 ]
 }
-"658
-[v _EEPROMread `(uc ~T0 @X0 1 ef1`uc ]
-"659
-{
-[; ;rf-out-key.C: 658: unsigned char EEPROMread(unsigned char EEAddr)
-[; ;rf-out-key.C: 659: {
-[e :U _EEPROMread ]
-"658
-[v _EEAddr `uc ~T0 @X0 1 r1 ]
-"659
-[f ]
-[; ;rf-out-key.C: 660: EEADR = EEAddr;
 "660
-[e = _EEADR _EEAddr ]
-[; ;rf-out-key.C: 661: RD = 1;
+[v _EEPROMread `(uc ~T0 @X0 1 ef1`uc ]
 "661
-[e = _RD -> -> 1 `i `b ]
-[; ;rf-out-key.C: 662: return EEDAT;
+{
+[; ;rf-out-key.C: 660: unsigned char EEPROMread(unsigned char EEAddr)
+[; ;rf-out-key.C: 661: {
+[e :U _EEPROMread ]
+"660
+[v _EEAddr `uc ~T0 @X0 1 r1 ]
+"661
+[f ]
+[; ;rf-out-key.C: 662: EEADR = EEAddr;
 "662
+[e = _EEADR _EEAddr ]
+[; ;rf-out-key.C: 663: RD = 1;
+"663
+[e = _RD -> -> 1 `i `b ]
+[; ;rf-out-key.C: 664: return EEDAT;
+"664
 [e ) _EEDAT ]
 [e $UE 164  ]
-[; ;rf-out-key.C: 663: }
-"663
+[; ;rf-out-key.C: 665: }
+"665
 [e :UE 164 ]
 }
-"665
+"667
 [v _EEPROMwrite `(v ~T0 @X0 1 ef2`uc`uc ]
-"666
+"668
 {
-[; ;rf-out-key.C: 665: void EEPROMwrite(unsigned char EEAddr, unsigned char Data)
-[; ;rf-out-key.C: 666: {
+[; ;rf-out-key.C: 667: void EEPROMwrite(unsigned char EEAddr, unsigned char Data)
+[; ;rf-out-key.C: 668: {
 [e :U _EEPROMwrite ]
-"665
+"667
 [v _EEAddr `uc ~T0 @X0 1 r1 ]
 [v _Data `uc ~T0 @X0 1 r2 ]
-"666
-[f ]
-[; ;rf-out-key.C: 667: GIE = 0;
-"667
-[e = _GIE -> -> 0 `i `b ]
-[; ;rf-out-key.C: 668: while(GIE);
 "668
+[f ]
+[; ;rf-out-key.C: 669: GIE = 0;
+"669
+[e = _GIE -> -> 0 `i `b ]
+[; ;rf-out-key.C: 670: while(GIE);
+"670
 [e $U 166  ]
 [e :U 167 ]
 [e :U 166 ]
 [e $ _GIE 167  ]
 [e :U 168 ]
-[; ;rf-out-key.C: 669: EEADR = EEAddr;
-"669
-[e = _EEADR _EEAddr ]
-[; ;rf-out-key.C: 670: EEDAT = Data;
-"670
-[e = _EEDAT _Data ]
-[; ;rf-out-key.C: 671: EEIF = 0;
+[; ;rf-out-key.C: 671: EEADR = EEAddr;
 "671
-[e = _EEIF -> -> 0 `i `b ]
-[; ;rf-out-key.C: 672: EECON1 |= 0x34;
+[e = _EEADR _EEAddr ]
+[; ;rf-out-key.C: 672: EEDAT = Data;
 "672
-[e =| _EECON1 -> -> 52 `i `uc ]
-[; ;rf-out-key.C: 673: WR = 1;
+[e = _EEDAT _Data ]
+[; ;rf-out-key.C: 673: EEIF = 0;
 "673
-[e = _WR -> -> 1 `i `b ]
-[; ;rf-out-key.C: 674: while(WR);
+[e = _EEIF -> -> 0 `i `b ]
+[; ;rf-out-key.C: 674: EECON1 |= 0x34;
 "674
+[e =| _EECON1 -> -> 52 `i `uc ]
+[; ;rf-out-key.C: 675: WR = 1;
+"675
+[e = _WR -> -> 1 `i `b ]
+[; ;rf-out-key.C: 676: while(WR);
+"676
 [e $U 169  ]
 [e :U 170 ]
 [e :U 169 ]
 [e $ _WR 170  ]
 [e :U 171 ]
-[; ;rf-out-key.C: 675: GIE = 1;
-"675
+[; ;rf-out-key.C: 677: GIE = 1;
+"677
 [e = _GIE -> -> 1 `i `b ]
-[; ;rf-out-key.C: 676: }
-"676
+[; ;rf-out-key.C: 678: }
+"678
 [e :UE 165 ]
 }
-"678
-[v _DelayUs `(v ~T0 @X0 1 ef1`uc ]
-"679
-{
-[; ;rf-out-key.C: 678: void DelayUs(unsigned char Time)
-[; ;rf-out-key.C: 679: {
-[e :U _DelayUs ]
-"678
-[v _Time `uc ~T0 @X0 1 r1 ]
-"679
-[f ]
 "680
-[v _a `uc ~T0 @X0 1 a ]
-[; ;rf-out-key.C: 680: unsigned char a;
-[; ;rf-out-key.C: 681: for(a = 0; a < Time; a++)
+[v _DelayUs `(v ~T0 @X0 1 ef1`uc ]
 "681
+{
+[; ;rf-out-key.C: 680: void DelayUs(unsigned char Time)
+[; ;rf-out-key.C: 681: {
+[e :U _DelayUs ]
+"680
+[v _Time `uc ~T0 @X0 1 r1 ]
+"681
+[f ]
+"682
+[v _a `uc ~T0 @X0 1 a ]
+[; ;rf-out-key.C: 682: unsigned char a;
+[; ;rf-out-key.C: 683: for(a = 0; a < Time; a++)
+"683
 {
 [e = _a -> -> 0 `i `uc ]
 [e $U 176  ]
-"682
-[e :U 173 ]
-[; ;rf-out-key.C: 682: {
-{
-[; ;rf-out-key.C: 683: __nop();
-"683
-[e ( ___nop ..  ]
-[; ;rf-out-key.C: 684: asm("clrwdt");
 "684
-[; <" clrwdt ;# ">
+[e :U 173 ]
+[; ;rf-out-key.C: 684: {
+{
+[; ;rf-out-key.C: 685: __nop();
 "685
+[e ( ___nop ..  ]
+[; ;rf-out-key.C: 686: asm("clrwdt");
+"686
+[; <" clrwdt ;# ">
+"687
 }
-"681
+"683
 [e ++ _a -> -> 1 `i `uc ]
 [e :U 176 ]
 [e $ < -> _a `i -> _Time `i 173  ]
 [e :U 174 ]
-"685
+"687
 }
-[; ;rf-out-key.C: 685: }
-[; ;rf-out-key.C: 686: }
-"686
+[; ;rf-out-key.C: 687: }
+[; ;rf-out-key.C: 688: }
+"688
 [e :UE 172 ]
 }
-"688
-[v _DelayMs `(v ~T0 @X0 1 ef1`ui ]
-"689
-{
-[; ;rf-out-key.C: 688: void DelayMs(unsigned int Time)
-[; ;rf-out-key.C: 689: {
-[e :U _DelayMs ]
-"688
-[v _Time `ui ~T0 @X0 1 r1 ]
-"689
-[f ]
 "690
+[v _DelayMs `(v ~T0 @X0 1 ef1`ui ]
+"691
+{
+[; ;rf-out-key.C: 690: void DelayMs(unsigned int Time)
+[; ;rf-out-key.C: 691: {
+[e :U _DelayMs ]
+"690
+[v _Time `ui ~T0 @X0 1 r1 ]
+"691
+[f ]
+"692
 [v _a `ui ~T0 @X0 1 a ]
 [v _b `ui ~T0 @X0 1 a ]
-[; ;rf-out-key.C: 690: unsigned int a, b;
-[; ;rf-out-key.C: 691: for(a = 0; a < Time; a++)
-"691
+[; ;rf-out-key.C: 692: unsigned int a, b;
+[; ;rf-out-key.C: 693: for(a = 0; a < Time; a++)
+"693
 {
 [e = _a -> -> 0 `i `ui ]
 [e $U 181  ]
-"692
+"694
 [e :U 178 ]
-[; ;rf-out-key.C: 692: {
+[; ;rf-out-key.C: 694: {
 {
-[; ;rf-out-key.C: 693: for(b = 0; b < 5; b++)
-"693
+[; ;rf-out-key.C: 695: for(b = 0; b < 5; b++)
+"695
 {
 [e = _b -> -> 0 `i `ui ]
 [e $ < _b -> -> 5 `i `ui 182  ]
 [e $U 183  ]
-"694
-[e :U 182 ]
-[; ;rf-out-key.C: 694: {
-{
-[; ;rf-out-key.C: 695: DelayUs(197);
-"695
-[e ( _DelayUs (1 -> -> 197 `i `uc ]
 "696
+[e :U 182 ]
+[; ;rf-out-key.C: 696: {
+{
+[; ;rf-out-key.C: 697: DelayUs(197);
+"697
+[e ( _DelayUs (1 -> -> 197 `i `uc ]
+"698
 }
-"693
+"695
 [e ++ _b -> -> 1 `i `ui ]
 [e $ < _b -> -> 5 `i `ui 182  ]
 [e :U 183 ]
-"696
+"698
 }
-"697
+"699
 }
-"691
+"693
 [e ++ _a -> -> 1 `i `ui ]
 [e :U 181 ]
 [e $ < _a _Time 178  ]
 [e :U 179 ]
-"697
+"699
 }
-[; ;rf-out-key.C: 696: }
-[; ;rf-out-key.C: 697: }
 [; ;rf-out-key.C: 698: }
-"698
+[; ;rf-out-key.C: 699: }
+[; ;rf-out-key.C: 700: }
+"700
 [e :UE 177 ]
 }
